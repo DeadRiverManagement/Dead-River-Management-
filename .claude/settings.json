@@ -1,0 +1,51 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "command -v graphify >/dev/null 2>&1 && exit 0; if command -v uv >/dev/null 2>&1; then uv tool install graphifyy >/dev/null 2>&1; elif command -v pipx >/dev/null 2>&1; then pipx install graphifyy >/dev/null 2>&1; fi; exit 0",
+            "timeout": 120,
+            "statusMessage": "Installing graphify (graphifyy) if missing..."
+          }
+        ]
+      },
+      {
+        "matcher": "startup|resume|clear|compact",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"$CLAUDE_PROJECT_DIR/.claude/hooks/ponytail/ponytail-activate.js\"",
+            "timeout": 5,
+            "statusMessage": "Loading ponytail mode..."
+          }
+        ]
+      }
+    ],
+    "SubagentStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"$CLAUDE_PROJECT_DIR/.claude/hooks/ponytail/ponytail-subagent.js\"",
+            "timeout": 5,
+            "statusMessage": "Loading ponytail mode..."
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"$CLAUDE_PROJECT_DIR/.claude/hooks/ponytail/ponytail-mode-tracker.js\"",
+            "timeout": 5,
+            "statusMessage": "Tracking ponytail mode..."
+          }
+        ]
+      }
+    ]
+  }
+}
