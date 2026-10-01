@@ -16,3 +16,4 @@ Then `omniroute launch` starts Claude Code pointed at the gateway. A plain `clau
 Model ids must be `provider/model` (for example `anthropic/claude-opus-5`) or a combo name (for example `default`).
 
 - [`tools/typesafe-lead-triage/`](tools/typesafe-lead-triage/) — TypeSafe lead triage lab (lab only, not production wiring).
+- [`tools/instantly-reply-classify/`](tools/instantly-reply-classify/) — Instantly reply classify (classify only; no Instantly API mutations).
