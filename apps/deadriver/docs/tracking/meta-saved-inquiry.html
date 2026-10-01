@@ -1,6 +1,16 @@
 <script>
 (function () {
-  if (!/^\/(demandflow|book)\/?$/.test(location.pathname) || typeof fbq !== 'function') return;
+  if (!/^\/(demandflow|book|demo|growth-plan|demand-intelligence)\/?$/.test(location.pathname) || typeof fbq !== 'function') return;
+  if (window.navigator && window.navigator.globalPrivacyControl === true) return;
+  var consent = {};
+  (window.dataLayer || []).forEach(function (entry) {
+    if (entry && entry[0] === 'consent' && /^(default|update)$/.test(entry[1])) {
+      ['ad_storage', 'ad_user_data'].forEach(function (key) {
+        if (entry[2] && entry[2][key]) consent[key] = entry[2][key];
+      });
+    }
+  });
+  if (consent.ad_storage === 'denied' || consent.ad_user_data === 'denied') return;
   var id = {{DLV - DRM Event ID}};
   var industry = {{DLV - DRM Industry}};
   var labels = {
@@ -8,14 +18,18 @@
     'dental': 'Dental',
     'real-estate': 'Real Estate',
     'ecommerce': 'E-commerce',
-    'med-spas': 'Med Spas'
+    'med-spas': 'Med Spas',
+    'other': 'General Business'
   };
-  if (typeof id !== 'string' || !/^drm_inquiry_[a-f0-9-]{36}$/i.test(id)) return;
+  if (typeof id !== 'string' || !/^drm_inquiry_[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(id)) return;
   if (typeof industry !== 'string' || !Object.prototype.hasOwnProperty.call(labels, industry)) return;
+  window.__drmMetaInquiryReceipts = window.__drmMetaInquiryReceipts || {};
+  if (window.__drmMetaInquiryReceipts[id]) return;
   fbq('trackSingle', '4422109568077296', 'Lead', {
     content_name: 'DRM - ' + labels[industry] + ' - Saved Inquiry',
     content_category: labels[industry],
     industry: industry
   }, {eventID: id});
+  window.__drmMetaInquiryReceipts[id] = true;
 })();
 </script>

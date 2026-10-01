@@ -94,6 +94,14 @@ test('uses the exact supplied calendar and a fixed internal booking route', () =
   assert.equal(DEMANDFLOW_BOOKING_PATH, '/demandflow/book');
 });
 
+test('the general booking application preserves other instead of inventing home services', async () => {
+  const h = harness({ pathname: '/book', industry: 'other', body: { ...responseBody, route: 'other-growth-strategist' } });
+  await h.submit();
+  assert.equal(h.requests[0].payload.industry, 'other');
+  assert.deepEqual(h.navigations, ['/book/thanks']);
+  assert.equal(buildDemandFlowPayload({...values, industry:'other'}, '', '/book').industry, 'other');
+});
+
 for (const industry of ['dental', 'real-estate', 'ecommerce', 'med-spas']) {
   test(`${industry} booking retains its industry and checks the matching saved route`, async () => {
     const h = harness({ pathname: '/book', industry, body: { ...responseBody, route: industry + '-growth-strategist' } });

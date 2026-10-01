@@ -4,7 +4,7 @@
 export type BookFaq = { q: string; a: string };
 
 export type BookPageCopy = {
-  industry: 'home-services' | 'dental' | 'med-spas' | 'real-estate' | 'ecommerce';
+  industry: 'home-services' | 'dental' | 'med-spas' | 'real-estate' | 'ecommerce' | 'other';
   title: string;
   description: string;
   eyebrow: string;
@@ -24,7 +24,7 @@ export type BookPageCopy = {
 };
 
 export const homeServicesBook: BookPageCopy = {
-  industry: 'home-services',
+  industry: 'other',
   title: 'Book Your Free Strategy Call',
   description:
     'Book a free strategy call with Dead River Management. See if your business qualifies for the Demand Flow guarantee: $50,000 in new revenue in 45 to 60 days.',
