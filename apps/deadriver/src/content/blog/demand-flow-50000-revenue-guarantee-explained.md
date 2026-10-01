@@ -59,7 +59,7 @@ That is RESULTS first: we only put the guarantee on work we believe we can deliv
 ## What Demand Flow is not
 
 - **Not** the old public “30 leads in 60 days” (or similar lead-count) guarantee. Earlier Dead River offers with lead, appointment, or patient targets are **no longer sold**. If you see an older article such as [30 leads in 60 days guarantee](/marketing-advice/30-leads-in-60-days-guarantee), treat it as **historical and superseded**. Demand Flow is current.
-- **Not** a public Foundation / Growth Partner / Scale price ladder.
+- **Not** a public Foundation / Growth Partner / Scale price ladder (those names are not live products; Growth is not a product we sell).
 - **Not** a public Demand Intelligence “$3,000/mo” offer card. Demand Intelligence is a separate product path ([Demand Intelligence](/demand-intelligence), [demo](/demo)). It is not this guarantee SoR.
 - **Not** a “work for free until…” public claim.
 
