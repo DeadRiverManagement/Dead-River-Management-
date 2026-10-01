@@ -1,0 +1,27 @@
+---
+/**
+ * Real HTTP 404 document. Unique title, noindex, canonical that is not `/`.
+ * Vercel serves dist/404.html with status 404 for unknown paths.
+ */
+import Base from '../layouts/Base.astro';
+
+const seo = {
+  title: 'Page Not Found | PMG',
+  description:
+    'That page is gone or never existed. Try the home page, shipping tips, or call (805) 984-4114.',
+};
+---
+<Base title={seo.title} description={seo.description} noindex canonical="/404/">
+  <section class="error-page" aria-label="Page not found">
+    <div class="wrap">
+      <span class="eyebrow">Error 404</span>
+      <h1>Page <span class="gold-text">not found.</span></h1>
+      <p class="lede">That page is gone or never existed. Try the home page, shipping tips, or call <a href="tel:+18059844114">(805) 984-4114</a>.</p>
+      <div class="hero-actions">
+        <a class="btn btn-gold" href="/">Home</a>
+        <a class="btn btn-ghost" href="/blog/">Ship Tips</a>
+        <a class="btn btn-ghost" href="/#contact">Contact</a>
+      </div>
+    </div>
+  </section>
+</Base>

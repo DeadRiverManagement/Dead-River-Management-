@@ -1,0 +1,122 @@
+---
+/**
+ * What is LTL shipping. City-level NAP only. No street. No lead form.
+ * Title, meta, H1, and FAQ copy are locked to the ship spec.
+ */
+import Base from '../layouts/Base.astro';
+import site from '../data/site.json';
+
+const siteURL = Astro.site?.toString() ?? `${site.canonicalOrigin}/`;
+const pagePath = '/what-is-ltl-shipping/';
+
+const title = 'What Is LTL Shipping? | Parcel Management Group';
+const description =
+  'LTL shipping moves freight that fills part of a truck. You share space and pay for the space you use. PMG is a registered broker in Ventura, CA. Call (805) 984-4114.';
+
+const faq = [
+  {
+    q: 'What is LTL shipping?',
+    a: 'LTL (less-than-truckload) shipping moves freight that fills part of a truck. You share space with other shippers and pay for the space you use. It fits pallet freight too big for small package but not needing a full trailer.',
+  },
+  {
+    q: 'When should I use LTL instead of small package or full truckload?',
+    a: 'Use small package for boxes usually under 150 lbs. Use LTL for pallet freight that does not need a full truck. Use full truckload when you need a dedicated trailer. Parcel Management Group helps you choose the right mode.',
+  },
+  {
+    q: 'Does Parcel Management Group handle LTL freight?',
+    a: 'Yes. PMG is a registered freight broker (USDOT 3266041 · MC 1030328) based in Ventura, CA 93001. We compare LTL carriers, book the load, and support you after pickup. Call (805) 984-4114.',
+  },
+  {
+    q: 'How do I get an LTL quote from PMG?',
+    a: 'Tell us what you ship, where it goes, and when you need it. We compare carriers and send a clear quote. See How freight quoting works or call (805) 984-4114.',
+  },
+];
+
+const seo = {
+  title,
+  description,
+  schema: [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      name: 'What is LTL shipping?',
+      url: `${siteURL}what-is-ltl-shipping/`,
+      description,
+      mainEntity: { '@id': `${siteURL}#organization` },
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: faq.map((qa) => ({
+        '@type': 'Question',
+        name: qa.q,
+        acceptedAnswer: { '@type': 'Answer', text: qa.a },
+      })),
+    },
+  ],
+};
+---
+<Base title={seo.title} description={seo.description} canonical={pagePath} schema={seo.schema}>
+  <section class="page-hero" aria-label="What is LTL shipping">
+    <div class="wrap">
+      <span class="eyebrow">LTL shipping</span>
+      <h1>What is LTL shipping?</h1>
+    </div>
+  </section>
+  <section class="page-body">
+    <div class="wrap prose">
+      <p>LTL (less-than-truckload) shipping moves freight that fills part of a truck. You share space with other shippers and pay for the space you use. Parcel Management Group is a registered freight broker (USDOT 3266041 · MC 1030328) in Ventura, CA 93001. We help with small package, LTL, and full truckload. Call <a href="tel:+18059844114">(805) 984-4114</a>.</p>
+
+      <h2>What LTL shipping means</h2>
+      <ul>
+        <li>Freight on pallets that is too big for small package but does not need a full trailer.</li>
+        <li>Your freight shares a truck with other loads.</li>
+        <li>You pay for the space and service level you need, not a whole truck.</li>
+        <li>A broker like PMG compares LTL carriers and books the move.</li>
+      </ul>
+
+      <h2>LTL vs small package vs full truckload</h2>
+      <p>Use small package for boxes usually under 150 lbs. Use LTL for pallet freight that does not need a full truck. Use full truckload when you need a dedicated trailer. PMG helps you pick the right mode. Services overview: <a href="/services/">/services/</a>.</p>
+
+      <h2>How a broker helps with LTL</h2>
+      <p>A freight broker shops carriers and manages the move so you get a clear rate and support after pickup. What is a freight broker: <a href="/what-is-a-freight-broker/">/what-is-a-freight-broker/</a>. Broker vs carrier: <a href="/freight-broker-vs-carrier/">/freight-broker-vs-carrier/</a>.</p>
+
+      <h2>How quoting works with PMG</h2>
+      <p>Tell us what you ship, where it goes, and when you need it. We compare carriers and send a clear quote. Details: <a href="/how-freight-quoting-works/">/how-freight-quoting-works/</a>.</p>
+
+      <p>Call <a href="tel:+18059844114">(805) 984-4114</a> or start a chat at <a href="/#contact">/#contact</a>.</p>
+
+      <p class="related">
+        <a href="/services/">Services</a>
+        <span aria-hidden="true">·</span>
+        <a href="/about/">About</a>
+        <span aria-hidden="true">·</span>
+        <a href="/blog/reduce-shipping-costs-high-volume/">Reduce shipping costs</a>
+      </p>
+    </div>
+  </section>
+  <section class="page-body" aria-label="LTL shipping questions">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">FAQ</span>
+        <h2>LTL shipping, in short.</h2>
+      </div>
+      <div class="faq faq-static">
+        {faq.map((qa) => (
+          <div class="qa">
+            <h3>{qa.q}</h3>
+            <div class="a">
+              {qa.q.startsWith('How do I get an LTL quote') ? (
+                <p>
+                  Tell us what you ship, where it goes, and when you need it. We compare carriers and send a clear quote. See <a href="/how-freight-quoting-works/">How freight quoting works</a> or call (805) 984-4114.
+                </p>
+              ) : (
+                <p>{qa.a}</p>
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</Base>

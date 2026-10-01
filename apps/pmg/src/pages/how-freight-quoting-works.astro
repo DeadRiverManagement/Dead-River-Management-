@@ -1,0 +1,115 @@
+---
+/**
+ * How freight quoting works. City-level NAP only. No street. No lead form.
+ * Title, meta, H1, and FAQ copy are locked to the ship spec.
+ */
+import Base from '../layouts/Base.astro';
+import site from '../data/site.json';
+
+const siteURL = Astro.site?.toString() ?? `${site.canonicalOrigin}/`;
+const pagePath = '/how-freight-quoting-works/';
+
+const quotingFaq = [
+  {
+    q: 'How does a freight quote work with PMG?',
+    a: 'You tell us what you ship, where it goes, and when you need it. We compare carriers and send a clear quote. For small packages, join the free Small Package Program — no fees and no contract. Call (805) 984-4114.',
+  },
+  {
+    q: 'What is the difference between a shipping broker and a carrier?',
+    a: 'A carrier owns the trucks or planes. A broker finds the right carrier for your freight and manages the move. Parcel Management Group is a registered freight broker (USDOT 3266041 · MC 1030328).',
+  },
+  {
+    q: 'When should I use small package vs LTL?',
+    a: 'Use small package for boxes usually under 150 lbs. Use LTL when you have pallet freight too big for parcel but not a full truck. PMG helps you pick the cheaper, safer mode.',
+  },
+  {
+    q: 'Is Parcel Management Group in Ventura, California?',
+    a: 'Yes. PMG is based in Ventura, CA 93001 and serves shippers nationwide. Phone: (805) 984-4114.',
+  },
+];
+
+const description =
+  'Tell PMG what you ship, where it goes, and when you need it. We compare carriers and send a clear quote. Ventura, CA. Call (805) 984-4114.';
+
+const seo = {
+  title: 'How Freight Quoting Works | Parcel Management Group',
+  description,
+  schema: [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      name: 'How freight quoting works at PMG',
+      url: `${siteURL}how-freight-quoting-works/`,
+      description,
+      mainEntity: { '@id': `${siteURL}#organization` },
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: quotingFaq.map((qa) => ({
+        '@type': 'Question',
+        name: qa.q,
+        acceptedAnswer: { '@type': 'Answer', text: qa.a },
+      })),
+    },
+  ],
+};
+---
+<Base title={seo.title} description={seo.description} canonical={pagePath} schema={seo.schema}>
+  <section class="page-hero" aria-label="How freight quoting works">
+    <div class="wrap">
+      <span class="eyebrow">Quoting</span>
+      <h1>How freight quoting works at PMG</h1>
+    </div>
+  </section>
+  <section class="page-body">
+    <div class="wrap prose">
+      <p>Tell Parcel Management Group what you ship, where it goes, and when you need it. We compare carrier options and send a clear quote. For small packages, join the free Small Package Program — no fees and no contract. Call <a href="tel:+18059844114">(805) 984-4114</a>.</p>
+
+      <h2>Steps</h2>
+      <ol>
+        <li>Share origin, destination, weight or size, and need-by date.</li>
+        <li>PMG checks carriers and service levels.</li>
+        <li>You get a clear quote.</li>
+        <li>You approve. PMG books and supports the move.</li>
+        <li>Questions: <a href="tel:+18059844114">(805) 984-4114</a> or <a href="/#contact">start a chat</a>.</li>
+      </ol>
+
+      <h2>Broker vs carrier</h2>
+      <p>A carrier owns the trucks or planes. A broker finds the right carrier and manages the move. Parcel Management Group is a registered freight broker (USDOT 3266041 · MC 1030328).</p>
+
+      <h2>Small package vs LTL</h2>
+      <p>Use small package for boxes usually under 150 lbs. Use LTL for pallet freight too big for parcel that does not need a full truck.</p>
+
+      <p>Call <a href="tel:+18059844114">(805) 984-4114</a> or <a href="/#contact">start a chat</a>.</p>
+
+      <p class="related">
+        <a href="/services/">Services</a>
+        <span aria-hidden="true">·</span>
+        <a href="/about/">About</a>
+        <span aria-hidden="true">·</span>
+        <a href="/blog/reduce-shipping-costs-high-volume/">Reduce shipping costs</a>
+        <span aria-hidden="true">·</span>
+        <a href="/blog/dimensional-weight/">Dimensional weight</a>
+        <span aria-hidden="true">·</span>
+        <a href="/blog/prepay-and-add-shipping/">Prepay and add</a>
+      </p>
+    </div>
+  </section>
+  <section class="page-body" aria-label="Quoting questions">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">FAQ</span>
+        <h2>FAQ</h2>
+      </div>
+      <div class="faq faq-static">
+        {quotingFaq.map((qa) => (
+          <div class="qa">
+            <h3>{qa.q}</h3>
+            <div class="a"><p>{qa.a}</p></div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</Base>

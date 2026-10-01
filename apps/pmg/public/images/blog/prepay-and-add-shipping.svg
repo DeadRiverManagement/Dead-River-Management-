@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-label="An invoice showing goods plus a separately added freight charge line">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F6E39C"/><stop offset=".34" stop-color="#E7C568"/>
+      <stop offset=".68" stop-color="#C79A3C"/><stop offset="1" stop-color="#8E6417"/>
+    </linearGradient>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" fill="none" stroke="#E7C568" stroke-opacity=".05" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="#0B0B0C"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <circle cx="880" cy="480" r="290" fill="#E7C568" opacity=".05"/>
+
+  <!-- shipper pays carrier -->
+  <g transform="translate(110 236)">
+    <rect x="0" y="0" width="200" height="130" rx="14" fill="#141416" stroke="#E7C568" stroke-opacity=".3"/>
+    <rect x="28" y="28" width="110" height="12" rx="6" fill="url(#g)" opacity=".85"/>
+    <rect x="28" y="56" width="144" height="9" rx="4.5" fill="#F3EEDF" opacity=".18"/>
+    <rect x="28" y="80" width="90" height="9" rx="4.5" fill="#F3EEDF" opacity=".18"/>
+  </g>
+  <g transform="translate(330 286)" stroke="url(#g)" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M0 30h84"/><path d="M64 12 86 30 64 48"/>
+  </g>
+
+  <!-- carrier -->
+  <g transform="translate(440 232)">
+    <rect x="0" y="16" width="96" height="66" rx="7" fill="#141416" stroke="url(#g)" stroke-width="5"/>
+    <path d="M96 34h26l20 20v28H96z" fill="#141416" stroke="url(#g)" stroke-width="5" stroke-linejoin="round"/>
+    <circle cx="28" cy="94" r="12" fill="#0B0B0C" stroke="url(#g)" stroke-width="5"/>
+    <circle cx="116" cy="94" r="12" fill="#0B0B0C" stroke="url(#g)" stroke-width="5"/>
+  </g>
+
+  <!-- invoice with added freight line -->
+  <g transform="translate(700 108)">
+    <rect x="0" y="0" width="400" height="414" rx="16" fill="#141416" stroke="#E7C568" stroke-opacity=".32"/>
+    <rect x="0" y="0" width="400" height="58" rx="16" fill="#E7C568" fill-opacity=".08"/>
+    <rect x="30" y="22" width="150" height="13" rx="6.5" fill="#F3EEDF" opacity=".28"/>
+
+    <g>
+      <rect x="30" y="94"  width="190" height="11" rx="5.5" fill="#F3EEDF" opacity=".16"/><rect x="292" y="94"  width="78" height="11" rx="5.5" fill="#F3EEDF" opacity=".16"/>
+      <rect x="30" y="134" width="230" height="11" rx="5.5" fill="#F3EEDF" opacity=".16"/><rect x="292" y="134" width="78" height="11" rx="5.5" fill="#F3EEDF" opacity=".16"/>
+      <rect x="30" y="174" width="160" height="11" rx="5.5" fill="#F3EEDF" opacity=".16"/><rect x="292" y="174" width="78" height="11" rx="5.5" fill="#F3EEDF" opacity=".16"/>
+      <rect x="30" y="214" width="210" height="11" rx="5.5" fill="#F3EEDF" opacity=".16"/><rect x="292" y="214" width="78" height="11" rx="5.5" fill="#F3EEDF" opacity=".16"/>
+    </g>
+
+    <!-- the added freight line -->
+    <rect x="14" y="252" width="372" height="50" rx="10" fill="#E7C568" fill-opacity=".14" stroke="#E7C568" stroke-opacity=".5"/>
+    <rect x="30" y="270" width="180" height="14" rx="7" fill="url(#g)"/>
+    <rect x="284" y="268" width="86" height="18" rx="9" fill="url(#g)"/>
+    <g transform="translate(-42 262)" fill="none" stroke="url(#g)" stroke-width="5" stroke-linecap="round">
+      <path d="M18 15h20"/><path d="M28 5v20"/>
+    </g>
+
+    <path d="M30 336H370" stroke="#E7C568" stroke-opacity=".3" stroke-width="1.5"/>
+    <rect x="30" y="360" width="118" height="13" rx="6.5" fill="#F3EEDF" opacity=".3"/>
+    <rect x="256" y="356" width="114" height="21" rx="10.5" fill="url(#g)"/>
+  </g>
+
+  <!-- buyer pays shipper -->
+  <g transform="translate(600 288)" stroke="url(#g)" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity=".75">
+    <path d="M0 26h70"/><path d="M50 8 72 26 50 44"/>
+  </g>
+</svg>
