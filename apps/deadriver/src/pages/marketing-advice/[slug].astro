@@ -73,10 +73,12 @@ const schema = {
           </div>
         </>
       )}
-      <p class="notice">
-        Prices and plans mentioned in older articles may have changed.{' '}
-        <a href="/book">Talk through current scope</a>.
-      </p>
+      {post.data.legacyPriceNotice && (
+        <p class="notice">
+          Prices and plans mentioned in older articles may have changed.{' '}
+          <a href="/book">Talk through current scope</a>.
+        </p>
+      )}
     </div>
   </article>
   <CTA />
