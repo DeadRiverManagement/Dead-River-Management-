@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-label="A descending cost line over a row of packages, showing shipping spend coming down">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F6E39C"/><stop offset=".34" stop-color="#E7C568"/>
+      <stop offset=".68" stop-color="#C79A3C"/><stop offset="1" stop-color="#8E6417"/>
+    </linearGradient>
+    <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#E7C568" stop-opacity=".26"/>
+      <stop offset="1" stop-color="#E7C568" stop-opacity="0"/>
+    </linearGradient>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" fill="none" stroke="#E7C568" stroke-opacity=".05" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="630" fill="#0B0B0C"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <circle cx="200" cy="110" r="280" fill="#E7C568" opacity=".05"/>
+
+  <!-- axes -->
+  <path d="M130 470H1070" stroke="#E7C568" stroke-opacity=".28" stroke-width="2"/>
+  <path d="M130 110V470" stroke="#E7C568" stroke-opacity=".28" stroke-width="2"/>
+
+  <!-- descending bars -->
+  <g>
+    <rect x="176" y="150" width="86" height="320" rx="8" fill="#E7C568" opacity=".16"/>
+    <rect x="306" y="196" width="86" height="274" rx="8" fill="#E7C568" opacity=".22"/>
+    <rect x="436" y="252" width="86" height="218" rx="8" fill="#E7C568" opacity=".30"/>
+    <rect x="566" y="300" width="86" height="170" rx="8" fill="#E7C568" opacity=".40"/>
+    <rect x="696" y="346" width="86" height="124" rx="8" fill="url(#g)" opacity=".72"/>
+    <rect x="826" y="384" width="86" height="86" rx="8" fill="url(#g)" opacity=".86"/>
+    <rect x="956" y="410" width="86" height="60" rx="8" fill="url(#g)"/>
+  </g>
+
+  <!-- trend line -->
+  <path d="M219 150 349 196 479 252 609 300 739 346 869 384 999 410" fill="none" stroke="url(#g)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M219 150 349 196 479 252 609 300 739 346 869 384 999 410V470H219Z" fill="url(#fade)"/>
+  <g fill="#0B0B0C" stroke="url(#g)" stroke-width="5">
+    <circle cx="219" cy="150" r="10"/><circle cx="609" cy="300" r="10"/><circle cx="999" cy="410" r="10"/>
+  </g>
+
+  <!-- packages along the baseline -->
+  <g transform="translate(160 496)" fill="none" stroke="#E7C568" stroke-opacity=".5" stroke-width="4" stroke-linejoin="round">
+    <g><path d="M0 18 30 4l30 14v34l-30 14-30-14z"/><path d="M0 18l30 14 30-14M30 32v36"/></g>
+    <g transform="translate(130 0)"><path d="M0 18 30 4l30 14v34l-30 14-30-14z"/><path d="M0 18l30 14 30-14M30 32v36"/></g>
+    <g transform="translate(260 0)"><path d="M0 18 30 4l30 14v34l-30 14-30-14z"/><path d="M0 18l30 14 30-14M30 32v36"/></g>
+    <g transform="translate(390 0)"><path d="M0 18 30 4l30 14v34l-30 14-30-14z"/><path d="M0 18l30 14 30-14M30 32v36"/></g>
+    <g transform="translate(520 0)"><path d="M0 18 30 4l30 14v34l-30 14-30-14z"/><path d="M0 18l30 14 30-14M30 32v36"/></g>
+    <g transform="translate(650 0)"><path d="M0 18 30 4l30 14v34l-30 14-30-14z"/><path d="M0 18l30 14 30-14M30 32v36"/></g>
+    <g transform="translate(780 0)"><path d="M0 18 30 4l30 14v34l-30 14-30-14z"/><path d="M0 18l30 14 30-14M30 32v36"/></g>
+  </g>
+
+  <!-- down arrow marker -->
+  <g transform="translate(1010 120)" fill="none" stroke="url(#g)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M30 0v96"/><path d="M2 68 30 98 58 68"/>
+  </g>
+</svg>

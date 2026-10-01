@@ -1,0 +1,137 @@
+---
+/**
+ * Services — indexable /services/ page. RESULTS FIRST. City-level NAP only. No street.
+ */
+import Base from '../layouts/Base.astro';
+import site from '../data/site.json';
+
+const siteURL = Astro.site?.toString() ?? `${site.canonicalOrigin}/`;
+const orgRef = { '@id': `${siteURL}#organization` };
+
+const title = 'Freight & Parcel Services | Parcel Management Group';
+const description =
+  'Small package discounts for UPS and FedEx, LTL and full truckload freight, and refund recovery audits. Parcel Management Group — Ventura, CA 93001. Call (805) 984-4114.';
+
+const servicesFaq = [
+  {
+    q: 'What services does Parcel Management Group offer?',
+    a: 'Small package discounts for UPS and FedEx, LTL freight, full truckload freight, and refund recovery audits. Call (805) 984-4114.',
+  },
+  {
+    q: 'Does the Small Package Program cost my business anything?',
+    a: 'No. No fees, no contract, and no cost to your business. PMG is paid on the program itself.',
+  },
+  {
+    q: 'Where is Parcel Management Group based?',
+    a: 'Ventura, CA 93001. We serve shippers nationwide. Phone: (805) 984-4114.',
+  },
+];
+
+const services = [
+  {
+    name: 'Small Package Discounts',
+    description:
+      'A nationwide small package discount program for UPS and FedEx shippers, positioned to surpass typical association and group discount programs. No fees, no contract and no cost to your business.',
+    serviceType: 'Parcel spend management',
+  },
+  {
+    name: 'Less-Than-Truckload (LTL) Freight',
+    description:
+      'A full LTL dispatch team providing competitive less-than-truckload rates with hands-on service and fast turnaround on every load.',
+    serviceType: 'LTL freight brokerage',
+  },
+  {
+    name: 'Full Truckload (FTL) Freight',
+    description:
+      'End-to-end full truckload shipping for shippers who need dedicated capacity, with vetted carriers and a single point of contact.',
+    serviceType: 'Full truckload freight brokerage',
+  },
+  {
+    name: 'Refund Recovery Audit',
+    description:
+      'Proactive auditing of UPS and FedEx accounts to identify refunds owed on late or unused shipments, with PMG filing and managing the claims end to end.',
+    serviceType: 'Parcel audit and refund recovery',
+  },
+];
+
+const seo = {
+  title,
+  description,
+  schema: [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      name: 'Freight and parcel services',
+      url: `${siteURL}services/`,
+      description,
+      mainEntity: orgRef,
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: servicesFaq.map((qa) => ({
+        '@type': 'Question',
+        name: qa.q,
+        acceptedAnswer: { '@type': 'Answer', text: qa.a },
+      })),
+    },
+    ...services.map((s) => ({
+      '@context': 'https://schema.org',
+      '@type': 'Service',
+      name: s.name,
+      description: s.description,
+      serviceType: s.serviceType,
+      provider: orgRef,
+      areaServed: { '@type': 'Country', name: site.areaServed },
+      url: `${siteURL}services/`,
+    })),
+  ],
+};
+---
+<Base title={seo.title} description={seo.description} canonical="/services/" schema={seo.schema}>
+  <section class="page-hero" aria-label="Freight and parcel services">
+    <div class="wrap">
+      <span class="eyebrow">Services</span>
+      <h1>Freight and parcel services</h1>
+    </div>
+  </section>
+  <section class="page-body">
+    <div class="wrap prose">
+      <p>Parcel Management Group cuts what US businesses pay to ship. Four services. One broker team. Nationwide from Ventura, CA.</p>
+      <h2>Small Package Discounts</h2>
+      <p>Competitive UPS and FedEx rates through PMG’s Small Package Program. No fees. No contract. No cost to your business.</p>
+      <h2>Less-Than-Truckload (LTL)</h2>
+      <p>Pallet freight with a full dispatch team, clear rates, and hands-on service on every load.</p>
+      <h2>Full Truckload (FTL)</h2>
+      <p>Dedicated capacity when you need a full trailer — booked and managed end to end.</p>
+      <h2>Refund Recovery Audit</h2>
+      <p>We audit UPS and FedEx accounts for late or unused shipments, file claims, and chase the refunds.</p>
+      <p>Call <a href="tel:+18059844114">(805) 984-4114</a> or <a href="/#contact">start a chat</a>.</p>
+      <p class="related">
+        <a href="/blog/reduce-shipping-costs-high-volume/">How to reduce shipping costs at volume</a>
+        <span aria-hidden="true">·</span>
+        <a href="/blog/what-is-a-parcel-audit/">What is a parcel audit</a>
+        <span aria-hidden="true">·</span>
+        <a href="/blog/parcel-audit-vs-freight-audit/">Parcel audit vs freight audit</a>
+        <span aria-hidden="true">·</span>
+        <a href="/about/">About Parcel Management Group</a>
+      </p>
+    </div>
+  </section>
+  <section class="page-body" aria-label="Services questions">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">FAQ</span>
+        <h2>Services, in short.</h2>
+      </div>
+      <div class="faq faq-static">
+        {servicesFaq.map((qa) => (
+          <div class="qa">
+            <h3>{qa.q}</h3>
+            <div class="a"><p>{qa.a}</p></div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</Base>

@@ -1,0 +1,179 @@
+[
+  {
+    "category": "Start here",
+    "items": [
+      {
+        "q": "How does a freight quote work with PMG?",
+        "a": "You tell us what you ship, where it goes, and when you need it. We compare carrier options and send a clear quote. For small packages, you can join the free Small Package Program — no fees and no contract. Call (805) 984-4114 or start a chat."
+      },
+      {
+        "q": "What is the difference between a shipping broker and a carrier?",
+        "a": "A carrier owns the trucks or planes. A broker finds the right carrier for your freight and manages the move. Parcel Management Group is a registered freight broker (USDOT 3266041 · MC 1030328). We shop rates, book the load, and stay with you if something goes wrong."
+      },
+      {
+        "q": "When should I use small package vs LTL?",
+        "a": "Use small package for boxes that are usually under 150 lbs. Use LTL when you have pallet freight that is too big for parcel but does not need a full truck. PMG helps you pick the cheaper, safer mode."
+      }
+    ]
+  },
+  {
+    "category": "General questions",
+    "items": [
+      {
+        "q": "What services does PMG provide?",
+        "a": "PMG offers full-service freight brokerage solutions, including parcel, LTL (less-than-truckload), FTL (full truckload), international shipping, and specialized freight services — all with premium, white-glove support."
+      },
+      {
+        "q": "Can PMG help me improve my overall shipping strategy?",
+        "a": "Yes! We provide consulting and data analysis to identify savings, optimize carrier selection, and streamline your supply chain for better performance."
+      },
+      {
+        "q": "Why should I choose PMG over a low-cost provider?",
+        "a": "PMG focuses on service excellence, reliability, and expert guidance, not just the cheapest rates. We help protect your business from costly delays, claims, and frustrations — saving you time, money, and stress in the long run."
+      },
+      {
+        "q": "Can PMG help me with freight claims?",
+        "a": "Yes! PMG offers proactive claims management, guiding you through every step and working directly with carriers to maximize your recovery."
+      },
+      {
+        "q": "How does PMG handle lost or damaged shipments?",
+        "a": "We take immediate action, filing claims on your behalf, coordinating directly with carriers, and keeping you informed throughout the resolution process so you don't have to manage the headache. Just notify PMG of your issue within 3 days of receiving the shipment and we'll take care of the rest."
+      }
+    ]
+  },
+  {
+    "category": "Small package questions",
+    "items": [
+      {
+        "q": "What qualifies as a small package shipment?",
+        "a": "Any parcel typically under 150 lbs. and within specific size limits, shipped via carriers like UPS, FedEx, or USPS."
+      },
+      {
+        "q": "What's the difference between ground and express shipping?",
+        "a": "Ground is more economical with longer delivery times. Express (Next Day, 2nd Day) is faster and costs more."
+      },
+      {
+        "q": "How are small package rates calculated?",
+        "a": "Rates depend on package weight, dimensions, delivery speed, distance, and any surcharges."
+      },
+      {
+        "q": "What is dimensional (DIM) weight?",
+        "a": "DIM weight is calculated using package size, not just weight. It ensures large, light boxes don't cost too little to ship."
+      },
+      {
+        "q": "Can I schedule a pickup for small packages?",
+        "a": "Yes, most carriers offer scheduled or on-demand pickups, often for a small fee."
+      },
+      {
+        "q": "Is tracking included with small package shipping?",
+        "a": "Yes, all major carriers offer detailed tracking from pickup to final delivery."
+      },
+      {
+        "q": "What happens if a package is lost or delayed?",
+        "a": "You can file a claim. Most carriers offer guaranteed delivery times for express services and basic insurance coverage."
+      },
+      {
+        "q": "Do I need special packaging for small parcels?",
+        "a": "Standard corrugated boxes work well. Use protective materials for fragile items, and make sure to label clearly."
+      },
+      {
+        "q": "Can I insure my small package?",
+        "a": "Yes, additional insurance is available beyond the default coverage (usually $100 value with most carriers)."
+      },
+      {
+        "q": "How do I save money on small package shipping?",
+        "a": "Use negotiated carrier rates, ship with zone optimization, and consolidate shipments when possible."
+      }
+    ]
+  },
+  {
+    "category": "Less-than-truckload questions",
+    "items": [
+      {
+        "q": "What is LTL shipping?",
+        "a": "LTL (Less-Than-Truckload) shipping is used when freight doesn't require a full truck. Multiple shipments from different shippers share space and cost on the same truck."
+      },
+      {
+        "q": "When should I use LTL shipping?",
+        "a": "LTL is ideal for shipments between 150–15,000 lbs. that don't require an entire trailer. It's cost-effective for smaller freight volumes."
+      },
+      {
+        "q": "How are LTL shipping rates calculated?",
+        "a": "Rates are based on freight class, weight, distance, dimensions, and additional services like liftgate or residential delivery."
+      },
+      {
+        "q": "What is freight class and why does it matter?",
+        "a": "Freight class (NMFC) is a standardized classification that impacts cost. It's determined by density, handling, stowability, and liability."
+      },
+      {
+        "q": "Can I track my LTL shipment?",
+        "a": "Yes, most carriers offer tracking via PRO number or BOL number through their online portals or customer service."
+      },
+      {
+        "q": "How long does LTL shipping take?",
+        "a": "Transit times depend on the origin and destination but typically range from 1 to 7 business days."
+      },
+      {
+        "q": "What documents are needed for LTL shipping?",
+        "a": "A Bill of Lading (BOL) is the primary document. It serves as a receipt and contract between shipper and carrier."
+      },
+      {
+        "q": "Is my freight insured in LTL shipping?",
+        "a": "Basic carrier liability is included but often limited. Additional freight insurance is recommended for higher-value shipments."
+      },
+      {
+        "q": "What if my shipment is damaged or lost?",
+        "a": "You can file a freight claim with the carrier. Document the damage with photos, save all packaging and paperwork, and notify the carrier at delivery or as soon as possible."
+      },
+      {
+        "q": "Do I need a forklift or dock for LTL delivery?",
+        "a": "Not necessarily. If you don't have a dock or forklift, request a liftgate service at pickup or delivery for an extra fee. Some carriers allow the product to be unloaded by hand to avoid additional liftgate fees."
+      }
+    ]
+  },
+  {
+    "category": "Full truckload questions",
+    "items": [
+      {
+        "q": "What is full truckload (FTL) shipping?",
+        "a": "FTL shipping means your freight exclusively occupies a truck. It's faster and safer for larger shipments."
+      },
+      {
+        "q": "When should I use FTL shipping?",
+        "a": "Use FTL for shipments over 15,000 lbs., high-value or fragile items, or when you need faster transit times."
+      },
+      {
+        "q": "How is FTL pricing determined?",
+        "a": "Pricing is based on mileage, route, equipment type, fuel cost, and market demand — but not freight class."
+      },
+      {
+        "q": "What equipment types are available for FTL?",
+        "a": "Common options include dry vans, flatbeds, and refrigerated (reefer) trailers."
+      },
+      {
+        "q": "Is FTL faster than LTL shipping?",
+        "a": "Yes, FTL is typically faster because the truck goes directly from pickup to delivery without handling other freight."
+      },
+      {
+        "q": "Can I track my FTL shipment?",
+        "a": "Yes, many carriers provide GPS tracking or location updates from the driver or dispatch."
+      },
+      {
+        "q": "What accessorial charges should I expect with FTL?",
+        "a": "Possible charges include detention, layover, truck ordered not used (TONU), and lumper fees."
+      },
+      {
+        "q": "Do I need to palletize my freight for FTL?",
+        "a": "Not always. You can ship loose or floor-loaded items if secured properly, though palletizing helps with loading and safety."
+      },
+      {
+        "q": "Is insurance included with FTL?",
+        "a": "Yes, but like LTL, it's limited. Consider additional cargo insurance for high-value freight."
+      },
+      {
+        "q": "What's the lead time for scheduling an FTL shipment?",
+        "a": "Same-day shipping is possible, but booking 24–48 hours in advance ensures better availability and pricing."
+      }
+    ]
+  }
+]

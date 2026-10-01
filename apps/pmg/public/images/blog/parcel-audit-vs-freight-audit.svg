@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-label="A small parcel on one side and a freight pallet on the other, each with its own invoice">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F6E39C"/><stop offset=".34" stop-color="#E7C568"/>
+      <stop offset=".68" stop-color="#C79A3C"/><stop offset="1" stop-color="#8E6417"/>
+    </linearGradient>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" fill="none" stroke="#E7C568" stroke-opacity=".05" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="630" fill="#0B0B0C"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <circle cx="300" cy="120" r="260" fill="#E7C568" opacity=".045"/>
+  <circle cx="900" cy="520" r="260" fill="#E7C568" opacity=".045"/>
+
+  <!-- divider -->
+  <path d="M600 70V560" stroke="#E7C568" stroke-opacity=".22" stroke-width="2" stroke-dasharray="10 12"/>
+  <circle cx="600" cy="315" r="42" fill="#141416" stroke="#E7C568" stroke-opacity=".45" stroke-width="2"/>
+  <text x="600" y="329" text-anchor="middle" font-family="Space Mono, ui-monospace, monospace" font-size="26" font-weight="700" fill="#E7C568">VS</text>
+
+  <!-- LEFT: small parcel -->
+  <g transform="translate(190 190)">
+    <path d="M0 60 110 12l110 48v128l-110 48L0 188z" fill="#141416" stroke="url(#g)" stroke-width="5" stroke-linejoin="round"/>
+    <path d="M0 60l110 48 110-48M110 108v116" fill="none" stroke="url(#g)" stroke-width="5" stroke-linejoin="round" opacity=".7"/>
+    <rect x="72" y="34" width="76" height="14" rx="7" fill="url(#g)" opacity=".9"/>
+  </g>
+  <g transform="translate(150 430)">
+    <rect x="0" y="0" width="300" height="96" rx="12" fill="#141416" stroke="#E7C568" stroke-opacity=".26"/>
+    <rect x="24" y="22" width="120" height="10" rx="5" fill="#F3EEDF" opacity=".22"/>
+    <rect x="24" y="46" width="200" height="10" rx="5" fill="url(#g)" opacity=".8"/>
+    <rect x="24" y="68" width="160" height="10" rx="5" fill="#F3EEDF" opacity=".22"/>
+  </g>
+
+  <!-- RIGHT: pallet -->
+  <g transform="translate(750 178)">
+    <rect x="30" y="10" width="90" height="76" rx="6" fill="#141416" stroke="url(#g)" stroke-width="5"/>
+    <rect x="130" y="10" width="90" height="76" rx="6" fill="#141416" stroke="url(#g)" stroke-width="5"/>
+    <rect x="30" y="96" width="190" height="76" rx="6" fill="#141416" stroke="url(#g)" stroke-width="5"/>
+    <rect x="0" y="186" width="250" height="18" rx="5" fill="url(#g)"/>
+    <rect x="18" y="212" width="34" height="26" rx="4" fill="url(#g)" opacity=".65"/>
+    <rect x="108" y="212" width="34" height="26" rx="4" fill="url(#g)" opacity=".65"/>
+    <rect x="198" y="212" width="34" height="26" rx="4" fill="url(#g)" opacity=".65"/>
+  </g>
+  <g transform="translate(750 430)">
+    <rect x="0" y="0" width="300" height="96" rx="12" fill="#141416" stroke="#E7C568" stroke-opacity=".26"/>
+    <rect x="24" y="22" width="160" height="10" rx="5" fill="#F3EEDF" opacity=".22"/>
+    <rect x="24" y="46" width="240" height="10" rx="5" fill="url(#g)" opacity=".8"/>
+    <rect x="24" y="68" width="110" height="10" rx="5" fill="#F3EEDF" opacity=".22"/>
+  </g>
+</svg>

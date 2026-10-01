@@ -1,0 +1,306 @@
+---
+/**
+ * HOMEPAGE — parcelmanagementgroup.com
+ * SEO fields live in the frontmatter block below so the monthly SEO run can
+ * update title / description / schema without touching the page markup.
+ */
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import faq from '../data/faq.json';
+import site from '../data/site.json';
+
+const siteURL = Astro.site?.toString() ?? `${site.canonicalOrigin}/`;
+const orgRef = { '@id': `${siteURL}#organization` };
+
+/** Latest posts, rendered into the Ship Tips section. */
+const posts = (await getCollection('blog', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 6);
+const fmtShort = (d: Date) => d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric', timeZone: 'UTC' });
+
+const services = [
+  {
+    name: 'Small Package Discounts',
+    description:
+      'A nationwide small package discount program for UPS and FedEx shippers, positioned to surpass typical association and group discount programs. No fees, no contract and no cost to your business.',
+    serviceType: 'Parcel spend management',
+  },
+  {
+    name: 'Less-Than-Truckload (LTL) Freight',
+    description:
+      'A full LTL dispatch team providing competitive less-than-truckload rates with hands-on service and fast turnaround on every load.',
+    serviceType: 'LTL freight brokerage',
+  },
+  {
+    name: 'Full Truckload (FTL) Freight',
+    description:
+      'End-to-end full truckload shipping for shippers who need dedicated capacity, with vetted carriers and a single point of contact.',
+    serviceType: 'Full truckload freight brokerage',
+  },
+  {
+    name: 'Refund Recovery Audit',
+    description:
+      'Proactive auditing of UPS and FedEx accounts to identify refunds owed on late or unused shipments, with PMG filing and managing the claims end to end.',
+    serviceType: 'Parcel audit and refund recovery',
+  },
+];
+
+const seo = {
+  title: 'Shipping Cost Reduction for National Shippers | PMG',
+  description:
+    'Parcel Management Group cuts shipping costs for US businesses: a free small package program for UPS and FedEx, premium LTL and full truckload freight, and refund recovery audits.',
+  schema: [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: faq.flatMap((c) => c.items).map((qa) => ({
+        '@type': 'Question',
+        name: qa.q,
+        acceptedAnswer: { '@type': 'Answer', text: qa.a },
+      })),
+    },
+    ...services.map((s) => ({
+      '@context': 'https://schema.org',
+      '@type': 'Service',
+      name: s.name,
+      description: s.description,
+      serviceType: s.serviceType,
+      provider: orgRef,
+      areaServed: { '@type': 'Country', name: site.areaServed },
+      url: `${siteURL}#services`,
+    })),
+  ],
+};
+---
+<Base title={seo.title} description={seo.description} schema={seo.schema}>
+  <section class="hero" aria-label="Introduction">
+    <div class="hero-grid"></div>
+    <div class="wrap">
+      <div class="hero-inner">
+        <div>
+          <span class="eyebrow">Freight &amp; parcel spend management · Nationwide</span>
+          <h1>
+            <span class="line"><span>Shipping cost</span></span>
+            <span class="line"><span class="gold-text">reduction</span></span>
+            <span class="line"><span>for freight and</span></span>
+            <span class="line"><span>parcel shippers.</span></span>
+          </h1>
+          <p class="lede">Parcel Management Group cuts what US businesses pay to ship — small package, LTL and full truckload — through better rates, tighter invoices and recovered refunds. Peace of mind, not just a shipping rate.</p>
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-gold">Start saving today →</a>
+            <a href="#services" class="btn btn-ghost">See our services</a>
+          </div>
+        </div>
+        <img class="hero-badge" src="/assets/pmg-logo.png" alt="" aria-hidden="true" width="320" height="320" />
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE (real service lines) -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>SMALL PACKAGE DISCOUNTS</span><span>LTL SHIPPING</span><span>FULL TRUCKLOAD</span><span>REFUND RECOVERY AUDIT</span><span>CUSTOMER-FIRST SUPPORT</span>
+      <span>SMALL PACKAGE DISCOUNTS</span><span>LTL SHIPPING</span><span>FULL TRUCKLOAD</span><span>REFUND RECOVERY AUDIT</span><span>CUSTOMER-FIRST SUPPORT</span>
+    </div>
+  </div>
+
+  <!-- ANSWER CAPSULE (direct answer for search + AI answer engines) -->
+  <section id="what-we-do" aria-label="What Parcel Management Group does">
+    <div class="wrap">
+      <div class="answer reveal">
+        <span class="eyebrow">In short</span>
+        <h2 class="answer-q">What does Parcel Management Group do?</h2>
+        <p class="answer-a">Parcel Management Group is a US freight and parcel spend management firm that reduces what businesses pay to ship. We run a nationwide small package discount program for UPS and FedEx shippers, dispatch LTL and full truckload freight, and audit carrier accounts to recover refunds on late or unused shipments. The Small Package Program has no fees, no contract and no cost to your business.</p>
+        <ul class="answer-facts">
+          <li><b>Who it is for</b><span>US businesses shipping small package, LTL or full truckload freight</span></li>
+          <li><b>What it costs</b><span>Small Package Program: no fees, no contract, no cost to your business</span></li>
+          <li><b>Coverage</b><span>Nationwide across the United States, from Ventura, California</span></li>
+          <li><b>Credentials</b><span>Registered freight broker · USDOT 3266041 · MC 1030328</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- MISSION -->
+  <section id="mission" aria-label="Our mission">
+    <div class="wrap">
+      <div class="mission reveal">
+        <span class="eyebrow">Our mission</span>
+        <p class="mission-text">To deliver <span class="gold-text">premium freight solutions</span> through expert service, precision logistics, and a customer-first approach. We provide peace of mind, not just shipping rates — ensuring every client experiences the highest level of care, reliability, and excellence.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" aria-label="Services">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">What we do</span>
+        <h2>Freight solutions,<br><span class="gold-text">end to end.</span></h2>
+        <p>Four ways PMG moves your freight for less — with the personal service and attention every shipment deserves.</p>
+      </div>
+      <div class="cards">
+        <article class="card reveal" data-d="1">
+          <div class="ci"><svg viewBox="0 0 24 24"><path d="M3 8l9-5 9 5v8l-9 5-9-5z"/><path d="M3 8l9 5 9-5M12 13v8"/></svg></div>
+          <div class="num">01 · SMALL PACKAGE</div>
+          <h3>Small Package Discounts</h3>
+          <p>One of the most competitive small package discount programs available nationwide — surpassing even top association and group discount programs. Enrollment is fast and simple, with billing seamlessly handled through a trusted third-party partner, delivering exceptional savings without sacrificing service quality.</p>
+          <p class="card-link"><a href="/blog/reduce-shipping-costs-high-volume/">How to reduce shipping costs at volume →</a></p>
+        </article>
+        <article class="card reveal" data-d="2">
+          <div class="ci"><svg viewBox="0 0 24 24"><path d="M1 4h14v11H1zM15 8h4l3 3v4h-7z"/><circle cx="5" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg></div>
+          <div class="num">02 · LTL</div>
+          <h3>Less-Than-Truckload Services</h3>
+          <p>A full LTL dispatch team that delivers fast, reliable turnaround on every shipment. Our rates are highly competitive, but what sets us apart is the level of personal service and attention we give every load — a team committed to moving your freight smoothly, efficiently, and with zero hassle.</p>
+          <p class="card-link"><a href="/blog/prepay-and-add-shipping/">What does prepay and add mean in shipping →</a></p>
+        </article>
+        <article class="card reveal" data-d="1">
+          <div class="ci"><svg viewBox="0 0 24 24"><path d="M2 5h13v13H2zM15 9h4l3 3v6h-7z"/><circle cx="6.5" cy="19.5" r="2"/><circle cx="18.5" cy="19.5" r="2"/></svg></div>
+          <div class="num">03 · FTL</div>
+          <h3>Full Truckload Services</h3>
+          <p>Customized, end-to-end FTL shipping designed for maximum efficiency and reliability. Competitive rates come paired with exceptional service, so every load is handled with precision and care — a dedicated partner delivering seamless truckload shipments every step of the way.</p>
+          <p class="card-link"><a href="/blog/forward-air-tracking/">How to track a Forward Air shipment →</a></p>
+          <p class="card-link"><a href="/blog/tforce-freight-tracking/">How to track a TForce Freight shipment →</a></p>
+        </article>
+        <article class="card reveal" data-d="2">
+          <div class="ci"><svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 15l4-5 3 3 5-7"/></svg></div>
+          <div class="num">04 · REFUND RECOVERY</div>
+          <h3>Refund Recovery Audit</h3>
+          <p>Expert refund recovery to help you reclaim money from late or unused UPS and FedEx shipments. We proactively audit your accounts, identify eligible refunds, and handle the entire claims process on your behalf — so you maximize savings effortlessly while focusing on your business.</p>
+          <p class="card-link"><a href="/blog/what-is-a-parcel-audit/">What is a parcel audit →</a></p>
+          <p class="card-link"><a href="/blog/ups-fedex-late-delivery-refunds/">UPS and FedEx late delivery refunds →</a></p>
+          <p class="card-link"><a href="/blog/parcel-audit-vs-freight-audit/">Parcel audit vs freight audit →</a></p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SHIP TIPS -->
+  <section id="tips" aria-label="Ship tips">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Ship tips</span>
+        <h2>From the <span class="gold-text">PMG desk.</span></h2>
+        <p>Practical freight know-how from the people who move it every day.</p>
+      </div>
+      <div class="posts">
+        {posts.map((post, i) => (
+          <article class="post reveal" data-d={(i % 3) + 1}>
+            <div class="post-date">{fmtShort(post.data.pubDate)}</div>
+            <h3><a href={`/blog/${post.id}/`}>{post.data.title}</a></h3>
+            <p>{post.data.description}</p>
+            <a class="post-link" href={`/blog/${post.id}/`}>Continue reading →</a>
+          </article>
+        ))}
+      </div>
+      <div class="tips-more">
+        <a class="btn btn-ghost" href="/blog/">View all ship tips →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials" aria-label="Testimonials">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Testimonials</span>
+        <h2>Shippers who <span class="gold-text">stayed for years.</span></h2>
+      </div>
+      <div class="quotes">
+        <figure class="quote reveal" data-d="1">
+          <div class="qh">24-Hour Support</div>
+          <div class="stars">★★★★★</div>
+          <p>"Not only has PMG taught us about how the shipping industry works, but they've introduced us to LTL and other freight options that have saved us time and money. They've walked us through each step along the way and have handled the frustrating issues that come up when shipping companies mess up. Highly recommend their services!"</p>
+          <figcaption class="who"><span class="avatar">M</span><span><b>Matt P.</b><span>Birkenstock of SD</span></span></figcaption>
+        </figure>
+        <figure class="quote reveal" data-d="2">
+          <div class="qh">Integrated &amp; Proactive</div>
+          <div class="stars">★★★★★</div>
+          <p>"Parcel Management has truly become an extension of the Playmakers team. They've taken an area of our business that we didn't fully understand and turned it into a strength — saving us time, money, and stress. They've developed such a deep understanding of our operations that they often anticipate our needs before we even reach out."</p>
+          <figcaption class="who"><span class="avatar">A</span><span><b>Andy M.</b><span>Playmakers</span></span></figcaption>
+        </figure>
+        <figure class="quote reveal" data-d="3">
+          <div class="qh">Reliable Service</div>
+          <div class="stars">★★★★★</div>
+          <p>"I've worked with Parcel Management Group for over 10 years now, and it's always been a great experience. Communication is spot-on and they always deliver on what they promise. Super easy to work with and I highly recommend them!"</p>
+          <figcaption class="who"><span class="avatar">B</span><span><b>Brennan T.</b><span>The Heel, Inc.</span></span></figcaption>
+        </figure>
+        <figure class="quote reveal" data-d="1">
+          <div class="qh">Trusted Freight Ally</div>
+          <div class="stars">★★★★★</div>
+          <p>"We've relied on PMG for prompt scheduling, troubleshooting, and finding competitively priced carriers. In the apparel industry, profit margins are thin. With PMG's help, they've increased our bottom line and become a trusted strategic partner."</p>
+          <figcaption class="who"><span class="avatar">T</span><span><b>Theresa M.</b><span>Big &amp; Tall of OC</span></span></figcaption>
+        </figure>
+        <figure class="quote reveal" data-d="2">
+          <div class="qh">Customer-First Team</div>
+          <div class="stars">★★★★★</div>
+          <p>"The folks at Parcel Management Group are really great to work with. Super quick to respond, immense industry knowledge, and a genuine commitment to customer satisfaction."</p>
+          <figcaption class="who"><span class="avatar">J</span><span><b>John K.</b><span>Gazelle Sports</span></span></figcaption>
+        </figure>
+        <figure class="quote reveal" data-d="3">
+          <div class="qh">Reliable &amp; Exceptional</div>
+          <div class="stars">★★★★★</div>
+          <p>"We have used Parcel Management Group for the past several years for our LTL shipments and have been very pleased with the service and communication regarding our shipments. I highly recommend using PMG for anyone wanting the BEST service for your freight needs."</p>
+          <figcaption class="who"><span class="avatar">R</span><span><b>Rick S.</b><span>Industrial Shoeworks</span></span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" aria-label="Frequently asked questions">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">FAQ</span>
+        <h2>Answers, <span class="gold-text">by category.</span></h2>
+      </div>
+
+      {faq.map((cat) => (
+        <div class="faq-cat reveal">
+          <div class="faq-cat-title">{cat.category}</div>
+          {cat.category === 'Start here' ? (
+            <div class="faq faq-static">
+              {cat.items.map((qa) => (
+                <div class="qa">
+                  <h3>{qa.q}</h3>
+                  <div class="a"><p>{qa.a}</p></div>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div class="faq">
+              {cat.items.map((qa) => (
+                <div class="qa"><button aria-expanded="false">{qa.q}</button><div class="a"><p>{qa.a}</p></div></div>
+              ))}
+            </div>
+          )}
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" aria-label="Contact">
+    <div class="wrap">
+      <div class="answer quoting-blurb reveal" id="how-quoting-works">
+        <span class="eyebrow">How quoting works</span>
+        <h2 class="answer-q">How a freight quote works</h2>
+        <p class="answer-a">Tell Parcel Management Group what you ship, where it goes, and when you need it. PMG compares carrier options and sends a clear quote. For small packages, you can join the free Small Package Program — no fees and no contract. Call <a href="tel:+18059844114">(805) 984-4114</a> or start a chat.</p>
+        <ul class="answer-links">
+          <li><a href="/blog/reduce-shipping-costs-high-volume/">How to reduce shipping costs at volume →</a></li>
+          <li><a href="/blog/prepay-and-add-shipping/">What prepay and add means in shipping →</a></li>
+          <li><a href="/blog/dimensional-weight/">What dimensional weight is →</a></li>
+        </ul>
+      </div>
+      <div class="cta reveal">
+        <span class="eyebrow">Start saving today</span>
+        <h2>Call or <span class="gold-text">chat.</span></h2>
+        <p>Tell us what you ship. A PMG broker will put a quote together. Call (805) 984-4114, or start a chat.</p>
+        <div class="contact-strip">
+          <a href="tel:+18059844114"><span class="mono" style="color:var(--gold)">☎</span><span class="mono">+1 (805) 984-4114</span></a>
+          <span><span class="mono" style="color:var(--gold)">◈</span> Ventura, CA 93001, USA</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>

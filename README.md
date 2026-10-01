@@ -21,3 +21,4 @@ Model ids must be `provider/model` (for example `anthropic/claude-opus-5`) or a 
 ## Apps
 
 - `apps/deadriver/` — Dead River Management public site (imported from `deadrivermanagement-site`; git history remains in that repo until Phase B).
+- `apps/pmg/` — Parcel Management Group site (imported from `pmg-site`).

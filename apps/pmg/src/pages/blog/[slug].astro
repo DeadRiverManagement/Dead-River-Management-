@@ -1,0 +1,105 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import site from '../../data/site.json';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog', ({ data }) => !data.draft);
+  return posts.map((post) => ({ params: { slug: post.id }, props: { post } }));
+}
+
+const { post } = Astro.props;
+const { Content, headings } = await render(post);
+const d = post.data;
+const url = new URL(`/blog/${post.id}/`, Astro.site).toString();
+const fmt = (x: Date) => x.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' });
+
+const article = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: d.title,
+  description: d.description,
+  image: d.heroImage ? new URL(d.heroImage, Astro.site).toString() : undefined,
+  datePublished: d.pubDate.toISOString(),
+  dateModified: (d.updatedDate ?? d.pubDate).toISOString(),
+  author: { '@type': 'Organization', name: d.author },
+  publisher: { '@type': 'Organization', name: site.name, logo: { '@type': 'ImageObject', url: new URL(site.logo, Astro.site).toString() } },
+  mainEntityOfPage: url,
+  keywords: [d.keyword, ...d.keywords].filter(Boolean).join(', '),
+};
+const schema: Record<string, unknown>[] = [article];
+if (d.faq.length) {
+  schema.push({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: d.faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+  });
+}
+schema.push({
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: Astro.site?.toString() },
+    { '@type': 'ListItem', position: 2, name: 'Blog', item: new URL('/blog/', Astro.site).toString() },
+    { '@type': 'ListItem', position: 3, name: d.title, item: url },
+  ],
+});
+const toc = headings.filter((h) => h.depth === 2);
+---
+<Base
+  title={d.title}
+  description={d.description}
+  image={d.heroImage}
+  type="article"
+  schema={schema}
+  publishedTime={d.pubDate.toISOString()}
+  modifiedTime={(d.updatedDate ?? d.pubDate).toISOString()}
+>
+  <article class="post">
+    <div class="wrap post-wrap">
+      <nav class="crumbs mono" aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/blog/">Blog</a> / <span>{d.category}</span></nav>
+      <div class="post-head">
+        <span class="eyebrow">{d.category}</span>
+        <h1>{d.title}</h1>
+        <p class="lede">{d.description}</p>
+        <p class="mono post-meta">By {d.author} · Published {fmt(d.pubDate)}{d.updatedDate && ` · Updated ${fmt(d.updatedDate)}`}</p>
+      </div>
+
+      {d.heroImage && (
+        <figure class="post-hero">
+          <img src={d.heroImage} alt={d.heroAlt ?? d.title} width="1536" height="1024" />
+        </figure>
+      )}
+
+      {toc.length > 2 && (
+        <aside class="toc">
+          <div class="faq-cat-title">In this guide</div>
+          <ol>{toc.map((h) => <li><a href={`#${h.slug}`}>{h.text}</a></li>)}</ol>
+        </aside>
+      )}
+
+      <div class="post-body">
+        <Content />
+      </div>
+
+      {d.faq.length > 0 && (
+        <section class="post-faq" aria-label="Frequently asked questions">
+          <h2>Frequently asked questions</h2>
+          <div class="faq">
+            {d.faq.map((f) => (
+              <div class="qa"><button aria-expanded="false">{f.q}</button><div class="a"><p>{f.a}</p></div></div>
+            ))}
+          </div>
+        </section>
+      )}
+
+      <aside class="post-cta">
+        <span class="eyebrow">Next step</span>
+        <h2>Want to know what your shipping <span class="gold-text">should</span> cost?</h2>
+        <p>Our Small Package Program has no fees, no contract and no cost to your business. Tell us what you ship and we'll show you where the savings are.</p>
+        <a class="btn btn-gold" href="/#contact">Start saving today</a>
+        <a class="btn btn-ghost" href={`tel:${site.phone}`}>{site.phoneDisplay}</a>
+      </aside>
+    </div>
+  </article>
+</Base>

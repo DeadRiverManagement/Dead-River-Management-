@@ -1,0 +1,72 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    { "source": "/ship-tips/f/a-quick-guide-to-tracking-your-tforce-freight-shipment", "destination": "/blog/tforce-freight-tracking/", "permanent": true },
+    { "source": "/ship-tips/f/a-quick-guide-to-tracking-your-tforce-freight-shipment/", "destination": "/blog/tforce-freight-tracking/", "permanent": true },
+    { "source": "/ship-tips/f/shipment-tracking-your-simple-guide-with-forward-air", "destination": "/blog/forward-air-tracking/", "permanent": true },
+    { "source": "/ship-tips/f/shipment-tracking-your-simple-guide-with-forward-air/", "destination": "/blog/forward-air-tracking/", "permanent": true },
+    { "source": "/ship-tips/f/shipment-tracking-multiple-shipments-with-forward-air", "destination": "/blog/forward-air-tracking/", "permanent": true },
+    { "source": "/ship-tips/f/shipment-tracking-multiple-shipments-with-forward-air/", "destination": "/blog/forward-air-tracking/", "permanent": true },
+    { "source": "/ship-tips/f/understanding-prepay-add-what-you-should-know-before-paying", "destination": "/blog/prepay-and-add-shipping/", "permanent": true },
+    { "source": "/ship-tips/f/understanding-prepay-add-what-you-should-know-before-paying/", "destination": "/blog/prepay-and-add-shipping/", "permanent": true },
+    { "source": "/ship-tips/f/the-essential-guide-how-to-write-an-address-for-shipping", "destination": "/blog/how-to-write-a-shipping-address/", "permanent": true },
+    { "source": "/ship-tips/f/the-essential-guide-how-to-write-an-address-for-shipping/", "destination": "/blog/how-to-write-a-shipping-address/", "permanent": true },
+    { "source": "/ship-tips", "destination": "/blog/", "permanent": true },
+    { "source": "/ship-tips/", "destination": "/blog/", "permanent": true },
+    { "source": "/ship-tips/:path*", "destination": "/blog/", "permanent": true },
+    { "source": "/small-package-discounts", "destination": "/#services", "permanent": true },
+    { "source": "/small-package-discounts/", "destination": "/#services", "permanent": true },
+    { "source": "/ltl-freight", "destination": "/#services", "permanent": true },
+    { "source": "/ltl-freight/", "destination": "/#services", "permanent": true },
+    { "source": "/ftl-freight", "destination": "/#services", "permanent": true },
+    { "source": "/ftl-freight/", "destination": "/#services", "permanent": true },
+    { "source": "/contact", "destination": "/#contact", "permanent": true },
+    { "source": "/contact/", "destination": "/#contact", "permanent": true },
+    { "source": "/services", "destination": "/services/", "permanent": true },
+    { "source": "/how-freight-quoting-works", "destination": "/how-freight-quoting-works/", "permanent": true },
+    { "source": "/quoting", "destination": "/how-freight-quoting-works/", "statusCode": 301 },
+    { "source": "/quoting/", "destination": "/how-freight-quoting-works/", "statusCode": 301 },
+    { "source": "/freight-broker-vs-carrier", "destination": "/freight-broker-vs-carrier/", "permanent": true },
+    { "source": "/broker-vs-carrier", "destination": "/freight-broker-vs-carrier/", "statusCode": 301 },
+    { "source": "/broker-vs-carrier/", "destination": "/freight-broker-vs-carrier/", "statusCode": 301 },
+    { "source": "/what-is-a-freight-broker", "destination": "/what-is-a-freight-broker/", "permanent": true },
+    { "source": "/freight-broker", "destination": "/what-is-a-freight-broker/", "statusCode": 301 },
+    { "source": "/freight-broker/", "destination": "/what-is-a-freight-broker/", "statusCode": 301 },
+    { "source": "/what-is-ltl-shipping", "destination": "/what-is-ltl-shipping/", "permanent": true },
+    { "source": "/ltl-shipping", "destination": "/what-is-ltl-shipping/", "statusCode": 301 },
+    { "source": "/ltl-shipping/", "destination": "/what-is-ltl-shipping/", "statusCode": 301 },
+    { "source": "/ltl-vs-ftl", "destination": "/ltl-vs-ftl/", "permanent": true },
+    { "source": "/ltl-freight-quote", "destination": "/ltl-freight-quote/", "permanent": true },
+    { "source": "/ltl-versus-ftl", "destination": "/ltl-vs-ftl/", "statusCode": 301 },
+    { "source": "/ltl-versus-ftl/", "destination": "/ltl-vs-ftl/", "statusCode": 301 }
+  ],
+  "headers": [
+    {
+      "source": "/404.html",
+      "headers": [
+        { "key": "X-Robots-Tag", "value": "noindex, nofollow" }
+      ]
+    },
+    {
+      "source": "/sitemap.xml",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=3600, stale-while-revalidate=86400" },
+        { "key": "Content-Type", "value": "application/xml; charset=utf-8" }
+      ]
+    },
+    {
+      "source": "/sitemap-index.xml",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=3600, stale-while-revalidate=86400" },
+        { "key": "Content-Type", "value": "application/xml; charset=utf-8" }
+      ]
+    },
+    {
+      "source": "/sitemap-0.xml",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=3600, stale-while-revalidate=86400" },
+        { "key": "Content-Type", "value": "application/xml; charset=utf-8" }
+      ]
+    }
+  ]
+}

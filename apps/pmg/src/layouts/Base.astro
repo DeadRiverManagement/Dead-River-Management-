@@ -1,0 +1,143 @@
+---
+/**
+ * Base layout. Every page passes its SEO fields in as props.
+ * The monthly SEO run edits `title`, `description` and `schema` on the pages,
+ * never this file.
+ */
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/site.css';
+import '../styles/blog.css';
+import site from '../data/site.json';
+
+export interface Props {
+  title: string;
+  description: string;
+  /** Path or absolute URL of the canonical page. Defaults to the current URL. */
+  canonical?: string;
+  /** Absolute or root-relative image for social cards. */
+  image?: string;
+  /** "website" or "article" */
+  type?: 'website' | 'article';
+  /** Extra JSON-LD objects to emit (Organization is always emitted). */
+  schema?: Record<string, unknown>[];
+  publishedTime?: string;
+  modifiedTime?: string;
+  noindex?: boolean;
+}
+
+const {
+  title,
+  description,
+  canonical,
+  image = site.defaultImage,
+  type = 'website',
+  schema = [],
+  publishedTime,
+  modifiedTime,
+  noindex = false,
+} = Astro.props;
+
+const canonicalURL = new URL(canonical ?? Astro.url.pathname, Astro.site);
+const imageURL = new URL(image, Astro.site).toString();
+
+const siteURL = Astro.site?.toString() ?? `${site.canonicalOrigin}/`;
+
+const organization = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  '@id': `${siteURL}#organization`,
+  name: site.name,
+  alternateName: site.shortName,
+  description: site.description,
+  url: siteURL,
+  logo: new URL(site.logo, Astro.site).toString(),
+  image: new URL(site.defaultImage, Astro.site).toString(),
+  telephone: site.phone,
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: site.address.locality,
+    addressRegion: site.address.region,
+    postalCode: site.address.postalCode,
+    addressCountry: 'US',
+  },
+  areaServed: { '@type': 'Country', name: site.areaServed },
+  knowsAbout: [
+    'parcel audit',
+    'freight audit',
+    'parcel spend management',
+    'shipping cost reduction',
+    'UPS and FedEx carrier contract negotiation',
+    'less-than-truckload freight',
+    'full truckload freight',
+    'shipping refund recovery',
+  ],
+  ...(site.sameAs.length ? { sameAs: site.sameAs } : {}),
+};
+
+const website = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  '@id': `${siteURL}#website`,
+  name: site.name,
+  url: siteURL,
+  publisher: { '@id': `${siteURL}#organization` },
+  inLanguage: 'en-US',
+};
+
+const jsonLd = [organization, website, ...schema];
+
+// Dead River tracking pixel. One sitewide load; client id and URL stay exact.
+const deadRiverPixel = `
+(function(s, p, i, c, e) {
+    s[e] = s[e] || function() { (s[e].a = s[e].a || []).push(arguments); };
+    s[e].l = 1 * new Date();
+    var t = new Date().getTime();
+    var k = c.createElement("script"), a = c.getElementsByTagName("script")[0];
+    k.async = 1, k.src = p + "?request_id=" + i + "&t=" + t, a.parentNode.insertBefore(k, a);
+    s.pixelClientId = i;
+})(window, "https://app.deadrivermanagement.com/script", "pmg", document, "script");
+`;
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonicalURL} />
+  {noindex && <meta name="robots" content="noindex, nofollow" />}
+  <link rel="icon" type="image/png" href={site.logo} />
+  <link rel="sitemap" href="/sitemap.xml" />
+
+  <meta property="og:type" content={type} />
+  <meta property="og:site_name" content={site.name} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={canonicalURL} />
+  <meta property="og:image" content={imageURL} />
+  {publishedTime && <meta property="article:published_time" content={publishedTime} />}
+  {modifiedTime && <meta property="article:modified_time" content={modifiedTime} />}
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={imageURL} />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800;900&family=Manrope:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+
+  {jsonLd.map((obj) => <script type="application/ld+json" set:html={JSON.stringify(obj)} />)}
+</head>
+<body>
+  <Header />
+  <main id="top">
+    <slot />
+  </main>
+  <Footer />
+  <script is:inline src="/site.js"></script>
+  <script is:inline type="text/javascript" set:html={deadRiverPixel}></script>
+  <script is:inline src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="6ab2d8cd8615594d9a5e208c" data-source="WEB_USER"></script>
+</body>
+</html>
