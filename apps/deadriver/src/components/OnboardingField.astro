@@ -1,0 +1,39 @@
+---
+import type { OnboardingField } from '../data/onboarding';
+
+interface Props {
+  field: OnboardingField;
+}
+
+const { field } = Astro.props;
+const required = field.required === true;
+---
+
+<label>
+  {field.label}{required && <span class="req"> *</span>}
+  {field.type === 'textarea' ? (
+    <textarea
+      name={field.name}
+      rows={field.rows ?? 2}
+      required={required || undefined}
+      placeholder={field.placeholder}
+    />
+  ) : field.type === 'select' ? (
+    <select name={field.name} required={required || undefined}>
+      <option value="">Choose one</option>
+      {field.options?.map((option) => (
+        <option value={option.value}>{option.label}</option>
+      ))}
+    </select>
+  ) : (
+    <input
+      type={field.type}
+      name={field.name}
+      required={required || undefined}
+      autocomplete={field.autocomplete}
+      placeholder={field.placeholder}
+    />
+  )}
+  {field.help && <small>{field.help}</small>}
+  {field.helper && <p class="newnum">{field.helper}</p>}
+</label>

@@ -1,0 +1,204 @@
+---
+import Base from '../layouts/Base.astro';
+import WalkthroughForm from '../components/WalkthroughForm.astro';
+import ServiceWorksheet from '../components/ServiceWorksheet.astro';
+import { business, completeWhatIs, GUARANTEE_LINE, USAGE_NOTE } from '../data/site';
+import { faqPage } from '../lib/schema';
+
+// Themes are researched buyer objections; answers are existing offer facts.
+// The owner confirmed the one-year contract on September 16, 2026.
+const objections = [
+  {
+    q: 'Will this turn into paying jobs?',
+    a: 'We manage the ads, website, follow-up and booking, with reporting on leads and booked jobs. The promise is for 30 leads, not 30 closed jobs or a guaranteed return. Your team still quotes and closes the work.',
+  },
+  {
+    q: 'What counts toward the 30 leads?',
+    a: 'A real person who calls, texts or fills out a form through the system. Spam, junk, vendors, job applicants and duplicate contacts do not count. Clicks, views and followers do not count either.',
+  },
+  {
+    q: 'What am I committing to if it doesn’t work?',
+    a: 'Complete is a one-year contract. If we miss 30 leads in 60 days, we work for free until we get them. This is continued work, not a refund. You still pay ad spend and must maintain the agreed ad budget.',
+  },
+];
+const schema = [
+  { '@context': 'https://schema.org', '@type': 'WebPage', '@id': `${business.url}/dead-river-complete#webpage`, url: `${business.url}/dead-river-complete`, name: 'Dead River Complete | 30 Leads in 60 Days', isPartOf: { '@id': `${business.url}/#website` } },
+  { '@context': 'https://schema.org', '@type': 'Service', name: 'Dead River Complete', description: completeWhatIs, provider: { '@id': `${business.url}/#organization` }, areaServed: { '@type': 'Country', name: 'United States' }, audience: { '@type': 'BusinessAudience', name: 'Home service businesses' }, offers: { '@type': 'Offer', url: `${business.url}/dead-river-complete`, priceCurrency: 'USD', description: `${GUARANTEE_LINE} One-year contract. Ad spend is separate. The 60 days start when the whole system is live; the agreed ad budget must be maintained.` } },
+  faqPage(objections),
+];
+---
+<Base landing schema={schema} title="Dead River Complete | 30 Leads in 60 Days" description="Managed lead generation for home-service businesses across the US. 30 leads in 60 days or we work free until we get them. One-year contract. Ad spend separate." ogImage="/images/og/whole-river.png">
+  <section class="complete-landing wrap" aria-labelledby="complete-title">
+    <div class="complete-copy">
+      <p class="eyebrow">Dead River Complete</p>
+      <h1 id="complete-title">30 leads in 60 days.<br /><span>Or we work for free until we get them.</span></h1>
+      <p class="complete-intro">Lead services for contractors and home-service businesses across the US. Ads, your website, follow-up and booking, handled together.</p>
+      <a class="mobile-form-link btn btn-primary" href="#get-video">Get the video <span aria-hidden="true">→</span></a>
+      <p class="promise-note">The 60 days start when the whole system is live. Maintain the agreed ad budget; ad spend stays separate.</p>
+
+      <figure class="system-visual" aria-labelledby="system-caption">
+        <figcaption id="system-caption">What we manage for you</figcaption>
+        <ol>
+          <li>
+            <svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><rect x="5" y="7" width="30" height="26" rx="3"/><path d="M5 14h30M11 20h12M11 25h8M27 23v6m-3-3h6"/></svg>
+            <b>Get found</b><span>Ads, website &amp; search</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M7 8h26v19H18l-8 6v-6H7zM13 14h14M13 20h9"/></svg>
+            <b>Get a reply</b><span>AI front desk &amp; follow-up</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><rect x="6" y="8" width="28" height="26" rx="3"/><path d="M12 5v7M28 5v7M6 16h28M13 24l5 5 9-10"/></svg>
+            <b>Get it booked</b><span>CRM, calendar &amp; reporting</span>
+          </li>
+        </ol>
+      </figure>
+    </div>
+    <aside class="complete-form" aria-label="Get the walkthrough"><WalkthroughForm /></aside>
+  </section>
+
+  <section class="complete-objections wrap" aria-labelledby="objections-title">
+    <h2 id="objections-title">Before you decide.</h2>
+    <ul>
+      {objections.map((item) => <li><h3>{item.q}</h3><p>{item.a}</p></li>)}
+    </ul>
+  </section>
+
+  <section class="complete-proof wrap" aria-labelledby="proof-title">
+    <div class="proof-copy">
+      <p class="eyebrow">Client result · Texas plumbing business</p>
+      <!-- Owner-supplied result. The client has not authorized public identity or photos. -->
+      <h2 id="proof-title"><span class="result-amount">$74,832</span> in additional revenue.<br />One month.</h2>
+    </div>
+    <div class="proof-detail">
+      <p>A Texas plumbing business added $74,832 in revenue in a single month.</p>
+      <p class="proof-context">The client's name and photos are kept private at their request. This is an individual client result, not a revenue guarantee. Complete's promise covers 30 leads in 60 days; your team quotes and closes the work.</p>
+    </div>
+  </section>
+
+  <section class="complete-details wrap" aria-labelledby="details-title">
+    <p class="eyebrow">What happens after someone clicks?</p>
+    <h2 id="details-title">A home services marketing agency<br />that connects the whole process.</h2>
+    <p class="details-intro">Complete manages the steps from finding your business to getting a response and arranging an appointment. Calls, texts and form inquiries from the connected channels are tracked in one place.</p>
+    <ol class="service-steps">
+      <li><h3>Reach the right customer</h3><p>We build and manage the ads and website. Facebook and Instagram ads are part of the system; Google Ads or Local Services Ads depend on your industry. We also work on your Google Business Profile.</p></li>
+      <li><h3>Keep the inquiry moving</h3><p>Missed-call text-back, the AI assistant and follow-up help continue the conversation when you're busy. Booking connects the inquiry to the next available appointment.</p></li>
+      <li><h3>See what happened next</h3><p>Lead and booked-job reporting shows the path from inquiry to appointment. Your team still assesses the job, provides the quote and closes the work.</p></li>
+    </ol>
+    <div class="roofing-detail">
+      <h3>Looking for roofing lead generation?</h3>
+      <p>Start with the work you want inquiries about, such as replacement estimates or repairs, and the locations your crew serves. The ad and page should explain that service and what happens when a homeowner gets in touch.</p>
+      <p>Then define the handoff: what information is needed, who responds and whether the next step is a callback or an estimate appointment. An estimate request does not reserve an installation date. The worksheet below helps you write this down before a campaign starts.</p>
+    </div>
+  </section>
+
+  <section class="complete-comparison wrap" aria-labelledby="comparison-title">
+    <p class="eyebrow">Before choosing a provider</p>
+    <h2 id="comparison-title">Compare what happens to each lead.</h2>
+    <p>If you're comparing the best lead generation companies for contractors, ask each provider to explain the same four things below. The best lead generation for contractors should fit the work you want, the area you serve and your team's ability to respond.</p>
+    <dl>
+      <div><dt>What counts as a lead?</dt><dd>For Complete, a real person calls, texts or fills out a form through the system. Spam, vendors, job applicants and duplicate contacts are excluded. Ask how a provider handles those exclusions in its reporting.</dd></div>
+      <div><dt>What happens after an inquiry?</dt><dd>Complete includes response, follow-up and booking alongside ads and the website. Ask who handles each step and who is responsible for quoting and closing the job.</dd></div>
+      <div><dt>What costs sit outside the service?</dt><dd>Complete's ad spend is separate and paid by you. Calls, texts and AI usage are billed at cost. Compare the full cost of the service, advertising and usage together.</dd></div>
+      <div><dt>What does the agreement promise?</dt><dd>Complete is a one-year agreement. The 60 days start when the whole system is live and require the agreed ad budget. If we miss 30 leads, we work free until we get them; ad spend and usage remain separate.</dd></div>
+    </dl>
+  </section>
+
+  <ServiceWorksheet />
+
+  <section class="complete-terms wrap" aria-label="Offer details">
+    <p><strong>The Complete promise:</strong> The 60-day period starts when the whole system is live. The promise applies only to Dead River Complete, with a one-year contract and the agreed ad budget maintained. Continued work is free until 30 leads are reached if we miss the target; it does not remove the contract commitment or refund earlier payments.</p>
+    <p>{USAGE_NOTE} Watch the video after the short form, then decide if Complete fits. You can book a time from the video page if you have questions. <a href="/terms">Read the terms</a>.</p>
+  </section>
+</Base>
+
+<style is:global>
+  .landing-page::after{display:none}
+  .landing-header{min-height:88px;display:flex;align-items:center;justify-content:space-between;gap:20px;border-bottom:1px solid var(--line)}
+  .landing-brand{display:flex;align-items:center;gap:12px;font-weight:650;font-size:16px}
+  .landing-brand img{flex-shrink:0;width:173px;height:auto;max-width:46vw}
+  .landing-scope{font-size:12px;color:var(--ash)}
+  .landing-header .skip-link{position:absolute;left:24px;top:-100px;z-index:10;background:var(--bone);color:var(--ink);padding:8px 16px}
+  .landing-header .skip-link:focus{top:12px}
+  .complete-landing{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(340px,.85fr);gap:64px;padding-top:56px;padding-bottom:56px;align-items:start}
+  .complete-copy .eyebrow{margin-bottom:18px}
+  .complete-copy h1{font-family:var(--display);font-weight:800;font-size:clamp(36px,4vw,53px);line-height:1.07;letter-spacing:-.045em;text-wrap:initial;max-width:19ch;margin:0 0 24px}
+  .complete-copy h1 span{color:var(--copper-2)}
+  .complete-intro{font-size:18px;line-height:1.6;max-width:48ch;color:#c7c5bd}
+  .complete-copy .mobile-form-link{display:none}
+  .promise-note{font-size:13px;line-height:1.6;color:var(--ash);max-width:55ch;margin-top:14px}
+  .system-visual{margin:30px 0 0;border-top:1px solid var(--line-2);padding-top:20px}
+  .system-visual figcaption{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--ash);margin-bottom:18px}
+  .system-visual ol{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .system-visual li{position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:5px}
+  .system-visual li:not(:last-child)::after{content:'→';position:absolute;right:0;top:5px;color:var(--ash)}
+  .system-visual svg{width:36px;height:36px;stroke:var(--copper-2);stroke-width:1.5;margin-bottom:6px}
+  .system-visual b{font-size:14px;font-weight:600}
+  .system-visual span{font-size:12px;color:var(--ash);line-height:1.5;max-width:15ch}
+  .complete-form{background:var(--ink-2);border:1px solid var(--line-2);border-top:3px solid var(--copper);border-radius:12px;padding:28px}
+  .leadform{scroll-margin-top:24px}
+  .leadform [hidden]{display:none!important}
+  .leadform .form-eyebrow{font-size:12px;color:var(--copper-2);margin-bottom:8px}
+  .leadform h2{font-family:var(--display);font-size:28px;line-height:1.15;letter-spacing:-.03em;margin:0 0 10px;text-wrap:initial}
+  .leadform .form-intro{font-size:14px;line-height:1.6;color:#c7c5bd;margin-bottom:10px}
+  .leadform .form-takeaways{padding-left:18px;font-size:13px;line-height:1.6;color:#c7c5bd;display:grid;gap:5px;margin-bottom:12px}
+  .leadform .form-takeaways li::marker{color:var(--copper-2)}
+  .leadform .form-next-step{font-size:12px;line-height:1.6;color:var(--ash);margin-bottom:22px}
+  .leadform .f{display:grid;gap:15px}
+  .leadform fieldset{border:0;padding:0;min-width:0;display:grid;gap:14px}
+  .leadform legend{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+  .leadform .form-progress{font-size:12px;color:var(--ash);border-bottom:1px solid var(--line-2);padding-bottom:10px;margin:0}
+  .leadform .fld{display:grid;gap:6px}
+  .leadform label{font-size:12.5px;font-weight:600;color:#d6d4cd}
+  .leadform input,.leadform select{width:100%;height:46px;padding:0 12px;border-radius:6px;border:1px solid #484b50;background:var(--ink);color:var(--bone);font:inherit;font-size:16px;outline-offset:3px}
+  .leadform select{cursor:pointer;color-scheme:dark}
+  .leadform input[aria-invalid=true],.leadform select[aria-invalid=true]{border-color:#f2a99f}
+  .leadform .err{font-size:12px;color:#f2a99f;line-height:1.4}
+  .leadform .btn{width:100%;justify-content:center;min-height:48px;font-size:14px;padding:12px;white-space:normal}
+  .leadform .btn:disabled{opacity:.65;cursor:wait}
+  .leadform .step-back{text-decoration:underline;text-underline-offset:4px;min-height:36px;font-size:13px;color:#c7c5bd}
+  .leadform .form-consent{font-size:11px;line-height:1.55;color:var(--ash)}
+  .leadform .form-consent a,.complete-terms a{text-decoration:underline;text-underline-offset:3px}
+  .leadform .formstatus:empty{display:none}
+  .leadform .formstatus{font-size:13px;margin-top:12px;color:#f2a99f}
+  .leadform .form-commitment{font-size:12px;line-height:1.5;color:#c7c5bd;margin-top:16px}
+  .leadform.sent .f{display:none}
+  .leadform .ok{font-size:15px}
+  .complete-objections{padding-top:36px;padding-bottom:38px;border-top:1px solid var(--line)}
+  .complete-objections h2{font-size:22px;font-family:var(--display);line-height:1.2;letter-spacing:-.02em;margin-bottom:25px;text-wrap:initial}
+  .complete-objections ul{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:36px;list-style:none}
+  .complete-objections li{padding-left:18px;position:relative}
+  .complete-objections li::before{content:'';position:absolute;top:8px;left:0;width:5px;height:5px;border-radius:50%;background:var(--copper-2)}
+  .complete-objections h3{font-size:16px;font-weight:650;line-height:1.4;margin-bottom:10px}
+  .complete-objections p{font-size:13px;line-height:1.7;color:#b4b2aa}
+  .complete-proof{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px;align-items:center;border-top:1px solid var(--line);padding-top:40px;padding-bottom:40px}
+  .complete-proof .eyebrow{font-size:11px;margin-bottom:14px}
+  .complete-proof h2{font-family:var(--display);font-size:clamp(26px,3vw,36px);line-height:1.15;letter-spacing:-.03em;margin-bottom:18px;text-wrap:initial}
+  .result-amount{display:block;font-size:clamp(52px,7vw,88px);line-height:1.1;letter-spacing:-.055em;color:var(--copper-2);margin-bottom:14px}
+  .proof-detail p{font-size:18px;line-height:1.65;color:#c7c5bd}
+  .proof-detail .proof-context{font-size:12px;color:var(--ash);margin-top:16px}
+  .complete-details,.complete-comparison{padding-top:38px;padding-bottom:38px;border-top:1px solid var(--line)}
+  .complete-details .eyebrow,.complete-comparison .eyebrow{font-size:11px;margin-bottom:14px}
+  .complete-details h2,.complete-comparison h2{font-family:var(--display);font-size:clamp(25px,3vw,34px);line-height:1.2;letter-spacing:-.025em;margin-bottom:18px;text-wrap:initial}
+  .details-intro,.complete-comparison>p:not(.eyebrow){font-size:15px;line-height:1.7;color:#c7c5bd;max-width:82ch}
+  .service-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:36px;list-style:none;margin-top:28px}
+  .service-steps h3,.roofing-detail h3{font-size:17px;line-height:1.4;margin-bottom:10px}
+  .service-steps p,.roofing-detail p,.complete-comparison dd{font-size:14px;line-height:1.7;color:#b4b2aa}
+  .roofing-detail{margin-top:30px;border-left:2px solid var(--copper);padding-left:24px;max-width:86ch}
+  .roofing-detail p+p{margin-top:10px}
+  .complete-comparison dl{margin-top:26px}
+  .complete-comparison dl>div{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.6fr);gap:32px;padding:18px 0;border-top:1px solid var(--line)}
+  .complete-comparison dt{font-size:15px;font-weight:600;line-height:1.5}
+  .complete-comparison dd{margin:0}
+  @media(max-width:760px){.complete-proof{grid-template-columns:1fr;gap:8px;padding-top:28px;padding-bottom:28px}.proof-detail p{font-size:16px}.complete-details,.complete-comparison{padding-top:28px;padding-bottom:28px}.service-steps{grid-template-columns:1fr;gap:22px}.complete-comparison dl>div{grid-template-columns:1fr;gap:8px}.roofing-detail{padding-left:18px}}
+  .complete-terms{font-size:11.5px;color:var(--ash);line-height:1.7;padding-bottom:30px}
+  .complete-terms p+p{margin-top:8px}
+  .landing-footer{padding:22px 0;background:var(--ink);border-top:1px solid var(--line);color:var(--ash);font-size:11.5px}
+  .landing-footer .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px}
+  .landing-footer nav{display:flex;gap:22px}
+  .landing-footer a{text-decoration:underline;text-underline-offset:3px}
+  @media(max-width:1000px){.complete-landing{gap:32px;grid-template-columns:minmax(0,1fr) minmax(330px,1fr)}.complete-copy h1{font-size:40px}.complete-form{padding:24px}.complete-objections ul{gap:24px}}
+  @media(max-width:760px){.landing-header{min-height:72px}.landing-scope{display:none}.complete-landing{grid-template-columns:1fr;gap:30px;padding-top:32px;padding-bottom:36px}.complete-copy h1{font-size:clamp(34px,7.4vw,46px);max-width:22ch;margin-bottom:18px}.complete-intro{font-size:16px}.promise-note{font-size:12px}.system-visual{margin-top:24px;padding-top:16px}.system-visual ol{gap:15px}.complete-form{padding:24px}.complete-objections{padding-top:28px;padding-bottom:26px}.complete-objections ul{grid-template-columns:1fr;gap:24px}.complete-objections h3{font-size:17px}.complete-objections p{font-size:14px}.landing-footer .wrap{flex-direction:column;align-items:flex-start}.complete-terms{font-size:12px}}
+  @media(prefers-reduced-motion:reduce){.landing-page{scroll-behavior:auto}}
+  @media(max-width:760px){.complete-copy .mobile-form-link{display:inline-flex;margin-top:20px;min-height:48px}.mobile-form-link span{margin-left:12px}}
+</style>

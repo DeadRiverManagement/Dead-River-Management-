@@ -1,0 +1,109 @@
+---
+// Step two of the booking application: pick a time. The /book form redirects
+// here after a successful submission. The calendar is the existing GoHighLevel
+// booking widget; swap BOOKING_CALENDAR_URL when a dedicated calendar exists.
+import Growth from '../../layouts/Growth.astro';
+import { DEMANDFLOW_CALENDAR_URL } from '../../lib/demandflow-handoff.js';
+const BOOKING_CALENDAR_URL = DEMANDFLOW_CALENDAR_URL;
+---
+
+<Growth
+  title="Pick a Time for Your Strategy Call"
+  description="Your application is received. Choose a time for your strategy call with Dead River Management."
+  robots="noindex,nofollow"
+  campaign
+>
+  <section class="thanks wrap" aria-labelledby="thanks-title">
+    <div class="thanks-intro">
+      <h1 id="thanks-title">Pick a time for your strategy call.</h1>
+      <p class="intro">
+        Your application is received. Choose a time below and Brandon will
+        confirm within one business day.
+      </p>
+    </div>
+
+    <div class="thanks-calendar">
+      <iframe
+        src={BOOKING_CALENDAR_URL}
+        allow="payment"
+        style="width:100%;border:none;overflow:hidden;min-height:780px;"
+        height="1100"
+        scrolling="no"
+        id="rfaj3m31onqPQEFYhwyE_book_thanks"
+        title="Pick a time for your strategy call with Dead River Management"
+        referrerpolicy="no-referrer"
+      ></iframe>
+      <script is:inline src="https://link.msgsndr.com/js/form_embed.js" type="text/javascript"></script>
+    </div>
+
+    <div class="thanks-next">
+      <h2>What to expect on the call:</h2>
+      <ul class="check-list">
+        <li>15 minutes, no pitch ambush</li>
+        <li>We’ll diagnose your current customer acquisition</li>
+        <li>If it makes sense, we’ll walk you through the guarantee for your business</li>
+      </ul>
+      <p>
+        Can’t find a time that works? Call or text
+        <a href="tel:+19152283054">(915) 228-3054</a>.
+      </p>
+    </div>
+  </section>
+</Growth>
+
+<style>
+  /* The scheduler step has no navigation or header call-to-action. */
+  :global(.campaign-cta) {
+    display: none !important;
+  }
+  .thanks {
+    padding-block: clamp(20px, 3vw, 40px) clamp(40px, 6vw, 80px);
+    max-width: 1120px;
+  }
+  .thanks-intro {
+    max-width: 790px;
+    margin: 0 auto 20px;
+    text-align: center;
+  }
+  .thanks-intro h1 {
+    font-size: clamp(28px, 3.6vw, 44px);
+  }
+  .thanks-intro .intro {
+    margin: 12px auto 0;
+    font-size: 17px;
+  }
+  .thanks-calendar {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    box-shadow: 0 14px 45px rgb(25 56 47 / 6%);
+    overflow: hidden;
+  }
+  .thanks-calendar iframe {
+    display: block;
+    max-width: 100%;
+  }
+  .thanks-next {
+    margin: 28px auto 0;
+    max-width: 640px;
+    padding: 28px;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    background: var(--sage);
+  }
+  .thanks-next h2 {
+    font-size: 24px;
+    margin-bottom: 8px;
+  }
+  .thanks-next .check-list li {
+    font-size: 16px;
+    color: var(--ink);
+  }
+  .thanks-next p {
+    margin-top: 14px;
+  }
+  .thanks-next a {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+</style>

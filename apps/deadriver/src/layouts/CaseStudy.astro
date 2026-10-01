@@ -1,0 +1,64 @@
+---
+import Base from './Base.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { business } from '../data/site';
+interface Props {
+  kicker: string; name: string; summary: string;
+  stats?: { num: string; label: string }[];
+  // Optional on purpose: a case study is only written from what the client has
+  // confirmed, so a missing starting situation or testimonial leaves the block
+  // out rather than inviting one to be filled in.
+  situation?: string; did: string; result: string;
+  quote?: string; who?: string; tags?: string[];
+  proof?: { src: string; alt: string; caption: string; width: number; height: number };
+}
+const p = Astro.props;
+const path = Astro.url.pathname.replace(/\.html$/, '');
+const schema = [
+  { '@context': 'https://schema.org', '@type': 'Article', headline: `${p.name} case study`, description: p.summary, ...(p.proof ? { image: `${business.url}${p.proof.src}` } : {}), author: { '@id': `${business.url}/#organization` }, publisher: { '@id': `${business.url}/#organization` }, mainEntityOfPage: `${business.url}${path}` },
+  // Home -> this case study. There is no case-studies index yet, and the
+  // middle entry used to be labelled "Case studies" while pointing at one
+  // specific case study, which is not what that URL is.
+  { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: `${business.url}/` }, { '@type': 'ListItem', position: 2, name: p.name, item: `${business.url}${path}` }] },
+];
+---
+<Base schema={schema}>
+  <section class="ihero" id="top">
+    <div class="wrap">
+      <nav class="crumb reveal-up" data-d="0" aria-label="Breadcrumb"><a href="/">Home</a><span>/</span><b>{p.name}</b></nav>
+      <p class="eyebrow reveal-up" data-d="60" style="display:flex;align-items:center;gap:12px"><span style="width:28px;height:1px;background:var(--copper);display:inline-block"></span>{p.kicker}</p>
+      <h1><span class="line"><span>{p.name}</span></span></h1>
+      <p class="lede reveal-up" data-d="420">{p.summary}</p>
+      {p.tags && <div class="rel reveal-up" data-d="500">{p.tags.map((t) => <a href="/services">{t}</a>)}</div>}
+    </div>
+  </section>
+
+  {p.stats && (
+    <section class="section" style="padding-top:0">
+      <div class="wrap">
+        <div class="nums">
+          {p.stats.map((s, i) => <div class="num io" style={`--d:${i * 80}ms`}><div class="n"><em>{s.num}</em></div><div class="l"><b>{s.label}</b></div></div>)}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <section class="section" style="padding-top:0">
+    <div class="wrap prose io">
+      {p.situation && <><h2>The starting situation</h2><p>{p.situation}</p></>}
+      <h2>What we did</h2><p>{p.did}</p>
+      <h2>The measured result</h2><p>{p.result}</p>
+      {p.proof && (
+        <figure class="proof-shot">
+          <a href={p.proof.src} target="_blank" rel="noopener">
+            <img src={p.proof.src} width={p.proof.width} height={p.proof.height} alt={p.proof.alt} title={p.proof.alt} loading="lazy" decoding="async" />
+          </a>
+          <figcaption>{p.proof.caption} <a class="shot-hint" href={p.proof.src} target="_blank" rel="noopener" aria-label={`Open the full-size ${p.name} results screenshot`}>Open full size</a></figcaption>
+        </figure>
+      )}
+      {p.quote && <blockquote>"{p.quote}"<br /><span style="font-family:var(--body);font-size:15px;color:var(--ash);font-weight:600">{p.who}</span></blockquote>}
+    </div>
+  </section>
+
+  <CtaBand heading="Ready to get started?" mark="Prices are on the page." text="Start at $97 a month, or fill out a short form and watch the full-plan video." secondaryLabel="See the full plan" secondaryHref="/dead-river-complete#get-video" />
+</Base>

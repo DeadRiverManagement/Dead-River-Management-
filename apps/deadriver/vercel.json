@@ -1,0 +1,1344 @@
+{
+  "cleanUrls": true,
+  "bulkRedirectsPath": "redirects/html-one-hop.json",
+  "trailingSlash": false,
+  "framework": "astro",
+  "crons": [
+    {
+      "path": "/api/instantly-reconcile",
+      "schedule": "*/5 * * * *"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        }
+      ]
+    },
+    {
+      "source": "/onboarding/:path*",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    },
+    {
+      "source": "/free-playbook",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex,nofollow"
+        }
+      ]
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/w/:key",
+      "destination": "/api/unlock?k=:key"
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/pricing",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/pricing.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/work/dynamic-heating-and-cooling.html",
+      "destination": "/work",
+      "permanent": true
+    },
+    {
+      "source": "/work/dynamic-heating-and-cooling",
+      "destination": "/work",
+      "permanent": true
+    },
+    {
+      "source": "/case-studies/total-auto-repair",
+      "destination": "/work/total-auto-repair",
+      "permanent": true
+    },
+    {
+      "source": "/case-studies/total-auto-repair.html",
+      "destination": "/work/total-auto-repair",
+      "permanent": true
+    },
+    {
+      "source": "/case-studies/gonzalez-and-sons-roofing",
+      "destination": "/work/gonzalez-and-sons-roofing",
+      "permanent": true
+    },
+    {
+      "source": "/case-studies/gonzalez-and-sons-roofing.html",
+      "destination": "/work/gonzalez-and-sons-roofing",
+      "permanent": true
+    },
+    {
+      "source": "/case-studies/the-pipe-whisperers",
+      "destination": "/work/the-pipe-whisperers",
+      "permanent": true
+    },
+    {
+      "source": "/case-studies/the-pipe-whisperers.html",
+      "destination": "/work/the-pipe-whisperers",
+      "permanent": true
+    },
+    {
+      "source": "/case-studies/dynamic-heating-and-cooling",
+      "destination": "/work",
+      "permanent": true
+    },
+    {
+      "source": "/case-studies/dynamic-heating-and-cooling.html",
+      "destination": "/work",
+      "permanent": true
+    },
+    {
+      "source": "/contact",
+      "destination": "/book",
+      "statusCode": 301
+    },
+    {
+      "source": "/contact.html",
+      "destination": "/book",
+      "statusCode": 301
+    },
+    {
+      "source": "/talk",
+      "destination": "/book",
+      "statusCode": 301
+    },
+    {
+      "source": "/talk.html",
+      "destination": "/book",
+      "statusCode": 301
+    },
+    {
+      "source": "/marketing-advice/how-to-get-more-google-reviews",
+      "destination": "/resources",
+      "permanent": false
+    },
+    {
+      "source": "/marketing-advice/small-business-website-cost",
+      "destination": "/resources",
+      "permanent": false
+    },
+    {
+      "source": "/watch",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/watch.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/voiceiq-demo",
+      "destination": "/demo",
+      "statusCode": 301
+    },
+    {
+      "source": "/voiceiq-demo.html",
+      "destination": "/demo",
+      "statusCode": 301
+    },
+    {
+      "source": "/flagship-offer",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/flagship-offer.html",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/dead-river-complete",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/dead-river-complete.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/website",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/website.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/paid-growth",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/paid-growth.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/search-growth",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/search-growth.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/local-visibility",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/local-visibility.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/front-desk-complete",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/front-desk-complete.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/front-desk-ai",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/front-desk-ai.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/essentials",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/essentials.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/case-studies/only-fish",
+      "destination": "/work/only-fish",
+      "statusCode": 301
+    },
+    {
+      "source": "/case-studies/only-fish.html",
+      "destination": "/work/only-fish",
+      "statusCode": 301
+    },
+    {
+      "source": "/case-studies/wicked-logistics",
+      "destination": "/work/wicked-logistics",
+      "statusCode": 301
+    },
+    {
+      "source": "/case-studies/wicked-logistics.html",
+      "destination": "/work/wicked-logistics",
+      "statusCode": 301
+    },
+    {
+      "source": "/case-studies/parcel-management-group",
+      "destination": "/work/parcel-management-group",
+      "statusCode": 301
+    },
+    {
+      "source": "/case-studies/parcel-management-group.html",
+      "destination": "/work/parcel-management-group",
+      "statusCode": 301
+    },
+    {
+      "source": "/case-studies",
+      "destination": "/work",
+      "permanent": false
+    },
+    {
+      "source": "/case-studies.html",
+      "destination": "/work",
+      "permanent": false
+    },
+    {
+      "source": "/industries-we-serve",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/industries-we-serve.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/services",
+      "destination": "/solutions",
+      "statusCode": 301
+    },
+    {
+      "source": "/services.html",
+      "destination": "/solutions",
+      "statusCode": 301
+    },
+    {
+      "source": "/plans",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/plans.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/about",
+      "destination": "/company",
+      "statusCode": 301
+    },
+    {
+      "source": "/about.html",
+      "destination": "/company",
+      "statusCode": 301
+    },
+    {
+      "source": "/videos/(.*)",
+      "missing": [
+        {
+          "type": "cookie",
+          "key": "drm_watch"
+        }
+      ],
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/front-desk-essentials",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/front-desk-essentials.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/missed-call-rescue",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/missed-call-rescue.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/lead-rescue",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/lead-rescue.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/website-rescue",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/website-rescue.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/local-growth",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/local-growth.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/growth-engine",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/growth-engine.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/whole-river-plan",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/whole-river-plan.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/whole-river",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/whole-river.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/the-whole-river",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/the-whole-river.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/welcome/missed-call-rescue",
+      "destination": "/welcome/essentials",
+      "statusCode": 301
+    },
+    {
+      "source": "/welcome/missed-call-rescue.html",
+      "destination": "/welcome/essentials",
+      "statusCode": 301
+    },
+    {
+      "source": "/welcome/whole-river-plan",
+      "destination": "/welcome/dead-river-complete",
+      "statusCode": 301
+    },
+    {
+      "source": "/welcome/whole-river-plan.html",
+      "destination": "/welcome/dead-river-complete",
+      "statusCode": 301
+    },
+    {
+      "source": "/source-plan",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/current-plan",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/rapids-plan",
+      "destination": "/plans",
+      "statusCode": 301
+    },
+    {
+      "source": "/flood-plan",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/appliance-repair-marketing-el-paso",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/carpenter-marketing-el-paso",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/carpet-cleaning-marketing-el-paso",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/countertop-marketing-el-paso",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/drain-cleaning-marketing-el-paso",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/electrician-marketing-el-paso",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/fencing-marketing-el-paso",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/flooring-marketing-el-paso",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/foundation-repair-marketing-el-paso",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/garage-door-marketing-el-paso",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/general-contractor-marketing-el-paso",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/handyman-marketing-el-paso",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/home-inspector-marketing-el-paso",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/insulation-marketing-el-paso",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/home-security-marketing-el-paso",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/home-theater-marketing-el-paso",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/house-cleaning-marketing-el-paso",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/hvac-marketing-el-paso",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/junk-removal-marketing-el-paso",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/landscaper-marketing-el-paso",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/lawn-care-marketing-el-paso",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/locksmith-marketing-el-paso",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/moving-services-marketing-el-paso",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/painter-marketing-el-paso",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/pest-control-marketing-el-paso",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/plumber-marketing-el-paso",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/pool-cleaning-marketing-el-paso",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/pool-contractor-marketing-el-paso",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/roofing-marketing-el-paso",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/sewer-line-marketing-el-paso",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/siding-marketing-el-paso",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/snow-removal-marketing-el-paso",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/solar-marketing-el-paso",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/tree-service-marketing-el-paso",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/water-damage-restoration-marketing-el-paso",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/window-cleaning-marketing-el-paso",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/window-repair-marketing-el-paso",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/bankruptcy-lawyer-marketing-el-paso",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/business-lawyer-marketing-el-paso",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/contract-lawyer-marketing-el-paso",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/criminal-lawyer-marketing-el-paso",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/disability-lawyer-marketing-el-paso",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/dui-lawyer-marketing-el-paso",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/estate-lawyer-marketing-el-paso",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/family-lawyer-marketing-el-paso",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/immigration-lawyer-marketing-el-paso",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ip-lawyer-marketing-el-paso",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/labor-lawyer-marketing-el-paso",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/litigation-lawyer-marketing-el-paso",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/malpractice-lawyer-marketing-el-paso",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/personal-injury-lawyer-marketing-el-paso",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/real-estate-lawyer-marketing-el-paso",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/tax-lawyer-marketing-el-paso",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/traffic-lawyer-marketing-el-paso",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/financial-planner-marketing-el-paso",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/tax-specialist-marketing-el-paso",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/real-estate-agent-marketing-el-paso",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/allergist-marketing-el-paso",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/chiropractor-marketing-el-paso",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/dentist-marketing-el-paso",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/dermatologist-marketing-el-paso",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/dietitian-marketing-el-paso",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ophthalmologist-marketing-el-paso",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/optometrist-marketing-el-paso",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/orthodontist-marketing-el-paso",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/physical-therapist-marketing-el-paso",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/podiatrist-marketing-el-paso",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/primary-care-marketing-el-paso",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/child-care-marketing-el-paso",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/funeral-home-marketing-el-paso",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/self-storage-marketing-el-paso",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/phone-laptop-repair-marketing-el-paso",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/beauty-school-marketing-el-paso",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/dance-studio-marketing-el-paso",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/driving-school-marketing-el-paso",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/language-school-marketing-el-paso",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/massage-school-marketing-el-paso",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/preschool-marketing-el-paso",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/tutoring-marketing-el-paso",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/animal-rescue-marketing-el-paso",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/pet-adoption-marketing-el-paso",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/pet-boarding-marketing-el-paso",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/pet-grooming-marketing-el-paso",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/pet-training-marketing-el-paso",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/veterinarian-marketing-el-paso",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/acupuncturist-marketing-el-paso",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/first-aid-training-marketing-el-paso",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/personal-trainer-marketing-el-paso",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/weight-loss-center-marketing-el-paso",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/yoga-studio-marketing-el-paso",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/barber-shop-marketing-el-paso",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/hair-removal-marketing-el-paso",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/hair-salon-marketing-el-paso",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/nail-salon-marketing-el-paso",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/piercing-studio-marketing-el-paso",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/auto-body-shop-marketing-el-paso",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/auto-repair-shop-marketing-el-paso",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/car-wash-detailing-marketing-el-paso",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/tire-shop-marketing-el-paso",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/towing-marketing-el-paso",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/source-plan.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/current-plan.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/flood-plan.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/el-paso-home-services-marketing",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/el-paso-home-services-marketing.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ai-receptionist-el-paso",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ai-receptionist-el-paso.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/google-ads-management-el-paso",
+      "destination": "/services/google-ads",
+      "statusCode": 301
+    },
+    {
+      "source": "/google-ads-management-el-paso.html",
+      "destination": "/services/google-ads",
+      "statusCode": 301
+    },
+    {
+      "source": "/social-media-management-el-paso",
+      "destination": "/services/facebook-ads",
+      "statusCode": 301
+    },
+    {
+      "source": "/social-media-management-el-paso.html",
+      "destination": "/services/facebook-ads",
+      "statusCode": 301
+    },
+    {
+      "source": "/web-design-el-paso",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/web-design-el-paso.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ai-search-optimization-el-paso",
+      "destination": "/marketing-advice/ai-search-for-local-business",
+      "statusCode": 301
+    },
+    {
+      "source": "/ai-search-optimization-el-paso.html",
+      "destination": "/marketing-advice/ai-search-for-local-business",
+      "statusCode": 301
+    },
+    {
+      "source": "/marketing-advice/marketing-agency-cost-el-paso",
+      "destination": "/marketing-advice/el-paso-home-services-marketing-agency",
+      "statusCode": 301
+    },
+    {
+      "source": "/google-business-profile-el-paso",
+      "destination": "/services/local-seo",
+      "statusCode": 301
+    },
+    {
+      "source": "/google-business-profile-el-paso.html",
+      "destination": "/services/local-seo",
+      "statusCode": 301
+    },
+    {
+      "source": "/seo-el-paso",
+      "destination": "/services/seo",
+      "statusCode": 301
+    },
+    {
+      "source": "/local-seo-el-paso",
+      "destination": "/services/local-seo",
+      "statusCode": 301
+    },
+    {
+      "source": "/local-seo-el-paso.html",
+      "destination": "/services/local-seo",
+      "statusCode": 301
+    },
+    {
+      "source": "/sitemap.xml",
+      "destination": "/sitemap-index.xml",
+      "statusCode": 301
+    },
+    {
+      "source": "/industries",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/industries.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/industries/home-services",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/industries/home-services.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/industries/med-spas",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/industries/med-spas.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/industries/dental",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/industries/dental.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/industries/real-estate",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/industries/real-estate.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/industries/ecommerce",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/industries/ecommerce.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/hvac",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/hvac.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/plumbing",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/plumbing.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/roofing",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/roofing.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/electrical",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/electrical.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/landscaping",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/landscaping.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/remodeling",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/remodeling.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/pest-control",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/pest-control.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/garage-doors",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/garage-doors.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/flooring",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/flooring.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/pool-service",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/pool-service.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/book/dental",
+      "destination": "/book",
+      "statusCode": 301
+    },
+    {
+      "source": "/book/dental.html",
+      "destination": "/book",
+      "statusCode": 301
+    },
+    {
+      "source": "/book/med-spas",
+      "destination": "/book",
+      "statusCode": 301
+    },
+    {
+      "source": "/book/med-spas.html",
+      "destination": "/book",
+      "statusCode": 301
+    },
+    {
+      "source": "/book/real-estate",
+      "destination": "/book",
+      "statusCode": 301
+    },
+    {
+      "source": "/book/real-estate.html",
+      "destination": "/book",
+      "statusCode": 301
+    },
+    {
+      "source": "/book/ecommerce",
+      "destination": "/book",
+      "statusCode": 301
+    },
+    {
+      "source": "/book/ecommerce.html",
+      "destination": "/book",
+      "statusCode": 301
+    },
+    {
+      "source": "/guarantee-terms",
+      "destination": "/legal/guarantee",
+      "statusCode": 301
+    },
+    {
+      "source": "/guarantee-terms.html",
+      "destination": "/legal/guarantee",
+      "statusCode": 301
+    },
+    {
+      "source": "/growth-plan",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/growth-plan.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/el-paso-roofers",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/el-paso-roofers.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/demandflow",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/demandflow.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/demandflow/watch",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/demandflow/watch.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/demandflow/book",
+      "destination": "/book/thanks",
+      "statusCode": 301
+    },
+    {
+      "source": "/demandflow/book.html",
+      "destination": "/book/thanks",
+      "statusCode": 301
+    }
+  ]
+}

@@ -1,0 +1,295 @@
+---
+// Cookie notice. One Accept button, no reject: this is a US audience and the
+// tags in the layouts keep loading the way they do today. The banner tells
+// people what runs, points them at the cookie notice, and gets out of the way.
+//
+// Shown once. Accept stores a stamp in localStorage; a visitor who has already
+// accepted never sees it again on any page. The stamp carries a version so a
+// meaningful change to what the site stores can re-ask by bumping VERSION.
+//
+// Two skins, same copper: `dark` for the Base layout (ink + bone), `light` for
+// the Growth layout (paper + forest green). Copy stays identical on both.
+interface Props {
+  variant?: 'dark' | 'light';
+}
+const { variant = 'dark' } = Astro.props;
+const VERSION = 1;
+---
+
+<aside
+  class:list={['cc', `cc--${variant}`]}
+  id="cookie-banner"
+  role="region"
+  aria-label="Cookie notice"
+  data-version={VERSION}
+  hidden
+>
+  <div class="cc-card">
+    <svg
+      class="cc-mark"
+      viewBox="0 0 24 24"
+      fill="none"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <path
+        d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-4-4 4 4 0 0 1-4-4 3.9 3.9 0 0 1-2-2Z"
+        stroke="currentColor"
+        stroke-width="1.7"
+        stroke-linejoin="round"
+      />
+      <circle cx="8.5" cy="10" r="1.25" fill="currentColor" />
+      <circle cx="10" cy="15.5" r="1.25" fill="currentColor" />
+      <circle cx="15" cy="14" r="1.25" fill="currentColor" />
+    </svg>
+    <div class="cc-body">
+      <p class="cc-title">This site uses cookies.</p>
+      <p class="cc-text">
+        They show us which ads and pages bring people here, so we can spend
+        money on what works. No form answers are stored in them.{' '}
+        <a href="/legal/cookies">Read the cookie notice</a>
+      </p>
+    </div>
+    <button class="cc-accept" type="button" data-cc-accept>
+      Accept
+    </button>
+  </div>
+</aside>
+
+<style>
+  /* Skin: every colour below comes from one of these two blocks so the banner
+     looks native on either layout instead of a bolted-on widget. */
+  .cc--dark {
+    --cc-bg: rgba(22, 24, 28, 0.94);
+    --cc-fg: #f2f0eb;
+    --cc-muted: #a6a49b;
+    --cc-line: rgba(255, 255, 255, 0.09);
+    --cc-mark: #d98438;
+    --cc-link: #d98438;
+    --cc-btn: linear-gradient(180deg, #d98438, #c8722e 60%);
+    --cc-btn-hover: linear-gradient(180deg, #e08f45, #d17a33 60%);
+    --cc-btn-ink: #140b04;
+    --cc-btn-radius: 999px;
+    --cc-btn-shadow:
+      0 1px 0 rgba(255, 255, 255, 0.18) inset,
+      0 -1px 0 rgba(0, 0, 0, 0.18) inset,
+      0 10px 24px -10px rgba(200, 114, 46, 0.32);
+    --cc-radius: 18px;
+    --cc-hairline: 0.9;
+    --cc-focus: #d98438;
+    --cc-shadow:
+      0 30px 70px -28px rgba(0, 0, 0, 0.9),
+      0 0 0 1px rgba(255, 255, 255, 0.03) inset;
+    --cc-blur: blur(16px) saturate(1.2);
+  }
+  /* Growth layout: paper card, forest-green button with the site's 6px
+     corners, green link. Copper appears only as the small mark, the way the
+     site uses it for the eyebrow dot. */
+  .cc--light {
+    --cc-bg: #fafbf7;
+    --cc-fg: #19382f;
+    --cc-muted: #5c6b62;
+    --cc-line: #dce3d8;
+    --cc-mark: #a5603f;
+    --cc-link: #285b48;
+    --cc-btn: #285b48;
+    --cc-btn-hover: #193e31;
+    --cc-btn-ink: #fff;
+    --cc-btn-radius: 6px;
+    --cc-btn-shadow: none;
+    --cc-radius: 12px;
+    --cc-hairline: 0;
+    --cc-focus: #a5603f;
+    --cc-shadow: 0 12px 45px #254f4320;
+    --cc-blur: none;
+  }
+
+  .cc {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 70; /* above the mobile sticky bar (60) and the growth concierge (60) */
+    padding: 0 16px calc(16px + env(safe-area-inset-bottom, 0px));
+    pointer-events: none;
+    font-family: var(--body, system-ui, sans-serif);
+  }
+  .cc[hidden] {
+    display: none;
+  }
+
+  .cc-card {
+    pointer-events: auto;
+    position: relative;
+    max-width: 520px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 12px 14px;
+    align-items: start;
+    padding: 18px 18px 16px;
+    border-radius: var(--cc-radius);
+    background: var(--cc-bg);
+    color: var(--cc-fg);
+    border: 1px solid var(--cc-line);
+    box-shadow: var(--cc-shadow);
+    backdrop-filter: var(--cc-blur);
+    -webkit-backdrop-filter: var(--cc-blur);
+    transform: translateY(24px);
+    opacity: 0;
+    animation: cc-in 0.55s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+  /* A copper hairline along the top edge: the same accent the buttons and
+     eyebrows use, so the card reads as ours before a word is read. */
+  .cc-card::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: 24px;
+    right: 24px;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      var(--cc-mark) 30%,
+      var(--cc-mark) 70%,
+      transparent
+    );
+    opacity: 0.9;
+  }
+  @keyframes cc-in {
+    to {
+      transform: none;
+      opacity: 1;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .cc-card {
+      animation: none;
+      transform: none;
+      opacity: 1;
+    }
+  }
+
+  .cc-mark {
+    width: 26px;
+    height: 26px;
+    margin-top: 2px;
+    color: var(--cc-mark);
+    flex: none;
+  }
+  .cc-body {
+    min-width: 0;
+  }
+  .cc-title {
+    margin: 0 0 4px;
+    font-family: var(--display, inherit);
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+  }
+  .cc-text {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--cc-muted);
+  }
+  .cc-text a {
+    color: var(--cc-link);
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-color: color-mix(in srgb, var(--cc-link) 45%, transparent);
+    text-underline-offset: 3px;
+    white-space: nowrap;
+  }
+  .cc-text a:hover {
+    text-decoration-color: var(--cc-link);
+  }
+
+  .cc-accept {
+    grid-column: 2;
+    justify-self: start;
+    display: inline-flex;
+    align-items: center;
+    height: 44px;
+    padding: 0 22px;
+    border-radius: var(--cc-btn-radius);
+    font: inherit;
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--cc-btn-ink);
+    background: var(--cc-btn);
+    box-shadow: var(--cc-btn-shadow);
+    border: 0;
+    cursor: pointer;
+    transition:
+      transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+      background 0.25s ease;
+  }
+  .cc-accept:hover {
+    transform: translateY(-1px);
+    background: var(--cc-btn-hover);
+  }
+  .cc-accept:focus-visible {
+    outline: 2px solid var(--cc-focus);
+    outline-offset: 3px;
+  }
+
+  /* Phones: the Base layout's Call / Text bar shares the bottom edge. Step it
+     out of the way until Accept is pressed. On Growth pages, the chat widget
+     waits for consent, so the notice can use the bottom edge without overlap. */
+  @media (max-width: 719px) {
+    body:has(#cookie-banner:not([hidden])) :global(.stickybar) {
+      transform: translateY(140%);
+    }
+  }
+
+  /* Desktop: tuck it bottom-left as a card, out of the reading line and clear
+     of the growth concierge button on the right. */
+  @media (min-width: 720px) {
+    .cc {
+      padding: 0 24px 24px;
+    }
+    .cc-card {
+      margin: 0;
+      max-width: 460px;
+    }
+  }
+</style>
+
+<script is:inline>
+  (function () {
+    var KEY = 'drm_cookie_ok';
+    var el = document.getElementById('cookie-banner');
+    if (!el) return;
+    var version = el.getAttribute('data-version') || '1';
+    var read = function () {
+      try {
+        return localStorage.getItem(KEY);
+      } catch (e) {
+        return null;
+      }
+    };
+    if (read() === version) return;
+    el.hidden = false;
+    var btn = el.querySelector('[data-cc-accept]');
+    btn.addEventListener('click', function () {
+      try {
+        localStorage.setItem(KEY, version);
+      } catch (e) {}
+      /* GTM can key on this if a tag ever needs to wait for the click. */
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: 'cookie_consent',
+        cookie_consent: 'accepted',
+      });
+      el.hidden = true;
+      window.dispatchEvent(
+        new CustomEvent('drm:cookie-consent', {
+          detail: { status: 'accepted', version: version },
+        }),
+      );
+    });
+  })();
+</script>

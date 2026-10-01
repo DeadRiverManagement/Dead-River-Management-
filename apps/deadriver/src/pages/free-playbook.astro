@@ -1,0 +1,103 @@
+---
+// Ungated Scale playbook. Direct link only: noindex, omitted from the sitemap
+// and llms.txt. Nationwide Growth Partner framing.
+// Phones and tablets lead with Download. A large screen can read the PDF here.
+import Growth from '../layouts/Growth.astro';
+import Hero from '../components/growth/Hero.astro';
+import Arrow from '../components/growth/Arrow.astro';
+
+const pdf = '/downloads/dead-river-scale-playbook.pdf';
+---
+
+<Growth
+  title="Free Scale Playbook"
+  description="The Scale playbook: how growing businesses build demand, convert it, and measure what matters. Download the PDF, or read it here on a computer. Nationwide."
+  robots="noindex,nofollow"
+>
+  <Hero
+    eyebrow="Scale playbook · Nationwide"
+    title="Get found. Win the job. Know the numbers."
+    intro="That is the Scale playbook: how growing businesses build demand, convert it, and measure what matters. Download the PDF, or read it here on a computer. Nationwide."
+  >
+    <div class="button-row playbook-actions">
+      <a class="button" href={pdf} download="dead-river-scale-playbook.pdf">
+        Download PDF <Arrow />
+      </a>
+    </div>
+  </Hero>
+  <section class="section wrap">
+    <div class="playbook-outcomes">
+      <p class="eyebrow">What’s inside</p>
+      <h2>Outcomes you can use.</h2>
+      <ul class="check-list">
+        <li>Get found by people already looking for the work.</li>
+        <li>Win more of the jobs that come in — reply, book, and close.</li>
+        <li>Grow again with repeat work and a clear next step.</li>
+        <li>Know the numbers that show whether the path is working.</li>
+      </ul>
+      <p class="small">
+        Based in El Paso, Texas. Serving businesses nationwide.
+      </p>
+    </div>
+  </section>
+  <section
+    class="section wrap playbook-read"
+    aria-labelledby="playbook-pdf-heading"
+  >
+    <div class="playbook-reader">
+      <div class="playbook-reader-head">
+        <h2 id="playbook-pdf-heading">Scale playbook</h2>
+        <a class="button" href={pdf} download="dead-river-scale-playbook.pdf">
+          Download PDF <Arrow />
+        </a>
+      </div>
+      <div class="playbook-get">
+        <p>Download the PDF to read it on this device.</p>
+        <p>
+          It opens in your browser, or you can save it.{' '}
+          <a href={pdf}>Open the PDF</a>.
+        </p>
+      </div>
+      <iframe
+        class="playbook-frame"
+        src={pdf}
+        title="Dead River Scale playbook"
+        loading="lazy"
+      ></iframe>
+      <p class="small playbook-frame-note">
+        <a href={pdf} download="dead-river-scale-playbook.pdf">
+          Download the Scale playbook (PDF)
+        </a>{' '}
+        if the viewer does not load in your browser.
+      </p>
+    </div>
+    <script is:inline>
+      (function () {
+        var reader = document.querySelector('.playbook-reader');
+        var frame = reader && reader.querySelector('.playbook-frame');
+        if (!reader || !frame) return;
+        var src = frame.getAttribute('src') || '';
+        var narrow = window.matchMedia('(max-width: 759px)');
+        var coarse = window.matchMedia('(hover: none) and (pointer: coarse)');
+        var iPadOS =
+          navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1;
+        var mobileOS =
+          /iPhone|iPad|iPod|Android/i.test(navigator.userAgent || '') || iPadOS;
+        function sync() {
+          var showFrame = !narrow.matches && !coarse.matches && !mobileOS;
+          if (showFrame) {
+            reader.classList.remove('playbook-download-first');
+            if (src && frame.getAttribute('src') !== src)
+              frame.setAttribute('src', src);
+            return;
+          }
+          reader.classList.add('playbook-download-first');
+          frame.removeAttribute('src');
+        }
+        sync();
+        narrow.addEventListener('change', sync);
+        coarse.addEventListener('change', sync);
+      })();
+    </script>
+  </section>
+</Growth>

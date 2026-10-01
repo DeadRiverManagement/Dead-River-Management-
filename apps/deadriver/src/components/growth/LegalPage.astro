@@ -1,0 +1,31 @@
+---
+import Growth from '../../layouts/Growth.astro';
+import Hero from './Hero.astro';
+import { linkClients } from '../../lib/client-links';
+const { document: d } = Astro.props;
+---
+
+<Growth title={d.name} description={d.description ?? d.intro}>
+  <Hero
+    eyebrow={'Policies · Updated ' + d.updated}
+    title={d.name}
+    intro={d.intro}
+  />
+  <section class="section wrap">
+    <div class="prose">
+      {d.sections.map(([heading, body]) => (
+        <section>
+          <h2>{heading}</h2>
+          <p>{linkClients(body).map((part) => part.href ? <a class="inline-link" href={part.href}>{part.text}</a> : part.text)}</p>
+        </section>
+      ))}
+      <p class="prose-footer">
+        Questions? Email{' '}
+        <a href="mailto:brandon@deadrivermanagement.com">
+          brandon@deadrivermanagement.com
+        </a>
+        .
+      </p>
+    </div>
+  </section>
+</Growth>

@@ -1,0 +1,53 @@
+---
+import Growth from '../../layouts/Growth.astro';
+import Hero from '../../components/growth/Hero.astro';
+import Arrow from '../../components/growth/Arrow.astro';
+import CTA from '../../components/growth/CTA.astro';
+import { toolCatalog } from '../../data/growth';
+---
+
+<Growth
+  title="Free Growth Tools & Calculators"
+  description="Free ROI, budget, CAC, and SEO tools from Dead River Management. No email required. Built for growing businesses nationwide."
+>
+  <Hero
+    eyebrow="The Dead River toolkit"
+    title="Better decisions start with clearer numbers."
+    intro="Ten practical tools to understand your economics, spot gaps, and make better growth decisions. No email required to see your results."
+  />
+  <section class="section wrap">
+    <div class="section-head">
+      <h2>Free calculators and checklists</h2>
+    </div>
+    <div class="filter-row" aria-label="Filter tools">
+      {['All', 'Calculators', 'Diagnostics', 'Search & website'].map((t, i) => (
+        <button data-filter={t} aria-pressed={i === 0 ? 'true' : 'false'}>
+          {t}
+        </button>
+      ))}
+    </div>
+    <div class="resource-grid">
+      {toolCatalog.map((t) => (
+        <a
+          href={'/tools/' + t.slug}
+          class="resource-card"
+          data-category={t.category}
+        >
+          <span class="mini-label">
+            {t.category} · {t.time}
+          </span>
+          <h3>{t.name}</h3>
+          <p>{t.description}</p>
+          <span class="card-bottom">
+            Open tool <Arrow />
+          </span>
+        </a>
+      ))}
+    </div>
+    <p class="tool-help">
+      Calculators use your inputs and stated assumptions. Diagnostics are
+      self-assessments, not automated audits. Results stay in your browser.
+    </p>
+  </section>
+  <CTA />
+</Growth>

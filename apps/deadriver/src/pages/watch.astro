@@ -1,0 +1,140 @@
+---
+import Base from '../layouts/Base.astro';
+import CtaBand from '../components/CtaBand.astro';
+import CompleteCheckout from '../components/CompleteCheckout.astro';
+import ServiceWorksheet from '../components/ServiceWorksheet.astro';
+import { business } from '../data/site';
+const schema = [
+  // isAccessibleForFree false: the page is gated behind the lead form, so this
+  // declares that rather than showing a crawler something a visitor cannot get.
+  { '@context': 'https://schema.org', '@type': 'VideoObject', name: 'How Dead River Management works: the 3-minute walkthrough', description: 'How Dead River Complete works: the website, the AI assistant, follow-up, Google work, ads and the 30 leads in 60 days promise.', thumbnailUrl: `${business.url}/images/logo-mark.png`, contentUrl: `${business.url}${business.walkthroughVideo}`, uploadDate: '2026-09-16', duration: 'PT2M33S', isAccessibleForFree: false, publisher: { '@id': `${business.url}/#organization` } },
+  { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: `${business.url}/` }, { '@type': 'ListItem', position: 2, name: 'Watch', item: `${business.url}/watch` }] },
+];
+---
+<Base schema={schema} ctaLabel="Book a time" ctaHref="/book" noindex={true}>
+  <section class="ihero watch-hero" id="top">
+    <div class="wrap">
+      <div class="hero-copy">
+        <nav class="crumb reveal-up" data-d="0" aria-label="Breadcrumb"><a href="/">Home</a><span>/</span><b>Watch</b></nav>
+        <p class="eyebrow reveal-up" data-d="60">The Complete walkthrough · 2:33</p>
+        <h1>
+          <span class="line"><span>Watch the video.</span></span>
+          <span class="line"><span class="mark">Then decide.</span></span>
+        </h1>
+        <p class="lede reveal-up" data-d="420">See how Complete works and decide if it fits your business. If you have questions, book a time to meet with us. No meeting required to watch or get started.</p>
+      </div>
+
+      <div class="video reveal-up" data-d="520">
+        <video controls preload="metadata" playsinline poster="/images/walkthrough-poster.jpg" src={business.walkthroughVideo}></video>
+      </div>
+
+      <div class="hero-after">
+        <div class="hero-ctas reveal-up" data-d="640">
+          <a class="btn btn-primary" href="#buy">If it fits, start here <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="btn btn-ghost" href="/book">Questions? Book a time</a>
+        </div>
+        <ul class="trust reveal-up" data-d="740">
+          <li>2 minutes, 33 seconds</li>
+          <li>Meeting optional</li>
+          <li>12-month agreement</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head io">
+        <p class="eyebrow">What you'll see</p>
+        <h2>One system, <span class="mark">not five vendors.</span></h2>
+      </div>
+      <div class="why">
+        <div class="io hot"><h3>The phone gets answered</h3><p>We answer when you can’t. We book the job while you sleep.</p></div>
+        <div class="io" style="--d:80ms"><h3>We get you leads</h3><p>Calls, texts, and forms land in one place so jobs do not slip.</p></div>
+        <div class="io" style="--d:160ms"><h3>30 leads in 60 days or we work for free until we get them.</h3><p>The only plan with this promise. A lead is a real person who calls, texts, or fills out a form.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <ServiceWorksheet />
+
+  <CompleteCheckout />
+
+  <CtaBand kicker="Your next step" heading="Have questions?" mark="Book a time." text="Choose a time to talk through how Complete fits your business, the 30-lead promise or what getting started involves." primaryLabel="Book a time to meet" primaryHref="/book" secondaryLabel="Ready? Get started" secondaryHref="#buy" />
+
+  <script is:inline define:vars={{ adsId: business.googleAdsId, label: business.googleAdsLeadLabel, pixelId: business.fbPixelId }}>
+    document.addEventListener('DOMContentLoaded', function () {
+      /* Landing here is only proof of a lead when the form put them here.
+         A direct visit, a refresh, or a returning viewer is the same person or
+         no lead at all, so the conversion is keyed to the one-time marker the
+         form set, not to the pageview. */
+      var id = new URLSearchParams(location.search).get('lead');
+      if (!id) return;
+
+      var pending = null;
+      var counted = [];
+      try {
+        pending = localStorage.getItem('drm_lead_pending');
+        counted = JSON.parse(localStorage.getItem('drm_lead_counted') || '[]');
+      } catch (err) {}
+
+      var consent = {};
+      (window.dataLayer || []).forEach(function (command) {
+        if (command && command[0] === 'consent' && (command[1] === 'default' || command[1] === 'update')) {
+          Object.assign(consent, command[2] || {});
+        }
+      });
+      var privateVisit = window.navigator && window.navigator.globalPrivacyControl === true;
+      if (id === pending && counted.indexOf(id) < 0) {
+        if (!privateVisit && consent.analytics_storage !== 'denied' && typeof window.gtag === 'function') {
+          window.gtag('event', 'drm_legacy_inquiry_saved', {
+            send_to: 'G-5MC19Z3162', event_id: id, industry: 'other'
+          });
+        }
+        if (!privateVisit && consent.ad_storage !== 'denied' && consent.ad_user_data !== 'denied' && label && typeof window.gtag === 'function') {
+          window.gtag('event', 'conversion', { send_to: adsId + '/' + label, transaction_id: id });
+        }
+        // The shared layout initializes fbq after this page's markup. Wait for
+        // DOMContentLoaded, then queue the Lead for this pixel only. No contact
+        // details are sent. The existing success marker prevents replay.
+        if (!privateVisit && consent.ad_storage !== 'denied' && consent.ad_user_data !== 'denied' && pixelId && typeof window.fbq === 'function') {
+          window.fbq('trackSingle', pixelId, 'Lead', {}, { eventID: id });
+        }
+        try {
+          counted.push(id);
+          localStorage.setItem('drm_lead_counted', JSON.stringify(counted.slice(-50)));
+          localStorage.removeItem('drm_lead_pending');
+        } catch (err) {}
+      }
+
+      /* Strip the marker whether or not it counted, so a refresh or a copied
+         URL cannot replay it. The head tag has already recorded the pageview
+         with ?lead= on it, which is what a URL-rule conversion would match. */
+      history.replaceState(null, '', location.pathname + location.hash);
+    }, { once: true });
+  </script>
+</Base>
+
+<style is:global>
+  /* The walkthrough is shot portrait, so the hero pairs it with the copy the
+     way .plan-hero pairs copy with the guarantee card. Stacked under
+     full-width copy, a 9/16 frame left most of the row empty on desktop.
+     The video spans both rows so it sits beside the copy and the buttons. */
+  /* Empty 1fr rows top and bottom: the video is taller than the copy, and
+     without them grid hands its spare height to the gap between the lede and
+     the buttons. This centres the copy against the video instead. */
+  .watch-hero .wrap{max-width:var(--maxw);display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-rows:1fr auto auto 1fr;column-gap:clamp(32px,5vw,72px);row-gap:0}
+  .watch-hero .hero-copy{grid-column:1;grid-row:2;min-width:0}
+  .watch-hero .hero-after{grid-column:1;grid-row:3;min-width:0}
+  .watch-hero .video{grid-column:2;grid-row:1 / -1;align-self:center;margin-top:0;width:min(384px,40vh)}
+  .watch-hero .hero-ctas{margin-bottom:22px}
+  /* One column below the point where a 384px video stops leaving room to
+     read beside it. Order follows the markup: copy, video, then the buttons,
+     so nobody is asked to decide above the thing they came to watch. */
+  @media (max-width:900px){
+    .watch-hero .wrap{grid-template-columns:1fr;grid-template-rows:none;row-gap:28px}
+    .watch-hero .hero-copy,.watch-hero .video,.watch-hero .hero-after{grid-column:1;grid-row:auto}
+    .watch-hero .video{width:min(100%,384px);align-self:start}
+    .watch-hero .hero-copy .lede{margin-bottom:0}
+  }
+</style>

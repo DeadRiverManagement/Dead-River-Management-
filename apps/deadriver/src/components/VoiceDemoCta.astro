@@ -1,0 +1,24 @@
+---
+import Icons from './Icons.astro';
+import {
+  VOICE_DEMO_CTA,
+  VOICE_DEMO_NOTE,
+  VOICE_DEMO_PHONE,
+  VOICE_DEMO_PHONE_E164,
+} from '../data/site';
+---
+<section class="section" style="padding-top:0" id="hear-the-voice">
+  <div class="wrap">
+    <div class="panel io">
+      <p class="eyebrow">Hear it first</p>
+      <h2>Call and hear the voice AI pick up.</h2>
+      <p class="lede" style="margin-top:16px">{VOICE_DEMO_CTA}</p>
+      <div class="hero-ctas" style="margin-top:18px;margin-bottom:12px">
+        <a class="btn btn-primary" href={`tel:${VOICE_DEMO_PHONE_E164}`}>
+          Call {VOICE_DEMO_PHONE} <Icons name="phone" />
+        </a>
+      </div>
+      <p class="cta-note" style="margin:0">{VOICE_DEMO_NOTE}</p>
+    </div>
+  </div>
+</section>

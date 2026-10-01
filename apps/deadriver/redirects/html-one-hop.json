@@ -1,0 +1,23 @@
+[
+  {
+    "source": "/watch.html",
+    "destination": "/",
+    "statusCode": 301,
+    "preserveQueryParams": true,
+    "caseSensitive": true
+  },
+  {
+    "source": "/voiceiq-demo.html",
+    "destination": "/demo",
+    "statusCode": 301,
+    "preserveQueryParams": true,
+    "caseSensitive": true
+  },
+  {
+    "source": "/talk.html",
+    "destination": "/book",
+    "statusCode": 301,
+    "preserveQueryParams": true,
+    "caseSensitive": true
+  }
+]

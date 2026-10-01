@@ -1,0 +1,124 @@
+---
+import Growth from '../layouts/Growth.astro';
+import Hero from '../components/growth/Hero.astro';
+import Arrow from '../components/growth/Arrow.astro';
+import CTA from '../components/growth/CTA.astro';
+import { getCollection } from 'astro:content';
+const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+);
+---
+
+<Growth
+  title="Tools, Guides & Case Studies"
+  description="Free calculators, diagnostics, practical guides, and documented client work from Dead River Management to help you decide what comes next."
+>
+  <Hero
+    eyebrow="Resources"
+    title="A clearer way to think about growth."
+    intro="Tools, practical reading, and documented work to help you decide what comes next. The tools do not require your email. The Scale playbook is optional and emailed."
+  />
+  <section class="section wrap">
+    <div class="section-head">
+      <h2>Practical ways to start</h2>
+    </div>
+    <div class="feature-grid">
+      <a class="feature-panel" href="/tools">
+        <h3>Put your numbers to work.</h3>
+        <p>
+          Ten calculators, diagnostics, and site tools. A useful starting point
+          without an email gate.
+        </p>
+        <span class="text-link">
+          Open the tools <Arrow />
+        </span>
+      </a>
+      <a class="feature-panel" href="/free-playbook">
+        <h3>Free Scale playbook.</h3>
+        <p>
+          How growing businesses build demand, convert it, and measure what
+          matters. Nationwide. Optional — emailed to you.
+        </p>
+        <span class="text-link">
+          Get the playbook <Arrow />
+        </span>
+      </a>
+    </div>
+  </section>
+  <section class="section soft">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">From the resource library</p>
+          <h2>Practical reading. Useful perspective.</h2>
+        </div>
+        <a class="text-link" href="/marketing-advice">
+          Browse the full library <Arrow />
+        </a>
+      </div>
+      <div class="resource-grid">
+        {posts.slice(0, 6).map((p) => (
+          <a class="resource-card" href={'/marketing-advice/' + p.id}>
+            <span class="mini-label">{p.data.category}</span>
+            <h3>{p.data.title}</h3>
+            <p>{p.data.description}</p>
+            <span class="card-bottom">
+              Read the article <Arrow />
+            </span>
+          </a>
+        ))}
+      </div>
+      <p class="prose after-notice">
+        <a href="/advice">New advice</a> on lead response and hiring help.
+      </p>
+    </div>
+  </section>
+  <section class="section wrap split">
+    <div>
+      <p class="eyebrow">Evidence, with context</p>
+      <h2>See how the work comes together.</h2>
+    </div>
+    <div>
+      <p>
+        Explore our client work, including the documented 49-lead result for
+        <a class="inline-link" href="/work/parcel-management-group">Parcel Management Group</a>.
+      </p>
+      <a class="text-link" href="/work">
+        Read the case studies <Arrow />
+      </a>
+    </div>
+  </section>
+  <section class="section soft">
+    <div class="wrap split">
+      <div>
+        <p class="eyebrow">Common questions</p>
+        <h2>A little context before you begin.</h2>
+      </div>
+      <div class="stack">
+        <div>
+          <h3>Where should I start?</h3>
+          <p>
+            Pick the calculator or diagnostic that matches the decision in
+            front of you.
+          </p>
+        </div>
+        <div>
+          <h3>Do the tools require my email?</h3>
+          <p>
+            No. Every tool shows results on the page.
+            Requesting an emailed plan or a conversation is optional.
+          </p>
+        </div>
+        <div>
+          <h3>Are these forecasts or guarantees?</h3>
+          <p>
+            No. Calculators model your assumptions. Diagnostics use your
+            self-assessment. Case studies describe the stated account and
+            timeframe, not a universal outcome.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <CTA />
+</Growth>

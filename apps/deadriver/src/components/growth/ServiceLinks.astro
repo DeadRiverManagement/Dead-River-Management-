@@ -1,0 +1,21 @@
+---
+// A row of links from an industry or location page to the service pages
+// behind the offer. Keeps money pages and service pages linked both ways.
+import { servicePages } from '../../data/service-pages';
+const { label = 'The services behind this offer' } = Astro.props;
+---
+
+<nav class="service-links" aria-label={label}>
+  <span class="mini-label">{label}</span>
+  <ul>
+    {servicePages.map((s) => (
+      <li><a class="inline-link" href={`/services/${s.slug}`}>{s.name}</a></li>
+    ))}
+  </ul>
+</nav>
+
+<style>
+  .service-links { margin-top: 24px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 20px; }
+  .service-links .mini-label { margin: 0; }
+  .service-links ul { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 8px 20px; }
+</style>

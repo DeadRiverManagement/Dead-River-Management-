@@ -1,0 +1,77 @@
+---
+import { business } from '../data/site';
+import Icons from './Icons.astro';
+
+const trades = ['Appliance Repair','Carpenter','Carpet Cleaning','Electrician','Fencing','Flooring','Garage Door','General Contractor','Handyman','House Cleaning','HVAC','Junk Removal','Landscaper','Lawn Care','Painter','Pest Control','Plumber','Pool Cleaning','Roofing','Solar','Tree Service','Water Damage Restoration','Other home service'];
+const contactFields = [
+  { name: 'name', label: 'Your name', type: 'text', autocomplete: 'name', error: 'Enter your name.' },
+  { name: 'phone', label: 'Mobile number', type: 'tel', autocomplete: 'tel', error: 'Enter a mobile number we can text.' },
+  { name: 'email', label: 'Email', type: 'email', autocomplete: 'email', error: 'Enter an email, like name@business.com.' },
+];
+---
+<form class="leadform" id="get-video" novalidate aria-label="Get the short walkthrough" data-walkthrough-form data-lead-form data-endpoint={business.leadEndpoint} data-source="Dead River Complete walkthrough" data-success-redirect="/watch">
+  <p class="form-eyebrow">2 minutes, 33 seconds</p>
+  <h2>See if Complete fits.</h2>
+  <p class="form-intro">Watch the video, then decide. You'll see:</p>
+  <ul class="form-takeaways">
+    <li>How ads, your website and booking work together.</li>
+    <li>What happens when you miss a call.</li>
+    <li>What the 30-lead promise covers.</li>
+  </ul>
+  <p class="form-next-step">You'll also get a service-planning worksheet to keep. If you have questions after watching, you can book a time with us. A meeting is optional.</p>
+  <div class="f">
+    <input type="hidden" name="form" value="dead-river-complete-walkthrough" />
+    <p class="form-progress" data-step-progress hidden aria-live="polite">Step 1 of 2 · Your business</p>
+    <fieldset data-form-step>
+      <legend>Your business</legend>
+      <div class="fld">
+        <label for="drc-business">Business name</label>
+        <input id="drc-business" type="text" name="business_name" autocomplete="organization" required aria-describedby="drc-business-err" />
+        <p class="err" id="drc-business-err" hidden>Enter your business name.</p>
+      </div>
+      <div class="fld">
+        <label for="drc-type">What kind of work do you do?</label>
+        <select id="drc-type" name="business_type" required aria-describedby="drc-type-err">
+          <option value="" disabled selected>Select your trade</option>
+          {trades.map((t) => <option value={t}>{t}</option>)}
+        </select>
+        <p class="err" id="drc-type-err" hidden>Choose the kind of work you do.</p>
+      </div>
+      <div class="fld">
+        <label for="drc-leads">How many leads do you get a month?</label>
+        <select id="drc-leads" name="leads_per_month" required aria-describedby="drc-leads-err">
+          <option value="" disabled selected>Select a range</option>
+          {['Under 10', '10 to 25', '25 to 50', '50 to 100', 'More than 100', 'Not sure'].map((range) => <option value={range}>{range}</option>)}
+        </select>
+        <p class="err" id="drc-leads-err" hidden>Choose about how many leads you get now.</p>
+      </div>
+    </fieldset>
+    <fieldset data-form-step>
+      <legend>Your contact details</legend>
+      {contactFields.map((field) => (
+        <div class="fld">
+          <label for={`drc-${field.name}`}>{field.label}</label>
+          <input id={`drc-${field.name}`} type={field.type} name={field.name} autocomplete={field.autocomplete} required aria-describedby={`drc-${field.name}-err`} />
+          <p class="err" id={`drc-${field.name}-err`} hidden>{field.error}</p>
+        </div>
+      ))}
+    </fieldset>
+    <div class="hp" aria-hidden="true"><input name="hp_fax" tabindex="-1" autocomplete="off" /></div>
+    <button class="btn btn-primary" type="button" data-step-next hidden>Continue to the video <Icons /></button>
+    <button class="btn btn-primary" type="submit">Watch the video <Icons /></button>
+    <button class="step-back" type="button" data-step-back hidden>Back to business details</button>
+    <p class="form-consent">By submitting, you consent to contact by call, email or text for follow-up. Message and data rates may apply. Reply STOP to opt out of texts. <a href="/privacy">Privacy policy</a>.</p>
+  </div>
+  <p class="formstatus" data-form-status role="status" aria-live="polite" aria-atomic="true"></p>
+  <p class="form-commitment">Complete is a one-year contract. Ad spend is separate.</p>
+  <div class="ok" hidden>
+    <b>Here it is.</b><p>A short video. Watch it, then decide.</p>
+    <a class="btn btn-primary" href="/watch">Play the video</a>
+  </div>
+  <noscript><p>Please enable JavaScript to use this form, or call {business.phone} for the video.</p></noscript>
+</form>
+
+<script>
+  import { initWalkthroughForm } from '../scripts/walkthrough-form.js';
+  document.querySelectorAll('[data-walkthrough-form]').forEach(initWalkthroughForm);
+</script>

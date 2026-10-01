@@ -1,0 +1,86 @@
+---
+import Growth from '../layouts/Growth.astro';
+import Hero from '../components/growth/Hero.astro';
+import Arrow from '../components/growth/Arrow.astro';
+const faqs = [
+  ['What is an audience builder?', 'An audience builder lets a team combine available consumer, business, behavioral, demographic, firmographic, and intent attributes to define a more focused group for analysis or activation.'],
+  ['Can it build both B2B and B2C audiences?', 'Yes. Dead River Demand Intelligence supports both business and consumer audience use cases, subject to available data and applicable rules.'],
+  ['Where can audiences be activated?', 'Activation options can include supported advertising platforms, CRM systems, and other connected workflows. Exact destinations and match rates are confirmed during the demo.'],
+  ['Is an audience builder the same as buyer intent data?', 'No. An audience builder defines and segments a target group. Buyer intent data is one possible signal used to prioritize or refine that audience.'],
+];
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    name: 'Dead River Audience Builder',
+    applicationCategory: 'BusinessApplication',
+    operatingSystem: 'Web',
+    description: 'Build and activate focused B2B and B2C audiences using available identity, business, consumer, behavioral, and intent attributes.',
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map(([name, text]) => ({
+      '@type': 'Question',
+      name,
+      acceptedAnswer: { '@type': 'Answer', text },
+    })),
+  },
+];
+---
+
+<Growth
+  title="B2B and B2C Audience Builder"
+  description="Build focused B2B and B2C audiences using available consumer, business, behavioral and buyer-intent data, then activate them across supported platforms."
+  schema={schema}
+>
+  <Hero
+    eyebrow="Audience builder · Business and consumer targeting"
+    title="Build the audience you actually want to reach."
+    intro="Create focused B2B and B2C audiences using available business, consumer, behavioral, demographic, firmographic, identity, and buyer-intent attributes. Then activate approved audiences across supported advertising and CRM workflows."
+  >
+    <div class="button-row">
+      <a class="button" href="/demo">See the Audience Builder <Arrow /></a>
+      <a class="text-link" href="/demand-intelligence">Explore the full platform <Arrow /></a>
+    </div>
+  </Hero>
+
+  <section class="section wrap">
+    <div class="section-head">
+      <div><p class="eyebrow">Target, understand, activate</p><h2>One audience workflow for B2B and B2C.</h2></div>
+      <p>Start with who matters, refine the audience with relevant attributes, and send it into the systems where your team works.</p>
+    </div>
+    <div class="capability-grid">
+      <article><h3>Consumer audiences</h3><p>Build audiences using available demographic, household, behavioral, interest, location, and purchase-intent attributes.</p></article>
+      <article><h3>Business audiences</h3><p>Focus by industry, company characteristics, professional roles, technologies, and relevant business intent.</p></article>
+      <article><h3>Website audiences</h3><p>Use eligible visitor-identification and engagement signals to create more useful first-party audience segments.</p></article>
+      <article><h3>Activation</h3><p>Move approved audiences into supported ad platforms, CRM workflows, and other destinations.</p></article>
+    </div>
+  </section>
+
+  <section class="section soft">
+    <div class="wrap split">
+      <div><p class="eyebrow">Beyond broad targeting</p><h2>Use data to narrow the market before spending.</h2></div>
+      <div>
+        <p>Broad targeting can be useful, but it should not be the only option. An audience builder helps teams define who fits, where relevant activity is appearing, and which segments deserve testing first.</p>
+        <p>Audience estimates, destination match rates, and category availability vary. We confirm the usable scope before activation.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section wrap">
+    <div class="section-head"><div><p class="eyebrow">Common questions</p><h2>Audience builder FAQ.</h2></div></div>
+    <div class="faq-list">
+      {faqs.map(([q, a]) => <details><summary>{q}</summary><p>{a}</p></details>)}
+    </div>
+  </section>
+
+  <section class="closing wrap">
+    <div>
+      <p class="eyebrow">Build a real example</p>
+      <h2>See what the reachable audience looks like in your market.</h2>
+      <p>Bring your target customer, geography, and use case. We will show you how the audience can be defined and where it can be activated.</p>
+    </div>
+    <div class="closing-actions"><a class="button" href="/demo">Book a Demo <Arrow /></a></div>
+  </section>
+</Growth>

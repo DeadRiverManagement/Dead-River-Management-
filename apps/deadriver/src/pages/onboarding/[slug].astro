@@ -1,0 +1,30 @@
+---
+// Unlisted post-pay intake for Offer v1 and Core 3 slugs.
+// Harper emails this link after payment.
+// Field names are Casey's GHL create map (Rowan). Do not rename the shared ones.
+// noindex, kept out of the sitemap, nav, footer, and llms.txt.
+import Base from '../../layouts/Base.astro';
+import OnboardingForm from '../../components/OnboardingForm.astro';
+import { business } from '../../data/site';
+import { CORE3_SLUGS, ONBOARDING_SLUGS, onboardingPlan } from '../../data/onboarding';
+
+export function getStaticPaths() {
+  return ONBOARDING_SLUGS.map((slug) => ({ params: { slug } }));
+}
+
+const slug = Astro.params.slug ?? '';
+const plan = onboardingPlan(slug);
+if (!plan) throw new Error(`Unknown onboarding slug: ${slug}`);
+const isCore3 = (CORE3_SLUGS as readonly string[]).includes(slug);
+const pageTitle = isCore3 ? plan.name : plan.title;
+---
+
+<Base
+  title={`${pageTitle} | ${business.name}`}
+  description={plan.description}
+  noindex={true}
+  robots="noindex, nofollow"
+  landing={isCore3}
+>
+  <OnboardingForm plan={plan} />
+</Base>

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1536 1024" width="1536" height="1024" role="img" aria-label="Why Your Business Needs to Show Up in AI Search (Before Your Competitors Do)">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#16181C"/><stop offset="1" stop-color="#0E0F11"/></linearGradient>
+    <linearGradient id="copper" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#D98438"/><stop offset="1" stop-color="#8F4E1B"/></linearGradient>
+    <radialGradient id="glow" cx="85%" cy="10%" r="60%"><stop offset="0" stop-color="#C8722E" stop-opacity=".24"/><stop offset="1" stop-color="#C8722E" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="1536" height="1024" fill="url(#bg)"/>
+  <rect width="1536" height="1024" fill="url(#glow)"/>
+  <g stroke="#C8722E" stroke-opacity=".07"><line x1="0" y1="0" x2="1536" y2="0"/><line x1="0" y1="96" x2="1536" y2="96"/><line x1="0" y1="192" x2="1536" y2="192"/><line x1="0" y1="288" x2="1536" y2="288"/><line x1="0" y1="384" x2="1536" y2="384"/><line x1="0" y1="480" x2="1536" y2="480"/><line x1="0" y1="576" x2="1536" y2="576"/><line x1="0" y1="672" x2="1536" y2="672"/><line x1="0" y1="768" x2="1536" y2="768"/><line x1="0" y1="864" x2="1536" y2="864"/><line x1="0" y1="960" x2="1536" y2="960"/><line x1="0" y1="1056" x2="1536" y2="1056"/></g>
+  <rect x="96" y="120" width="60" height="4" fill="url(#copper)"/>
+  <text x="96" y="176" font-family="Space Mono, Menlo, monospace" font-size="22" letter-spacing="6" fill="#C8722E">DEAD RIVER</text>
+  <text x="96" y="470" font-family="Archivo, Helvetica, Arial, sans-serif" font-weight="800" font-size="68" fill="#F2F0EB"><tspan x="96" dy="0">Why Your Business Needs to</tspan><tspan x="96" dy="74">Show Up in AI Search</tspan><tspan x="96" dy="74">(Before Your Competitors</tspan><tspan x="96" dy="74">Do)</tspan></text>
+  <rect x="96" y="880" width="1344" height="1" fill="#C8722E" fill-opacity=".3"/>
+</svg>

@@ -1,0 +1,313 @@
+---
+import { linkClients } from '../../lib/client-links';
+// Shared booking application. Copy and the hidden industry value come from
+// src/data/book-pages.ts. Every industry posts through growth-inquiry.js and
+// lands on the shared /book/thanks calendar.
+import Growth from '../../layouts/Growth.astro';
+import type { BookPageCopy } from '../../data/book-pages';
+
+interface Props {
+  page: BookPageCopy;
+}
+
+const { page } = Astro.props;
+---
+
+<Growth title={page.title} description={page.description}>
+  <section class="page-hero wrap book-hero">
+    <p class="eyebrow">{page.eyebrow}</p>
+    <h1>{page.headline}</h1>
+    <p class="intro book-sub-desk">{page.intro}</p>
+  </section>
+
+  <section class="section wrap split book-split">
+    <div class="book-left">
+      <p class="intro book-sub-mob">{page.intro}</p>
+      <h2>What happens on this call.</h2>
+      <p>{page.happens}</p>
+      <p class="book-label">You’ll walk away with:</p>
+      <ul class="check-list">
+        {page.walkAway.map((item) => <li>{item}</li>)}
+      </ul>
+      <p class="book-strong">{page.reassurance}</p>
+      <p class="book-label">Who this is for:</p>
+      <p>{page.whoFor}</p>
+      <p class="small">
+        Available Monday through Saturday, 9 to 6 Mountain Time. Or call{' '}
+        <a href="tel:+19152283054">(915) 228-3054</a>.
+      </p>
+    </div>
+
+    <div class="book-right">
+      <form
+        class="form-card inquiry-form book-form"
+        data-kind="demandflow"
+        data-success="Thanks. Your application is received. On the next page, pick a time that works for you. Brandon will confirm within one business day."
+        data-redirect="/book/thanks"
+      >
+        <h2>Apply for a strategy call.</h2>
+        <p class="small form-lede">
+          About two minutes. Brandon replies within one
+          business day with available times.
+        </p>
+        <div class="form-grid">
+          <label class="field">
+            Your name
+            <input name="name" autocomplete="name" maxlength="120" required />
+          </label>
+          <label class="field">
+            Email
+            <input name="email" type="email" autocomplete="email" maxlength="200" required />
+          </label>
+          <label class="field">
+            Business name
+            <input name="company" autocomplete="organization" maxlength="160" required />
+          </label>
+          <label class="field">
+            Phone
+            <input name="phone" type="tel" autocomplete="tel" maxlength="40" />
+          </label>
+          <label class="field full">
+            What is your biggest bottleneck right now?
+            <select name="message" required>
+              <option value="">Choose one</option>
+              <option value="Biggest bottleneck: leads">Leads</option>
+              <option value="Biggest bottleneck: follow-up">Follow-up</option>
+              <option value="Biggest bottleneck: closing">Closing</option>
+              <option value="Biggest bottleneck: scaling">Scaling</option>
+            </select>
+          </label>
+        </div>
+        <input type="hidden" name="industry" value={page.industry} />
+        <label class="honeypot" aria-hidden="true">
+          Leave this empty
+          <input name="fax" tabindex="-1" autocomplete="off" />
+        </label>
+        <label class="checkbox-field">
+          <input type="checkbox" name="consent" required />
+          <span>It’s okay for Dead River to contact me about this request.</span>
+        </label>
+        <button class="button book-submit" type="submit">
+          Apply for My Free Strategy Call <span aria-hidden="true">→</span>
+        </button>
+        <p class="form-status" role="status" aria-live="polite"></p>
+        {page.scarcity && <p class="book-scarcity">{page.scarcity}</p>}
+        <noscript>
+          <p class="notice">
+            This form needs JavaScript. You can also email
+            brandon@deadrivermanagement.com or call (915) 228-3054.
+          </p>
+        </noscript>
+      </form>
+
+      <div class="book-proof" aria-label={page.proofTitle}>
+        {page.quote && (
+          <blockquote class="book-quote">
+            <p>“{page.quote.text}”</p>
+            <cite>{page.quote.cite}</cite>
+          </blockquote>
+        )}
+        <p class="book-proof-title">{page.proofTitle}</p>
+        <ul>
+          {page.proof.map((item) => (
+            <li>{linkClients(item).map((part) => part.href ? <a class="inline-link" href={part.href}>{part.text}</a> : part.text)}</li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="feature-panel book-trust">
+        <h3>Our guarantee, in plain English:</h3>
+        <p>{page.guarantee}</p>
+        {page.investment && <p><strong>Investment:</strong> {page.investment}</p>}
+        <h3>Common questions:</h3>
+        <ul class="check-list">
+          {page.faqs.map((item) => (
+            <li><strong>{item.q}</strong> {item.a}</li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </section>
+</Growth>
+
+<script>
+  import '../../scripts/growth-inquiry.js';
+</script>
+
+<style>
+  .book-hero h1 {
+    max-width: 900px;
+  }
+  .book-split {
+    align-items: start;
+  }
+  .book-split > * {
+    min-width: 0;
+  }
+  .book-split h2 {
+    margin-bottom: 16px;
+  }
+  .book-split p + p {
+    margin-top: 14px;
+  }
+  .book-label {
+    margin-top: 22px;
+    color: var(--ink);
+    font-weight: 600;
+  }
+  .book-strong {
+    margin-top: 18px;
+    color: var(--ink);
+    font-weight: 500;
+    font-size: 18px;
+  }
+  .book-split strong {
+    color: var(--ink);
+  }
+  .book-split .check-list li {
+    font-size: 16px;
+  }
+  .book-scarcity {
+    margin-top: 16px;
+    font-size: 14px;
+    font-weight: 600;
+    font-style: italic;
+    color: var(--copper);
+  }
+  .book-proof {
+    margin-top: 24px;
+    padding: 26px 28px;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    background: var(--paper);
+  }
+  .book-proof-title {
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+  .book-proof ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .book-proof li {
+    padding: 10px 0;
+    border-top: 1px solid var(--line);
+    font-size: 15px;
+    line-height: 1.5;
+  }
+  .book-proof li:first-child {
+    border-top: 0;
+  }
+  .book-proof li {
+    color: var(--ink);
+  }
+  .book-quote {
+    margin: 0 0 18px;
+    padding: 0 0 18px;
+    border-bottom: 1px solid var(--line);
+  }
+  .book-quote p {
+    font-family: var(--display);
+    font-size: 19px;
+    line-height: 1.35;
+    color: var(--ink);
+  }
+  .book-quote cite {
+    display: block;
+    margin-top: 8px;
+    font-size: 14px;
+    font-style: normal;
+    color: var(--muted);
+  }
+  .book-trust {
+    margin-top: 24px;
+  }
+  .book-trust h3 {
+    font-size: 21px;
+    margin-bottom: 10px;
+  }
+  .book-trust h3 + p,
+  .book-trust p + h3 {
+    margin-top: 14px;
+  }
+  .book-sub-mob {
+    display: none;
+  }
+  .book-submit {
+    width: 100%;
+    min-height: 76px;
+    padding: 22px 26px;
+    font-size: 21px;
+    font-weight: 700;
+    border-radius: 8px;
+    margin-top: 6px;
+    box-shadow: 0 10px 28px rgb(40 91 72 / 28%);
+  }
+  .book-submit span {
+    font-size: 24px;
+  }
+  @media (max-width: 860px) {
+    .book-hero {
+      padding-top: 24px;
+      padding-bottom: 8px;
+    }
+    .book-hero .eyebrow {
+      margin-bottom: 10px;
+    }
+    .book-hero h1 {
+      font-size: 30px;
+    }
+    .book-sub-desk {
+      display: none;
+    }
+    .book-sub-mob {
+      display: block;
+      margin: 0 0 28px;
+    }
+    .book-split {
+      padding-top: 12px !important;
+      gap: 40px;
+    }
+    .book-right {
+      order: -1;
+    }
+    .book-form h2 {
+      font-size: 22px;
+      margin-bottom: 6px;
+    }
+    .book-form .form-lede {
+      margin-bottom: 14px;
+    }
+  }
+  @media (max-width: 620px) {
+    .book-form {
+      padding: 20px;
+    }
+    .book-form .form-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .book-form .field {
+      font-size: 14px;
+    }
+    .book-form .field input,
+    .book-form .field select {
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+    .book-form .checkbox-field {
+      margin-top: 14px;
+    }
+    .book-submit {
+      min-height: 66px;
+      padding: 18px 12px;
+      font-size: 17px;
+      white-space: nowrap;
+    }
+    .book-submit span {
+      display: none;
+    }
+  }
+</style>

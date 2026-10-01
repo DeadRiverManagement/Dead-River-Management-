@@ -1,0 +1,24 @@
+---
+import Growth from '../layouts/Growth.astro';
+import Hero from '../components/growth/Hero.astro';
+import CTA from '../components/growth/CTA.astro';
+import Arrow from '../components/growth/Arrow.astro';
+---
+
+<Growth title="Page not found">
+  <Hero
+    eyebrow="Page not found"
+    title="That page is not here."
+    intro="It may have moved, or the address may have a typo. Here are a few places to go instead."
+  >
+    <div class="button-row">
+      <a class="button" href="/">
+        Return home <Arrow />
+      </a>
+      <a class="text-link" href="/book">
+        Talk with us <Arrow />
+      </a>
+    </div>
+  </Hero>
+  <CTA />
+</Growth>

@@ -1,0 +1,89 @@
+---
+import Growth from '../../layouts/Growth.astro';
+import Hero from '../../components/growth/Hero.astro';
+import CTA from '../../components/growth/CTA.astro';
+import CaseStudyPage from '../../components/growth/CaseStudyPage.astro';
+import PmgCaseStudy from '../../components/growth/PmgCaseStudy.astro';
+import { work } from '../../data/growth-work';
+import { caseStudyPages } from '../../data/case-study-pages';
+export function getStaticPaths() {
+  return work.map((study) => ({
+    params: { slug: study.slug },
+    props: { study },
+  }));
+}
+const { study: w } = Astro.props;
+const rewrite = caseStudyPages.find((c) => c.slug === w.slug);
+---
+
+{w.slug === 'parcel-management-group' && w.proof ? <PmgCaseStudy logo={w.logo} proof={w.proof} /> : rewrite ? <CaseStudyPage c={rewrite} logo={w.logo} /> : (
+
+<Growth title={w.seoTitle} description={w.description}>
+  <Hero eyebrow={w.category} title={w.headline} intro={w.intro}>
+    <p class="case-client">
+      <strong>{w.name}</strong>
+    </p>
+    {w.metrics && (
+      <div class="case-stats">
+        {w.metrics.map((metric) => (
+          <div>
+            <strong>{metric.value}</strong>
+            <span>{metric.label}</span>
+          </div>
+        ))}
+      </div>
+    )}
+  </Hero>
+  <section class="section wrap split case-body">
+    <div class="prose">
+      <a href="/work" class="back-link">
+        ← All case studies
+      </a>
+      {w.sections.map((section) => (
+        <section>
+          <h2>{section.heading}</h2>
+          {section.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+        </section>
+      ))}
+      <nav class="case-related" aria-label="Related services and case studies">
+        <h2>Keep exploring</h2>
+        <ul>
+          {w.related.map((link) => <li><a href={link.href}>{link.label}</a></li>)}
+        </ul>
+      </nav>
+    </div>
+    {w.proof ? (
+      <figure class="proof-image">
+        <img
+          src={w.proof.src}
+          width={w.proof.width}
+          height={w.proof.height}
+          alt={w.proof.alt}
+        />
+        <figcaption>
+          {w.proof.caption}
+        </figcaption>
+      </figure>
+    ) : (
+      <div class="case-graphic">
+        {w.logo && <img class="case-logo" src={w.logo.src} width={w.logo.width} height={w.logo.height} alt={w.name} loading="lazy" decoding="async" />}
+        <p class="eyebrow">{w.quantified ? 'The result at a glance' : 'What the project included'}</p>
+        <h2 class="case-graphic-title">{w.name}</h2>
+        <ul class="check-list">
+          {w.highlights.map((x) => (
+            <li>{x}</li>
+          ))}
+        </ul>
+      </div>
+    )}
+  </section>
+  <CTA title={w.cta.title} text={w.cta.text} />
+</Growth>
+)}
+
+<style>
+  .case-body { align-items: start; grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr); }
+  .case-related { margin-top: 44px; border-top: 1px solid var(--line); }
+  .case-logo { display: block; width: 150px; height: 116px; object-fit: contain; margin-bottom: 28px; }
+  @media (max-width: 900px) { .case-body { grid-template-columns: 1fr; } }
+</style>

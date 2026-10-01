@@ -1,0 +1,12 @@
+---
+import LegalPage from '../../components/growth/LegalPage.astro';
+import { legal } from '../../data/growth-legal';
+export function getStaticPaths() {
+  return Object.entries(legal)
+    .filter(([slug]) => !['privacy', 'terms'].includes(slug))
+    .map(([slug, document]) => ({ params: { slug }, props: { document } }));
+}
+const { document } = Astro.props;
+---
+
+<LegalPage document={document} />
