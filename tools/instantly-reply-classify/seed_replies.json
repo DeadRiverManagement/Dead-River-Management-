@@ -1,0 +1,37 @@
+[
+  {
+    "id": "seed-1",
+    "campaign": "50k in 45-60 days Med Spas",
+    "from": "drz@zhengmd.com",
+    "subject": "(reply)",
+    "body": "Thank you for your email. To book an appointment or reach our clinic, please visit our online scheduling portal or call the front desk. This is an automated response."
+  },
+  {
+    "id": "seed-2",
+    "campaign": "50k in 45-60 days Med Spas",
+    "from": "karli@nectaraesthetics.com",
+    "subject": "(reply)",
+    "body": "No thanks"
+  },
+  {
+    "id": "seed-3",
+    "campaign": "50k in 45-60 days Med Spas",
+    "from": "amy.archuleta@hausofaesthetics.com",
+    "subject": "(reply)",
+    "body": "Stop"
+  },
+  {
+    "id": "seed-4",
+    "campaign": "50k in 45-60 days Home Services",
+    "from": "bob@belairfoam.com",
+    "subject": "(reply)",
+    "body": "stop"
+  },
+  {
+    "id": "seed-5",
+    "campaign": "Data Moon HS 3K Pilot",
+    "from": "darlene@valleype.com",
+    "subject": "(reply)",
+    "body": "I am out of the office from September 24 through October 4 with limited email access. I will respond when I return."
+  }
+]
