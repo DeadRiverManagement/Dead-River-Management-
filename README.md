@@ -14,3 +14,7 @@ Run `scripts/omniroute-up.sh` once with `ANTHROPIC_API_KEY` exported. It install
 Then `omniroute launch` starts Claude Code pointed at the gateway. A plain `claude` still uses the normal login.
 
 Model ids must be `provider/model` (for example `anthropic/claude-opus-5`) or a combo name (for example `default`).
+
+## TypeSafe lab
+
+- Local lead-triage experiments: [`tools/typesafe/`](tools/typesafe/).
