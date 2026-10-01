@@ -1,0 +1,47 @@
+---
+// Confirmation after /onboarding/<slug> submit. noindex like the forms.
+import Base from '../../layouts/Base.astro';
+import { business } from '../../data/site';
+import { ONBOARDING_INBOX, ONBOARDING_PLANS } from '../../data/onboarding';
+
+const planNames = Object.fromEntries(
+  Object.values(ONBOARDING_PLANS).map((plan) => [plan.slug, plan.name]),
+);
+---
+
+<Base
+  title={`Onboarding received | ${business.name}`}
+  description="We got your onboarding details."
+  noindex={true}
+  robots="noindex, nofollow"
+>
+  <section class="wrap onb">
+    <p class="eyebrow">After you pay</p>
+    <h1>We got it.</h1>
+    <p class="lede" data-thanks-lede>
+      Onboarding will reply from
+      <a class="link" href={`mailto:${ONBOARDING_INBOX}`}>
+        {ONBOARDING_INBOX}
+      </a>
+      . That is the inbox that starts your setup.
+    </p>
+    <p>
+      Need to change something? Call or text{' '}
+      <a class="link" href={`tel:${business.phoneE164}`}>
+        {business.phone}
+      </a>
+      .
+    </p>
+  </section>
+</Base>
+
+<script define:vars={{ planNames }}>
+  (function () {
+    var slug = new URLSearchParams(window.location.search).get('plan') || '';
+    var name = planNames[slug];
+    if (!name) return;
+    var lede = document.querySelector('[data-thanks-lede]');
+    if (!lede) return;
+    lede.insertAdjacentHTML('afterbegin', name + ' details are in. ');
+  })();
+</script>

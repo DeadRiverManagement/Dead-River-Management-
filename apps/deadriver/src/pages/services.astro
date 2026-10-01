@@ -1,0 +1,84 @@
+---
+// Markup lives in src/pagehtml/services.html
+import Base from '../layouts/Base.astro';
+import html from '../pagehtml/services.html?raw';
+import script from '../pagehtml/services.script.js?raw';
+import { business } from '../data/site';
+import { planOfferCatalog } from '../lib/schema';
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    '@id': `${business.url}/services#webpage`,
+    url: `${business.url}/services`,
+    name: 'What We Do for Home Services | Dead River Management',
+    isPartOf: { '@id': `${business.url}/#website` },
+  },
+  planOfferCatalog(),
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'Dead River Management services',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, item: { '@type': 'Service', name: 'Front desk', url: `${business.url}/ai-receptionist-el-paso`, provider: { '@id': `${business.url}/#organization` } } },
+      { '@type': 'ListItem', position: 2, item: { '@type': 'Service', name: 'Websites', url: `${business.url}/web-design-el-paso`, provider: { '@id': `${business.url}/#organization` } } },
+      { '@type': 'ListItem', position: 3, item: { '@type': 'Service', name: 'Google listing', url: `${business.url}/google-business-profile-el-paso`, provider: { '@id': `${business.url}/#organization` } } },
+      { '@type': 'ListItem', position: 4, item: { '@type': 'Service', name: 'Show up in search', url: `${business.url}/local-seo-el-paso`, provider: { '@id': `${business.url}/#organization` } } },
+      { '@type': 'ListItem', position: 5, item: { '@type': 'Service', name: 'New job leads', url: `${business.url}/google-ads-management-el-paso`, provider: { '@id': `${business.url}/#organization` } } },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${business.url}/` },
+      { '@type': 'ListItem', position: 2, name: 'Services', item: `${business.url}/services` },
+    ],
+  },
+];
+---
+<Base schema={schema}>
+  <Fragment set:html={html} />
+  <script is:inline set:html={script} />
+</Base>
+<style is:global>
+/* ---------- services page only ---------- */
+.shero{position:relative;padding:clamp(48px,7vw,96px) 0 clamp(28px,4vw,40px);overflow:hidden}
+.shero::before{content:"";position:absolute;inset:-20%;background:radial-gradient(40% 40% at 80% 20%,rgba(200,114,46,.14),transparent 70%);pointer-events:none;animation:drift 18s ease-in-out infinite alternate}
+.shero .wrap{position:relative;z-index:2;max-width:900px}
+.shero h1{margin-bottom:22px;font-size:clamp(40px,6vw,80px)}
+.shero .lede{margin-bottom:30px}
+
+/* service cards */
+.svcs{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.svc{display:flex;flex-direction:column;gap:12px;background:linear-gradient(180deg,rgba(255,255,255,.025),transparent 30%),var(--ink-2);border:1px solid var(--line);border-radius:var(--r);padding:26px 24px;box-shadow:0 1px 0 rgba(255,255,255,.04) inset;transition:border-color .5s var(--ease),transform .5s var(--ease),opacity .45s var(--ease)}
+.svc:hover{border-color:var(--line-2);transform:translateY(-3px)}
+.svc.dim{opacity:.28}
+.svc .ic{width:40px;height:40px;border-radius:10px;background:var(--copper-dim);border:1px solid rgba(200,114,46,.35);display:grid;place-items:center}
+.svc .ic svg{width:20px;height:20px;color:var(--copper-2)}
+.svc h3{font-size:20px;letter-spacing:-.01em;line-height:1.15}
+.svc p{color:var(--ash);font-size:14.5px;line-height:1.5;flex:1}
+.svc .in{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:12px;color:var(--ash)}
+.svc .in b{font-weight:600;color:var(--ash);margin-right:2px}
+.svc .in span{border:1px solid var(--line-2);border-radius:999px;padding:3px 9px;color:var(--bone);font-weight:500;white-space:nowrap}
+.svc .in span.from{border-color:rgba(200,114,46,.45);background:var(--copper-dim)}
+.svc .links{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;padding-top:12px;border-top:1px solid var(--line);margin-top:2px}
+.svc .links .link{font-size:14px}
+.svc .links .muted{font-size:13px;color:var(--ash)}
+
+/* not sure strip */
+.notsure{display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center;background:var(--copper-dim);border:1px solid rgba(200,114,46,.35);border-radius:var(--r);padding:24px 26px}
+.notsure b{display:block;font-family:var(--display);font-weight:700;font-size:22px;letter-spacing:-.01em;margin-bottom:4px}
+.notsure p{color:var(--ash);font-size:15px;line-height:1.5}
+
+@media (max-width:1080px){.svcs{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:640px){.svcs{grid-template-columns:1fr}.shero h1{font-size:clamp(36px,10.5vw,46px)}.chip-f{height:38px;padding:0 12px;font-size:13.5px}.notsure{grid-template-columns:1fr}.notsure .btn{width:100%;justify-content:center}}
+
+
+/* ---------- promoted headings ----------
+   A2 retagged headings so no page skips a level. Each rule below gives
+   the promoted tag the typography its previous tag had, then re-applies
+   the container's own declarations, so nothing changes visually. */
+.svc h2{font-family:var(--display);font-weight:700;font-size:clamp(22px,2.2vw,28px);letter-spacing:-.015em;line-height:1.1;font-variation-settings:"opsz" 96;text-wrap:wrap;font-size:20px;letter-spacing:-.01em;line-height:1.15}
+</style>

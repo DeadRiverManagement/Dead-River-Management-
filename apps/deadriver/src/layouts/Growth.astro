@@ -1,0 +1,408 @@
+---
+import PreferredSource from '../components/PreferredSource.astro';
+import { Font } from 'astro:assets';
+import '../styles/growth.css';
+import Logo from '../components/growth/Logo.astro';
+import Arrow from '../components/growth/Arrow.astro';
+import CookieBanner from '../components/CookieBanner.astro';
+import { brand } from '../data/growth';
+import { business, socials } from '../data/site';
+import { socialIcons } from '../data/social-icons';
+import { servicePages, elPasoAreas } from '../data/service-pages';
+const {
+  title = 'A growth partner for businesses ready to break through the next stage',
+  description = brand.description,
+  ogImage = '/images/og/demand-flow.png',
+  schema,
+  robots = '',
+  campaign = false,
+  campaignHref = '#roofing-form',
+  campaignLabel = 'Book a free consultation',
+  campaignShort = 'Book a call',
+} = Astro.props;
+const path =
+  Astro.url.pathname
+    .replace(/\/index\.html$/, '/')
+    .replace(/\.html$/, '')
+    .replace(/\/$/, '') || '/';
+const canonical = new URL(
+  path === '/' ? '/' : path,
+  'https://www.deadrivermanagement.com',
+);
+const ogAbs = new URL(
+  ogImage,
+  'https://www.deadrivermanagement.com',
+).toString();
+const pageTitle =
+  title.endsWith(' | Dead River Management') ||
+  title.endsWith(' | Dead River Demand Intelligence') ||
+  title.endsWith(' | Demand Intelligence')
+    ? title
+    : title + ' | Dead River Management';
+const org = {
+  '@context': 'https://schema.org',
+  '@type': ['ProfessionalService', 'LocalBusiness'],
+  '@id': 'https://www.deadrivermanagement.com/#organization',
+  name: brand.name,
+  url: 'https://www.deadrivermanagement.com',
+  logo: 'https://www.deadrivermanagement.com/images/logo.png',
+  image: 'https://www.deadrivermanagement.com/images/logo.png',
+  email: brand.email,
+  telephone: '+19152283054',
+  description: brand.description,
+  // Keeps search engines from merging us with Dead River Company (New England fuel).
+  disambiguatingDescription:
+    'Dead River Management is an El Paso, Texas marketing agency serving businesses across El Paso and nationwide. Not Dead River Company, the New England fuel company.',
+  alternateName: ['Dead River Management El Paso', 'DRM El Paso'],
+  founder: {
+    '@type': 'Person',
+    name: 'Brandon Aubey',
+    jobTitle: 'Founder',
+    image: 'https://www.deadrivermanagement.com/images/brandon-aubey.jpg',
+    sameAs: business.founderSameAs ?? [],
+  },
+  knowsAbout: [
+    'Digital marketing',
+    'Google Ads management',
+    'Facebook and Instagram advertising',
+    'Search engine optimization',
+    'Local SEO',
+    'Google Business Profile optimization',
+    'Landing pages',
+    'Missed call text back',
+    'CRM and marketing automation',
+    'Lead generation',
+  ],
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'El Paso',
+    addressRegion: 'TX',
+    addressCountry: 'US',
+  },
+  // Hours match the footer: Mon to Sat, 9 to 6 Mountain.
+  openingHoursSpecification: {
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: [...business.openingHours.open.dayOfWeek],
+    opens: business.openingHours.open.opens,
+    closes: business.openingHours.open.closes,
+  },
+  areaServed: [
+    {
+      '@type': 'City',
+      name: 'El Paso',
+      containedInPlace: { '@type': 'State', name: 'Texas' },
+    },
+    ...elPasoAreas
+      .filter((a) => a !== 'El Paso')
+      .map((a) => ({ '@type': 'City', name: a.replace(', NM', '') })),
+    { '@type': 'Country', name: 'United States' },
+  ],
+  sameAs: business.sameAs ?? [],
+};
+const site = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  '@id': 'https://www.deadrivermanagement.com/#website',
+  url: 'https://www.deadrivermanagement.com',
+  name: brand.name,
+  publisher: { '@id': 'https://www.deadrivermanagement.com/#organization' },
+};
+const schemas = [org, site, ...(schema ? [schema] : [])];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    {robots && <meta name="robots" content={robots} />}
+    <link rel="canonical" href={canonical} />
+    <meta name="author" content={brand.name} />
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="icon" href="/favicon-growth.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <link
+      rel="alternate"
+      type="text/plain"
+      href="/llms.txt"
+      title="LLM information"
+    />
+    <meta name="theme-color" content="#fafbf7" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={brand.name} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogAbs} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogAbs} />
+    <Font cssVariable="--font-display" preload />
+    <Font cssVariable="--font-body" preload />
+    {schemas.map((s) => (
+      <script
+        type="application/ld+json"
+        set:html={JSON.stringify(s).replace(/</g, '\\u003c')}
+      ></script>
+    ))}
+    <!-- Google tag stub for Google Ads: the same tag the rest of the site uses.
+         Only the stub runs now; the network-heavy tags load after first paint. -->
+    <script is:inline define:vars={{ adsId: business.googleAdsId }}>
+      window.dataLayer = window.dataLayer || [];
+      window.gtag =
+        window.gtag ||
+        function () {
+          window.dataLayer.push(arguments);
+        };
+      gtag('js', new Date());
+      gtag('config', adsId);
+    </script>
+
+  </head>
+  <body>
+    <a href="#main" class="skip-link">
+      Skip to content
+    </a>
+    <header class="site-header">
+      <div class="wrap nav-wrap">
+        <a href="/" class="brand" aria-label="Dead River Management home">
+          <Logo />
+        </a>
+        {campaign ? (
+          <a class="button campaign-cta" href={campaignHref}><span class="campaign-cta-full">{campaignLabel}</span><span class="campaign-cta-short">{campaignShort}</span> <Arrow /></a>
+        ) : (<>
+        <button
+          class="menu-toggle"
+          aria-label="Open navigation"
+          aria-expanded="false"
+          aria-controls="main-nav"
+        >
+          <span></span>
+          <span></span>
+        </button>
+        <nav id="main-nav" aria-label="Main navigation">
+          <a class="mobile-home" href="/">
+            Home
+          </a>
+          <a
+            href="/demand-intelligence"
+            aria-current={path === '/demand-intelligence' ? 'page' : undefined}
+          >
+            Demand Intelligence
+          </a>
+          <details class="nav-dropdown">
+            <summary>
+              Services <span aria-hidden="true">⌄</span>
+            </summary>
+            <div>
+              {servicePages.map((sp) => (
+                <a href={`/services/${sp.slug}`}>{sp.navLabel}</a>
+              ))}
+            </div>
+          </details>
+          <a href="/work" aria-current={path === '/work' ? 'page' : undefined}>
+            Results
+          </a>
+          <a href="/company" aria-current={path === '/company' ? 'page' : undefined}>
+            Company
+          </a>
+          <a class="button secondary nav-cta" href="https://app.deadrivermanagement.com/v2/">
+            Sign in <Arrow />
+          </a>
+        </nav>
+        </>)}
+      </div>
+    </header>
+    <main id="main">
+      <slot />
+    </main>
+    {campaign ? (
+      <footer class="site-footer">
+        <div class="wrap footer-bottom">
+          <span>© {new Date().getFullYear()} Dead River Management · El Paso, Texas</span>
+          <span><a href={brand.phoneHref}>{brand.phone}</a> · <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></span>
+        </div>
+      </footer>
+    ) : (
+    <footer class="site-footer">
+      <div class="wrap footer-main">
+        <a href="/" class="brand" aria-label="Dead River Management home">
+          <Logo />
+        </a>
+        <nav class="footer-links" aria-label="Footer">
+          {[
+            ['Solutions', '/solutions'],
+            ['Work and case studies', '/work'],
+            ['Demand Intelligence', '/demand-intelligence'],
+            ...servicePages.map((sp) => [sp.navLabel, `/services/${sp.slug}`]),
+            ['Free tools', '/tools'],
+            ['Scale playbook', '/free-playbook'],
+            ['Articles', '/resources'],
+            ['Company', '/company'],
+            ['Onboarding', '/onboarding'],
+            ['El Paso, Texas', '/locations/el-paso'],
+          ].map(([label, href]) => (
+            <a href={href}>{label}</a>
+          ))}
+        </nav>
+        <div class="footer-contact">
+          <PreferredSource />
+          <a href={`mailto:${brand.email}`}>{brand.email}</a>
+          <a href={brand.phoneHref}>{brand.phone}</a>
+          <a class="footer-book" href="/book">Book a strategy call <Arrow /></a>
+          <ul class="footer-social" aria-label="Dead River Management on social media">
+            {socials.map((s) => (
+              <li>
+                <a href={s.href} rel="me noopener" target="_blank" aria-label={s.label} title={s.label}>
+                  <svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor" aria-hidden="true" focusable="false">
+                    <path d={socialIcons[s.icon]} />
+                  </svg>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+      <div class="wrap footer-bottom">
+        <span>© {new Date().getFullYear()} Dead River Management · {brand.location} · Mon to Sat, 9 to 6 Mountain</span>
+        <nav class="footer-legal" aria-label="Policies">
+          {[
+            ['Privacy', '/privacy'],
+            ['Terms', '/terms'],
+            ['Cookies', '/legal/cookies'],
+            ['Text messages', '/legal/sms'],
+            ['Results and claims', '/legal/advertising'],
+            ['Lead guarantee', '/legal/guarantee'],
+            ['Industry notes', '/legal/industries'],
+          ].map(([label, href]) => (
+            <a href={href}>{label}</a>
+          ))}
+        </nav>
+      </div>
+    </footer>
+    )}
+    <CookieBanner variant="light" />
+    <script>
+      import '../scripts/growth-shell.js';
+    </script>
+    <!-- Load third-party chat only after cookie consent. This keeps the mobile
+         notice unobstructed and avoids setting chat identifiers beforehand. -->
+    {!campaign && <script is:inline>
+      (function () {
+        var KEY = 'drm_cookie_ok';
+        var VERSION = '1';
+        var loadChat = function () {
+          if (window.__drmChatLoaded) return;
+          window.__drmChatLoaded = true;
+          var script = document.createElement('script');
+          script.async = true;
+          script.src = 'https://widgets.leadconnectorhq.com/loader.js';
+          script.setAttribute(
+            'data-resources-url',
+            'https://widgets.leadconnectorhq.com/chat-widget/loader.js',
+          );
+          script.setAttribute(
+            'data-widget-id',
+            '6a2cc5939cb8f1e129ae0769',
+          );
+          document.body.appendChild(script);
+        };
+        var hasConsent = function () {
+          try {
+            return localStorage.getItem(KEY) === VERSION;
+          } catch (e) {
+            return false;
+          }
+        };
+        if (hasConsent()) loadChat();
+        else
+          window.addEventListener(
+            'drm:cookie-consent',
+            function (event) {
+              if (event.detail && event.detail.status === 'accepted') loadChat();
+            },
+            { once: true },
+          );
+      })();
+    </script>}
+    <!-- Google Tag Manager, Google Ads, and the Meta pixel: the same tags the
+         rest of the site loads. They wait until after first paint. -->
+    <script
+      is:inline
+      define:vars={{
+        gtm: business.gtmId,
+        fb: business.fbPixelId,
+        adsId: business.googleAdsId,
+      }}
+    >
+      (function (f) {
+        if (f.fbq) return;
+        var n = (f.fbq = function () {
+          n.callMethod
+            ? n.callMethod.apply(n, arguments)
+            : n.queue.push(arguments);
+        });
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = true;
+        n.version = '2.0';
+        n.queue = [];
+      })(window);
+      fbq('init', fb);
+      fbq('track', 'PageView');
+      var loadMarketing = function () {
+        if (!['deadrivermanagement.com', 'www.deadrivermanagement.com'].includes(location.hostname)) return;
+        if (window.__drmMkt) return;
+        window.__drmMkt = true;
+        var f = document.getElementsByTagName('script')[0];
+        var add = function (src) {
+          var s = document.createElement('script');
+          s.async = true;
+          s.src = src;
+          f.parentNode.insertBefore(s, f);
+        };
+        window.dataLayer.push({
+          'gtm.start': new Date().getTime(),
+          event: 'gtm.js',
+        });
+        add('https://www.googletagmanager.com/gtm.js?id=' + gtm);
+        add('https://www.googletagmanager.com/gtag/js?id=' + adsId);
+        add('https://connect.facebook.net/en_US/fbevents.js');
+      };
+      var armMarketing = function () {
+        if (window.__drmMktArm) return;
+        window.__drmMktArm = true;
+        var start = function () {
+          loadMarketing();
+        };
+        ['pointerdown', 'keydown', 'scroll'].forEach(function (e) {
+          window.addEventListener(e, start, { once: true, passive: true });
+        });
+        if ('requestIdleCallback' in window)
+          requestIdleCallback(start, { timeout: 3500 });
+        else setTimeout(start, 3500);
+      };
+      if (document.readyState === 'complete') armMarketing();
+      else window.addEventListener('load', armMarketing);
+    </script>
+    <script>
+      import '../scripts/attribution.js';
+    </script>
+    <!-- Dead River tracking pixel: one copy on every public page. -->
+    <script is:inline type="text/javascript">
+      (function(s, p, i, c, e) {
+          if (!['deadrivermanagement.com', 'www.deadrivermanagement.com'].includes(location.hostname)) return;
+          s[e] = s[e] || function() { (s[e].a = s[e].a || []).push(arguments); };
+          s[e].l = 1 * new Date();
+          var t = new Date().getTime();
+          var k = c.createElement("script"), a = c.getElementsByTagName("script")[0];
+          k.async = 1, k.src = p + "?request_id=" + i + "&t=" + t, a.parentNode.insertBefore(k, a);
+          s.pixelClientId = i;
+      })(window, "https://app.deadrivermanagement.com/script", "dead-river-management", document, "script");
+    </script>
+  </body>
+</html>

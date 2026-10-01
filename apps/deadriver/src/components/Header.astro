@@ -1,0 +1,33 @@
+---
+// Site nav: hides on scroll down, returns on scroll up, progress hairline on top.
+// Behaviour lives in Base.astro's global script (needs #nav, #progress, #navToggle, #navMobile).
+import { business, nav } from '../data/site';
+import BrandLogo from './BrandLogo.astro';
+interface Props { ctaLabel?: string; ctaHref?: string }
+const { ctaLabel = 'See plans', ctaHref = '/plans' } = Astro.props;
+const path = Astro.url.pathname.replace(/\/index\.html$/, '/').replace(/\.html$/, '').replace(/\/$/, '') || '/';
+const planPaths = ['/essentials','/front-desk-ai','/front-desk-complete','/local-visibility','/search-growth','/paid-growth','/website','/dead-river-complete'];
+const isCurrent = (href: string) => (href === '/' ? path === '/' : path === href || path.startsWith(href + '-') || (href === '/industries-we-serve' && /-marketing-el-paso$/.test(path)) || (href === '/services' && /-el-paso$/.test(path) && !/-marketing-el-paso$/.test(path)) || (href === '/plans' && planPaths.includes(path)) || (href === '/marketing-advice' && (path.startsWith('/marketing-advice') || path === '/el-paso-home-services-marketing')));
+---
+<header class="nav" id="nav">
+  <span class="progress" id="progress" aria-hidden="true"></span>
+  <div class="wrap">
+    <a class="brand" href="/" aria-label={`${business.name} home`}>
+      <BrandLogo />
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      {nav.main.map((l) => (
+        <a href={l.href} aria-current={isCurrent(l.href) ? 'page' : undefined} style={isCurrent(l.href) ? 'color:var(--bone)' : undefined}>{l.label}</a>
+      ))}
+    </nav>
+    <div class="nav-right">
+      <a class="nav-phone" href={`tel:${business.phoneE164}`}>{business.phone}</a>
+      <a class="btn btn-primary btn-sm" href={ctaHref}>{ctaLabel}</a>
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navMobile" aria-label="Open menu"><span></span></button>
+    </div>
+  </div>
+  <nav class="nav-mobile" id="navMobile" aria-label="Mobile">
+    {nav.main.map((l) => <a href={l.href}>{l.label}</a>)}
+    <a href={`tel:${business.phoneE164}`}>{business.phone}</a>
+  </nav>
+</header>

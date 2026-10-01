@@ -1,0 +1,96 @@
+---
+import Growth from '../layouts/Growth.astro';
+import Hero from '../components/growth/Hero.astro';
+import Arrow from '../components/growth/Arrow.astro';
+const faqs = [
+  ['What is website visitor identification?', 'Website visitor identification uses available identity and business data to resolve a portion of otherwise anonymous website traffic into usable audience records. Match rates vary by traffic, geography, device, consent, and data availability.'],
+  ['Does it identify every visitor?', 'No. No responsible provider should promise that every anonymous visitor can be identified. Coverage and match rates vary, and some visitors will remain anonymous.'],
+  ['Can identified visitors be contacted automatically?', 'Identification does not itself create permission to email, call, or text someone. Any activation must follow applicable privacy, marketing, outreach, and platform rules.'],
+  ['How is this different from ordinary analytics?', 'Analytics usually reports sessions, sources, and behavior in aggregate. Visitor identification attempts to connect eligible traffic with additional person or company data so teams can build audiences and prioritize follow-up.'],
+];
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: 'Website Visitor Identification',
+    description: 'A practical guide to website visitor identification for B2B and B2C marketing and sales teams.',
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map(([name, text]) => ({
+      '@type': 'Question',
+      name,
+      acceptedAnswer: { '@type': 'Answer', text },
+    })),
+  },
+];
+---
+
+<Growth
+  title="Website Visitor Identification"
+  description="Identify a portion of anonymous website traffic, enrich eligible audience records, and activate them responsibly across sales and advertising workflows."
+  schema={schema}
+>
+  <Hero
+    eyebrow="Website visitor identification · B2B and B2C"
+    title="Turn more anonymous website activity into useful audience intelligence."
+    intro="Website visitor identification helps eligible teams understand more of the people and businesses reaching their site, enrich available records, and build better audiences for permitted sales and advertising workflows."
+  >
+    <div class="button-row">
+      <a class="button" href="/demo">See the Platform <Arrow /></a>
+      <a class="text-link" href="/demand-intelligence">Explore Demand Intelligence <Arrow /></a>
+    </div>
+  </Hero>
+
+  <section class="section wrap">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">What it does</p>
+        <h2>More context than an anonymous session.</h2>
+      </div>
+      <p>
+        Traditional analytics shows visits and behavior. Visitor identification
+        can add available identity, contact, or company context to a portion of
+        eligible traffic.
+      </p>
+    </div>
+    <div class="capability-grid">
+      <article><h3>Identify</h3><p>Resolve some eligible visitors or companies using available identity signals and data.</p></article>
+      <article><h3>Enrich</h3><p>Add useful consumer, professional, company, or behavioral attributes where available.</p></article>
+      <article><h3>Segment</h3><p>Group audiences around pages viewed, market fit, business attributes, or relevant intent.</p></article>
+      <article><h3>Activate</h3><p>Send approved audiences into connected CRM and advertising workflows where permitted.</p></article>
+    </div>
+  </section>
+
+  <section class="section soft">
+    <div class="wrap split">
+      <div>
+        <p class="eyebrow">A realistic standard</p>
+        <h2>Identification is a signal, not automatic consent.</h2>
+      </div>
+      <div>
+        <p>Not every visitor can or should be identified. Coverage varies, and identity data can be incomplete or wrong.</p>
+        <p>Use the information to improve prioritization and audience strategy. Do not treat an identified record as permission for unsolicited calls, texts, or email.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section wrap">
+    <div class="section-head">
+      <div><p class="eyebrow">Common questions</p><h2>Website visitor identification FAQ.</h2></div>
+    </div>
+    <div class="faq-list">
+      {faqs.map(([q, a]) => <details><summary>{q}</summary><p>{a}</p></details>)}
+    </div>
+  </section>
+
+  <section class="closing wrap">
+    <div>
+      <p class="eyebrow">See it in context</p>
+      <h2>Connect visitor identification with broader buyer intent.</h2>
+      <p>See how visitor identification, audience building, and purchase-intent signals work together inside Dead River Demand Intelligence.</p>
+    </div>
+    <div class="closing-actions"><a class="button" href="/demo">Book a Demo <Arrow /></a></div>
+  </section>
+</Growth>

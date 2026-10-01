@@ -1,0 +1,22 @@
+---
+interface Props {
+  theme?: 'light' | 'dark';
+}
+const { theme = 'light' } = Astro.props;
+---
+<div class="preferred-source">
+  <div google-add-preferred-source-btn data-theme={theme}></div>
+  <noscript>
+    <a href="https://www.google.com/preferences/source?q=deadrivermanagement.com">
+      Add Dead River Management as a preferred source on Google
+    </a>
+  </noscript>
+</div>
+<script is:inline async src="https://news.google.com/swg/js/v1/publisher.js"></script>
+
+<style>
+  .preferred-source {
+    margin-block: 1rem;
+    max-width: 100%;
+  }
+</style>

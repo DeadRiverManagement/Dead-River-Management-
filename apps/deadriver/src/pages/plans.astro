@@ -1,0 +1,173 @@
+---
+import Base from '../layouts/Base.astro';
+import OfferGrid from '../components/OfferGrid.astro';
+import FaqList from '../components/FaqList.astro';
+import Icons from '../components/Icons.astro';
+import { business, homeFaq, USAGE_NOTE } from '../data/site';
+import { faqPage, planOfferCatalog } from '../lib/schema';
+
+const faq = [
+  { q: 'Which plan do I need?', a: homeFaq.find((f) => f.q === 'Which plan do I need?')!.a },
+  { q: 'How much do plans cost?', a: homeFaq.find((f) => f.q === 'How much do plans cost?')!.a },
+  { q: 'Is ad spend in the plan price?', a: 'No. Paid Growth and Dead River Complete use ads. You pay that spend on the side. We do not mark it up.' },
+  { q: 'Which plans have a setup fee?', a: 'Paid Growth has a $997 setup. Dead River Complete talks setup after a short form. Front Desk, Local Visibility, Search Growth, and the website have no setup fee. Pay your first month to start Front Desk.' },
+  { q: 'How long do I sign up for?', a: 'The website is 12 months. Dead River Complete is a full plan we walk you through after the video. The other plans are month to month.' },
+  { q: 'Can I grow later?', a: 'Yes. Start with one piece. Move up when you are ready. Nothing you built is lost.' },
+  { q: 'Which plan has the 30 leads in 60 days promise?', a: homeFaq.find((f) => f.q.startsWith('How does the 30'))!.a },
+  { q: 'What about texts, calls, and AI use?', a: USAGE_NOTE },
+];
+
+const schema = [
+  { '@context': 'https://schema.org', '@type': 'WebPage', '@id': `${business.url}/plans#webpage`, url: `${business.url}/plans`, name: 'Plans & Prices | Dead River Management El Paso', isPartOf: { '@id': `${business.url}/#website` } },
+  planOfferCatalog(),
+  faqPage(faq),
+  { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: `${business.url}/` }, { '@type': 'ListItem', position: 2, name: 'Plans', item: `${business.url}/plans` }] },
+];
+---
+<Base schema={schema} ctaLabel="Call" ctaHref={`tel:${business.phoneE164}`}>
+  <section class="phero" id="top">
+    <div class="wrap">
+      <p class="eyebrow reveal-up" data-d="0">Plans and prices</p>
+      <h1>
+        <span class="line"><span>Start where it hurts.</span></span>
+        <span class="line"><span class="mark">Grow when you're ready.</span></span>
+      </h1>
+      <p class="lede reveal-up" data-d="420">Dead River runs the lead-gen and job-booking system. Start where it hurts. Pick the piece you need. The full plan shows its price after a short form.</p>
+      <div class="chooser reveal-up" data-d="560" id="chooser">
+        <div class="lbl">Pick your main problem. We will point you to a fit.</div>
+        <div class="pills" role="group" aria-label="Pick one main problem">
+          <button class="pill" data-p="calls" aria-pressed="false">I miss calls</button>
+          <button class="pill" data-p="web" aria-pressed="false">My site is the problem</button>
+          <button class="pill" data-p="google" aria-pressed="false">People can’t find me</button>
+          <button class="pill" data-p="pages" aria-pressed="false">I need more of the right people</button>
+          <button class="pill" data-p="ads" aria-pressed="false">I need a steady flow of jobs</button>
+          <button class="pill" data-p="all" aria-pressed="false">Hand us the whole thing</button>
+        </div>
+        <div class="verdict" id="verdict" aria-live="polite">
+          <div class="v-main">
+            <div class="v-eyebrow">Best fit</div>
+            <div class="v-name" id="vName"></div>
+            <div class="v-price" id="vPrice"></div>
+            <p class="v-why" id="vWhy"></p>
+            <p class="v-alt" id="vAlt"></p>
+          </div>
+          <a class="btn btn-primary btn-sm" id="vBtn" href="#">See it <Icons /></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="plans" style="padding-top:clamp(32px,4vw,56px)">
+    <div class="wrap">
+      <OfferGrid />
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0" id="faq">
+    <div class="wrap">
+      <div class="section-head io">
+        <p class="eyebrow">Questions</p>
+        <h2>Straight answers.</h2>
+      </div>
+      <FaqList items={faq} />
+    </div>
+  </section>
+
+  <section class="cta section">
+    <div class="wrap io">
+      <p class="eyebrow" style="margin-bottom:18px">Get started</p>
+      <h2>Pick a plan. <span class="mark">We start building.</span></h2>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="#plans">See the plans <Icons /></a>
+        <a class="btn btn-ghost" href={`tel:${business.phoneE164}`}>Call {business.phone}</a>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<script is:inline>
+(function(){
+  var rm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var pills = document.querySelectorAll('.pill');
+  if (!pills.length) return;
+  var TIERS = {
+    ess:{id:'tier-essentials', name:'Essentials', price:'$97/mo', url:'/essentials'},
+    ai: {id:'tier-front-desk-ai', name:'Front Desk AI', price:'$197/mo', url:'/front-desk-ai'},
+    fdc:{id:'tier-front-desk-complete', name:'Front Desk Complete', price:'$497/mo', url:'/front-desk-complete'},
+    loc:{id:'tier-local-visibility', name:'Local Visibility', price:'$297/mo', url:'/local-visibility'},
+    sg: {id:'tier-search-growth', name:'Search Growth', price:'$497/mo', url:'/search-growth'},
+    pg: {id:'tier-paid-growth', name:'Paid Growth', price:'$997/mo + $997 setup + ad spend', url:'/paid-growth'},
+    web:{id:'tier-website', name:'Website', price:'$0 design · $97/mo for 12 months', url:'/website'},
+    drc:{id:'tier-dead-river-complete', name:'Dead River Complete', price:'Full plan', url:'/dead-river-complete'}
+  };
+  function selected(){ var s={}; pills.forEach(function(p){ if(p.classList.contains('on')) s[p.getAttribute('data-p')]=true; }); return s; }
+  function decide(s){
+    if (s.all) return {k:'drc', why:'Your leads, handled by us. We get you leads. We answer when you can’t. We book the job.', alt:'If we miss 30 real leads in 60 days, we work for free until we get them.'};
+    if (s.ads) return {k:'pg', why:'A steady flow of new job leads. You pay the ad spend on the side.', alt:''};
+    if (s.pages) return {k:'sg', why:'More of the right people find you online. Two new or better pages a month.', alt:''};
+    if (s.google) return {k:'loc', why:'Show up when people near you search.', alt:''};
+    if (s.calls) return {k:'ess', why:'Never miss a job because you missed a call. We text back. No chat. No voice AI.', alt:'Need the phone picked up? Front Desk Complete answers day and night.'};
+    if (s.web) return {k:'web', why:'A site that turns searches into calls. $0 to build. $97 a month for 12 months.', alt:''};
+    return null;
+  }
+  var verdict = document.getElementById('verdict'), vName = document.getElementById('vName'), vPrice = document.getElementById('vPrice'), vWhy = document.getElementById('vWhy'), vAlt = document.getElementById('vAlt'), vBtn = document.getElementById('vBtn');
+  var current = null;
+  function highlight(id){
+    document.querySelectorAll('.tier.pick').forEach(function(t){ t.classList.remove('pick'); });
+    var t = document.getElementById(id); if (t) t.classList.add('pick');
+  }
+  function render(){
+    var d = decide(selected());
+    if (!d){ verdict.classList.remove('show'); setTimeout(function(){ if(!verdict.classList.contains('show')) verdict.style.display='none'; }, 500); highlight(null); current=null; return; }
+    var t = TIERS[d.k];
+    vName.textContent = t.name; vPrice.textContent = t.price; vWhy.textContent = d.why; vAlt.textContent = d.alt;
+    vBtn.textContent = ''; vBtn.insertAdjacentHTML('beforeend', 'See ' + t.name + ' <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>');
+    vBtn.setAttribute('href', '#' + t.id);
+    verdict.style.display='grid'; requestAnimationFrame(function(){ verdict.classList.add('show'); });
+    highlight(t.id); current = t.id;
+  }
+  pills.forEach(function(p){ p.addEventListener('click', function(){ pills.forEach(function(other){ other.classList.remove('on'); other.setAttribute('aria-pressed', 'false'); }); p.classList.add('on'); p.setAttribute('aria-pressed', 'true'); render(); }); });
+  vBtn.addEventListener('click', function(e){
+    e.preventDefault(); if (!current) return;
+    var el = document.getElementById(current);
+    if (!el) return;
+    var top = el.getBoundingClientRect().top + window.scrollY - 110;
+    window.scrollTo({top:top, behavior: rm ? 'auto' : 'smooth'});
+  });
+})();
+</script>
+<style is:global>
+.phero{position:relative;padding:clamp(56px,8vw,104px) 0 clamp(40px,5vw,64px);overflow:hidden}
+.phero::before{content:"";position:absolute;inset:-20%;background:radial-gradient(40% 40% at 80% 20%,rgba(200,114,46,.14),transparent 70%);pointer-events:none;animation:drift 18s ease-in-out infinite alternate}
+.phero .wrap{position:relative;z-index:2;max-width:900px}
+.phero .eyebrow{margin-bottom:22px;display:flex;align-items:center;gap:12px}
+.phero .eyebrow::before{content:"";width:28px;height:1px;background:var(--copper)}
+.phero h1{margin-bottom:22px;font-size:clamp(42px,6vw,80px)}
+.phero .lede{margin-bottom:36px}
+.chooser{background:linear-gradient(180deg,rgba(255,255,255,.025),transparent 30%),var(--ink-2);border:1px solid var(--line);border-radius:var(--r);padding:22px 24px}
+.chooser .lbl{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ash);margin-bottom:14px}
+.pills{display:flex;flex-wrap:wrap;gap:10px}
+.pill{display:inline-flex;align-items:center;gap:8px;height:44px;padding:0 16px;border-radius:999px;border:1px solid var(--line-2);background:rgba(255,255,255,.02);color:var(--bone);font-size:15px;font-weight:500}
+.pill::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--line-2)}
+.pill.on{border-color:var(--copper);background:var(--copper-dim)}
+.pill.on::before{background:var(--copper-2)}
+.verdict{display:none;grid-template-columns:1fr auto;gap:18px;align-items:center;margin-top:18px;padding-top:18px;border-top:1px solid var(--line)}
+.verdict.show{display:grid}
+.v-eyebrow{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--copper-2);margin-bottom:6px}
+.v-name{font-family:var(--display);font-weight:800;font-size:clamp(24px,2.6vw,32px);letter-spacing:-.02em}
+.v-price{display:inline;margin-left:10px;font-size:15px;font-weight:600;color:var(--ash)}
+.v-why{margin-top:8px;font-size:15px;color:var(--bone);line-height:1.5}
+.v-alt{margin-top:4px;font-size:13.5px;color:var(--ash);line-height:1.5}
+.v-alt:empty{display:none}
+.tier .inc{list-style:none;display:grid;gap:8px;margin:2px 0 6px;padding-top:14px;border-top:1px solid var(--line)}
+.tier .inc li{display:flex;gap:10px;font-size:14.5px;color:var(--bone);line-height:1.4}
+.tier .inc li::before{content:"";flex:none;width:16px;height:16px;margin-top:2px;border-radius:50%;background:var(--copper-dim);border:1px solid rgba(200,114,46,.4);background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23D98438' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><path d='M5 12l4 4L19 7'/></svg>");background-size:10px;background-position:center;background-repeat:no-repeat}
+.tiers-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.callout-line{margin-top:28px;color:var(--ash);font-size:15px;line-height:1.55}
+.callout-line b{color:var(--bone)}
+@media (max-width:1080px){.tiers-3{grid-template-columns:1fr}}
+@media (max-width:640px){
+  .verdict{grid-template-columns:1fr}
+  .verdict .btn{width:100%;justify-content:center}
+}
+</style>

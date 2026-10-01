@@ -1,0 +1,51 @@
+---
+import Growth from '../../layouts/Growth.astro';
+import Hero from '../../components/growth/Hero.astro';
+import Arrow from '../../components/growth/Arrow.astro';
+import { getCollection } from 'astro:content';
+const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+);
+---
+
+<Growth
+  title="Marketing Advice and Guides"
+  description="Plain-language articles from Dead River Management on getting found, websites, follow-up, and growing a local business."
+>
+  <Hero
+    eyebrow="Articles"
+    title="Ideas you can put to work this week."
+    intro="Practical guides on getting found, your website, follow-up, and growth, written for owners, not marketers."
+  />
+  <section class="section wrap">
+    <a class="back-link" href="/resources">
+      ← Tools and articles
+    </a>
+    <div class="section-head">
+      <h2>Guides worth reading</h2>
+    </div>
+    <div class="resource-grid">
+      {posts.map((p) => (
+        <a class="resource-card" href={'/marketing-advice/' + p.id}>
+          <span class="mini-label">
+            {p.data.category} ·{' '}
+            {p.data.date.toLocaleDateString('en-US', {
+              month: 'short',
+              year: 'numeric',
+              timeZone: 'UTC',
+            })}
+          </span>
+          <h3>{p.data.title}</h3>
+          <p>{p.data.description}</p>
+          <span class="card-bottom">
+            Read the article <Arrow />
+          </span>
+        </a>
+      ))}
+    </div>
+    <p class="notice">
+      Prices and plans mentioned in older articles may have changed.{' '}
+      <a href="/book">Talk through current scope</a>.
+    </p>
+  </section>
+</Growth>

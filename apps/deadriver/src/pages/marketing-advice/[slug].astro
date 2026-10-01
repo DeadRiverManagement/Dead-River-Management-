@@ -1,0 +1,83 @@
+---
+import Growth from '../../layouts/Growth.astro';
+import Hero from '../../components/growth/Hero.astro';
+import CTA from '../../components/growth/CTA.astro';
+import { getCollection, render } from 'astro:content';
+export async function getStaticPaths() {
+  return (await getCollection('blog', ({ data }) => !data.draft)).map(
+    (post) => ({ params: { slug: post.id }, props: { post } }),
+  );
+}
+const { post } = Astro.props;
+const { Content } = await render(post);
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: post.data.title,
+  description: post.data.description,
+  datePublished: post.data.date.toISOString(),
+  author: { '@type': 'Person', name: post.data.author },
+  ...(post.data.heroImage
+    ? { image: 'https://www.deadrivermanagement.com' + post.data.heroImage }
+    : {}),
+};
+---
+
+<Growth
+  title={post.data.pageTitle || post.data.title}
+  description={post.data.description}
+  schema={schema}
+  ogImage={post.data.heroImage || '/images/og/demand-flow.png'}
+>
+  <Hero
+    eyebrow={
+      post.data.category +
+      ' · ' +
+      post.data.date.toLocaleDateString('en-US', {
+        month: 'long',
+        day: 'numeric',
+        year: 'numeric',
+        timeZone: 'UTC',
+      })
+    }
+    title={post.data.headline || post.data.title}
+    intro={post.data.description}
+  />
+  <article class="section wrap">
+    <div class="prose">
+      <a class="back-link" href="/marketing-advice">
+        ← All articles
+      </a>
+      <p class="small">By {post.data.author}</p>
+      {post.data.heroImage && (
+        <img
+          class="article-hero"
+          src={post.data.heroImage}
+          width="1536"
+          height="1024"
+          alt={post.data.heroAlt || post.data.title}
+          loading="lazy"
+        />
+      )}
+      <Content />
+      {post.data.faq?.length > 0 && (
+        <>
+          <h2>{post.data.faqHeading || 'Questions'}</h2>
+          <div class="faq">
+            {post.data.faq.map((f) => (
+              <details>
+                <summary>{f.q}</summary>
+                <p>{f.a}</p>
+              </details>
+            ))}
+          </div>
+        </>
+      )}
+      <p class="notice">
+        Prices and plans mentioned in older articles may have changed.{' '}
+        <a href="/book">Talk through current scope</a>.
+      </p>
+    </div>
+  </article>
+  <CTA />
+</Growth>

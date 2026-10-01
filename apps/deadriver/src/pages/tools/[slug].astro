@@ -1,0 +1,204 @@
+---
+import Growth from '../../layouts/Growth.astro';
+import Hero from '../../components/growth/Hero.astro';
+import Arrow from '../../components/growth/Arrow.astro';
+import { toolCatalog } from '../../data/growth';
+import { numericTools, checklists } from '../../lib/growth-tools.js';
+export function getStaticPaths() {
+  return toolCatalog.map((tool) => ({
+    params: { slug: tool.slug },
+    props: { tool },
+  }));
+}
+const { tool } = Astro.props;
+const config = numericTools[tool.type];
+const checklist = checklists[tool.type];
+const toolTitle =
+  {
+    'customer-acquisition-cost': 'Free Customer Acquisition Cost Tool',
+    'seo-foundations': 'Free SEO Foundations Checklist',
+    'website-conversion': 'Free Website Conversion Review',
+  }[tool.slug] ?? tool.name + ' (free tool)';
+const toolMeta: Record<string, string> = {
+  'ad-budget':
+    'Free ad budget planner. Connect customer targets, close rate, and media spend. No email required. Built for growing businesses nationwide.',
+  'campaign-roi':
+    'Free campaign ROI calculator. See contribution left after a campaign pays for itself. No email required. For growing businesses nationwide.',
+  'campaign-url':
+    'Free campaign URL builder. Create consistent tracking links so every campaign stays measurable. No email required. Nationwide.',
+  'customer-acquisition-cost':
+    'Free CAC calculator. Understand the true cost of winning each new customer. No email required. Built for growing businesses nationwide.',
+  'growth-readiness':
+    'Free growth readiness check. See whether your systems can handle more demand before you scale spend. No email required. Nationwide.',
+  'lead-response':
+    'Free lead response scorecard. Find gaps between a new inquiry and a useful reply. No email required. For growing businesses nationwide.',
+  'search-preview':
+    'Free search snippet preview. Write a clearer page title and meta description and see how it may appear in Google. No email required.',
+  'seo-foundations':
+    'Free SEO foundations checklist. Review the essentials that help your site get found. No email required. For growing businesses nationwide.',
+  'website-conversion':
+    'Free website conversion review. Assess the path from first visit to next step. No email required. Built for growing businesses nationwide.',
+  'revenue-goal':
+    'Free revenue goal planner. Work backward from a revenue target to the leads you need. No email required. Nationwide.',
+};
+---
+
+<Growth title={toolTitle} description={toolMeta[tool.slug] ?? tool.description}>
+  <Hero
+    eyebrow={tool.category + ' · Free tool'}
+    title={tool.name}
+    intro={tool.description}
+  />
+  <section class="section wrap">
+    <a class="back-link" href="/tools">
+      ← All free tools
+    </a>
+    <div class="tool-layout" data-tool={tool.type}>
+      <form id="tool-form" class="form-card">
+        <h2>
+          {config
+            ? 'Enter your numbers'
+            : checklist
+              ? 'Tick what is true today'
+              : tool.type === 'meta'
+                ? 'Write your title and description'
+                : 'Build your link'}
+        </h2>
+        {config && (
+          <>
+            <p class="small form-lede">
+              We filled in example numbers. Replace them with your own.
+            </p>
+            {config.fields.map(([name, label, value, min, max]) => (
+              <label class="field">
+                {label}
+                <input
+                  type="number"
+                  name={name}
+                  value={value}
+                  min={min}
+                  max={max}
+                  step={name === 'customers' ? '1' : 'any'}
+                  required
+                />
+              </label>
+            ))}
+          </>
+        )}
+        {checklist && (
+          <>
+            <p class="small">
+              Be honest. This is based on your answers, not a scan of your
+              website or accounts.
+            </p>
+            {checklist.map((label, i) => (
+              <label class="check-question">
+                <input name="checks" type="checkbox" value={String(i)} />
+                <span>{label}</span>
+              </label>
+            ))}
+          </>
+        )}
+        {tool.type === 'meta' && (
+          <>
+            <label class="field">
+              Page address
+              <input
+                name="url"
+                type="url"
+                value="https://example.com/your-page"
+                required
+              />
+            </label>
+            <label class="field">
+              Page title
+              <input
+                name="title"
+                maxlength="160"
+                value="A clear title that says what this page is about"
+                required
+              />
+            </label>
+            <label class="field">
+              Description
+              <textarea
+                name="description"
+                maxlength="400"
+                required
+              >A short description of the page, who it helps, and what to do next.</textarea>
+            </label>
+          </>
+        )}
+        {tool.type === 'utm' && (
+          <>
+            <label class="field">
+              Where the link goes
+              <input
+                name="url"
+                type="url"
+                placeholder="https://yourwebsite.com/offer"
+                required
+              />
+            </label>
+            <label class="field">
+              Where you will share it{' '}
+              <span>For example: facebook, newsletter, google</span>
+              <input
+                name="source"
+                placeholder="facebook"
+                maxlength="150"
+                required
+              />
+            </label>
+            <label class="field">
+              Type of link <span>For example: ad, email, post</span>
+              <input name="medium" placeholder="ad" maxlength="150" required />
+            </label>
+            <label class="field">
+              Campaign name{' '}
+              <span>Anything that helps you recognize it later</span>
+              <input
+                name="campaign"
+                placeholder="fall-special"
+                maxlength="150"
+                required
+              />
+            </label>
+          </>
+        )}
+        <button class="button tool-submit" type="submit">
+          {checklist
+            ? 'See my score'
+            : tool.type === 'utm'
+              ? 'Build the link'
+              : 'Update results'}{' '}
+          <Arrow />
+        </button>
+        <p class="form-status" role="status" aria-live="polite"></p>
+      </form>
+      <aside class="result-card" aria-live="polite">
+        <p class="eyebrow">Your result</p>
+        <h2 id="result-title">
+          {tool.type === 'meta'
+            ? 'How it looks in Google'
+            : tool.type === 'utm'
+              ? 'Your tracking link'
+              : 'What the numbers say'}
+        </h2>
+        <div id="tool-output"></div>
+        <p>
+          {config?.method ||
+            (checklist
+              ? 'Each item is worth 20 points. The score is based only on your answers, so use it to decide what to fix first, not to compare yourself with others.'
+              : tool.type === 'meta'
+                ? 'This is a close approximation. Google sometimes rewrites or shortens titles and descriptions depending on the search and the device.'
+                : 'Paste this link into your ad or email. Google Analytics will then show you how many visits came from this campaign.')}
+        </p>
+        <p class="small">Estimates and scores are not forecasts or promises.</p>
+      </aside>
+    </div>
+  </section>
+  <script>
+    import '../../scripts/growth-tools-ui.js';
+  </script>
+</Growth>

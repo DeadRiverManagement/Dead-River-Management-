@@ -1,0 +1,238 @@
+---
+// Post-payment onboarding for Dead River Complete. Reached by the redirect set on
+// that plan's payment link, which is sent by hand once someone agrees, so this
+// is noindex and kept out of the sitemap: it is a step inside a purchase, not
+// a page for search.
+//
+// Same shape as /welcome/essentials, because the AI front office is
+// part of this plan too, plus the pieces the rest of the system needs: the
+// website, the Google profile, and the work they actually want more of.
+import Base from '../../layouts/Base.astro';
+import { business, plans } from '../../data/site';
+
+const plan = plans.find((p) => p.slug === 'dead-river-complete');
+const planName = plan ? plan.name : 'Dead River Complete';
+const arrow = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>`;
+---
+
+<Base
+  title={`Welcome to ${planName} | ${business.name}`}
+  description="Tell us about your business and we will start building your system."
+  noindex={true}
+>
+  <section class="wrap onb">
+    <p class="eyebrow">You're in</p>
+    <h1>Welcome to {planName}.</h1>
+    <p class="lede">
+      Your payment went through and the account is open. One form left. It tells us
+      what your business does, which phone to watch, and where your Google presence
+      stands today, and it is what we build the whole system from.
+    </p>
+
+    <form id="onboardForm" novalidate aria-label={`${planName} setup`}>
+      <input type="hidden" name="plan" value="dead-river-complete" />
+
+      <fieldset>
+        <legend>Who you are</legend>
+        <div class="grid-2">
+          <label>
+            Business name <span class="req">*</span>
+            <input type="text" name="business_name" required autocomplete="organization" />
+          </label>
+          <label>
+            Your first name <span class="req">*</span>
+            <input type="text" name="first_name" required autocomplete="given-name" />
+          </label>
+          <label>
+            Your last name
+            <input type="text" name="last_name" autocomplete="family-name" />
+          </label>
+          <label>
+            Email <span class="req">*</span>
+            <input type="email" name="email" required autocomplete="email" />
+          </label>
+        </div>
+        <label>
+          Your mobile <span class="req">*</span>
+          <input type="tel" name="phone" required autocomplete="tel" />
+          <small>So we can text you as each piece goes live.</small>
+        </label>
+      </fieldset>
+
+      <fieldset>
+        <legend>The phone</legend>
+        <label>
+          What do you want to do about your number? <span class="req">*</span>
+          <select name="number_choice" id="numberChoice" required>
+            <option value="">Choose one</option>
+            <option value="Port my existing number over">Port my existing number over to you</option>
+            <option value="Brand new number, nothing to keep">Set me up with a brand new number, I do not have one to keep</option>
+            <option value="Keep my number where it is, forward missed calls">Keep my number where it is and forward the missed calls</option>
+            <option value="Not sure yet, talk me through it">Not sure yet, talk me through it</option>
+          </select>
+        </label>
+        <label id="businessPhoneField" hidden>
+          Number your customers call now <span class="req">*</span>
+          <input type="tel" name="business_phone" />
+          <small>The one that rings out when you are on a job.</small>
+        </label>
+        <p class="newnum" hidden>
+          Nothing else needed here. We pick the number and send it to you to approve
+          before anything goes live.
+        </p>
+      </fieldset>
+
+      <fieldset>
+        <legend>What the AI needs to know</legend>
+        <label>
+          What do you do? <span class="req">*</span>
+          <textarea name="services" rows="3" required></textarea>
+          <small>The jobs you take and the ones you do not. This is what the AI answers questions about.</small>
+        </label>
+        <div class="grid-2">
+          <label>
+            Service area
+            <input type="text" name="service_area" />
+            <small>Neighborhoods or towns you cover.</small>
+          </label>
+          <label>
+            Business hours
+            <input type="text" name="hours" />
+            <small>And whether after-hours calls count as emergencies.</small>
+          </label>
+        </div>
+        <label>
+          Calendar to book into
+          <input type="text" name="booking_calendar" />
+          <small>The email address on the calendar you want appointments to land in.</small>
+        </label>
+        <label>
+          Anything the AI should or should not say
+          <textarea name="ai_notes" rows="3"></textarea>
+          <small>Most people tell us not to quote prices. Your call.</small>
+        </label>
+      </fieldset>
+
+      <fieldset>
+        <legend>What we are building on</legend>
+        <label>
+          Your website
+          <input type="text" name="website" placeholder="yourbusiness.com" autocomplete="url" />
+          <small>If you have one. If you do not, leave it blank and we build from scratch.</small>
+        </label>
+        <label>
+          Do you have a Google Business Profile?
+          <select name="gbp">
+            <option value="">Choose one</option>
+            <option value="Yes, and I can log in">Yes, and I can log in</option>
+            <option value="Yes, but I cannot log in">Yes, but I have lost access to it</option>
+            <option value="No">No, I do not have one</option>
+            <option value="Not sure">Not sure</option>
+          </select>
+          <small>We do not need the password here. We will walk you through access once we start.</small>
+        </label>
+        <label>
+          Which jobs do you want more of?
+          <textarea name="jobs_wanted" rows="3"></textarea>
+          <small>The work that is worth the most to you. It is what we point the ads and the Google work at.</small>
+        </label>
+      </fieldset>
+
+      <div class="hp" aria-hidden="true"><input name="company" tabindex="-1" autocomplete="off" /></div>
+
+      <button class="btn btn-primary" type="submit">Send this over <Fragment set:html={arrow} /></button>
+      <p class="fine">
+        Anything you leave blank we will ask you about. None of it is final, we tune it
+        with you once it is running.
+      </p>
+      <p class="err" hidden role="alert"></p>
+    </form>
+
+    <div class="done" hidden>
+      <h2>Got it. That is everything.</h2>
+      <p>
+        One of the three of us reads this today and starts building. We will be in
+        touch as each piece goes live, starting with the phone.
+      </p>
+      <p>
+        Need to change something or add a detail? Call or text
+        <a class="link" href={`tel:${business.phoneE164}`}>{business.phone}</a>.
+      </p>
+    </div>
+  </section>
+</Base>
+
+<script define:vars={{ phone: business.phone, phoneE164: business.phoneE164 }}>
+  (function () {
+    var form = document.getElementById('onboardForm');
+    if (!form) return;
+    var err = form.querySelector('.err');
+    var done = document.querySelector('.onb .done');
+
+    // Someone starting fresh has no existing number to give, so the number
+    // field only appears (and is only required) when there is one to talk about.
+    var choice = document.getElementById('numberChoice');
+    var phoneField = document.getElementById('businessPhoneField');
+    var phoneInput = phoneField.querySelector('input');
+    var newNumNote = form.querySelector('.newnum');
+    var NEW_NUMBER = 'Brand new number, nothing to keep';
+
+    function syncNumber() {
+      var v = choice.value;
+      var wantsExisting = v !== '' && v !== NEW_NUMBER;
+      phoneField.hidden = !wantsExisting;
+      phoneInput.required = wantsExisting;
+      if (!wantsExisting) { phoneInput.value = ''; phoneInput.classList.remove('bad'); }
+      newNumNote.hidden = v !== NEW_NUMBER;
+    }
+    choice.addEventListener('change', syncNumber);
+    syncNumber();
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      err.hidden = true;
+
+      var ok = true;
+      form.querySelectorAll('[required]').forEach(function (i) {
+        var bad = !i.value.trim() || (i.type === 'email' && i.value.indexOf('@') < 0);
+        i.classList.toggle('bad', bad);
+        if (bad && ok) { i.focus(); ok = false; }
+      });
+      if (!ok) {
+        err.textContent = 'A couple of fields still need filling in.';
+        err.hidden = false;
+        return;
+      }
+
+      var btn = form.querySelector('button[type=submit]');
+      var label = btn.innerHTML;
+      btn.disabled = true;
+      btn.textContent = 'Sending...';
+
+      var data = {};
+      new FormData(form).forEach(function (v, k) { data[k] = v; });
+
+      fetch('/api/onboard', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      })
+        .then(function (r) {
+          if (!r.ok) throw new Error('onboard ' + r.status);
+          form.hidden = true;
+          done.hidden = false;
+          done.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        })
+        .catch(function () {
+          btn.disabled = false;
+          btn.innerHTML = label;
+          // They have already paid. Never dead-end them, give them a person.
+          err.innerHTML =
+            'That did not send, and we do not want you retyping it. Your account is ' +
+            'already active. Call or text <a class="link" href="tel:' + phoneE164 + '">' +
+            phone + '</a> and we will take these details down for you.';
+          err.hidden = false;
+        });
+    });
+  })();
+</script>

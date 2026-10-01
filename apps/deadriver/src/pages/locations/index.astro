@@ -1,0 +1,44 @@
+---
+import Growth from '../../layouts/Growth.astro';
+import Hero from '../../components/growth/Hero.astro';
+import Arrow from '../../components/growth/Arrow.astro';
+import CTA from '../../components/growth/CTA.astro';
+import { locations } from '../../data/growth-locations';
+---
+
+<Growth
+  title="Where we work"
+  description="Dead River Management is based in El Paso, Texas, and works with businesses across the borderland and the United States."
+>
+  <Hero
+    eyebrow="Locations"
+    title="Based in El Paso. Built around your market."
+    intro="Your plan should reflect where and how your customers buy. We add a location page when we have something useful to say about that market."
+  />
+  <section class="section wrap">
+    <div class="section-head">
+      <h2>Markets we serve</h2>
+    </div>
+    <div class="feature-grid">
+      {locations.map((l) => (
+        <a class="feature-panel" href={'/locations/' + l.slug}>
+          <span class="number">{l.region}</span>
+          <h3>{l.name}</h3>
+          <p>{l.intro}</p>
+          <span class="text-link">
+            Our local approach <Arrow />
+          </span>
+        </a>
+      ))}
+      <article class="feature-panel">
+        <span class="number">Everywhere else</span>
+        <h3>Outside El Paso?</h3>
+        <p>
+          We work with businesses across the United States. Get in touch and we
+          will tell you honestly whether we are a good fit for your market.
+        </p>
+      </article>
+    </div>
+  </section>
+  <CTA />
+</Growth>

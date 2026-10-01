@@ -1,0 +1,23 @@
+---
+import { COMPLETE_CHECKOUT_URL } from '../data/complete-checkout';
+import { GUARANTEE_LINE, USAGE_NOTE } from '../data/site';
+import Icons from './Icons.astro';
+---
+<section class="section" id="buy" style="padding-top:0">
+  <div class="wrap buy">
+    <div class="buycard">
+      <div class="q">Watched it?</div>
+      <h2>If it fits, start here.</h2>
+      <p>We get you leads. We answer when you can’t. We book the job.</p>
+      <p>{GUARANTEE_LINE}</p>
+      <p class="fine">{USAGE_NOTE}</p>
+      <a class="btn btn-ghost btn-sm" href="/book">Questions? Book a time <Icons /></a>
+    </div>
+    <div class="checkout-block">
+      <div class="checkout" id="checkout">
+        <iframe src={COMPLETE_CHECKOUT_URL} title="Secure checkout for Dead River Complete" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+      </div>
+      <p class="checkout-fallback"><a href={COMPLETE_CHECKOUT_URL} target="_blank" rel="noopener">Open secure checkout</a></p>
+    </div>
+  </div>
+</section>

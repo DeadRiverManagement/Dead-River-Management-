@@ -1,0 +1,273 @@
+---
+// Parcel Management Group case study, coach rewrite. Its structure differs
+// from the CaseStudyPage formula (challenge, solution, results, why it worked,
+// what it means, bigger picture, next steps), so it has its own template.
+import Growth from '../../layouts/Growth.astro';
+import Arrow from './Arrow.astro';
+const { logo, proof } = Astro.props as {
+  logo?: { src: string; width: number; height: number };
+  proof: { src: string; width: number; height: number; alt: string };
+};
+const quickStats: [string, string][] = [
+  ['Industry', 'Freight consulting'],
+  ['Location', 'Ventura, CA'],
+  ['Campaign duration', '30 days'],
+  ['Total leads', '49'],
+  ['Avg cost per lead', '$17.70'],
+  ['Campaign A', '25 leads at $22.48'],
+  ['Campaign B', '24 leads at $12.72'],
+];
+---
+
+<Growth
+  title="49 Leads at $17.70 Each in 30 Days"
+  description="Parcel Management Group generated 49 Facebook leads at $17.70 each in 30 days with Meta ads, lead capture, and automated follow-up."
+>
+  <section class="page-hero wrap">
+    <p class="eyebrow">Freight consulting · Facebook lead generation</p>
+    <h1>49 Facebook leads in 30 days at $17.70 each.</h1>
+    <p class="intro">
+      For Parcel Management Group, we built a Facebook advertising system that
+      captured inquiries and followed up automatically—turning ad clicks into
+      sales conversations.
+    </p>
+    <div class="pm-hero-row">
+      {logo && <img class="pm-logo" src={logo.src} width={logo.width} height={logo.height} alt="Parcel Management Group logo" />}
+      <ul class="pm-stats">
+        <li><strong>49</strong> Facebook leads</li>
+        <li><strong>$17.70</strong> avg cost per lead</li>
+        <li><strong>30 days</strong> (Aug 11–Sep 9, 2026)</li>
+      </ul>
+    </div>
+    <a href="/work" class="back-link">← All case studies</a>
+  </section>
+
+  <section class="section soft">
+    <div class="wrap split pm-body">
+      <div class="pm-main">
+        <p class="eyebrow">The challenge</p>
+        <h2>A freight consulting business that needed a predictable source of new inquiries.</h2>
+        <p>
+          Parcel Management Group helps businesses reduce shipping costs and
+          optimize freight operations. They had a strong service offering, but
+          no consistent way to generate new leads.
+        </p>
+        <p>
+          Cold outreach wasn't scalable. Referrals were inconsistent. They
+          needed a system that could run in the background while they served
+          existing clients—something that would bring qualified prospects to
+          them, not the other way around.
+        </p>
+        <p class="pm-lead">That's where we came in.</p>
+
+        <p class="eyebrow pm-gap">The solution</p>
+        <h2>A Facebook ad campaign connected to lead capture and automatic follow-up.</h2>
+        <p>We didn't just run ads. We built the entire system behind the ads:</p>
+        <ul class="check-list">
+          <li>Facebook lead-form campaigns targeting freight decision-makers</li>
+          <li>Lead capture that pulled inquiries directly into their CRM</li>
+          <li>Automated follow-up sequences that engaged prospects immediately</li>
+          <li>Two-campaign split test to optimize cost per lead</li>
+        </ul>
+        <p class="pm-lead">
+          The goal wasn't just to generate clicks. It was to create a machine
+          that turned ad spend into sales conversations—automatically.
+        </p>
+      </div>
+      <aside class="pm-side">
+        <figure class="proof-image">
+          <img src={proof.src} width={proof.width} height={proof.height} alt={proof.alt} />
+          <figcaption>
+            Meta Ads Manager, August 11 to September 9, 2026. 49 leads at $17.70
+            average cost per lead.
+          </figcaption>
+        </figure>
+        <div class="case-graphic pm-quick">
+          <p class="eyebrow">Quick stats</p>
+          <dl>
+            {quickStats.map(([k, v]) => (
+              <div><dt>{k}</dt><dd>{v}</dd></div>
+            ))}
+          </dl>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section wrap">
+    <p class="eyebrow">The results</p>
+    <h2>49 leads in 30 days. $17.70 average cost per lead.</h2>
+    <p class="intro">
+      From August 11 to September 9, 2026, Meta Ads Manager recorded 49 Facebook
+      lead-form completions.
+    </p>
+    <div class="pm-campaigns">
+      <article>
+        <p class="mini-label">Campaign A</p>
+        <strong>25 leads</strong>
+        <p>at $22.48 each</p>
+      </article>
+      <article class="pm-win">
+        <p class="mini-label">Campaign B</p>
+        <strong>24 leads</strong>
+        <p>at $12.72 each</p>
+      </article>
+    </div>
+    <p class="pm-lead">
+      Nearly identical lead volume, but Campaign B delivered leads at 43% lower
+      cost. That's the kind of insight you get when you run structured
+      tests—and it's exactly what we use to optimize campaigns over time.
+    </p>
+  </section>
+
+  <section class="section soft">
+    <div class="wrap split pm-two">
+      <div>
+        <p class="eyebrow">Why this worked</p>
+        <h2>Lead generation isn't just about the ad. It's about what happens after the click.</h2>
+        <p>
+          Most freight companies run ads and hope someone fills out a form.
+          Then they wait. Maybe someone follows up. Maybe they don't.
+        </p>
+        <p class="pm-lead">That's not a system. That's a gamble.</p>
+      </div>
+      <div>
+        <p>For PMG, we connected three pieces:</p>
+        <ol class="pm-pieces">
+          <li><strong>The ad</strong> (Facebook lead-form campaigns)</li>
+          <li><strong>The capture</strong> (CRM integration)</li>
+          <li><strong>The follow-up</strong> (automated sequences)</li>
+        </ol>
+        <p>
+          When a prospect raised their hand, they didn't fall into a black
+          hole. They got an immediate response. The conversation started while
+          they were still interested.
+        </p>
+        <p class="pm-lead">That's the difference between a lead and a sales opportunity.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section wrap split pm-two">
+    <div>
+      <p class="eyebrow">What this means for your business</p>
+      <h2>What would 49 new inquiries do for your pipeline?</h2>
+      <p>Think about it:</p>
+      <ul class="check-list">
+        <li>49 people who raised their hand and said "I'm interested"</li>
+        <li>49 conversations your sales team didn't have to cold-start</li>
+        <li>49 opportunities to close business while you were busy serving existing clients</li>
+      </ul>
+    </div>
+    <div>
+      <p>Now ask yourself:</p>
+      <ul class="pm-q">
+        <li>Who on your team would respond to those inquiries?</li>
+        <li>Where would those conversations live?</li>
+        <li>What happens when a prospect is interested but not ready to buy yet?</li>
+      </ul>
+      <p class="pm-lead">
+        If you don't have clear answers, you don't have a system. You have a
+        hope.
+      </p>
+      <p class="pm-lead"><strong>We build systems.</strong></p>
+    </div>
+  </section>
+
+  <section class="section soft">
+    <div class="wrap">
+      <p class="eyebrow">The bigger picture</p>
+      <h2>This is what freight marketing looks like in 2026.</h2>
+      <p class="intro">
+        Freight and logistics businesses don't need more "brand awareness."
+        They need qualified inquiries from decision-makers who have a shipping
+        problem right now.
+      </p>
+      <p>Facebook advertising works for B2B freight when you:</p>
+      <ul class="check-list">
+        <li>Target the right audience (not just "business owners")</li>
+        <li>Capture leads properly (not just a contact form on your website)</li>
+        <li>Follow up automatically (not manually, days later)</li>
+      </ul>
+      <p class="pm-lead">PMG's campaign proves it. 49 leads. $17.70 each. 30 days.</p>
+      <p class="pm-lead"><strong>That's not luck. That's a system.</strong></p>
+    </div>
+  </section>
+
+  <section class="section wrap split pm-two">
+    <div>
+      <p class="eyebrow">Next steps</p>
+      <h2>Want a lead generation system that runs while you're busy running your business?</h2>
+      <p>
+        If you're tired of inconsistent lead flow and want a system that works
+        in the background, let's talk.
+      </p>
+    </div>
+    <article class="feature-panel">
+      <h3>Here's what we do:</h3>
+      <ul class="check-list">
+        <li>Build Facebook ad campaigns that target freight decision-makers</li>
+        <li>Set up lead capture and CRM integration</li>
+        <li>Create automated follow-up sequences</li>
+        <li>Optimize campaigns based on real data (not guesses)</li>
+      </ul>
+    </article>
+  </section>
+
+  <section class="closing wrap">
+    <div>
+      <h2>Ready to build your lead generation system?</h2>
+    </div>
+    <div class="closing-actions">
+      <a class="button" href="/book">Book a Strategy Call <Arrow /></a>
+      <a class="text-link" href="/solutions">See Our Lead Generation Process <Arrow /></a>
+    </div>
+  </section>
+
+  <section class="section wrap pm-explore">
+    <h2>Keep exploring</h2>
+    <ul>
+      <li><a href="/work/wicked-logistics">See how Wicked Logistics went from 1-2 leads/week to 5-6/day</a></li>
+      <li><a href="/solutions">Explore our full lead generation system</a></li>
+    </ul>
+  </section>
+</Growth>
+
+<style>
+  .pm-hero-row { display: flex; flex-wrap: wrap; align-items: center; gap: 24px 40px; margin: 32px 0 28px; }
+  .pm-logo { width: 110px; height: 110px; object-fit: contain; }
+  .pm-stats { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 12px; }
+  .pm-stats li { background: var(--sage); border: 1px solid var(--line); border-radius: 999px; padding: 10px 18px; color: var(--ink); font-size: 16px; }
+  .pm-body { align-items: start; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); }
+  .pm-body > *, .pm-two > * { min-width: 0; }
+  .pm-two { align-items: start; }
+  .pm-gap { margin-top: 48px; }
+  .pm-lead { font-size: 18px; font-weight: 500; color: var(--ink); margin: 18px 0; }
+  .pm-side { display: grid; gap: 20px; }
+  .pm-quick { min-height: 0; background: #fff; border: 1px solid var(--line); }
+  .pm-quick dl { display: grid; gap: 10px; margin: 0; }
+  .pm-quick dl div { display: grid; grid-template-columns: 150px 1fr; gap: 10px; }
+  .pm-quick dt { font-weight: 600; color: var(--ink); }
+  .pm-quick dd { margin: 0; }
+  .pm-campaigns { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; max-width: 720px; margin-top: 20px; }
+  .pm-campaigns article { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 22px; }
+  .pm-campaigns strong { display: block; font-family: var(--display); font-size: 38px; letter-spacing: -.03em; color: var(--ink); }
+  .pm-campaigns p:last-child { margin: 4px 0 0; }
+  .pm-campaigns .pm-win { border-color: var(--green); background: #e8eedf; }
+  .pm-campaigns .pm-win strong { color: var(--green); }
+  .pm-pieces { font-size: 18px; color: var(--ink); padding-left: 22px; }
+  .pm-pieces li { margin: 8px 0; }
+  .pm-q { padding-left: 20px; }
+  .pm-q li { margin: 8px 0; font-size: 17px; color: var(--ink); }
+  .pm-explore { padding-top: 0; }
+  .pm-explore h2 { font-size: 24px; margin-bottom: 10px; }
+  .pm-explore ul { padding-left: 20px; }
+  .pm-explore a { text-decoration: underline; text-underline-offset: 3px; }
+  @media (max-width: 900px) {
+    .pm-body { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 620px) {
+    .pm-campaigns { grid-template-columns: 1fr; }
+    .pm-quick dl div { grid-template-columns: 1fr; gap: 2px; }
+  }
+</style>

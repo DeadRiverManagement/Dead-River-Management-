@@ -1,0 +1,71 @@
+---
+import { plans, planGroups, GUARANTEE_LINE, USAGE_NOTE } from '../data/site';
+import Icons from './Icons.astro';
+
+interface Props { highlight?: string }
+const { highlight } = Astro.props;
+---
+<div class="ladder offer-ladder">
+  {planGroups.map((group) => {
+    const groupPlans = plans.filter((p) => p.group === group.id);
+    const isFlag = group.id === 'complete';
+    return (
+      <div class:list={['group', 'io', { 'group-flagship': isFlag }]}>
+        <div class="group-label">
+          <h2>{group.title}</h2>
+          <p>{group.lede}</p>
+        </div>
+        <div class:list={['tiers', { 'tiers-2': groupPlans.length === 2, 'tiers-3': groupPlans.length === 3 }]}>
+          {groupPlans.map((plan) => (
+            <div class:list={['tier', { flag: isFlag, hot: plan.slug === 'front-desk-ai' || plan.slug === 'paid-growth', pick: highlight === plan.slug }]} id={`tier-${plan.slug}`}>
+              {isFlag ? (
+                <div class="flag-main">
+                  <div>
+                    <span class="flag-chip">Our full plan</span>
+                    <div class="q">{plan.kicker}</div>
+                    <h3>{plan.name}</h3>
+                    <p>We handle ads, answers, booking, and follow-up.</p>
+                    <div class="flag-actions">
+                      <a class="btn btn-primary btn-sm" href={`/${plan.slug}`}>See if it fits <Icons /></a>
+                    </div>
+                    <p class="terms-line">{plan.term}</p>
+                  </div>
+                  <div class="guar">
+                    <Icons name="shield" />
+                    <div>
+                      <b>{GUARANTEE_LINE}</b>
+                      <small>A lead is a real person who calls, texts, or fills out a form. Ad spend is separate.</small>
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <>
+                  <div class="q">{plan.kicker}</div>
+                  <h3>{plan.name}</h3>
+                  <div class="price">
+                    <span class="amt">{plan.price}</span>
+                    <span class="per">{plan.priceNote}</span>
+                  </div>
+                  {plan.term && <p class="sum">{plan.term}</p>}
+                  <p>{plan.blurb}</p>
+                  <ul class="inc">
+                    {plan.features.map((f) => <li>{f}</li>)}
+                  </ul>
+                  {plan.usageNote && <p class="fine">{plan.usageNote}</p>}
+                  {plan.holdCheckout ? (
+                    <a class="btn btn-sm btn-ghost" href={`/${plan.slug}`}>See how to start <Icons /></a>
+                  ) : (
+                    <a class:list={['btn', 'btn-sm', plan.slug === 'front-desk-ai' || plan.slug === 'paid-growth' ? 'btn-primary' : 'btn-ghost']} href={plan.slug === 'website' ? '/website' : (plan.paymentLink ?? `/${plan.slug}`)}>
+                      {plan.slug === 'website' ? 'See the Website plan' : plan.cta} <Icons />
+                    </a>
+                  )}
+                </>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+    );
+  })}
+</div>
+<p class="usage-note io">{USAGE_NOTE}</p>

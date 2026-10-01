@@ -1,0 +1,134 @@
+---
+import Growth from '../../layouts/Growth.astro';
+import Hero from '../../components/growth/Hero.astro';
+import AdviceCta from '../../components/growth/AdviceCta.astro';
+import { leadResponse, postSchema } from '../../data/advice-wave-b';
+const post = leadResponse;
+---
+
+<Growth
+  title={post.title}
+  description={post.description}
+  schema={postSchema(post)}
+  robots="index, follow"
+>
+  <Hero eyebrow={post.eyebrow} title={post.h1} intro={post.lede} />
+  <article class="section wrap">
+    <div class="prose">
+      <a class="back-link" href="/advice">
+        ← Advice
+      </a>
+      <h2>What “speed-to-lead” means here</h2>
+      <p>
+        Speed-to-lead is the time from a form, a call, or a chat to a human
+        reply that can book the job. The clock starts when the inquiry reaches
+        you. It stops when a person who can put work on the calendar actually
+        connects.
+      </p>
+      <p>
+        An auto-text that says “we got it” is not that reply. It can hold the
+        thread. It cannot book the job.
+      </p>
+      <p>
+        Count nights and weekends the same as Tuesday at noon. If the phone
+        rings after hours and nobody who can book answers, that minute still
+        counts. The homeowner does not pause their problem until your office
+        opens.
+      </p>
+      <h2>Why more ad spend won’t fix a slow phone</h2>
+      <p>
+        You already paid for the attention. Delay hands that person to the next
+        company that picks up. Another ad dollar does not call them back.
+      </p>
+      <p>
+        Missed calls and hour-later callbacks show up as “bad leads” in the
+        report when they were late replies. The form was real. The job went to
+        whoever answered.
+      </p>
+      <p>
+        Measure booked jobs, not form fills. A full inbox and a quiet calendar
+        usually means the phone was slow. Buy more clicks only after the replies
+        are holding.
+      </p>
+      <h2>Targets that actually change the calendar</h2>
+      <p>
+        Aim to answer or return the call in minutes, not “same day.” Same-day is
+        a long gap when the next company is already on the way.
+      </p>
+      <p>
+        After hours, a covered line beats a voicemail box that gets checked at
+        8am. The job that needed you tonight is often booked by morning.
+      </p>
+      <p>
+        One owner on a truck needs a backup—person, service, or shared queue—not
+        hope. If you are on a job, someone else has to be able to book the next
+        one.
+      </p>
+      <h2>A simple weekly scoreboard</h2>
+      <p>Review these four numbers before you raise the budget.</p>
+      <ul>
+        <li>Missed calls</li>
+        <li>Median callback time</li>
+        <li>Booked appointments from inbound</li>
+        <li>No-shows (separate problem; don’t mix with speed)</li>
+      </ul>
+      <p>
+        Missed calls and callback time show whether a person got there in
+        minutes. Booked appointments show whether that speed became work.
+        No-shows stay on the board so you can see them, and off the speed line
+        so they do not excuse a late reply.
+      </p>
+      <p>
+        For a plain check of the gap between a new inquiry and a useful reply,
+        use the free{' '}
+        <a href="/tools/lead-response">lead response scorecard</a>. It does not
+        replace the weekly numbers.
+      </p>
+    </div>
+    <AdviceCta />
+    <div class="prose">
+      <h2>Fixes that usually pay before new campaigns</h2>
+      <p>Do these before you fund another campaign.</p>
+      <ul>
+        <li>
+          Call routing that rings a live person, including when the owner is
+          already on a job.
+        </li>
+        <li>
+          A missed-call text within a minute that offers two bookable times.
+          That text has to lead to a person who can book, not a note that only
+          says you saw it.
+        </li>
+        <li>
+          A calendar link only after a human qualifies the job. The link is
+          optional, and it does not belong in the first auto-reply.
+        </li>
+        <li>
+          Stop judging channels until response time is stable. A slow phone
+          makes every source look like a bad lead.
+        </li>
+      </ul>
+      <p>
+        Intake, or the front desk in plain language, is who answers, how fast,
+        and whether they can book. Get that stable. Then decide if you still
+        need more traffic.
+      </p>
+      <h2>Questions</h2>
+      <div class="faq">
+        {post.faq.map((item) => (
+          <details>
+            <summary>{item.q}</summary>
+            <p>{item.a}</p>
+          </details>
+        ))}
+      </div>
+      <p>
+        <a href="/advice">Advice</a>·
+        <a href="/advice/after-a-bad-agency">
+          What to ask after a marketing agency burned you
+        </a>
+      </p>
+    </div>
+  </article>
+  <AdviceCta headline={post.ctaHeadline} body={post.ctaBody} />
+</Growth>

@@ -17,3 +17,7 @@ Model ids must be `provider/model` (for example `anthropic/claude-opus-5`) or a 
 
 - [`tools/typesafe-lead-triage/`](tools/typesafe-lead-triage/) — TypeSafe lead triage lab (lab only, not production wiring).
 - [`tools/instantly-reply-classify/`](tools/instantly-reply-classify/) — Instantly reply classify (classify only; no Instantly API mutations).
+
+## Apps
+
+- `apps/deadriver/` — Dead River Management public site (imported from `deadrivermanagement-site`; git history remains in that repo until Phase B).

@@ -1,0 +1,424 @@
+---
+import { Font } from 'astro:assets';
+import '../styles/global.css';
+import { business, ORG_DESCRIPTION } from '../data/site';
+import { brand } from '../data/growth';
+import { seo } from '../data/seo';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import StickyBar from '../components/StickyBar.astro';
+import BrandLogo from '../components/BrandLogo.astro';
+import CookieBanner from '../components/CookieBanner.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+  ogImage?: string;
+  schema?: object | object[];
+  noindex?: boolean;
+  robots?: string;
+  ctaLabel?: string;
+  ctaHref?: string;
+  landing?: boolean;
+  landingScope?: string;
+  landingPlace?: string;
+}
+
+// With `build.format: 'file'` Astro reports pathnames like `/plans.html` (and
+// `/index.html` for the homepage) at build time. Normalize to the clean route
+// so the seo lookup and canonical URL work for every page.
+const path =
+  Astro.url.pathname
+    .replace(/\/index\.html$/, '/')
+    .replace(/\.html$/, '')
+    .replace(/\/$/, '') || '/';
+const fallback = seo[path] ?? seo['/'];
+const {
+  title = fallback.title,
+  description = fallback.description,
+  ogImage = '/images/og/brand.png',
+  schema,
+  noindex = false,
+  robots,
+  ctaLabel,
+  ctaHref,
+  landing = false,
+  landingScope = 'Serving businesses nationwide',
+  landingPlace = 'Based in Texas · nationwide',
+} = Astro.props;
+const robotsContent = robots ?? (noindex ? 'noindex' : '');
+
+const canonical = new URL(path === '/' ? '/' : path, Astro.site).toString();
+const ogAbs = new URL(ogImage, Astro.site).toString();
+
+const offerOrgSchema = {
+  '@context': 'https://schema.org',
+  '@type': ['ProfessionalService', 'LocalBusiness'],
+  '@id': `${business.url}/#organization`,
+  name: business.name,
+  alternateName: [...business.alternateName],
+  url: business.url,
+  logo: `${business.url}/images/logo.png`,
+  image: `${business.url}/images/logo.png`,
+  telephone: business.phoneE164,
+  email: business.email,
+  description: ORG_DESCRIPTION,
+  disambiguatingDescription: business.disambiguatingDescription,
+  founder: {
+    '@type': 'Person',
+    name: business.founder,
+    jobTitle: business.founderTitle,
+    sameAs: business.founderSameAs ?? [],
+  },
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: business.city,
+    addressRegion: business.region,
+    addressCountry: business.country,
+  },
+  openingHoursSpecification: [
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: [...business.openingHours.open.dayOfWeek],
+      opens: business.openingHours.open.opens,
+      closes: business.openingHours.open.closes,
+    },
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: [...business.openingHours.closed.dayOfWeek],
+      opens: '00:00',
+      closes: '00:00',
+    },
+  ],
+  openingHours: 'Mo-Sa 09:00-18:00',
+  areaServed: [
+    { '@type': 'City', name: 'El Paso', containedInPlace: { '@type': 'State', name: 'Texas' } },
+    ...business.serviceArea.map((n) => ({ '@type': 'Place', name: n })),
+  ],
+  priceRange: '$97 - $997 per month',
+  sameAs: business.sameAs ?? [],
+};
+
+// Landing pages (Core3 onboarding) publish the same nationwide org as Growth.astro.
+const nationwideOrgSchema = {
+  '@context': 'https://schema.org',
+  '@type': ['ProfessionalService', 'LocalBusiness'],
+  '@id': 'https://www.deadrivermanagement.com/#organization',
+  name: brand.name,
+  url: 'https://www.deadrivermanagement.com',
+  logo: 'https://www.deadrivermanagement.com/images/logo.png',
+  image: 'https://www.deadrivermanagement.com/images/logo.png',
+  email: brand.email,
+  telephone: '+19152283054',
+  description: brand.description,
+  founder: { '@type': 'Person', name: 'Brandon Aubey', jobTitle: 'Founder' },
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'El Paso',
+    addressRegion: 'TX',
+    addressCountry: 'US',
+  },
+  areaServed: [
+    {
+      '@type': 'City',
+      name: 'El Paso',
+      containedInPlace: { '@type': 'State', name: 'Texas' },
+    },
+    { '@type': 'Country', name: 'United States' },
+  ],
+  sameAs: business.sameAs ?? [],
+};
+
+const orgSchema = landing ? nationwideOrgSchema : offerOrgSchema;
+
+const siteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  '@id': `${business.url}/#website`,
+  url: business.url,
+  name: business.name,
+  publisher: { '@id': `${business.url}/#organization` },
+};
+
+const schemas = [orgSchema, siteSchema, ...(Array.isArray(schema) ? schema : schema ? [schema] : [])];
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    {robotsContent && <meta name="robots" content={robotsContent} />}
+    <meta name="author" content={business.name} />
+    <meta name="theme-color" content="#0E0F11" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={business.name} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogAbs} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogAbs} />
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM information" />
+    <Font cssVariable="--font-display" preload />
+    <Font cssVariable="--font-body" />
+    {schemas.map((s) => <script type="application/ld+json" set:html={JSON.stringify(s)} />)}
+    <!-- Google tag (gtag.js) for Google Ads. In the shared layout so it loads
+         once on every page, including gated and post-pay routes. This is the
+         same tag already live on production: one copy, defined here only.
+         GTM shares the dataLayer, which is expected, and does not fire this Ads
+         id. The conversion event lives on /watch, not here.
+         Stubs run now so /watch can queue a conversion; the network-heavy GTM /
+         Ads / Meta scripts wait until load so they do not compete with LCP. -->
+    <script is:inline define:vars={{ adsId: business.googleAdsId }}>
+      /* Tiny stub only. window.gtag, not a bare declaration: define:vars wraps
+         this block in a function, so a declared gtag would be private and the
+         conversion snippet on /watch would not find it. The network-heavy GTM /
+         Ads / Meta tags load after first paint. */
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
+      gtag('js', new Date());
+      gtag('config', adsId);
+    </script>
+
+  </head>
+  <body class:list={{ 'landing-page': landing }}>
+    {landing ? (
+      <header class="landing-header wrap">
+        <a class="skip-link" href="#main-content">Skip to content</a>
+        <div class="landing-brand"><BrandLogo /></div>
+        <span class="landing-scope">{landingScope}</span>
+      </header>
+    ) : <Header ctaLabel={ctaLabel} ctaHref={ctaHref} />}
+    <main id="main-content">
+      <slot />
+    </main>
+    {landing ? (
+      <footer class="landing-footer">
+        <div class="wrap">
+          <span>© {new Date().getFullYear()} {business.name} · {landingPlace}</span>
+          <nav aria-label="Legal"><a href="/privacy">Privacy policy</a><a href="/terms">Terms of service</a></nav>
+        </div>
+      </footer>
+    ) : <><StickyBar /><Footer /></>}
+    <CookieBanner />
+    <script is:inline define:vars={{ gtm: business.gtmId, fb: business.fbPixelId, adsId: business.googleAdsId }}>
+      (function (f) {
+        if (f.fbq) return;
+        var n = f.fbq = function () { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments); };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = true;
+        n.version = '2.0';
+        n.queue = [];
+      })(window);
+      fbq('init', fb);
+      fbq('track', 'PageView');
+      var loadMarketing = function () {
+        if (!['deadrivermanagement.com', 'www.deadrivermanagement.com'].includes(location.hostname)) return;
+        if (window.__drmMkt) return;
+        window.__drmMkt = true;
+        var f = document.getElementsByTagName('script')[0];
+        var add = function (src) {
+          var s = document.createElement('script');
+          s.async = true;
+          s.src = src;
+          f.parentNode.insertBefore(s, f);
+        };
+        window.dataLayer.push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+        add('https://www.googletagmanager.com/gtm.js?id=' + gtm);
+        add('https://www.googletagmanager.com/gtag/js?id=' + adsId);
+        add('https://connect.facebook.net/en_US/fbevents.js');
+      };
+      var armMarketing = function () {
+        if (window.__drmMktArm) return;
+        window.__drmMktArm = true;
+        var start = function () { loadMarketing(); };
+        ['pointerdown', 'keydown', 'scroll'].forEach(function (e) {
+          window.addEventListener(e, start, { once: true, passive: true });
+        });
+        if ('requestIdleCallback' in window) requestIdleCallback(start, { timeout: 3500 });
+        else setTimeout(start, 3500);
+      };
+      if (document.readyState === 'complete') armMarketing();
+      else window.addEventListener('load', armMarketing);
+    </script>
+    <script is:inline>
+      /* Site-wide behaviour: nav, sticky bar, reveals, steps, lead forms. Page-specific animation lives in each page. */
+      (function(){
+        var rm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        var E = 'cubic-bezier(.22,1,.36,1)';
+
+        /* nav */
+        var nav = document.getElementById('nav');
+        var bar = document.getElementById('stickybar');
+        var prog = document.getElementById('progress');
+        var tg = document.getElementById('navToggle'), mob = document.getElementById('navMobile');
+        var lastY = 0;
+        var onScroll = function(){
+          if (!nav || !mob || !prog) return;
+          var y = window.scrollY;
+          nav.classList.toggle('is-stuck', y > 8);
+          if (bar) bar.classList.toggle('show', y > 420);
+          if (y > 160 && y > lastY + 6 && !mob.classList.contains('open')) nav.classList.add('is-hidden');
+          else if (y < lastY - 6 || y <= 160) nav.classList.remove('is-hidden');
+          lastY = y;
+          var max = document.documentElement.scrollHeight - window.innerHeight;
+          prog.style.transform = 'scaleX(' + (max > 0 ? Math.min(1, y / max) : 0) + ')';
+        };
+        onScroll();
+        window.addEventListener('scroll', onScroll, {passive:true});
+        if (tg && mob) tg.addEventListener('click', function(){
+          var open = mob.classList.toggle('open');
+          tg.setAttribute('aria-expanded', open ? 'true' : 'false');
+          tg.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+        });
+        if (mob && tg) mob.addEventListener('click', function(e){ if(e.target.tagName==='A'){ mob.classList.remove('open'); tg.setAttribute('aria-expanded','false'); } });
+
+        /* lead forms: post JSON to /api/lead, then show the thank-you */
+        /* A field's error node is the one named by aria-describedby. Forms that
+           do not carry one still work: the callers fall back to the old
+           border-colour hint and to alert(). */
+        var errorFor = function(el){
+          var id = el.getAttribute('aria-describedby');
+          return id ? document.getElementById(id) : null;
+        };
+        var setStatus = function(form, msg, tone){
+          var live = form.querySelector('[data-form-status]');
+          if (!live) return false;
+          live.textContent = msg || '';
+          if (tone) live.setAttribute('data-tone', tone); else live.removeAttribute('data-tone');
+          return true;
+        };
+        document.querySelectorAll('[data-lead-form]').forEach(function(form){
+          /* Clear a field's error as soon as it is corrected, so the message
+             never outlives the problem. */
+          form.querySelectorAll('[required]').forEach(function(i){
+            var clear = function(){
+              if (i.getAttribute('aria-invalid') !== 'true' || !i.value.trim()) return;
+              i.setAttribute('aria-invalid', 'false');
+              var errEl = errorFor(i);
+              if (errEl) errEl.hidden = true; else i.style.borderColor = '';
+            };
+            i.addEventListener('input', clear);
+            i.addEventListener('change', clear);
+          });
+          form.addEventListener('submit', function(e){
+            e.preventDefault();
+            /* [required], not input[required]: forms with a required select need checking too. */
+            var badCount = 0, firstBad = null;
+            form.querySelectorAll('[required]').forEach(function(i){
+              var bad = !i.value.trim() || (i.type === 'email' && i.value.indexOf('@') < 0);
+              i.setAttribute('aria-invalid', bad ? 'true' : 'false');
+              var errEl = errorFor(i);
+              /* The message is what carries the failure; colour is only a second
+                 signal, so the field never depends on colour alone. */
+              if (errEl) errEl.hidden = !bad; else i.style.borderColor = bad ? '#D9534F' : '';
+              if (bad) { badCount++; if (!firstBad) firstBad = i; }
+            });
+            if (badCount) {
+              setStatus(form, badCount === 1 ? 'One field still needs an answer.' : badCount + ' fields still need an answer.', 'error');
+              if (firstBad) firstBad.focus();
+              return;
+            }
+            setStatus(form, '');
+            var btn = form.querySelector('button[type=submit]'); if (btn) btn.disabled = true;
+            var data = {}; new FormData(form).forEach(function(v,k){ data[k] = v; });
+            data.source = form.getAttribute('data-source') || ''; data.page = location.href;
+            var endpoint = form.getAttribute('data-endpoint');
+            var done = function(isNew){
+              form.classList.add('sent');
+              setStatus(form, 'Got it. Opening the walkthrough now.');
+              var okEl = form.querySelector('.ok'); if (okEl) okEl.hidden = false;
+              /* Opt-in per form, so only the form that should hand over to a
+                 thank-you page does. The success panel is shown first, so a
+                 blocked navigation still leaves them the link. */
+              var to = form.getAttribute('data-success-redirect');
+              if (!to) return;
+              /* The marker is what makes the conversion count once per
+                 submission rather than once per pageview. It is only attached
+                 for a lead the CRM had never seen: someone filling the form
+                 again on a second device is one lead, and counting them twice
+                 would overstate the campaign. They still get the video either
+                 way, which is why the redirect happens regardless. */
+              var q = '';
+              if (isNew) {
+                var id = String(Date.now()) + '-' + Math.random().toString(36).slice(2, 10);
+                try { localStorage.setItem('drm_lead_pending', id); } catch (err) {}
+                q = (to.indexOf('?') < 0 ? '?' : '&') + 'lead=' + encodeURIComponent(id);
+              }
+              location.assign(to + q);
+            };
+            if (!endpoint) { done(); return; }
+            fetch(endpoint, {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(data)})
+              .then(function(r){ if(!r.ok) throw new Error('lead endpoint ' + r.status); return r.json().catch(function(){ return {}; }); })
+              /* Only a confirmed new CRM contact may create a conversion marker.
+                 Honeypot and malformed responses must never count as leads. */
+              .then(function(d){ done(d?.ok === true && d.isNew === true); })
+              .catch(function(){
+                if (btn) btn.disabled = false;
+                var msg = 'Something went wrong. Call or text (915) 228-3054 and we will send it over.';
+                /* alert() only where there is no live region to announce into. */
+                if (!setStatus(form, msg, 'error')) alert(msg);
+              });
+          });
+        });
+
+        var steps = document.querySelectorAll('#steps .step');
+        if (rm) {
+          document.querySelectorAll('.io,.reveal-up,.demo').forEach(function(el){ el.classList.add('in'); el.style.opacity='1'; el.style.transform='none'; });
+          steps.forEach(function(s){ s.classList.add('on'); });
+          return;
+        }
+
+        /* Headlines stay painted (LCP). Supporting copy still reveals. */
+        document.querySelectorAll('.reveal-up').forEach(function(el){
+          var d = parseInt(el.getAttribute('data-d')||'0',10);
+          el.style.transition = 'opacity .7s ease '+d+'ms, transform .8s '+E+' '+d+'ms';
+          setTimeout(function(){ el.style.opacity='1'; el.style.transform='none'; }, 40);
+        });
+
+        /* scroll reveals, staggered among siblings so grids ripple in */
+        document.querySelectorAll('.tiers, .two, .cases, .quotes, .proof .wrap, .feats, .svcs, .proofrow, .nums, .pains, .why, .cost, .buy, .money, .next, .fine-print').forEach(function(parent){
+          Array.prototype.forEach.call(parent.children, function(el,i){ if(el.classList.contains('io') && !el.style.getPropertyValue('--d')) el.style.setProperty('--d', (i*80)+'ms'); });
+        });
+        var io = new IntersectionObserver(function(entries){
+          entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
+        }, {rootMargin:'0px 0px -8% 0px', threshold:.06});
+        document.querySelectorAll('.io').forEach(function(el){ io.observe(el); });
+
+        /* steps underline, staggered when in view */
+        var stepsBox = document.getElementById('steps');
+        if (stepsBox && steps.length){
+          var so = new IntersectionObserver(function(entries){
+            entries.forEach(function(en){ if(en.isIntersecting){ steps.forEach(function(s,i){ setTimeout(function(){ s.classList.add('on'); }, 160*i); }); so.disconnect(); } });
+          }, {threshold:.3});
+          so.observe(stepsBox);
+        }
+      })();
+    </script>
+    <script>
+      import '../scripts/attribution.js';
+    </script>
+    <!-- Dead River tracking pixel: one copy on every public page. -->
+    <script is:inline type="text/javascript">
+      (function(s, p, i, c, e) {
+          if (!['deadrivermanagement.com', 'www.deadrivermanagement.com'].includes(location.hostname)) return;
+          s[e] = s[e] || function() { (s[e].a = s[e].a || []).push(arguments); };
+          s[e].l = 1 * new Date();
+          var t = new Date().getTime();
+          var k = c.createElement("script"), a = c.getElementsByTagName("script")[0];
+          k.async = 1, k.src = p + "?request_id=" + i + "&t=" + t, a.parentNode.insertBefore(k, a);
+          s.pixelClientId = i;
+      })(window, "https://app.deadrivermanagement.com/script", "dead-river-management", document, "script");
+    </script>
+  </body>
+</html>

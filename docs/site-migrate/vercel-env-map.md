@@ -6,13 +6,11 @@ Monorepo copy of the 2026-10-01 env/secret **names** inventory. Facts below matc
 
 ## `.env.example` is not in this commit
 
-Phase A tree `apps/deadriver` does **not** exist on this branch. A names-only `.env.example` lands with the Phase A import under `apps/deadriver/`. Until then, the commented placeholder list at the bottom of this file is the stand-in (names only, no values).
+Phase A import places the site under `apps/deadriver/` with names-only `apps/deadriver/.env.example`.
 
 ## Access note (Phase A vs this inventory)
 
-- **Cloud agent** GitHub App install still **cannot** read `deadrivermanagement-site` → Phase A import PR still blocked.
-- **This inventory did NOT need that grant:** Vercel connector lists env **names**; inline Cursor GitHub tools can read site metadata/tree/files for code-referenced names.
-- Still waiting on grant for Phase A `apps/deadriver` import.
+- Phase A import done inline (site zipball → `apps/deadriver/`). Cloud App site access no longer required for this tree.
 
 ## Source of truth today
 
@@ -108,7 +106,7 @@ From site API libs (names only; may be optional / unset / elsewhere):
 |---|---|---|
 | Monorepo `.claude/`, OmniRoute, `ANTHROPIC_API_KEY`, graphify | **Claude** | Stays Claude; not part of site Vercel env move |
 | Site Astro/API code under future `apps/deadriver/` | **Reed** (codes) / Rowan routes / Quinn SEO ships when assigned | Cursor/Grok bot lane |
-| Phase A import PR into `apps/deadriver/` | **Cloud agent / Reed** after GitHub App grant on site repo | Still blocked for cloud install. Names-only `apps/deadriver/.env.example` lands with that import. |
+| Phase A import PR into `apps/deadriver/` | **Reed** (inline) | Tree + names-only `.env.example` in this PR. |
 | Names-only env map doc in monorepo | **Reed** | This file. No values. |
 | Vercel env values reside / Phase B Root Directory + git retarget | **Brandon OK via Marlow**; Rowan coordinates; **do not** flip without Phase B OK | Prefer keep same Vercel project |
 | Prod DNS / domain moves | **Brandon OK** — none in this ask | No flip now |
@@ -121,8 +119,7 @@ From site API libs (names only; may be optional / unset / elsewhere):
 - No Vercel Root Directory change yet
 - No secret values copied or printed
 - Claude monorepo tooling secrets untouched
-- No Phase A site import
-- No `apps/deadriver/.env.example` until that directory exists
+- Phase A site import is this PR
 
 ## Future `apps/deadriver/.env.example` — names-only placeholders
 

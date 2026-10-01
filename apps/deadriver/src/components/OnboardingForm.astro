@@ -1,0 +1,144 @@
+---
+import { business } from '../data/site';
+import { ONBOARDING_INBOX, type OnboardingField, type OnboardingPlan } from '../data/onboarding';
+import OnboardingField from './OnboardingField.astro';
+
+interface Props {
+  plan: OnboardingPlan;
+}
+
+const { plan } = Astro.props;
+
+function groupFields(fields: OnboardingField[]) {
+  const groups: { pair: string; fields: OnboardingField[] }[] = [];
+  for (const field of fields) {
+    const pair = field.pair || '';
+    const last = groups[groups.length - 1];
+    if (last && last.pair && last.pair === pair) last.fields.push(field);
+    else groups.push({ pair, fields: [field] });
+  }
+  return groups;
+}
+const arrow = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>`;
+const thanksPath = `/onboarding/thanks?plan=${encodeURIComponent(plan.slug)}`;
+const addressPlaceholder = plan.addressPlaceholder ?? 'El Paso, TX';
+const addressHelp =
+  plan.addressHelp ??
+  'City and state is enough. Use the address customers should see. Do not use a home street.';
+---
+
+<section class="wrap onb">
+  <p class="eyebrow">After you pay</p>
+  <h1>{plan.title}</h1>
+  <p class="lede">{plan.lede}</p>
+
+    <form
+      id="onboardForm"
+      novalidate
+      aria-label={`${plan.name} onboarding`}
+      data-thanks-path={thanksPath}
+      data-phone={business.phone}
+      data-phone-e164={business.phoneE164}
+      data-inbox={ONBOARDING_INBOX}
+    >
+    <input type="hidden" name="plan" value={plan.slug} />
+    <input type="hidden" name="form" value="onboarding" />
+    <input type="hidden" name="stripe_product" value={plan.stripeProduct} />
+    <input type="hidden" name="stripe_customer_id" value="" />
+    <input type="hidden" name="stripe_subscription_id" value="" />
+
+    <fieldset>
+      <legend>Who you are</legend>
+      <div class="grid-2">
+        <label>
+          First name <span class="req">*</span>
+          <input type="text" name="first_name" required autocomplete="given-name" />
+        </label>
+        <label>
+          Last name <span class="req">*</span>
+          <input type="text" name="last_name" required autocomplete="family-name" />
+        </label>
+      </div>
+      <label>
+        Contact email <span class="req">*</span>
+        <input type="email" name="email" required autocomplete="email" />
+      </label>
+      <label>
+        Your mobile
+        <input type="tel" name="phone_mobile" autocomplete="tel" />
+        <small>Optional. So we can text you while we set this up.</small>
+      </label>
+    </fieldset>
+
+    <fieldset>
+      <legend>The business the public sees</legend>
+      <label>
+        Business legal name <span class="req">*</span>
+        <input type="text" name="business_legal_name" required autocomplete="organization" />
+      </label>
+      <label>
+        DBA
+        <input type="text" name="business_dba" />
+        <small>The name customers know, if it is different. Optional.</small>
+      </label>
+      <label>
+        Business phone <span class="req">*</span>
+        <input type="tel" name="business_phone" required autocomplete="tel" />
+        <small>The number customers call.</small>
+      </label>
+      <label>
+        Public business address <span class="req">*</span>
+        <input type="text" name="public_business_address" required autocomplete="address-level2" placeholder={addressPlaceholder} />
+        <small>{addressHelp}</small>
+      </label>
+      <label>
+        Service areas <span class="req">*</span>
+        <input type="text" name="service_areas" required />
+        <small>Towns or neighborhoods you cover.</small>
+      </label>
+      <label>
+        Website
+        <input type="url" name="business_website" autocomplete="url" placeholder="https://" />
+        <small>Optional.</small>
+      </label>
+    </fieldset>
+
+    {plan.extras.map((section) => (
+      <fieldset>
+        <legend>{section.legend}</legend>
+        {groupFields(section.fields).map((group) =>
+          group.pair ? (
+            <div class="grid-2">
+              {group.fields.map((field) => <OnboardingField field={field} />)}
+            </div>
+          ) : (
+            group.fields.map((field) => <OnboardingField field={field} />)
+          )
+        )}
+      </fieldset>
+    ))}
+
+    <fieldset>
+      <legend>Anything else</legend>
+      <label>
+        Notes
+        <textarea name="notes" rows="3"></textarea>
+      </label>
+    </fieldset>
+
+    <div class="hp" aria-hidden="true"><input name="company" tabindex="-1" autocomplete="off" /></div>
+
+    <button class="btn btn-primary" type="submit">Send this over <Fragment set:html={arrow} /></button>
+    <p class="fine">
+      We will reply from <a class="link" href={`mailto:${ONBOARDING_INBOX}`}>{ONBOARDING_INBOX}</a>.
+      Need help now? Call or text{' '}
+      <a class="link" href={`tel:${business.phoneE164}`}>{business.phone}</a>.
+    </p>
+    <p class="err" hidden role="alert"></p>
+  </form>
+</section>
+
+<script>
+  import { bindOnboardingForm } from '../lib/onboarding-form.js';
+  bindOnboardingForm(document.getElementById('onboardForm'));
+</script>

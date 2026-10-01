@@ -1,0 +1,86 @@
+---
+import { industries } from '../../data/growth';
+---
+
+<section
+  id="concierge"
+  class="concierge-panel"
+  hidden
+  aria-label="Quick answers"
+>
+  <div class="panel-heading">
+    <strong>Quick answers</strong>
+    <button data-concierge-close aria-label="Close quick answers">
+      ×
+    </button>
+  </div>
+  <p>Ask about pricing, scope, Demand Intelligence, or your next step.</p>
+  <div class="concierge-prompts">
+    <button data-concierge-question="pricing">Pricing</button>
+    <button data-concierge-question="what do you do">What we do</button>
+    <button data-concierge-question="tools">Free tools</button>
+    <button data-concierge-question="book a call">Book a call</button>
+  </div>
+  <form id="concierge-question">
+    <label class="sr-only" for="concierge-query">
+      Your question
+    </label>
+    <div class="concierge-input">
+      <input
+        id="concierge-query"
+        name="question"
+        maxlength="240"
+        placeholder="Type a question"
+        required
+        autocomplete="off"
+      />
+      <button type="submit" aria-label="Ask">
+        →
+      </button>
+    </div>
+  </form>
+  <div class="concierge-answer" role="status" aria-live="polite">
+    <p id="concierge-reply">
+      Pick a topic above, type a question, or use the short fit guide below.
+    </p>
+    <a id="concierge-next" href="tel:+19152283054">
+      Call (915) 228-3054 →
+    </a>
+  </div>
+  <details class="concierge-fit">
+    <summary>Which engagement fits me?</summary>
+    <form id="concierge-fit-form">
+      <label class="field">
+        Your industry
+        <select name="industry">
+          {industries.map((i) => (
+            <option value={i.slug}>{i.name}</option>
+          ))}
+          <option value="other">Other</option>
+        </select>
+      </label>
+      <label class="field">
+        Your priority
+        <select name="priority">
+          <option value="foundation">
+            Fix tracking, booking, or follow-up first
+          </option>
+          <option value="growth-partner">
+            Grow through a managed acquisition strategy
+          </option>
+          <option value="scale">Expand across more channels</option>
+        </select>
+      </label>
+      <button type="submit" class="button secondary">
+        Show my next step →
+      </button>
+    </form>
+  </details>
+  <small>
+    Prepared answers, not a live chat. To reach a person, call (915) 228-3054 or
+    use the contact form.
+  </small>
+</section>
+<script>
+  import '../../scripts/growth-concierge.js';
+</script>

@@ -1,0 +1,20 @@
+---
+// Wide lockup (emblem + wordmark). Header/footer use the 480/960 renditions.
+// public/images/logo.png is the same mark at schema size.
+---
+<picture>
+  <source
+    type="image/webp"
+    srcset="/images/logo-480.webp 480w, /images/logo-960.webp 960w"
+    sizes="(max-width: 860px) 160px, 200px"
+  />
+  <img
+    src="/images/logo-480.png"
+    srcset="/images/logo-480.png 480w, /images/logo-960.png 960w"
+    sizes="(max-width: 860px) 160px, 200px"
+    width="960"
+    height="222"
+    alt="Dead River Management"
+    decoding="async"
+  />
+</picture>

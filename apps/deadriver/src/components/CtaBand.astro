@@ -1,0 +1,25 @@
+---
+// Final call-to-action band, same markup as the approved pages (.cta section).
+import { business } from '../data/site';
+interface Props {
+  kicker?: string; heading: string; mark?: string; text?: string;
+  primaryLabel?: string; primaryHref?: string;
+  secondaryLabel?: string; secondaryHref?: string;
+}
+const {
+  kicker = 'Get started', heading, mark, text,
+  primaryLabel = 'See plans and pricing', primaryHref = '/plans',
+  secondaryLabel = `Call ${business.phone}`, secondaryHref = `tel:${business.phoneE164}`,
+} = Astro.props;
+---
+<section class="cta section">
+  <div class="wrap io">
+    <p class="eyebrow" style="margin-bottom:18px">{kicker}</p>
+    <h2>{heading} {mark && <span class="mark">{mark}</span>}</h2>
+    {text && <p class="lede">{text}</p>}
+    <div class="hero-ctas">
+      <a class="btn btn-primary" href={primaryHref}>{primaryLabel} <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn btn-ghost" href={secondaryHref}>{secondaryLabel}</a>
+    </div>
+  </div>
+</section>

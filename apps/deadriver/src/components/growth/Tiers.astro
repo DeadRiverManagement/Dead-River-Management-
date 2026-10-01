@@ -1,0 +1,24 @@
+---
+import { engagements } from '../../data/growth';
+const { industry } = Astro.props;
+---
+
+<div class="tiers">
+  {engagements.map((tier, i) => (
+    <article class:list={['tier', { featured: i === 1 }]}>
+      <p class="tier-tag">{tier.label}</p>
+      <h3>{tier.name}</h3>
+      <p class="tier-headline">{tier.headline}</p>
+      <p class="tier-intro">{tier.intro}</p>
+      <ul class="check-list">
+        {tier.features.map((f) => (
+          <li>{f}</li>
+        ))}
+      </ul>
+    </article>
+  ))}
+</div>
+<p class="pricing-note">
+  Three-month initial commitment, then month to month with 30-day notice.{' '}
+  <a href="/book">Talk through the full scope</a>.
+</p>

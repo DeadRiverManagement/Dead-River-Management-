@@ -1,0 +1,91 @@
+---
+// The walkthrough, for people already in the CRM.
+//
+// Same video as /watch, but ungated: these people are already leads, so asking
+// them to fill in the lead form to see it makes no sense. The slug is random so
+// it is not guessable, it is noindex, it is kept out of the sitemap, and nothing
+// on the site links to it. It is sent by hand or by the follow-up automation.
+//
+// Two deliberate differences from /watch:
+//   1. No Google Ads conversion script. These are existing contacts, not new
+//      leads, so firing the lead conversion here would corrupt the ad data.
+//   2. The video is served from /media/, which sits outside the cookie gate on
+//      /videos/*. The gate on /watch is untouched.
+import Base from '../layouts/Base.astro';
+import CtaBand from '../components/CtaBand.astro';
+import CompleteCheckout from '../components/CompleteCheckout.astro';
+import ServiceWorksheet from '../components/ServiceWorksheet.astro';
+import { business } from '../data/site';
+
+const VIDEO = '/media/flagship-offer.mp4?v=20260916';
+const POSTER = '/media/flagship-offer.jpg';
+
+const schema = [
+  { '@context': 'https://schema.org', '@type': 'VideoObject', name: 'How Dead River Management works: the 3-minute walkthrough', description: 'How Dead River Complete works: the website, the AI assistant, follow-up, Google work, ads and the 30 leads in 60 days promise.', thumbnailUrl: `${business.url}/images/logo-mark.png`, contentUrl: `${business.url}${VIDEO}`, uploadDate: '2026-09-16', duration: 'PT2M33S', isAccessibleForFree: true, publisher: { '@id': `${business.url}/#organization` } },
+];
+---
+<Base schema={schema} ctaLabel="Book a time" ctaHref="/book" noindex={true}>
+  <section class="ihero watch-hero" id="top">
+    <div class="wrap">
+      <div class="hero-copy">
+        <p class="eyebrow reveal-up" data-d="60">The Complete walkthrough · 2:33</p>
+        <h1>
+          <span class="line"><span>Watch the video.</span></span>
+          <span class="line"><span class="mark">Then decide.</span></span>
+        </h1>
+        <p class="lede reveal-up" data-d="420">See how Complete works and decide if it fits your business. If you have questions, book a time to meet with us. No meeting required to watch or get started.</p>
+      </div>
+
+      <div class="video reveal-up" data-d="520">
+        <video controls preload="metadata" playsinline poster={POSTER} src={VIDEO}></video>
+      </div>
+
+      <div class="hero-after">
+        <div class="hero-ctas reveal-up" data-d="640">
+          <a class="btn btn-primary" href="#buy">If it fits, start here <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="btn btn-ghost" href="/book">Questions? Book a time</a>
+        </div>
+        <ul class="trust reveal-up" data-d="740">
+          <li>2 minutes, 33 seconds</li>
+          <li>Meeting optional</li>
+          <li>12-month agreement</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head io">
+        <p class="eyebrow">What you'll see</p>
+        <h2>One system, <span class="mark">not five vendors.</span></h2>
+      </div>
+      <div class="why">
+        <div class="io hot"><h3>The phone gets answered</h3><p>We answer when you can’t. We book the job while you sleep.</p></div>
+        <div class="io" style="--d:80ms"><h3>We get you leads</h3><p>Calls, texts, and forms land in one place so jobs do not slip.</p></div>
+        <div class="io" style="--d:160ms"><h3>30 leads in 60 days or we work for free until we get them.</h3><p>The only plan with this promise. A lead is a real person who calls, texts, or fills out a form.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <ServiceWorksheet />
+
+  <CompleteCheckout />
+
+  <CtaBand kicker="Your next step" heading="Have questions?" mark="Book a time." text="Choose a time to talk through how Complete fits your business, the 30-lead promise or what getting started involves." primaryLabel="Book a time to meet" primaryHref="/book" secondaryLabel="Ready? Get started" secondaryHref="#buy" />
+</Base>
+
+<style is:global>
+  /* Same portrait-video hero as /watch. See that page for the reasoning. */
+  .watch-hero .wrap{max-width:var(--maxw);display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-rows:1fr auto auto 1fr;column-gap:clamp(32px,5vw,72px);row-gap:0}
+  .watch-hero .hero-copy{grid-column:1;grid-row:2;min-width:0}
+  .watch-hero .hero-after{grid-column:1;grid-row:3;min-width:0}
+  .watch-hero .video{grid-column:2;grid-row:1 / -1;align-self:center;margin-top:0;width:min(384px,40vh)}
+  .watch-hero .hero-ctas{margin-bottom:22px}
+  @media (max-width:900px){
+    .watch-hero .wrap{grid-template-columns:1fr;grid-template-rows:none;row-gap:28px}
+    .watch-hero .hero-copy,.watch-hero .video,.watch-hero .hero-after{grid-column:1;grid-row:auto}
+    .watch-hero .video{width:min(100%,384px);align-self:start}
+    .watch-hero .hero-copy .lede{margin-bottom:0}
+  }
+</style>
