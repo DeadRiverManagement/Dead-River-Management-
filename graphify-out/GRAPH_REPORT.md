@@ -5,7 +5,7 @@
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 2801 nodes · 8291 edges · 141 communities (118 shown, 23 thin omitted)
+- 2802 nodes · 8291 edges · 141 communities (118 shown, 23 thin omitted)
 - Extraction: 93% EXTRACTED · 7% INFERRED · 0% AMBIGUOUS · INFERRED: 575 edges (avg confidence: 0.78)
 - Token cost: 0 input · 0 output
 
@@ -421,8 +421,8 @@ Cohesion: 0.13
 Nodes (7): Browse Abandon Flow, Core Revenue Flows, Email Campaigns, Email Flows, Site Abandon Flow, Welcome Flow, Winback Flow
 
 ### Community 17 - "Dead River Management Business"
-Cohesion: 0.18
-Nodes (29): Brandon Aubey, Client Ascension AI Agents, Dead River Management, Demand Flow Pricing, Dental, Desk Loom, DRM Upwork Pricing, Ecommerce (+21 more)
+Cohesion: 0.17
+Nodes (30): Brandon Aubey, Client Ascension AI Agents, Dead River Management, Demand Flow Pricing, Dental, Desk Loom, DRM Upwork Pricing, Ecommerce (+22 more)
 
 ### Community 18 - "AI Ads & Sales Copy Generation"
 Cohesion: 0.12
@@ -785,8 +785,8 @@ Nodes (4): Alex Hormozi, Dan Crowley, Dan's Sales Training, Perfect Flow Convers
   8073c49e-COACHING_KNOWLEDGE_BASE.md · relation: references
 
 ## Knowledge Gaps
-- **169 isolated node(s):** `All in Sundry`, `Arena`, `Psycho-Cybernetics`, `Jordan Platten`, `Opus AI` (+164 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 348 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **170 isolated node(s):** `All in Sundry`, `Arena`, `Psycho-Cybernetics`, `Jordan Platten`, `Opus AI` (+165 more)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 349 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
 - **23 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions

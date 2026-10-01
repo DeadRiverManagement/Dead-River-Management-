@@ -12540,6 +12540,21 @@
       "source_url": null
     },
     {
+      "id": "8073c49e_coaching_knowledge_base_arron_pipe_whisperers",
+      "label": "Arron (Owner, The Pipe Whisperers)",
+      "author": null,
+      "captured_at": null,
+      "community": 17,
+      "community_name": "Dead River Management Business",
+      "contributor": null,
+      "file_type": "concept",
+      "norm_label": "arron (owner, the pipe whisperers)",
+      "rationale": "Client. Owner of The Pipe Whisperers; published testimonial: \"We went from barely surviving to turning down work.\" Not the Dead River Management owner.",
+      "source_file": "8073c49e-COACHING_KNOWLEDGE_BASE.md",
+      "source_location": "line 7800: Approved published testimonial excerpts",
+      "source_url": null
+    },
+    {
       "id": "8073c49e_coaching_knowledge_base_brandon_aubey",
       "label": "Brandon Aubey",
       "author": null,
@@ -71582,6 +71597,16 @@
       "weight": 1.0
     },
     {
+      "source": "8073c49e_coaching_knowledge_base_arron_pipe_whisperers",
+      "target": "8073c49e_coaching_knowledge_base_the_pipe_whisperers",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "8073c49e-COACHING_KNOWLEDGE_BASE.md",
+      "source_location": "line 7800: Approved published testimonial excerpts",
+      "weight": 1.0
+    },
+    {
       "source": "8073c49e_coaching_knowledge_base_ask_for_looms",
       "target": "8073c49e_coaching_knowledge_base_loom",
       "relation": "references",
@@ -113402,16 +113427,6 @@
       "weight": 1.0
     },
     {
-      "source": "8073c49e_coaching_knowledge_base_the_pipe_whisperers",
-      "target": "8073c49e_coaching_knowledge_base_brandon_aubey",
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "8073c49e-COACHING_KNOWLEDGE_BASE.md",
-      "source_location": "lines 6089-8284: Approved published testimonial excerpts",
-      "weight": 1.0
-    },
-    {
       "source": "8073c49e_coaching_knowledge_base_the_power_frame_max_alexander_leadhawks_call_review",
       "target": "8073c49e_coaching_knowledge_base_athletic_greens",
       "relation": "references",
@@ -128432,5 +128447,5 @@
       "source_file": "8073c49e-COACHING_KNOWLEDGE_BASE.md"
     }
   ],
-  "built_at_commit": "689411e3ba84318559af5202a03e9355cbbc3aec"
+  "built_at_commit": "1874aa780e36b6bcb0b5a8e3723b8177ea8dc69d"
 }
