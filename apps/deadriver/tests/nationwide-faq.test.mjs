@@ -23,11 +23,11 @@ test('nationwide FAQ pastes keep GP-only framing', () => {
     'How long is the commitment?',
     'Do we need a new website?',
     'Is Demand Intelligence included?',
-    'How much do nationwide plans cost?',
+    'How does Demand Flow pricing work?',
     'Is Dead River Management the same as Dead River Company?',
   ]);
   assert.deepEqual(questions('pricingFaq'), [
-    'What is the difference between Foundation, Growth Partner, and Scale?',
+    'What is Demand Flow?',
     'What is included in the monthly fee?',
     'How long do I have to stay?',
     'What is Dead River Demand Intelligence?',
@@ -37,9 +37,9 @@ test('nationwide FAQ pastes keep GP-only framing', () => {
   ]);
   assert.deepEqual(questions('homeServicesFaq'), [
     'Do you work with HVAC, plumbing, roofing, and other trades?',
-    'Which plan should a home services company start with?',
+    'What does Demand Flow cover for home services?',
     'Do you only serve El Paso home services?',
-    'Is missed-call recovery part of Growth Partner?',
+    'Is missed-call recovery included?',
     'Are written lead promises part of current plans?',
     'How do I get pricing?',
   ]);
@@ -54,7 +54,10 @@ test('FAQ answers do not sell Complete or the old SKU ladder', () => {
   assert.doesNotMatch(answers, /Essentials is \$97/);
   assert.doesNotMatch(answers, /Front Desk AI is \$197/);
   assert.doesNotMatch(answers, /work for free until we get them/);
-  assert.match(answers, /Foundation, Growth Partner, and Scale/);
+  assert.match(answers, /Demand Flow/);
+  assert.match(answers, /\$50,000 in new revenue in 45–60 days/);
+  assert.doesNotMatch(answers, /Foundation|Growth Partner|Scale/);
+  assert.doesNotMatch(answers, /\$3,000|3000/);
   assert.doesNotMatch(
     answers,
     /\$997|\$1,497|\$1,997|\$2,497|\$2,997|\$4,497|See Pricing|\/pricing/,

@@ -27,7 +27,7 @@ function answer(raw) {
     );
   if (/platform|intelligence|prospect|data|list/.test(q))
     return show(
-      'Dead River Demand Intelligence identifies people and businesses showing relevant buying signals across B2B and B2C markets, so your sales or marketing team has a better place to start. Full platform access is $3,000 a month with no setup fee.',
+      'Dead River Demand Intelligence identifies people and businesses showing relevant buying signals across B2B and B2C markets, so your sales or marketing team has a better place to start. Full platform access is scoped with you on a demo; fees are confirmed based on use case.',
       'Learn about Demand Intelligence',
       '/demand-intelligence',
     );
