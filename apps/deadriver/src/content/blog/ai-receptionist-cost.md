@@ -1,7 +1,7 @@
 ---
 title: "AI Receptionist Cost Guide"
 pageTitle: "AI Receptionist Cost Guide"
-description: "AI receptionist pricing ranges widely by billing model. Compare costs next to Foundation, Growth Partner, and Scale."
+description: "AI receptionist pricing ranges widely by billing model. Compare tool costs like for like before you buy."
 date: 2026-09-06
 category: "AI Receptionist"
 heroImage: "/images/blog/ai-receptionist-cost.svg"
@@ -42,7 +42,7 @@ Before you compare any two quotes, work out roughly how many calls you miss in a
 
 A flat monthly plan costs the same whether the month is quiet or busy. No overage math.
 
-Dead River’s live nationwide plans are Foundation, Growth Partner, and Scale. Foundation builds tracking, follow-up, and booking. Growth Partner adds missed-call recovery on your primary acquisition channel. Scale coordinates a broader acquisition and retention scope. [Talk through scope](/book) or [book a conversation](/book).
+Dead River’s live public offer is Demand Flow: $50,000 in new revenue in 45–60 days, or service fees refunded + $500 (ad spend not refunded). Terms are on [/legal/guarantee](/legal/guarantee). When scope fits, that work can include tracking, follow-up, booking, and missed-call recovery — confirmed on a call, not sold as a tier card. [Talk through scope](/book) or [book a conversation](/book).
 
 Complete is retired.
 
@@ -54,7 +54,7 @@ A voice receptionist picks up and holds a spoken conversation. That is the right
 
 A text-back system does not pick up. It catches the call you already missed and turns it into a text conversation. That is the right tool if your customers are comfortable texting, and if your actual problem is not "nobody answers" but "nobody follows up after the call goes to voicemail."
 
-Most home service owners we talk to have the second problem, not the first. Growth Partner includes missed-call recovery with booking and estimate follow-up. [Talk through scope](/book) or [book a conversation](/book).
+Most home service owners we talk to have the second problem, not the first. Demand Flow engagements often include missed-call recovery with booking and estimate follow-up when that is the bottleneck. [Talk through scope](/book) or [book a conversation](/book).
 
 ## Is there a free AI receptionist?
 
@@ -93,6 +93,6 @@ Answer these four questions in order, and the choice usually makes itself.
 3. **Does it book, or just take a message?** Taking a message moves the work back to you. Booking into your calendar is the part that saves time. Check whether booking costs extra.
 4. **Who sets it up?** A cheap tool you never finish configuring costs more than a slightly pricier one that someone sets up for you.
 
-If you want the whole thing handled rather than assembled, that is what we do. Live nationwide plans are Foundation, Growth Partner, and Scale. [Talk through scope](/book) or [book a conversation](/book).
+If you want the whole thing handled rather than assembled, that is what we do. Dead River’s live public offer is Demand Flow — see [/legal/guarantee](/legal/guarantee). [Talk through scope](/book) or [book a conversation](/book).
 
 The provider prices in the table came from each company's own pricing page in September 2026. Check them before you buy, because they change. Dead River scope is confirmed on a call.
