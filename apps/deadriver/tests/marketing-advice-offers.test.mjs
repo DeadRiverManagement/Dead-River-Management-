@@ -53,6 +53,22 @@ test('30-leads article matches Demand Flow SoR', () => {
   assert.doesNotMatch(text, /work for free/);
 });
 
+test('ai-receptionist-cost matches Demand Flow SoR without ladder-as-current', () => {
+  const text = read('ai-receptionist-cost.md');
+  assert.match(text, /Demand Flow/);
+  assert.match(text, /\$50,000 in new revenue in 45–60 days/);
+  assert.match(text, /service fees refunded \+ \$500/);
+  assert.match(text, /ad spend/);
+  assert.match(text, /\/legal\/guarantee/);
+  assert.match(text, /\/book/);
+  assert.doesNotMatch(text, /Foundation, Growth Partner, and Scale/);
+  assert.doesNotMatch(text, /Compare costs next to Foundation/);
+  assert.doesNotMatch(text, /live nationwide plans are Foundation/i);
+  assert.doesNotMatch(text, /Growth Partner includes missed-call/);
+  assert.doesNotMatch(text, /\]\(\/talk\)/);
+  assert.doesNotMatch(text, /\]\(\/pricing\)/);
+});
+
 test('El Paso comparison uses Demand Flow without publishing dollars', () => {
   const text = read('el-paso-home-services-marketing-agency.md');
   assert.match(text, /Demand Flow/);
@@ -74,6 +90,18 @@ test('advice articles do not publish Foundation, Growth Partner, or Scale dollar
     const text = read(name);
     assert.doesNotMatch(text, ladder, name);
     assert.doesNotMatch(text, /\]\(\/pricing\)/, name);
+  }
+});
+
+test('advice descriptions do not use Foundation/Growth Partner/Scale hub blurb', () => {
+  for (const name of published) {
+    const text = read(name);
+    const front = text.split('---')[1] || '';
+    assert.doesNotMatch(
+      front,
+      /Compare costs next to Foundation, Growth Partner, and Scale/,
+      name,
+    );
   }
 });
 
