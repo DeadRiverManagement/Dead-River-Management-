@@ -53,9 +53,9 @@ test('30-leads article matches Demand Flow SoR', () => {
   assert.doesNotMatch(text, /work for free/);
 });
 
-test('El Paso comparison uses nationwide plans without publishing dollars', () => {
+test('El Paso comparison uses Demand Flow without publishing dollars', () => {
   const text = read('el-paso-home-services-marketing-agency.md');
-  assert.match(text, /Foundation, Growth Partner, and Scale/);
+  assert.match(text, /Demand Flow/);
   assert.doesNotMatch(text, /\/talk/);
   assert.match(text, /\/book/);
   assert.doesNotMatch(text, /\/pricing/);
