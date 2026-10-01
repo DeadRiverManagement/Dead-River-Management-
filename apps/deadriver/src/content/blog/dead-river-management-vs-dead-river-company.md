@@ -78,5 +78,3 @@ If you run a home-service or local business and want more booked revenue in El P
 Demand Flow is the live public offer: **$50,000 in new revenue in 45 to 60 days** for accepted businesses, or service fees refunded + $500 (ad spend not refunded). [Guarantee terms](/legal/guarantee). [Book a strategy call](/book).
 
 Call or text **(915) 228-3054**. El Paso / Mountain Time. [Company](/company) · [El Paso](/locations/el-paso) · [Home](/).
-
-## FAQ
