@@ -12549,7 +12549,7 @@
       "contributor": null,
       "file_type": "concept",
       "norm_label": "brandon aubey",
-      "rationale": "Prospect-facing sender for all Dream 100 outreach: Brandon, brandon@deadrivermanagement.com; owns Loom workspace and Gamma workspace.",
+      "rationale": "Prospect-facing sender for all Dream 100 outreach: Brandon, brandon@deadrivermanagement.com; owns Loom workspace and Gamma workspace. Business owner of Dead River Management; decisions: keep Demand Flow as the current cross-industry offer, do not reintroduce Growth Partner, do not redo niche selection, keep Whop deferred.",
       "source_file": "8073c49e-COACHING_KNOWLEDGE_BASE.md",
       "source_location": "lines 6089-8284: Confirmed business inputs",
       "source_url": null
@@ -14742,21 +14742,6 @@
       "rationale": "Friday message: positive replies, calls booked, conversion vs KPI, pipeline value, expected revenue; short so it is read; underperformance explained on a call, not in text.",
       "source_file": "8073c49e-COACHING_KNOWLEDGE_BASE.md",
       "source_location": "lines 42548-42562: Source archive: ops-10.txt (effective client communication)",
-      "source_url": null
-    },
-    {
-      "id": "8073c49e_coaching_knowledge_base_arron",
-      "label": "Arron",
-      "author": null,
-      "captured_at": null,
-      "community": 20,
-      "community_name": "Demand Flow Offer",
-      "contributor": null,
-      "file_type": "concept",
-      "norm_label": "arron",
-      "rationale": "Business owner of Dead River Management; decisions: keep Demand Flow as the current cross-industry offer, do not reintroduce Growth Partner, do not redo niche selection, keep Whop deferred.",
-      "source_file": "8073c49e-COACHING_KNOWLEDGE_BASE.md",
-      "source_location": "lines 1-2776: Client Ascension coaching knowledge base / Arron's business decisions and preferences",
       "source_url": null
     },
     {
@@ -43887,16 +43872,6 @@
       "weight": 1.0
     },
     {
-      "source": "8073c49e_coaching_knowledge_base_arron",
-      "target": "8073c49e_coaching_knowledge_base_brandon_aubey",
-      "relation": "conceptually_related_to",
-      "confidence": "AMBIGUOUS",
-      "confidence_score": 0.3,
-      "source_file": "8073c49e-COACHING_KNOWLEDGE_BASE.md",
-      "source_location": "lines 6089-8284: Open action register",
-      "weight": 1.0
-    },
-    {
       "source": "8073c49e_coaching_knowledge_base_alex_hormozi",
       "target": "8073c49e_coaching_knowledge_base_simplicity_scales_complex_fails",
       "relation": "references",
@@ -51117,16 +51092,6 @@
       "weight": 1.0
     },
     {
-      "source": "8073c49e_coaching_knowledge_base_arron",
-      "target": "8073c49e_coaching_knowledge_base_dead_river_management",
-      "relation": "conceptually_related_to",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "8073c49e-COACHING_KNOWLEDGE_BASE.md",
-      "source_location": "lines 1-2776: Client Ascension coaching knowledge base / Arron's business decisions and preferences",
-      "weight": 1.0
-    },
-    {
       "source": "8073c49e_coaching_knowledge_base_attraction_effect",
       "target": "8073c49e_coaching_knowledge_base_contrast_effect",
       "relation": "conceptually_related_to",
@@ -51263,7 +51228,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "8073c49e-COACHING_KNOWLEDGE_BASE.md",
-      "source_location": "lines 45568-50014: Poppy board preparation",
+      "source_location": "lines 1-2776: Client Ascension coaching knowledge base / Arron's business decisions and preferences",
       "weight": 1.0
     },
     {
@@ -63367,16 +63332,6 @@
       "weight": 1.0
     },
     {
-      "source": "8073c49e_coaching_knowledge_base_arron",
-      "target": "8073c49e_coaching_knowledge_base_demand_flow",
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "8073c49e-COACHING_KNOWLEDGE_BASE.md",
-      "source_location": "lines 1-2776: Dead River Management: Master Coaching Reference / Current corrections and decisions",
-      "weight": 1.0
-    },
-    {
       "source": "8073c49e_coaching_knowledge_base_attention_and_expertise_levers",
       "target": "8073c49e_coaching_knowledge_base_super_loom",
       "relation": "rationale_for",
@@ -63514,6 +63469,16 @@
       "confidence_score": 1.0,
       "source_file": "8073c49e-COACHING_KNOWLEDGE_BASE.md",
       "source_location": "lines 108391-114775: Daily Campaign Reports Workflow",
+      "weight": 1.0
+    },
+    {
+      "source": "8073c49e_coaching_knowledge_base_brandon_aubey",
+      "target": "8073c49e_coaching_knowledge_base_demand_flow",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "8073c49e-COACHING_KNOWLEDGE_BASE.md",
+      "source_location": "lines 1-2776: Dead River Management: Master Coaching Reference / Current corrections and decisions",
       "weight": 1.0
     },
     {
@@ -71617,46 +71582,6 @@
       "weight": 1.0
     },
     {
-      "source": "8073c49e_coaching_knowledge_base_arron",
-      "target": "8073c49e_coaching_knowledge_base_growth_partner_offer",
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "8073c49e-COACHING_KNOWLEDGE_BASE.md",
-      "source_location": "lines 1-2776: Client Ascension coaching knowledge base / Arron's business decisions and preferences",
-      "weight": 1.0
-    },
-    {
-      "source": "8073c49e_coaching_knowledge_base_arron",
-      "target": "8073c49e_coaching_knowledge_base_whop",
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "8073c49e-COACHING_KNOWLEDGE_BASE.md",
-      "source_location": "lines 1-2776: Client Ascension coaching knowledge base / Arron's business decisions and preferences",
-      "weight": 1.0
-    },
-    {
-      "source": "8073c49e_coaching_knowledge_base_arron",
-      "target": "8073c49e_coaching_knowledge_base_business_model_assessment",
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "8073c49e-COACHING_KNOWLEDGE_BASE.md",
-      "source_location": "lines 1-2776: Prior completed coaching notes / Introduction - Cliff Notes",
-      "weight": 1.0
-    },
-    {
-      "source": "8073c49e_coaching_knowledge_base_arron",
-      "target": "8073c49e_coaching_knowledge_base_morning_deep_work_blocks",
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "8073c49e-COACHING_KNOWLEDGE_BASE.md",
-      "source_location": "lines 1-2776: Prior completed coaching notes / Introduction - Cliff Notes",
-      "weight": 1.0
-    },
-    {
       "source": "8073c49e_coaching_knowledge_base_ask_for_looms",
       "target": "8073c49e_coaching_knowledge_base_loom",
       "relation": "references",
@@ -73184,6 +73109,46 @@
       "confidence_score": 1.0,
       "source_file": "8073c49e-COACHING_KNOWLEDGE_BASE.md",
       "source_location": "lines 153727-157544: Brandon Aubey \u2014 Writing Voice Reference",
+      "weight": 1.0
+    },
+    {
+      "source": "8073c49e_coaching_knowledge_base_brandon_aubey",
+      "target": "8073c49e_coaching_knowledge_base_growth_partner_offer",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "8073c49e-COACHING_KNOWLEDGE_BASE.md",
+      "source_location": "lines 1-2776: Client Ascension coaching knowledge base / Arron's business decisions and preferences",
+      "weight": 1.0
+    },
+    {
+      "source": "8073c49e_coaching_knowledge_base_brandon_aubey",
+      "target": "8073c49e_coaching_knowledge_base_whop",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "8073c49e-COACHING_KNOWLEDGE_BASE.md",
+      "source_location": "lines 1-2776: Client Ascension coaching knowledge base / Arron's business decisions and preferences",
+      "weight": 1.0
+    },
+    {
+      "source": "8073c49e_coaching_knowledge_base_brandon_aubey",
+      "target": "8073c49e_coaching_knowledge_base_business_model_assessment",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "8073c49e-COACHING_KNOWLEDGE_BASE.md",
+      "source_location": "lines 1-2776: Prior completed coaching notes / Introduction - Cliff Notes",
+      "weight": 1.0
+    },
+    {
+      "source": "8073c49e_coaching_knowledge_base_brandon_aubey",
+      "target": "8073c49e_coaching_knowledge_base_morning_deep_work_blocks",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "8073c49e-COACHING_KNOWLEDGE_BASE.md",
+      "source_location": "lines 1-2776: Prior completed coaching notes / Introduction - Cliff Notes",
       "weight": 1.0
     },
     {
@@ -98877,16 +98842,6 @@
       "weight": 1.0
     },
     {
-      "source": "8073c49e_coaching_knowledge_base_list_growth",
-      "target": "8073c49e_coaching_knowledge_base_list_growth",
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "8073c49e-COACHING_KNOWLEDGE_BASE.md",
-      "source_location": "lines 124411-130701: E-Com Email Marketing Agency / List Growth - Intro",
-      "weight": 1.0
-    },
-    {
       "source": "8073c49e_coaching_knowledge_base_listkit",
       "target": "8073c49e_coaching_knowledge_base_listkit_email_engine",
       "relation": "references",
@@ -105188,7 +105143,7 @@
     },
     {
       "source": "8073c49e_coaching_knowledge_base_open_action_register",
-      "target": "8073c49e_coaching_knowledge_base_arron",
+      "target": "8073c49e_coaching_knowledge_base_brandon_aubey",
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
@@ -113448,7 +113403,7 @@
     },
     {
       "source": "8073c49e_coaching_knowledge_base_the_pipe_whisperers",
-      "target": "8073c49e_coaching_knowledge_base_arron",
+      "target": "8073c49e_coaching_knowledge_base_brandon_aubey",
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
@@ -128477,5 +128432,5 @@
       "source_file": "8073c49e-COACHING_KNOWLEDGE_BASE.md"
     }
   ],
-  "built_at_commit": "c9a01f59ea707081c9866e38451fd10ff2e8a336"
+  "built_at_commit": "689411e3ba84318559af5202a03e9355cbbc3aec"
 }
