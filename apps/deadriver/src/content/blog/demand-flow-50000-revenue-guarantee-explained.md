@@ -91,5 +91,3 @@ This article summarizes. It does not replace the guarantee page or your agreemen
 3. Or call **(915) 228-3054** (El Paso / Mountain Time, Mon to Sat, 9 to 6).
 
 More context: [home](/), [company](/company), [solutions](/solutions), [work and case studies](/work), [El Paso](/locations/el-paso).
-
-## FAQ
