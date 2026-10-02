@@ -20,9 +20,9 @@ faq:
 
 Your [Google Business Profile](https://www.google.com/business/) is the free listing that shows up on [Google Maps](https://www.google.com/maps). Most owners set it up once and never touch it again. The services section stays half empty. The posts tab has nothing in it. That is a problem, because Google reads those sections to decide who to show.
 
-![Google Business Profile sign-in page](/images/tools/google-business-profile.webp)
+<img src="/images/tools/google-business-profile.webp" width="1200" height="750" alt="Google Business Profile sign-in page" loading="lazy" decoding="async">
 
-![Google Maps search results for a local service](/images/tools/google-maps.webp)
+<img src="/images/tools/google-maps.webp" width="1200" height="750" alt="Google Maps search results for a local service" loading="lazy" decoding="async">
 
 Here is how we fill them out for our clients. None of it costs money. All of it takes under an hour.
 

@@ -20,7 +20,7 @@ faq:
 
 If you run [Google Ads](https://ads.google.com/), you are paying for clicks. Some of those clicks are from people who will never hire you. They just happen to type words that match your ads. This fix takes about ten minutes and it stops a lot of that waste.
 
-![Google Ads home page](/images/tools/google-ads.webp)
+<img src="/images/tools/google-ads.webp" width="1200" height="750" alt="Google Ads home page" loading="lazy" decoding="async">
 
 ## Where does the money leak?
 

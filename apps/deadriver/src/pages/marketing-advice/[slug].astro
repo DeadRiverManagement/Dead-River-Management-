@@ -4,6 +4,7 @@ import Hero from '../../components/growth/Hero.astro';
 import CTA from '../../components/growth/CTA.astro';
 import { getCollection, render } from 'astro:content';
 import { faqPage } from '../../lib/schema';
+import ServiceLinks from '../../components/growth/ServiceLinks.astro';
 export async function getStaticPaths() {
   return (await getCollection('blog', ({ data }) => !data.draft)).map(
     (post) => ({ params: { slug: post.id }, props: { post } }),
@@ -11,6 +12,14 @@ export async function getStaticPaths() {
 }
 const { post } = Astro.props;
 const { Content } = await render(post);
+// Three more guides, same category first, newest first. Internal links keep
+// readers (and crawlers) moving between articles.
+const related = (await getCollection('blog', ({ data }) => !data.draft))
+  .filter((p) => p.id !== post.id)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .sort((a, b) => Number(b.data.category === post.data.category) - Number(a.data.category === post.data.category))
+  .slice(0, 3)
+  .map((p) => ({ label: p.data.title, href: `/marketing-advice/${p.id}`, blurb: p.data.description }));
 const SITE = 'https://www.deadrivermanagement.com';
 const url = `${SITE}/marketing-advice/${post.id}`;
 const article = {
@@ -86,6 +95,7 @@ const schema = post.data.faq?.length ? [article, faqPage(post.data.faq)] : artic
         </>
       )}
     </div>
+    <ServiceLinks label="Keep reading" heading="More marketing advice." links={related} />
   </article>
   <CTA />
 </Growth>

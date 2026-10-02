@@ -338,6 +338,11 @@ button:active,
   margin-top: 30px;
   border-radius: 8px;
 }
+.prose table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+}
 .prose img {
   display: block;
   max-width: 100%;
@@ -1822,7 +1827,8 @@ a.feature-panel:hover {
   border-top: 1px solid #c5d2bd;
   padding-top: 22px;
 }
-.steps h3 {
+.steps h3,
+.steps .step-title {
   font-size: 22px;
   margin-bottom: 12px;
 }

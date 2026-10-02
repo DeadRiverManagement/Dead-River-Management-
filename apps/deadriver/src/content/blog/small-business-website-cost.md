@@ -113,7 +113,7 @@ Pick a DIY builder if you have time, a freelancer if you want the files outright
 - **Freelancer or agency.** You own it. Budget $500 to $30,000, then budget again for maintenance.
 - **Monthly service.** Nothing upfront, someone else owns the upkeep, and you rent rather than buy.
 
-We are in El Paso and we build for [plumbers](/plumber-marketing-el-paso), [roofers](/roofing-marketing-el-paso) and the rest of the trades, here and nationwide. If you are local, our [El Paso web design page](/web-design-el-paso) shows what that looks like.
+We are in El Paso and we build for [plumbers](/services/facebook-ads), [roofers](/roofing-marketing-el-paso) and the rest of the trades, here and nationwide. If you are local, our [El Paso web design page](/web-design-el-paso) shows what that looks like.
 
 ## Common questions
 

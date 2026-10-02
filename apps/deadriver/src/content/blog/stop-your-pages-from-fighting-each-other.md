@@ -22,7 +22,7 @@ You run a home service business in El Paso. You do not have time for SEO homewor
 
 All four fixes use [Google Search Console](https://search.google.com/search-console/about). It is a free tool from Google. It shows which searches bring people to your site. If you do not have it yet, set it up first. Google walks you through the steps.
 
-![Google Search Console home page](/images/tools/search-console.webp)
+<img src="/images/tools/search-console.webp" width="1200" height="750" alt="Google Search Console home page" loading="lazy" decoding="async">
 
 ## Fix 1: Two pages fighting for one keyword
 

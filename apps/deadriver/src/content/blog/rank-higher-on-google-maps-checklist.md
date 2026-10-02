@@ -20,13 +20,13 @@ faq:
 
 Most of your calls come from [Google Maps](https://www.google.com/maps). That little map with three businesses on it. If you're not in it, you're not getting the call. This is the full list of what we do to get a client in there.
 
-![Google Maps search results for a local service](/images/tools/google-maps.webp)
+<img src="/images/tools/google-maps.webp" width="1200" height="750" alt="Google Maps search results for a local service" loading="lazy" decoding="async">
 
 ## Start with the profile
 
 Optimizing a [Google Business Profile](https://www.google.com/business/) takes an hour or two. Everyone can do it. So it isn't enough on its own. But you have to do it first.
 
-![Google Business Profile sign-in page](/images/tools/google-business-profile.webp)
+<img src="/images/tools/google-business-profile.webp" width="1200" height="750" alt="Google Business Profile sign-in page" loading="lazy" decoding="async">
 
 1. Nail your primary category. It's the biggest ranking factor there is. A roofer should be "Roofing contractor," not "Contractor."
 2. Add every service you offer. Click into each one and write a description. Put your city and your main keyword in it.
@@ -48,11 +48,11 @@ This one gets out of hand fast. Google trusts your info more when it is the same
 
 A citation is a listing of your business on another site. [Yellow Pages](https://www.yellowpages.com/), the Chamber of Commerce, places like that. Each one shows your name, address, and phone.
 
-![Yellow Pages home page](/images/tools/yellow-pages.webp)
+<img src="/images/tools/yellow-pages.webp" width="1200" height="750" alt="Yellow Pages home page" loading="lazy" decoding="async">
 
 Google sees those three things repeated across the internet. The more they match, the more Google trusts you. We use [BrightLocal](https://www.brightlocal.com/) for this. Yext does the same job. These tools also let you fix wrong info in one place.
 
-![BrightLocal home page](/images/tools/brightlocal.webp)
+<img src="/images/tools/brightlocal.webp" width="1200" height="750" alt="BrightLocal home page" loading="lazy" decoding="async">
 
 ## Put your website to work
 
@@ -76,7 +76,7 @@ Stay realistic. A huge city or one far away is a long shot. Nearby towns usually
 
 Your profile hides most of its numbers. [Google Analytics](https://analytics.google.com/), the free tool that tracks your website visits, can show them.
 
-![Google Analytics overview page](/images/tools/google-analytics.webp)
+<img src="/images/tools/google-analytics.webp" width="1200" height="750" alt="Google Analytics overview page" loading="lazy" decoding="async">
 
 1. Open Google Analytics. Click Admin at the bottom left.
 2. Scroll down to Product links. Click Google Business Profile links.

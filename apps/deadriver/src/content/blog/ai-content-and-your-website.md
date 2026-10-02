@@ -32,7 +32,7 @@ Here is how to check in about 20 seconds.
 4. Open [Google Search Console](https://search.google.com/search-console/about). That is Google's free tool for site owners.
 5. Click Pages. Scroll down to the list of reasons pages are not indexed.
 
-![Google Search Console home page](/images/tools/search-console.webp)
+<img src="/images/tools/search-console.webp" width="1200" height="750" alt="Google Search Console home page" loading="lazy" decoding="async">
 
 I would bet almost all of his posts sit in one bucket. Google calls it crawled, currently not indexed. Google read the page and chose to skip it. That happens when a page adds nothing new to the world. AI content written from nothing is exactly that.
 

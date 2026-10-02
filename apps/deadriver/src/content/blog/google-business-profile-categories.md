@@ -24,7 +24,7 @@ Your map listing is your front door. That is true for every home service busines
 
 A [Google Business Profile](https://www.google.com/business/) is your free listing on Google Maps. It is the box with your name, reviews, hours, and phone number. Search "plumber near me" and the top three listings come from these profiles. That spot is called the map pack. If you are not in it, you are losing calls.
 
-![Google Business Profile sign-in page](/images/tools/google-business-profile.webp)
+<img src="/images/tools/google-business-profile.webp" width="1200" height="750" alt="Google Business Profile sign-in page" loading="lazy" decoding="async">
 
 ## Why the primary category matters
 
@@ -49,9 +49,9 @@ Google hides most of this from normal users. A free Chrome extension can show it
 - GMB Everywhere.
 - [PlePer](https://chromewebstore.google.com/search/PlePer).
 
-![PlePer in the Chrome Web Store](/images/tools/pleper.webp)
+<img src="/images/tools/pleper.webp" width="1200" height="750" alt="PlePer in the Chrome Web Store" loading="lazy" decoding="async">
 
-![GMB Spy in the Chrome Web Store](/images/tools/gmb-spy.webp)
+<img src="/images/tools/gmb-spy.webp" width="1200" height="750" alt="GMB Spy in the Chrome Web Store" loading="lazy" decoding="async">
 
 Here is how it works with any of them.
 
@@ -71,11 +71,11 @@ Look at the secondary categories the top three use. If they have one you don't, 
 
 PlePer has one more useful screen. It shows which other platforms a competitor has claimed. Think [Apple Maps](https://businessconnect.apple.com/), [Bing Places](https://www.bingplaces.com/), and [Yelp](https://biz.yelp.com/). If they are on one you are not, go claim it. These listings are called citations. That just means other sites that show your name, address, and phone. They help Google trust that you are real.
 
-![Bing Places for Business page](/images/tools/bing-places.webp)
+<img src="/images/tools/bing-places.webp" width="1200" height="750" alt="Bing Places for Business page" loading="lazy" decoding="async">
 
-![Apple Business Connect page](/images/tools/apple-business-connect.webp)
+<img src="/images/tools/apple-business-connect.webp" width="1200" height="750" alt="Apple Business Connect page" loading="lazy" decoding="async">
 
-![Yelp for Business page](/images/tools/yelp-for-business.webp)
+<img src="/images/tools/yelp-for-business.webp" width="1200" height="750" alt="Yelp for Business page" loading="lazy" decoding="async">
 
 ## Rating each profile feature
 

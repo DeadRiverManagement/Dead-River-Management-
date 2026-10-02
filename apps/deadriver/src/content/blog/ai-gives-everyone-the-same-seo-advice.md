@@ -58,7 +58,7 @@ You also have to know what to ask. That part comes from experience.
 
 One quick way to get real data to feed it. Open [Google Search Console](https://search.google.com/search-console/about). That is Google's free report on your site.
 
-![Google Search Console home page](/images/tools/search-console.webp)
+<img src="/images/tools/search-console.webp" width="1200" height="750" alt="Google Search Console home page" loading="lazy" decoding="async">
 
 1. Click Performance.
 2. Click Search Results.

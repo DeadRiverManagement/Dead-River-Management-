@@ -30,7 +30,7 @@ Google already trusts that page a little. It thinks you're a decent match. You d
 
 You need [Google Search Console](https://search.google.com/search-console/about). It's free. If your site isn't connected yet, do that first.
 
-![Google Search Console home page](/images/tools/search-console.webp)
+<img src="/images/tools/search-console.webp" width="1200" height="750" alt="Google Search Console home page" loading="lazy" decoding="async">
 
 1. Open Google Search Console.
 2. Click Performance, then Search Results.

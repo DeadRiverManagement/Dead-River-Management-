@@ -1,5 +1,10 @@
 User-agent: *
 Allow: /
+Disallow: /onboarding/
+Disallow: /welcome/
+Disallow: /book/thanks
+Disallow: /demand-intelligence/thanks
+Disallow: /api/
 
 # AI crawlers welcome
 User-agent: GPTBot
@@ -9,6 +14,8 @@ Allow: /
 User-agent: PerplexityBot
 Allow: /
 User-agent: Google-Extended
+Allow: /
+User-agent: Bingbot
 Allow: /
 
 Sitemap: https://www.deadrivermanagement.com/sitemap-index.xml

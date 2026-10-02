@@ -40,9 +40,9 @@ One thing before we start. This is for learning what the market wants. It isn't 
 6. Paste it into an AI assistant. Ask it to find weaknesses you could improve on.
 7. Read the answer. Then write your own page on that topic. Make it clearer and more complete.
 
-![Ubersuggest page](/images/tools/ubersuggest.webp)
+<img src="/images/tools/ubersuggest.webp" width="1200" height="750" alt="Ubersuggest page" loading="lazy" decoding="async">
 
-![Website traffic checker page](/images/tools/traffic-checker.webp)
+<img src="/images/tools/traffic-checker.webp" width="1200" height="750" alt="Website traffic checker page" loading="lazy" decoding="async">
 
 That's the whole first method. It takes maybe twenty minutes. The writing takes longer, and it should.
 
@@ -70,7 +70,7 @@ Reviews are customers talking in their own words. That's hard to get anywhere el
 5. Turn each one into an FAQ on your site. FAQ means a short question and answer.
 6. Turn the bigger ones into full articles.
 
-![Google Business Profile sign-in page](/images/tools/google-business-profile.webp)
+<img src="/images/tools/google-business-profile.webp" width="1200" height="750" alt="Google Business Profile sign-in page" loading="lazy" decoding="async">
 
 Say the reviews keep mentioning the tech showed up late. That's a worry. Write a page on how you handle arrival times. Say people kept asking about financing. Write an FAQ on it. These are real questions from real El Paso customers. That's what your pages should answer.
 
