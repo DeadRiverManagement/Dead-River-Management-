@@ -1,5 +1,6 @@
 ---
 title: "What to ask after a marketing agency burned you"
+pageTitle: "Questions to Ask After a Bad Agency | Dead River Management"
 description: "Got reports but no jobs? Use this question list before you hire again, so the next partner sells booked work, not pretty numbers."
 date: 2026-09-27
 category: "Advice"
@@ -16,6 +17,8 @@ faq:
   - q: "What is the first call with a new partner for?"
     a: "Finding the problem. If they cannot talk about your phone, follow-up, and calendar, they are not ready to take your budget."
 ---
+
+**In short:** Got reports but no jobs? Use this question list before you hire again, so the next partner sells booked work, not pretty numbers.
 
 The last agency sent dashboards. Your calendar stayed quiet. The problem was the offer, not your "tough market." Before you hire again, ask questions that only someone who does the work can answer.
 

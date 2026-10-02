@@ -1,6 +1,7 @@
 ---
 title: "How to Get Google Reviews After Every Job"
-description: "Most home service businesses do good work and get almost no Google reviews. Here is the fix, the exact text to send, and what to do about fake ones."
+pageTitle: "Get Google Reviews After Every Job | Dead River Management"
+description: "Most home service businesses do good work and get almost no Google reviews. Here is the fix, the text to send, and what to do about fake ones."
 date: 2026-10-02
 category: "Reviews"
 author: "Brandon Aubey"
@@ -14,6 +15,8 @@ faq:
   - q: "What do I do about a fake one-star review?"
     a: "Do not reply to it. Check if they were ever a customer. If not, report it and give it a couple of weeks."
 ---
+
+**In short:** Most home service businesses do good work and get almost no Google reviews. Here is the fix, the text to send, and what to do about fake ones.
 
 A lot of home service businesses do great work and have almost no reviews. We see it all the time. A company serves 300 customers a year and has six reviews to show for it. That is not a quality problem. It is an asking problem.
 

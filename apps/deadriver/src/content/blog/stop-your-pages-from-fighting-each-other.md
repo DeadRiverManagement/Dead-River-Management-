@@ -1,5 +1,6 @@
 ---
 title: "Stop Your Own Pages From Fighting Each Other on Google"
+pageTitle: "Stop Pages Competing on Google | Dead River Management"
 description: "Four fixes in Google Search Console that help your pages rank. Each one takes minutes, and the first one can move rankings fast."
 date: 2026-10-02
 category: "SEO"
@@ -14,6 +15,8 @@ faq:
   - q: "Is it safe to delete pages?"
     a: "Yes, if you redirect each one to a related page. Never delete a page that has outside links pointing to it. Those links are worth keeping."
 ---
+
+**In short:** Four fixes in Google Search Console that help your pages rank. Each one takes minutes, and the first one can move rankings fast.
 
 You run a home service business in El Paso. You do not have time for SEO homework. SEO means showing up on Google when people search for your service. Here is the good news. Most sites have a few problems hiding in plain sight. Fix them and rankings can move fast.
 

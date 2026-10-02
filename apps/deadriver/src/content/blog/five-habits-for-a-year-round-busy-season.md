@@ -1,5 +1,6 @@
 ---
 title: "Five Habits That Make Busy Season Last All Year"
+pageTitle: "Year-Round Busy Season Habits | Dead River Management"
 description: "Reviews, fast lead response, a useful slow season, real commitment, and a clear win. Five habits that keep a home service business busy all year."
 date: 2026-10-02
 category: "Business"
@@ -14,6 +15,8 @@ faq:
   - q: "Why does defining a win matter?"
     a: "Most owners say they want growth but never say what done looks like. Pick an end point and write it down. Then every decision gets easier."
 ---
+
+**In short:** Reviews, fast lead response, a useful slow season, real commitment, and a clear win. Five habits that keep a home service business busy all year.
 
 Most home service owners in El Paso have a busy season and a slow one. The phone rings for a few months. Then it goes quiet. I think a lot of that gap is habit, not weather. Here are five habits that stretch the busy season out.
 

@@ -1,5 +1,6 @@
 ---
 title: "Free Business Listings for Local SEO: Claim These, Skip Those"
+pageTitle: "Free Business Listings to Claim | Dead River Management"
 description: "Nine free business listings for local SEO, rated 1 to 10. What each one does, why it matters, and how to claim it in one step."
 date: 2026-10-02
 category: "Local SEO"
@@ -14,6 +15,8 @@ faq:
   - q: "Why does Bing matter if nobody uses it?"
     a: "ChatGPT pulls from Bing when it recommends a business. So a Bing Places listing helps AI find you."
 ---
+
+**In short:** Nine free business listings for local SEO, rated 1 to 10. What each one does, why it matters, and how to claim it in one step.
 
 Most owners claim Google and stop. That leaves a lot of free spots empty. Each one takes a few minutes. Some of them feed the AI tools people now use to pick a company. Here is the list, rated, with the one step to claim each.
 

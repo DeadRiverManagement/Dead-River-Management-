@@ -1,5 +1,6 @@
 ---
 title: "Google Business Profile Categories: The Setting That Matters Most"
+pageTitle: "Google Business Profile Categories | Dead River Management"
 description: "Your primary category is the biggest ranking setting on your Google Business Profile. Here is how to check it and see what the top competitors use."
 date: 2026-10-02
 category: "Google Business Profile"
@@ -14,6 +15,8 @@ faq:
   - q: Should I pay an agency to manage my map listing?
     a: Not just for that. The profile takes an hour or two to set up right. Ranking comes from your website, reviews, and mentions across the internet.
 ---
+
+**In short:** Your primary category is the biggest ranking setting on your Google Business Profile. Here is how to check it and see what the top competitors use.
 
 Your map listing is your front door. That is true for every home service business in El Paso. Most owners set it up once and never look again. One setting on that profile matters more than all the rest.
 

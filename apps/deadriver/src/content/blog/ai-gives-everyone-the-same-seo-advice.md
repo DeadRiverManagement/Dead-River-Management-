@@ -1,5 +1,6 @@
 ---
 title: "AI Gives Everyone the Same SEO Advice. That Is the Problem."
+pageTitle: "Same SEO Advice From AI | Dead River Management"
 description: "Most owners now do SEO by asking an AI. They all get the same answer. Here is why that cannot win, and how to use AI the right way."
 date: 2026-10-02
 category: "AI Search"
@@ -14,6 +15,8 @@ faq:
   - q: "How do I see if my pages show up in AI Overviews?"
     a: "Open Google Search Console. Go to Performance, then Search Results, then the get more details report. There is a Generative AI tab."
 ---
+
+**In short:** Most owners now do SEO by asking an AI. They all get the same answer. Here is why that cannot win, and how to use AI the right way.
 
 Most owners I talk to now do their own SEO. SEO means showing up on Google. They do it by asking an AI assistant. That sounds smart. The problem is everyone else is doing the exact same thing.
 

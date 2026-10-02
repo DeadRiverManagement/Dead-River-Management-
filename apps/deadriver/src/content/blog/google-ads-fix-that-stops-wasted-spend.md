@@ -1,5 +1,6 @@
 ---
 title: "Google Ads Negative Keywords: The Ten-Minute Fix for Wasted Spend"
+pageTitle: "Google Ads Negative Keywords | Dead River Management"
 description: "A short Google Ads check that finds job seekers and other bad clicks eating your budget. Then you block them with negative keywords."
 date: 2026-10-02
 category: "Google Ads"
@@ -14,6 +15,8 @@ faq:
   - q: "Will negative keywords lower my leads?"
     a: "No. They block people who were never going to hire you. Your budget moves to real customers instead."
 ---
+
+**In short:** A short Google Ads check that finds job seekers and other bad clicks eating your budget. Then you block them with negative keywords.
 
 If you run [Google Ads](https://ads.google.com/), you are paying for clicks. Some of those clicks are from people who will never hire you. They just happen to type words that match your ads. This fix takes about ten minutes and it stops a lot of that waste.
 

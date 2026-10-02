@@ -1,5 +1,6 @@
 ---
 title: "Why a Business Stays Stuck for Years, and What Changes It"
+pageTitle: "Why Businesses Stay Stuck | Dead River Management"
 description: "Most stuck owners know what is wrong. They just will not touch it. Here is what we see change when a business finally moves."
 date: 2026-10-02
 category: "Business"
@@ -14,6 +15,8 @@ faq:
   - q: "Is it okay to not want to grow?"
     a: "Yes. If you are good where you are and just need a few more leads, say so. That is a clear goal, and we respect it."
 ---
+
+**In short:** Most stuck owners know what is wrong. They just will not touch it. Here is what we see change when a business finally moves.
 
 You run a home service business in El Paso. You have been about the same size for a while. This post is about why that happens, and what we see change it.
 

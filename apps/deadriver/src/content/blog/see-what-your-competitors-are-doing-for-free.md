@@ -1,5 +1,6 @@
 ---
 title: "Free Ways to See What Your Competitors Are Doing Online"
+pageTitle: "Free Competitor Research | Dead River Management"
 description: "Four free ways to learn why a competitor ranks above you on Google. Then use what you learn to write better pages of your own."
 date: 2026-10-02
 category: "SEO"
@@ -14,6 +15,8 @@ faq:
   - q: "How long does this take?"
     a: "The first pass takes about an hour. Writing the page takes longer. Plan on one good page a week."
 ---
+
+**In short:** Four free ways to learn why a competitor ranks above you on Google. Then use what you learn to write better pages of your own.
 
 If someone ranks above you on Google, they're getting your calls. You can guess why. Or you can look. Looking is free, and it takes about an hour.
 

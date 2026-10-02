@@ -1,5 +1,6 @@
 ---
 title: "Local SEO: Which Trades Rank Easiest, and What to Do First"
+pageTitle: "Easiest Trades to Rank on Google | Dead River Management"
 description: "Some trades rank fast on Google. Others are brutal. Here is the honest tier list and the first local SEO move for each goal."
 date: 2026-10-02
 category: "Local SEO"
@@ -14,6 +15,8 @@ faq:
   - q: "What is the fastest way to get more calls from Google?"
     a: "Fix your Google Maps categories and services first. It is free and works fast if you are already close. Then get reviews. Ads are faster but you stop getting calls the day you stop paying."
 ---
+
+**In short:** Some trades rank fast on Google. Others are brutal. Here is the honest tier list and the first local SEO move for each goal.
 
 Every trade is not the same on Google. Some owners rank in a few months. Others grind for years and never crack the top three. The difference is mostly the trade, not the effort.
 

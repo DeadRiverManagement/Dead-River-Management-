@@ -1,5 +1,6 @@
 ---
 title: "How fast you answer is the real cost of a lead"
+pageTitle: "Lead Response Time Is the Real Cost | Dead River Management"
 description: "If you wait hours to call back, you paid for someone else's job. See what a slow reply does to booked jobs, and what to fix first."
 date: 2026-09-27
 category: "Advice"
@@ -16,6 +17,8 @@ faq:
   - q: "Should we pause ads until we reply faster?"
     a: "If you often miss or delay calls, pause or cut spend until the phone process holds. Paying for ignored leads is the costly choice."
 ---
+
+**In short:** If you wait hours to call back, you paid for someone else's job. See what a slow reply does to booked jobs, and what to fix first.
 
 A lead that waits is usually a lead you lost. The ad did not fail. The follow-up did. Speed to lead means how fast a real person answers or calls back. It is often cheaper to fix than buying more clicks.
 

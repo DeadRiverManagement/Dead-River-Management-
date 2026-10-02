@@ -1,5 +1,6 @@
 ---
 title: "What SEO Costs for a Home Service Business, and Who to Hire"
+pageTitle: "What SEO Costs and Who to Hire | Dead River Management"
 description: "A plain look at SEO price tiers, what each one buys, and the five kinds of people you can hire. Written for home service owners."
 date: 2026-10-02
 category: "SEO"
@@ -14,6 +15,8 @@ faq:
   - q: "What is a Google Business Profile?"
     a: "It is your free listing on Google Maps. It shows your reviews, hours, and photos. It is important, but it is not a full SEO plan on its own."
 ---
+
+**In short:** A plain look at SEO price tiers, what each one buys, and the five kinds of people you can hire. Written for home service owners.
 
 You get a call every week from someone selling SEO. One guy wants 99 dollars a month. Another wants 4,000. They all say the same stuff. Here is what you actually get at each price, and who is worth hiring.
 

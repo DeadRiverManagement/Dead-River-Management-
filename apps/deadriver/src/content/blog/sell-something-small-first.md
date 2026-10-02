@@ -1,5 +1,6 @@
 ---
 title: "Why a Free Lead Magnet Rarely Sells, and What to Offer Instead"
+pageTitle: "Sell Something Small First | Dead River Management"
 description: "A free download makes a viewer. A small paid offer makes a customer. Here is how home service businesses can use a low-cost first step."
 date: 2026-10-02
 category: "Marketing"
@@ -14,6 +15,8 @@ faq:
   - q: "Will charging for the first step lose me leads?"
     a: "Yes, you will get fewer leads. That is the trade. You give up volume and get more serious conversations in return."
 ---
+
+**In short:** A free download makes a viewer. A small paid offer makes a customer. Here is how home service businesses can use a low-cost first step.
 
 Most home service owners I talk to have tried a free offer. A free guide, a free quote, a free inspection. Leads come in, but most of them go nowhere. Here is why I think that happens, and what to try instead.
 

@@ -1,5 +1,6 @@
 ---
 title: "Using AI on Your Website Without Getting Buried by Google"
+pageTitle: "AI Content and Your Website | Dead River Management"
 description: "AI blog posts and AI location pages used to rank. Now Google ignores most of them. Here is how to check your site and use AI the right way."
 date: 2026-10-02
 category: "AI Search"
@@ -14,6 +15,8 @@ faq:
   - q: "Is it ever okay to use AI for my website?"
     a: "Yes. Use it to pull your real story and numbers out of you. Do not use it to make up pages that say nothing new."
 ---
+
+**In short:** AI blog posts and AI location pages used to rank. Now Google ignores most of them. Here is how to check your site and use AI the right way.
 
 A lot of owners write their websites with AI now. Most have never checked if any of it works. I think most of it is hurting them.
 

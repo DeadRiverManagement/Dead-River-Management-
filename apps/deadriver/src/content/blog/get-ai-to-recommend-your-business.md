@@ -1,5 +1,6 @@
 ---
 title: "How to Get ChatGPT and Google AI to Recommend Your Business"
+pageTitle: "Get AI to Recommend Your Business | Dead River Management"
 description: "A plain guide for home service owners. See if AI already sends you visitors, then fix the free listings and site facts that get you recommended."
 date: 2026-10-02
 category: "AI Search"
@@ -14,6 +15,8 @@ faq:
   - q: "Should I post a lot of AI written blogs?"
     a: "No. That is the worst approach. Short answers to real questions, with original facts, work far better."
 ---
+
+**In short:** A plain guide for home service owners. See if AI already sends you visitors, then fix the free listings and site facts that get you recommended.
 
 More people ask ChatGPT for a plumber now. Google shows AI answers at the top of the page. If AI does not know your business, it will not say your name. Here is how to check where you stand, and what to fix.
 
