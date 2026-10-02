@@ -240,32 +240,47 @@ const schemas = [org, site, ...(schema ? [schema] : [])];
       </footer>
     ) : (
     <footer class="site-footer">
-      <div class="wrap footer-main">
-        <a href="/" class="brand" aria-label="Dead River Management home">
-          <Logo />
-        </a>
-        <nav class="footer-links" aria-label="Footer">
-          {[
-            ['Solutions', '/solutions'],
-            ['Work and case studies', '/work'],
-            ['Demand Intelligence', '/demand-intelligence'],
-            ...servicePages.map((sp) => [sp.navLabel, `/services/${sp.slug}`]),
-            ['Free tools', '/tools'],
-            ['Scale playbook', '/free-playbook'],
-            ['Articles', '/resources'],
+      <div class="wrap footer-grid">
+        <div class="footer-talk">
+          <p class="eyebrow">Talk to a person</p>
+          <a class="footer-phone" href={brand.phoneHref}>{brand.phone}</a>
+          <p class="footer-hours">Call or text. Mon to Sat, 9 to 6 Mountain.</p>
+          <div class="footer-actions">
+            <a class="button" href="/book">Book a strategy call <Arrow /></a>
+            <a class="button secondary" href={brand.smsHref}>Text us</a>
+          </div>
+          <a class="footer-email" href={`mailto:${brand.email}`}>{brand.email}</a>
+        </div>
+        {[
+          ['Services', servicePages.map((sp) => [sp.navLabel, `/services/${sp.slug}`])],
+          ['Company', [
             ['About', '/company'],
+            ['Results', '/work'],
+            ['Demand Intelligence', '/demand-intelligence'],
             ['Marketing advice', '/marketing-advice'],
-            ['Onboarding', '/onboarding'],
+            ['Free tools', '/tools'],
             ['El Paso, Texas', '/locations/el-paso'],
-          ].map(([label, href]) => (
-            <a href={href}>{label}</a>
-          ))}
-        </nav>
-        <div class="footer-contact">
-          <PreferredSource />
-          <a href={`mailto:${brand.email}`}>{brand.email}</a>
-          <a href={brand.phoneHref}>{brand.phone}</a>
-          <a class="footer-book" href="/book">Book a strategy call <Arrow /></a>
+          ]],
+          ['Clients', [
+            ['Sign in', 'https://app.deadrivermanagement.com/v2/'],
+            ['Onboarding', '/onboarding'],
+            ['Solutions', '/solutions'],
+            ['Scale playbook', '/free-playbook'],
+          ]],
+        ].map(([group, links]) => (
+          <nav class="footer-col" aria-label={group}>
+            <p class="footer-col-title">{group}</p>
+            {links.map(([label, href]) => (
+              <a href={href}>{label}</a>
+            ))}
+          </nav>
+        ))}
+      </div>
+      <div class="wrap footer-bottom">
+        <div class="footer-bottom-row">
+          <a href="/" class="brand" aria-label="Dead River Management home">
+            <Logo />
+          </a>
           <ul class="footer-social" aria-label="Dead River Management on social media">
             {socials.map((s) => (
               <li>
@@ -278,9 +293,6 @@ const schemas = [org, site, ...(schema ? [schema] : [])];
             ))}
           </ul>
         </div>
-      </div>
-      <div class="wrap footer-bottom">
-        <span>© {new Date().getFullYear()} Dead River Management · {brand.location} · Mon to Sat, 9 to 6 Mountain</span>
         <nav class="footer-legal" aria-label="Policies">
           {[
             ['Privacy', '/privacy'],
@@ -294,6 +306,10 @@ const schemas = [org, site, ...(schema ? [schema] : [])];
             <a href={href}>{label}</a>
           ))}
         </nav>
+        <div class="footer-bottom-row">
+          <span>© {new Date().getFullYear()} Dead River Management · {brand.location}</span>
+          <PreferredSource />
+        </div>
       </div>
     </footer>
     )}
