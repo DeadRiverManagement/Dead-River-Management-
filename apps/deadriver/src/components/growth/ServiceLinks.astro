@@ -1,21 +1,63 @@
 ---
-// A row of links from an industry or location page to the service pages
-// behind the offer. Keeps money pages and service pages linked both ways.
+// An index of the pages behind the offer, shown near the end of location and
+// service pages. Each row is a channel: name, one line on what it does, and a
+// link. Pass `links` to override the default list of service pages. Slot
+// content renders under the heading (used for a short "Also read" line).
 import { servicePages } from '../../data/service-pages';
-const { label = 'The services behind this offer' } = Astro.props;
+import Arrow from './Arrow.astro';
+type Link = { label: string; href: string; blurb?: string };
+const { label = 'The services behind this offer', heading = 'Every channel we run.', links } = Astro.props as {
+  label?: string; heading?: string; links?: Link[];
+};
+const items: Link[] = links ?? servicePages.map((s) => ({ label: s.name, href: `/services/${s.slug}`, blurb: s.blurb }));
 ---
 
 <nav class="service-links" aria-label={label}>
-  <span class="mini-label">{label}</span>
+  <div class="sl-head">
+    <p class="eyebrow">{label}</p>
+    <h2>{heading}</h2>
+    <slot />
+  </div>
   <ul>
-    {servicePages.map((s) => (
-      <li><a class="inline-link" href={`/services/${s.slug}`}>{s.name}</a></li>
+    {items.map((l) => (
+      <li>
+        <a href={l.href}>
+          <span class="sl-name">{l.label}</span>
+          {l.blurb && <span class="sl-blurb">{l.blurb}</span>}
+          <Arrow />
+        </a>
+      </li>
     ))}
   </ul>
 </nav>
 
 <style>
-  .service-links { margin-top: 24px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 20px; }
-  .service-links .mini-label { margin: 0; }
-  .service-links ul { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 8px 20px; }
+  .service-links { padding-block: 8px 56px; }
+  .sl-head { margin-bottom: 28px; }
+  .sl-head h2 { font-size: clamp(26px, 2.6vw, 34px); margin-bottom: 0; }
+  .sl-head :global(.also) { margin-top: 14px; font-size: 15px; color: var(--muted); }
+  .sl-head :global(.also a) { margin-left: 6px; }
+  .service-links ul { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-top: 1px solid var(--line); }
+  .service-links li { border-bottom: 1px solid var(--line); }
+  .service-links li:nth-child(odd) { border-right: 1px solid var(--line); }
+  .service-links li:last-child:nth-child(odd) { grid-column: 1 / -1; border-right: 0; } /* odd count: no orphan cell */
+  .service-links a { position: relative; display: grid; grid-template-columns: 1fr 22px; grid-template-rows: auto auto; column-gap: 20px; row-gap: 4px; padding: 20px 22px 20px 0; text-decoration: none; color: inherit; transition: background-color .25s ease, padding-left .25s cubic-bezier(.22,1,.36,1); }
+  .service-links li:nth-child(even) a { padding-left: 24px; }
+  .sl-name { grid-column: 1; font-family: var(--display); font-weight: 700; font-size: 21px; letter-spacing: -0.02em; line-height: 1.15; }
+  .sl-blurb { grid-column: 1; font-size: 14.5px; line-height: 1.45; color: var(--muted); }
+  .service-links :global(.arrow) { grid-column: 2; grid-row: 1; width: 20px; height: 20px; align-self: center; color: var(--copper); opacity: 0; transform: translateX(-6px); transition: opacity .25s ease, transform .25s cubic-bezier(.22,1,.36,1); }
+  .service-links a:hover, .service-links a:focus-visible { background: var(--sage); padding-left: 14px; }
+  .service-links li:nth-child(even) a:hover, .service-links li:nth-child(even) a:focus-visible { padding-left: 32px; }
+  .service-links a:hover :global(.arrow), .service-links a:focus-visible :global(.arrow) { opacity: 1; transform: none; }
+  .service-links a:focus-visible { outline: 3px solid var(--copper); outline-offset: -3px; }
+  @media (max-width: 720px) {
+    .service-links ul { grid-template-columns: 1fr; }
+    .service-links li:nth-child(odd) { border-right: 0; }
+    .service-links li:nth-child(even) a { padding-left: 0; }
+    .service-links a:hover, .service-links a:focus-visible, .service-links li:nth-child(even) a:hover { padding-left: 10px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .service-links a, .service-links :global(.arrow) { transition: none; }
+    .service-links a:hover, .service-links li:nth-child(even) a:hover { padding-left: inherit; }
+  }
 </style>

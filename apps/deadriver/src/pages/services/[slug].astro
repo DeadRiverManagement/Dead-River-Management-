@@ -5,6 +5,7 @@
 // which is where the guaranteed offers and prices live.
 import Growth from '../../layouts/Growth.astro';
 import Arrow from '../../components/growth/Arrow.astro';
+import ServiceLinks from '../../components/growth/ServiceLinks.astro';
 import { faqPage } from '../../lib/schema';
 import { servicePages, demandFlowOffer, elPasoAreas } from '../../data/service-pages';
 import type { ServicePageData } from '../../data/service-pages';
@@ -137,13 +138,15 @@ const serviceSchema = {
           <a class="text-link" href="/locations/el-paso">Marketing in El Paso <Arrow /></a>
         </article>
       </div>
-      <div class="sv-related">
-        <p class="mini-label">Keep reading</p>
-        <ul>
-          {page.related.map((r) => <li><a class="inline-link" href={r.href}>{r.label}</a></li>)}
-          {others.map((s) => <li><a class="inline-link" href={'/services/' + s.slug}>{s.name}</a></li>)}
-        </ul>
-      </div>
+      <ServiceLinks
+        label="Keep reading"
+        heading="The other channels we run."
+        links={others.map((s) => ({ label: s.name, href: '/services/' + s.slug, blurb: s.blurb }))}
+      >
+        <p class="also">Also read:{page.related.map((r, i) => (
+          <>{i > 0 && ','}<a class="inline-link" href={r.href}>{r.label}</a></>
+        ))}</p>
+      </ServiceLinks>
     </div>
   </section>
 
@@ -206,10 +209,9 @@ const serviceSchema = {
   .sv-offer p:not(.mini-label) { color: var(--muted); font-size: 15px; margin-bottom: 14px; }
   .sv-offer .text-link { margin-top: auto; font-size: 14px; }
   .sv-proof { font-size: 17px; color: var(--ink); margin-bottom: 16px; }
-  .sv-related { margin-top: 28px; }
+  .service-links { margin-top: 28px; }
   .sv-areas { list-style: none; padding: 0; margin: 14px 0 16px; display: flex; flex-wrap: wrap; gap: 6px; }
   .sv-areas li { font-size: 13px; padding: 4px 10px; border: 1px solid var(--line); border-radius: 999px; color: var(--ink); background: var(--paper); }
-  .sv-related ul { list-style: none; padding: 0; margin: 8px 0 0; display: flex; flex-wrap: wrap; gap: 8px 24px; }
   .ms-close { padding-bottom: 72px; }
   @media (max-width: 1100px) {
   }
