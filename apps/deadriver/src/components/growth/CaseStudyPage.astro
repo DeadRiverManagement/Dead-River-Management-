@@ -7,21 +7,9 @@ const { c, logo } = Astro.props as {
   logo?: { src: string; width: number; height: number };
 };
 const name = c.company;
-const SITE = 'https://www.deadrivermanagement.com';
-const videoSchema = c.video && {
-  '@context': 'https://schema.org',
-  '@type': 'VideoObject',
-  name: c.video.title,
-  description: c.video.description,
-  thumbnailUrl: SITE + c.video.poster,
-  contentUrl: SITE + c.video.src,
-  uploadDate: c.video.uploadDate,
-  ...(c.video.duration ? { duration: c.video.duration } : {}),
-  publisher: { '@id': `${SITE}/#organization` },
-};
 ---
 
-<Growth title={c.seoTitle} description={c.description} schema={videoSchema}>
+<Growth title={c.seoTitle} description={c.description}>
   <section class="page-hero wrap">
     <p class="eyebrow">{c.eyebrow}</p>
     <h1>{c.headline}</h1>
@@ -35,12 +23,6 @@ const videoSchema = c.video && {
     <a href="/work" class="back-link">← All case studies</a>
   </section>
 
-  {c.video && (
-    <section class="section wrap cs-video">
-      <p class="eyebrow">Hear it from {name}</p>
-      <video controls preload="metadata" playsinline poster={c.video.poster} src={c.video.src} aria-label={c.video.title}></video>
-    </section>
-  )}
 
   <section class="section soft">
     <div class="wrap split cs-body">
@@ -164,7 +146,6 @@ const videoSchema = c.video && {
 </Growth>
 
 <style>
-  .cs-video video { display: block; width: 100%; max-width: 860px; border-radius: 12px; background: #000; aspect-ratio: 16 / 9; }
   .page-hero .intro + .intro { margin-top: 14px; }
   .cs-hero-row { display: flex; flex-wrap: wrap; align-items: center; gap: 24px 40px; margin: 32px 0 28px; }
   .cs-logo { width: 120px; height: 96px; object-fit: contain; }
