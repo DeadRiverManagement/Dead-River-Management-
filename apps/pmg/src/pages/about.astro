@@ -1,0 +1,88 @@
+---
+/**
+ * About — RESULTS FIRST lead. City-level NAP only. No street.
+ * Title is locked: About Parcel Management Group | Freight Broker
+ */
+import Base from '../layouts/Base.astro';
+import site from '../data/site.json';
+
+const siteURL = Astro.site?.toString() ?? `${site.canonicalOrigin}/`;
+
+const entityFaq = [
+  {
+    q: 'Is Parcel Management Group in Ventura, California?',
+    a: 'Yes. PMG is based in Ventura, CA 93001 and serves shippers across the United States. Phone: (805) 984-4114.',
+  },
+  {
+    q: 'Does the Small Package Program cost my business anything?',
+    a: 'No. There are no fees, no contract, and no cost to your business. PMG is paid on the program itself — not by charging you an extra bill.',
+  },
+];
+
+const seo = {
+  title: 'About Parcel Management Group | Freight Broker',
+  description:
+    'Parcel Management Group is a US freight broker in Ventura, CA. We cut shipping costs for small package, LTL, and full truckload. Call (805) 984-4114.',
+  schema: [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'AboutPage',
+      name: 'About Parcel Management Group',
+      url: `${siteURL}about/`,
+      mainEntity: { '@id': `${siteURL}#organization` },
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: entityFaq.map((qa) => ({
+        '@type': 'Question',
+        name: qa.q,
+        acceptedAnswer: { '@type': 'Answer', text: qa.a },
+      })),
+    },
+  ],
+};
+---
+<Base title={seo.title} description={seo.description} canonical="/about/" schema={seo.schema}>
+  <section class="page-hero" aria-label="About Parcel Management Group">
+    <div class="wrap">
+      <span class="eyebrow">About</span>
+      <h1>About Parcel Management Group</h1>
+    </div>
+  </section>
+  <section class="page-body">
+    <div class="wrap prose">
+      <p>Parcel Management Group (PMG) helps US businesses pay less to ship. We run a free small-package discount program for UPS and FedEx. We also move LTL and full truckload freight, and we audit accounts to recover refunds.</p>
+      <p>We are a registered freight broker: USDOT 3266041 · MC 1030328. We work from Ventura, CA 93001 and serve shippers nationwide.</p>
+      <p>Peace of mind, not just a shipping rate.</p>
+      <p>Phone: <a href="tel:+18059844114">(805) 984-4114</a><br />Web: <a href="https://www.parcelmanagementgroup.com/">https://www.parcelmanagementgroup.com/</a></p>
+      <div class="hero-actions">
+        <a class="btn btn-gold" href="/#contact">Start saving today →</a>
+        <a class="btn btn-ghost" href="/#services">See our services</a>
+      </div>
+      <p class="related">
+        <a href="/#services">Services</a>
+        <span aria-hidden="true">·</span>
+        <a href="/blog/what-is-a-parcel-audit/">What is a parcel audit</a>
+        <span aria-hidden="true">·</span>
+        <a href="/blog/parcel-audit-vs-freight-audit/">Parcel audit vs freight audit</a>
+      </p>
+    </div>
+  </section>
+  <section class="page-body" aria-label="About questions">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">FAQ</span>
+        <h2>Parcel Management Group, in short.</h2>
+      </div>
+      <div class="faq faq-static">
+        {entityFaq.map((qa) => (
+          <div class="qa">
+            <h3>{qa.q}</h3>
+            <div class="a"><p>{qa.a}</p></div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</Base>

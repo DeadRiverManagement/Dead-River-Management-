@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-label="A freight shipment moving between terminals with tracking scan points along the route">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F6E39C"/><stop offset=".34" stop-color="#E7C568"/>
+      <stop offset=".68" stop-color="#C79A3C"/><stop offset="1" stop-color="#8E6417"/>
+    </linearGradient>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" fill="none" stroke="#E7C568" stroke-opacity=".05" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="#0B0B0C"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <circle cx="600" cy="180" r="320" fill="#E7C568" opacity=".045"/>
+
+  <!-- route -->
+  <path d="M140 400C300 250 420 250 600 330 780 410 900 400 1060 260"
+        fill="none" stroke="#E7C568" stroke-opacity=".3" stroke-width="4" stroke-dasharray="14 14"/>
+
+  <!-- terminals -->
+  <g>
+    <g transform="translate(100 360)">
+      <rect x="0" y="0" width="80" height="72" rx="8" fill="#141416" stroke="url(#g)" stroke-width="5"/>
+      <path d="M0 26h80M26 26v46" stroke="url(#g)" stroke-width="4" opacity=".6"/>
+      <rect x="10" y="88" width="60" height="10" rx="5" fill="url(#g)" opacity=".7"/>
+    </g>
+    <g transform="translate(1020 220)">
+      <rect x="0" y="0" width="80" height="72" rx="8" fill="#141416" stroke="url(#g)" stroke-width="5"/>
+      <path d="M0 26h80M54 26v46" stroke="url(#g)" stroke-width="4" opacity=".6"/>
+      <rect x="10" y="88" width="60" height="10" rx="5" fill="url(#g)" opacity=".7"/>
+    </g>
+  </g>
+
+  <!-- scan points -->
+  <g fill="#0B0B0C" stroke="url(#g)" stroke-width="6">
+    <circle cx="330" cy="278" r="14"/>
+    <circle cx="600" cy="330" r="14"/>
+    <circle cx="860" cy="360" r="14"/>
+  </g>
+  <g fill="url(#g)">
+    <circle cx="330" cy="278" r="5"/><circle cx="600" cy="330" r="5"/><circle cx="860" cy="360" r="5"/>
+  </g>
+
+  <!-- truck at midpoint -->
+  <g transform="translate(540 148)" fill="none" stroke="url(#g)" stroke-width="6" stroke-linejoin="round">
+    <rect x="0" y="0" width="80" height="58" rx="6" fill="#141416"/>
+    <path d="M80 18h24l18 18v22H80z" fill="#141416"/>
+    <circle cx="26" cy="70" r="11" fill="#0B0B0C"/>
+    <circle cx="100" cy="70" r="11" fill="#0B0B0C"/>
+  </g>
+
+  <!-- PRO chip -->
+  <g transform="translate(430 470)">
+    <rect x="0" y="0" width="340" height="70" rx="35" fill="#141416" stroke="#E7C568" stroke-opacity=".35"/>
+    <g fill="url(#g)" transform="translate(34 26)">
+      <rect x="0" y="0" width="6" height="20"/><rect x="11" y="0" width="3" height="20"/>
+      <rect x="20" y="0" width="8" height="20"/><rect x="33" y="0" width="3" height="20"/>
+      <rect x="42" y="0" width="3" height="20"/><rect x="51" y="0" width="8" height="20"/>
+    </g>
+    <rect x="120" y="28" width="130" height="14" rx="7" fill="url(#g)" opacity=".85"/>
+    <rect x="262" y="28" width="46" height="14" rx="7" fill="#F3EEDF" opacity=".2"/>
+  </g>
+</svg>

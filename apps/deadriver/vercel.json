@@ -1281,6 +1281,26 @@
       "statusCode": 301
     },
     {
+      "source": "/guarantee",
+      "destination": "/legal/guarantee",
+      "statusCode": 301
+    },
+    {
+      "source": "/guarantee.html",
+      "destination": "/legal/guarantee",
+      "statusCode": 301
+    },
+    {
+      "source": "/demand-flow",
+      "destination": "/book",
+      "statusCode": 301
+    },
+    {
+      "source": "/demand-flow.html",
+      "destination": "/book",
+      "statusCode": 301
+    },
+    {
       "source": "/guarantee-terms",
       "destination": "/legal/guarantee",
       "statusCode": 301

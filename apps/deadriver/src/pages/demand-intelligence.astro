@@ -22,17 +22,6 @@ const productSchema = {
   operatingSystem: 'Web',
   description:
     'Unlimited daily-refreshed purchase intent data delivered as verified email lists and custom ad audiences for Meta and Google.',
-  offers: {
-    '@type': 'Offer',
-    price: '3000',
-    priceCurrency: 'USD',
-    priceSpecification: {
-      '@type': 'UnitPriceSpecification',
-      price: '3000',
-      priceCurrency: 'USD',
-      unitText: 'MONTH',
-    },
-  },
 };
 const faqs = [
   [
@@ -68,12 +57,12 @@ const faqs = [
     'Three things: 1) Daily refresh (our data is from the last 24-48 hours, not 30-90 days old). 2) Unlimited data points (no caps). 3) Instant delivery (5 minutes vs. 3-7 days). Plus, we have the guarantee.',
   ],
   [
-    'How much does Dead River Demand Intelligence cost?',
-    '$3,000 per month with no setup fee. Unlimited data points. Daily refresh. Instant delivery. Partial refund guarantee if targets not hit.',
+    'How does Demand Intelligence pricing work?',
+    'Scope and fees are confirmed on a demo based on your market and use case. Unlimited data points, daily refresh, instant delivery, and a partial refund guarantee if targets are not hit.',
   ],
   [
     "What if I'm already using another intent data provider?",
-    "Cool. What's your current email reply rate? What's your ad ROAS? If we can't beat it, you get a refund. Also, they charge $800-1,400/month for 2M-4M data points. We give you unlimited for $3,000/month with daily refresh.",
+    "Cool. What's your current email reply rate? What's your ad ROAS? If we can't beat it, you get a refund. Other providers often cap or age their data; we provide unlimited daily-refreshed data and discuss fit and scope on a demo.",
   ],
 ];
 const faqSchema = {
@@ -100,7 +89,7 @@ const tiers = [
 ];
 const requirements = [
   'You must be sending minimum 1,000 emails/month',
-  'You must be spending minimum $3,000/month on paid ads (Meta or Google)',
+  'You must have meaningful paid spend on Meta or Google',
   'You must email provided lists within 7 days of delivery',
   'You must upload provided ad audiences within 7 days of delivery',
   'You must run campaigns for full 60 days without pausing for more than 48 consecutive hours',
@@ -126,7 +115,7 @@ const features = [
   ],
   [
     'Unlimited data points',
-    'No caps. No limits. Competitors charge $800-1,400/month for 2M-4M data points. You get unlimited for $3,000/month.',
+    'No caps. No limits. You get unlimited data with daily refresh; scope and fees are confirmed on a demo.',
   ],
   [
     'B2B and B2C',
@@ -135,13 +124,13 @@ const features = [
 ];
 const bestFor = [
   'Marketing agencies running ads or email campaigns for clients',
-  'SaaS companies with $3,000+/month ad budgets',
+  'SaaS companies with meaningful paid ad budgets',
   'B2B companies doing outbound email (1,000+ emails/month)',
   'Sales teams tired of working completely cold lists',
   'Growth teams that need better targeting data',
 ];
 const minimums = [
-  'Sending 1,000+ emails/month OR spending $3,000+/month on ads',
+  'Sending 1,000+ emails/month OR running meaningful paid campaigns',
   'Targeting B2B or B2C audiences in the U.S.',
   'Product/service with minimum $1,000 LTV',
   'Email deliverability above 85% (if doing email outreach)',
@@ -150,7 +139,7 @@ const compare = [
   ['Data freshness', '24-48 hours (daily refresh)', '30-90 days old (stale data)'],
   ['Data volume', 'Unlimited data points', '2M-4M data points (capped)'],
   ['Delivery speed', '5 minutes (instant)', '3-7 days (slow)'],
-  ['Pricing', '$3,000/month', '$800-1,400/month (but limited data)'],
+  ['Pricing', 'Scope confirmed on a demo', 'Varies by provider and data limits'],
   ['Guarantee', 'Partial refund if targets not hit', 'No guarantee (you waste money on bad data)'],
   ['Email accuracy', '<1% bounce rate (Instantly enriched)', '5-10% bounce rate (unverified)'],
   ['Ad audiences', 'Ready-to-upload (Meta/Google)', 'You build them yourself'],
@@ -175,7 +164,7 @@ const seeing = [
 
 <Growth
   title="2x Email Response & Ad ROAS in 60 Days | Demand Intelligence"
-  description="Unlimited daily purchase intent data for agencies and SaaS. 2x email response rates and double ad ROAS in 60 days, or you pay nothing. $3,000/month."
+  description="Unlimited daily purchase intent data for agencies and SaaS. 2x email response rates and double ad ROAS in 60 days, or you pay nothing. Talk through scope on a demo."
   ogImage="/media/demand-intelligence-walkthrough-poster.jpg"
   schema={[videoSchema, productSchema, faqSchema]}
 >
@@ -201,7 +190,7 @@ const seeing = [
       60 days, you get a partial refund.
     </p>
     <ul class="di-trust">
-      <li>$3,000/month</li>
+      <li>Scope confirmed on a demo</li>
       <li>Unlimited data points</li>
       <li>Daily refresh</li>
       <li>Instant delivery</li>
@@ -410,8 +399,8 @@ const seeing = [
       traffic.
     </h2>
     <p class="intro">
-      If you're spending $3,000+/month on ads or sending 1,000+ emails/month and
-      not hitting 2x ROAS or 10%+ reply rates, you're wasting money on cold
+      If you're running meaningful paid campaigns or sending 1,000+ emails/month
+      and not hitting 2x ROAS or 10%+ reply rates, you're wasting money on cold
       prospects. This fixes that.
     </p>
     <div class="split di-who">
@@ -466,11 +455,11 @@ const seeing = [
 
   <section class="section wrap split">
     <div>
-      <p class="eyebrow">One plan. Full access.</p>
-      <h2>$3,000/month. No setup fee.</h2>
+      <p class="eyebrow">Platform access, scoped to your team.</p>
+      <h2>Talk through the right scope.</h2>
       <p class="intro">
-        Full platform access for your team on a single monthly plan. No public
-        tiers and no onboarding charge.
+        Full platform access for your team. Scope and fees are confirmed on a
+        demo based on your market and use case; no public price is listed here.
       </p>
       <p>Agency and multi-client arrangements are discussed on the demo.</p>
       <a class="button" href="#di-demo">Book a Demo <Arrow /></a>

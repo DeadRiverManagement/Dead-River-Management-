@@ -5,6 +5,7 @@ date: 2026-09-06
 category: "Advertising"
 heroImage: "/images/blog/facebook-ads-for-plumbers.svg"
 heroAlt: "Article card for a guide to Facebook ads for plumbers"
+legacyPriceNotice: true
 ---
 
 Ask this question in a contractor forum and you get two answers, both delivered with total confidence. "Facebook ads are a waste of money for trades." "Facebook ads built my business."

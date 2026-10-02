@@ -10,7 +10,7 @@ const budgetLabels = {
   '5000-10000': '$5,000–$10,000',
   '10000-plus': '$10,000+',
 };
-const bookVerticals = ['dental', 'real-estate', 'ecommerce', 'med-spas'];
+const bookVerticals = ['dental', 'real-estate', 'ecommerce', 'med-spas', 'other'];
 
 export function industryFromBookPath(pathname) {
   const path = String(pathname || '').replace(/\/$/, '') || '/';
@@ -72,7 +72,7 @@ function bookIndustry(values, source) {
 }
 
 export function canOpenDemandFlowCalendar(result, industry = 'home-services') {
-  const route = ['dental', 'real-estate', 'ecommerce', 'med-spas'].includes(industry)
+  const route = bookVerticals.includes(industry)
     ? industry + '-growth-strategist' : DEMANDFLOW_ROUTE;
   return result?.ok === true &&
     result.route === route &&

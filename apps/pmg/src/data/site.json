@@ -1,0 +1,17 @@
+{
+  "name": "Parcel Management Group",
+  "shortName": "PMG",
+  "domain": "www.parcelmanagementgroup.com",
+  "canonicalOrigin": "https://www.parcelmanagementgroup.com",
+  "description": "Parcel Management Group is a US freight and parcel spend management firm that reduces shipping costs for small package (UPS and FedEx), less-than-truckload and full truckload freight, including refund recovery audits. The Small Package Program has no fees, no contract and no cost to the business.",
+  "email": "",
+  "phone": "+1-805-984-4114",
+  "phoneDisplay": "(805) 984-4114",
+  "address": { "locality": "Ventura", "region": "CA", "postalCode": "93001" },
+  "areaServed": "United States",
+  "foundingNote": "Registered freight broker, USDOT 3266041, MC 1030328",
+  "logo": "/assets/pmg-logo.png",
+  "defaultImage": "/assets/pmg-logo.png",
+  "sameAs": [],
+  "author": "Parcel Management Group"
+}

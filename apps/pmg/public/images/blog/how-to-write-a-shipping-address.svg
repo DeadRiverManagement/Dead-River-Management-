@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-label="A shipping label with the recipient address block laid out line by line">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F6E39C"/><stop offset=".34" stop-color="#E7C568"/>
+      <stop offset=".68" stop-color="#C79A3C"/><stop offset="1" stop-color="#8E6417"/>
+    </linearGradient>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" fill="none" stroke="#E7C568" stroke-opacity=".05" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="#0B0B0C"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <circle cx="300" cy="150" r="290" fill="#E7C568" opacity=".05"/>
+
+  <!-- parcel -->
+  <g transform="translate(120 170)">
+    <path d="M0 76 150 6l150 70v168l-150 70L0 244z" fill="#141416" stroke="url(#g)" stroke-width="5" stroke-linejoin="round"/>
+    <path d="M0 76l150 70 150-70M150 146v168" fill="none" stroke="url(#g)" stroke-width="5" opacity=".55"/>
+    <!-- label on the face -->
+    <g transform="translate(28 122)">
+      <rect x="0" y="0" width="104" height="90" rx="6" fill="#F3EEDF" opacity=".1" stroke="#E7C568" stroke-opacity=".45"/>
+      <rect x="12" y="14" width="60" height="7" rx="3.5" fill="url(#g)" opacity=".9"/>
+      <rect x="12" y="30" width="76" height="6" rx="3" fill="#F3EEDF" opacity=".3"/>
+      <rect x="12" y="44" width="68" height="6" rx="3" fill="#F3EEDF" opacity=".3"/>
+      <rect x="12" y="58" width="50" height="6" rx="3" fill="#F3EEDF" opacity=".3"/>
+      <g fill="url(#g)" transform="translate(12 72)">
+        <rect x="0" y="0" width="4" height="10"/><rect x="7" y="0" width="2" height="10"/>
+        <rect x="13" y="0" width="5" height="10"/><rect x="22" y="0" width="2" height="10"/>
+        <rect x="28" y="0" width="5" height="10"/><rect x="37" y="0" width="2" height="10"/>
+        <rect x="43" y="0" width="4" height="10"/><rect x="52" y="0" width="2" height="10"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- address block, line by line -->
+  <g transform="translate(600 128)">
+    <rect x="0" y="0" width="500" height="374" rx="16" fill="#141416" stroke="#E7C568" stroke-opacity=".32"/>
+
+    <g transform="translate(40 48)">
+      <rect x="-22" y="4" width="4" height="22" rx="2" fill="url(#g)"/>
+      <rect x="0" y="4" width="220" height="16" rx="8" fill="url(#g)"/>
+      <rect x="0" y="34" width="70" height="9" rx="4.5" fill="#E7C568" opacity=".45"/>
+    </g>
+    <g transform="translate(40 138)">
+      <rect x="-22" y="4" width="4" height="22" rx="2" fill="url(#g)" opacity=".6"/>
+      <rect x="0" y="4" width="176" height="16" rx="8" fill="#F3EEDF" opacity=".34"/>
+      <rect x="0" y="34" width="86" height="9" rx="4.5" fill="#E7C568" opacity=".45"/>
+    </g>
+    <g transform="translate(40 228)">
+      <rect x="-22" y="4" width="4" height="22" rx="2" fill="url(#g)" opacity=".6"/>
+      <rect x="0" y="4" width="290" height="16" rx="8" fill="#F3EEDF" opacity=".34"/>
+      <rect x="0" y="34" width="104" height="9" rx="4.5" fill="#E7C568" opacity=".45"/>
+    </g>
+    <g transform="translate(40 302)">
+      <rect x="-22" y="4" width="4" height="22" rx="2" fill="url(#g)" opacity=".6"/>
+      <rect x="0" y="4" width="150" height="16" rx="8" fill="#F3EEDF" opacity=".34"/>
+      <rect x="164" y="4" width="46" height="16" rx="8" fill="url(#g)" opacity=".8"/>
+      <rect x="224" y="4" width="86" height="16" rx="8" fill="url(#g)" opacity=".8"/>
+    </g>
+  </g>
+
+  <!-- checkmark -->
+  <g transform="translate(1024 452)" fill="none" stroke="url(#g)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="30" cy="30" r="30" stroke-opacity=".4" stroke-width="5"/>
+    <path d="M16 31 26 42 46 19"/>
+  </g>
+</svg>

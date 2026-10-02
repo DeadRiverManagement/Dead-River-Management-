@@ -5,7 +5,7 @@ export type FaqItem = { q: string; a: string };
 export const homeFaq: FaqItem[] = [
   {
     q: 'What does Dead River Management actually do?',
-    a: 'We build and manage the infrastructure behind growth. Foundation puts tracking, CRM and pipeline, booking, and follow-up in place. Growth Partner adds a managed acquisition strategy and ongoing conversion work. Scale expands across more channels with deeper retention and strategy. Talk through scope at deadrivermanagement.com/book.',
+    a: 'We build and manage the demand, conversion, follow-up, and measurement infrastructure behind growth. Our live public engagement is Demand Flow for accepted businesses: $50,000 in new revenue in 45–60 days. If we miss, service fees are refunded plus $500; ad spend is not refunded. Read the terms at deadrivermanagement.com/legal/guarantee and talk through fit at deadrivermanagement.com/book.',
   },
   {
     q: 'Do you only work with businesses in El Paso?',
@@ -21,11 +21,11 @@ export const homeFaq: FaqItem[] = [
   },
   {
     q: 'Is Demand Intelligence included?',
-    a: 'Audience intelligence informs research and targeting across the engagements where it is useful. Full platform access, covering both B2B and B2C purchase-intent audiences, is a standalone product at $3,000/month with no setup fee. See Demand Intelligence.',
+    a: 'Audience intelligence can inform Demand Flow and acquisition work where it is useful. Full platform access, covering both B2B and B2C purchase-intent audiences, is a standalone product; scope and fees are confirmed on a call. See Demand Intelligence.',
   },
   {
-    q: 'How much do nationwide plans cost?',
-    a: 'Scope and fees for Foundation, Growth Partner, and Scale are confirmed before you start. Book a conversation at deadrivermanagement.com/book or call (915) 228-3054.',
+    q: 'How does Demand Flow pricing work?',
+    a: 'Demand Flow scope and fees are confirmed for accepted businesses before you start. Book a conversation at deadrivermanagement.com/book or call (915) 228-3054.',
   },
   {
     q: 'Is Dead River Management the same as Dead River Company?',
@@ -35,8 +35,8 @@ export const homeFaq: FaqItem[] = [
 
 export const pricingFaq: FaqItem[] = [
   {
-    q: 'What is the difference between Foundation, Growth Partner, and Scale?',
-    a: 'Foundation is a focused 90-day engagement that builds tracking, follow-up, conversion, and customer systems when demand already exists. Growth Partner is your managed growth engine — primary acquisition, conversion path, and reporting. Scale expands what is already working across more channels with deeper retention and strategy.',
+    q: 'What is Demand Flow?',
+    a: 'Demand Flow is the live public engagement for accepted businesses: $50,000 in new revenue in 45–60 days. If we miss, service fees are refunded plus $500; ad spend is not refunded. Read the terms at /legal/guarantee and book a conversation to see whether your business qualifies.',
   },
   {
     q: 'What is included in the monthly fee?',
@@ -48,11 +48,11 @@ export const pricingFaq: FaqItem[] = [
   },
   {
     q: 'What is Dead River Demand Intelligence?',
-    a: 'A standalone platform at $3,000/month with no setup fee. It helps you see where demand is forming and build higher-opportunity B2B and B2C audiences. It is not automatic inside Foundation, Growth Partner, or Scale — full access is sold separately. See Demand Intelligence.',
+    a: 'A standalone platform that helps you see where demand is forming and build higher-opportunity B2B and B2C audiences. Scope and fees are confirmed on a call; full access is sold separately. See Demand Intelligence.',
   },
   {
     q: 'Do you still sell Dead River Complete or Front Desk plans?',
-    a: 'No. Those older offers are retired. Current nationwide engagements are Foundation, Growth Partner, and Scale on this page.',
+    a: 'No. Those older offers are retired. The live public offer is Demand Flow: $50,000 in new revenue in 45–60 days for accepted businesses, or service fees refunded plus $500; ad spend is not refunded.',
   },
   {
     q: 'Who is a good fit?',
@@ -70,35 +70,35 @@ export const homeServicesFaq: FaqItem[] = [
     a: 'Yes. We partner with home services businesses nationwide — HVAC, plumbing, roofing, electrical, and related trades — wherever you operate.',
   },
   {
-    q: 'Which plan should a home services company start with?',
-    a: 'If infrastructure needs work first — tracking, booking, follow-up — start with Foundation. If you already have traction and want a managed acquisition strategy, Growth Partner is the usual fit. Scale is for teams ready to expand channels and deepen retention.',
+    q: 'What does Demand Flow cover for home services?',
+    a: 'Demand Flow connects demand creation, fast response, booking, follow-up, and measurement around your trade, service area, and capacity. It is offered to accepted businesses with scope confirmed before work starts.',
   },
   {
     q: 'Do you only serve El Paso home services?',
     a: 'No. We are based in El Paso and work with home services businesses across the U.S.',
   },
   {
-    q: 'Is missed-call recovery part of Growth Partner?',
-    a: 'Growth Partner brings your primary acquisition channel together with missed-call recovery, CRM and pipeline, booking, estimate follow-up, and reporting, shaped around your trade and service area. Exact scope is confirmed before you start. Book a conversation at deadrivermanagement.com/book.',
+    q: 'Is missed-call recovery included?',
+    a: 'Fast response, booking, and follow-up — including missed-call recovery where it fits the agreed scope — can be part of Demand Flow. Scope is confirmed before you start. Book a conversation at deadrivermanagement.com/book.',
   },
   {
     q: 'Are written lead promises part of current plans?',
-    a: 'Current public engagements are Foundation, Growth Partner, and Scale. Older written lead promises are not active public offers. Ask what a lead means and what happens if targets are missed before you buy any promise from anyone.',
+    a: 'The current public guarantee is Demand Flow: $50,000 in new revenue in 45–60 days for accepted businesses. If we miss, service fees are refunded plus $500; ad spend is not refunded. Older written lead promises are not active public offers.',
   },
   {
     q: 'How do I get pricing?',
-    a: 'Scope and fees for Foundation, Growth Partner, and Scale are confirmed before you start. Call (915) 228-3054.',
+    a: 'Demand Flow scope and fees are confirmed for accepted businesses before you start. Call (915) 228-3054.',
   },
 ];
 
 export const elPasoLocationFaq: FaqItem[] = [
   {
     q: 'Are you an El Paso-only agency?',
-    a: 'We are based in El Paso, Texas, and serve growing businesses nationwide. This page is for local context. Nationwide plans are Foundation, Growth Partner, and Scale.',
+    a: 'We are based in El Paso, Texas, and serve growing businesses nationwide. This page is for local context. Demand Flow is the live public engagement for accepted businesses.',
   },
   {
-    q: 'What plans do you offer now?',
-    a: 'Foundation, Growth Partner, and Scale, plus optional Demand Intelligence. Book a conversation to talk through scope.',
+    q: 'What public offer do you make now?',
+    a: 'Demand Flow is the live public offer for accepted businesses: $50,000 in new revenue in 45–60 days, or service fees refunded plus $500; ad spend is not refunded. Book a conversation to talk through fit and scope.',
   },
 ];
 

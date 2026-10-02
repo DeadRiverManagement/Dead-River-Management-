@@ -5,6 +5,7 @@ import '../styles/growth.css';
 import Logo from '../components/growth/Logo.astro';
 import Arrow from '../components/growth/Arrow.astro';
 import CookieBanner from '../components/CookieBanner.astro';
+import TrackingPrivacy from '../components/TrackingPrivacy.astro';
 import { brand } from '../data/growth';
 import { business, socials } from '../data/site';
 import { socialIcons } from '../data/social-icons';
@@ -151,6 +152,7 @@ const schemas = [org, site, ...(schema ? [schema] : [])];
     ))}
     <!-- Google tag stub for Google Ads: the same tag the rest of the site uses.
          Only the stub runs now; the network-heavy tags load after first paint. -->
+    <TrackingPrivacy />
     <script is:inline define:vars={{ adsId: business.googleAdsId }}>
       window.dataLayer = window.dataLayer || [];
       window.gtag =
@@ -355,6 +357,7 @@ const schemas = [org, site, ...(schema ? [schema] : [])];
       fbq('init', fb);
       fbq('track', 'PageView');
       var loadMarketing = function () {
+        if (window.__drmTrackingDenied()) return;
         if (!['deadrivermanagement.com', 'www.deadrivermanagement.com'].includes(location.hostname)) return;
         if (window.__drmMkt) return;
         window.__drmMkt = true;
@@ -395,6 +398,7 @@ const schemas = [org, site, ...(schema ? [schema] : [])];
     <!-- Dead River tracking pixel: one copy on every public page. -->
     <script is:inline type="text/javascript">
       (function(s, p, i, c, e) {
+          if (s.__drmTrackingDenied()) return;
           if (!['deadrivermanagement.com', 'www.deadrivermanagement.com'].includes(location.hostname)) return;
           s[e] = s[e] || function() { (s[e].a = s[e].a || []).push(arguments); };
           s[e].l = 1 * new Date();

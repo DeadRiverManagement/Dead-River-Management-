@@ -1,0 +1,16 @@
+<script is:inline>
+  // Read the existing consent choices without treating the contact checkbox as
+  // permission for advertising. Re-check immediately before loading any vendor.
+  window.__drmTrackingDenied = function () {
+    if (window.navigator && window.navigator.globalPrivacyControl === true) return true;
+    var consent = {};
+    (window.dataLayer || []).forEach(function (entry) {
+      if (entry && entry[0] === 'consent' && /^(default|update)$/.test(entry[1])) {
+        ['ad_storage', 'ad_user_data', 'analytics_storage'].forEach(function (key) {
+          if (entry[2] && entry[2][key]) consent[key] = entry[2][key];
+        });
+      }
+    });
+    return Object.keys(consent).some(function (key) { return consent[key] === 'denied'; });
+  };
+</script>

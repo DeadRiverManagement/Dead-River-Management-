@@ -276,9 +276,9 @@ export const industries = [
 
 export const demandIntelligence = {
   name: 'Dead River Demand Intelligence',
-  price: '$3,000',
-  period: '/month',
-  terms: 'Full platform access. No setup fee.',
+  price: 'Talk through scope',
+  period: '',
+  terms: 'Scope and fees are confirmed on a demo.',
   summary:
     'Understand where demand is forming across both business and consumer markets. Identify people and businesses showing relevant purchase-intent signals, build higher-opportunity B2B and B2C audiences, and give sales and marketing teams a better place to start.',
 };
