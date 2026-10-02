@@ -152,6 +152,14 @@ export const servicePages: ServicePageData[] = [
         a: 'You do. The domain, the hosting account, the content, and the design are yours. If you ever leave, the site goes with you. Ask every agency this question before you sign.',
       },
       {
+        q: 'Does a small business still need a website?',
+        a: 'Yes. Your Google Business Profile gets you found, but the website is where people check you out and decide to call. AI assistants also read your site to decide whether to recommend you. A business with no site, or a slow one, loses the buyer at the last step.',
+      },
+      {
+        q: 'What makes a website turn visitors into calls?',
+        a: 'Speed, one clear promise at the top, the phone number and booking button on every screen, a page for each service and area, real photos and reviews placed where people decide, and a form that reaches you within a minute. Everything else is decoration.',
+      },
+      {
         q: 'Do you build websites outside El Paso?',
         a: 'Yes. We build sites for service businesses nationwide. The process is the same anywhere.',
       },
@@ -284,6 +292,18 @@ export const servicePages: ServicePageData[] = [
         q: 'What is AI-powered marketing and how does it help a small business?',
         a: 'AI-powered marketing uses software to do the parts of marketing that used to need a person on a phone or in a spreadsheet: answering calls after hours, texting back missed calls, following up quotes, writing first drafts, and spotting which ads to pause. For a small business it means no lead waits until morning and no quote is forgotten. We run it as part of the system, not as a product on its own.',
       },
+      {
+        q: 'Can AI do my SEO for me?',
+        a: 'AI can draft pages, suggest keywords, and write schema, and we use it for all three. It cannot earn reviews, fix your listings, build real links, or decide what is true about your business. Pages written by AI with nothing specific in them do not get cited. The work is still the work; AI makes it faster.',
+      },
+      {
+        q: 'Does AI SEO really work?',
+        a: 'Yes, when it means making your business easy for AI assistants to find, read, and trust. Businesses with complete listings, structured data, direct answers, and real proof get named in ChatGPT and Google AI answers. Businesses that just publish more AI-written text do not.',
+      },
+      {
+        q: 'How do I measure ROI from AI search optimization?',
+        a: 'Three ways. Ask the assistants your buyers\' questions each month and log whether you are named. Track referral traffic from chatgpt.com, perplexity.ai, and Google AI in your analytics. And ask every new lead how they found you. Then count booked jobs from those sources against what you spent.',
+      },
       pricingFaq,
     ],
   },
@@ -378,6 +398,18 @@ export const servicePages: ServicePageData[] = [
         q: 'How much should a local business spend on Facebook ads?',
         a: 'Enough to get 30 to 50 leads a month, so the campaign has data to improve on. For most home service businesses that is $750 to $2,000 a month in ad spend, on top of management. Start with one offer and one audience, then add budget to what books jobs. Ad spend is paid from your own account.',
       },
+      {
+        q: 'How do Facebook ads work?',
+        a: 'You write an ad, pick an area, and set a daily budget. Meta shows the ad in the Facebook and Instagram feeds of people likely to respond, and you pay per click or per thousand views. The lead fills a form or lands on your page, and your job is to answer within minutes. Meta finds the people. The ad and the follow-up do the selling.',
+      },
+      {
+        q: 'Do Facebook ads work for contractors?',
+        a: 'Yes, for the right jobs. Emergency work comes from Google, where people search. Planned work like water heaters, roof replacements, system upgrades, and remodels comes from Facebook ads aimed at the right homes. The Pipe Whisperers grew from about $60,000 a year to about $250,000 with Facebook ads as one of their channels.',
+      },
+      {
+        q: 'Are Facebook ads worth it for a small business?',
+        a: 'They are worth it when every lead gets a reply in minutes and cost per booked job is tracked. A freight client got 49 leads in 30 days at $17.70 each with automatic follow-up. They are not worth it when leads sit in an inbox until tomorrow. The ads are cheap. The missed follow-up is what costs you.',
+      },
       pricingFaq,
     ],
   },
@@ -471,6 +503,22 @@ export const servicePages: ServicePageData[] = [
         q: 'How do you measure Google Ads?',
         a: 'Cost per booked job, not cost per click. Every call and form from an ad is recorded with the keyword and campaign it came from, then matched to whether it became a job. You see spend, calls, booked jobs, and cost per job on one report every month.',
       },
+      {
+        q: 'Is $10 a day enough for Google Ads?',
+        a: 'Enough to learn, not enough to grow. In most service markets a click costs $5 to $40, so $10 a day buys a handful of clicks and one or two calls a week. Use it to find which searches book jobs, then raise the budget on those. Most of our clients start at $25 to $100 a day.',
+      },
+      {
+        q: 'How does the Google Ads daily budget work?',
+        a: 'Google can spend up to twice your daily budget on a busy day, but never more than about 30 times it in a month. Set the daily number at your monthly budget divided by 30. Then watch cost per booked job, not spend.',
+      },
+      {
+        q: 'Can Google Ads target zip codes?',
+        a: 'Yes. You can target cities, zip codes, or a radius around your shop, and exclude areas you do not serve. Set it to where your crews actually go. That stops you paying for clicks from a town you will never drive to.',
+      },
+      {
+        q: 'How long does it take for Google Ads to work?',
+        a: 'Calls can come the first day the ads are approved. The first two to four weeks are for finding which searches and ads book jobs, so costs fall over that time. Gonzalez & Sons Roofing went from 2 to 8 roofs a month over six months with Google Ads as the lead channel.',
+      },
       pricingFaq,
     ],
   },
@@ -546,6 +594,22 @@ export const servicePages: ServicePageData[] = [
       {
         q: 'How do Local Services Ads decide who shows first?',
         a: 'Google ranks Local Services Ads on review count and rating, how fast you answer calls and messages, your hours, your distance from the searcher, and how many leads you have paused or disputed. Answering every call and asking every customer for a review are the two biggest levers. Budget matters less than responsiveness.',
+      },
+      {
+        q: 'How much do Google Local Services Ads cost?',
+        a: 'You pay per lead, not per click. Lead prices vary by trade and city, from about $15 for a cleaning lead to $50 or more for roofing or HVAC. You set a weekly budget and can dispute leads that were spam or outside your area. There is no fee for the Google Guaranteed badge itself.',
+      },
+      {
+        q: 'How do I get the Google Guaranteed badge?',
+        a: 'Apply through Local Services Ads, pass a background check for the business and its owners, and submit your licence and insurance. Approval usually takes one to three weeks. Once approved, the green badge shows on your ad and Google backs the work up to a set amount.',
+      },
+      {
+        q: 'Is Google Guaranteed the same as Local Services Ads?',
+        a: 'Google Guaranteed is the badge. Local Services Ads is the ad program that carries it. Home service businesses get Google Guaranteed, and professional services like lawyers get Google Screened. Both run through the same Local Services Ads account.',
+      },
+      {
+        q: 'Is Google Guaranteed going away?',
+        a: 'No. Google keeps changing the rules for Local Services Ads, such as how leads are charged and which trades qualify, but the program and the badge are active and growing in 2026. Check the current requirements for your trade before you apply.',
       },
       pricingFaq,
     ],
@@ -643,6 +707,18 @@ export const servicePages: ServicePageData[] = [
         q: 'How do you measure whether SEO is working?',
         a: 'By calls, forms, and booked jobs from organic search, tracked by page. Rankings and traffic are leading signs. Google Search Console shows which searches bring people in, Google Analytics shows what they do, and call tracking shows who booked. We report all three next to each other every month.',
       },
+      {
+        q: 'How much does SEO cost for a small business per month?',
+        a: 'Most agencies charge $500 to $5,000 a month for SEO, depending on how competitive your market is and how much content and link work it takes. Local service businesses usually sit at the lower end. We include SEO inside the Demand Flow system and quote it on its own on a short call. Whatever you pay, measure it by calls and booked jobs from search, not rankings.',
+      },
+      {
+        q: 'Do SEO companies really work?',
+        a: 'The good ones do, and you can tell them apart in one question: show me calls and booked jobs from organic search for a client in my trade. An SEO company that reports only rankings and traffic is hiding the number that matters. Total Auto Repair went from about $20,000 to about $100,000 a month with SEO as one of three channels.',
+      },
+      {
+        q: 'How does SEO work on Google?',
+        a: 'Google reads your pages, works out what each one is about, and ranks it against every other page on that topic. It favours pages that answer the search directly, load fast, are linked from trusted sites, and belong to a business with consistent listings and real reviews. SEO is the work of giving Google all of those signals on purpose.',
+      },
       pricingFaq,
     ],
   },
@@ -739,6 +815,22 @@ export const servicePages: ServicePageData[] = [
         q: 'Why do citations and links matter for local SEO?',
         a: 'Citations are listings of your name, address, and phone on directories like Yelp, Bing, Apple, and the BBB. When they all match, Google trusts the business exists where it says. Links from local sites, suppliers, and trade associations add prominence. Together they are the trust layer under the map pack.',
       },
+      {
+        q: 'Does a Google Business Profile cost money?',
+        a: 'No. A Google Business Profile is free, and so is showing up on Google Maps. What costs money is the work to rank it: categories, photos, posts, reviews, listings, and pages on your site. Anyone who tries to charge you for the profile itself is selling you something else.',
+      },
+      {
+        q: 'How long does a Google Business Profile take to show up?',
+        a: 'A new profile usually appears on Maps within a few days of verification. Verification itself can take a day by phone or email, or one to two weeks by postcard. Ranking in the map pack for real searches takes longer, typically one to three months of steady work.',
+      },
+      {
+        q: 'Does local SEO still work?',
+        a: 'Yes. It works better than ever because AI assistants and Google AI Overviews pull their local recommendations from the same signals: a complete profile, consistent listings, and real reviews. A map pack call is a nearby customer who needs the job now and cost you nothing per click.',
+      },
+      {
+        q: 'How do you do local SEO for multiple locations?',
+        a: 'Each location gets its own Google Business Profile, its own page on your website with its address and areas, its own reviews, and its own listings. Never share one profile across locations. Total Auto Repair opened a second location on exactly this setup.',
+      },
       pricingFaq,
     ],
   },
@@ -814,6 +906,22 @@ export const servicePages: ServicePageData[] = [
       {
         q: 'How many cold emails does it take to get a meeting?',
         a: 'Roughly 100 to 300 emails per booked meeting for a well-targeted B2B campaign, depending on the offer and list. Reply rates of 2 to 5 percent are normal. The number falls as the list and message improve, which is why the first month is testing and the second month is scaling.',
+      },
+      {
+        q: 'Do cold emails go to spam?',
+        a: 'They do when they are sent from your main domain, in bulk, with links and attachments, to a bad list. We send from separate warmed-up domains, keep each message short and plain, verify every address, and cap volume per inbox. Done that way, most cold email lands in the inbox.',
+      },
+      {
+        q: 'How long should a cold email be?',
+        a: 'Under 100 words. Three or four short sentences: why them, the problem you solve, one line of proof, and a one-question ask. The reader decides in five seconds on a phone. Long emails get skimmed and deleted.',
+      },
+      {
+        q: 'How many cold emails can I send a day?',
+        a: 'About 20 to 40 per inbox per day without hurting deliverability. To send more, add more inboxes and domains rather than pushing one harder. A campaign of 1,000 emails a day typically runs across 30 or more inboxes.',
+      },
+      {
+        q: 'Is cold email dead in 2026?',
+        a: 'No, but lazy cold email is. Spam filters are stricter and buyers delete anything generic. What still works is a clean list, a specific message about the reader, separate sending domains, and fast follow-up on every reply. Reply rates of 2 to 5 percent are normal for a well-run campaign.',
       },
       pricingFaq,
     ],

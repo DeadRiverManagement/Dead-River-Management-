@@ -14,6 +14,12 @@ faq:
     a: "A rule that tells Meta the most you will pay per lead or sale. Set it at 80 percent of your real limit. Meta then only spends where it can hit that number."
   - q: "What is MER?"
     a: "Marketing efficiency ratio. Total revenue divided by total ad spend across every platform. It is more honest than the ROAS in any one dashboard."
+  - q: "Are Facebook ads expensive?"
+    a: "No single answer. You set the budget, and you can start at $20 a day. What gets expensive is scaling an ad that only worked on warm people. Use cost caps so Meta stops spending when the cost per lead climbs."
+  - q: "How does the Facebook ads daily budget work?"
+    a: "Meta tries to spend your full daily budget every day, good day or bad. A cost cap changes that. Set the most you will pay per lead and Meta only spends where it can hit that number."
+  - q: "How do I measure Facebook ads ROI?"
+    a: "Not with the ROAS in ads manager alone. Add up all ad spend across every platform and divide revenue by it. That is your MER. Then look at net cash this month. Cash pays the bills. ROAS does not."
 ---
 
 **In short:** The ads that win small often fail big. Story ads for cold traffic, cost caps, and the one number that beats ROAS.

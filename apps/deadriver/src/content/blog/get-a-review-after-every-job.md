@@ -14,6 +14,12 @@ faq:
     a: "No. Google does not like that anymore. Frame the ask around the tech. Just do not tell the customer what to write."
   - q: "What do I do about a fake one-star review?"
     a: "Do not reply to it. Check if they were ever a customer. If not, report it and give it a couple of weeks."
+  - q: "Can you ask customers for Google reviews?"
+    a: "Yes. Google allows you to ask. You can send a link or a QR code. What you cannot do is pay for reviews, give discounts for them, or ask only happy customers. Ask everyone, the same way, every time."
+  - q: "Do Google reviews help SEO?"
+    a: "Yes. Reviews are one of the biggest factors in the map pack. Google looks at how many you have, how recent they are, your rating, and whether you reply. Steady new reviews beat a big old pile."
+  - q: "Can a business get a Google review removed?"
+    a: "Only if it breaks Google's rules. Fake reviews, spam, and reviews from people who were never customers can be reported. Honest bad reviews stay. Reply calmly and fix the problem instead."
 ---
 
 **In short:** Most home service businesses do good work and get almost no Google reviews. Here is the fix, the text to send, and what to do about fake ones.

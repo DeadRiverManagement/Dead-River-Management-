@@ -14,6 +14,12 @@ faq:
     a: "Enough to test a few ads a week. For most businesses that is $20 to $100 a day. Keep the money in one simple campaign and let the ads compete."
   - q: "What button should the ad use?"
     a: "Learn more. It gets more clicks than Shop now or Book now at this stage. People want to find out, not commit. Let the page do the selling."
+  - q: "How much should I spend on Facebook ads per day?"
+    a: "Start at $20 to $100 a day. That is enough to test three to five ads a week and see which one wins. Raise it only after one ad is bringing leads at a cost you can live with."
+  - q: "Do Facebook ads work for small business?"
+    a: "Yes, when the ad looks like a post and the follow-up is fast. A freight company we work with got 49 leads in 30 days at $17.70 each. The ad did the work. The settings did not."
+  - q: "How long does it take for Facebook ads to work?"
+    a: "The first leads can come the same week. Finding a real winner usually takes two to four weeks of testing. Most people quit in week one. Do not."
 ---
 
 **In short:** At $0 to $100 a day you have one job. Find one ad that works. Here is the ad formula, what to test, and what to ignore until it does.
