@@ -42,7 +42,7 @@ Before you compare any two quotes, work out roughly how many calls you miss in a
 
 A flat monthly plan costs the same whether the month is quiet or busy. No overage math.
 
-Dead River’s live public offer is Demand Flow: $50,000 in new revenue in 45–60 days, or service fees refunded + $500 (ad spend not refunded). Terms are on [/legal/guarantee](/legal/guarantee). When scope fits, that work can include tracking, follow-up, booking, and missed-call recovery — confirmed on a call, not sold as a tier card. [Talk through scope](/book) or [book a conversation](/book).
+Dead River’s live public offer is Demand Flow: $50,000 in new revenue in 45 to 60 days, or service fees refunded + $500 (ad spend not refunded). Terms are on the [Guarantee terms](/legal/guarantee) page. When scope fits, that work can include tracking, follow-up, booking, and missed-call recovery, confirmed on a call, not sold as a tier card. [Talk through scope](/book) or [book a conversation](/book).
 
 Complete is retired.
 
@@ -93,6 +93,6 @@ Answer these four questions in order, and the choice usually makes itself.
 3. **Does it book, or just take a message?** Taking a message moves the work back to you. Booking into your calendar is the part that saves time. Check whether booking costs extra.
 4. **Who sets it up?** A cheap tool you never finish configuring costs more than a slightly pricier one that someone sets up for you.
 
-If you want the whole thing handled rather than assembled, that is what we do. Dead River’s live public offer is Demand Flow — see [/legal/guarantee](/legal/guarantee). [Talk through scope](/book) or [book a conversation](/book).
+If you want the whole thing handled rather than assembled, that is what we do. Dead River’s live public offer is Demand Flow. See the [Guarantee terms](/legal/guarantee) page. [Talk through scope](/book) or [book a conversation](/book).
 
 The provider prices in the table came from each company's own pricing page in September 2026. Check them before you buy, because they change. Dead River scope is confirmed on a call.

@@ -5,7 +5,6 @@ date: 2026-06-15
 category: "AI Search"
 heroImage: "/images/blog/ai-search-for-local-business.svg"
 heroAlt: "Article card for a guide to showing up in AI search"
-legacyPriceNotice: true
 ---
 
 A year ago, someone in El Paso with a leaking water heater typed "water heater repair near me" into Google and called one of the three businesses in the map. Today a growing share of those people open ChatGPT, Perplexity, or the AI box at the top of Google and ask a full question instead: "Who's a good plumber on the Eastside that can come out today?"

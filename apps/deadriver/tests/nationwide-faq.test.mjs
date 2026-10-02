@@ -55,7 +55,7 @@ test('FAQ answers do not sell Complete or the old SKU ladder', () => {
   assert.doesNotMatch(answers, /Front Desk AI is \$197/);
   assert.doesNotMatch(answers, /work for free until we get them/);
   assert.match(answers, /Demand Flow/);
-  assert.match(answers, /\$50,000 in new revenue in 45–60 days/);
+  assert.match(answers, /\$50,000 in new revenue in 45 to 60 days/);
   assert.doesNotMatch(answers, /Foundation|Growth Partner|Scale/);
   assert.doesNotMatch(answers, /\$3,000|3000/);
   assert.doesNotMatch(
