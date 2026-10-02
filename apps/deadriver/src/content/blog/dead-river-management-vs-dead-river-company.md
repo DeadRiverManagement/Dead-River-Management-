@@ -14,9 +14,9 @@ faq:
   - q: "Does Dead River Management sell heating oil or propane?"
     a: "No. We do not sell heating oil, propane, or any fuel."
   - q: "What does Dead River Management offer publicly right now?"
-    a: "Demand Flow: $50,000 in new revenue in 45 to 60 days for accepted businesses, or service fees refunded + $500 (ad spend not refunded). Terms: /legal/guarantee. Demand Intelligence is a separate product path."
+    a: "Demand Flow: $50,000 in new revenue in 45 to 60 days for accepted businesses, or service fees refunded + $500 (ad spend not refunded). Read the full guarantee terms on the Guarantee terms page linked in this article. Demand Intelligence is a separate product path."
   - q: "How do I book a strategy call?"
-    a: "Book at /book, or call (915) 228-3054."
+    a: "Book a strategy call, or call (915) 228-3054."
 ---
 
 **Short answer:** Dead River Management is based in El Paso, Texas, and works with **accepted businesses nationwide**. We sell **Demand Flow** and **Demand Intelligence**. We are **not** Dead River Company, the New England fuel company. We do not sell fuel.

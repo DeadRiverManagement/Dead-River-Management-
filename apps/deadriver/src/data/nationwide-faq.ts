@@ -5,7 +5,7 @@ export type FaqItem = { q: string; a: string };
 export const homeFaq: FaqItem[] = [
   {
     q: 'What does Dead River Management actually do?',
-    a: 'We build and manage the demand, conversion, follow-up, and measurement infrastructure behind growth. Our live public engagement is Demand Flow for accepted businesses: $50,000 in new revenue in 45–60 days. If we miss, service fees are refunded plus $500; ad spend is not refunded. Read the terms at deadrivermanagement.com/legal/guarantee and talk through fit at deadrivermanagement.com/book.',
+    a: 'We build and manage the demand, conversion, follow-up, and measurement infrastructure behind growth. Our live public engagement is Demand Flow for accepted businesses: $50,000 in new revenue in 45 to 60 days. If we miss, service fees are refunded plus $500; ad spend is not refunded. Read the Guarantee terms page on this site, then book a strategy call to talk through fit.',
   },
   {
     q: 'Do you only work with businesses in El Paso?',
@@ -25,7 +25,7 @@ export const homeFaq: FaqItem[] = [
   },
   {
     q: 'How does Demand Flow pricing work?',
-    a: 'Demand Flow scope and fees are confirmed for accepted businesses before you start. Book a conversation at deadrivermanagement.com/book or call (915) 228-3054.',
+    a: 'Demand Flow scope and fees are confirmed for accepted businesses before you start. Book a strategy call, or call (915) 228-3054.',
   },
   {
     q: 'Is Dead River Management the same as Dead River Company?',
@@ -36,7 +36,7 @@ export const homeFaq: FaqItem[] = [
 export const pricingFaq: FaqItem[] = [
   {
     q: 'What is Demand Flow?',
-    a: 'Demand Flow is the live public engagement for accepted businesses: $50,000 in new revenue in 45–60 days. If we miss, service fees are refunded plus $500; ad spend is not refunded. Read the terms at /legal/guarantee and book a conversation to see whether your business qualifies.',
+    a: 'Demand Flow is the live public engagement for accepted businesses: $50,000 in new revenue in 45 to 60 days. If we miss, service fees are refunded plus $500; ad spend is not refunded. Read the Guarantee terms page on this site, then book a strategy call to see whether your business qualifies.',
   },
   {
     q: 'What is included in the monthly fee?',
@@ -52,7 +52,7 @@ export const pricingFaq: FaqItem[] = [
   },
   {
     q: 'Do you still sell Dead River Complete or Front Desk plans?',
-    a: 'No. Those older offers are retired. The live public offer is Demand Flow: $50,000 in new revenue in 45–60 days for accepted businesses, or service fees refunded plus $500; ad spend is not refunded.',
+    a: 'No. Those older offers are retired. The live public offer is Demand Flow: $50,000 in new revenue in 45 to 60 days for accepted businesses, or service fees refunded plus $500; ad spend is not refunded.',
   },
   {
     q: 'Who is a good fit?',
@@ -79,11 +79,11 @@ export const homeServicesFaq: FaqItem[] = [
   },
   {
     q: 'Is missed-call recovery included?',
-    a: 'Fast response, booking, and follow-up — including missed-call recovery where it fits the agreed scope — can be part of Demand Flow. Scope is confirmed before you start. Book a conversation at deadrivermanagement.com/book.',
+    a: 'Fast response, booking, and follow-up — including missed-call recovery where it fits the agreed scope — can be part of Demand Flow. Scope is confirmed before you start. Book a strategy call.',
   },
   {
     q: 'Are written lead promises part of current plans?',
-    a: 'The current public guarantee is Demand Flow: $50,000 in new revenue in 45–60 days for accepted businesses. If we miss, service fees are refunded plus $500; ad spend is not refunded. Older written lead promises are not active public offers.',
+    a: 'The current public guarantee is Demand Flow: $50,000 in new revenue in 45 to 60 days for accepted businesses. If we miss, service fees are refunded plus $500; ad spend is not refunded. Older written lead promises are not active public offers.',
   },
   {
     q: 'How do I get pricing?',
@@ -98,7 +98,7 @@ export const elPasoLocationFaq: FaqItem[] = [
   },
   {
     q: 'What public offer do you make now?',
-    a: 'Demand Flow is the live public offer for accepted businesses: $50,000 in new revenue in 45–60 days, or service fees refunded plus $500; ad spend is not refunded. Book a conversation to talk through fit and scope.',
+    a: 'Demand Flow is the live public offer for accepted businesses: $50,000 in new revenue in 45 to 60 days, or service fees refunded plus $500; ad spend is not refunded. Book a conversation to talk through fit and scope.',
   },
 ];
 
