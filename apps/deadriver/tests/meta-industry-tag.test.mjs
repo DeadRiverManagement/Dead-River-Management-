@@ -43,7 +43,7 @@ test('Meta does not default an unknown industry or missing receipt to home servi
 });
 
 test('current inquiry routes fire once per receipt and honor explicit consent denial', () => {
-  for (const path of ['/book', '/demo', '/demand-intelligence', '/growth-plan']) {
+  for (const path of ['/book', '/demand-intelligence', '/growth-plan']) {
     assert.equal(run('other', path, eventId, { navigator: {}, dataLayer: [] }, true).length, 1);
     assert.equal(run('other', path, eventId, { navigator: { globalPrivacyControl: true } }).length, 0);
     for (const key of ['ad_storage', 'ad_user_data']) {

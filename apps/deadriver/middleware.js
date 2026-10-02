@@ -10,8 +10,8 @@
 const ONE_HOP = new Map([
   ['/watch', '/'],
   ['/watch.html', '/'],
-  ['/voiceiq-demo', '/demo'],
-  ['/voiceiq-demo.html', '/demo'],
+  ['/voiceiq-demo', '/demand-intelligence'],
+  ['/voiceiq-demo.html', '/demand-intelligence'],
   ['/talk', '/book'],
   ['/talk.html', '/book'],
 ]);
