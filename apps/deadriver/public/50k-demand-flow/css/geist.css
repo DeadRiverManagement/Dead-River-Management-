@@ -1,0 +1,26 @@
+/* ============================================================
+   Geist — self-hosted (Vercel, OFL licensed). See fonts/geist/OFL.txt
+   Variable weight files = one request, all weights 100–900.
+   Usage: font-family: "Geist"  /  "Geist Mono"  /  "Geist Pixel"
+   ============================================================ */
+@font-face {
+  font-family: "Geist";
+  src: url("/50k-demand-flow/fonts/geist/Geist-Variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Geist Mono";
+  src: url("/50k-demand-flow/fonts/geist/GeistMono-Variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Geist Pixel";
+  src: url("/50k-demand-flow/fonts/geist/GeistPixel-Square.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
