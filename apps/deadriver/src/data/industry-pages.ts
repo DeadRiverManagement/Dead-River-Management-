@@ -82,6 +82,8 @@ export const industryPages: IndustryPage[] = [
       { q: 'What does it cost?', a: 'Roofing is a Demand Flow trade: $50,000 in new revenue in 45 to 60 days for accepted companies, or service fees refunded plus $500. Ad spend is separate and paid from your own account. Gonzalez & Sons invested about $3,500 a month including ads.' },
       { q: 'Do you work with roofers outside El Paso?', a: 'Yes. The same system runs for roofers nationwide. We adjust service areas, storm patterns, and ad budgets to your market.' },
       { q: 'How fast will I see roofs on the calendar?', a: 'Ads and the phone system go live in the first two weeks. Gonzalez & Sons went from 2 to 8 roofs a month over six months. Your first booked inspections usually come inside the first month.' },
+      { q: 'Do you work with residential and commercial roofers?', a: 'Yes. Residential roofing, which is mostly storm and replacement work, runs on Google Ads, Local Services Ads, and fast follow-up. Commercial roofing is a longer sale, so it adds cold email to property managers, case studies, and a slower nurture. We build the system to match the mix of work you want.' },
+      { q: 'What should a roofing website include?', a: 'A page for each service (roof repair, roof replacement, storm damage, inspections, commercial), a page for each area you serve, a free-inspection form that texts you, a gallery of finished roofs, reviews, your licence and insurance, and the phone number on every screen. Add a storm page you can switch on the day a storm hits.' },
     ],
   },
   {
@@ -135,6 +137,8 @@ export const industryPages: IndustryPage[] = [
       { q: 'What does it cost?', a: 'Plumbing is a Demand Flow trade: $50,000 in new revenue in 45 to 60 days for accepted companies, or service fees refunded plus $500. Ad spend is separate. The Pipe Whisperers invested about $2,000 a month including ads.' },
       { q: 'Do you work with plumbers outside El Paso?', a: 'Yes. We run the same system for plumbers nationwide and adjust service areas and budgets to your market.' },
       { q: 'How soon do calls start?', a: 'Ads and the phone system go live in the first two weeks. Emergency search ads bring calls almost immediately. Water heater campaigns build over the first one to two months.' },
+      { q: 'Do you work with residential and commercial plumbers?', a: 'Yes. Residential plumbing runs on emergency search ads, Local Services Ads, and after-hours phone handling. Commercial plumbing adds cold email to property managers and contractors, and a slower follow-up for maintenance contracts. We set the system up for whichever mix you want more of.' },
+      { q: 'What should a plumbing website include?', a: 'A page for each service (water heaters, drain cleaning, repipes, slab leaks, emergency service), a page for each area you serve, click-to-call on every screen, a form that texts you the second it is filled out, your after-hours rate, reviews, and your licence number. Spanish pages where your customers use them.' },
     ],
   },
   {
@@ -188,6 +192,8 @@ export const industryPages: IndustryPage[] = [
       { q: 'What does it cost?', a: 'HVAC is a Demand Flow trade: $50,000 in new revenue in 45 to 60 days for accepted companies, or service fees refunded plus $500. Ad spend is separate and paid from your own account.' },
       { q: 'Do you work with HVAC companies outside El Paso?', a: 'Yes. We run the same system nationwide. Service areas, seasons, and budgets are set to your market.' },
       { q: 'Do you have HVAC results?', a: 'Not published yet. Our nearest result is a plumbing company with the same emergency-call business, shown above and labelled as such. We do not claim it as an HVAC benchmark.' },
+      { q: 'Do you work with residential and commercial HVAC companies?', a: 'Yes. Residential HVAC runs on seasonal search ads, Local Services Ads, maintenance plans, and long follow-up on replacement quotes. Commercial HVAC adds cold email to property managers and facilities teams and a slower nurture for service contracts. We build for whichever side you want to grow.' },
+      { q: 'What should an HVAC website include?', a: 'A page for each service (AC repair, AC replacement, heating, maintenance plans, ductwork, mini-splits), a page for each area you serve, financing options, same-day availability, click-to-call on every screen, a form that texts you, reviews, and your licence. Add a heat-wave page with a same-day promise you can switch on in summer.' },
     ],
   },
   {
@@ -241,6 +247,8 @@ export const industryPages: IndustryPage[] = [
       { q: 'What does it cost?', a: 'Auto repair is a Demand Flow trade: $50,000 in new revenue in 45 to 60 days for accepted shops, or service fees refunded plus $500. Ad spend is separate. Total Auto Repair invested about $2,500 a month including ads.' },
       { q: 'Do you work with shops outside El Paso?', a: 'Yes. The same system runs for shops nationwide.' },
       { q: 'How long did Total Auto Repair take?', a: 'Eighteen months from about $20,000 a month to about $100,000 a month. The first new customers came in the first month. The second location came after.' },
+      { q: 'Do you work with independent shops and multi-location shops?', a: 'Yes. A single shop runs on Google Ads for "mechanic near me", a strong Google Business Profile, reviews, and reminders that bring cars back. A second or third location gets its own profile, its own pages, and its own ad budget so each one is measured on its own. Total Auto Repair opened its second location on this system.' },
+      { q: 'What should an auto repair website include?', a: 'A page for each service (diagnostics, brakes, AC, engine and transmission, oil changes, inspections), the makes you service, hours, online scheduling, click-to-call on every screen, reviews, photos of the bays, warranty terms, and whether you offer loaners. Every page should answer the question a driver asks before choosing a shop.' },
     ],
   },
 ];
