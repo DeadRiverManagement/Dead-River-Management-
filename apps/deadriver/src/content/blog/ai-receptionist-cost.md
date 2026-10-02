@@ -42,7 +42,7 @@ Before you compare two quotes, do two things. Work out how many calls you miss i
 
 A flat monthly plan costs the same in a quiet month or a busy one. No overage math.
 
-Dead River’s live public offer is Demand Flow. The deal is $50,000 in new revenue in 45–60 days. Revenue means money coming in. If that does not happen, service fees are refunded, plus $500. Ad spend is not refunded. Terms are on [/legal/guarantee](/legal/guarantee). When the scope fits, that work can include tracking, follow-up, booking, and missed-call recovery. Scope means what the job covers. We confirm it on a call. It is not sold as a tier card. [Talk through scope](/book) or [book a conversation](/book).
+Dead River’s live public offer is Demand Flow. The deal is $50,000 in new revenue in 45–60 days. Revenue means money coming in. If that does not happen, you get service fees refunded + $500. Ad spend is not refunded. Terms are on [/legal/guarantee](/legal/guarantee). When the scope fits, that work can include tracking, follow-up, booking, and missed-call recovery. Scope means what the job covers. We confirm it on a call. It is not sold as a tier card. [Talk through scope](/book) or [book a conversation](/book).
 
 Complete is retired.
 

@@ -1,7 +1,7 @@
 ---
 title: "Demand Flow vs a 30-in-60 Lead Promise"
 pageTitle: "Demand Flow vs a 30-in-60 Lead Promise"
-description: "Dead River’s live public guarantee is Demand Flow: $50,000 in new revenue in 45–60 days, or we refund our service fees plus $500. Ad spend is not refunded. Older 30-in-60 lead promises are not current public offers."
+description: "Dead River’s live public guarantee is Demand Flow: $50,000 in new revenue in 45–60 days, or service fees refunded + $500 (ad spend not refunded). Older 30-in-60 lead promises are not current public offers."
 date: 2026-09-12
 updated: 2026-10-01
 category: "Marketing"
