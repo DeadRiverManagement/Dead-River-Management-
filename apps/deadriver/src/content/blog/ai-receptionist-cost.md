@@ -96,3 +96,7 @@ Answer these four questions in order. The choice usually makes itself.
 If you want the whole thing handled, not just assembled, that is what we do. Dead River’s live public offer is Demand Flow. See [Guarantee terms](/legal/guarantee). [Talk through scope](/book) or [book a conversation](/book).
 
 The prices in the table came from each company's own pricing page in September 2026. Check them before you buy. They change. Dead River scope is confirmed on a call.
+
+## We can do this for you
+
+You can do everything above yourself. Most owners do not have the hours. Dead River Management builds and runs it for home service businesses. We work in El Paso and across the country. You keep running jobs. We handle the phone, the follow-up, and the listing. You judge us on booked jobs, not reports. See [Local SEO services](/services/local-seo), read about [the Demand Flow guarantee](/), or [book a strategy call](/book).
