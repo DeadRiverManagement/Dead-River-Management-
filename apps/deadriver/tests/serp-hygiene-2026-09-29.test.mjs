@@ -78,9 +78,9 @@ const locked = {
   demandIntelligence: {
     title: '2x Email Response & Ad ROAS in 60 Days | Demand Intelligence',
     description:
-      'Unlimited daily purchase intent data for agencies and SaaS. 2x email response rates and double ad ROAS in 60 days, or you pay nothing. Talk through scope on a demo.',
+      'Unlimited daily purchase intent data for agencies and SaaS. 2x email response rates and double ad ROAS in 60 days, or you pay nothing. Book a demo.',
     titleChars: 60,
-    descriptionChars: 164,
+    descriptionChars: 147,
   },
 };
 
@@ -127,7 +127,7 @@ test('/demand-intelligence title and meta stay on the live offer', () => {
   assert.match(page, new RegExp(`title="${di.title.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}"`));
   assert.match(page, new RegExp(`description="${di.description.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}"`));
   assert.doesNotMatch(di.description, /\$3,000\/month|3000/);
-  assert.match(di.description, /Talk through scope on a demo/);
+  assert.match(di.description, /Book a demo/);
   assert.match(di.description, /or you pay nothing/);
   assert.match(page, /<h1>/);
   assert.match(page, /2x your email response rates and double your ad ROAS in 60 days/);

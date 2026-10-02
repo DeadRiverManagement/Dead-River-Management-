@@ -1,8 +1,8 @@
 ---
 title: "Dead River Management vs Dead River Company: We are in El Paso. We work nationwide. We do not sell fuel."
-pageTitle: "Dead River Management vs Dead River Company"
+pageTitle: "Not the New England Fuel Co"
 headline: "Dead River Management vs Dead River Company: El Paso-based nationwide operator, not New England fuel"
-description: "Dead River Management is in El Paso, Texas. We work with accepted businesses nationwide. We are not Dead River Company, the New England fuel company. We do not sell fuel. Our live public offer is Demand Flow."
+description: "Dead River Management is El Paso-based and works nationwide. Not Dead River Company (New England fuel). We do not sell fuel. Live offer: Demand Flow."
 date: 2026-10-01
 category: "Company"
 faqHeading: "FAQ"
