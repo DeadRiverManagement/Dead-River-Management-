@@ -6,6 +6,7 @@ import ServiceLinks from '../../components/growth/ServiceLinks.astro';
 import Arrow from '../../components/growth/Arrow.astro';
 import { locations } from '../../data/growth-locations';
 import { industryPages } from '../../data/industry-pages';
+import OfficeMap from '../../components/growth/OfficeMap.astro';
 import { elPasoLocationFaq } from '../../data/nationwide-faq';
 import { faqPage } from '../../lib/schema';
 export function getStaticPaths() {
@@ -161,6 +162,7 @@ const schema = [
       </div>
     </div>
   </section>
+  {l.slug === 'el-paso' && <OfficeMap heading="Based in downtown El Paso." />}
   {pageFaq.length > 0 && (
     <section class="section wrap">
       <div class="section-head">
