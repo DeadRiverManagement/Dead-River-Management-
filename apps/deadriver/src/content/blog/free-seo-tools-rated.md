@@ -1,5 +1,6 @@
 ---
 title: "Free SEO Tools for Local Businesses, Rated by What They Do"
+pageTitle: "Free SEO Tools, Rated | Dead River Management"
 description: "Honest ratings for the free SEO tools we use with home service clients. Which ones earn a spot, which to skip, and what each is for."
 date: 2026-10-02
 category: "SEO"
@@ -14,6 +15,8 @@ faq:
   - q: "How do I know if AI tools recommend my business?"
     a: "Use Bing Webmaster Tools. Many AI tools pull from Bing. Asking ChatGPT about yourself is not reliable."
 ---
+
+**In short:** Honest ratings for the free SEO tools we use with home service clients. Which ones earn a spot, which to skip, and what each is for.
 
 You run a crew. You do not have time to test 20 SEO tools. SEO means showing up on Google. Most of the tools that help with it are free. Here is what we use, what we skip, and why.
 

@@ -1,5 +1,6 @@
 ---
 title: "Is Your Website on Google? Check in Two Minutes"
+pageTitle: "Is Your Website on Google? | Dead River Management"
 description: "A quick way to see if Google has your pages, and the SEO fixes if it does not. Nothing else matters until this is done."
 date: 2026-10-02
 category: "SEO"
@@ -14,6 +15,8 @@ faq:
   - q: "What does crawled, currently not indexed mean?"
     a: "Google visited the page and chose not to list it. Most of the time the page did not add anything new. Thin or copied content lands here a lot."
 ---
+
+**In short:** A quick way to see if Google has your pages, and the SEO fixes if it does not. Nothing else matters until this is done.
 
 Most owners pay for a website and assume Google has it. A lot of the time, Google does not. You can find out in about two minutes. Here's how, and what to do if it fails.
 

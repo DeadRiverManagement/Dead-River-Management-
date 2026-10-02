@@ -1,5 +1,6 @@
 ---
 title: "How to Rank on Google Maps: The Full Checklist for Home Services"
+pageTitle: "Rank on Google Maps Checklist | Dead River Management"
 description: "Every step we use to move a home service business up the Google Maps results. Profile, website, citations, and two things never to do."
 date: 2026-10-02
 category: "Local SEO"
@@ -14,6 +15,8 @@ faq:
   - q: "Should I delete a duplicate Google Business Profile?"
     a: "Not until you are sure which one is which. We have seen the main profile get deleted by mistake. Ask for help before you click delete."
 ---
+
+**In short:** Every step we use to move a home service business up the Google Maps results. Profile, website, citations, and two things never to do.
 
 Most of your calls come from [Google Maps](https://www.google.com/maps). That little map with three businesses on it. If you're not in it, you're not getting the call. This is the full list of what we do to get a client in there.
 

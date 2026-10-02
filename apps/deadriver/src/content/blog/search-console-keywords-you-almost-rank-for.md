@@ -1,5 +1,6 @@
 ---
 title: "Google Search Console: Find the Keywords You Almost Rank For"
+pageTitle: "Keywords You Almost Rank For | Dead River Management"
 description: "Google Search Console shows the searches where you sit on page two. Here is how to find them and move those pages up."
 date: 2026-10-02
 category: "SEO"
@@ -14,6 +15,8 @@ faq:
   - q: "How long until I see a change?"
     a: "Usually a few weeks after you update the page. Check Search Console again after about a month. Compare the position and the clicks."
 ---
+
+**In short:** Google Search Console shows the searches where you sit on page two. Here is how to find them and move those pages up.
 
 Most home service owners think SEO is a long, slow fight. SEO means showing up on Google when someone searches. Part of it is slow. But some of it is sitting right in front of you. Google is already showing your site for searches you don't know about. You just aren't getting the click yet. This post shows you how to find those searches and fix them.
 

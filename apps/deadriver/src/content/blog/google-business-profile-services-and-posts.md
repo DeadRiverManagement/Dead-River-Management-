@@ -1,5 +1,6 @@
 ---
 title: "Google Business Profile Services and Posts: Fill Them Out Right"
+pageTitle: "Google Business Profile Services | Dead River Management"
 description: "Most owners leave the services and posts on their Google Business Profile half empty. Here is how to fill them in with the words customers use."
 date: 2026-10-02
 category: "Google Business Profile"
@@ -14,6 +15,8 @@ faq:
   - q: "Do Google posts really show up in AI answers?"
     a: "They can. Google's AI Mode and Ask Maps pull from your profile. Posts with a real photo, a short story, and one city give it something to quote."
 ---
+
+**In short:** Most owners leave the services and posts on their Google Business Profile half empty. Here is how to fill them in with the words customers use.
 
 Your [Google Business Profile](https://www.google.com/business/) is the free listing that shows up on [Google Maps](https://www.google.com/maps). Most owners set it up once and never touch it again. The services section stays half empty. The posts tab has nothing in it. That is a problem, because Google reads those sections to decide who to show.
 
