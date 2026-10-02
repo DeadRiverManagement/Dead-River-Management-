@@ -80,3 +80,7 @@ Run a home-service or local business? Want more booked revenue in El Paso or nat
 Demand Flow is the live public offer. **$50,000 in new revenue in 45 to 60 days.** That is for accepted businesses. If we miss, we refund service fees plus $500. Ad spend is not refunded. [Guarantee terms](/legal/guarantee). [Book a strategy call](/book).
 
 Call or text **(915) 228-3054**. El Paso / Mountain Time. [Company](/company) · [El Paso](/locations/el-paso) · [Home](/).
+
+## We can do this for you
+
+You can do everything above yourself. Most owners do not have the hours. Dead River Management builds and runs it for home service businesses. We work in El Paso and across the country. You keep running jobs. We handle the search work. You judge us on booked jobs, not reports. See [SEO services](/services/seo), read about [the Demand Flow guarantee](/), or [book a strategy call](/book).

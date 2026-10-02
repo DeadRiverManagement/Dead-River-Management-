@@ -9,7 +9,7 @@ heroAlt: "Article card for a guide to showing up in AI search"
 
 A year ago, someone in El Paso had a leaking water heater. They typed "water heater repair near me" into Google. Then they called one of the three businesses on the map.
 
-Today, more of those people open ChatGPT or Perplexity. Or they use the AI box at the top of Google. AI is a computer program that answers questions in plain words. Now they ask a full question. Who's a good plumber on the Eastside that can come out today?
+Today, more of those people open [ChatGPT](https://chatgpt.com/) or Perplexity. Or they use the AI box at the top of Google. AI is a computer program that answers questions in plain words. Now they ask a full question. Who's a good plumber on the Eastside that can come out today?
 
 They get one answer. Not ten blue links. One or two business names, and a line on why.
 
@@ -19,13 +19,21 @@ Say your business is one of those names. You just got a lead. A lead is a person
 
 AI engines have no opinions. They build an answer from what they can find about you. Then they check it. They use a few sources and compare them.
 
-**Your Google Business Profile.** This is your free listing on Google Maps. It holds your categories, which means the kind of work you do. It holds your services, hours, service area, and photos. Most of all, it holds reviews. Say one profile has 80 recent reviews. Many of them say "same day" and "water heater". Say another has 6 reviews from 2021. The AI treats those two very differently.
+**Your [Google Business Profile](https://www.google.com/business/).** This is your free listing on [Google Maps](https://www.google.com/maps). It holds your categories, which means the kind of work you do. It holds your services, hours, service area, and photos. Most of all, it holds reviews. Say one profile has 80 recent reviews. Many of them say "same day" and "water heater". Say another has 6 reviews from 2021. The AI treats those two very differently.
+
+![Google Business Profile sign-in page](/images/tools/google-business-profile.webp)
+
+![Google Maps search results for a local service](/images/tools/google-maps.webp)
 
 **Your website, read as text.** Not the design. The words. Say your homepage says "Welcome to our website". Say your services page is just icons with no sentences. Then there is nothing for the AI to quote. Now say it reads like this instead. "We repair and replace water heaters across El Paso and Horizon City. Usually the same day. Starting at $X." That one line can become the answer.
 
 **Structured data.** This is a block of code on your pages. It is called JSON-LD schema. It tells machines, in their own format, what your business is. Where it is. What it does. What it costs. Most local business sites don't have it. The ones that do are much easier to recommend with confidence.
 
-**Everything else that mentions you.** Directories, which are websites that list businesses. The Chamber of Commerce. Yelp, Nextdoor, Facebook. News mentions. The AI checks them against each other. Say your phone number is different on three of them. Trust drops.
+**Everything else that mentions you.** Directories, which are websites that list businesses. The Chamber of Commerce. [Yelp](https://biz.yelp.com/), [Nextdoor](https://business.nextdoor.com/), Facebook. News mentions. The AI checks them against each other. Say your phone number is different on three of them. Trust drops.
+
+![Yelp for Business page](/images/tools/yelp-for-business.webp)
+
+![Nextdoor for Business page](/images/tools/nextdoor-business.webp)
 
 ## Why "before your competitors do" is not a sales line
 
@@ -51,3 +59,7 @@ None of this is hard. It's just work most owners don't have time for. That is wh
 Open ChatGPT. Ask it for a pick in your trade, in your part of town. Ask the way a customer would. See who it names. If it isn't you, now you know exactly what you're competing for.
 
 If you'd rather we handle it, [talk with us](/book). Or call or text (915) 228-3054. No sales call.
+
+## We can do this for you
+
+You can do everything above yourself. Most owners do not have the hours. Dead River Management builds and runs it for home service businesses. We work in El Paso and across the country. You keep running jobs. We handle the search and AI visibility work. You judge us on booked jobs, not reports. See [SEO services](/services/seo), read about [the Demand Flow guarantee](/), or [book a strategy call](/book).

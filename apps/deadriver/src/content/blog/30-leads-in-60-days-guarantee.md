@@ -45,3 +45,7 @@ Not Dead River Company (New England fuel). We do not sell fuel.
 ## Next step
 
 [Book a strategy call](/book) to see if your business fits. Full terms: [Guarantee terms](/legal/guarantee).
+
+## We can do this for you
+
+You can do everything above yourself. Most owners do not have the hours. Dead River Management builds and runs it for home service businesses. We work in El Paso and across the country. You keep running jobs. We handle the ads, the landing page, and the follow-up. You judge us on booked jobs, not reports. See [Facebook Ads](/services/facebook-ads), read about [the Demand Flow guarantee](/), or [book a strategy call](/book).

@@ -338,6 +338,14 @@ button:active,
   margin-top: 30px;
   border-radius: 8px;
 }
+.prose img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 14px 0 22px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
 .prose a {
   border-bottom: 1px solid var(--green);
 }

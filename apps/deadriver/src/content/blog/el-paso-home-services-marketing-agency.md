@@ -52,3 +52,7 @@ We do not knock Strategic Key Marketing. We show the public difference. That way
 Demand Flow is for accepted businesses. It aims for $50,000 in new revenue in 45–60 days. Revenue means money that comes in. If we miss, we refund the service fees. We also pay you $500. Ad spend is not refunded. Ad spend is the money paid for the ads themselves. [Read the guarantee terms](/legal/guarantee) and [book a conversation](/book).
 
 Call or text (915) 228-3054. El Paso, TX. Nationwide.
+
+## We can do this for you
+
+You can do everything above yourself. Most owners do not have the hours. Dead River Management builds and runs it for home service businesses. We work in El Paso and across the country. You keep running jobs. We handle the ads, the landing page, and the follow-up. You judge us on booked jobs, not reports. See [Facebook Ads](/services/facebook-ads), read about [the Demand Flow guarantee](/), or [book a strategy call](/book).

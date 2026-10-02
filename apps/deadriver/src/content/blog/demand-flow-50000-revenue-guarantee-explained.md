@@ -91,3 +91,7 @@ This article is a summary. It does not replace the guarantee page or your agreem
 3. Or call **(915) 228-3054**. We are in El Paso, on Mountain Time. Hours are Mon to Sat, 9 to 6.
 
 More context: [home](/), [company](/company), [solutions](/solutions), [work and case studies](/work), [El Paso](/locations/el-paso).
+
+## We can do this for you
+
+You can do everything above yourself. Most owners do not have the hours. Dead River Management builds and runs it for home service businesses. We work in El Paso and across the country. You keep running jobs. We handle the search work. You judge us on booked jobs, not reports. See [SEO services](/services/seo), read about [the Demand Flow guarantee](/), or [book a strategy call](/book).

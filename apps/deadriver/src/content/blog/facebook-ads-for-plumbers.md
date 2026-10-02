@@ -37,7 +37,7 @@ That number comes from [WordStream by LocaliQ's Facebook Ads Benchmarks](https:/
 
 Two honest warnings before you plan a budget on that. It is a **category average**, not a plumbing number. You are lumped in with remodelers and furniture stores. And it is a national number, not an El Paso number. Treat it as a starting point, not a forecast.
 
-The same study found Facebook lead ads cost **$27.66** per lead on average. Google Ads cost **$70.11**. A click was **$1.92** on Facebook and **$5.26** on Google. Cheaper leads, but colder leads. That trade is the whole story.
+The same study found Facebook lead ads cost **$27.66** per lead on average. [Google Ads](https://ads.google.com/) cost **$70.11**. A click was **$1.92** on Facebook and **$5.26** on Google. Cheaper leads, but colder leads. That trade is the whole story.
 
 ## What does $25 a day actually buy?
 
@@ -81,7 +81,7 @@ Google Ads catch demand that already exists. Someone typed "water heater repair 
 
 Facebook creates demand you did not have. It is cheaper per lead and slower to turn into a job.
 
-Most plumbers we talk to should be on Google first. Add Facebook once the phone side is handled well. Can you only do one thing this quarter? If your Google Business Profile is a mess, fix that first. Do it before you spend a dollar on either.
+Most plumbers we talk to should be on Google first. Add Facebook once the phone side is handled well. Can you only do one thing this quarter? If your [Google Business Profile](https://www.google.com/business/) is a mess, fix that first. Do it before you spend a dollar on either.
 
 ## What does it cost to have someone run this for you?
 
@@ -92,3 +92,7 @@ Ads only work if someone answers. Fix the phone first. Then turn the leads on.
 Want the plumbing-only version of all this? We wrote one: [plumber marketing in El Paso](/plumber-marketing-el-paso).
 
 The numbers above came from WordStream by LocaliQ in September 2025. They are linked so you can check them. Scope for Foundation, Growth Partner, and Scale is confirmed on a call.
+
+## We can do this for you
+
+You can do everything above yourself. Most owners do not have the hours. Dead River Management builds and runs it for home service businesses. We work in El Paso and across the country. You keep running jobs. We handle the search work. You judge us on booked jobs, not reports. See [SEO services](/services/seo), read about [the Demand Flow guarantee](/), or [book a strategy call](/book).

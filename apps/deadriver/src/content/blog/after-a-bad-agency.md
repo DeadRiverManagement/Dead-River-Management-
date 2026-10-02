@@ -64,3 +64,7 @@ Ask them to find the problem first. Not to pitch a package name. The phone, the 
 Do they start with plan tiers and prices? Before they understand your intake? Leave.
 
 Next: [Why answer speed is the real cost of a lead](/marketing-advice/lead-response-time).
+
+## We can do this for you
+
+You can do everything above yourself. Most owners do not have the hours. Dead River Management builds and runs it for home service businesses. We work in El Paso and across the country. You keep running jobs. We handle the demand, the follow-up, and the tracking. You judge us on booked jobs, not reports. See [Demand Intelligence](/demand-intelligence), read about [the Demand Flow guarantee](/), or [book a strategy call](/book).

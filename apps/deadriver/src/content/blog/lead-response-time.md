@@ -68,3 +68,7 @@ Do these first. A campaign is a set of ads you pay for. Fix these before you fun
 Intake is the front desk, in plain language. It is who answers, how fast, and if they can book. Get that stable. Then decide if you still need more traffic.
 
 Next: [What to ask after a bad agency](/marketing-advice/after-a-bad-agency).
+
+## We can do this for you
+
+You can do everything above yourself. Most owners do not have the hours. Dead River Management builds and runs it for home service businesses. We work in El Paso and across the country. You keep running jobs. We handle the demand, the follow-up, and the tracking. You judge us on booked jobs, not reports. See [Demand Intelligence](/demand-intelligence), read about [the Demand Flow guarantee](/), or [book a strategy call](/book).

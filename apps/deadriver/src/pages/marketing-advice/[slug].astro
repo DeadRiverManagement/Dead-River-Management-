@@ -3,6 +3,7 @@ import Growth from '../../layouts/Growth.astro';
 import Hero from '../../components/growth/Hero.astro';
 import CTA from '../../components/growth/CTA.astro';
 import { getCollection, render } from 'astro:content';
+import { faqPage } from '../../lib/schema';
 export async function getStaticPaths() {
   return (await getCollection('blog', ({ data }) => !data.draft)).map(
     (post) => ({ params: { slug: post.id }, props: { post } }),
@@ -10,17 +11,28 @@ export async function getStaticPaths() {
 }
 const { post } = Astro.props;
 const { Content } = await render(post);
-const schema = {
+const SITE = 'https://www.deadrivermanagement.com';
+const url = `${SITE}/marketing-advice/${post.id}`;
+const article = {
   '@context': 'https://schema.org',
-  '@type': 'BlogPosting',
+  '@type': ['BlogPosting', 'Article'],
   headline: post.data.title,
   description: post.data.description,
   datePublished: post.data.date.toISOString(),
-  author: { '@type': 'Person', name: post.data.author },
+  dateModified: post.data.date.toISOString(),
+  url,
+  mainEntityOfPage: url,
+  inLanguage: 'en-US',
+  articleSection: post.data.category,
+  author: { '@type': 'Person', name: post.data.author, url: `${SITE}/company` },
+  publisher: { '@id': `${SITE}/#organization` },
+  isPartOf: { '@id': `${SITE}/#website` },
   ...(post.data.heroImage
-    ? { image: 'https://www.deadrivermanagement.com' + post.data.heroImage }
+    ? { image: SITE + post.data.heroImage }
     : {}),
 };
+// FAQPage schema makes the Q&A citable by Google AI Overviews and assistants.
+const schema = post.data.faq?.length ? [article, faqPage(post.data.faq)] : article;
 ---
 
 <Growth
