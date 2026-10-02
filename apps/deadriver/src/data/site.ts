@@ -57,6 +57,8 @@ export const business = {
   phone: '(915) 228-3054',
   phoneE164: '+19152283054',
   email: 'brandon@deadrivermanagement.com',
+  street: '416 N. Stanton St, Suite 120-M',
+  postalCode: '79901',
   city: 'El Paso',
   region: 'TX',
   country: 'US',

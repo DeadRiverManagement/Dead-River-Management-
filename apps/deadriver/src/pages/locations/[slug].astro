@@ -5,6 +5,7 @@ import CTA from '../../components/growth/CTA.astro';
 import ServiceLinks from '../../components/growth/ServiceLinks.astro';
 import Arrow from '../../components/growth/Arrow.astro';
 import { locations } from '../../data/growth-locations';
+import { industryPages } from '../../data/industry-pages';
 import { elPasoLocationFaq } from '../../data/nationwide-faq';
 import { faqPage } from '../../lib/schema';
 export function getStaticPaths() {
@@ -104,6 +105,11 @@ const pageTitle =
   )}
   <section class="wrap">
     <ServiceLinks label="Our services" heading="Every channel we run." />
+    <ServiceLinks
+      label="By trade"
+      heading="Built for how your trade gets the call."
+      links={industryPages.map((p) => ({ label: p.name, href: '/industries/' + p.slug, blurb: p.headline }))}
+    />
   </section>
   <CTA />
 </Growth>

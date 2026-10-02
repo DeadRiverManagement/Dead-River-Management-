@@ -8,6 +8,7 @@ import Arrow from '../../components/growth/Arrow.astro';
 import ServiceLinks from '../../components/growth/ServiceLinks.astro';
 import { faqPage } from '../../lib/schema';
 import { servicePages, demandFlowOffer, elPasoAreas } from '../../data/service-pages';
+import { industryPages } from '../../data/industry-pages';
 import type { ServicePageData } from '../../data/service-pages';
 
 export function getStaticPaths() {
@@ -104,6 +105,32 @@ const serviceSchema = {
     </div>
   </section>
 
+  {page.longform && (
+  <section class="section wrap sv-longform">
+    {page.longform.map((b) => (
+      <div class="sv-block">
+        <h2>{b.heading}</h2>
+        {b.paragraphs.map((p) => <p>{p}</p>)}
+      </div>
+    ))}
+    {page.compare && (
+      <div class="sv-block">
+        <h2>{page.compare.heading}</h2>
+        <div class="table-scroll">
+          <table class="comparison-table sv-compare">
+            <thead><tr>{page.compare.columns.map((c) => <th scope="col">{c}</th>)}</tr></thead>
+            <tbody>
+              {page.compare.rows.map(([k, a, b]) => (
+                <tr><th scope="row">{k}</th><td>{a}</td><td>{b}</td></tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    )}
+  </section>
+  )}
+
   {page.proof.length > 0 && (
   <section class="section wrap">
     <p class="eyebrow">Results</p>
@@ -130,6 +157,9 @@ const serviceSchema = {
           <ul class="check-list">
             {page.fit.map((f) => <li>{f}</li>)}
           </ul>
+          <p class="small sv-industries">By trade:{industryPages.map((p, i) => (
+            <>{i > 0 && ','}<a class="inline-link" href={'/industries/' + p.slug}>{p.name}</a></>
+          ))}</p>
         </article>
         <article class="feature-panel">
           <h3>In El Paso</h3>
@@ -208,6 +238,8 @@ const serviceSchema = {
   .ms-plans > * { min-width: 0; display: flex; flex-direction: column; align-items: flex-start; }
   .ms-plans .text-link { margin-top: auto; }
   .ms-note { margin-top: 14px; }
+  .sv-industries { margin-top: 14px; }
+  .sv-industries a { margin-left: 6px; }
   .sv-offers { display: grid; grid-template-columns: minmax(0, 560px); gap: 16px; margin-top: 24px; }
   .sv-offer { min-width: 0; display: flex; flex-direction: column; padding: 24px; }
   .sv-offer p:not(.mini-label) { color: var(--muted); font-size: 15px; margin-bottom: 14px; }
@@ -217,6 +249,13 @@ const serviceSchema = {
   .sv-areas { list-style: none; padding: 0; margin: 14px 0 16px; display: flex; flex-wrap: wrap; gap: 6px; }
   .sv-areas li { font-size: 13px; padding: 4px 10px; border: 1px solid var(--line); border-radius: 999px; color: var(--ink); background: var(--paper); }
   .ms-close { padding-bottom: 72px; }
+  .sv-longform { max-width: 860px; }
+  .sv-block + .sv-block { margin-top: 40px; }
+  .sv-block h2 { font-size: clamp(24px, 2.6vw, 32px); margin-bottom: 14px; }
+  .sv-block p { color: var(--muted); font-size: 17px; line-height: 1.6; margin-bottom: 14px; }
+  .sv-compare { min-width: 640px; }
+  .sv-compare th, .sv-compare td { padding: 14px 16px; }
+  .sv-compare tr > :nth-child(3) { background: #e8eedf; }
   @media (max-width: 1100px) {
   }
   @media (max-width: 1000px) {

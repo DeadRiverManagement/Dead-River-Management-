@@ -48,6 +48,10 @@ export type ServicePageData = {
   fit: string[];
   related: { label: string; href: string }[];
   faqs: { q: string; a: string }[];
+  // Optional long-form blocks for pages that need to be the complete answer
+  // (AI search). Rendered between "what we build" and results.
+  longform?: { heading: string; paragraphs: string[] }[];
+  compare?: { heading: string; columns: [string, string, string]; rows: [string, string, string][] };
 };
 
 const pricingFaq = {
@@ -56,6 +60,132 @@ const pricingFaq = {
 };
 
 export const servicePages: ServicePageData[] = [
+  {
+    slug: 'ai-search-optimization',
+    blurb: 'Get recommended by ChatGPT and Google AI.',
+    name: 'AI Search Optimization',
+    navLabel: 'AI search optimization',
+    title: 'AI Search Optimization (AEO and GEO)',
+    description:
+      'AI search optimization for service businesses. Get recommended by ChatGPT, Google AI Overviews, Perplexity, and Gemini. Nationwide and in El Paso.',
+    eyebrow: 'AI search optimization · AEO · GEO',
+    headline: 'Get Recommended by ChatGPT, Google AI, and Perplexity.',
+    sub: 'Answer engine optimization (AEO) and generative engine optimization (GEO) for service businesses, nationwide and in El Paso.',
+    intro:
+      'More people now ask an AI assistant "who should I call" instead of scrolling ten blue links. The assistant names two or three businesses. We make sure yours is one of them, and that the person who asked becomes a booked job.',
+    problemHeading: 'AI answers are replacing the search results page.',
+    problems: [
+      ['The assistant names someone else.', 'Ask ChatGPT for the best roofer in your city. It names three companies. If you are not one of them, that buyer never sees you.'],
+      ['Your site was built for Google, not for AI.', 'AI models need plain facts, clear structure, and proof they can quote. Most service sites bury all three under slogans.'],
+      ['Nobody can tell if it is working.', 'Rank trackers do not watch ChatGPT. Without a way to test the real answers, you are guessing.'],
+    ],
+    builtHeading: 'Everything an AI assistant needs to recommend you.',
+    built: [
+      ['Entity and listing cleanup', 'Your name, address, phone, hours, services, and service area, identical on your site, Google Business Profile, Bing, Apple, and the directories AI models read.'],
+      ['Answer-first pages', 'Each service page answers the question a buyer asks, in the first paragraph, with the price range, the timeline, and who it is for.'],
+      ['Structured data', 'Organization, LocalBusiness, Service, FAQ, Article, and Review schema on every page, validated, so models can read the facts without guessing.'],
+      ['Proof the model can quote', 'Case studies with real numbers and dates, reviews with replies, and a clear guarantee. Models cite specifics, not claims.'],
+      ['Citations and mentions', 'Profiles and mentions on the directories, review sites, and local press AI assistants already cite for your trade.'],
+      ['Monthly answer testing', 'We ask ChatGPT, Gemini, Perplexity, and Google AI Mode the questions your buyers ask, log who gets named, and fix what blocks you.'],
+    ],
+    longform: [
+      {
+        heading: 'What AI search optimization is, in plain words',
+        paragraphs: [
+          'AI search optimization is the work of making your business the answer when someone asks an AI assistant for a recommendation. People call it answer engine optimization (AEO) or generative engine optimization (GEO). The names differ. The job is the same: give ChatGPT, Google AI Overviews, Google AI Mode, Perplexity, Gemini, Claude, and Copilot clear, consistent, provable facts about what you do, where you do it, and why you are a safe pick.',
+          'These assistants do not rank pages the way Google does. They read a handful of trusted sources, pull out facts, and write an answer. The sources they trust for a local service business are your own site, your Google Business Profile, your reviews, the directories that list you, and anything written about you elsewhere. If those sources disagree, or say nothing specific, the assistant names a competitor who made it easier.',
+        ],
+      },
+      {
+        heading: 'How it works with the SEO you already have',
+        paragraphs: [
+          'AI search optimization sits on top of normal SEO. It does not replace it. A page still has to be indexed, fast, and clear for Google before an assistant will read it. What changes is what goes on the page: direct answers, numbers, named service areas, and structured data, instead of long introductions and vague promises.',
+          'Our local SEO and SEO work handles the foundation. This service adds the layer that gets you quoted: entity cleanup, answer-first copy, schema, citable proof, mentions, and monthly testing against the real assistants.',
+        ],
+      },
+      {
+        heading: 'What you get each month',
+        paragraphs: [
+          'Month one is cleanup and structure: listings matched, schema added, the top service pages rewritten to answer first, and a baseline of which assistants name you today. From month two we work the list: new proof published, mentions earned, pages added for the questions buyers ask, and the same questions re-tested. You get a one-page report that shows which assistants recommend you, for which questions, and what changed.',
+          'Results take time because the assistants refresh what they know on their own schedule. Most businesses see their first citations in 60 to 90 days. Listings and schema changes show up faster in Google AI Overviews than in ChatGPT.',
+        ],
+      },
+    ],
+    compare: {
+      heading: 'Traditional SEO and AI search optimization, side by side',
+      columns: ['What matters', 'Traditional SEO', 'AI search optimization'],
+      rows: [
+        ['The goal', 'Rank on page one', 'Be one of the two or three businesses the assistant names'],
+        ['Where answers come from', 'Your pages, judged by links and relevance', 'Your site plus listings, reviews, directories, and press, judged by consistency and proof'],
+        ['How copy is written', 'Keywords and headings', 'Direct answers, numbers, dates, and named service areas'],
+        ['Structured data', 'Helpful', 'Required. Models read schema to confirm facts'],
+        ['Proof', 'Nice to have', 'Case studies and reviews with specifics are what get quoted'],
+        ['How you measure it', 'Rank trackers and Search Console', 'Monthly tests of the real assistants, logged by question'],
+      ],
+    },
+    proofHeading: 'What the work looks like',
+    proof: [
+      {
+        label: 'Our own site',
+        text: 'Every page carries validated Organization, Service, FAQ, and Article schema, a public llms.txt file for AI crawlers, and case studies with dated numbers. It is the same build we do for clients.',
+        href: '/marketing-advice/get-ai-to-recommend-your-business',
+        linkText: 'Read how to get AI to recommend your business',
+      },
+      {
+        label: 'Gonzalez & Sons Roofing',
+        text: 'A roofer that went from about 2 roofs a month to about 8 in six months. The pages, proof, and follow-up built for that result are the same raw material AI assistants cite.',
+        href: '/work/gonzalez-and-sons-roofing',
+        linkText: 'Read the case study',
+      },
+    ],
+    elPaso:
+      'We are based in El Paso and test the assistants from here, so El Paso and borderland businesses see exactly what a local buyer is told. The same process works for businesses in any city.',
+    offerLead:
+      'AI search optimization is one of the channels inside our Demand Flow system. It makes sure the buyers who ask an assistant end up on your calendar.',
+    fit: [
+      'You sell a service people research before they hire',
+      'Your listings and site are mostly accurate and you want them airtight',
+      'You have at least a few reviews and one result you can prove',
+      'You want to be early, before every competitor in your trade does this',
+    ],
+    related: [
+      { label: 'How to get AI to recommend your business', href: '/marketing-advice/get-ai-to-recommend-your-business' },
+      { label: 'AI gives everyone the same SEO advice', href: '/marketing-advice/ai-gives-everyone-the-same-seo-advice' },
+      { label: 'AI search for local business', href: '/marketing-advice/ai-search-for-local-business' },
+      { label: 'SEO foundations checklist', href: '/tools/seo-foundations' },
+    ],
+    faqs: [
+      {
+        q: 'What is the difference between AEO, GEO, and AI SEO?',
+        a: 'They are three names for the same work. AEO means answer engine optimization. GEO means generative engine optimization. AI SEO is the casual term. All of them mean making your business the answer an AI assistant gives.',
+      },
+      {
+        q: 'Which AI tools does this cover?',
+        a: 'ChatGPT and ChatGPT search, Google AI Overviews and AI Mode, Gemini, Perplexity, Claude, and Microsoft Copilot. We test all of them monthly. Most buyers use ChatGPT and Google.',
+      },
+      {
+        q: 'Do I still need regular SEO?',
+        a: 'Yes. An assistant will not cite a page Google cannot find. We run the SEO foundation and the AI layer together, or add the AI layer to SEO you already have.',
+      },
+      {
+        q: 'How long until an AI assistant names my business?',
+        a: 'Most clients see first citations in 60 to 90 days. Google AI Overviews move faster because they draw on the live index. ChatGPT updates its knowledge of local businesses more slowly.',
+      },
+      {
+        q: 'How do you prove it is working?',
+        a: 'We ask each assistant the questions your buyers ask, from your market, every month, and log who gets named. You see the questions, the answers, and the change over time. Booked jobs from those buyers show up in your tracking like any other channel.',
+      },
+      {
+        q: 'Can you guarantee a ChatGPT recommendation?',
+        a: 'No one can promise what a model will say. What we guarantee is the Demand Flow result: $50,000 in new revenue in 45 to 60 days for accepted businesses, or service fees refunded plus $500. AI search is one of the channels we use to get there.',
+      },
+      {
+        q: 'Do you work outside El Paso?',
+        a: 'Yes. We run AI search optimization for service businesses nationwide. The process is the same in any city.',
+      },
+      pricingFaq,
+    ],
+  },
   {
     slug: 'facebook-ads',
     blurb: 'Meta ads that book jobs, not likes.',

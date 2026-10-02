@@ -1,0 +1,26 @@
+---
+import Growth from '../../layouts/Growth.astro';
+import Hero from '../../components/growth/Hero.astro';
+import CTA from '../../components/growth/CTA.astro';
+import ServiceLinks from '../../components/growth/ServiceLinks.astro';
+import { industryPages } from '../../data/industry-pages';
+---
+
+<Growth
+  title="Marketing by Industry"
+  description="Marketing built for roofers, plumbers, HVAC companies, and auto repair shops. One offer, tuned to how each trade gets the call. Nationwide and in El Paso."
+>
+  <Hero
+    eyebrow="Industries · Nationwide and El Paso"
+    title="Built for how your trade gets the call."
+    intro="Every trade loses jobs in a different place: the storm week, the 9 PM call, the July rush, the quote that walks out. Pick yours."
+  />
+  <section class="section wrap">
+    <ServiceLinks
+      label="Pick your trade"
+      heading="One system, four trades."
+      links={industryPages.map((p) => ({ label: p.name, href: '/industries/' + p.slug, blurb: p.headline }))}
+    />
+  </section>
+  <CTA />
+</Growth>

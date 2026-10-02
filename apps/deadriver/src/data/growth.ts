@@ -4,6 +4,8 @@ export const brand = {
   phone: '(915) 228-3054',
   phoneHref: 'tel:+19152283054',
   smsHref: 'sms:+19152283054',
+  address: '416 N. Stanton St, Suite 120-M, El Paso, TX 79901',
+  mapHref: 'https://www.google.com/maps/search/?api=1&query=416+N+Stanton+St+Suite+120-M+El+Paso+TX+79901',
   location: 'Based in El Paso, Texas · Serving businesses nationwide',
   description:
     'A growth partner for businesses ready to break through the next stage. Dead River builds and manages the infrastructure behind growth: acquisition, conversion, follow-up, retention, measurement, and strategy in one managed system. Based in Texas, working with growing businesses nationwide.',
