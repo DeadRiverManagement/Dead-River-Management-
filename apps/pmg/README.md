@@ -45,10 +45,28 @@ Set `draft: true` to keep a post out of the build.
 ## Local dev
 
 ```
-npm install
+npm ci
 npm run dev      # http://localhost:4321
 npm run build    # outputs to dist/
+npm run verify:seo
 ```
+
+## Vercel (pmg-site)
+
+Project `pmg-site` (`prj_HPGOS5lHBX3nD540zvtX5ezyDfY3`, team deadriver) builds this directory. The monorepo root has no `package.json`. A build that runs `astro build` from the repo root exits 127 because `astro` is not installed there (`dpl_86bj8muBozS5gxqRpNV473S4ygyE`, commit `982f282`).
+
+`vercel.json` in this directory sets Install Command to `npm ci` and Build Command to `npm run build`. Vercel reads that file only when the project Root Directory is `apps/pmg`. `npm run build` runs the `astro build` script with `node_modules/.bin` on `PATH`.
+
+Set this once in the Vercel dashboard, then redeploy a commit that already contains `/what-is-freight-class/`. Do not change `deadrivermanagement-site`.
+
+1. Open [pmg-site settings](https://vercel.com/deadriver/pmg-site/settings).
+2. Build and Deployment → Root Directory → Edit → `apps/pmg` → Save. Leave "Include source files outside of the Root Directory" off.
+3. Framework Preset: Astro.
+4. Install Command: leave the override off so `apps/pmg/vercel.json` supplies `npm ci`. If an override is stuck on, set it to `npm ci`.
+5. Build Command: leave the override off so `vercel.json` supplies `npm run build`. If an override is stuck on `astro build`, clear it or set `npm run build`.
+6. Output Directory: `dist`.
+7. Production Branch: `claude/magical-goldberg-ijl1j4`.
+8. Redeploy the merge commit of the freight-class PR. Do not redeploy an older monorepo commit. A successful deploy of a commit without `src/pages/what-is-freight-class.astro` replaces https://www.parcelmanagementgroup.com/what-is-freight-class/.
 
 ## Contact
 

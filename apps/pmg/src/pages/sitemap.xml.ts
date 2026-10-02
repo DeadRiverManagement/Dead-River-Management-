@@ -12,6 +12,7 @@ const STATIC_PATHS = [
   { path: '/what-is-ltl-shipping/', changefreq: 'monthly', priority: 0.7 },
   { path: '/ltl-vs-ftl/', changefreq: 'monthly', priority: 0.7 },
   { path: '/ltl-freight-quote/', changefreq: 'monthly', priority: 0.7 },
+  { path: '/what-is-freight-class/', changefreq: 'monthly', priority: 0.7 },
   { path: '/blog/', changefreq: 'weekly', priority: 0.7 },
   { path: '/privacy/', changefreq: 'yearly', priority: 0.3 },
   { path: '/terms/', changefreq: 'yearly', priority: 0.3 },
