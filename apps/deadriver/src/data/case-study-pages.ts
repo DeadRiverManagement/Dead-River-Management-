@@ -21,8 +21,6 @@ export interface CaseStudyPage {
   glance: { facts: [string, string][]; did: string[]; metrics: string[] };
   /** Industry page this result belongs to, shown under the result. */
   industry?: { label: string; href: string };
-  /** Short client video. Put the file under public/media/ and fill this in; the page renders the player and VideoObject schema. */
-  video?: { src: string; poster: string; title: string; description: string; uploadDate: string; duration?: string };
 }
 
 export const caseStudyPages: CaseStudyPage[] = [
