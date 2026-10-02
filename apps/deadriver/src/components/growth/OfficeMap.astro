@@ -3,7 +3,8 @@
 // API key is needed. The iframe is lazy so it never touches page speed.
 import Arrow from './Arrow.astro';
 import { brand } from '../../data/growth';
-const q = encodeURIComponent(`Dead River Management, ${brand.address}`);
+// Address only: with the business name Google snaps the pin to the Business Profile listing, which still carries the old address.
+const q = encodeURIComponent(brand.address);
 const { heading = 'Come see us.' } = Astro.props as { heading?: string };
 ---
 

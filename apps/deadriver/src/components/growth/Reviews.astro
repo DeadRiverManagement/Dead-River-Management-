@@ -1,11 +1,15 @@
 ---
-// Home page reviews: real Google reviews, a link to the Google profile, and a
-// link to Facebook recommendations. No schema: Google ignores self-served
-// review markup on a business's own site.
+// Home page reviews: real Google reviews and Facebook recommendations, with
+// links to both profiles. No schema: Google ignores self-served review markup
+// on a business's own site.
 import Arrow from './Arrow.astro';
-import { googleReviews, facebookReviewsHref } from '../../data/reviews';
+import { googleReviews, facebookReviews } from '../../data/reviews';
 const fmt = (d: string) =>
   new Date(d).toLocaleDateString('en-US', { month: 'long', year: 'numeric', timeZone: 'UTC' });
+const cards = [
+  ...facebookReviews.items.map((r) => ({ ...r, source: 'Facebook', stars: 0 })),
+  ...googleReviews.items.map((r) => ({ ...r, source: 'Google', href: undefined as string | undefined })),
+].sort((a, b) => b.date.localeCompare(a.date));
 ---
 
 <section class="section soft" id="reviews">
@@ -15,23 +19,32 @@ const fmt = (d: string) =>
         <p class="eyebrow">Reviews</p>
         <h2>What clients say.</h2>
       </div>
-      <p class="rv-score" aria-label={`Rated ${googleReviews.rating.toFixed(1)} out of 5 on Google from ${googleReviews.count} reviews`}>
-        <span class="rv-stars" aria-hidden="true">★★★★★</span>
-        <strong>{googleReviews.rating.toFixed(1)}</strong> on Google · {googleReviews.count} {googleReviews.count === 1 ? 'review' : 'reviews'}
-      </p>
+      <div class="rv-scores">
+        <p class="rv-score" aria-label={`Rated ${googleReviews.rating.toFixed(1)} out of 5 on Google from ${googleReviews.count} reviews`}>
+          <span class="rv-stars" aria-hidden="true">★★★★★</span>
+          <strong>{googleReviews.rating.toFixed(1)}</strong> on Google · {googleReviews.count} {googleReviews.count === 1 ? 'review' : 'reviews'}
+        </p>
+        <p class="rv-score">
+          <span class="rv-rec" aria-hidden="true">👍</span>
+          <strong>{facebookReviews.count}</strong> Facebook recommendations
+        </p>
+      </div>
     </div>
     <ul class="rv-grid">
-      {googleReviews.items.map((r) => (
+      {cards.map((r) => (
         <li class="rv-card">
-          <p class="rv-stars" aria-label={`${r.stars} out of 5 stars`}>{'★'.repeat(r.stars)}</p>
+          {r.stars
+            ? <p class="rv-stars" aria-label={`${r.stars} out of 5 stars`}>{'★'.repeat(r.stars)}</p>
+            : <p class="rv-badge">Recommends Dead River Management</p>}
           <blockquote>{r.text}</blockquote>
-          <p class="rv-meta"><strong>{r.name}</strong> · Google · {fmt(r.date)}</p>
+          <p class="rv-meta"><strong>{r.name}</strong> · {r.source} · {fmt(r.date)}</p>
+          {r.href && <a class="text-link rv-case" href={r.href}>Read the case study <Arrow /></a>}
         </li>
       ))}
     </ul>
     <div class="rv-links">
-      <a class="text-link" href={googleReviews.profileHref} rel="noopener" target="_blank">Read our Google reviews <Arrow /></a>
-      <a class="text-link" href={facebookReviewsHref} rel="noopener" target="_blank">Read our Facebook reviews <Arrow /></a>
+      <a class="text-link" href={googleReviews.profileHref} rel="noopener" target="_blank">All Google reviews <Arrow /></a>
+      <a class="text-link" href={facebookReviews.profileHref} rel="noopener" target="_blank">All Facebook recommendations <Arrow /></a>
       <a class="text-link" href={googleReviews.writeHref} rel="noopener" target="_blank">Worked with us? Leave a review <Arrow /></a>
     </div>
   </div>
