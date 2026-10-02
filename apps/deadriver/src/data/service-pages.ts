@@ -128,10 +128,6 @@ export const servicePages: ServicePageData[] = [
     ],
     faqs: [
       {
-        q: 'How much does a website cost for a service business?',
-        a: 'A professional service business website usually costs between $2,000 and $10,000 to build, depending on the number of pages, custom design, and copywriting, plus hosting and maintenance after launch. Template builders cost less and rank worse. We quote every site on a short call once we know how many services and areas you need pages for. Book a strategy call to get a number.',
-      },
-      {
         q: 'How long does a website take to build?',
         a: 'Four to eight weeks for most service businesses. The first week is strategy and page planning, then design, build, copy, photos, and testing. The biggest delay is usually waiting on content from the owner, so we write the copy ourselves and only ask you to approve it.',
       },
@@ -159,7 +155,6 @@ export const servicePages: ServicePageData[] = [
         q: 'Do you build websites outside El Paso?',
         a: 'Yes. We build sites for service businesses nationwide. The process is the same anywhere.',
       },
-      pricingFaq,
     ],
   },
   {
