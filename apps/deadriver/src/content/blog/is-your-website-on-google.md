@@ -52,7 +52,7 @@ I've seen this on sites that were live for a year. The owner thought SEO just di
 
 [Google Search Console](https://search.google.com/search-console/about) is a free tool from Google. It tells you what Google sees on your site. Every business should have it set up.
 
-![Google Search Console home page](/images/tools/search-console.webp)
+<img src="/images/tools/search-console.webp" width="1200" height="750" alt="Google Search Console home page" loading="lazy" decoding="async">
 
 1. Go to Google Search Console and sign in with a Google account.
 2. Add your domain as a property.

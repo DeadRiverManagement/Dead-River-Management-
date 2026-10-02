@@ -24,7 +24,7 @@ More people ask ChatGPT for a plumber now. Google shows AI answers at the top of
 
 [Google Analytics](https://analytics.google.com/) has a new channel for AI visits. Google Analytics is the free tool that tracks your site visitors. Here is how to find it.
 
-![Google Analytics overview page](/images/tools/google-analytics.webp)
+<img src="/images/tools/google-analytics.webp" width="1200" height="750" alt="Google Analytics overview page" loading="lazy" decoding="async">
 
 1. Open Google Analytics.
 2. Click Reports, then Acquisition, then Traffic Acquisition.
@@ -46,14 +46,14 @@ Those pages are the ones AI trusts. They are your most valuable pages. Make them
 
 [Bing Webmaster Tools](https://www.bing.com/webmasters) is a free report from Bing. It has an AI performance report that Google does not have.
 
-![Bing Webmaster Tools page](/images/tools/bing-webmaster-tools.webp)
+<img src="/images/tools/bing-webmaster-tools.webp" width="1200" height="750" alt="Bing Webmaster Tools page" loading="lazy" decoding="async">
 
 1. Go to Bing Webmaster Tools.
 2. Sign in with your Google account.
 3. Click Import and pull your site from [Google Search Console](https://search.google.com/search-console/about).
 4. Open AI Performance.
 
-![Google Search Console home page](/images/tools/search-console.webp)
+<img src="/images/tools/search-console.webp" width="1200" height="750" alt="Google Search Console home page" loading="lazy" decoding="async">
 
 You will see how many times AI cited you. You will see the searches you showed up for. And you will see which pages got recommended.
 
@@ -61,7 +61,7 @@ You will see how many times AI cited you. You will see the searches you showed u
 
 ChatGPT pulls business data from Bing. Not Google. So if you only have a [Google Business Profile](https://www.google.com/business/), ChatGPT is guessing. These five listings are free and most El Paso companies never claim them.
 
-![Google Business Profile sign-in page](/images/tools/google-business-profile.webp)
+<img src="/images/tools/google-business-profile.webp" width="1200" height="750" alt="Google Business Profile sign-in page" loading="lazy" decoding="async">
 
 - [Bing Places](https://www.bingplaces.com/). This is the big one for ChatGPT.
 - [Apple Maps](https://businessconnect.apple.com/). Tons of iPhone users search here. Go to Apple Business and claim it.
@@ -69,9 +69,9 @@ ChatGPT pulls business data from Bing. Not Google. So if you only have a [Google
 - Better Business Bureau. People think it costs money. A basic listing is free, and AI treats it as a trust signal.
 - Nextdoor. People ask neighbors for a plumber there. Set up a page so you show up.
 
-![Bing Places for Business page](/images/tools/bing-places.webp)
+<img src="/images/tools/bing-places.webp" width="1200" height="750" alt="Bing Places for Business page" loading="lazy" decoding="async">
 
-![Apple Business Connect page](/images/tools/apple-business-connect.webp)
+<img src="/images/tools/apple-business-connect.webp" width="1200" height="750" alt="Apple Business Connect page" loading="lazy" decoding="async">
 
 Match your name, phone, and address on all of them.
 

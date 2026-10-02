@@ -39,13 +39,13 @@ I have tested all of these on real client sites. Scores are out of 10.
 - **PageSpeed Insights.** Free from Google. Tells you if your site is slow and why.
 - **Ahrefs.** Strong for site health and AI visibility. The free parts are thin. Still worth a look.
 
-![Google Search Console home page](/images/tools/search-console.webp)
+<img src="/images/tools/search-console.webp" width="1200" height="750" alt="Google Search Console home page" loading="lazy" decoding="async">
 
-![Google Business Profile sign-in page](/images/tools/google-business-profile.webp)
+<img src="/images/tools/google-business-profile.webp" width="1200" height="750" alt="Google Business Profile sign-in page" loading="lazy" decoding="async">
 
-![Google Analytics overview page](/images/tools/google-analytics.webp)
+<img src="/images/tools/google-analytics.webp" width="1200" height="750" alt="Google Analytics overview page" loading="lazy" decoding="async">
 
-![Bing Webmaster Tools page](/images/tools/bing-webmaster-tools.webp)
+<img src="/images/tools/bing-webmaster-tools.webp" width="1200" height="750" alt="Bing Webmaster Tools page" loading="lazy" decoding="async">
 
 ## Citations
 
@@ -55,9 +55,9 @@ A citation is a listing of your name, address, and phone on another site. Three 
 - **[Whitespark](https://whitespark.ca/).** Does the job.
 - **[BrightLocal](https://www.brightlocal.com/).** The best one of the three.
 
-![BrightLocal home page](/images/tools/brightlocal.webp)
+<img src="/images/tools/brightlocal.webp" width="1200" height="750" alt="BrightLocal home page" loading="lazy" decoding="async">
 
-![Whitespark home page](/images/tools/whitespark.webp)
+<img src="/images/tools/whitespark.webp" width="1200" height="750" alt="Whitespark home page" loading="lazy" decoding="async">
 
 ## Pick by job
 

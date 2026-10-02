@@ -40,7 +40,7 @@ We help accepted businesses get more **booked revenue**. That means leads that t
 
 Our live public offer is **Demand Flow**. Here's the deal. $50,000 in new revenue in 45 to 60 days. That is for accepted businesses. If we miss, we refund our service fees plus $500. Ad spend is not refunded. Ad spend is the money paid to run the ads. Read the terms on the [guarantee](/legal/guarantee) page.
 
-**Demand Intelligence** is a separate product path. See [Demand Intelligence](/demand-intelligence) and the [demo](/demo). It is not a fuel product. It is not a “Growth” product line either.
+**Demand Intelligence** is a separate product path. See [Demand Intelligence](/demand-intelligence) and the [demo](/demand-intelligence). It is not a fuel product. It is not a “Growth” product line either.
 
 We are not a fuel supplier. We do not run heating-oil routes. We do not fill propane tanks. We do not run truck fleets for fuel. We build and manage the path from demand to booked work. See [what we do](/solutions) and [proof on /work](/work).
 

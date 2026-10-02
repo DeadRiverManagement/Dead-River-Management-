@@ -1,6 +1,6 @@
 import { defineConfig, fontProviders } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
-import { readFileSync } from 'node:fs';
+import { readFileSync, readdirSync } from 'node:fs';
 
 // Any path that vercel.json redirects unconditionally is an old URL that
 // still builds (so old links keep working) but should not be in the sitemap.
@@ -8,6 +8,19 @@ const redirected = new Set(
   JSON.parse(readFileSync(new URL('./vercel.json', import.meta.url), 'utf8'))
     .redirects.filter((r) => !r.missing && !r.has)
     .map((r) => r.source.replace(/\.html$/, '')),
+);
+
+// lastmod for each article comes from its front-matter date, so crawlers see
+// which guides changed without us hand-editing the sitemap.
+const articleDates = Object.fromEntries(
+  readdirSync(new URL('./src/content/blog', import.meta.url))
+    .filter((f) => f.endsWith('.md'))
+    .map((f) => {
+      const src = readFileSync(new URL(`./src/content/blog/${f}`, import.meta.url), 'utf8');
+      const date = src.match(/^date:\s*["']?(\d{4}-\d{2}-\d{2})/m)?.[1];
+      return [`/marketing-advice/${f.replace(/\.md$/, '')}`, date];
+    })
+    .filter(([, d]) => d),
 );
 
 export default defineConfig({
@@ -39,6 +52,11 @@ export default defineConfig({
   // Purchase, gated content and paid-campaign steps are not discovery URLs.
   integrations: [
     sitemap({
+      serialize: (item) => {
+        const path = new URL(item.url).pathname.replace(/\/$/, '') || '/';
+        const date = articleDates[path];
+        return date ? { ...item, lastmod: new Date(date).toISOString() } : item;
+      },
       filter: (page) => {
         const path = new URL(page).pathname.replace(/\/$/, '') || '/';
         const oldPlanPaths = new Set([

@@ -48,7 +48,7 @@ We rank trades from S down to F. S means easy. F means you need a big budget. He
 
 An S or A trade is the easy spot. A clean [Google Business Profile](https://www.google.com/business/), a real website, and steady reviews can get you ranking. You don't need a huge budget. You need to do the basics and not quit.
 
-![Google Business Profile sign-in page](/images/tools/google-business-profile.webp)
+<img src="/images/tools/google-business-profile.webp" width="1200" height="750" alt="Google Business Profile sign-in page" loading="lazy" decoding="async">
 
 If you're B or C, the basics still matter. You also need patience. Plan on months, not weeks. The owners who win here keep posting, keep asking for reviews, and keep adding pages.
 
@@ -80,7 +80,7 @@ More people ask AI tools who to call. Here's what moves the needle.
 - **Get on [Yelp](https://biz.yelp.com/) and Bing.** Better. AI tools pull from these more than most owners think. Claim both profiles and fill them out fully.
 - **Get mentioned on sites AI already trusts.** Best. Local news, trade groups, supplier sites, the chamber. When trusted sites mention you, AI tools pick that up.
 
-![Yelp for Business page](/images/tools/yelp-for-business.webp)
+<img src="/images/tools/yelp-for-business.webp" width="1200" height="750" alt="Yelp for Business page" loading="lazy" decoding="async">
 
 ## Where to start
 

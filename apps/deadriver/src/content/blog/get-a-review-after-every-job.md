@@ -59,9 +59,9 @@ Here is the one that works best for us. It is built around the tech, not the bus
 3. Open your CRM, which is just your customer list, and find your recent jobs.
 4. Send something like this: "Hey Rob, it's Brandon here. Steven told me how great you were to work with. It would mean a lot to him if you left us a review. Thanks." Then paste the link.
 
-![Google Business Profile sign-in page](/images/tools/google-business-profile.webp)
+<img src="/images/tools/google-business-profile.webp" width="1200" height="750" alt="Google Business Profile sign-in page" loading="lazy" decoding="async">
 
-![Google Maps search results for a local service](/images/tools/google-maps.webp)
+<img src="/images/tools/google-maps.webp" width="1200" height="750" alt="Google Maps search results for a local service" loading="lazy" decoding="async">
 
 One warning. Do not ask the customer to name your tech in the review. Google does not like that anymore. Frame the ask around the tech, but let the customer write what they want.
 

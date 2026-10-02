@@ -60,7 +60,7 @@ That is RESULTS first. We only put the guarantee on work we believe we can deliv
 
 - **Not** the old “30 leads in 60 days” guarantee. That was a public offer too. Not any other lead-count guarantee either. Dead River used to sell offers with lead, appointment, or patient targets. Those are **no longer sold**. You may see an older article like [30 leads in 60 days guarantee](/marketing-advice/30-leads-in-60-days-guarantee). Treat it as **historical and superseded**. That means it is old and has been replaced. Demand Flow is current.
 - **Not** a public price ladder called Foundation / Growth Partner / Scale. Those names are not live products. Growth is not a product we sell.
-- **Not** a public Demand Intelligence “$3,000/mo” offer card. Demand Intelligence is a separate product. It has its own path ([Demand Intelligence](/demand-intelligence), [demo](/demo)). It is not this guarantee SoR.
+- **Not** a public Demand Intelligence “$3,000/mo” offer card. Demand Intelligence is a separate product. It has its own path ([Demand Intelligence](/demand-intelligence), [demo](/demand-intelligence)). It is not this guarantee SoR.
 - **Not** a “work for free until…” public claim.
 
 Dead River has two live public products to know by name. **Demand Flow** is this guarantee. **Demand Intelligence** is separate. Do not treat “Growth” as a product name.

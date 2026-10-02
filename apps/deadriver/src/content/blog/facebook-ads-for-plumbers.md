@@ -89,7 +89,7 @@ Foundation builds follow-up and booking when that needs to come first. Growth Pa
 
 Ads only work if someone answers. Fix the phone first. Then turn the leads on.
 
-Want the plumbing-only version of all this? We wrote one: [plumber marketing in El Paso](/plumber-marketing-el-paso).
+Want the plumbing-only version of all this? We wrote one: [plumber marketing in El Paso](/services/facebook-ads).
 
 The numbers above came from WordStream by LocaliQ in September 2025. They are linked so you can check them. Scope for Foundation, Growth Partner, and Scale is confirmed on a call.
 

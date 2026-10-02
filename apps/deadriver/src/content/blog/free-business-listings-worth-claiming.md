@@ -28,23 +28,23 @@ A listing is your company's page on another site. It shows your name, address, p
 
 **[Google Business Profile](https://www.google.com/business/). 10.** This is the big one. It is your map pin on Google. Nothing else comes close. How to: go to Google Business Profile, search your business, claim it or add it.
 
-![Google Business Profile sign-in page](/images/tools/google-business-profile.webp)
+<img src="/images/tools/google-business-profile.webp" width="1200" height="750" alt="Google Business Profile sign-in page" loading="lazy" decoding="async">
 
 **[Apple Maps](https://businessconnect.apple.com/). 9.** Every iPhone user has it. Almost no one claims it. How to: go to Apple Business, search your business, and claim it.
 
-![Apple Business Connect page](/images/tools/apple-business-connect.webp)
+<img src="/images/tools/apple-business-connect.webp" width="1200" height="750" alt="Apple Business Connect page" loading="lazy" decoding="async">
 
 **[Bing Places](https://www.bingplaces.com/). 8.** Nobody searches on Bing. But ChatGPT pulls from Bing to recommend businesses. I feel a little bad for Bing. Still, get your info on there. How to: go to Bing Places, search your business, claim it or add it.
 
-![Bing Places for Business page](/images/tools/bing-places.webp)
+<img src="/images/tools/bing-places.webp" width="1200" height="750" alt="Bing Places for Business page" loading="lazy" decoding="async">
 
 **[Yelp](https://biz.yelp.com/). 7.** I know. They love to call you. But Yelp still drives calls. And Apple Maps pulls most of its data from Yelp. How to: go to Yelp for Business, find your listing, claim it. Ignore the sales calls.
 
-![Yelp for Business page](/images/tools/yelp-for-business.webp)
+<img src="/images/tools/yelp-for-business.webp" width="1200" height="750" alt="Yelp for Business page" loading="lazy" decoding="async">
 
 **[Better Business Bureau](https://www.bbb.org/). 6.** Most people think the BBB costs money. It doesn't. The basic listing is free. It is a strong trust signal for customers and for AI. A few things to know:
 
-![Better Business Bureau home page](/images/tools/bbb.webp)
+<img src="/images/tools/bbb.webp" width="1200" height="750" alt="Better Business Bureau home page" loading="lazy" decoding="async">
 
 - Skip the paid section. The free version is enough.
 - You don't get a link to your website unless you pay. The listing still counts.
@@ -54,7 +54,7 @@ How to: go to BBB.org and search your business. Claim it or add it. Fill in your
 
 **[Nextdoor](https://business.nextdoor.com/). 4.** Weak for rankings, good for referrals. It's an app where neighbors ask each other who to hire. If you're a plumber in El Paso, that question comes up a lot. Some owners say it works great. Others, not so much. You might as well grab it. How to: go to the Nextdoor Business Center and create a free page. Add your service and area. Then unsubscribe from their emails. There are a lot of them.
 
-![Nextdoor for Business page](/images/tools/nextdoor-business.webp)
+<img src="/images/tools/nextdoor-business.webp" width="1200" height="750" alt="Nextdoor for Business page" loading="lazy" decoding="async">
 
 **Foursquare. 4.** Apple, Uber, and a bunch of apps pull location data from it. Claim it once and your info spreads. How to: go to Foursquare for Business, search your business, claim it.
 

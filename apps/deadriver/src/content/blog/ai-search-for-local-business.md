@@ -21,9 +21,9 @@ AI engines have no opinions. They build an answer from what they can find about 
 
 **Your [Google Business Profile](https://www.google.com/business/).** This is your free listing on [Google Maps](https://www.google.com/maps). It holds your categories, which means the kind of work you do. It holds your services, hours, service area, and photos. Most of all, it holds reviews. Say one profile has 80 recent reviews. Many of them say "same day" and "water heater". Say another has 6 reviews from 2021. The AI treats those two very differently.
 
-![Google Business Profile sign-in page](/images/tools/google-business-profile.webp)
+<img src="/images/tools/google-business-profile.webp" width="1200" height="750" alt="Google Business Profile sign-in page" loading="lazy" decoding="async">
 
-![Google Maps search results for a local service](/images/tools/google-maps.webp)
+<img src="/images/tools/google-maps.webp" width="1200" height="750" alt="Google Maps search results for a local service" loading="lazy" decoding="async">
 
 **Your website, read as text.** Not the design. The words. Say your homepage says "Welcome to our website". Say your services page is just icons with no sentences. Then there is nothing for the AI to quote. Now say it reads like this instead. "We repair and replace water heaters across El Paso and Horizon City. Usually the same day. Starting at $X." That one line can become the answer.
 
@@ -31,15 +31,15 @@ AI engines have no opinions. They build an answer from what they can find about 
 
 **Everything else that mentions you.** Directories, which are websites that list businesses. The Chamber of Commerce. [Yelp](https://biz.yelp.com/), [Nextdoor](https://business.nextdoor.com/), Facebook. News mentions. The AI checks them against each other. Say your phone number is different on three of them. Trust drops.
 
-![Yelp for Business page](/images/tools/yelp-for-business.webp)
+<img src="/images/tools/yelp-for-business.webp" width="1200" height="750" alt="Yelp for Business page" loading="lazy" decoding="async">
 
-![Nextdoor for Business page](/images/tools/nextdoor-business.webp)
+<img src="/images/tools/nextdoor-business.webp" width="1200" height="750" alt="Nextdoor for Business page" loading="lazy" decoding="async">
 
 ## Why "before your competitors do" is not a sales line
 
 Google rankings move slowly. Rankings means where you land on the Google list. It is a slow fight. Everyone in your trade has worked on Google for ten years. Moving from spot 7 to spot 3 takes months. Showing up when people ask who to call is the same job. It means clear pages and a live listing. [Growth Partner and Scale](/book) include that search work.
 
-AI picks are different right now. Almost nobody local is doing the work. We check the trades we serve in El Paso. Most businesses have a thin profile. They have a brochure website, which means a site with no real facts on it. And they have no structured data. The AI has little to go on. So it picks whoever it can verify. That is a wide open door. It will not stay open. In two years this will be the bare minimum. Maybe the brochure website is what you need to fix first. Here is [what a small business website should actually cost](/marketing-advice/small-business-website-cost).
+AI picks are different right now. Almost nobody local is doing the work. We check the trades we serve in El Paso. Most businesses have a thin profile. They have a brochure website, which means a site with no real facts on it. And they have no structured data. The AI has little to go on. So it picks whoever it can verify. That is a wide open door. It will not stay open. In two years this will be the bare minimum. Maybe the brochure website is what you need to fix first. Here is [what a small business website should actually cost](/resources).
 
 ## What showing up actually takes
 
@@ -49,7 +49,7 @@ Here is what we do on a client's site. In the order it matters.
 2. **Add schema.** That is the structured data code from above. We add LocalBusiness, Service, FAQPage, and Review markup. We keep it accurate.
 3. **Fix the profile.** Right categories. Every service listed. Service areas filled in. A post every month. Every review answered.
 4. **Make the facts match everywhere.** Same name, address, phone, and hours on every listing out there.
-5. **Keep the reviews coming.** Send a one-tap review request after every job. New reviews matter as much as the total count. This is [how to get more Google reviews](/marketing-advice/how-to-get-more-google-reviews) without breaking the rules.
+5. **Keep the reviews coming.** Send a one-tap review request after every job. New reviews matter as much as the total count. This is [how to get more Google reviews](/marketing-advice/get-a-review-after-every-job) without breaking the rules.
 6. **Publish answers, not announcements.** Write one short article a month. It should answer a real customer question. Example: how much does a water heater replacement cost in El Paso? That gives the AI something clear to cite.
 
 None of this is hard. It's just work most owners don't have time for. That is why it's part of Foundation, Growth Partner, and Scale. [Talk through scope](/book) or [book a conversation](/book).
