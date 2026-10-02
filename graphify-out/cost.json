@@ -1,0 +1,13 @@
+{
+  "runs": [
+    {
+      "date": "2026-10-01T22:53:40.115051+00:00",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "files": 1,
+      "note": "host-agent extraction via 36 subagents; per-chunk token counts not captured"
+    }
+  ],
+  "total_input_tokens": 0,
+  "total_output_tokens": 0
+}

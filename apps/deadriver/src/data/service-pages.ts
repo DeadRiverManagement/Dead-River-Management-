@@ -35,6 +35,7 @@ export type ServicePageData = {
   eyebrow: string;
   headline: string;
   sub: string;
+  blurb: string; // one line for the channel index on location and service pages
   intro: string;
   problemHeading: string;
   problems: [string, string][];
@@ -57,6 +58,7 @@ const pricingFaq = {
 export const servicePages: ServicePageData[] = [
   {
     slug: 'facebook-ads',
+    blurb: 'Meta ads that book jobs, not likes.',
     name: 'Facebook Ads',
     navLabel: 'Facebook ads',
     title: 'Facebook Ads for Service Businesses',
@@ -142,6 +144,7 @@ export const servicePages: ServicePageData[] = [
   },
   {
     slug: 'google-ads',
+    blurb: 'Search ads for people ready to hire.',
     name: 'Google Ads',
     navLabel: 'Google Ads',
     title: 'Google Ads and PPC Management',
@@ -222,6 +225,7 @@ export const servicePages: ServicePageData[] = [
   },
   {
     slug: 'google-local-services-ads',
+    blurb: 'Google Guaranteed leads, paid per lead.',
     name: 'Google Local Services Ads',
     navLabel: 'Local Services Ads',
     title: 'Google Local Services Ads (LSA)',
@@ -293,6 +297,7 @@ export const servicePages: ServicePageData[] = [
   },
   {
     slug: 'seo',
+    blurb: 'Rank for the searches that bring work.',
     name: 'SEO',
     navLabel: 'SEO',
     title: 'SEO Services That Bring Customers',
@@ -368,6 +373,7 @@ export const servicePages: ServicePageData[] = [
   },
   {
     slug: 'local-seo',
+    blurb: 'Google Business Profile and the map pack.',
     name: 'Local SEO',
     navLabel: 'Local SEO',
     title: 'Local SEO & Google Business Profile',
@@ -439,6 +445,7 @@ export const servicePages: ServicePageData[] = [
   },
   {
     slug: 'cold-email',
+    blurb: 'B2B outreach that lands meetings.',
     name: 'Cold Email',
     navLabel: 'Cold email',
     title: 'Cold Email for B2B Lead Generation',
