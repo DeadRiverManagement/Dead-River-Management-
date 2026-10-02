@@ -18,6 +18,14 @@ export const elPasoAreas = [
   'Las Cruces, NM',
 ];
 
+// Areas that have their own city page.
+export const areaHrefs: Record<string, string> = {
+  'El Paso': '/locations/el-paso',
+  'Horizon City': '/locations/horizon-city',
+  Socorro: '/locations/socorro',
+  'Las Cruces, NM': '/locations/las-cruces',
+};
+
 // The offer every service page routes buyers to.
 export const demandFlowOffer = {
   name: 'The Demand Flow guarantee',

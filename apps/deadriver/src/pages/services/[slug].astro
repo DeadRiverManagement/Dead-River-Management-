@@ -7,7 +7,7 @@ import Growth from '../../layouts/Growth.astro';
 import Arrow from '../../components/growth/Arrow.astro';
 import ServiceLinks from '../../components/growth/ServiceLinks.astro';
 import { faqPage } from '../../lib/schema';
-import { servicePages, demandFlowOffer, elPasoAreas } from '../../data/service-pages';
+import { servicePages, demandFlowOffer, elPasoAreas, areaHrefs } from '../../data/service-pages';
 import { industryPages } from '../../data/industry-pages';
 import type { ServicePageData } from '../../data/service-pages';
 
@@ -165,7 +165,7 @@ const serviceSchema = {
           <h3>In El Paso</h3>
           <p>{page.elPaso}</p>
           <ul class="sv-areas" aria-label="Areas we serve">
-            {elPasoAreas.map((a) => <li>{a}</li>)}
+            {elPasoAreas.map((a) => <li>{areaHrefs[a] ? <a href={areaHrefs[a]}>{a}</a> : a}</li>)}
           </ul>
           <a class="text-link" href="/locations/el-paso">Marketing in El Paso <Arrow /></a>
         </article>
@@ -247,6 +247,7 @@ const serviceSchema = {
   .sv-proof { font-size: 17px; color: var(--ink); margin-bottom: 16px; }
   .service-links { margin-top: 28px; }
   .sv-areas { list-style: none; padding: 0; margin: 14px 0 16px; display: flex; flex-wrap: wrap; gap: 6px; }
+  .sv-areas a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
   .sv-areas li { font-size: 13px; padding: 4px 10px; border: 1px solid var(--line); border-radius: 999px; color: var(--ink); background: var(--paper); }
   .ms-close { padding-bottom: 72px; }
   .sv-longform { max-width: 860px; }
