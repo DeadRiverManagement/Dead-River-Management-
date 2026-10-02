@@ -1584,48 +1584,101 @@ a.outcome-item:hover h3 {
   background: #edf1e8;
   border-top: 1px solid #d6dfcf;
 }
-.footer-main {
+/* Footer, phone first: the number is the thesis, links are the index. */
+.footer-grid {
   display: grid;
-  grid-template-columns: auto 1fr auto;
-  align-items: start;
-  gap: 20px 48px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px 24px;
   padding-top: 36px;
-  padding-bottom: 28px;
+  padding-bottom: 32px;
 }
-.footer-main > .brand {
-  display: inline-flex;
+.footer-talk {
+  grid-column: 1 / -1;
 }
-.footer-links {
+.footer-talk .eyebrow {
+  margin-bottom: 10px;
+}
+.footer-phone {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(30px, 8vw, 40px);
+  letter-spacing: -0.02em;
+  line-height: 1;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+.footer-hours {
+  margin: 10px 0 16px;
+  font-size: 14px;
+  color: var(--muted);
+}
+.footer-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px 22px;
-  padding-top: 4px;
+  gap: 10px;
 }
-.footer-links a,
+.footer-actions .button {
+  min-height: 46px;
+  padding: 12px 18px;
+  font-size: 14px;
+}
+.footer-email {
+  display: inline-block;
+  margin-top: 16px;
+  font-size: 14px;
+  color: var(--muted);
+}
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+/* Third group on phones: a short row, so no orphan column. */
+@media (max-width: 899px) {
+  .footer-col:last-of-type {
+    grid-column: 1 / -1;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px 20px;
+  }
+  .footer-col:last-of-type .footer-col-title {
+    flex-basis: 100%;
+  }
+}
+.footer-col-title {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+.footer-col a,
 .footer-legal a,
-.footer-contact a {
+.footer-email {
   font-size: 14px;
   color: var(--muted);
   transition: color 0.2s ease;
 }
-.footer-links a:hover,
+.footer-col a:hover,
 .footer-legal a:hover,
-.footer-contact a:hover {
+.footer-email:hover,
+.footer-phone:hover {
   color: var(--green);
 }
-.footer-contact {
+.footer-bottom-row {
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 6px;
-}
-.footer-contact .footer-book {
-  display: inline-flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 6px;
-  font-weight: 600;
-  color: var(--green);
-  margin-top: 4px;
+  justify-content: space-between;
+  gap: 12px 24px;
+}
+.footer-bottom .brand img {
+  width: 150px;
+}
+.footer-bottom .preferred-source {
+  margin-block: 0;
 }
 .footer-social {
   list-style: none;
@@ -1650,19 +1703,14 @@ a.outcome-item:hover h3 {
   border-color: var(--green);
   transform: translateY(-2px);
 }
-.footer-contact .footer-social {
-  justify-content: flex-end;
-}
 .footer-social svg {
   display: block;
 }
 .footer-bottom {
   border-top: 1px solid #d2ddca;
-  padding-block: 16px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 8px 24px;
+  padding-block: 20px;
+  display: grid;
+  gap: 14px;
   font-size: 13px;
   color: var(--muted);
 }
@@ -1674,29 +1722,16 @@ a.outcome-item:hover h3 {
 .footer-legal a {
   font-size: 13px;
 }
-@media (max-width: 900px) {
-  .footer-main {
-    grid-template-columns: 1fr;
-    gap: 16px;
-    padding-top: 28px;
-    padding-bottom: 20px;
+@media (min-width: 900px) {
+  .footer-grid {
+    grid-template-columns: 1.4fr repeat(3, minmax(0, 1fr));
+    gap: 24px 40px;
+    padding-top: 48px;
+    padding-bottom: 40px;
   }
-  .footer-links {
-    gap: 6px 16px;
-  }
-  .footer-contact {
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 6px 18px;
-  }
-  .footer-contact .footer-book {
-    margin-top: 0;
-  }
-  .footer-contact .footer-social {
-    flex-basis: 100%;
-    justify-content: flex-start;
-    margin-top: 4px;
+  .footer-talk {
+    grid-column: auto;
+    padding-right: 24px;
   }
 }
 .concierge-toggle {
@@ -2935,8 +2970,6 @@ dialog::backdrop {
     gap: 14px;
   }
   .footer-bottom {
-    flex-direction: column;
-    gap: 10px;
     padding-bottom: 88px;
   }
   .concierge-toggle {
