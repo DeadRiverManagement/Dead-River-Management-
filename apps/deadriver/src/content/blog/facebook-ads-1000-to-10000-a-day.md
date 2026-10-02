@@ -14,6 +14,12 @@ faq:
     a: "A second campaign for ads you believed in that got no spend. Give them their own budget. About 10 to 20 percent turn out to be winners."
   - q: "Why does the landing page matter here?"
     a: "If the page does not match the ad, half your clicks leave at once. Put the winning headline on the page. Cost per lead often drops by half."
+  - q: "What is the best way to scale Facebook ads?"
+    a: "Sideways, not up. Keep the winning ad. Make many versions of it for different groups. Put them in one campaign with a shared budget. Raising the budget on one ad burns it out."
+  - q: "Why are my Facebook ads not converting?"
+    a: "Usually the page, not the ad. If the landing page does not match the ad's promise, half the clicks leave. Put the winning headline on the page. Then check how fast leads get a reply."
+  - q: "What is a good cost per lead on Facebook?"
+    a: "It depends on what a customer is worth. Service businesses often see $10 to $50 per lead from lead forms. Our freight client paid $17.70. Judge it by cost per booked job, not cost per lead."
 ---
 
 **In short:** Do not ride one winning ad until it dies. Copy it sideways. The one-word change, AI variations, the zombie campaign, and matching the landing page.

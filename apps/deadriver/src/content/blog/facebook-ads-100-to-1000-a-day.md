@@ -14,6 +14,12 @@ faq:
     a: "No. Go broad. Let the words and the image do the targeting. Meta reads your copy and finds the right people on its own."
   - q: "Why exclude my own customers?"
     a: "Because Meta will keep showing ads to people who already bought. That can eat 40 percent of your budget. Upload your list every 30 days and exclude it."
+  - q: "Do Facebook ads run on Instagram too?"
+    a: "Yes. One Meta ad account runs ads on Facebook and Instagram at the same time. Leave both on. Meta puts your ad where it performs best."
+  - q: "Can Facebook ads target a specific area?"
+    a: "Yes. You can target a city, a radius around your shop, or a list of zip codes. Set the area to where you actually work. Then go broad inside it and let the ad do the rest."
+  - q: "Are Facebook ads worth it for a small business?"
+    a: "They are worth it when every lead gets a reply in minutes and the cost per booked job is tracked. They are not worth it when leads sit in an inbox. The ads are cheap. The missed follow-up is what costs you."
 ---
 
 **In short:** Once you have a winning ad, structure adds 30 to 50 percent. Two campaigns, broad targeting, long copy, and one exclusion most people skip.
