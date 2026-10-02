@@ -69,6 +69,100 @@ const pricingFaq = {
 
 export const servicePages: ServicePageData[] = [
   {
+    slug: 'web-design',
+    blurb: 'Mobile-first sites built to get the call.',
+    name: 'Web Design',
+    navLabel: 'Web design',
+    title: 'Web Design for Service Businesses',
+    description:
+      'Web design for service businesses. Mobile-first sites built to get the call, with click-to-call, forms that text you, and SEO built in. Nationwide and El Paso.',
+    eyebrow: 'Web design',
+    headline: 'Web Design That Gets the Call, Not Just Compliments.',
+    sub: 'Mobile-first websites for service businesses, nationwide and in El Paso.',
+    intro:
+      'Most of your visitors are on a phone with a problem. We design and build sites that load fast, answer the question, and make calling or booking the easiest thing on the screen. Then we track which pages turn into jobs.',
+    problemHeading: 'Most service websites look fine and book nothing.',
+    problems: [
+      ['Pretty, slow, and silent.', 'A site that takes five seconds to load on a phone loses half its visitors before the headline. The ones who stay cannot find the phone number.'],
+      ['One page for everything.', 'A plumber with one "services" paragraph cannot rank for water heaters, drains, or repipes. Google needs a page per job, and so does the homeowner.'],
+      ['Forms that go nowhere.', 'A form fill that lands in an inbox nobody checks until tomorrow is a lead you paid for and lost.'],
+    ],
+    builtHeading: 'Everything a site needs to turn visitors into booked work.',
+    built: [
+      ['Mobile first', 'Designed on a phone screen first. Fast, readable, with the number and the booking button always in reach.'],
+      ['A page for every service and area', 'Each job you want and each area you serve gets its own page, written to answer the question a buyer types into Google or asks an AI assistant.'],
+      ['Calls and forms that reach you', 'Click-to-call on every screen, and forms that text you the second they are filled out, with follow-up if you miss them.'],
+      ['SEO built in', 'Titles, structure, speed, schema, and internal links done at build time, not bolted on later. Your Google Business Profile and site match.'],
+      ['Proof on the page', 'Reviews, job photos, and case-study numbers placed where a buyer decides.'],
+      ['Tracking to the job', 'Every call and form is recorded against the page it came from, so you know which pages book work.'],
+    ],
+    proofHeading: 'Sites we have built',
+    proof: [
+      {
+        label: 'Total Auto Repair',
+        text: 'A mobile-friendly rebuild, with Google Ads and local SEO, took the shop from about $20,000 a month to about $100,000 a month in 18 months. Sixty percent of their traffic was mobile and the old site did not work on a phone.',
+        href: '/work/total-auto-repair',
+        linkText: 'Read the case study',
+      },
+      {
+        label: 'Wicked Logistics',
+        text: 'A new site and social setup took a freight company from 1 to 2 leads a week to 5 to 6 a day. One of those leads became a $1.2 million a year contract.',
+        href: '/work/wicked-logistics',
+        linkText: 'Read the case study',
+      },
+    ],
+    elPaso:
+      'We are based in El Paso and build websites for businesses across El Paso County, Las Cruces, and the rest of the country.',
+    offerLead:
+      'The website is one part of our Demand Flow system. It is where the ad click lands and where the call starts, so we build it to do that one job well.',
+    fit: [
+      'Your site is slow on a phone or hard to call from',
+      'You have one services page where you need ten',
+      'You run ads and want pages built for them',
+      'You want to own your site and its content outright',
+    ],
+    related: [
+      { label: 'Is your website on Google?', href: '/marketing-advice/is-your-website-on-google' },
+      { label: 'AI content and your website', href: '/marketing-advice/ai-content-and-your-website' },
+      { label: 'Website conversion review', href: '/tools/website-conversion' },
+    ],
+    faqs: [
+      {
+        q: 'How much does a website cost for a service business?',
+        a: 'A professional service business website usually costs between $2,000 and $10,000 to build, depending on the number of pages, custom design, and copywriting, plus hosting and maintenance after launch. Template builders cost less and rank worse. We quote every site on a short call once we know how many services and areas you need pages for. Book a strategy call to get a number.',
+      },
+      {
+        q: 'How long does a website take to build?',
+        a: 'Four to eight weeks for most service businesses. The first week is strategy and page planning, then design, build, copy, photos, and testing. The biggest delay is usually waiting on content from the owner, so we write the copy ourselves and only ask you to approve it.',
+      },
+      {
+        q: 'What should a service business website include?',
+        a: 'A page for each service you sell, a page for each area you serve, your phone number and a booking button on every screen, reviews and job photos, a clear price or quote path, and a form that reaches you within a minute. For trades, add a storm, emergency, or same-day page. Every page should answer one question a buyer would type into Google.',
+      },
+      {
+        q: 'What is the difference between web design and web development?',
+        a: 'Web design is what the visitor sees: layout, type, colour, and the path to the call. Web development is what makes it work: the code, speed, forms, tracking, and hosting. We do both, because a beautiful site that loads slowly or drops form fills does not book jobs.',
+      },
+      {
+        q: 'Is SEO included in web design?',
+        a: 'The foundation is. Every site we build ships with fast load times, proper titles and headings, schema markup, a sitemap, and a page structure Google and AI assistants can read. Ongoing SEO, which means new content, links, and local listings work each month, is a separate service.',
+      },
+      {
+        q: 'Can you redo my existing website instead of starting over?',
+        a: 'Often, yes. If the platform is sound we rebuild the pages, speed, and conversion path on it. If it is a slow page builder or an old template we usually rebuild from scratch, because fixing it costs more than replacing it. We tell you which on the first call.',
+      },
+      {
+        q: 'Who owns the website when it is done?',
+        a: 'You do. The domain, the hosting account, the content, and the design are yours. If you ever leave, the site goes with you. Ask every agency this question before you sign.',
+      },
+      {
+        q: 'Do you build websites outside El Paso?',
+        a: 'Yes. We build sites for service businesses nationwide. The process is the same anywhere.',
+      },
+      pricingFaq,
+    ],
+  },
+  {
     slug: 'ai-search-optimization',
     blurb: 'Get recommended by ChatGPT and Google AI.',
     name: 'AI Search Optimization',
@@ -191,6 +285,10 @@ export const servicePages: ServicePageData[] = [
         q: 'Do you work outside El Paso?',
         a: 'Yes. We run AI search optimization for service businesses nationwide. The process is the same in any city.',
       },
+      {
+        q: 'What is AI-powered marketing and how does it help a small business?',
+        a: 'AI-powered marketing uses software to do the parts of marketing that used to need a person on a phone or in a spreadsheet: answering calls after hours, texting back missed calls, following up quotes, writing first drafts, and spotting which ads to pause. For a small business it means no lead waits until morning and no quote is forgotten. We run it as part of the system, not as a product on its own.',
+      },
       pricingFaq,
     ],
   },
@@ -277,6 +375,14 @@ export const servicePages: ServicePageData[] = [
         q: 'Do you work outside El Paso?',
         a: 'Yes. We run Facebook ads for businesses nationwide.',
       },
+      {
+        q: 'What is a Facebook lead form?',
+        a: 'A Facebook lead form opens inside the Facebook or Instagram app when someone taps your ad, with their name and phone already filled in. It gets more leads at a lower cost than sending people to a website, but the leads cool fast. Parcel Management Group got 49 lead-form leads in 30 days at $17.70 each, with every one followed up automatically.',
+      },
+      {
+        q: 'How much should a local business spend on Facebook ads?',
+        a: 'Enough to get 30 to 50 leads a month, so the campaign has data to improve on. For most home service businesses that is $750 to $2,000 a month in ad spend, on top of management. Start with one offer and one audience, then add budget to what books jobs. Ad spend is paid from your own account.',
+      },
       pricingFaq,
     ],
   },
@@ -358,6 +464,18 @@ export const servicePages: ServicePageData[] = [
         q: 'Do you work outside El Paso?',
         a: 'Yes. We run Google Ads for businesses nationwide.',
       },
+      {
+        q: 'What is Google Ads?',
+        a: 'Google Ads is the paid listing at the top of a Google search. You pay each time someone clicks. For a service business, it means showing up for "AC repair near me" the minute someone types it, without waiting months for SEO. It is the fastest way to book jobs, and the fastest way to waste money if nobody tracks what each click became.',
+      },
+      {
+        q: 'Is Google Ads worth it for a local service business?',
+        a: 'Yes, when the campaign targets the jobs you want, in the area you serve, and every call is tracked to a booked job. Gonzalez & Sons Roofing went from 2 to 8 roofs a month with Google Ads as the lead channel. It is not worth it if calls go to voicemail or the budget runs on broad keywords across the whole city.',
+      },
+      {
+        q: 'How do you measure Google Ads?',
+        a: 'Cost per booked job, not cost per click. Every call and form from an ad is recorded with the keyword and campaign it came from, then matched to whether it became a job. You see spend, calls, booked jobs, and cost per job on one report every month.',
+      },
       pricingFaq,
     ],
   },
@@ -429,6 +547,10 @@ export const servicePages: ServicePageData[] = [
       {
         q: 'Do you work outside El Paso?',
         a: 'Yes. We run Local Services Ads for businesses nationwide.',
+      },
+      {
+        q: 'How do Local Services Ads decide who shows first?',
+        a: 'Google ranks Local Services Ads on review count and rating, how fast you answer calls and messages, your hours, your distance from the searcher, and how many leads you have paused or disputed. Answering every call and asking every customer for a review are the two biggest levers. Budget matters less than responsiveness.',
       },
       pricingFaq,
     ],
@@ -506,6 +628,26 @@ export const servicePages: ServicePageData[] = [
         q: 'Do you work outside El Paso?',
         a: 'Yes. We do SEO for businesses nationwide.',
       },
+      {
+        q: 'What is SEO?',
+        a: 'SEO, search engine optimization, is the work of making your website show up when someone searches Google for what you sell. It covers the words on your pages, how fast the site loads, how it is structured, and how many trusted sites link to it. For a service business, SEO means ranking for "roof repair" or "emergency plumber" plus your city, without paying per click.',
+      },
+      {
+        q: 'Is SEO still worth it in 2026 with AI search?',
+        a: 'Yes, and it matters more. AI Overviews, ChatGPT, and Perplexity pull their answers from pages that already rank and from listings that are complete. A site with no SEO is invisible to both. What changed is the writing: pages now need to answer the question directly, with numbers and named service areas, so a model can quote them.',
+      },
+      {
+        q: 'Is SEO dead now that AI answers questions?',
+        a: 'No. Fewer clicks go to page one than before, but the businesses AI assistants recommend are the ones with strong, well-structured pages, consistent listings, and real reviews. That is SEO. What is dead is thin content written for keywords. Pages have to earn a citation now, not just a ranking.',
+      },
+      {
+        q: 'What does an SEO agency actually do each month?',
+        a: 'Research what your buyers search, fix technical problems that block Google, write or rewrite pages to answer those searches, earn links and mentions from trusted sites, keep your Google Business Profile and listings consistent, and report rankings, traffic, and booked jobs. If a report shows only rankings and no jobs, ask why.',
+      },
+      {
+        q: 'How do you measure whether SEO is working?',
+        a: 'By calls, forms, and booked jobs from organic search, tracked by page. Rankings and traffic are leading signs. Google Search Console shows which searches bring people in, Google Analytics shows what they do, and call tracking shows who booked. We report all three next to each other every month.',
+      },
       pricingFaq,
     ],
   },
@@ -578,6 +720,30 @@ export const servicePages: ServicePageData[] = [
         q: 'Do you work outside El Paso?',
         a: 'Yes. We do local SEO for businesses in cities nationwide.',
       },
+      {
+        q: 'What is local SEO?',
+        a: 'Local SEO is the work of showing up in the Google map pack and in "near me" searches for your area. It is driven by your Google Business Profile, your reviews, your name, address, and phone number being identical everywhere, and pages on your site for each area you serve. For a service business, local SEO is usually the highest-return marketing there is.',
+      },
+      {
+        q: 'What is a Google Business Profile and why does it matter?',
+        a: 'A Google Business Profile is the free listing that shows your business on Google Maps and in the map pack with your hours, phone, reviews, and photos. It is the single biggest factor in local search. Most profiles we audit are half built: wrong category, empty service area, no photos, no replies to reviews. Fixing those usually moves rankings within weeks.',
+      },
+      {
+        q: 'How do I rank higher on Google Maps?',
+        a: 'Google ranks the map pack on relevance, distance, and prominence. Set the right primary category and every service you offer, fill in your service areas, keep your name, address, and phone identical on every directory, earn reviews steadily and reply to all of them, add photos monthly, post weekly, and build pages on your site for each area. Do all seven and keep doing them.',
+      },
+      {
+        q: 'How much does local SEO cost?',
+        a: 'Most agencies charge $300 to $1,500 a month for local SEO, and Google Business Profile management alone runs $125 to $400 a month. We include local SEO inside the Demand Flow system and quote it on its own on a short call. Whatever you pay, measure it by calls from Maps and booked jobs, not by rankings.',
+      },
+      {
+        q: 'Is it worth paying for local SEO?',
+        a: 'For a service business, yes. A map pack call is someone nearby who needs the job now and did not cost a click. The Pipe Whisperers went from about $60,000 a year to about $250,000 with local SEO as one of three channels. It is not worth paying for if the agency cannot show you calls from Maps in your reporting.',
+      },
+      {
+        q: 'Why do citations and links matter for local SEO?',
+        a: 'Citations are listings of your name, address, and phone on directories like Yelp, Bing, Apple, and the BBB. When they all match, Google trusts the business exists where it says. Links from local sites, suppliers, and trade associations add prominence. Together they are the trust layer under the map pack.',
+      },
       pricingFaq,
     ],
   },
@@ -645,6 +811,14 @@ export const servicePages: ServicePageData[] = [
       {
         q: 'Do you do cold email for local businesses?',
         a: 'Cold email works best when you sell to other businesses. If you sell to homeowners, Facebook ads and Local Services Ads are usually a better fit.',
+      },
+      {
+        q: 'What is cold email?',
+        a: 'Cold email is a short, personal email to a business that has not heard from you, asking for a reply or a meeting. It works for B2B services when the list is accurate, the sending domains are warmed up, and the message is about the reader\'s problem, not your company. It is sent from separate domains so your main email stays safe.',
+      },
+      {
+        q: 'How many cold emails does it take to get a meeting?',
+        a: 'Roughly 100 to 300 emails per booked meeting for a well-targeted B2B campaign, depending on the offer and list. Reply rates of 2 to 5 percent are normal. The number falls as the list and message improve, which is why the first month is testing and the second month is scaling.',
       },
       pricingFaq,
     ],

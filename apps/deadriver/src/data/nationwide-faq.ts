@@ -100,6 +100,30 @@ export const elPasoLocationFaq: FaqItem[] = [
     q: 'What public offer do you make now?',
     a: 'Demand Flow is the live public offer for accepted businesses: $50,000 in new revenue in 45 to 60 days, or service fees refunded plus $500; ad spend is not refunded. Book a conversation to talk through fit and scope.',
   },
+  {
+    q: 'Where is your El Paso office?',
+    a: '416 N. Stanton St, Suite 120-M, El Paso, TX 79901, in downtown El Paso near San Jacinto Plaza. Open Monday to Saturday, 9 to 6 Mountain. Call or text (915) 228-3054. We meet clients at our office, at their shop, or on a call.',
+  },
+  {
+    q: 'Which El Paso businesses do you work with?',
+    a: 'Home service trades first: roofing, plumbing, HVAC, electrical, landscaping, pest control, and auto repair, across El Paso, Horizon City, Socorro, the Lower Valley, and Las Cruces. Published El Paso results include Gonzalez & Sons Roofing (2 to 8 roofs a month), The Pipe Whisperers ($60,000 to $250,000 a year), and Total Auto Repair ($20,000 to $100,000 a month).',
+  },
+  {
+    q: 'How do I rank higher on Google Maps in El Paso?',
+    a: 'Set the right primary category on your Google Business Profile, list every service, fill in your El Paso service areas (Westside, Eastside, Northeast, Lower Valley, Horizon City, Socorro, Canutillo), keep your name, address, and phone identical on every directory, earn reviews every week and reply to all of them, add photos monthly, and build a page on your site for each area. Most El Paso profiles we audit have an empty service area, which is the first fix.',
+  },
+  {
+    q: 'How much does local SEO cost in El Paso?',
+    a: 'El Paso agencies charge roughly $300 to $1,500 a month for local SEO, and Google Business Profile management alone runs $125 to $400 a month. Most do not publish a number. We include local SEO inside Demand Flow and quote it on its own on a short call, and we report it by calls from Maps and booked jobs.',
+  },
+  {
+    q: 'Is it worth hiring a marketing agency in El Paso?',
+    a: 'It is worth it when the agency can show you El Paso client numbers, a written miss rule, and who owns your ad accounts and website if you leave. El Paso has several agencies with good reviews and no published results. Ask for the calendar, not the dashboard. Our guarantee and case studies are on this site so you can check before you call.',
+  },
+  {
+    q: 'Do you serve Horizon City, Socorro, and Las Cruces?',
+    a: 'Yes. Each has its own page on this site with the areas we cover, what we run there, and local answers. We set service areas and ad radius to match where your crews actually go.',
+  },
 ];
 
 /** Live sitemap keep list from Quinn pack 02-sitemap-llms.md */
