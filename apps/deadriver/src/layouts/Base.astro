@@ -48,6 +48,11 @@ const {
   landingPlace = 'Based in Texas · nationwide',
 } = Astro.props;
 const robotsContent = robots ?? (noindex ? 'noindex' : '');
+// Every page title carries the brand, matching Growth.astro.
+const BRAND = 'Dead River Management';
+const pageTitle = title.includes(BRAND) || title.endsWith('| Dead River Demand Intelligence')
+  ? title
+  : title.endsWith(' | Dead River') ? title.replace(/ \| Dead River$/, ` | ${BRAND}`) : `${title} | ${BRAND}`;
 
 const canonical = new URL(path === '/' ? '/' : path, Astro.site).toString();
 const ogAbs = new URL(ogImage, Astro.site).toString();
@@ -148,7 +153,7 @@ const schemas = [orgSchema, siteSchema, ...(Array.isArray(schema) ? schema : sch
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{title}</title>
+    <title>{pageTitle}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
     {robotsContent && <meta name="robots" content={robotsContent} />}

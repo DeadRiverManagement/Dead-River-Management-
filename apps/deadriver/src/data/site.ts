@@ -1,6 +1,6 @@
 // Single source of truth for business facts, navigation and reusable copy.
 // The monthly SEO routine edits titles/descriptions in src/data/seo.ts and
-// adds posts in src/content/blog/ — it should not need to touch layouts.
+// adds posts in src/content/blog/, it should not need to touch layouts.
 
 export const socials = [
   { label: 'Facebook', href: 'https://www.facebook.com/profile.php?id=61590635130563', icon: 'facebook', owner: 'org' },
@@ -329,7 +329,7 @@ export const plans: Plan[] = [
     features: [
       'A steady flow of new job leads',
       'A $997 setup to turn the ads on',
-      'Google or Meta — we pick what fits',
+      'Google or Meta, we pick what fits',
       'You pay the ad spend on the side',
     ],
     benefits: [
@@ -605,7 +605,7 @@ export const hubFaq = [
 export const homeFaq = [
   {
     q: 'What does Dead River Management do?',
-    a: 'Dead River Management runs the lead-gen and job-booking system for home service businesses. Ads, landing pages, calls and forms, follow-up, CRM, booking, reporting, and AI front office — sold alone or as one system. We are based in El Paso. Call (915) 228-3054.',
+    a: 'Dead River Management runs the lead-gen and job-booking system for home service businesses. Ads, landing pages, calls and forms, follow-up, CRM, booking, reporting, and AI front office, sold alone or as one system. We are based in El Paso. Call (915) 228-3054.',
   },
   deadRiverCompanySystemFaq,
   {

@@ -94,7 +94,7 @@ export const work: CaseStudy[] = [
       {
         heading: 'The move to $100K months',
         paragraphs: [
-          'Monthly revenue grew to roughly $100,000—about five times the earlier level. That is an increase of around $80,000 a month, and the reason Total Auto Repair is one of the client stories featured in DemandFlow.',
+          'Monthly revenue grew to roughly $100,000, about five times the earlier level. That is an increase of around $80,000 a month, and the reason Total Auto Repair is one of the client stories featured in DemandFlow.',
           'The comparison is simple enough to remember: $20K months became $100K months. If you run a repair shop, it is an invitation to examine your own next stage. How much work do you want coming in, which services do you want more of, and where does your current customer journey leave room to improve?',
         ],
       },
@@ -192,7 +192,7 @@ export const work: CaseStudy[] = [
         ],
       },
       {
-        heading: '$250K a year—and the need to expand',
+        heading: '$250K a year, and the need to expand',
         paragraphs: [
           'Annual revenue grew to roughly $250,000, more than four times the earlier level. The increase was around $190,000 a year. Growth reached the point where the business had to expand to support it.',
           'That expansion is what makes this story stand out. The result went beyond a larger revenue figure: the business needed room for its next stage. It is why The Pipe Whisperers is one of the plumbing business growth stories we share through DemandFlow.',
@@ -238,7 +238,7 @@ export const work: CaseStudy[] = [
         heading: 'When a week’s inquiries became part of a single day',
         paragraphs: [
           'Wicked Logistics was receiving one or two leads a week. For a trucking and freight business looking for its next shipping customer, that meant a small number of new opportunities entering the conversation.',
-          'The change was substantial: lead volume grew to five or six a day. A single day was bringing in more inquiries than the business previously saw in a week. That shift is the starting point of the Wicked Logistics growth story—but the value of one particular inquiry made it even more memorable.',
+          'The change was substantial: lead volume grew to five or six a day. A single day was bringing in more inquiries than the business previously saw in a week. That shift is the starting point of the Wicked Logistics growth story, but the value of one particular inquiry made it even more memorable.',
         ],
       },
       {
@@ -259,7 +259,7 @@ export const work: CaseStudy[] = [
         heading: 'What could your next freight inquiry be worth?',
         paragraphs: [
           'If your logistics marketing brings in a handful of inquiries, start by looking at what happens to each one. Where does it arrive? Who picks it up? How does the team keep the conversation moving? Then consider where additional demand could come from.',
-          'We can review your website, your current lead sources, and your follow-up process with you. The goal is to find the next opportunity—and build a clear path for your business to pursue it.',
+          'We can review your website, your current lead sources, and your follow-up process with you. The goal is to find the next opportunity, and build a clear path for your business to pursue it.',
         ],
       },
     ],

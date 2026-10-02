@@ -165,6 +165,21 @@
       "statusCode": 301
     },
     {
+      "source": "/advice",
+      "destination": "/marketing-advice",
+      "statusCode": 301
+    },
+    {
+      "source": "/advice/lead-response-time",
+      "destination": "/marketing-advice/lead-response-time",
+      "statusCode": 301
+    },
+    {
+      "source": "/advice/after-a-bad-agency",
+      "destination": "/marketing-advice/after-a-bad-agency",
+      "statusCode": 301
+    },
+    {
       "source": "/flagship-offer",
       "destination": "/",
       "permanent": false

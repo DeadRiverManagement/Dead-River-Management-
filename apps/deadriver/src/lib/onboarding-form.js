@@ -1,5 +1,5 @@
 // Client submit rules for /onboarding/<slug>. Contact-only GHL upsert is not
-// completed onboarding — thanks only after the intake note is saved.
+// completed onboarding, thanks only after the intake note is saved.
 
 export function isCompleteOnboardResponse(data) {
   return Boolean(data && data.ok === true && data.note === true);

@@ -106,7 +106,7 @@ export const caseStudyPages: CaseStudyPage[] = [
     result: {
       heading: '$20K/month to $100K/month: 5x revenue growth in 18 months.',
       paragraphs: [
-        'Total Auto Repair went from $20,000/month to $100,000/month in 18 months—a 5x increase in revenue.',
+        'Total Auto Repair went from $20,000/month to $100,000/month in 18 months, a 5x increase in revenue.',
       ],
       metricsLead: 'Key metrics:',
       metrics: [
@@ -265,7 +265,7 @@ export const caseStudyPages: CaseStudyPage[] = [
     result: {
       heading: '$60K/year to $250K/year: 4x revenue growth in 24 months.',
       paragraphs: [
-        'The Pipe Whisperers went from $60,000/year to $250,000/year in 24 months—a 4x increase in revenue.',
+        'The Pipe Whisperers went from $60,000/year to $250,000/year in 24 months, a 4x increase in revenue.',
       ],
       metricsLead: 'Key metrics:',
       metrics: [
@@ -279,7 +279,7 @@ export const caseStudyPages: CaseStudyPage[] = [
       after:
         'They also hired 2 additional plumbers and Arron transitioned from doing all the work himself to managing the team.',
       quote:
-        'We went from barely surviving to turning down work. I used to pray for the phone to ring. Now I have more leads than I can handle. Dead River Management didn’t just help us grow—they helped us build a real business.',
+        'We went from barely surviving to turning down work. I used to pray for the phone to ring. Now I have more leads than I can handle. Dead River Management didn’t just help us grow, they helped us build a real business.',
       cite: 'Arron, Owner, The Pipe Whisperers',
     },
     beforeAfter: [
@@ -347,7 +347,7 @@ export const caseStudyPages: CaseStudyPage[] = [
       'From 2 roofs/month to 8 roofs/month. $50,000/month to $200,000/month in 6 months.',
     intro: [
       'Gonzalez & Sons Roofing was stuck at 2 roofs/month ($50K/month revenue) with inconsistent lead flow and no system for following up with estimates. We rebuilt their Google Ads account, created storm-damage landing pages, set up automated follow-up for no-shows, and tracked every estimate from click to signed contract.',
-      '6 months later, they’re consistently closing 8 roofs/month ($200K/month revenue)—4x the volume and $150,000 more every month.',
+      '6 months later, they’re consistently closing 8 roofs/month ($200K/month revenue), 4x the volume and $150,000 more every month.',
     ],
     stats: [
       '2 roofs/month → 8 roofs/month (4x growth)',
@@ -417,7 +417,7 @@ export const caseStudyPages: CaseStudyPage[] = [
     result: {
       heading: '2 roofs/month to 8 roofs/month: 4x growth in just 6 months.',
       paragraphs: [
-        'Gonzalez & Sons Roofing went from 2 roofs/month ($50K/month) to 8 roofs/month ($200K/month) in just 6 months—a 4x increase in volume and revenue.',
+        'Gonzalez & Sons Roofing went from 2 roofs/month ($50K/month) to 8 roofs/month ($200K/month) in just 6 months, a 4x increase in volume and revenue.',
       ],
       metricsLead: 'Key metrics:',
       metrics: [
@@ -431,7 +431,7 @@ export const caseStudyPages: CaseStudyPage[] = [
       ],
       after: 'They also hired 2 additional crews to handle the increased workload.',
       quote:
-        'We used to pray for leads. Now we have more than we can handle. Dead River Management didn’t just help us grow—they helped us build a real business.',
+        'We used to pray for leads. Now we have more than we can handle. Dead River Management didn’t just help us grow, they helped us build a real business.',
       cite: 'Gonzalez, Owner, Gonzalez & Sons Roofing',
     },
     beforeAfter: [
@@ -502,7 +502,7 @@ export const caseStudyPages: CaseStudyPage[] = [
       'From 1-2 leads/week to 5-6 leads/day in 3 months. One lead became a $1.2 million contract.',
     intro: [
       'Wicked Logistics was stuck at 1-2 inbound leads per week with no predictable system for bringing in new shipping customers. We rebuilt their lead generation engine with new ads, a landing page built to capture shipping inquiries, and follow-up that gets every lead a response fast.',
-      '3 months later, they’re getting 5-6 leads per day—and one of those leads became a $1.2 million/year shipping contract.',
+      '3 months later, they’re getting 5-6 leads per day, and one of those leads became a $1.2 million/year shipping contract.',
     ],
     stats: [
       '1-2 leads/week → 5-6 leads/day (25x growth)',
@@ -571,7 +571,7 @@ export const caseStudyPages: CaseStudyPage[] = [
       heading:
         '1-2 leads/week to 5-6 leads/day: 25x growth in 3 months. One lead = $1.2M contract.',
       paragraphs: [
-        'Wicked Logistics went from 1-2 leads/week to 5-6 leads/day in just 3 months—a 25x increase in lead volume.',
+        'Wicked Logistics went from 1-2 leads/week to 5-6 leads/day in just 3 months, a 25x increase in lead volume.',
       ],
       metricsLead: 'Key metrics:',
       metrics: [

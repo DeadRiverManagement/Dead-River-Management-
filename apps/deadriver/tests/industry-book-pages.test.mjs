@@ -37,12 +37,12 @@ test('sitemap keep lists have /book only and omit /talk and the retired industry
   }
 });
 
-test('/talk is only a 301 to /book and the advice hub is its own route', () => {
+test('/talk is only a 301 to /book and the advice hub is retired', () => {
   assert.equal(existsSync(new URL('../src/pages/talk.astro', import.meta.url)), false);
   const vercel = JSON.parse(read('vercel.json'));
   const rule = vercel.redirects.find((entry) => entry.source === '/talk');
   assert.equal(rule?.destination, '/book');
   assert.equal(rule?.statusCode, 301);
-  assert.equal(existsSync(new URL('../src/pages/advice.astro', import.meta.url)), false);
-  assert.equal(existsSync(new URL('../src/pages/advice/index.astro', import.meta.url)), true);
+  // The advice hub was folded into /marketing-advice; /advice only redirects now.
+  assert.equal(existsSync(new URL('../src/pages/advice', import.meta.url)), false);
 });
