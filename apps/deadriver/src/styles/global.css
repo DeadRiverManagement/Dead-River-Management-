@@ -90,6 +90,7 @@ h3{font-size:clamp(22px,2.2vw,28px);font-weight:700;letter-spacing:-.015em;line-
 .nav-links a:hover{color:var(--bone)}
 .nav-right{display:flex;align-items:center;gap:16px}
 .nav-phone{font-size:15px;font-weight:600;color:var(--bone);letter-spacing:.01em}
+.nav-contact{display:none}
 .nav-toggle{display:none;width:44px;height:44px;border-radius:10px;border:1px solid var(--line-2);place-items:center}
 .nav-toggle span{display:block;width:18px;height:2px;background:var(--bone);position:relative}
 .nav-toggle span::before,.nav-toggle span::after{content:"";position:absolute;left:0;width:18px;height:2px;background:var(--bone)}
@@ -304,6 +305,10 @@ footer{border-top:1px solid var(--line);padding:56px 0 32px;background:#0A0B0C;f
   .nav-links{display:none}
   .nav-toggle{display:grid}
   .nav-phone{display:none}
+  .nav-contact{display:flex;align-items:center;gap:10px;width:calc(100% - 2*var(--gutter));margin:0 auto;min-height:40px;border-top:1px solid var(--line);font-size:14px;color:var(--ash)}
+  .nav-contact a{color:var(--bone);font-weight:600;padding:10px 0}
+  .nav-contact .nav-text{margin-left:auto;padding:6px 14px;border:1px solid var(--bone);border-radius:999px;font-size:13px}
+  .nav-mobile{top:100%}
   .nav-mobile{display:none;position:absolute;left:0;right:0;top:72px;background:var(--ink);border-bottom:1px solid var(--line);padding:12px var(--gutter) 20px}
   .nav-mobile.open{display:grid;gap:4px}
   .nav-mobile a{padding:12px 4px;font-size:17px;font-weight:500;border-bottom:1px solid var(--line)}
@@ -327,7 +332,7 @@ footer{border-top:1px solid var(--line);padding:56px 0 32px;background:#0A0B0C;f
 @media (max-width:640px){
   body{font-size:16px}
   .nav .wrap{height:64px;gap:12px}
-  .nav-mobile{top:64px}
+  .nav-mobile{top:100%}
   .brand{font-size:16px;white-space:nowrap}
   .nav-right{gap:10px}
   .nav .btn-sm{height:40px;padding:0 14px;font-size:14px}
