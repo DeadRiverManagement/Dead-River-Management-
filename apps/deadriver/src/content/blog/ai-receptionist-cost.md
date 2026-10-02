@@ -42,7 +42,7 @@ Before you compare two quotes, do two things. Work out how many calls you miss i
 
 A flat monthly plan costs the same in a quiet month or a busy one. No overage math.
 
-Dead River’s live public offer is Demand Flow. The deal is $50,000 in new revenue in 45–60 days. Revenue means money coming in. If that does not happen, you get service fees refunded + $500. Your ad spend is not refunded. Terms are on [/legal/guarantee](/legal/guarantee). When the scope fits, that work can include tracking, follow-up, booking, and missed-call recovery. Scope means what the job covers. We confirm it on a call. It is not sold as a tier card. [Talk through scope](/book) or [book a conversation](/book).
+Dead River’s live public offer is Demand Flow. The deal is $50,000 in new revenue in 45 to 60 days. Revenue means money coming in. If that does not happen, you get service fees refunded + $500. Your ad spend is not refunded. Terms are on the [Guarantee terms](/legal/guarantee) page. When the scope fits, that work can include tracking, follow-up, booking, and missed-call recovery. Scope means what the job covers. We confirm it on a call. It is not sold as a tier card. [Talk through scope](/book) or [book a conversation](/book).
 
 Complete is retired.
 
@@ -93,6 +93,6 @@ Answer these four questions in order. The choice usually makes itself.
 3. **Does it book, or just take a message?** A message moves the work back to you. Booking into your calendar is the part that saves time. Check whether booking costs extra.
 4. **Who sets it up?** A cheap tool you never finish setting up costs you more. A slightly pricier one that someone sets up for you is the better deal.
 
-If you want the whole thing handled, not just assembled, that is what we do. Dead River’s live public offer is Demand Flow. See [/legal/guarantee](/legal/guarantee). [Talk through scope](/book) or [book a conversation](/book).
+If you want the whole thing handled, not just assembled, that is what we do. Dead River’s live public offer is Demand Flow. See [Guarantee terms](/legal/guarantee). [Talk through scope](/book) or [book a conversation](/book).
 
 The prices in the table came from each company's own pricing page in September 2026. Check them before you buy. They change. Dead River scope is confirmed on a call.

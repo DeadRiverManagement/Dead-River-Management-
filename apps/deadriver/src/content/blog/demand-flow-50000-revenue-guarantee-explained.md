@@ -2,13 +2,13 @@
 title: "Demand Flow explained: $50,000 in new revenue in 45 to 60 days"
 pageTitle: "Demand Flow explained: $50k revenue guarantee"
 headline: "Demand Flow explained: $50,000 in new revenue in 45 to 60 days (and what is not guaranteed)"
-description: "Demand Flow is Dead River Management’s live public offer. Accepted businesses get $50,000 in new revenue in 45 to 60 days, or service fees back plus $500. Ad spend is not refunded. Full terms on /legal/guarantee."
+description: "Demand Flow is Dead River Management’s live public offer. Accepted businesses get $50,000 in new revenue in 45 to 60 days, or service fees back plus $500. Ad spend is not refunded. Full terms on the Guarantee terms page linked in this article."
 date: 2026-10-01
 category: "Offers"
 faqHeading: "FAQ"
 faq:
   - q: "What is Demand Flow?"
-    a: "Demand Flow is Dead River Management’s live public offer: $50,000 in new revenue within 45 to 60 days of the system going live for accepted businesses. If we miss, service fees are refunded plus $500. Ad spend is not refunded. Terms: /legal/guarantee."
+    a: "Demand Flow is Dead River Management’s live public offer: $50,000 in new revenue within 45 to 60 days of the system going live for accepted businesses. If we miss, service fees are refunded plus $500. Ad spend is not refunded. Read the full guarantee terms on the Guarantee terms page linked in this article."
   - q: "Is the “30 leads in 60 days” guarantee still sold?"
     a: "No. Earlier lead, appointment, or patient-target offers are no longer sold as live public offers. Demand Flow is current (terms updated September 29, 2026). Older articles that describe lead-count guarantees are historical and superseded."
   - q: "Are ad costs refunded if you miss?"
@@ -16,9 +16,9 @@ faq:
   - q: "Is Demand Flow available to every business?"
     a: "No. It applies to businesses accepted into Demand Flow with a signed agreement. If we do not think we can hit the number, we say so and do not offer the guarantee."
   - q: "Is Demand Intelligence part of this public guarantee?"
-    a: "No. Demand Flow is the public revenue guarantee. Demand Intelligence is a separate product path (see /demand-intelligence and /demo). Do not treat a monthly DI fee as part of this guarantee SoR."
+    a: "No. Demand Flow is the public revenue guarantee. Demand Intelligence is a separate product path . See the Demand Intelligence page linked in this article. Do not treat a monthly DI fee as part of this guarantee SoR."
   - q: "Where do I book?"
-    a: "Book a strategy call at /book, or call (915) 228-3054. Read full terms at /legal/guarantee."
+    a: "Book a strategy call, or call (915) 228-3054. Read the full guarantee terms on the Guarantee terms page linked in this article."
 ---
 
 **Short answer:** Demand Flow is our live public offer. Dead River Management runs it. We build you a system that brings in new customers. Then we aim for **$50,000 in new revenue in 45 to 60 days**. Revenue is the money you get paid. The clock starts the day the system goes live. This is for accepted businesses only. If we miss that number, you get your service fees back. Service fees are what you pay us for the work. We also pay you **$500**. **Ad spend is not refunded.** Your signed agreement controls. Read the full terms on the [guarantee](/legal/guarantee) page. It was updated September 29, 2026.

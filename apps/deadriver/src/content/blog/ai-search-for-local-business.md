@@ -5,7 +5,6 @@ date: 2026-06-15
 category: "AI Search"
 heroImage: "/images/blog/ai-search-for-local-business.svg"
 heroAlt: "Article card for a guide to showing up in AI search"
-legacyPriceNotice: true
 ---
 
 A year ago, someone in El Paso had a leaking water heater. They typed "water heater repair near me" into Google. Then they called one of the three businesses on the map.
