@@ -1667,6 +1667,13 @@ a.outcome-item:hover h3 {
 .office-hours { color: var(--muted); margin-bottom: 18px; }
 .office-map { border: 1px solid var(--line); border-radius: 12px; overflow: hidden; background: #e9ede4; aspect-ratio: 4 / 3; }
 .office-map iframe { display: block; width: 100%; height: 100%; border: 0; }
+.serve-line {
+  margin: 28px 0 0;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+  font-size: 14px;
+  color: var(--muted);
+}
 .footer-address {
   display: block;
   margin-top: 6px;
