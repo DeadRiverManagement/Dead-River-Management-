@@ -210,7 +210,10 @@ const schemas = [org, site, ...(schema ? [schema] : [])];
             Results
           </a>
           <a href="/company" aria-current={path === '/company' ? 'page' : undefined}>
-            Company
+            About
+          </a>
+          <a href="/marketing-advice" aria-current={path.startsWith('/marketing-advice') ? 'page' : undefined}>
+            Marketing advice
           </a>
           <a class="button secondary nav-cta" href="https://app.deadrivermanagement.com/v2/">
             Sign in <Arrow />
@@ -244,7 +247,8 @@ const schemas = [org, site, ...(schema ? [schema] : [])];
             ['Free tools', '/tools'],
             ['Scale playbook', '/free-playbook'],
             ['Articles', '/resources'],
-            ['Company', '/company'],
+            ['About', '/company'],
+            ['Marketing advice', '/marketing-advice'],
             ['Onboarding', '/onboarding'],
             ['El Paso, Texas', '/locations/el-paso'],
           ].map(([label, href]) => (

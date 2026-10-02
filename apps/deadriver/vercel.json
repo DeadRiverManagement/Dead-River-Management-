@@ -151,12 +151,17 @@
     },
     {
       "source": "/voiceiq-demo",
-      "destination": "/demo",
+      "destination": "/demand-intelligence",
       "statusCode": 301
     },
     {
       "source": "/voiceiq-demo.html",
-      "destination": "/demo",
+      "destination": "/demand-intelligence",
+      "statusCode": 301
+    },
+    {
+      "source": "/demo",
+      "destination": "/demand-intelligence",
       "statusCode": 301
     },
     {

@@ -18,6 +18,8 @@ const { page } = Astro.props as { page: ServicePageData };
 const bookHref = '/book';
 const cta = 'Book a Strategy Call';
 const others = servicePages.filter((s) => s.slug !== page.slug);
+// Guides and tools only; service pages already appear in the channel index below.
+const guides = page.related.filter((r) => !r.href.startsWith('/services/'));
 const serviceSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
@@ -143,9 +145,11 @@ const serviceSchema = {
         heading="The other channels we run."
         links={others.map((s) => ({ label: s.name, href: '/services/' + s.slug, blurb: s.blurb }))}
       >
-        <p class="also">Also read:{page.related.map((r, i) => (
-          <>{i > 0 && ','}<a class="inline-link" href={r.href}>{r.label}</a></>
-        ))}</p>
+        {guides.length > 0 && (
+          <p class="also">Also read:{guides.map((r, i) => (
+            <>{i > 0 && ','}<a class="inline-link" href={r.href}>{r.label}</a></>
+          ))}</p>
+        )}
       </ServiceLinks>
     </div>
   </section>

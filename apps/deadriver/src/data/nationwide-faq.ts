@@ -111,7 +111,6 @@ export const sitemapKeepPaths = [
   '/intent-data-providers',
   '/solutions',
   '/book',
-  '/demo',
   '/company',
   '/resources',
   '/advice',

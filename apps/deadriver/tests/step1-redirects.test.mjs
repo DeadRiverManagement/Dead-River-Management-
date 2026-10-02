@@ -143,8 +143,8 @@ test('STEP 1 trade El Paso landers 301 home now that the trade LPs are retired',
 test('STEP 1 collapse and 404 fixes are one-hop 301s', () => {
   assert301('/watch.html', '/');
   assert301('/watch', '/');
-  assert301('/voiceiq-demo.html', '/demo');
-  assert301('/voiceiq-demo', '/demo');
+  assert301('/voiceiq-demo.html', '/demand-intelligence');
+  assert301('/voiceiq-demo', '/demand-intelligence');
   assert301('/talk.html', '/book');
   assert301('/talk', '/book');
   assert301(
@@ -202,7 +202,7 @@ test('cleanUrls .html strip is beaten by bulk 301s for the two failing aliases',
     },
     {
       source: '/voiceiq-demo.html',
-      destination: '/demo',
+      destination: '/demand-intelligence',
       statusCode: 301,
       preserveQueryParams: true,
       caseSensitive: true,
@@ -225,8 +225,8 @@ test('middleware collapses watch.html and voiceiq-demo.html in one 301', async (
   const cases = [
     ['/watch', '/'],
     ['/watch.html', '/'],
-    ['/voiceiq-demo', '/demo'],
-    ['/voiceiq-demo.html', '/demo'],
+    ['/voiceiq-demo', '/demand-intelligence'],
+    ['/voiceiq-demo.html', '/demand-intelligence'],
     ['/talk', '/book'],
     ['/talk.html', '/book'],
   ];
