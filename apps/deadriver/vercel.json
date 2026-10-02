@@ -1105,16 +1105,6 @@
       "statusCode": 301
     },
     {
-      "source": "/industries",
-      "destination": "/",
-      "statusCode": 301
-    },
-    {
-      "source": "/industries.html",
-      "destination": "/",
-      "statusCode": 301
-    },
-    {
       "source": "/industries/home-services",
       "destination": "/",
       "statusCode": 301
