@@ -18,6 +18,8 @@ const blog = defineCollection({
     headline: z.string().optional(),
     faqHeading: z.string().optional(),
     faq: z.array(z.object({ q: z.string(), a: z.string() })).optional(),
+    /** Show legacy “prices and plans may have changed” hedge (retired ladder articles only). */
+    legacyPriceNotice: z.boolean().default(false),
   }),
 });
 
