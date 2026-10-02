@@ -1,4 +1,4 @@
-/** Quinn nationwide GP FAQ pastes — visible copy and FAQPage schema must match exactly. */
+/** Quinn nationwide GP FAQ pastes, visible copy and FAQPage schema must match exactly. */
 
 export type FaqItem = { q: string; a: string };
 
@@ -25,18 +25,18 @@ export const homeFaq: FaqItem[] = [
   },
   {
     q: 'How does Demand Flow pricing work?',
-    a: 'Demand Flow scope and fees are confirmed for accepted businesses before you start. Book a strategy call, or call (915) 228-3054.',
+    a: 'Demand Flow scope and fees are confirmed for accepted businesses before you start. Book a strategy call or call (915) 228-3054.',
   },
   {
     q: 'Is Dead River Management the same as Dead River Company?',
-    a: 'No. Not Dead River Company (New England fuel) — we do not sell fuel. Dead River Management is a growth partner based in El Paso, Texas, working with businesses nationwide.',
+    a: 'No. Not Dead River Company (New England fuel), we do not sell fuel. Dead River Management is a growth partner based in El Paso, Texas, working with businesses nationwide.',
   },
 ];
 
 export const pricingFaq: FaqItem[] = [
   {
     q: 'What is Demand Flow?',
-    a: 'Demand Flow is the live public engagement for accepted businesses: $50,000 in new revenue in 45 to 60 days. If we miss, service fees are refunded plus $500; ad spend is not refunded. Read the Guarantee terms page on this site, then book a strategy call to see whether your business qualifies.',
+    a: 'Demand Flow is the live public engagement for accepted businesses: $50,000 in new revenue in 45 to 60 days. If we miss, service fees are refunded plus $500; ad spend is not refunded. Read the Guarantee terms page on this site, then book a conversation to see whether your business qualifies.',
   },
   {
     q: 'What is included in the monthly fee?',
@@ -56,7 +56,7 @@ export const pricingFaq: FaqItem[] = [
   },
   {
     q: 'Who is a good fit?',
-    a: 'Growing businesses that are ready for a connected system — acquisition, conversion, follow-up, and measurement — not a pile of disconnected vendors. We work nationwide from El Paso, Texas.',
+    a: 'Growing businesses that are ready for a connected system, acquisition, conversion, follow-up, and measurement, not a pile of disconnected vendors. We work nationwide from El Paso, Texas.',
   },
   {
     q: 'How do I start?',
@@ -67,7 +67,7 @@ export const pricingFaq: FaqItem[] = [
 export const homeServicesFaq: FaqItem[] = [
   {
     q: 'Do you work with HVAC, plumbing, roofing, and other trades?',
-    a: 'Yes. We partner with home services businesses nationwide — HVAC, plumbing, roofing, electrical, and related trades — wherever you operate.',
+    a: 'Yes. We partner with home services businesses nationwide, HVAC, plumbing, roofing, electrical, and related trades, wherever you operate.',
   },
   {
     q: 'What does Demand Flow cover for home services?',
@@ -79,7 +79,7 @@ export const homeServicesFaq: FaqItem[] = [
   },
   {
     q: 'Is missed-call recovery included?',
-    a: 'Fast response, booking, and follow-up — including missed-call recovery where it fits the agreed scope — can be part of Demand Flow. Scope is confirmed before you start. Book a strategy call.',
+    a: 'Fast response, booking, and follow-up, including missed-call recovery where it fits the agreed scope, can be part of Demand Flow. Scope is confirmed before you start. Book a strategy call.',
   },
   {
     q: 'Are written lead promises part of current plans?',
@@ -113,9 +113,9 @@ export const sitemapKeepPaths = [
   '/book',
   '/company',
   '/resources',
-  '/advice',
-  '/advice/lead-response-time',
-  '/advice/after-a-bad-agency',
+  '/marketing-advice',
+  '/marketing-advice/lead-response-time',
+  '/marketing-advice/after-a-bad-agency',
   '/privacy',
   '/terms',
   '/locations',

@@ -20,28 +20,28 @@ faq:
     a: "Ask what counts as a lead, what happens if they miss, who pays ads, and whether the promise is in a signed agreement. Then compare that to a written new-revenue guarantee like Demand Flow."
 ---
 
-Looking for a marketing agency with a **written performance guarantee**? Dead River Management’s live public offer is **Demand Flow**: **$50,000 in new revenue in 45 to 60 days** for accepted businesses, or **service fees refunded + $500** (ad spend **not** refunded). [Read the guarantee terms](/legal/guarantee). [Book a strategy call](/book).
+Looking for a marketing agency with a **written performance guarantee**? That means a promise about results, on paper. Here is the live Dead River Management offer. It is called **Demand Flow**. The promise is **$50,000 in new revenue in 45 to 60 days**. New revenue means new money from new customers. It is for accepted businesses only. If we miss, you get your **service fees refunded + $500**. Ad spend is **not** refunded. Ad spend is the money paid to Google or Facebook to run your ads. [Read the guarantee terms](/legal/guarantee). [Book a strategy call](/book).
 
-A **30 leads in 60 days** line is still common in home-services marketing. Dead River **does not** sell that as a current public offer. Older lead, appointment, or patient-target promises are retired unless a signed legacy agreement still says otherwise.
+A **30 leads in 60 days** line is still common in home-services marketing. A lead is a person who asks about your service. Dead River **does not** sell that as a current public offer. We dropped the older promises about leads, appointments, or patient targets. The one case that differs is an old signed agreement that still says so.
 
 ## What to ask any agency
 
-1. What counts (lead vs booked job vs **new revenue**)?
-2. What happens if they miss — keep working, refund, or rewrite the definition?
+1. What counts? A lead, a booked job, or **new revenue**?
+2. What happens if they miss? Do they keep working, refund you, or change what counts?
 3. Who pays the ad platforms?
 4. When does the clock start?
 
 ## Dead River’s answer (current)
 
-- **Offer name:** Demand Flow  
-- **Promise:** $50,000 in new revenue in 45 to 60 days  
-- **Miss rule:** service fees refunded + $500  
-- **Ad spend:** not refunded  
-- **Who:** accepted businesses only  
-- **Terms updated:** September 29, 2026  
+- **Offer name:** Demand Flow.  
+- **Promise:** $50,000 in new revenue in 45 to 60 days.  
+- **Miss rule:** service fees refunded + $500.  
+- **Ad spend:** not refunded.  
+- **Who:** accepted businesses only.  
+- **Terms updated:** September 29, 2026.  
 
-Not Dead River Company (New England fuel) — we do not sell fuel.
+Not Dead River Company (New England fuel). We do not sell fuel.
 
 ## Next step
 
-[Book a strategy call](/book) to see whether your business qualifies. Full terms: [Guarantee terms](/legal/guarantee).
+[Book a strategy call](/book) to see if your business fits. Full terms: [Guarantee terms](/legal/guarantee).
