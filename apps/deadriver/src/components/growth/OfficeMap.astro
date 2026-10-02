@@ -1,0 +1,32 @@
+---
+// Office map with a pin. Google's embed endpoint geocodes the address, so no
+// API key is needed. The iframe is lazy so it never touches page speed.
+import Arrow from './Arrow.astro';
+import { brand } from '../../data/growth';
+const q = encodeURIComponent(`Dead River Management, ${brand.address}`);
+const { heading = 'Come see us.' } = Astro.props as { heading?: string };
+---
+
+<section class="section wrap office">
+  <div class="split office-split">
+    <div>
+      <p class="eyebrow">Our office</p>
+      <h2>{heading}</h2>
+      <p class="office-address">{brand.address}</p>
+      <p class="office-hours">Mon to Sat, 9 to 6 Mountain. Call or text <a class="inline-link" href={brand.phoneHref}>{brand.phone}</a>.</p>
+      <div class="stack">
+        <a class="text-link" href={brand.mapHref} rel="noopener" target="_blank">Get directions <Arrow /></a>
+        <a class="text-link" href="/book">Book a strategy call <Arrow /></a>
+      </div>
+    </div>
+    <div class="office-map">
+      <iframe
+        src={`https://www.google.com/maps?q=${q}&z=16&output=embed`}
+        title="Map showing the Dead River Management office at 416 N. Stanton St, El Paso"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        allowfullscreen
+      ></iframe>
+    </div>
+  </div>
+</section>

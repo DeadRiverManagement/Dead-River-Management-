@@ -1,0 +1,38 @@
+---
+// Home page reviews: real Google reviews, a link to the Google profile, and a
+// link to Facebook recommendations. No schema: Google ignores self-served
+// review markup on a business's own site.
+import Arrow from './Arrow.astro';
+import { googleReviews, facebookReviewsHref } from '../../data/reviews';
+const fmt = (d: string) =>
+  new Date(d).toLocaleDateString('en-US', { month: 'long', year: 'numeric', timeZone: 'UTC' });
+---
+
+<section class="section soft" id="reviews">
+  <div class="wrap">
+    <div class="section-head rv-head">
+      <div>
+        <p class="eyebrow">Reviews</p>
+        <h2>What clients say.</h2>
+      </div>
+      <p class="rv-score" aria-label={`Rated ${googleReviews.rating.toFixed(1)} out of 5 on Google from ${googleReviews.count} reviews`}>
+        <span class="rv-stars" aria-hidden="true">★★★★★</span>
+        <strong>{googleReviews.rating.toFixed(1)}</strong> on Google · {googleReviews.count} {googleReviews.count === 1 ? 'review' : 'reviews'}
+      </p>
+    </div>
+    <ul class="rv-grid">
+      {googleReviews.items.map((r) => (
+        <li class="rv-card">
+          <p class="rv-stars" aria-label={`${r.stars} out of 5 stars`}>{'★'.repeat(r.stars)}</p>
+          <blockquote>{r.text}</blockquote>
+          <p class="rv-meta"><strong>{r.name}</strong> · Google · {fmt(r.date)}</p>
+        </li>
+      ))}
+    </ul>
+    <div class="rv-links">
+      <a class="text-link" href={googleReviews.profileHref} rel="noopener" target="_blank">Read our Google reviews <Arrow /></a>
+      <a class="text-link" href={facebookReviewsHref} rel="noopener" target="_blank">Read our Facebook reviews <Arrow /></a>
+      <a class="text-link" href={googleReviews.writeHref} rel="noopener" target="_blank">Worked with us? Leave a review <Arrow /></a>
+    </div>
+  </div>
+</section>

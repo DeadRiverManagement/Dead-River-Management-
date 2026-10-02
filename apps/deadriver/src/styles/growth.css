@@ -1640,6 +1640,27 @@ a.outcome-item:hover h3 {
   font-size: 14px;
   color: var(--muted);
 }
+/* Reviews on the home page */
+.rv-head { align-items: end; }
+.rv-score { font-size: 15px; color: var(--muted); display: flex; align-items: center; gap: 8px; }
+.rv-score strong { color: var(--ink); font-size: 18px; }
+.rv-stars { color: #c98a2b; letter-spacing: 2px; font-size: 16px; line-height: 1; }
+.rv-grid { list-style: none; padding: 0; margin: 12px 0 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.rv-card { border: 1px solid var(--line); border-radius: 9px; padding: 26px; background: #fffdf9; display: flex; flex-direction: column; gap: 12px; }
+.rv-card blockquote { margin: 0; font-family: var(--font-display); font-weight: 700; font-size: 20px; line-height: 1.35; color: var(--ink); }
+.rv-meta { font-size: 14px; color: var(--muted); }
+.rv-meta strong { color: var(--ink); }
+.rv-links { display: flex; flex-wrap: wrap; gap: 12px 28px; margin-top: 24px; }
+@media (max-width: 760px) {
+  .rv-head { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .rv-grid { grid-template-columns: 1fr; }
+}
+/* Office map */
+.office-split { align-items: center; }
+.office-address { font-family: var(--font-display); font-weight: 700; font-size: 20px; line-height: 1.3; margin: 12px 0 8px; }
+.office-hours { color: var(--muted); margin-bottom: 18px; }
+.office-map { border: 1px solid var(--line); border-radius: 12px; overflow: hidden; background: #e9ede4; aspect-ratio: 4 / 3; }
+.office-map iframe { display: block; width: 100%; height: 100%; border: 0; }
 .footer-address {
   display: block;
   margin-top: 6px;
