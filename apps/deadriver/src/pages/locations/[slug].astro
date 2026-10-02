@@ -15,29 +15,84 @@ export function getStaticPaths() {
   }));
 }
 const { location: l } = Astro.props;
-const pageFaq = l.slug === 'el-paso' ? elPasoLocationFaq : [];
+const pageFaq = l.faq ?? (l.slug === 'el-paso' ? elPasoLocationFaq : []);
 const pageTitle =
-  l.slug === 'el-paso'
+  l.title ?? (l.slug === 'el-paso'
     ? 'El Paso Home Services Marketing'
-    : 'Growth partner for ' + l.name + ' businesses';
+    : 'Growth partner for ' + l.name + ' businesses');
+const SITE = 'https://www.deadrivermanagement.com';
+const rich = Boolean(l.about);
+const schema = [
+  ...(pageFaq.length ? [faqPage(pageFaq)] : []),
+  ...(rich
+    ? [
+        {
+          '@context': 'https://schema.org',
+          '@type': 'Service',
+          name: `Marketing agency for ${l.name}, ${l.state}`,
+          serviceType: 'Marketing services',
+          description: l.description,
+          provider: { '@id': `${SITE}/#organization` },
+          areaServed: [
+            { '@type': 'City', name: l.name, containedInPlace: { '@type': 'State', name: l.region } },
+            ...l.areas.filter((a) => a !== l.name).map((a) => ({ '@type': 'Place', name: a })),
+          ],
+          url: `${SITE}/locations/${l.slug}`,
+        },
+        {
+          '@context': 'https://schema.org',
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` },
+            { '@type': 'ListItem', position: 2, name: 'Locations', item: `${SITE}/locations` },
+            { '@type': 'ListItem', position: 3, name: l.name, item: `${SITE}/locations/${l.slug}` },
+          ],
+        },
+      ]
+    : []),
+];
 ---
 
 <Growth
   title={pageTitle}
   description={
-    l.intro +
-    ' Ads, follow-up, and reporting built around where your customers are.'
+    l.description ??
+    l.intro + ' Ads, follow-up, and reporting built around where your customers are.'
   }
-  schema={pageFaq.length ? faqPage(pageFaq) : undefined}
+  schema={schema.length ? schema : undefined}
 >
   <Hero
-    eyebrow={l.name + ', ' + l.region}
-    title="A clearer path to growth, close to home."
+    eyebrow={l.eyebrow ?? l.name + ', ' + l.region}
+    title={l.headline ?? 'A clearer path to growth, close to home.'}
     intro={l.intro}
   />
+  {rich && l.about && (
+    <section class="section wrap loc-about">
+      <p class="eyebrow">Local first</p>
+      <h2>{l.about.heading}</h2>
+      {l.about.paragraphs.map((p) => <p>{p}</p>)}
+    </section>
+  )}
+  {rich && l.services && (
+    <section class="section soft">
+      <div class="wrap">
+        <p class="eyebrow">What we run in {l.name}</p>
+        <h2>Every channel, targeted to {l.name}.</h2>
+        <div class="loc-grid">
+          {l.services.map((s) => (
+            <a class="feature-panel loc-service" href={s.href}>
+              <h3>{s.name}</h3>
+              <p>{s.blurb}</p>
+              <span class="text-link">How we run it <Arrow /></span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
   <section class="section wrap split">
     <div>
-      <p class="eyebrow">Local first</p>
+      <p class="eyebrow">{rich ? 'Where to start' : 'Local first'}</p>
       <h2>Where you work shapes how you grow.</h2>
       <p class="intro">{l.context}</p>
     </div>
@@ -53,13 +108,19 @@ const pageTitle =
   <section class="section soft">
     <div class="wrap split">
       <div>
-        <p class="eyebrow">El Paso and the borderland</p>
+        <p class="eyebrow">{rich ? l.name + ' and nearby' : 'El Paso and the borderland'}</p>
         <h2>Be specific about the customers you can serve.</h2>
+        {l.nearby && (
+          <p class="loc-nearby">Also see:{l.nearby.map((n, i) => (
+            <>{i > 0 && ','}<a class="inline-link" href={n.href}>{n.label}</a></>
+          ))}</p>
+        )}
       </div>
       <div>
         <p>
-          We can plan around {l.areas.join(', ')}, and around Sunland Park and
-          Las Cruces in New Mexico if you serve them.
+          {rich
+            ? `We can plan around ${l.areas.join(', ')}, and anywhere else your crews go.`
+            : `We can plan around ${l.areas.join(', ')}, and around Sunland Park and Las Cruces in New Mexico if you serve them.`}
         </p>
         <p>
           Before ads run, we confirm the areas you cover, how far your team will
@@ -69,6 +130,21 @@ const pageTitle =
       </div>
     </div>
   </section>
+  {rich && l.demand && (
+    <section class="section wrap split">
+      <div>
+        <p class="eyebrow">Demand</p>
+        <h2>{l.demand.heading}</h2>
+        <p>{l.demand.lead}</p>
+      </div>
+      <div>
+        <ul class="check-list">
+          {l.demand.items.map((d) => <li>{d}</li>)}
+        </ul>
+        <p class="small">{l.demand.note}</p>
+      </div>
+    </section>
+  )}
   <section class="section wrap split">
     <div>
       <h2>Local team. Real numbers.</h2>
@@ -90,7 +166,7 @@ const pageTitle =
       <div class="section-head">
         <div>
           <p class="eyebrow">Before you start</p>
-          <h2>A few clear answers.</h2>
+          <h2>{rich ? `Questions ${l.name} businesses ask us.` : 'A few clear answers.'}</h2>
         </div>
       </div>
       <div class="faq">
@@ -113,3 +189,17 @@ const pageTitle =
   </section>
   <CTA />
 </Growth>
+
+<style>
+  .loc-about { max-width: 860px; }
+  .loc-about h2 { margin-bottom: 14px; }
+  .loc-about p { color: var(--muted); font-size: 17px; line-height: 1.6; margin-bottom: 14px; }
+  .loc-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; margin-top: 12px; }
+  .loc-grid > * { min-width: 0; display: flex; flex-direction: column; }
+  .loc-service h3 { font-size: 20px; margin-bottom: 8px; }
+  .loc-service p { color: var(--muted); font-size: 15px; margin-bottom: 14px; }
+  .loc-service .text-link { margin-top: auto; font-size: 14px; }
+  .loc-nearby { margin-top: 12px; font-size: 14px; color: var(--muted); }
+  .loc-nearby a { margin-left: 6px; }
+  @media (max-width: 1000px) { .loc-grid { grid-template-columns: 1fr; } }
+</style>
