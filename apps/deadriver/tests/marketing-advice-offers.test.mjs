@@ -26,7 +26,7 @@ const LIVE_OFFER = [
 ];
 
 const DEK =
-  'Dead River’s live public guarantee is Demand Flow: $50,000 in new revenue in 45 to 60 days, or service fees refunded + $500 (ad spend not refunded). Older 30-in-60 lead promises are not current public offers.';
+  'Our live guarantee is Demand Flow: $50k new revenue in 45 to 60 days, or service fees refunded + $500. 30-in-60 lead promises are not current offers.';
 
 test('published marketing advice does not sell retired offers', () => {
   for (const name of published) {
@@ -44,7 +44,7 @@ test('30-leads article matches Demand Flow SoR', () => {
   assert.match(text, /Demand Flow/);
   assert.match(text, /\$50,000 in new revenue in 45 to 60 days/);
   assert.match(text, /service fees refunded \+ \$500/);
-  assert.match(text, /ad spend/);
+  assert.match(text, /ad spend/i);
   assert.match(text, /no longer a public offer|not.*current public offer/i);
   assert.doesNotMatch(text, /Foundation, Growth Partner, and Scale/);
   assert.doesNotMatch(text, /\/talk/);

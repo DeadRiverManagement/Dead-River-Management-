@@ -1,8 +1,8 @@
 ---
 title: "Demand Flow explained: $50,000 in new revenue in 45 to 60 days"
-pageTitle: "Demand Flow explained: $50k revenue guarantee"
+pageTitle: "Demand Flow $50k Guarantee"
 headline: "Demand Flow explained: $50,000 in new revenue in 45 to 60 days (and what is not guaranteed)"
-description: "Demand Flow is Dead River Management’s live public offer. Accepted businesses get $50,000 in new revenue in 45 to 60 days, or service fees back plus $500. Ad spend is not refunded. Full terms on the Guarantee terms page linked in this article."
+description: "Demand Flow is our live public offer: $50,000 in new revenue in 45 to 60 days, or service fees back + $500. Ad spend is not refunded. Accepted businesses only."
 date: 2026-10-01
 category: "Offers"
 faqHeading: "FAQ"
