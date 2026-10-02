@@ -98,7 +98,7 @@ So here is my warning. Don't pay an agency hundreds a month just to "manage your
 
 Do the profile yourself this week. Then put your time and money into the stuff that actually moves the needle.
 
-Want help with the full picture? That is what our [Local SEO services](/services/local-seo) are for. SEO just means showing up on Google. Or book [a strategy call](/book) and we will look at your listing together.
+Want help with the full picture? That is what our [Local SEO services](/services/local-seo) are for. [SEO](/services/seo) just means showing up on Google. Or book [a strategy call](/book) and we will look at your listing together.
 
 ## We can do this for you
 

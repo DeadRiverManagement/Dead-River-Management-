@@ -7,6 +7,7 @@ import Growth from '../../layouts/Growth.astro';
 import Arrow from '../../components/growth/Arrow.astro';
 import ServiceLinks from '../../components/growth/ServiceLinks.astro';
 import { faqPage } from '../../lib/schema';
+import { linkify } from '../../lib/linkify';
 import { servicePages, demandFlowOffer, elPasoAreas, areaHrefs } from '../../data/service-pages';
 import { industryPages } from '../../data/industry-pages';
 import type { ServicePageData } from '../../data/service-pages';
@@ -16,6 +17,7 @@ export function getStaticPaths() {
 }
 
 const { page } = Astro.props as { page: ServicePageData };
+const here = `/services/${page.slug}`;
 const bookHref = '/book';
 const cta = 'Book a Strategy Call';
 const others = servicePages.filter((s) => s.slug !== page.slug);
@@ -45,7 +47,7 @@ const serviceSchema = {
     <p class="eyebrow">{page.eyebrow}</p>
     <h1>{page.headline}</h1>
     <p class="ms-sub">{page.sub}</p>
-    <p class="intro">{page.intro}</p>
+    <p class="intro" set:html={linkify(page.intro, here)} />
     <div class="button-row">
       <a class="button" href={bookHref} data-cta="hero">{cta} <Arrow /></a>
       <a class="button secondary" href="#offer" data-cta="hero-offer">See the offers</a>
@@ -110,7 +112,7 @@ const serviceSchema = {
     {page.longform.map((b) => (
       <div class="sv-block">
         <h2>{b.heading}</h2>
-        {b.paragraphs.map((p) => <p>{p}</p>)}
+        {b.paragraphs.map((p) => <p set:html={linkify(p, here)} />)}
       </div>
     ))}
     {page.compare && (
@@ -191,7 +193,7 @@ const serviceSchema = {
       {page.faqs.map((f) => (
         <details>
           <summary>{f.q}</summary>
-          <p>{f.a}</p>
+          <p set:html={linkify(f.a, here)} />
         </details>
       ))}
     </div>

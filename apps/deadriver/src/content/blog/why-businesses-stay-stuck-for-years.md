@@ -42,7 +42,7 @@ Pick one.
 
 Say you hire a marketing company. You can make a bad one work if you are committed. You can make a great one even better. But maybe you are committed to being right that it does not work. Then you will win that. Every time. No matter how good the agency is.
 
-Same thing with ads. Same thing with SEO, which means showing up on Google. People say it does not work. It works for a huge number of businesses. The question is whether you are committed to making it work.
+Same thing with ads. Same thing with [SEO](/services/seo), which means showing up on Google. People say it does not work. It works for a huge number of businesses. The question is whether you are committed to making it work.
 
 If you care more about being right than getting what you want, nothing will change.
 

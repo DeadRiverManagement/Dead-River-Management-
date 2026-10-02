@@ -4,6 +4,7 @@ import Hero from '../../components/growth/Hero.astro';
 import CTA from '../../components/growth/CTA.astro';
 import { getCollection, render } from 'astro:content';
 import { faqPage } from '../../lib/schema';
+import { linkify } from '../../lib/linkify';
 import ServiceLinks from '../../components/growth/ServiceLinks.astro';
 export async function getStaticPaths() {
   return (await getCollection('blog', ({ data }) => !data.draft)).map(
@@ -88,7 +89,7 @@ const schema = post.data.faq?.length ? [article, faqPage(post.data.faq)] : artic
             {post.data.faq.map((f) => (
               <details>
                 <summary>{f.q}</summary>
-                <p>{f.a}</p>
+                <p set:html={linkify(f.a)} />
               </details>
             ))}
           </div>

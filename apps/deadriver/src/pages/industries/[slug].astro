@@ -6,8 +6,9 @@ import Growth from '../../layouts/Growth.astro';
 import Arrow from '../../components/growth/Arrow.astro';
 import ServiceLinks from '../../components/growth/ServiceLinks.astro';
 import { faqPage } from '../../lib/schema';
+import { linkify } from '../../lib/linkify';
 import { industryPages } from '../../data/industry-pages';
-import { demandFlowOffer, elPasoAreas, areaHrefs } from '../../data/service-pages';
+import { demandFlowOffer, elPasoAreas, areaHrefs, servicePages } from '../../data/service-pages';
 import type { IndustryPage } from '../../data/industry-pages';
 
 export function getStaticPaths() {
@@ -16,6 +17,7 @@ export function getStaticPaths() {
 const { page } = Astro.props as { page: IndustryPage };
 const SITE = 'https://www.deadrivermanagement.com';
 const others = industryPages.filter((p) => p.slug !== page.slug);
+const here = `/industries/${page.slug}`;
 const schema = [
   {
     '@context': 'https://schema.org',
@@ -48,7 +50,7 @@ const schema = [
   <section class="page-hero wrap in-hero">
     <p class="eyebrow">{page.name} marketing · Nationwide and El Paso</p>
     <h1>{page.headline}</h1>
-    <p class="intro">{page.intro}</p>
+    <p class="intro" set:html={linkify(page.intro, here)} />
     <div class="button-row">
       <a class="button" href="/book" data-cta="hero">Book a Strategy Call <Arrow /></a>
       <a class="button secondary" href="#proof" data-cta="hero-proof">See the {page.name.toLowerCase()} result</a>
@@ -83,7 +85,7 @@ const schema = [
       {page.built.map(([title, body]) => (
         <article class="feature-panel">
           <h3>{title}</h3>
-          <p>{body}</p>
+          <p set:html={linkify(body, here)} />
         </article>
       ))}
     </div>
@@ -130,6 +132,11 @@ const schema = [
       </article>
     </div>
     <ServiceLinks
+      label={`What we run for ${page.trade}`}
+      heading="Every channel, built for your trade."
+      links={servicePages.map((s) => ({ label: s.name, href: '/services/' + s.slug, blurb: s.blurb }))}
+    />
+    <ServiceLinks
       label="Other trades"
       heading="The same system, built for your trade."
       links={others.map((p) => ({ label: p.name, href: '/industries/' + p.slug, blurb: p.headline }))}
@@ -144,7 +151,7 @@ const schema = [
         {page.faqs.map((f) => (
           <details>
             <summary>{f.q}</summary>
-            <p>{f.a}</p>
+            <p set:html={linkify(f.a, here)} />
           </details>
         ))}
       </div>

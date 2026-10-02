@@ -39,7 +39,7 @@ You know the list. Every business has a list of things it knows it should do. No
 - Getting listed in directories. A directory is a site that lists businesses, like [Yelp](https://biz.yelp.com/) or [Nextdoor](https://business.nextdoor.com/).
 - Checking your listings. Same name, phone, and address everywhere.
 - Building a social presence. That means posting on Facebook or Instagram on a regular basis.
-- Working on SEO, which means showing up on Google when people search.
+- Working on [SEO](/services/seo), which means showing up on Google when people search.
 
 A lot of this gets skipped for one reason. You don't know how to do it. The pain of not knowing stops more owners than the work does. Here is what I have learned. Sit with the task for five minutes. Just open it and look. You will know more than you expect. Most people who sound like experts spent an hour or two learning. That's really it.
 
