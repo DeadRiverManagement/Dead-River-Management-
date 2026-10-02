@@ -20,7 +20,7 @@ faq:
 
 Every trade is not the same on Google. Some owners rank in a few months. Others grind for years and never crack the top three. The difference is mostly the trade, not the effort.
 
-SEO means showing up on Google. Before you spend money on it, know what you're up against. Then pick the move that fits your goal.
+[SEO](/services/seo) means showing up on Google. Before you spend money on it, know what you're up against. Then pick the move that fits your goal.
 
 ## The honest tier list
 

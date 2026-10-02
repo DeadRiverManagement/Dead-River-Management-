@@ -77,7 +77,7 @@ This is why we do not sell ad management on its own. If nobody works the leads, 
 
 Google if you need booked jobs this week. Facebook if you want a pipeline that does not depend on who is searching today. A pipeline is a steady line of future jobs.
 
-Google Ads catch demand that already exists. Someone typed "water heater repair El Paso" and is ready to call. That is why a Google lead costs about two and a half times more.
+[Google Ads](/services/google-ads) catch demand that already exists. Someone typed "water heater repair El Paso" and is ready to call. That is why a Google lead costs about two and a half times more.
 
 Facebook creates demand you did not have. It is cheaper per lead and slower to turn into a job.
 

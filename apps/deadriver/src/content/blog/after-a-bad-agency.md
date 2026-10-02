@@ -46,7 +46,7 @@ Question 4 is about real jobs on a calendar. One public home-service example is 
 - They blame only "your closers" and never check intake. A closer is whoever sells the job. Intake is how a new call gets handled. If nobody looked at missed calls, the closers are not the whole story.
 - They will not define a lead. A click, a form, and a shown appointment are not the same. If they all count the same, you have no real result.
 - They want a long contract before a clear 90-day scoreboard. Know what "working" means before the term locks you in.
-- They worship one channel. More Facebook, more SEO, but no booking math. SEO means showing up on Google. Traffic that never becomes a booked job is just a bill.
+- They worship one channel. More Facebook, more [SEO](/services/seo), but no booking math. SEO means showing up on Google. Traffic that never becomes a booked job is just a bill.
 
 ## The first 30 days
 

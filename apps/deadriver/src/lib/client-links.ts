@@ -8,6 +8,7 @@ const clients: [string, string][] = [
   ['Wicked Logistics', '/work/wicked-logistics'],
   ['Parcel Management Group', '/work/parcel-management-group'],
   ['Only Fish', '/work/only-fish'],
+  ['Demand Intelligence', '/demand-intelligence'],
   ['full guarantee terms', '/legal/guarantee'],
   ['published guarantee terms', '/legal/guarantee'],
 ];
