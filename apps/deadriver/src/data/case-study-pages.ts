@@ -19,11 +19,16 @@ export interface CaseStudyPage {
   notFor?: string[];
   apply: { heading: string; paragraphs: string[]; list: string[]; cta: string; scarcity: string; button: string };
   glance: { facts: [string, string][]; did: string[]; metrics: string[] };
+  /** Industry page this result belongs to, shown under the result. */
+  industry?: { label: string; href: string };
+  /** Short client video. Put the file under public/media/ and fill this in; the page renders the player and VideoObject schema. */
+  video?: { src: string; poster: string; title: string; description: string; uploadDate: string; duration?: string };
 }
 
 export const caseStudyPages: CaseStudyPage[] = [
   {
     slug: 'total-auto-repair',
+    industry: { label: 'Marketing for auto repair shops', href: '/industries/auto-repair' },
     company: 'Total Auto Repair',
     seoTitle: 'Auto Repair: $20K to $100K/Month',
     description:
@@ -183,6 +188,7 @@ export const caseStudyPages: CaseStudyPage[] = [
   },
   {
     slug: 'the-pipe-whisperers',
+    industry: { label: 'Marketing for plumbers', href: '/industries/plumbing' },
     company: 'The Pipe Whisperers',
     seoTitle: '$60K to $250K/Year Plumbing Growth',
     description:
@@ -338,6 +344,7 @@ export const caseStudyPages: CaseStudyPage[] = [
   },
   {
     slug: 'gonzalez-and-sons-roofing',
+    industry: { label: 'Marketing for roofers', href: '/industries/roofing' },
     company: 'Gonzalez & Sons Roofing',
     seoTitle: '2 to 8 Roofs/Month in 6 Months',
     description:

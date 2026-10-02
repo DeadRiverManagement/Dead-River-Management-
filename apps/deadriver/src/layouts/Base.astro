@@ -78,8 +78,10 @@ const offerOrgSchema = {
   },
   address: {
     '@type': 'PostalAddress',
+    streetAddress: business.street,
     addressLocality: business.city,
     addressRegion: business.region,
+    postalCode: business.postalCode,
     addressCountry: business.country,
   },
   openingHoursSpecification: [
@@ -120,8 +122,10 @@ const nationwideOrgSchema = {
   founder: { '@type': 'Person', name: 'Brandon Aubey', jobTitle: 'Founder' },
   address: {
     '@type': 'PostalAddress',
+    streetAddress: business.street,
     addressLocality: 'El Paso',
     addressRegion: 'TX',
+    postalCode: business.postalCode,
     addressCountry: 'US',
   },
   areaServed: [

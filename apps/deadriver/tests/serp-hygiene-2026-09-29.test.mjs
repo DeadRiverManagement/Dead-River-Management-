@@ -134,11 +134,10 @@ test('/demand-intelligence title and meta stay on the live offer', () => {
   assert.equal(pageTitle(di.title), di.title);
 });
 
-test('home meta carries the Demand Flow guarantee and industry pages are retired', () => {
+test('home meta carries the Demand Flow guarantee', () => {
   const home = read('src/pages/index.astro');
   const homeMeta =
     'Purchase intent data finds people ready to buy now. We create, capture, and convert that demand. $50,000 in 45 to 60 days or money back + $500.';
   assert.equal(homeMeta.length, 143);
   assert.match(home, new RegExp(`description="${homeMeta.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}"`));
-  assert.equal(existsSync(new URL('../src/pages/industries', import.meta.url)), false);
 });

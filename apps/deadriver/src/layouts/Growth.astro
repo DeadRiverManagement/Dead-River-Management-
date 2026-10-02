@@ -10,6 +10,7 @@ import { brand } from '../data/growth';
 import { business, socials } from '../data/site';
 import { socialIcons } from '../data/social-icons';
 import { servicePages, elPasoAreas } from '../data/service-pages';
+import { industryPages } from '../data/industry-pages';
 const {
   title = 'A growth partner for businesses ready to break through the next stage',
   description = brand.description,
@@ -76,8 +77,10 @@ const org = {
   ],
   address: {
     '@type': 'PostalAddress',
+    streetAddress: business.street,
     addressLocality: 'El Paso',
     addressRegion: 'TX',
+    postalCode: business.postalCode,
     addressCountry: 'US',
   },
   // Hours match the footer: Mon to Sat, 9 to 6 Mountain.
@@ -204,6 +207,10 @@ const schemas = [org, site, ...(schema ? [schema] : [])];
               {servicePages.map((sp) => (
                 <a href={`/services/${sp.slug}`}>{sp.navLabel}</a>
               ))}
+              <p class="nav-group">By industry</p>
+              {industryPages.map((p) => (
+                <a href={`/industries/${p.slug}`}>{p.name}</a>
+              ))}
             </div>
           </details>
           <a href="/work" aria-current={path === '/work' ? 'page' : undefined}>
@@ -250,6 +257,7 @@ const schemas = [org, site, ...(schema ? [schema] : [])];
             <a class="button secondary" href={brand.smsHref}>Text us</a>
           </div>
           <a class="footer-email" href={`mailto:${brand.email}`}>{brand.email}</a>
+          <a class="footer-address" href={brand.mapHref} rel="noopener" target="_blank">{brand.address}</a>
         </div>
         {[
           ['Services', servicePages.map((sp) => [sp.navLabel, `/services/${sp.slug}`])],
@@ -261,6 +269,7 @@ const schemas = [org, site, ...(schema ? [schema] : [])];
             ['Free tools', '/tools'],
             ['El Paso, Texas', '/locations/el-paso'],
           ]],
+          ['Industries', industryPages.map((p) => [p.name, `/industries/${p.slug}`])],
           ['Clients', [
             ['Sign in', 'https://app.deadrivermanagement.com/v2/'],
             ['Onboarding', '/onboarding'],
