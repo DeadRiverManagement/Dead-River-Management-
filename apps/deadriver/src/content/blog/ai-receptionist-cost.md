@@ -42,7 +42,7 @@ Before you compare any two quotes, work out roughly how many calls you miss in a
 
 A flat monthly plan costs the same whether the month is quiet or busy. No overage math.
 
-Dead River’s live public offer is Demand Flow: $50,000 in new revenue in 45 to 60 days, or service fees refunded + $500 (ad spend not refunded). Terms are on the [Guarantee terms](/legal/guarantee) page. When scope fits, that work can include tracking, follow-up, booking, and missed-call recovery — confirmed on a call, not sold as a tier card. [Talk through scope](/book) or [book a conversation](/book).
+Dead River’s live public offer is Demand Flow: $50,000 in new revenue in 45 to 60 days, or service fees refunded + $500 (ad spend not refunded). Terms are on the [Guarantee terms](/legal/guarantee) page. When scope fits, that work can include tracking, follow-up, booking, and missed-call recovery, confirmed on a call, not sold as a tier card. [Talk through scope](/book) or [book a conversation](/book).
 
 Complete is retired.
 

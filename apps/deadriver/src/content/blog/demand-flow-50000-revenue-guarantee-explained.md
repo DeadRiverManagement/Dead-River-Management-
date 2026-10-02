@@ -16,7 +16,7 @@ faq:
   - q: "Is Demand Flow available to every business?"
     a: "No. It applies to businesses accepted into Demand Flow with a signed agreement. If we do not think we can hit the number, we say so and do not offer the guarantee."
   - q: "Is Demand Intelligence part of this public guarantee?"
-    a: "No. Demand Flow is the public revenue guarantee. Demand Intelligence is a separate product path (see /demand-intelligence and /demo). Do not treat a monthly DI fee as part of this guarantee SoR."
+    a: "No. Demand Flow is the public revenue guarantee. Demand Intelligence is a separate product path. See the Demand Intelligence and demo pages linked in this article. Do not treat a monthly DI fee as part of this guarantee SoR."
   - q: "Where do I book?"
     a: "Book a strategy call, or call (915) 228-3054. Read the full guarantee terms on the Guarantee terms page linked in this article."
 ---
