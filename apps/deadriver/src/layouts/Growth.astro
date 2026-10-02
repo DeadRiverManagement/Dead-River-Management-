@@ -215,12 +215,18 @@ const schemas = [org, site, ...(schema ? [schema] : [])];
           <a href="/marketing-advice" aria-current={path.startsWith('/marketing-advice') ? 'page' : undefined}>
             Marketing advice
           </a>
+          <a class="nav-phone" href={brand.phoneHref}>{brand.phone}</a>
           <a class="button secondary nav-cta" href="https://app.deadrivermanagement.com/v2/">
             Sign in <Arrow />
           </a>
         </nav>
         </>)}
       </div>
+      <p class="nav-contact">
+        <span>Call or text</span>
+        <a href={brand.phoneHref}>{brand.phone}</a>
+        <a class="nav-text" href={brand.smsHref}>Text us</a>
+      </p>
     </header>
     <main id="main">
       <slot />

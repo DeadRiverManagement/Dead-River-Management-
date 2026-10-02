@@ -26,6 +26,11 @@ const isCurrent = (href: string) => (href === '/' ? path === '/' : path === href
       <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navMobile" aria-label="Open menu"><span></span></button>
     </div>
   </div>
+  <p class="nav-contact">
+    <span>Call or text</span>
+    <a href={`tel:${business.phoneE164}`}>{business.phone}</a>
+    <a class="nav-text" href={`sms:${business.phoneE164}`}>Text us</a>
+  </p>
   <nav class="nav-mobile" id="navMobile" aria-label="Mobile">
     {nav.main.map((l) => <a href={l.href}>{l.label}</a>)}
     <a href={`tel:${business.phoneE164}`}>{business.phone}</a>
