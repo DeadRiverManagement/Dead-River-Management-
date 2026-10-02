@@ -23,6 +23,29 @@ export const googleReviews = {
   ],
 };
 
-// Facebook recommendations are not available through our connectors, so the
-// page links out instead of quoting a number we cannot verify.
-export const facebookReviewsHref = 'https://www.facebook.com/profile.php?id=61590635130563&sk=reviews';
+// Facebook recommendations, copied from the page's Reviews tab (Facebook has
+// no star ratings, only "recommends"). Last checked: 2026-10-02.
+export const facebookReviews = {
+  count: 3,
+  profileHref: 'https://www.facebook.com/profile.php?id=61590635130563&sk=reviews',
+  items: [
+    {
+      name: 'Parcel Management Group',
+      date: '2026-08-05',
+      text: 'Great Service. They do my meta ads, google ads, seo and geo, and manage my leads!',
+      href: '/work/parcel-management-group',
+    },
+    {
+      name: 'Wicked Logistics',
+      date: '2026-06-09',
+      text: 'They did all of our social media management, set up our website, and optimized everything. We get 5-6 calls and multiple emails a day for shipments!',
+      href: '/work/wicked-logistics',
+    },
+    {
+      name: 'OnlyFish',
+      date: '2026-06-09',
+      text: 'When we were in business Dead River Management made our website and helped set up our social media! They ran Google ads and made everything smooth',
+      href: '/work/only-fish',
+    },
+  ],
+};
