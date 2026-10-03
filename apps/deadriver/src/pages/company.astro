@@ -8,10 +8,11 @@ import FaqList from '../components/FaqList.astro';
 import { faqPage } from '../lib/schema';
 
 const fuelLine = 'Not Dead River Company (New England fuel), we do not sell fuel.';
+const fuelFaqAnswer = 'No. Not Dead River Company (New England fuel), we do not sell fuel. Dead River Management is based in El Paso, Texas, and works with accepted businesses nationwide.';
 const companyFaq = [
   {
     q: 'Is Dead River Management the same as Dead River Company?',
-    a: `No. ${fuelLine} Dead River Management is a growth partner based in El Paso, Texas, working with businesses nationwide.`,
+    a: fuelFaqAnswer,
   },
   {
     q: 'What is the Demand Flow guarantee?',
@@ -25,8 +26,8 @@ const companyFaq = [
 ---
 
 <Growth
-  title="About"
-  description="Dead River Management is a growth partner based in El Paso, Texas, working nationwide. We build demand, follow-up, and tracking for accepted businesses."
+  title="El Paso HQ, Clients Nationwide | Dead River Management"
+  description="Dead River Management is based in El Paso and works nationwide. The public offer is Demand Flow: $50,000 in new revenue in 45-60 days for accepted businesses."
   schema={faqPage(companyFaq)}
 >
   <Hero
