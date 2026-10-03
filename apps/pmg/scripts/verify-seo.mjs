@@ -159,8 +159,11 @@ if (sitemap) {
   if (!sitemap.includes(`${WWW}/ltl-freight-quote/`)) {
     fail('sitemap.xml is missing the ltl-freight-quote loc');
   }
+  if (!sitemap.includes(`${WWW}/what-is-freight-class/`)) {
+    fail('sitemap.xml is missing the what-is-freight-class loc');
+  }
   const sitemapCount = (sitemap.match(/<loc>/g) || []).length;
-  if (sitemapCount !== 21) fail(`sitemap.xml should list 21 URLs (found ${sitemapCount})`);
+  if (sitemapCount !== 22) fail(`sitemap.xml should list 22 URLs (found ${sitemapCount})`);
   if (sitemap.includes('/404')) fail('sitemap.xml includes the 404 document');
   assertNoBareApex('sitemap.xml', sitemap);
 }
@@ -199,8 +202,11 @@ if (urlset) {
   if (!urlset.includes(`${WWW}/ltl-freight-quote/`)) {
     fail('sitemap-0.xml is missing the ltl-freight-quote loc');
   }
+  if (!urlset.includes(`${WWW}/what-is-freight-class/`)) {
+    fail('sitemap-0.xml is missing the what-is-freight-class loc');
+  }
   const sitemap0Count = (urlset.match(/<loc>/g) || []).length;
-  if (sitemap0Count !== 21) fail(`sitemap-0.xml should list 21 URLs (found ${sitemap0Count})`);
+  if (sitemap0Count !== 22) fail(`sitemap-0.xml should list 22 URLs (found ${sitemap0Count})`);
   assertNoBareApex('sitemap-0.xml', urlset);
 }
 
@@ -438,6 +444,9 @@ if (homepage) {
   if (!homepage.includes('href="/ltl-freight-quote/">LTL freight quote</a>')) {
     fail('footer is missing the LTL freight quote link');
   }
+  if (!homepage.includes('href="/what-is-freight-class/">What is freight class?</a>')) {
+    fail('footer is missing the What is freight class link');
+  }
   for (const href of [
     '/blog/reduce-shipping-costs-high-volume/',
     '/blog/prepay-and-add-shipping/',
@@ -484,14 +493,25 @@ if (llms) {
   if (!guides.includes(`${WWW}/ltl-freight-quote/`)) {
     fail('llms.txt Guides section is missing the ltl-freight-quote link');
   }
+  if (!guides.includes(`${WWW}/what-is-freight-class/`)) {
+    fail('llms.txt Guides section is missing the what-is-freight-class link');
+  }
   const ltlGuideAt = guides.indexOf(`${WWW}/what-is-ltl-shipping/`);
   const modeGuideAt = guides.indexOf(`${WWW}/ltl-vs-ftl/`);
   const quoteGuideAt = guides.indexOf(`${WWW}/ltl-freight-quote/`);
+  const classGuideAt = guides.indexOf(`${WWW}/what-is-freight-class/`);
+  const quotingGuideAt = guides.indexOf(`${WWW}/how-freight-quoting-works/`);
   if (ltlGuideAt === -1 || modeGuideAt === -1 || modeGuideAt < ltlGuideAt) {
     fail('llms.txt LTL vs FTL guide is not after What Is LTL Shipping');
   }
   if (quoteGuideAt === -1 || modeGuideAt === -1 || quoteGuideAt < modeGuideAt) {
     fail('llms.txt LTL freight quote guide is not after LTL vs FTL');
+  }
+  if (classGuideAt === -1 || quoteGuideAt === -1 || classGuideAt < quoteGuideAt) {
+    fail('llms.txt What Is Freight Class guide is not after LTL Freight Quote');
+  }
+  if (quotingGuideAt === -1 || classGuideAt === -1 || quotingGuideAt < classGuideAt) {
+    fail('llms.txt How Freight Quoting Works guide is not after What Is Freight Class');
   }
 }
 
@@ -580,6 +600,21 @@ if (!vercelJson.redirects?.some((rule) => rule.source === '/ltl-freight-quote' &
 }
 if (vercelJson.redirects?.some((rule) => rule.source === '/ltl-freight-quote/')) {
   fail('vercel.json redirects the canonical /ltl-freight-quote/ path');
+}
+if (!vercelJson.redirects?.some((rule) => rule.source === '/what-is-freight-class' && rule.destination === '/what-is-freight-class/' && rule.permanent === true)) {
+  fail('vercel.json is missing /what-is-freight-class slash redirect');
+}
+if (vercelJson.redirects?.some((rule) => rule.source === '/what-is-freight-class/')) {
+  fail('vercel.json redirects the canonical /what-is-freight-class/ path');
+}
+if (vercelJson.redirects?.some((rule) => rule.source === '/freight-class' || rule.source === '/freight-class/')) {
+  fail('vercel.json adds a /freight-class alias');
+}
+if (vercelJson.installCommand !== 'npm ci') {
+  fail('vercel.json installCommand must be npm ci so astro is installed before build');
+}
+if (vercelJson.buildCommand !== 'npm run build') {
+  fail('vercel.json buildCommand must be npm run build, not bare astro');
 }
 if (vercelJson.redirects?.some((rule) => rule.source === '/freight-quote' || rule.source === '/freight-quote/')) {
   fail('vercel.json adds a /freight-quote/ alias');
@@ -1134,6 +1169,104 @@ if (modePage) {
   assertLegalFooter('LTL vs FTL HTML', modePage);
 } else {
   fail('ltl-vs-ftl/index.html is missing');
+}
+
+const CLASS_TITLE = 'What Is Freight Class? | Parcel Management Group';
+const CLASS_META =
+  'Freight class (NMFC) is the rating that shapes LTL rates. Learn density, handling, and how PMG helps shippers quote clearly. Ventura, CA 93001. Call (805) 984-4114.';
+const CLASS_FAQ = [
+  {
+    q: 'What is freight class in LTL shipping?',
+    a: 'Freight class is the NMFC rating that helps carriers price less-than-truckload freight. Density, handling, stowability, and liability set the class. Call Parcel Management Group at (805) 984-4114 for help quoting LTL.',
+  },
+  {
+    q: 'What is NMFC freight class?',
+    a: 'NMFC stands for National Motor Freight Classification. It is the industry system that assigns freight class so similar freight is rated consistently across LTL carriers.',
+  },
+  {
+    q: 'Does freight class affect my LTL rate?',
+    a: 'Yes. Class is one of the inputs carriers use with weight, distance, and accessorials. A wrong class can raise the final invoice after reclass. Share accurate weight and dimensions when you request a quote.',
+  },
+];
+const CLASS_FAQ_MODE =
+  'Freight class mainly applies to LTL shared-trailer freight. Full truckload usually prices by truck and lane. PMG quotes both modes when they fit. See LTL vs FTL or call (805) 984-4114.';
+
+const classPage = read('what-is-freight-class/index.html');
+if (classPage) {
+  if (CLASS_TITLE.length !== 48) fail(`freight class title should be 48 characters (found ${CLASS_TITLE.length})`);
+  if (CLASS_META.length !== 164) fail(`freight class meta should be 164 characters (found ${CLASS_META.length})`);
+  if (!classPage.includes(`<title>${CLASS_TITLE}</title>`)) fail('freight class <title> is not exact');
+  if (!classPage.includes(`name="description" content="${CLASS_META}"`)) {
+    fail('freight class meta description is not exact');
+  }
+  if (!classPage.includes(`property="og:description" content="${CLASS_META}"`)) {
+    fail('freight class og:description is not exact');
+  }
+  if (!classPage.includes('<h1>What is freight class?</h1>')) {
+    fail('freight class H1 is not exact');
+  }
+  if (!classPage.includes('<h2>Freight class FAQ</h2>')) {
+    fail('freight class FAQ heading is not exact');
+  }
+  if (!classPage.includes(`rel="canonical" href="${WWW}/what-is-freight-class/"`)) {
+    fail('freight class canonical is not the www URL');
+  }
+  if (!classPage.includes(`property="og:url" content="${WWW}/what-is-freight-class/"`)) {
+    fail('freight class og:url is not the www URL');
+  }
+  if (!classPage.includes('"@type":"WebPage"')) fail('freight class page is missing WebPage JSON-LD');
+  if (!classPage.includes('"@type":"FAQPage"')) fail('freight class page is missing FAQPage JSON-LD');
+  if (!classPage.includes(`${WWW}/what-is-freight-class/`)) {
+    fail('freight class JSON-LD is missing the page URL');
+  }
+  if (!classPage.includes('Freight class is the NMFC rating carriers use to price less-than-truckload freight.')) {
+    fail('freight class lead is missing the results-first sentence');
+  }
+  if (!classPage.includes('USDOT 3266041')) fail('freight class page is missing USDOT');
+  if (!classPage.includes('MC 1030328')) fail('freight class page is missing MC');
+  if (!classPage.includes('Ventura, CA 93001')) fail('freight class page is missing city-level NAP');
+  if (!classPage.includes('(805) 984-4114')) fail('freight class page is missing the phone number');
+  if (/streetAddress/i.test(classPage)) fail('freight class page includes a street address');
+  if (/Oxnard/i.test(classPage)) fail('freight class page mentions Oxnard');
+  if (/noindex/i.test(classPage)) fail('freight class page is noindex');
+  if (/connect\.facebook\.net|fbq\(/.test(classPage)) fail('freight class page includes a Meta pixel');
+  const classMain = classPage.match(/<main[\s\S]*?<\/main>/)?.[0] ?? '';
+  if (/[—–]/.test(classMain)) fail('freight class page includes an em or en dash');
+  for (const href of [
+    '/what-is-ltl-shipping/',
+    '/ltl-freight-quote/',
+    '/ltl-vs-ftl/',
+    '/how-freight-quoting-works/',
+    '/what-is-a-freight-broker/',
+    '/freight-broker-vs-carrier/',
+    '/services/',
+    '/about/',
+    '/blog/dimensional-weight/',
+    '/#contact',
+  ]) {
+    if (!classPage.includes(`href="${href}"`)) fail(`freight class page is missing internal link ${href}`);
+  }
+  if (!classPage.includes('See <a href="/ltl-vs-ftl/">LTL vs FTL</a> or call (805) 984-4114.')) {
+    fail('freight class mode FAQ is missing the visible LTL vs FTL link');
+  }
+  if (!classPage.includes(JSON.stringify(CLASS_FAQ_MODE))) {
+    fail('freight class FAQPage JSON-LD is missing the mode answer');
+  }
+  if (!classPage.includes('Does freight class matter for full truckload?')) {
+    fail('freight class FAQ is missing the mode question');
+  }
+  assertFaqVisibleAndJsonLd('freight class', classPage, CLASS_FAQ);
+  assertNoBareApex('freight class HTML', classPage);
+  assertLeadConnectorWidget('freight class HTML', classPage);
+  assertDeadRiverPixel('freight class HTML', classPage);
+  assertNoLeadForm('freight class HTML', classPage);
+  assertLegalFooter('freight class HTML', classPage);
+} else {
+  fail('what-is-freight-class/index.html is missing');
+}
+
+if (existsSync(resolve(dist, 'freight-class/index.html'))) {
+  fail('freight-class/index.html should not be a 200 page');
 }
 
 if (errors.length) {

@@ -1,5 +1,7 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
+  "installCommand": "npm ci",
+  "buildCommand": "npm run build",
   "redirects": [
     { "source": "/ship-tips/f/a-quick-guide-to-tracking-your-tforce-freight-shipment", "destination": "/blog/tforce-freight-tracking/", "permanent": true },
     { "source": "/ship-tips/f/a-quick-guide-to-tracking-your-tforce-freight-shipment/", "destination": "/blog/tforce-freight-tracking/", "permanent": true },
@@ -37,6 +39,7 @@
     { "source": "/ltl-shipping/", "destination": "/what-is-ltl-shipping/", "statusCode": 301 },
     { "source": "/ltl-vs-ftl", "destination": "/ltl-vs-ftl/", "permanent": true },
     { "source": "/ltl-freight-quote", "destination": "/ltl-freight-quote/", "permanent": true },
+    { "source": "/what-is-freight-class", "destination": "/what-is-freight-class/", "permanent": true },
     { "source": "/ltl-versus-ftl", "destination": "/ltl-vs-ftl/", "statusCode": 301 },
     { "source": "/ltl-versus-ftl/", "destination": "/ltl-vs-ftl/", "statusCode": 301 }
   ],
