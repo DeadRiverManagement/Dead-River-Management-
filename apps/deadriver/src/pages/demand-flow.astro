@@ -27,14 +27,14 @@ const faqs = [
   },
   {
     q: 'Where do I start?',
-    a: 'Book a strategy call at /book, or call (915) 228-3054. Read the full guarantee terms at /legal/guarantee.',
+    a: 'Book a strategy call, or call (915) 228-3054. Read the full guarantee terms.',
   },
 ];
 ---
 
 <Growth
   title="Demand Flow Guarantee | Dead River Management"
-  description="Demand Flow is the live public offer: $50,000 in new revenue in 45-60 days for accepted businesses, or service fees refunded plus $500. Ad spend is not refunded."
+  description="Demand Flow is the public offer: $50,000 in new revenue in 45-60 days for accepted businesses, or service fees refunded plus $500. Ad spend is not refunded."
   schema={faqPage(faqs)}
 >
   <Hero
@@ -114,7 +114,11 @@ const faqs = [
       {faqs.map((item) => (
         <details>
           <summary>{item.q}</summary>
-          <p>{item.a}</p>
+          {item.q === 'Where do I start?' ? (
+            <p>Book a <a class="inline-link" href="/book">strategy call</a>, or call (915) 228-3054. Read the full <a class="inline-link" href="/legal/guarantee">guarantee terms</a>.</p>
+          ) : (
+            <p>{item.a}</p>
+          )}
         </details>
       ))}
     </div>
