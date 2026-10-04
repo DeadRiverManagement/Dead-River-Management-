@@ -229,10 +229,10 @@ export const work: CaseStudy[] = [
     slug: 'wicked-logistics',
     name: 'Wicked Logistics',
     category: 'Logistics marketing · Freight lead generation',
-    headline: 'From 1–2 leads a week to 5–6 a day.',
+    headline: 'From 1-2 leads a week to 5-6 a day.',
     intro: 'One of those leads became a $1.2 million contract. For Wicked Logistics, a website, search campaigns, and connected follow-up opened the door to a much bigger conversation.',
     seoTitle: 'Freight Lead Generation Case Study: Wicked Logistics',
-    description: 'Wicked Logistics went from 1–2 leads a week to 5–6 a day. One lead became a $1.2 million contract. Explore the website, campaigns, and follow-up behind it.',
+    description: 'Wicked Logistics went from 1-2 leads a week to 5-6 a day. One lead became a $1.2 million contract. Explore the website, campaigns, and follow-up behind it.',
     sections: [
       {
         heading: 'When a week’s inquiries became part of a single day',
@@ -266,8 +266,8 @@ export const work: CaseStudy[] = [
     quantified: true,
     logo: { src: '/images/clients/wicked-logistics-transparent.webp', width: 240, height: 202 },
     metrics: [
-      { value: '1–2', label: 'Leads per week before' },
-      { value: '5–6', label: 'Leads per day after' },
+      { value: '1-2', label: 'Leads per week before' },
+      { value: '5-6', label: 'Leads per day after' },
       { value: '$1.2M', label: 'Contract from one lead' },
     ],
     highlights: ['From weekly inquiries to daily leads', '$1.2 million contract from one lead', 'Website, search campaigns, and CRM follow-up'],

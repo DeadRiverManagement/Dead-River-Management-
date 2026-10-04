@@ -135,7 +135,9 @@ test('STEP 1 trade El Paso landers 301 home now that the trade LPs are retired',
   assert301('/guarantee-terms', '/legal/guarantee');
   assert301('/growth-plan', '/');
   assert301('/el-paso-roofers', '/');
-  assert301('/demandflow', '/');
+  assert301('/demandflow', '/demand-flow');
+  assert.equal(bySource.has('/demand-flow'), false, '/demand-flow must be a page, not a redirect');
+  assert.equal(bySource.has('/demand-flow.html'), false, '/demand-flow.html must not redirect away from the page');
   assert301('/demandflow/watch', '/');
   assert301('/demandflow/book', '/book/thanks');
 });
