@@ -254,7 +254,6 @@ assert.doesNotMatch(home, /name="robots" content="[^"]*noindex/, 'home must stay
 assert.doesNotMatch(home, /\$4,497|\$2,997|30 Qualified Appointments/, 'home must not lead with the Complete offer');
 const retiredIndustryPages = [
   '/el-paso-roofers',
-  '/demandflow',
   '/demandflow/watch',
   '/growth-plan',
   '/hvac',
@@ -287,6 +286,7 @@ for (const [from, to] of [
   ['/book/real-estate', '/book'],
   ['/book/ecommerce', '/book'],
   ['/guarantee-terms', '/legal/guarantee'],
+  ['/demandflow', '/demand-flow'],
   ['/demandflow/book', '/book/thanks'],
 ]) {
   assert.ok(!existsSync(join(root, from.slice(1) + '.html')), from + ': retired page must not build');
@@ -304,6 +304,7 @@ const sitemapKeep = new Set([
   '/',
   '/home-service-case-studies',
   '/demand-intelligence',
+  '/demand-flow',
   '/audience-builder',
   '/website-visitor-identification',
   '/intent-data-providers',

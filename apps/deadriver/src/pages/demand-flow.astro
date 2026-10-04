@@ -1,0 +1,147 @@
+---
+import Growth from '../layouts/Growth.astro';
+import Hero from '../components/growth/Hero.astro';
+import Arrow from '../components/growth/Arrow.astro';
+import { faqPage } from '../lib/schema';
+
+const faqs = [
+  {
+    q: 'What is Demand Flow?',
+    a: "Demand Flow is Dead River Management's live public offer for accepted businesses: $50,000 in new revenue in 45-60 days after the system goes live. If we miss, service fees are refunded plus $500. Ad spend is not refunded.",
+  },
+  {
+    q: 'Is ad spend refunded if you miss?',
+    a: 'No. Ad spend is paid to the advertising platforms and is not refunded. The miss clause covers service fees plus $500 only. Your signed agreement controls.',
+  },
+  {
+    q: 'Is Demand Flow open to every business?',
+    a: 'No. It is for accepted businesses with a signed agreement. If we do not think we can hit the number, we say so and do not offer the guarantee.',
+  },
+  {
+    q: 'Is the old 30 leads in 60 days guarantee still sold?',
+    a: 'No. Lead-count and work-for-free style offers are not live public offers. Demand Flow is current. Terms updated September 29, 2026.',
+  },
+  {
+    q: 'How is Demand Intelligence different?',
+    a: 'Demand Intelligence is a separate product for purchase intent data and audiences. It is not the Demand Flow revenue guarantee. Scope is confirmed on a demo. See the Demand Intelligence page.',
+  },
+  {
+    q: 'Where do I start?',
+    a: 'Book a strategy call at /book, or call (915) 228-3054. Read the full guarantee terms at /legal/guarantee.',
+  },
+];
+---
+
+<Growth
+  title="Demand Flow Guarantee | Dead River Management"
+  description="Demand Flow is the live public offer: $50,000 in new revenue in 45-60 days for accepted businesses, or service fees refunded plus $500. Ad spend is not refunded."
+  schema={faqPage(faqs)}
+>
+  <Hero
+    eyebrow="Demand Flow"
+    title="Demand Flow: $50,000 in new revenue in 45-60 days."
+    intro="Dead River Management builds the system that creates, captures, and converts demand. For accepted businesses, the public offer is Demand Flow: hit $50,000 in new revenue in 45-60 days, or service fees are refunded plus $500. Ad spend is not refunded."
+  >
+    <div class="button-row">
+      <a class="button" href="/book">Book a strategy call <Arrow /></a>
+      <a class="text-link" href="tel:+19152283054">Call (915) 228-3054 <Arrow /></a>
+    </div>
+  </Hero>
+
+  <section class="section wrap">
+    <div class="section-head">
+      <h2>What you get</h2>
+    </div>
+    <div class="feature-grid">
+      <article class="feature-panel">
+        <h3>Booked new revenue</h3>
+        <p>
+          Booked new revenue from the Demand Flow system: ads, landing pages,
+          follow-up, and booking.
+        </p>
+        <p>
+          <a class="inline-link" href="/solutions">See how the system connects</a>.
+        </p>
+      </article>
+      <article class="feature-panel">
+        <h3>What happens if we miss</h3>
+        <p>
+          Service fees are refunded plus $500. Ad spend is not refunded. Your
+          signed agreement controls.
+        </p>
+        <p>
+          <a class="inline-link" href="/legal/guarantee">Read the guarantee terms</a>.
+        </p>
+      </article>
+      <article class="feature-panel">
+        <h3>Accepted businesses only</h3>
+        <p>We decline when we do not believe we can hit the number.</p>
+      </article>
+      <article class="feature-panel">
+        <h3>Not the old lead-count offers</h3>
+        <p>30-in-60 and work-for-free offers are not live public offers.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section soft">
+    <div class="wrap split">
+      <div>
+        <p class="eyebrow">A different product</p>
+        <h2>Demand Intelligence is separate.</h2>
+      </div>
+      <div>
+        <p>
+          Demand Intelligence is purchase intent data and audiences. It is not
+          the Demand Flow revenue guarantee. Scope is confirmed on a demo. No
+          public price is listed here.
+        </p>
+        <a class="text-link" href="/demand-intelligence">
+          Explore Demand Intelligence <Arrow />
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section wrap">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">FAQ</p>
+        <h2>Demand Flow questions</h2>
+      </div>
+    </div>
+    <div class="faq">
+      {faqs.map((item) => (
+        <details>
+          <summary>{item.q}</summary>
+          <p>{item.a}</p>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  <section class="section soft">
+    <div class="wrap split">
+      <div>
+        <p class="eyebrow">Next step</p>
+        <h2>See if your business qualifies.</h2>
+      </div>
+      <div class="stack">
+        <p>
+          Dead River Management is headquartered in El Paso, Texas, and works
+          with accepted businesses nationwide. Call (915) 228-3054 or book a
+          strategy call.
+        </p>
+        <div class="button-row">
+          <a class="button" href="/book">Book a strategy call <Arrow /></a>
+          <a class="text-link" href="tel:+19152283054">Call (915) 228-3054 <Arrow /></a>
+        </div>
+        <p>
+          <a class="inline-link" href="/work">See the work</a>
+          {' · '}
+          <a class="inline-link" href="/company">About the company</a>
+        </p>
+      </div>
+    </div>
+  </section>
+</Growth>
