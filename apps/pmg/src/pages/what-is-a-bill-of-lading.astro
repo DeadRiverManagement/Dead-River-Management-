@@ -1,0 +1,114 @@
+---
+/**
+ * What is a bill of lading. City-level NAP only. No street. No lead form.
+ * Title, meta, H1, and FAQ copy match the live pmg-site guide.
+ */
+import Base from '../layouts/Base.astro';
+import site from '../data/site.json';
+
+const siteURL = Astro.site?.toString() ?? `${site.canonicalOrigin}/`;
+const pagePath = '/what-is-a-bill-of-lading/';
+
+const title = 'What Is a Bill of Lading? | Parcel Management Group';
+const description =
+  'A bill of lading is the freight receipt and contract. Learn what a BOL lists and who signs it. PMG helps shippers in Ventura, CA 93001. Call (805) 984-4114.';
+
+const faq = [
+  {
+    q: 'What is a bill of lading?',
+    a: 'A bill of lading is the document that describes a freight shipment, acts as a receipt, and sets the contract between shipper and carrier. Parcel Management Group is a registered broker in Ventura, CA 93001. Call (805) 984-4114.',
+  },
+  {
+    q: 'What does a freight bill of lading list?',
+    a: 'It usually lists shipper and consignee, origin and destination, piece count, weight, freight description, and any special handling. Those details should match the quote and the pickup.',
+  },
+  {
+    q: 'Who signs a bill of lading?',
+    a: 'The shipper signs at pickup and the receiver signs at delivery. The signatures record that the freight was tendered and delivered as described.',
+  },
+  {
+    q: 'Is a bill of lading the same as a tracking number?',
+    a: 'No. The bill of lading is the shipping document. LTL carriers often track with a PRO number that ties back to that bill. Call (805) 984-4114 if the paperwork and the shipment do not match.',
+  },
+];
+
+const seo = {
+  title,
+  description,
+  schema: [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      name: 'What is a bill of lading?',
+      url: `${siteURL}what-is-a-bill-of-lading/`,
+      description,
+      mainEntity: { '@id': `${siteURL}#organization` },
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: faq.map((qa) => ({
+        '@type': 'Question',
+        name: qa.q,
+        acceptedAnswer: { '@type': 'Answer', text: qa.a },
+      })),
+    },
+  ],
+};
+---
+<Base title={seo.title} description={seo.description} canonical={pagePath} schema={seo.schema}>
+  <section class="page-hero" aria-label="What is a bill of lading">
+    <div class="wrap">
+      <span class="eyebrow">Bill of lading</span>
+      <h1>What is a bill of lading?</h1>
+    </div>
+  </section>
+  <section class="page-body">
+    <div class="wrap prose">
+      <p>A bill of lading is the freight receipt and the contract for the move. It describes the shipment, names the shipper and the receiver, and travels with the freight. Parcel Management Group is a registered freight broker (USDOT 3266041 · MC 1030328) in Ventura, CA 93001. Call <a href="tel:+18059844114">(805) 984-4114</a>.</p>
+
+      <h2>What a bill of lading lists</h2>
+      <ul>
+        <li>Shipper and consignee, plus origin and destination.</li>
+        <li>Piece count, weight, and a plain freight description.</li>
+        <li>Special handling, such as a liftgate or an appointment.</li>
+        <li>Those details should match the quote. Class context: <a href="/what-is-freight-class/">what is freight class</a>.</li>
+      </ul>
+
+      <h2>Who signs it</h2>
+      <p>The shipper signs at pickup. The receiver signs at delivery. Those signatures record that the freight was tendered and delivered as described. Keep a copy with the quote.</p>
+
+      <h2>Bill of lading vs a tracking number</h2>
+      <p>The bill of lading is the shipping document. It is not the tracking number. LTL carriers often track with a PRO number that ties back to that bill. If the paperwork and the shipment do not match, call <a href="tel:+18059844114">(805) 984-4114</a>.</p>
+
+      <h2>How PMG uses it</h2>
+      <p>Share the same facts on the bill that you share for the rate. That includes weight, freight class, and extra services. Get a rate: <a href="/ltl-freight-quote/">LTL freight quote</a>. Extra fees: <a href="/accessorial-charges/">accessorial charges</a>. Mode choice: <a href="/what-is-ltl-shipping/">what is LTL shipping</a> and <a href="/ltl-vs-ftl/">LTL vs FTL</a>. How a quote is built: <a href="/how-freight-quoting-works/">how freight quoting works</a>. FOB terms: <a href="/what-is-fob/">what is FOB</a>.</p>
+
+      <p>Call <a href="tel:+18059844114">(805) 984-4114</a> or <a href="/#contact">start a chat</a>.</p>
+
+      <p class="related">
+        <a href="/services/">Services</a>
+        <span aria-hidden="true">·</span>
+        <a href="/about/">About</a>
+        <span aria-hidden="true">·</span>
+        <a href="/what-is-a-freight-broker/">What is a freight broker</a>
+      </p>
+    </div>
+  </section>
+  <section class="page-body" aria-label="Bill of lading questions">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">FAQ</span>
+        <h2>Bill of lading FAQ</h2>
+      </div>
+      <div class="faq faq-static">
+        {faq.map((qa) => (
+          <div class="qa">
+            <h3>{qa.q}</h3>
+            <div class="a"><p>{qa.a}</p></div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</Base>

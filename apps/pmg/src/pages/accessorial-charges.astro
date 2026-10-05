@@ -1,0 +1,114 @@
+---
+/**
+ * Accessorial charges. City-level NAP only. No street. No lead form.
+ * Title, meta, H1, and FAQ copy match the live pmg-site guide.
+ */
+import Base from '../layouts/Base.astro';
+import site from '../data/site.json';
+
+const siteURL = Astro.site?.toString() ?? `${site.canonicalOrigin}/`;
+const pagePath = '/accessorial-charges/';
+
+const title = 'Accessorial Charges Explained | Parcel Management Group';
+const description =
+  'Accessorial charges are extra freight fees such as liftgate or a residential stop. See what to share before you quote. Ventura, CA 93001. Call (805) 984-4114.';
+
+const faq = [
+  {
+    q: 'What are accessorial charges in freight?',
+    a: 'Accessorial charges are extra fees for services beyond the basic linehaul move. Common LTL examples are liftgate, residential delivery, inside delivery, and an appointment.',
+  },
+  {
+    q: 'Do accessorial charges apply to LTL and full truckload?',
+    a: 'They can apply to both. LTL invoices often list them as separate lines. Truckload can add extras when a stop needs driver help or runs long. Tell PMG before you quote.',
+  },
+  {
+    q: 'How do accessorials change an LTL quote?',
+    a: 'If a needed service was not on the quote, the invoice can come back higher after pickup. Share liftgate, residential, limited access, or appointment needs with the rate request.',
+  },
+  {
+    q: 'What should I tell PMG so accessorials are on the quote?',
+    a: 'Share the stop type, whether you need a liftgate or inside move, any appointment rule, plus weight and freight class. Call (805) 984-4114.',
+  },
+];
+
+const seo = {
+  title,
+  description,
+  schema: [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      name: 'What are freight accessorial charges?',
+      url: `${siteURL}accessorial-charges/`,
+      description,
+      mainEntity: { '@id': `${siteURL}#organization` },
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: faq.map((qa) => ({
+        '@type': 'Question',
+        name: qa.q,
+        acceptedAnswer: { '@type': 'Answer', text: qa.a },
+      })),
+    },
+  ],
+};
+---
+<Base title={seo.title} description={seo.description} canonical={pagePath} schema={seo.schema}>
+  <section class="page-hero" aria-label="Accessorial charges">
+    <div class="wrap">
+      <span class="eyebrow">Accessorial charges</span>
+      <h1>What are freight accessorial charges?</h1>
+    </div>
+  </section>
+  <section class="page-body">
+    <div class="wrap prose">
+      <p>Accessorial charges are extra freight fees for services beyond the basic linehaul move. A liftgate, a residential stop, inside delivery, and an appointment are common examples. Parcel Management Group is a registered freight broker (USDOT 3266041 · MC 1030328) in Ventura, CA 93001. Call <a href="tel:+18059844114">(805) 984-4114</a>.</p>
+
+      <h2>Common freight accessorials</h2>
+      <ul>
+        <li>Liftgate when a stop has no dock.</li>
+        <li>Residential delivery, or a limited-access location.</li>
+        <li>Inside delivery, or an appointment window.</li>
+        <li>These are separate from freight class. Class guide: <a href="/what-is-freight-class/">what is freight class</a>.</li>
+      </ul>
+
+      <h2>LTL and full truckload</h2>
+      <p>Accessorials can apply to both modes. LTL invoices often list them as separate lines. Truckload can add extras when a stop needs driver help or runs long. Compare modes: <a href="/ltl-vs-ftl/">LTL vs FTL</a>. LTL basics: <a href="/what-is-ltl-shipping/">what is LTL shipping</a>.</p>
+
+      <h2>How accessorials change a quote</h2>
+      <p>If a needed service was not on the quote, the invoice can come back higher after pickup. Share liftgate, residential, limited access, or appointment needs with the rate request. Start here: <a href="/ltl-freight-quote/">LTL freight quote</a>. The bill should match those facts: <a href="/what-is-a-bill-of-lading/">what is a bill of lading</a>.</p>
+
+      <h2>What to tell PMG</h2>
+      <p>Share the stop type, whether you need a liftgate or inside move, any appointment rule, plus weight and freight class. How quoting works: <a href="/how-freight-quoting-works/">how freight quoting works</a>.</p>
+
+      <p>Call <a href="tel:+18059844114">(805) 984-4114</a> or <a href="/#contact">start a chat</a>.</p>
+
+      <p class="related">
+        <a href="/services/">Services</a>
+        <span aria-hidden="true">·</span>
+        <a href="/about/">About</a>
+        <span aria-hidden="true">·</span>
+        <a href="/what-is-a-freight-broker/">What is a freight broker</a>
+      </p>
+    </div>
+  </section>
+  <section class="page-body" aria-label="Accessorial charge questions">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">FAQ</span>
+        <h2>Accessorial charges FAQ</h2>
+      </div>
+      <div class="faq faq-static">
+        {faq.map((qa) => (
+          <div class="qa">
+            <h3>{qa.q}</h3>
+            <div class="a"><p>{qa.a}</p></div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</Base>

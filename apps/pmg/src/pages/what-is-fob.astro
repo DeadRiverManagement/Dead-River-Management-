@@ -1,0 +1,117 @@
+---
+/**
+ * What is FOB in shipping. City-level NAP only. No street. No lead form.
+ * Title, meta, H1, and FAQ copy match the live pmg-site guide.
+ */
+import Base from '../layouts/Base.astro';
+import site from '../data/site.json';
+
+const siteURL = Astro.site?.toString() ?? `${site.canonicalOrigin}/`;
+const pagePath = '/what-is-fob/';
+
+const title = 'What Is FOB in Shipping? | Parcel Management Group';
+const description =
+  'FOB shows where freight ownership and risk change hands. See FOB shipping point vs FOB destination. Ventura, CA 93001. Call (805) 984-4114.';
+
+const faq = [
+  {
+    q: 'What does FOB mean in shipping?',
+    a: 'FOB means free on board. It shows where ownership and risk pass from the seller to the buyer. Parcel Management Group is a registered broker in Ventura, CA 93001. Call (805) 984-4114.',
+  },
+  {
+    q: 'What is the difference between FOB shipping point and FOB destination?',
+    a: 'With FOB shipping point, the buyer takes ownership and risk when freight leaves the seller. With FOB destination, the seller keeps ownership and risk until delivery.',
+  },
+  {
+    q: 'Does FOB decide who pays freight?',
+    a: 'Not by itself. FOB covers ownership and risk. Prepaid or collect terms say who pays the carrier. Put both on the bill of lading.',
+  },
+  {
+    q: 'How do I get a freight quote with FOB terms?',
+    a: 'Share origin, destination, weight, class, and your FOB terms. PMG compares carriers and sends a clear rate. Call (805) 984-4114 or start a chat.',
+  },
+];
+
+const seo = {
+  title,
+  description,
+  schema: [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      name: 'What does FOB mean in shipping?',
+      url: `${siteURL}what-is-fob/`,
+      description,
+      mainEntity: { '@id': `${siteURL}#organization` },
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: faq.map((qa) => ({
+        '@type': 'Question',
+        name: qa.q,
+        acceptedAnswer: { '@type': 'Answer', text: qa.a },
+      })),
+    },
+  ],
+};
+---
+<Base title={seo.title} description={seo.description} canonical={pagePath} schema={seo.schema}>
+  <section class="page-hero" aria-label="What does FOB mean in shipping">
+    <div class="wrap">
+      <span class="eyebrow">FOB shipping</span>
+      <h1>What does FOB mean in shipping?</h1>
+    </div>
+  </section>
+  <section class="page-body">
+    <div class="wrap prose">
+      <p>FOB stands for free on board. On a freight quote or purchase order, FOB tells you where ownership and risk pass from the seller to the buyer. Parcel Management Group is a registered freight broker (USDOT 3266041 · MC 1030328) in Ventura, CA 93001. Call <a href="tel:+18059844114">(805) 984-4114</a>.</p>
+
+      <h2>FOB shipping point</h2>
+      <p>Ownership and risk pass to the buyer when the freight leaves the seller's dock. The buyer usually arranges the carrier and handles a damage claim if one is needed.</p>
+
+      <h2>FOB destination</h2>
+      <p>Ownership and risk stay with the seller until the freight is delivered to the buyer. The seller usually arranges the carrier and handles a damage claim in transit.</p>
+
+      <h2>Freight prepaid vs freight collect</h2>
+      <p>FOB terms say who owns the freight in transit. Prepaid or collect says who pays the carrier bill. The two can be mixed, so put both on the bill of lading: <a href="/what-is-a-bill-of-lading/">/what-is-a-bill-of-lading/</a>.</p>
+
+      <h2>How PMG helps</h2>
+      <p>Share origin, destination, weight, class, and your FOB terms. PMG compares carriers and sends a clear rate. Quote path: <a href="/ltl-freight-quote/">/ltl-freight-quote/</a> · <a href="/how-freight-quoting-works/">/how-freight-quoting-works/</a>.</p>
+
+      <p>Check your contract or purchase order for the exact terms. This guide is general information, not legal advice.</p>
+
+      <p>Call <a href="tel:+18059844114">(805) 984-4114</a> or start a chat at <a href="/#contact">/#contact</a>.</p>
+
+      <p class="related">
+        <a href="/what-is-freight-class/">What is freight class</a>
+        <span aria-hidden="true">·</span>
+        <a href="/accessorial-charges/">Accessorial charges</a>
+        <span aria-hidden="true">·</span>
+        <a href="/what-is-a-freight-broker/">What is a freight broker</a>
+        <span aria-hidden="true">·</span>
+        <a href="/what-is-cross-docking/">What is cross docking</a>
+        <span aria-hidden="true">·</span>
+        <a href="/services/">Services</a>
+        <span aria-hidden="true">·</span>
+        <a href="/about/">About</a>
+      </p>
+    </div>
+  </section>
+  <section class="page-body" aria-label="FOB shipping questions">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">FAQ</span>
+        <h2>FOB shipping FAQ</h2>
+      </div>
+      <div class="faq faq-static">
+        {faq.map((qa) => (
+          <div class="qa">
+            <h3>{qa.q}</h3>
+            <div class="a"><p>{qa.a}</p></div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</Base>

@@ -38,7 +38,20 @@
     { "source": "/ltl-vs-ftl", "destination": "/ltl-vs-ftl/", "permanent": true },
     { "source": "/ltl-freight-quote", "destination": "/ltl-freight-quote/", "permanent": true },
     { "source": "/ltl-versus-ftl", "destination": "/ltl-vs-ftl/", "statusCode": 301 },
-    { "source": "/ltl-versus-ftl/", "destination": "/ltl-vs-ftl/", "statusCode": 301 }
+    { "source": "/ltl-versus-ftl/", "destination": "/ltl-vs-ftl/", "statusCode": 301 },
+    { "source": "/what-is-freight-class", "destination": "/what-is-freight-class/", "permanent": true },
+    { "source": "/what-is-a-bill-of-lading", "destination": "/what-is-a-bill-of-lading/", "permanent": true },
+    { "source": "/accessorial-charges", "destination": "/accessorial-charges/", "permanent": true },
+    { "source": "/what-is-a-freight-forwarder", "destination": "/what-is-a-freight-forwarder/", "permanent": true },
+    { "source": "/what-is-ftl", "destination": "/what-is-ftl/", "permanent": true },
+    { "source": "/what-is-full-truckload", "destination": "/what-is-ftl/", "statusCode": 301 },
+    { "source": "/what-is-full-truckload/", "destination": "/what-is-ftl/", "statusCode": 301 },
+    { "source": "/what-is-fob", "destination": "/what-is-fob/", "permanent": true },
+    { "source": "/fob-shipping-point", "destination": "/what-is-fob/", "statusCode": 301 },
+    { "source": "/fob-shipping-point/", "destination": "/what-is-fob/", "statusCode": 301 },
+    { "source": "/fob-destination", "destination": "/what-is-fob/", "statusCode": 301 },
+    { "source": "/fob-destination/", "destination": "/what-is-fob/", "statusCode": 301 },
+    { "source": "/what-is-cross-docking", "destination": "/what-is-cross-docking/", "permanent": true }
   ],
   "headers": [
     {

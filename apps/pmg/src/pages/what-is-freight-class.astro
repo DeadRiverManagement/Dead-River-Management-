@@ -1,0 +1,128 @@
+---
+/**
+ * What is freight class. City-level NAP only. No street. No lead form.
+ * Title, meta, H1, and FAQ copy match the live pmg-site guide.
+ */
+import Base from '../layouts/Base.astro';
+import site from '../data/site.json';
+
+const siteURL = Astro.site?.toString() ?? `${site.canonicalOrigin}/`;
+const pagePath = '/what-is-freight-class/';
+
+const title = 'What Is Freight Class? | Parcel Management Group';
+const description =
+  'Freight class (NMFC) is the rating that shapes LTL rates. Learn density, handling, and how PMG helps shippers quote clearly. Ventura, CA 93001. Call (805) 984-4114.';
+
+const faq = [
+  {
+    q: 'What is freight class in LTL shipping?',
+    a: 'Freight class is the NMFC rating that helps carriers price less-than-truckload freight. Density, handling, stowability, and liability set the class. Call Parcel Management Group at (805) 984-4114 for help quoting LTL.',
+  },
+  {
+    q: 'What is NMFC freight class?',
+    a: 'NMFC stands for National Motor Freight Classification. It is the industry system that assigns freight class so similar freight is rated consistently across LTL carriers.',
+  },
+  {
+    q: 'Does freight class affect my LTL rate?',
+    a: 'Yes. Class is one of the inputs carriers use with weight, distance, and accessorials. A wrong class can raise the final invoice after reclass. Share accurate weight and dimensions when you request a quote.',
+  },
+  {
+    q: 'Does freight class matter for full truckload?',
+    a: 'Freight class mainly applies to LTL shared-trailer freight. Full truckload usually prices by truck and lane. PMG quotes both modes when they fit. See LTL vs FTL or call (805) 984-4114.',
+  },
+];
+
+const seo = {
+  title,
+  description,
+  schema: [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      name: 'What is freight class?',
+      url: `${siteURL}what-is-freight-class/`,
+      description,
+      mainEntity: { '@id': `${siteURL}#organization` },
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: faq.map((qa) => ({
+        '@type': 'Question',
+        name: qa.q,
+        acceptedAnswer: { '@type': 'Answer', text: qa.a },
+      })),
+    },
+  ],
+};
+---
+<Base title={seo.title} description={seo.description} canonical={pagePath} schema={seo.schema}>
+  <section class="page-hero" aria-label="What is freight class">
+    <div class="wrap">
+      <span class="eyebrow">Freight class</span>
+      <h1>What is freight class?</h1>
+    </div>
+  </section>
+  <section class="page-body">
+    <div class="wrap prose">
+      <p>Freight class is the NMFC rating carriers use to price less-than-truckload freight. Density, handling, stowability, and liability set the class, and the class shapes your rate. Parcel Management Group is a registered freight broker (USDOT 3266041 · MC 1030328) in Ventura, CA 93001. Call <a href="tel:+18059844114">(805) 984-4114</a>.</p>
+
+      <h2>What freight class means for your rate</h2>
+      <ul>
+        <li>LTL carriers map freight to an NMFC class so similar freight is priced the same way.</li>
+        <li>A lower class usually means denser, easier freight and a lower rate; a higher class usually costs more.</li>
+        <li>Wrong class can trigger reclass fees after pickup.</li>
+        <li>More on LTL: <a href="/what-is-ltl-shipping/">/what-is-ltl-shipping/</a>.</li>
+      </ul>
+
+      <h2>What drives freight class</h2>
+      <ul>
+        <li>Density (weight vs cube).</li>
+        <li>Handling (how hard it is to move).</li>
+        <li>Stowability (how it packs with other freight).</li>
+        <li>Liability (value and damage risk).</li>
+        <li>For a clear LTL rate: <a href="/ltl-freight-quote/">/ltl-freight-quote/</a>.</li>
+      </ul>
+
+      <h2>Freight class vs mode (LTL vs FTL)</h2>
+      <p>Freight class mainly matters for LTL shared-trailer moves. Full truckload usually prices by truck and lane, not NMFC class. Side-by-side modes: <a href="/ltl-vs-ftl/">/ltl-vs-ftl/</a>.</p>
+
+      <h2>How PMG helps</h2>
+      <p>Tell PMG what you ship, dimensions, weight, and lanes. We help you land the right class context and compare carriers. How quoting works: <a href="/how-freight-quoting-works/">/how-freight-quoting-works/</a>. Broker vs carrier: <a href="/what-is-a-freight-broker/">/what-is-a-freight-broker/</a> and <a href="/freight-broker-vs-carrier/">/freight-broker-vs-carrier/</a>.</p>
+
+      <p>Call <a href="tel:+18059844114">(805) 984-4114</a> or start a chat at <a href="/#contact">/#contact</a>.</p>
+
+      <p class="related">
+        <a href="/services/">Services</a>
+        <span aria-hidden="true">·</span>
+        <a href="/about/">About</a>
+        <span aria-hidden="true">·</span>
+        <a href="/blog/dimensional-weight/">What is dimensional weight</a>
+      </p>
+    </div>
+  </section>
+  <section class="page-body" aria-label="Freight class questions">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">FAQ</span>
+        <h2>Freight class FAQ</h2>
+      </div>
+      <div class="faq faq-static">
+        {faq.map((qa) => (
+          <div class="qa">
+            <h3>{qa.q}</h3>
+            <div class="a">
+              {qa.q.startsWith('Does freight class matter') ? (
+                <p>
+                  Freight class mainly applies to LTL shared-trailer freight. Full truckload usually prices by truck and lane. PMG quotes both modes when they fit. See <a href="/ltl-vs-ftl/">LTL vs FTL</a> or call (805) 984-4114.
+                </p>
+              ) : (
+                <p>{qa.a}</p>
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</Base>
