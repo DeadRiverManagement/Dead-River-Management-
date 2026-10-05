@@ -1,4 +1,5 @@
 import { createHash } from 'node:crypto';
+import { REQUESTED_VSL_CAMPAIGN } from './requested-vsl-config.js';
 import {
   ACTIVITY_SCHEMA_KEY,
   createGhlActivityLedger,
@@ -166,10 +167,10 @@ export function readOutreachConfig(env, { historical = false } = {}) {
     locationId: env.GHL_LOCATION_ID,
     fieldMap,
     workspaceId: env.INSTANTLY_WORKSPACE_ID,
-    campaignIds: arrayConfig(
+    campaignIds: [...new Set([...arrayConfig(
       env.INSTANTLY_CAMPAIGN_IDS,
       'INSTANTLY_CAMPAIGN_IDS',
-    ),
+    ), REQUESTED_VSL_CAMPAIGN])],
     customLabels: arrayConfig(
       env.INSTANTLY_CUSTOM_LABELS || '[]',
       'CUSTOM_LABELS',
