@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Qualified Buyer Appointments for Real Estate Agents | Dead River Management</title>
+<meta content="Connect with active homebuyers in your market. We handle qualification, booking and reminders so you can focus on helping buyers find a home." name="description"/>
+<link href="/50k-demand-flow/css/geist.css" rel="stylesheet"/>
+<link href="/50k-demand-flow/css/styles.css" rel="stylesheet"/>
+<style>
+    /* Red accents for this page only */
+    .lp .eyebrow { color: var(--pop); }
+    .lp .hero h1 .accent { color: var(--pop); }
+    .lp .hero-sub strong { color: #fff; font-weight: 500; }
+
+    /* Red CTA button */
+    .btn-red { background: var(--pop); color: #fff; font-size: 16px; padding: 15px 30px; }
+    .btn-red:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(193,124,74,0.30); }
+    .btn-red.small { font-size: 14px; padding: 11px 20px; }
+    .btn-red.btn-lg { font-size: 19px; padding: 17px 38px; }
+
+    .cta-center { margin-top: 40px; }
+
+    /* Red ROI calculator (this page only) */
+    .lp .roi-tab.active { background: var(--pop); color: #fff; }
+    .lp .roi-box.potential { border-color: rgba(193,124,74,.55); background: linear-gradient(135deg, rgba(193,124,74,.10), rgba(193,124,74,.015)); }
+    .lp .roi-box.potential .rb-label { color: var(--pop); }
+    .lp .roi-box.potential .rb-val { color: var(--pop); }
+    .lp .roi-arrow { color: var(--pop); }
+    .lp .roi-stat .rs-val { color: var(--pop); }
+    .lp .roi-note strong { color: var(--pop); }
+
+    /* ---- NAV: links moved right + mobile burger ---- */
+    .lp .nav { position: relative; }
+    .lp .nav-menu { margin-left: auto; display: flex; align-items: center; gap: 26px; }
+    .lp .nav-menu a:not(.btn) { font-size: 14px; color: #e8e8e8; font-weight: 400; transition: color 0.18s ease; }
+    .lp .nav-menu a:not(.btn):hover { color: var(--pop); }
+    .lp .nav-burger { display: none; margin-left: auto; flex-direction: column; justify-content: center; gap: 5px; width: 34px; height: 30px; padding: 6px; background: none; border: none; }
+    .lp .nav-burger span { display: block; width: 100%; height: 2px; background: #fff; border-radius: 2px; transition: transform 0.25s ease, opacity 0.2s ease; }
+    .lp .nav-burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .lp .nav-burger.open span:nth-child(2) { opacity: 0; }
+    .lp .nav-burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    @media (max-width: 760px) {
+      .lp .nav { width: 100%; justify-content: space-between; }
+      .lp .nav-burger { display: flex; }
+      .lp .nav-menu {
+        position: absolute; top: calc(100% + 12px); left: 0; right: 0;
+        flex-direction: column; align-items: stretch; gap: 4px; padding: 14px;
+        background: rgba(10,10,10,0.96); border: 1px solid var(--border); border-radius: 20px;
+        backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
+        box-shadow: 0 20px 60px rgba(0,0,0,0.6); display: none;
+      }
+      .lp .nav-menu.open { display: flex; }
+      .lp .nav-menu a:not(.btn) { padding: 12px 14px; font-size: 15px; }
+      .lp .nav-menu .btn { width: 100%; justify-content: center; text-align: center; margin-top: 6px; }
+    }
+
+    /* ---- HERO: tighter, VSL above the fold + bigger ---- */
+    .lp .hero { padding: 62px 0 54px; }
+    .lp .hero h1 { font-size: clamp(26px, 4.6vw, 50px); max-width: 900px; }
+    .lp .hero-sub { margin-top: 20px; font-size: clamp(17px, 2.3vw, 21px); max-width: 640px; }
+    .lp .vsl { max-width: 940px; margin: 30px auto 0; box-shadow: 0 40px 100px rgba(0,0,0,0.7); }
+    .lp .vsl .play { width: 92px; height: 92px; }
+    .lp .vsl .play::after { border-width: 15px 0 15px 26px; }
+    /* Glowing red bloom hugging all edges of the VSL */
+    .lp .vsl-stage { position: relative; max-width: 940px; margin: 56px auto 0; isolation: isolate; }
+    .lp .vsl-stage::before { content: ""; position: absolute; z-index: -2; inset: -6%; border-radius: 34px; background: rgba(193,124,74,0.45); filter: blur(90px); pointer-events: none; }
+    .lp .vsl-stage::after { content: ""; position: absolute; z-index: -1; inset: -1%; border-radius: 22px; background: rgba(193,124,74,0.65); filter: blur(42px); pointer-events: none; }
+    .lp .vsl-stage .vsl { position: relative; z-index: 1; margin: 0 auto; }
+    .lp .hero-cta { margin-top: 30px; }
+    .lp .hero-partners { margin-top: 30px; }
+    /* Revenue line above the brand banner */
+    .lp .lm-headline { text-align: center; margin: 54px auto 0; max-width: 900px; padding: 0 20px; font-family: var(--font-head); font-weight: 500; font-size: clamp(22px, 3.2vw, 34px); line-height: 1.2; letter-spacing: var(--track-head); color: #fff; }
+    .lp .lm-headline .accent { color: var(--pop); }
+    .lp .lm-headline + .logo-marquee { margin-top: 6px; }
+    @media (max-width: 640px) {
+      .lp .hero { padding: 40px 0 40px; }
+      /* Super-sized CTA on mobile, Social Scout style */
+      .lp .btn-red.btn-lg { display: block; width: 100%; font-size: 22px; font-weight: 500; padding: 26px 20px; border-radius: 999px; letter-spacing: -0.02em; }
+      .lp .cta-center .btn-red.btn-lg { max-width: 440px; margin-left: auto; margin-right: auto; }
+      .lp .vsl .play { width: 66px; height: 66px; }
+      .lp .vsl .play::after { border-width: 11px 0 11px 18px; }
+    }
+
+    /* ---- Pain section: scannable icon cards ---- */
+    .lp-pain { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 10px; text-align: left; }
+    .lp-pcard { background: var(--bg-card); border: 1px solid var(--border); border-radius: 18px; padding: 26px 24px; }
+    .lp-picon { width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; background: rgba(193,124,74,0.10); border: 1px solid rgba(193,124,74,0.22); margin-bottom: 16px; }
+    .lp-picon svg { width: 22px; height: 22px; stroke: var(--pop); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .lp-pcard h4 { font-family: var(--font-head); font-weight: 500; font-size: 18px; letter-spacing: var(--track-head); line-height: 1.2; margin-bottom: 8px; }
+    .lp-pcard p { font-family: var(--font-body); font-size: 14.5px; line-height: 1.5; color: var(--text-secondary); letter-spacing: -0.02em; }
+    @media (max-width: 900px) { .lp-pain { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 600px) { .lp-pain { grid-template-columns: 1fr; } }
+
+    /* ---- Dream outcome list ---- */
+    .lp-list { max-width: 760px; margin: 8px auto 0; text-align: left; list-style: none; display: grid; gap: 14px; }
+    .lp-list li { position: relative; padding: 18px 22px 18px 56px; background: var(--bg-card); border: 1px solid rgba(193,124,74,0.16); border-radius: 16px; font-family: var(--font-body); font-size: clamp(15px, 1.9vw, 17px); line-height: 1.5; color: #e6e6e6; letter-spacing: -0.02em; }
+    .lp-list li::before { content: "\2713"; position: absolute; left: 20px; top: 50%; transform: translateY(-50%); font-family: var(--font-head); font-weight: 600; font-size: 18px; color: var(--pop); line-height: 1; }
+
+    /* ---- Case studies ---- */
+    .cs-wrap { display: grid; gap: 30px; margin-top: 44px; }
+    .cs { text-align: left; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: clamp(22px, 3.4vw, 40px); }
+    .cs-eyebrow { display: inline-block; font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--pop); margin-bottom: 14px; }
+    .cs-eyebrow[href], .cs-video-only .cs-title a { text-decoration: underline; text-underline-offset: 4px; }
+    .cs-video-only { text-align: center; }
+    .cs-video-only .cs-title { color: var(--pop); }
+    .cs-video-only .cs-title a { color: inherit; }
+    .cs-video-only a:focus-visible, a.cs-eyebrow:focus-visible { outline: 2px solid var(--pop); outline-offset: 5px; }
+    #total-auto-repair-testimonial { margin: 0; }
+    #total-auto-repair-testimonial video { display: block; width: 100%; max-width: 360px; height: auto; aspect-ratio: 512 / 910; object-fit: contain; margin: 0 auto; border: 1px solid var(--border); border-radius: 14px; background: #000; }
+    .testimonial-error { margin: 12px 0 0; font-size: 14px; }
+    .cs-title { font-family: var(--font-head); font-weight: 500; font-size: clamp(23px, 3.3vw, 34px); letter-spacing: var(--track-head); line-height: 1.12; margin-bottom: 26px; }
+    .cs-wins { list-style: none; display: grid; gap: 15px; margin: 0 0 28px; }
+    .cs-wins li { position: relative; padding-left: 44px; font-family: var(--font-head); font-weight: 500; font-size: clamp(17px, 2.3vw, 23px); letter-spacing: var(--track-head); line-height: 1.28; color: #fff; }
+    .cs-wins li::before { content: ""; position: absolute; left: 0; top: 1px; width: 29px; height: 29px; border-radius: 9px; background: rgba(193,124,74,0.14); }
+    .cs-wins li::after { content: ""; position: absolute; left: 9px; top: 8px; width: 11px; height: 6px; border-left: 2.5px solid var(--pop); border-bottom: 2.5px solid var(--pop); transform: rotate(-45deg); }
+    .cs-shots { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px; margin-bottom: 4px; }
+    .cs-shot { aspect-ratio: 16 / 10; border: 1px dashed var(--border-strong); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-muted); background: rgba(255,255,255,0.015); text-align: center; padding: 8px; }
+    .cs-shot.after { border-style: solid; border-color: rgba(193,124,74,0.5); color: var(--pop); }
+    .cs-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 24px; }
+    .cs-tile { background: var(--bg-card-2); border: 1px solid var(--border); border-radius: 14px; padding: 18px 20px; }
+    .cs-tile .k { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 10px; }
+    .cs-tile .v { font-family: var(--font-head); font-weight: 500; font-size: clamp(24px, 3.6vw, 34px); letter-spacing: var(--track-head); line-height: 1; }
+    .cs-tile .s { font-family: var(--font-body); font-size: 13px; color: var(--text-secondary); margin-top: 8px; }
+    .cs-tile.after .v { color: var(--pop); }
+    .cs-story { font-family: var(--font-body); font-size: clamp(14.5px, 1.8vw, 16px); line-height: 1.6; color: var(--text-secondary); letter-spacing: -0.02em; margin-bottom: 22px; }
+    .cs-ba { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 24px; }
+    .cs-ba .col { border-left: 2px solid var(--border-strong); padding-left: 18px; }
+    .cs-ba .col.did { border-left-color: var(--pop); }
+    .cs-ba h5 { font-family: var(--font-head); font-weight: 600; font-size: 13px; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 12px; }
+    .cs-ba ul { list-style: none; display: grid; gap: 9px; }
+    .cs-ba li { font-family: var(--font-body); font-size: 14.5px; line-height: 1.45; color: #d8d8d8; letter-spacing: -0.02em; padding-left: 16px; position: relative; }
+    .cs-ba li::before { content: ""; position: absolute; left: 0; top: 9px; width: 5px; height: 5px; border-radius: 50%; background: var(--text-muted); }
+    .cs-ba .did li::before { background: var(--pop); }
+    .cs-results { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 14px; padding: 22px 0 0; border-top: 1px solid var(--border); }
+    .cs-results .r .rk { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 8px; }
+    .cs-results .r .rv { font-family: var(--font-head); font-weight: 500; font-size: clamp(20px, 2.6vw, 26px); letter-spacing: var(--track-head); }
+    .cs-results .r .rs { font-family: var(--font-body); font-size: 13px; color: var(--text-secondary); margin-top: 6px; }
+    .cs-kicker { font-family: var(--font-body); font-style: italic; font-size: clamp(14.5px, 1.9vw, 16.5px); color: #fff; letter-spacing: -0.02em; margin-top: 20px; }
+
+    /* ---- What you'll get + audit form ---- */
+    .audit-get { max-width: 620px; margin: 8px auto 0; text-align: left; list-style: none; display: grid; gap: 16px; }
+    .audit-get li { position: relative; padding-left: 34px; font-family: var(--font-body); font-size: clamp(15px,1.9vw,17px); line-height: 1.5; color: #e6e6e6; letter-spacing: -0.02em; }
+    .audit-get li::before { content: "\2713"; position: absolute; left: 0; top: 0; color: var(--pop); font-weight: 600; font-family: var(--font-head); }
+    .audit-form { max-width: 520px; margin: 34px auto 0; text-align: left; display: grid; gap: 16px; }
+    .audit-form .fld { display: grid; gap: 8px; }
+    .audit-form label { font-family: var(--font-body); font-size: 13.5px; color: var(--text-secondary); letter-spacing: -0.02em; }
+    .audit-form input, .audit-form select { width: 100%; background: var(--bg-input); border: 1px solid var(--border-strong); border-radius: 12px; padding: 15px 16px; color: #fff; font-family: var(--font-body); font-size: 15px; letter-spacing: -0.02em; transition: border-color 0.2s; }
+    .audit-form input:focus, .audit-form select:focus { outline: none; border-color: var(--pop); }
+    .audit-form select { appearance: none; -webkit-appearance: none; background-image: linear-gradient(45deg, transparent 50%, #888 50%), linear-gradient(135deg, #888 50%, transparent 50%); background-position: right 18px center, right 13px center; background-size: 5px 5px, 5px 5px; background-repeat: no-repeat; }
+    .audit-form .btn-red { width: 100%; margin-top: 6px; padding: 17px 30px; font-size: 16px; justify-content: center; }
+    .audit-note { font-family: var(--font-body); font-size: 12.5px; color: var(--text-muted); text-align: center; margin-top: 14px; letter-spacing: -0.02em; }
+    .lp .audit-value { display: inline-block; margin-top: 16px; padding: 8px 18px; border-radius: 999px; background: rgba(193,124,74,0.10); border: 1px solid rgba(193,124,74,0.3); color: var(--pop); font-family: var(--font-head); font-weight: 500; font-size: clamp(16px, 2.1vw, 20px); letter-spacing: var(--track-head); }
+    .lp .cta-value { margin-top: 14px; color: var(--pop); font-family: var(--font-head); font-weight: 500; font-size: clamp(15px, 1.9vw, 18px); letter-spacing: var(--track-head); }
+    .lp .cta-value b { color: #fff; }
+
+    /* ---- "What you will get" cards ---- */
+    .wyg-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 44px; text-align: left; }
+    .wyg-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 20px; overflow: hidden; }
+    .wyg-art { position: relative; height: 190px; display: flex; align-items: center; justify-content: center; border-bottom: 1px solid var(--border);
+      background: radial-gradient(120% 130% at 50% 15%, rgba(193,124,74,0.14), transparent 60%), linear-gradient(180deg, #151517 0%, #090909 100%); }
+    .wyg-art::before { content: ""; position: absolute; inset: 0;
+      background-image: linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+      background-size: 38px 38px;
+      -webkit-mask-image: radial-gradient(120% 120% at 50% 30%, #000 40%, transparent 75%); mask-image: radial-gradient(120% 120% at 50% 30%, #000 40%, transparent 75%); }
+    .wyg-icon { position: relative; width: 74px; height: 74px; border-radius: 18px; display: flex; align-items: center; justify-content: center;
+      background: rgba(193,124,74,0.10); border: 1px solid rgba(193,124,74,0.28); box-shadow: 0 10px 40px rgba(193,124,74,0.15); }
+    .wyg-icon svg { width: 34px; height: 34px; stroke: var(--pop); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+    .wyg-body { padding: 24px 26px 28px; }
+    .wyg-body p { font-family: var(--font-body); font-size: 15.5px; line-height: 1.55; color: var(--text-secondary); letter-spacing: -0.02em; }
+    .wyg-body p b { color: #fff; font-weight: 500; }
+    @media (max-width: 760px) { .wyg-grid { grid-template-columns: 1fr; } }
+
+    /* ---- Founder section ---- */
+    .fdr-photos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 44px; }
+    .fdr-photo { position: relative; aspect-ratio: 4/3; border-radius: 16px; overflow: hidden; border: 1px dashed var(--border-strong); background: radial-gradient(120% 120% at 50% 10%, rgba(193,124,74,0.08), transparent 60%), linear-gradient(180deg, #141416, #0a0a0a); display: flex; align-items: flex-end; padding: 16px; }
+    .fdr-photo img, .fdr-portrait img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .fdr-photo .cap, .fdr-portrait .cap { position: relative; z-index: 2; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-secondary); }
+    .fdr-photo .hint, .fdr-portrait .hint { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-muted); }
+    .fdr-photo:has(img) .cap, .fdr-portrait:has(img) .cap { color: #fff; }
+    .fdr-photo:has(img)::after, .fdr-portrait:has(img)::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 45%; background: linear-gradient(to top, rgba(0,0,0,0.78), transparent); z-index: 1; }
+    .fdr-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 16px; }
+    .fdr-stat { display: flex; align-items: flex-start; gap: 12px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 18px; text-align: left; }
+    .fdr-stat .si { flex: none; width: 34px; height: 34px; border-radius: 10px; display: flex; align-items: center; justify-content: center; background: rgba(193,124,74,0.10); border: 1px solid rgba(193,124,74,0.22); }
+    .fdr-stat .si svg { width: 18px; height: 18px; stroke: var(--pop); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .fdr-stat p { font-family: var(--font-body); font-size: 14px; line-height: 1.4; color: #e6e6e6; letter-spacing: -0.02em; }
+    .fdr-about { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 28px; margin-top: 28px; align-items: stretch; text-align: left; }
+    .fdr-portrait { position: relative; border-radius: 20px; overflow: hidden; min-height: 440px; border: 1px dashed var(--border-strong); background: radial-gradient(120% 120% at 50% 10%, rgba(193,124,74,0.08), transparent 60%), linear-gradient(180deg, #141416, #0a0a0a); display: flex; align-items: flex-end; padding: 20px; }
+    .fdr-copy { background: var(--bg-card); border: 1px solid var(--border); border-radius: 20px; padding: clamp(26px, 3.4vw, 38px); display: flex; flex-direction: column; justify-content: center; gap: 18px; }
+    .fdr-copy p { font-family: var(--font-body); font-size: clamp(15px, 1.9vw, 17px); line-height: 1.6; color: var(--text-secondary); letter-spacing: -0.02em; }
+    .fdr-copy p b { color: #fff; font-weight: 500; }
+    @media (max-width: 900px) { .fdr-photos { grid-template-columns: 1fr; } .fdr-stats { grid-template-columns: 1fr 1fr; } .fdr-about { grid-template-columns: 1fr; } .fdr-portrait { min-height: 340px; } }
+    @media (max-width: 520px) { .fdr-stats { grid-template-columns: 1fr; } }
+
+    /* ---- Profit banner (full-width red marquee) ---- */
+    .lp .hero .badge-pill { font-size: 16px; padding: 11px 22px; margin-bottom: 34px; }
+    .profit-banner { background: linear-gradient(180deg, #A66A3F, #704729); padding: clamp(44px, 6vw, 72px) 20px; }
+    .profit-stack { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 2px; }
+    .profit-line { font-family: var(--font-head); font-weight: 500; color: #fff; letter-spacing: var(--track-head); line-height: 1.02; font-size: clamp(28px, 6.2vw, 62px); }
+    .profit-line.pop { font-weight: 600; margin-top: clamp(8px, 1.2vw, 16px); }
+
+    @media (max-width: 640px) {
+      .cs-stats { grid-template-columns: 1fr; }
+      .cs-ba { grid-template-columns: 1fr; }
+    }
+  </style>
+<meta content="noindex,nofollow" name="robots"/><link href="/50k-demand-flow/assets/logo.png" rel="icon"/><style>.fdr-photo img{object-fit:contain;padding:30px}.footer-logo-img{object-fit:contain}.hero-partners span{white-space:nowrap}.vsl{cursor:default}.cs-shot{padding:24px;text-align:center}</style><style id="drm-static-proof">
+.logo-marquee{overflow:visible;mask-image:none;-webkit-mask-image:none;padding:30px 24px}
+.lm-track{animation:none!important;transform:none!important;width:100%;max-width:1000px;margin:auto;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:36px;justify-items:center}
+.lm-track .lm-logo{width:auto!important;height:70px!important;max-width:100%;margin:0!important;object-fit:contain}
+.case-art{margin-top:28px}.case-art img{display:block;width:100%;height:auto;border:1px solid rgba(193,124,74,.25);border-radius:16px}
+.case-art-caption{text-align:center;font-size:12px;color:#999;margin-top:12px}
+.cs.reveal{transition:none;opacity:1;transform:none}
+@media(max-width:600px){.lm-track{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}.lm-track .lm-logo{height:62px!important}}
+</style><style id="drm-photo-refinements">
+.lp .lm-headline{font-size:clamp(23px,3vw,32px);max-width:700px;margin-top:48px}
+.logo-marquee{max-width:1080px;margin:0 auto;padding:28px 24px 10px}
+.lm-track{gap:14px;align-items:stretch}
+.client-logo-tile{width:100%;min-width:0;background:#101010;border:1px solid #28221e;border-radius:16px;padding:24px 14px 18px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px}
+.lm-track .lm-logo{height:84px!important;width:130px!important;max-width:100%;object-fit:contain;filter:none;opacity:1}
+.client-logo-tile span{font-size:12px;line-height:1.35;color:#bfb8b2;text-align:center}
+.email-card{overflow:hidden;background:#171310}
+.email-card img{width:100%;height:100%;object-fit:cover}
+.email-card::after{display:none}
+.workflow-caption{position:absolute;bottom:0;left:0;right:0;padding:55px 20px 24px;background:linear-gradient(transparent,rgba(12,9,7,.96));color:white}
+.workflow-caption span{font-size:9px;letter-spacing:.1em;color:#e3b088}
+.workflow-caption h3{font-size:22px;line-height:1.15;margin:8px 0 0;font-weight:500}
+@media(max-width:600px){.lm-track{gap:12px}.client-logo-tile{padding:20px 10px 16px}.lm-track .lm-logo{height:74px!important;width:115px!important}.client-logo-tile span{font-size:11px}.workflow-caption{padding:50px 16px 20px}.workflow-caption h3{font-size:20px}}
+</style><style>.df-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;text-align:left;margin-top:38px}.df-steps article{padding:30px 24px;background:#111;border:1px solid #33271e;border-radius:20px}.df-number{display:block;color:#C17C4A;font-size:48px;line-height:1;margin-bottom:26px}.df-steps h3{font-size:26px;line-height:1.2;margin-bottom:16px}.df-steps p{color:#bbb;font-size:17px;line-height:1.6}.df-path{margin-top:24px;padding-top:20px;border-top:1px solid #333;color:#dfac85;font-size:14px;line-height:1.6}@media(max-width:760px){.df-steps{grid-template-columns:1fr}}</style><style id="drm-footer-offer-layout">
+.footer .rev-label{color:var(--pop);font-size:12px;letter-spacing:.1em;margin-bottom:16px}
+.footer .rev-row{display:flex;flex-direction:row;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:28px}
+.footer #consultation-target{display:block;flex:none;white-space:nowrap;font-family:var(--font-head);font-size:clamp(48px,6vw,76px);font-weight:500;line-height:1.1;letter-spacing:var(--track-head);color:var(--pop);max-width:100%}
+.footer .rev-cta{flex:none;min-height:56px;padding:18px 30px;width:auto;max-width:100%;white-space:normal;text-align:center;background:var(--pop);color:#fff;font-size:16px;font-weight:600;border-radius:999px;box-shadow:none}
+.footer .rev-cta:hover{background:#d18b58;box-shadow:0 8px 28px rgba(193,124,74,.18)}
+@media(max-width:600px){.footer .rev-row{flex-direction:column;align-items:flex-start;gap:24px}.footer .rev-cta{width:100%}}
+</style><style id="drm-readable-client-logos">
+.lp .lm-track .lm-logo{padding:0!important;width:200px!important;height:140px!important;max-width:100%;object-fit:contain}
+.lp .client-logo-tile{padding:28px 18px 22px;gap:20px;min-height:220px}
+.lp .client-logo-tile span{font-size:16px;line-height:1.4;color:#eee7e1}
+@media(max-width:600px){.lp .lm-track .lm-logo{width:160px!important;height:112px!important}.lp .client-logo-tile{padding:22px 12px 18px;min-height:190px;gap:16px}.lp .client-logo-tile span{font-size:14px}}
+</style><link rel="canonical" href="https://www.deadrivermanagement.com/real-estate-buyer-appointments"/><meta property="og:title" content="More qualified buyers. Less chasing leads."/><meta property="og:description" content="Active home search data, buyer qualification and appointments on your calendar."/><style>
+.re-intro{min-height:380px;aspect-ratio:16/9;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding:clamp(28px,5vw,68px);text-align:left;background:radial-gradient(ellipse at 100% 0%,rgba(193,124,74,.14),transparent 65%),#101010}
+.re-intro h2{font-size:clamp(28px,4vw,48px);line-height:1.1;letter-spacing:-.04em;max-width:650px;margin:18px 0}
+.re-intro p{font-size:clamp(16px,2vw,20px);color:var(--text-secondary);max-width:560px;line-height:1.5}
+.re-proof{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:940px;margin:0 auto;padding:0 20px}.re-proof div{padding:24px;border:1px solid var(--border);background:var(--bg-card);border-radius:16px}.re-proof strong{display:block;font-size:20px;margin-bottom:8px}.re-proof span{color:var(--text-secondary)}
+.cs-stats .v{font-variant-numeric:tabular-nums;color:var(--pop)}.cs-stats .k{color:#d8cec6}.cs-story{max-width:65ch}
+.re-calc{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:760px;margin:30px auto;text-align:left}.re-calc label{display:grid;gap:12px;font-size:16px}.re-calc input{width:100%;padding:16px;border-radius:12px;background:var(--bg-card);border:1px solid var(--border);color:#fff;font:inherit}.re-total{padding:30px;border:1px solid rgba(193,124,74,.45);border-radius:16px;max-width:760px;margin:auto}.re-total output{display:block;color:var(--pop);font-size:clamp(36px,6vw,60px);font-variant-numeric:tabular-nums}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(--pop);outline-offset:4px}
+@media(max-width:600px){.re-proof,.re-calc{grid-template-columns:1fr}.re-intro{min-height:300px;aspect-ratio:auto}.cs-stats{grid-template-columns:1fr}.lp #consultation-target{font-size:clamp(32px,8vw,50px)}}
+</style></head>
+<body class="lp">
+<span id="top"></span>
+<header class="hero"><div class="container"><div class="badge-pill reveal in">For Real Estate Agents</div><h1 id="hero-h1">We connect you with <span class="accent">qualified homebuyers</span> and book appointments on your calendar.</h1><p class="hero-sub reveal"><strong>More buyer meetings. Less time chasing leads.</strong></p><p class="hero-sub">We use active home search data from the last two to seven days to find buyers in your market. Then we handle qualification, booking and reminders so you can focus on helping them find a home.</p><div class="vsl-stage reveal"><div class="vsl" id="vsl-slot"><div class="re-intro"><span class="eyebrow">Active home search data</span><h2>Meet the buyers.<br/>We handle the chasing.</h2><p>Find active buyers. Qualify what they need. Book the appointment.</p></div></div></div><div class="cta-center reveal"><a class="btn btn-red btn-lg" href="https://api.leadconnectorhq.com/widget/bookings/drm-real-estate-strategy">Book a Strategy Call</a><p class="cta-value">Your market. Qualified buyers. A clear plan.</p></div><div class="hero-partners reveal"><span class="hp-klaviyo" style="font-weight:700;font-size:18px">DEAD RIVER</span><span class="hp-divider"></span><span class="hp-shopify" style="font-size:15px">MANAGEMENT</span></div></div></header>
+<p class="lm-headline reveal">Real agents. <span class="accent">Real results.</span></p><div class="re-proof"><div><strong>Diana Smith</strong><span>Dallas, Texas</span></div><div><strong>Enrique Campos</strong><span>Charlotte, North Carolina</span></div><div><strong>Joe Ruiz</strong><span>Florida</span></div></div>
+<section class="section" id="for-you"><div class="container center"><span class="eyebrow reveal">This Is For You If</span><h2 class="section-title reveal">You Need Buyers. Not Another List Of Leads.</h2><p class="section-sub reveal">Thousands spent. Hours of follow-up. Too few appointments.</p><div class="lp-pain reveal"><article class="lp-pcard"><h4>Thousands spent on leads</h4><p>You spend thousands of dollars on leads that never pan out.</p></article><article class="lp-pcard"><h4>People never answer</h4><p>You call, send another message and still cannot get a conversation started.</p></article><article class="lp-pcard"><h4>Buyers are not qualified</h4><p>The people who do answer may not fit the market or buyers you can help.</p></article><article class="lp-pcard"><h4>Hours of chasing</h4><p>Following up takes time away from buyer meetings and showing homes.</p></article><article class="lp-pcard"><h4>Appointments fall through</h4><p>Getting interest is only the start. Booking details and reminders matter.</p></article><article class="lp-pcard"><h4>Too few real conversations</h4><p>Another list of names does not help when you need buyers on your calendar.</p></article></div></div></section>
+<section class="section" id="outcome"><div class="container center"><span class="eyebrow reveal">Active Home Search Data</span><h2 class="section-title reveal">Start With People Already Looking For A Home</h2><p class="section-sub reveal">We look at home search activity from the last two to seven days in the areas you serve. Then we connect with those buyers and find out what they need.</p><ul class="lp-list reveal"><li>Find active homebuyers in your market.</li><li>Focus on recent home search activity from the last two to seven days.</li><li>Qualify the buyer against the criteria we agree with you.</li><li>Arrange the appointment directly on your calendar.</li></ul></div></section><section class="section" id="work"><div class="container center"><span class="eyebrow reveal">How It Works</span><h2 class="section-title reveal">Three Steps. One Connected Process.</h2><p class="section-sub">The data helps us find the audience. The conversation tells us who you can help.</p><div class="df-steps"><article><span class="df-number">01</span><h3>Identify</h3><p>Find people showing recent interest in homes in your market.</p><div class="df-path">Home search activity → Active buyers</div></article><article><span class="df-number">02</span><h3>Qualify</h3><p>Understand where they are looking, what they need and whether they are a fit for you.</p><div class="df-path">Buyer conversation → Qualified opportunity</div></article><article><span class="df-number">03</span><h3>Book</h3><p>Arrange the appointment and send the booking details and reminders.</p><div class="df-path">Qualified buyer → Your calendar</div></article></div></div></section><section class="section" id="case-studies"><div class="container center"><span class="eyebrow reveal">Proven Results</span><h2 class="section-title reveal">Results From Agents We’ve Worked With</h2><p class="section-sub reveal">Different markets. Real buyer conversations, closed sales and buyers under contract.</p><div class="cs-wrap"><article class="cs reveal"><span class="cs-eyebrow">Dallas, Texas · 2 months working with us</span><h3 class="cs-title">Diana Smith</h3><div class="cs-stats"><div class="cs-tile after"><div class="k">Qualified leads per month</div><div class="v">30</div></div><div class="cs-tile after"><div class="k">Closed</div><div class="v">4</div></div><div class="cs-tile after"><div class="k">Under contract</div><div class="v">8</div></div></div><p class="cs-story">Diana receives 30 qualified leads a month in the Dallas market. After two months working with us, she has four closed sales and eight buyers under contract.</p></article><article class="cs reveal"><span class="cs-eyebrow">Charlotte, North Carolina · 1 month working with us</span><h3 class="cs-title">Enrique Campos</h3><div class="cs-stats"><div class="cs-tile after"><div class="k">Leads</div><div class="v">15</div></div><div class="cs-tile after"><div class="k">Under contract</div><div class="v">4</div></div></div><p class="cs-story">After one month working with us in the Charlotte market, Enrique has received 15 leads and has four buyers under contract.</p></article><article class="cs reveal"><span class="cs-eyebrow">Florida · 5 months working with us</span><h3 class="cs-title">Joe Ruiz</h3><div class="cs-stats"><div class="cs-tile after"><div class="k">Leads</div><div class="v">200</div></div><div class="cs-tile after"><div class="k">Closed</div><div class="v">50</div></div><div class="cs-tile after"><div class="k">Under contract</div><div class="v">40</div></div></div><p class="cs-story">After five months working with us in Florida, Joe has received 200 leads, with 50 closed sales and 40 buyers under contract.</p></article></div><div class="cta-center reveal"><a class="btn btn-red btn-lg" href="https://api.leadconnectorhq.com/widget/bookings/drm-real-estate-strategy">Book a Strategy Call</a><p class="cta-value">Your market. Qualified buyers. A clear plan.</p></div></div></section>
+<div class="profit-banner"><div class="profit-stack reveal"><span class="profit-line">Find active homebuyers</span><span class="profit-line">Qualify what they need</span><span class="profit-line">Book the appointment</span><span class="profit-line">Send the reminders</span><span class="profit-line pop">More conversations. Less chasing.</span></div></div><section class="section" id="roi-calculator"><div class="container center"><span class="eyebrow reveal">Commission Calculator</span><h2 class="section-title reveal">What Could More Closed Sales Mean For You?</h2><p class="section-sub reveal">Use your average gross commission and a number of closed sales to explore the revenue.</p><div class="re-calc"><label>Average gross commission per closed sale<input id="re-commission" type="number" min="0" step="100" value="10000"/></label><label>Closed sales<input id="re-closings" type="number" min="0" step="1" value="2"/></label></div><div class="re-total"><span class="eyebrow">Estimated gross commission</span><output id="re-revenue" aria-live="polite">$20,000</output></div><p class="audit-note">An illustration using your inputs. Gross commission is before brokerage splits, fees and expenses.</p><div class="cta-center reveal"><a class="btn btn-red btn-lg" href="https://api.leadconnectorhq.com/widget/bookings/drm-real-estate-strategy">Book a Strategy Call</a><p class="cta-value">Your market. Qualified buyers. A clear plan.</p></div></div></section>
+<section class="section" id="offering"><div class="container center"><span class="eyebrow reveal">Our Offering</span><h2 class="section-title reveal">What You Will Get</h2><p class="section-sub reveal">We handle the work around getting buyers onto your calendar.</p><div class="wyg-grid reveal"><div class="wyg-card"><div class="wyg-body"><p>A process built around your market and the buyers you can help.</p></div></div><div class="wyg-card"><div class="wyg-body"><p>Active home search data from the last two to seven days.</p></div></div><div class="wyg-card"><div class="wyg-body"><p>Buyer qualification based on the criteria we agree with you.</p></div></div><div class="wyg-card"><div class="wyg-body"><p>Appointments booked directly on your calendar.</p></div></div><div class="wyg-card"><div class="wyg-body"><p>Booking details, follow-up and appointment reminders.</p></div></div><div class="wyg-card"><div class="wyg-body"><p>Appointment tracking and your feedback after each meeting.</p></div></div></div><div class="cta-center reveal"><a class="btn btn-red btn-lg" href="https://api.leadconnectorhq.com/widget/bookings/drm-real-estate-strategy">Book a Strategy Call</a><p class="cta-value">Your market. Qualified buyers. A clear plan.</p></div></div></section>
+<section class="section" id="founder"><div class="container center"><span class="eyebrow reveal">Who I Am</span><h2 class="section-title reveal">A Bit About Me</h2><p class="section-sub reveal">Brandon Aubey · Dead River Management</p><div class="fdr-about reveal"><div class="fdr-portrait"><img alt="Brandon Aubey" src="/50k-demand-flow/assets/brandon.jpg"/><span class="cap">Brandon · Dead River Management</span></div><div class="fdr-copy"><p>I’m Brandon, and I run Dead River Management. We connect real estate agents with active homebuyers in their market.</p><p>You handle the buyer meeting and the relationship. We handle finding buyers, qualification, booking and reminders.</p><p>On the call, we’ll look at where you work, who you can help and how this would fit your business.</p></div></div></div></section>
+<section class="section" id="audit"><div class="container center"><span class="eyebrow reveal">Book Your Strategy Call</span><h2 class="section-title reveal">Book a Strategy Call</h2><p class="audit-value reveal">Your market. Qualified buyers. A clear plan.</p><p class="section-sub reveal">Here is what we’ll review together.</p><ul class="lp-list reveal" style="margin-bottom:38px"><li>The areas you serve and the buyers you can help.</li><li>How you are getting leads now and where opportunities are being lost.</li><li>Buyer qualification, your availability and how appointments would work.</li></ul><div class="book-embed reveal"><iframe src="https://api.leadconnectorhq.com/widget/bookings/drm-real-estate-strategy" title="Book your real estate strategy call" id="real-estate-booking" loading="lazy" style="display:block;width:100%;min-height:900px;border:0;background:#fff" height="1100"></iframe></div><p class="audit-note"><a href="https://api.leadconnectorhq.com/widget/bookings/drm-real-estate-strategy" target="_blank" rel="noopener noreferrer">Open the calendar in a new tab</a></p></div></section>
+<section class="section" id="faq"><div class="container center"><span class="eyebrow reveal">Frequently Asked Questions</span><h2 class="section-title reveal">Do You Have Questions?</h2><div class="faq-list"><div class="faq-item open"><button class="faq-q">How do you find buyers?<span class="faq-icon"></span></button><div class="faq-a"><div class="faq-a-inner">We use active home search data from the last two to seven days in your market. Then we connect with those people to find out what they need.</div></div></div><div class="faq-item"><button class="faq-q">How do you qualify buyers?<span class="faq-icon"></span></button><div class="faq-a"><div class="faq-a-inner">We agree with you on the buyers you can help and what needs to be covered during qualification. We use those criteria before arranging appointments.</div></div></div><div class="faq-item"><button class="faq-q">What does my team need to do?<span class="faq-icon"></span></button><div class="faq-a"><div class="faq-a-inner">Tell us your market and buyer criteria, connect your calendar and keep your availability current. Attend the meetings and give us feedback afterward.</div></div></div><div class="faq-item"><button class="faq-q">Will this work in my market?<span class="faq-icon"></span></button><div class="faq-a"><div class="faq-a-inner">On your strategy call, we review the areas you serve, the available home search activity and the buyers you can help.</div></div></div><div class="faq-item"><button class="faq-q">How do I get started?<span class="faq-icon"></span></button><div class="faq-a"><div class="faq-a-inner">Book your strategy call below. We’ll review the process and investment with you and agree on the next steps.</div></div></div></div></div></section>
+<footer class="footer" id="footer">
+<div class="container">
+<div class="footer-top">
+<div class="footer-brand"><img alt="Dead River Management" class="footer-logo-img" src="/50k-demand-flow/assets/logo.png"/><span style="color:white;font-weight:600;font-size:20px">Dead River Management</span></div>
+<nav aria-label="Footer" class="footer-menu">
+<div class="fm-col">
+<span class="fm-head">Navigate</span>
+<a href="#top">Home</a>
+<a href="#case-studies">Case Studies</a>
+<a href="#work">How It Works</a>
+<a href="#roi-calculator">Commission Calculator</a>
+</div>
+<div class="fm-col">
+<span class="fm-head">Company</span>
+<a href="https://www.deadrivermanagement.com/">Main Site</a>
+<a href="https://api.leadconnectorhq.com/widget/bookings/drm-real-estate-strategy">Book a Strategy Call</a>
+<a href="#faq">FAQ</a>
+</div>
+<div class="fm-col">
+<span class="fm-head">Social</span>
+<a href="mailto:brandon@deadrivermanagement.com">Email</a>
+<a href="https://www.youtube.com/@DeadRiverManagement">YouTube</a>
+<a href="https://www.linkedin.com/company/dead-river-management/">LinkedIn</a>
+</div>
+</nav>
+</div>
+<div class="footer-divider"></div>
+<div class="rev-label reveal">Qualified Buyers In Your Market</div>
+<div class="rev-row">
+<div aria-label="More buyer meetings" class="reveal" id="consultation-target">More buyer meetings</div>
+<a class="rev-cta reveal" href="https://api.leadconnectorhq.com/widget/bookings/drm-real-estate-strategy">Book a Strategy Call<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></a>
+</div>
+<div class="rev-goal reveal">We handle qualification, booking and reminders. You focus on the buyer.</div>
+<div class="footer-divider"></div>
+<div class="footer-bottom">
+<span>© <span id="year"></span> Dead River Management. All rights reserved.</span>
+<span>Real Estate Buyer Appointments</span>
+</div>
+</div>
+</footer>
+<script src="/50k-demand-flow/js/main.js"></script>
+<script>(()=>{const commission=document.getElementById('re-commission'),sales=document.getElementById('re-closings'),out=document.getElementById('re-revenue');const update=()=>{out.textContent=new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0}).format(Math.max(0,Number(commission.value)||0)*Math.floor(Math.max(0,Number(sales.value)||0)));};commission.addEventListener('input',update);sales.addEventListener('input',update);})();</script>
+<script>
+  window.__drmTrackingDenied = function () {
+    if (window.navigator && window.navigator.globalPrivacyControl === true) return true;
+    var consent = {};
+    (window.dataLayer || []).forEach(function (entry) {
+      if (entry && entry[0] === 'consent' && /^(default|update)$/.test(entry[1])) {
+        ['ad_storage', 'ad_user_data', 'analytics_storage'].forEach(function (key) {
+          if (entry[2] && entry[2][key]) consent[key] = entry[2][key];
+        });
+      }
+    });
+    return Object.keys(consent).some(function (key) { return consent[key] === 'denied'; });
+  };
+</script>
+<script type="text/javascript">
+  (function(s, p, i, c, e) {
+      if (s.__drmTrackingDenied()) return;
+      if (!['deadrivermanagement.com', 'www.deadrivermanagement.com'].includes(location.hostname)) return;
+      s[e] = s[e] || function() { (s[e].a = s[e].a || []).push(arguments); };
+      s[e].l = 1 * new Date();
+      var t = new Date().getTime();
+      var k = c.createElement("script"), a = c.getElementsByTagName("script")[0];
+      k.async = 1, k.src = p + "?request_id=" + i + "&t=" + t, a.parentNode.insertBefore(k, a);
+      s.pixelClientId = i;
+  })(window, "https://app.deadrivermanagement.com/script", "dead-river-management", document, "script");
+</script>
+</body>
+</html>
