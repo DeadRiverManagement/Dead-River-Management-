@@ -259,19 +259,12 @@
   figure.id = 'total-auto-repair-testimonial';
   figure.style.cssText = 'margin:0;text-align:center;';
 
-  var caption = document.createElement('figcaption');
-  caption.id = 'total-auto-repair-testimonial-caption';
-  caption.style.cssText = 'margin:0 0 18px;font-family:var(--font-head);font-size:clamp(18px,2.3vw,23px);font-weight:500;line-height:1.3;color:var(--text-primary,#fff);';
-  caption.textContent = 'Hear from Total Auto Repair';
-  figure.appendChild(caption);
-
   var video = document.createElement('video');
   video.controls = true;
   video.preload = 'none';
   video.playsInline = true;
   video.setAttribute('playsinline', '');
   video.setAttribute('aria-label', 'Total Auto Repair client video testimonial');
-  video.setAttribute('aria-describedby', caption.id);
   video.width = 512;
   video.height = 910;
   video.poster = 'https://d2ol7oe51mr4n9.cloudfront.net/user_3JQHnLTq89zb3rmd2x4Z53G0lE3/bc486f19-6b03-42e7-996b-7226bd18326e.jpg';
@@ -286,11 +279,6 @@
   fallback.textContent = 'Watch the Total Auto Repair testimonial.';
   video.appendChild(fallback);
   figure.appendChild(video);
-
-  var note = document.createElement('p');
-  note.style.cssText = 'margin:12px 0 0;font-family:var(--font-body);font-size:13px;line-height:1.5;color:var(--text-secondary);';
-  note.textContent = '24-second client testimonial. Press play to watch with sound.';
-  figure.appendChild(note);
 
   var errorNote = document.createElement('p');
   errorNote.hidden = true;
