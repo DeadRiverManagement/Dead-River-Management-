@@ -12,7 +12,7 @@ import { socialIcons } from '../data/social-icons';
 import { servicePages, elPasoAreas } from '../data/service-pages';
 import { industryPages } from '../data/industry-pages';
 const {
-  title = 'A growth partner for businesses ready to break through the next stage',
+  title = 'Demand Flow: $50,000 in 45-60 Days',
   description = brand.description,
   ogImage = '/images/og/demand-flow.png',
   schema,
@@ -193,6 +193,7 @@ const schemas = [org, site, ...(schema ? [schema] : [])];
           <a class="mobile-home" href="/">
             Home
           </a>
+          <a href="/demand-flow" aria-current={path === '/demand-flow' ? 'page' : undefined}>Demand Flow</a>
           <a
             href="/demand-intelligence"
             aria-current={path === '/demand-intelligence' ? 'page' : undefined}
@@ -264,6 +265,7 @@ const schemas = [org, site, ...(schema ? [schema] : [])];
           ['Company', [
             ['About', '/company'],
             ['Results', '/work'],
+            ['Demand Flow', '/demand-flow'],
             ['Demand Intelligence', '/demand-intelligence'],
             ['Marketing advice', '/marketing-advice'],
             ['Free tools', '/tools'],
@@ -309,7 +311,7 @@ const schemas = [org, site, ...(schema ? [schema] : [])];
             ['Cookies', '/legal/cookies'],
             ['Text messages', '/legal/sms'],
             ['Results and claims', '/legal/advertising'],
-            ['Lead guarantee', '/legal/guarantee'],
+            ['Demand Flow guarantee', '/legal/guarantee'],
             ['Industry notes', '/legal/industries'],
           ].map(([label, href]) => (
             <a href={href}>{label}</a>
