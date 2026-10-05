@@ -240,71 +240,14 @@
   })();
 })();
 
-/* ---------- Total Auto Repair video testimonial: $50K VSL page only ---------- */
+/* ---------- Total Auto Repair video fallback ---------- */
 (function () {
   'use strict';
-  var pagePath = window.location.pathname.replace(/\/$/, '');
-  if (pagePath !== '/50k-demand-flow' && pagePath !== '/50k-demand-flow.html') return;
-  if (document.getElementById('total-auto-repair-testimonial')) return;
-
-  var card = null;
-  document.querySelectorAll('#case-studies article.cs').forEach(function (article) {
-    var label = article.querySelector('.cs-eyebrow');
-    if (label && label.textContent.indexOf('Total Auto Repair') !== -1) card = article;
-  });
-  if (!card) return;
-
-  var videoUrl = 'https://d2ol7oe51mr4n9.cloudfront.net/user_3JQHnLTq89zb3rmd2x4Z53G0lE3/52a05e7d-44fc-4cb0-9aab-4269f45edef3.mp4';
-  var figure = document.createElement('figure');
-  figure.id = 'total-auto-repair-testimonial';
-  figure.style.cssText = 'margin:0;text-align:center;';
-
-  var video = document.createElement('video');
-  video.controls = true;
-  video.preload = 'none';
-  video.playsInline = true;
-  video.setAttribute('playsinline', '');
-  video.setAttribute('aria-label', 'Total Auto Repair client video testimonial');
-  video.width = 512;
-  video.height = 910;
-  video.poster = 'https://d2ol7oe51mr4n9.cloudfront.net/user_3JQHnLTq89zb3rmd2x4Z53G0lE3/bc486f19-6b03-42e7-996b-7226bd18326e.jpg';
-  video.style.cssText = 'display:block;width:100%;max-width:360px;height:auto;aspect-ratio:512/910;object-fit:contain;margin:0 auto;border:1px solid var(--border);border-radius:14px;background:#000;';
-  var source = document.createElement('source');
-  source.src = videoUrl;
-  source.type = 'video/mp4';
-  video.appendChild(source);
-  video.appendChild(document.createTextNode('Your browser does not support embedded video. '));
-  var fallback = document.createElement('a');
-  fallback.href = videoUrl;
-  fallback.textContent = 'Watch the Total Auto Repair testimonial.';
-  video.appendChild(fallback);
-  figure.appendChild(video);
-
-  var errorNote = document.createElement('p');
-  errorNote.hidden = true;
-  errorNote.style.cssText = 'margin:12px 0 0;font-family:var(--font-body);font-size:14px;';
-  var directLink = document.createElement('a');
-  directLink.href = videoUrl;
-  directLink.target = '_blank';
-  directLink.rel = 'noopener noreferrer';
-  directLink.style.color = 'var(--pop)';
-  directLink.textContent = 'Having trouble playing? Open the testimonial in a new tab.';
-  errorNote.appendChild(directLink);
-  figure.appendChild(errorNote);
-  video.addEventListener('error', function () { errorNote.hidden = false; });
-  source.addEventListener('error', function () { errorNote.hidden = false; });
-
-  // Replace the static case-study graphic with the testimonial video.
-  var artwork = card.querySelector('.case-art');
-  if (artwork) artwork.parentNode.replaceChild(figure, artwork);
-  else card.appendChild(figure);
-
-  // Lead with Total Auto Repair and keep example numbers in reading order.
-  var firstGroup = document.querySelector('#case-studies .cs-wrap');
-  if (firstGroup) firstGroup.insertBefore(card, firstGroup.firstChild);
-  document.querySelectorAll('#case-studies article.cs').forEach(function (article, index) {
-    var label = article.querySelector('.cs-eyebrow');
-    if (label) label.textContent = label.textContent.replace(/^Example\s+\d+/, 'Example ' + (index + 1));
-  });
-  // No autoplay or lead/conversion events; booking links stay unchanged.
+  var figure = document.getElementById('total-auto-repair-testimonial');
+  if (!figure) return;
+  var video = figure.querySelector('video');
+  var note = figure.querySelector('.testimonial-error');
+  function showFallback() { note.hidden = false; }
+  video.addEventListener('error', showFallback);
+  video.querySelector('source').addEventListener('error', showFallback);
 })();

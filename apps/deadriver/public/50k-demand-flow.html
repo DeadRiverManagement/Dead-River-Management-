@@ -102,6 +102,13 @@
     .cs-wrap { display: grid; gap: 30px; margin-top: 44px; }
     .cs { text-align: left; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: clamp(22px, 3.4vw, 40px); }
     .cs-eyebrow { display: inline-block; font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--pop); margin-bottom: 14px; }
+    .cs-eyebrow[href], .cs-video-only .cs-title a { text-decoration: underline; text-underline-offset: 4px; }
+    .cs-video-only { text-align: center; }
+    .cs-video-only .cs-title a { color: inherit; }
+    .cs-video-only a:focus-visible, a.cs-eyebrow:focus-visible { outline: 2px solid var(--pop); outline-offset: 5px; }
+    #total-auto-repair-testimonial { margin: 0; }
+    #total-auto-repair-testimonial video { display: block; width: 100%; max-width: 360px; height: auto; aspect-ratio: 512 / 910; object-fit: contain; margin: 0 auto; border: 1px solid var(--border); border-radius: 14px; background: #000; }
+    .testimonial-error { margin: 12px 0 0; font-size: 14px; }
     .cs-title { font-family: var(--font-head); font-weight: 500; font-size: clamp(23px, 3.3vw, 34px); letter-spacing: var(--track-head); line-height: 1.12; margin-bottom: 26px; }
     .cs-wins { list-style: none; display: grid; gap: 15px; margin: 0 0 28px; }
     .cs-wins li { position: relative; padding-left: 44px; font-family: var(--font-head); font-weight: 500; font-size: clamp(17px, 2.3vw, 23px); letter-spacing: var(--track-head); line-height: 1.28; color: #fff; }
@@ -312,8 +319,18 @@ Your browser does not support video playback. <a href="/50k-demand-flow/assets/d
 <h2 class="section-title reveal">Results From Businesses We’ve Worked With</h2>
 <p class="section-sub reveal">Real businesses, different markets. Each case study shows its own results and timeframe; your outcome will depend on your business.</p>
 <div class="cs-wrap">
+<article class="cs reveal cs-video-only">
+<h3 class="cs-title">Hear from <a href="/work/total-auto-repair">Total Auto Repair</a></h3>
+<figure id="total-auto-repair-testimonial">
+<video controls playsinline preload="none" width="512" height="910" poster="https://d2ol7oe51mr4n9.cloudfront.net/user_3JQHnLTq89zb3rmd2x4Z53G0lE3/bc486f19-6b03-42e7-996b-7226bd18326e.jpg" aria-label="Total Auto Repair client video testimonial">
+<source src="https://d2ol7oe51mr4n9.cloudfront.net/user_3JQHnLTq89zb3rmd2x4Z53G0lE3/52a05e7d-44fc-4cb0-9aab-4269f45edef3.mp4" type="video/mp4"/>
+Your browser does not support embedded video. <a href="https://d2ol7oe51mr4n9.cloudfront.net/user_3JQHnLTq89zb3rmd2x4Z53G0lE3/52a05e7d-44fc-4cb0-9aab-4269f45edef3.mp4">Watch the Total Auto Repair testimonial.</a>
+</video>
+<p class="testimonial-error" hidden>Having trouble playing? <a href="https://d2ol7oe51mr4n9.cloudfront.net/user_3JQHnLTq89zb3rmd2x4Z53G0lE3/52a05e7d-44fc-4cb0-9aab-4269f45edef3.mp4" target="_blank" rel="noopener noreferrer">Open the testimonial in a new tab.</a></p>
+</figure>
+</article>
 <article class="cs reveal">
-<span class="cs-eyebrow">Example 1 · Gonzalez &amp; Sons Roofing</span>
+<a class="cs-eyebrow" href="/work/gonzalez-and-sons-roofing">Gonzalez &amp; Sons Roofing</a>
 <h3 class="cs-title">From 2 To 8 Roofs A Month In 6 Months</h3>
 <ul class="cs-wins">
 <li>2 to 8 roofs per month</li>
@@ -323,7 +340,7 @@ Your browser does not support video playback. <a href="/50k-demand-flow/assets/d
 <div class="case-art"><img alt="From 2 To 8 Roofs A Month In 6 Months" height="864" loading="lazy" src="/50k-demand-flow/assets/case-study-0.webp" width="1536"/><p class="case-art-caption">Client case-study summary</p></div>
 </article>
 <article class="cs reveal">
-<span class="cs-eyebrow">Example 2 · The Pipe Whisperers</span>
+<a class="cs-eyebrow" href="/work/the-pipe-whisperers">The Pipe Whisperers</a>
 <h3 class="cs-title">From $60K To $250K In Annual Revenue</h3>
 <ul class="cs-wins">
 <li>Approximately $60K annual revenue before</li>
@@ -332,21 +349,11 @@ Your browser does not support video playback. <a href="/50k-demand-flow/assets/d
 </ul>
 <div class="case-art"><img alt="From $60K To $250K In Annual Revenue" height="864" loading="lazy" src="/50k-demand-flow/assets/case-study-1.webp" width="1536"/><p class="case-art-caption">Client case-study summary</p></div>
 </article>
-<article class="cs reveal">
-<span class="cs-eyebrow">Example 3 · Total Auto Repair</span>
-<h3 class="cs-title">From $20K To $100K In Monthly Revenue</h3>
-<ul class="cs-wins">
-<li>Approximately $20K monthly revenue before</li>
-<li>Approximately $100K monthly revenue after</li>
-<li>18-month case study</li>
-</ul>
-<div class="case-art"><img alt="From $20K To $100K In Monthly Revenue" height="864" loading="lazy" src="/50k-demand-flow/assets/case-study-2.webp" width="1536"/><p class="case-art-caption">Client case-study summary</p></div>
-</article>
 </div>
 <div class="cta-center reveal"><a class="btn btn-red btn-lg" href="https://api.leadconnectorhq.com/widget/bookings/demandflow">Book a Strategy Call</a><p class="cta-value reveal">Your market. Your numbers. A clear plan.</p></div>
 <div class="cs-wrap" style="margin-top:44px;">
 <article class="cs reveal">
-<span class="cs-eyebrow">Example 4 · Wicked Logistics</span>
+<a class="cs-eyebrow" href="/work/wicked-logistics">Wicked Logistics</a>
 <h3 class="cs-title">From 1–2 Weekly Inquiries To 5–6 Daily</h3>
 <ul class="cs-wins">
 <li>1–2 inquiries per week before</li>
