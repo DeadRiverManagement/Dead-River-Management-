@@ -99,7 +99,17 @@ const filters = [
             <cite>Travis Miller, Owner, Total Auto Repair</cite>
           </blockquote>
         </div>
-        <article class="feature-panel">
+        <div class="rs-video">
+        <video controls playsinline preload="none" width="512" height="910"
+          poster="https://d2ol7oe51mr4n9.cloudfront.net/user_3JQHnLTq89zb3rmd2x4Z53G0lE3/bc486f19-6b03-42e7-996b-7226bd18326e.jpg"
+          aria-label="Hear from Total Auto Repair">
+          <source src="https://d2ol7oe51mr4n9.cloudfront.net/user_3JQHnLTq89zb3rmd2x4Z53G0lE3/52a05e7d-44fc-4cb0-9aab-4269f45edef3.mp4" type="video/mp4" />
+          Your browser does not support embedded video.
+          <a href="https://d2ol7oe51mr4n9.cloudfront.net/user_3JQHnLTq89zb3rmd2x4Z53G0lE3/52a05e7d-44fc-4cb0-9aab-4269f45edef3.mp4">Watch the Total Auto Repair testimonial.</a>
+        </video>
+        </div>
+      </div>
+        <article class="feature-panel rs-details">
           <h3>What we did:</h3>
           <ul class="check-list">
             <li>Rebuilt website for mobile conversions</li>
@@ -117,7 +127,6 @@ const filters = [
             Read the full case study <Arrow />
           </a>
         </article>
-      </div>
     </div>
   </section>
 
@@ -194,7 +203,11 @@ const filters = [
 
 <style>
   .work-logo { display: block; width: 120px; height: 88px; object-fit: contain; margin-bottom: 24px; }
-  .rs-featured { align-items: start; margin-top: 12px; }
+  .rs-featured { grid-template-columns: minmax(0, 1fr) 340px; align-items: center; gap: clamp(32px, 5vw, 72px); max-width: 1120px; margin: 12px auto 0; }
+  .rs-video { width: 100%; max-width: 340px; justify-self: center; }
+  .rs-video video { display: block; width: 100%; height: auto; aspect-ratio: 512 / 910; object-fit: contain; border-radius: 18px; border: 1px solid var(--line); background: #101713; }
+  .rs-details { margin-top: 32px; }
+  @media (max-width: 900px) { .rs-featured { grid-template-columns: minmax(0, 1fr); gap: 32px; } }
   .rs-featured > * { min-width: 0; }
   .rs-featured .mini-label { margin-top: 6px; }
   .rs-big {
