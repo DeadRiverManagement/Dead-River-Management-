@@ -50,7 +50,7 @@ export function createRequestedVslHandler({ env = process.env, fetchImpl = fetch
       if (input.validate === true || input.validate === 'true') return res.status(200).json({ ok: true, dryRun: true, mutations: 0 });
       const response = await fetchImpl('https://api.instantly.ai/api/v2/leads', {
         method: 'POST', redirect: 'error', signal: AbortSignal.timeout(15000),
-        headers: { Authorization: `Bearer ${env.INSTANTLY_API_KEY}`, 'Content-Type': 'application/json' },
+        headers: { Authorization: `Bearer ${env.INSTANTLY_VSL_API_KEY || env.INSTANTLY_API_KEY}`, 'Content-Type': 'application/json' },
         body: JSON.stringify({ campaign: REQUESTED_VSL_CAMPAIGN, email,
           first_name: contact.firstName || '', last_name: contact.lastName || '', skip_if_in_campaign: true }),
       });
