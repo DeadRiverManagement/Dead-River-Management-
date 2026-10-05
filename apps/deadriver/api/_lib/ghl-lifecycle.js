@@ -1,5 +1,5 @@
 import { createHash } from 'node:crypto';
-import { REAL_ESTATE_LOCATION, REAL_ESTATE_CALENDAR, REAL_ESTATE_PIPELINE, REAL_ESTATE_QUALIFIED_STAGE, REAL_ESTATE_WON_STAGE } from './real-estate-config.js';
+import { REAL_ESTATE_LOCATION, REAL_ESTATE_CALENDAR, REAL_ESTATE_PIPELINE, REAL_ESTATE_WON_STAGE } from './real-estate-config.js';
 import { createGhlActivityLedger, deriveActivityMetrics, ACTIVITY_SCHEMA_KEY } from './ghl-activity.js';
 import { createGhlOutreachClient, outreachContactProjection, readOutreachFieldMap } from './outreach-sync.js';
 import { createInstantlyClient, syncInstantlyLifecycle } from './instantly-client.js';
@@ -90,7 +90,8 @@ export function readLifecycleConfig(env, { historical = false, inquiryOnly = fal
   if (env.GHL_LOCATION_ID === REAL_ESTATE_LOCATION) {
     if (!calendarIds.includes(REAL_ESTATE_CALENDAR)) calendarIds.push(REAL_ESTATE_CALENDAR);
     pipelineStages[REAL_ESTATE_PIPELINE] = {
-      qualifiedStageIds: [REAL_ESTATE_QUALIFIED_STAGE], wonStageIds: [REAL_ESTATE_WON_STAGE],
+      // Hot List is a follow-up outcome, not proof of sales qualification.
+      qualifiedStageIds: [], wonStageIds: [REAL_ESTATE_WON_STAGE],
     };
   }
   return {
