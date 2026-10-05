@@ -7,39 +7,41 @@ const { c, logo } = Astro.props as {
   logo?: { src: string; width: number; height: number };
 };
 const name = c.company;
+const hasTestimonial = c.slug === 'total-auto-repair';
 ---
 
 <Growth title={c.seoTitle} description={c.description}>
-  <section class="page-hero wrap">
-    <p class="eyebrow">{c.eyebrow}</p>
-    <h1>{c.headline}</h1>
-    {c.intro.map((p) => <p class="intro">{p}</p>)}
-    <div class="cs-hero-row">
-      {logo && <img class="cs-logo" src={logo.src} width={logo.width} height={logo.height} alt={name + ' logo'} />}
-      <ul class="cs-stats">
-        {c.stats.map((s) => <li>{s}</li>)}
-      </ul>
+  <section class:list={['page-hero', 'wrap', { 'cs-hero-with-video': hasTestimonial }]}>
+    <div class="cs-hero-copy">
+      <p class="eyebrow">{c.eyebrow}</p>
+      <h1>{c.headline}</h1>
+      {c.intro.map((p) => <p class="intro">{p}</p>)}
+      <div class="cs-hero-row">
+        {logo && <img class="cs-logo" src={logo.src} width={logo.width} height={logo.height} alt={name + ' logo'} />}
+        <ul class="cs-stats">
+          {c.stats.map((s) => <li>{s}</li>)}
+        </ul>
+      </div>
+      <a href="/work" class="back-link">← All case studies</a>
     </div>
-    <a href="/work" class="back-link">← All case studies</a>
+    {hasTestimonial && (
+      <div class="cs-testimonial" id="total-auto-repair-testimonial">
+        <video
+          controls
+          playsinline
+          preload="none"
+          width="512"
+          height="910"
+          poster="https://d2ol7oe51mr4n9.cloudfront.net/user_3JQHnLTq89zb3rmd2x4Z53G0lE3/bc486f19-6b03-42e7-996b-7226bd18326e.jpg"
+          aria-label="Total Auto Repair client video testimonial"
+        >
+          <source src="https://d2ol7oe51mr4n9.cloudfront.net/user_3JQHnLTq89zb3rmd2x4Z53G0lE3/52a05e7d-44fc-4cb0-9aab-4269f45edef3.mp4" type="video/mp4" />
+          Your browser does not support embedded video.
+          <a href="https://d2ol7oe51mr4n9.cloudfront.net/user_3JQHnLTq89zb3rmd2x4Z53G0lE3/52a05e7d-44fc-4cb0-9aab-4269f45edef3.mp4">Watch the Total Auto Repair testimonial.</a>
+        </video>
+      </div>
+    )}
   </section>
-
-  {c.slug === 'total-auto-repair' && (
-    <section class="wrap cs-testimonial" id="total-auto-repair-testimonial" aria-label="Total Auto Repair client video testimonial">
-      <video
-        controls
-        playsinline
-        preload="none"
-        width="512"
-        height="910"
-        poster="https://d2ol7oe51mr4n9.cloudfront.net/user_3JQHnLTq89zb3rmd2x4Z53G0lE3/bc486f19-6b03-42e7-996b-7226bd18326e.jpg"
-        aria-label="Total Auto Repair client video testimonial"
-      >
-        <source src="https://d2ol7oe51mr4n9.cloudfront.net/user_3JQHnLTq89zb3rmd2x4Z53G0lE3/52a05e7d-44fc-4cb0-9aab-4269f45edef3.mp4" type="video/mp4" />
-        Your browser does not support embedded video.
-        <a href="https://d2ol7oe51mr4n9.cloudfront.net/user_3JQHnLTq89zb3rmd2x4Z53G0lE3/52a05e7d-44fc-4cb0-9aab-4269f45edef3.mp4">Watch the Total Auto Repair testimonial.</a>
-      </video>
-    </section>
-  )}
 
   <section class="section soft">
     <div class="wrap split cs-body">
@@ -164,7 +166,12 @@ const name = c.company;
 
 <style>
   .page-hero .intro + .intro { margin-top: 14px; }
-  .cs-testimonial { margin-bottom: 48px; }
+  .cs-hero-with-video { display: grid; grid-template-columns: minmax(240px, 360px) minmax(0, 1fr); grid-template-areas: "video copy"; align-items: center; column-gap: clamp(32px, 5vw, 80px); row-gap: 32px; padding-top: 48px; padding-bottom: 56px; }
+  .cs-hero-copy { min-width: 0; }
+  .cs-hero-with-video .cs-hero-copy { grid-area: copy; }
+  .cs-hero-with-video h1 { font-size: clamp(36px, 3.6vw, 54px); }
+  .cs-hero-with-video .cs-hero-row { gap: 20px 24px; }
+  .cs-testimonial { grid-area: video; width: 100%; min-width: 0; margin: 0; }
   .cs-testimonial video { display: block; width: 100%; max-width: 360px; height: auto; aspect-ratio: 512 / 910; object-fit: contain; margin: 0 auto; border: 1px solid var(--line); border-radius: 14px; background: #000; }
   .cs-hero-row { display: flex; flex-wrap: wrap; align-items: center; gap: 24px 40px; margin: 32px 0 28px; }
   .cs-logo { width: 120px; height: 96px; object-fit: contain; }
@@ -215,6 +222,9 @@ const name = c.company;
   .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
   .cs-scarcity { font-weight: 600; color: var(--copper); margin: 0 0 22px; }
   @media (max-width: 900px) {
+    .cs-hero-with-video { grid-template-columns: minmax(0, 1fr); grid-template-areas: "copy" "video"; gap: 32px; padding-top: 43px; padding-bottom: 42px; }
+    .cs-hero-with-video h1 { font-size: 36px; }
+    .cs-hero-with-video .cs-hero-row { margin: 24px 0; }
     .cs-body, .cs-phases, .cs-metrics, .cs-cost { grid-template-columns: 1fr; }
     .cs-timeline { grid-template-columns: 1fr; gap: 14px; }
     .cs-timeline:before { left: 7px; right: auto; top: 0; bottom: 0; width: 2px; height: auto; }
