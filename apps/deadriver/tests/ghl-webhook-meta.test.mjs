@@ -6,6 +6,7 @@ import { createMetaConversionDispatcher } from '../api/_lib/ad-conversions.js';
 import { activityProperties } from '../api/_lib/ghl-activity.js';
 import { OUTREACH_CONTACT_FIELDS } from '../api/_lib/outreach-sync.js';
 import { readLifecycleConfig, createLifecycleDependencies } from '../api/_lib/ghl-lifecycle.js';
+import { REAL_ESTATE_CALENDAR } from '../api/_lib/real-estate-config.js';
 
 // All CRM/platform calls are local fakes; no external records or ads are sent.
 const map = attributionFields.fields, locationId = attributionFields.locationId;
@@ -100,6 +101,16 @@ function harness(overrides = {}) {
     return res;
   } };
 }
+
+test('real estate booking records its verified milestone without sending a Demand Flow ad conversion', async () => {
+  const h = harness({ ENABLE_META_CAPI: 'true' });
+  h.state.appointment.calendarId = REAL_ESTATE_CALENDAR;
+  const res = await h.send(flat({ drm_event_type: 'appointment_confirmed', drm_event_id: 'real-estate-booking-001',
+    drm_calendar_id: REAL_ESTATE_CALENDAR, drm_appointment_id: 'appointment_001' }));
+  assert.equal(res.statusCode, 200);
+  assert.equal(h.state.records.size, 1);
+  assert.equal(h.state.sent.length, 0);
+});
 
 test('standard Webhook uses explicit flat custom data and rejects ambiguous or unresolved mapping', () => {
   const normalized = normalizeGhlWebhookEnvelope(flat());

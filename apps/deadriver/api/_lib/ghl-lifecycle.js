@@ -1,4 +1,5 @@
 import { createHash } from 'node:crypto';
+import { REAL_ESTATE_LOCATION, REAL_ESTATE_CALENDAR, REAL_ESTATE_PIPELINE, REAL_ESTATE_QUALIFIED_STAGE, REAL_ESTATE_WON_STAGE } from './real-estate-config.js';
 import { createGhlActivityLedger, deriveActivityMetrics, ACTIVITY_SCHEMA_KEY } from './ghl-activity.js';
 import { createGhlOutreachClient, outreachContactProjection, readOutreachFieldMap } from './outreach-sync.js';
 import { createInstantlyClient, syncInstantlyLifecycle } from './instantly-client.js';
@@ -86,6 +87,12 @@ export function readLifecycleConfig(env, { historical = false, inquiryOnly = fal
   }
   const schemaKey = env.GHL_ACTIVITY_SCHEMA_KEY || ACTIVITY_SCHEMA_KEY;
   if (!/^custom_objects\.[a-z][a-z0-9_]*$/.test(schemaKey)) throw new LifecycleError('CONFIG_ACTIVITY_SCHEMA_KEY');
+  if (env.GHL_LOCATION_ID === REAL_ESTATE_LOCATION) {
+    if (!calendarIds.includes(REAL_ESTATE_CALENDAR)) calendarIds.push(REAL_ESTATE_CALENDAR);
+    pipelineStages[REAL_ESTATE_PIPELINE] = {
+      qualifiedStageIds: [REAL_ESTATE_QUALIFIED_STAGE], wonStageIds: [REAL_ESTATE_WON_STAGE],
+    };
+  }
   return {
     token, locationId: env.GHL_LOCATION_ID, associationId: env.GHL_ACTIVITY_ASSOCIATION_ID,
     contactIsFirst: env.GHL_ACTIVITY_CONTACT_IS_FIRST === 'true', schemaKey, fieldMap, calendarIds, pipelineStages,

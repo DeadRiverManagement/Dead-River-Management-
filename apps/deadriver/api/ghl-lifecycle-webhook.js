@@ -2,6 +2,7 @@ import { timingSafeEqual, createHash } from 'node:crypto';
 import { normalizeGhlLifecycle, readLifecycleConfig, createLifecycleDependencies, processGhlLifecycle } from './_lib/ghl-lifecycle.js';
 import { META_EVENT_NAMES, readMetaConversionConfig, createMetaConversionDispatcher } from './_lib/ad-conversions.js';
 import { readGooglePaymentConfig, createGooglePaymentDispatcher } from './_lib/google-payment-conversions.js';
+import { REAL_ESTATE_LOCATION, REAL_ESTATE_CALENDAR, REAL_ESTATE_PIPELINE } from './_lib/real-estate-config.js';
 
 // Authentication is checked before this diagnostic. Report only known schema
 // field names/types, never native contact data, identifiers, or their values.
@@ -84,7 +85,11 @@ export function createGhlLifecycleWebhookHandler({ env = process.env, dependenci
       if (mode === 'live' && event.origin === 'ghl' && event.eventType === 'revenue_received') {
         googleEnabled = Boolean(readGooglePaymentConfig(env));
       }
-      if (!event.historical && event.origin === 'ghl' && Object.hasOwn(META_EVENT_NAMES, event.eventType) &&
+      // The separate real estate sales calendar/pipeline must not feed Demand
+      // Flow's paid-ad optimization. Its verified facts and stop sync still run.
+      const realEstateSalesEvent = event.locationId === REAL_ESTATE_LOCATION &&
+        (event.calendarId === REAL_ESTATE_CALENDAR || event.pipelineId === REAL_ESTATE_PIPELINE);
+      if (!realEstateSalesEvent && !event.historical && event.origin === 'ghl' && Object.hasOwn(META_EVENT_NAMES, event.eventType) &&
           (env.ENABLE_META_CAPI === 'true' || (mode === 'test' && env.ENABLE_META_CAPI_TEST === 'true'))) {
         const metaConfig = readMetaConversionConfig(env, { testOnly: mode === 'test' });
         if (mode === 'test' && !/^[A-Za-z0-9_-]{3,100}$/.test(metaConfig.testEventCode || '')) throw new TypeError('Meta test code required');

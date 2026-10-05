@@ -1,5 +1,6 @@
 import { createHash } from 'node:crypto';
 import { REQUESTED_VSL_CAMPAIGN } from './requested-vsl-config.js';
+import { REAL_ESTATE_LOCATION, REAL_ESTATE_CAMPAIGNS, REAL_ESTATE_PIPELINE, REAL_ESTATE_LEAD_STAGE, REAL_ESTATE_INTERESTED_TAG } from './real-estate-config.js';
 import {
   ACTIVITY_SCHEMA_KEY,
   createGhlActivityLedger,
@@ -170,7 +171,11 @@ export function readOutreachConfig(env, { historical = false } = {}) {
     campaignIds: [...new Set([...arrayConfig(
       env.INSTANTLY_CAMPAIGN_IDS,
       'INSTANTLY_CAMPAIGN_IDS',
-    ), REQUESTED_VSL_CAMPAIGN])],
+    ), REQUESTED_VSL_CAMPAIGN, ...(env.GHL_LOCATION_ID === REAL_ESTATE_LOCATION ? REAL_ESTATE_CAMPAIGNS : [])])],
+    realEstateRoute: env.GHL_LOCATION_ID === REAL_ESTATE_LOCATION ? {
+      campaignIds: REAL_ESTATE_CAMPAIGNS, pipelineId: REAL_ESTATE_PIPELINE,
+      interestedStageId: REAL_ESTATE_LEAD_STAGE, priorStageIds: [], offerName: 'Real Estate',
+    } : null,
     customLabels: arrayConfig(
       env.INSTANTLY_CUSTOM_LABELS || '[]',
       'CUSTOM_LABELS',
@@ -389,7 +394,7 @@ export function createGhlOutreachClient({
             pipelineId: config.pipelineId,
             pipelineStageId: config.interestedStageId,
             status: 'open',
-            name: `DemandFlow - ${contact.companyName || contact.name || 'Cold email opportunity'}`.slice(
+            name: `${config.offerName || 'DemandFlow'} - ${contact.companyName || contact.name || 'Cold email opportunity'}`.slice(
               0,
               200,
             ),
@@ -673,6 +678,8 @@ export async function processInstantlyOutreach(
   { ghl, ledger, instantly, ledgerWait },
 ) {
   validateOutreachAccount(event, config);
+  const realEstate = Boolean(config.realEstateRoute?.campaignIds.includes(event.campaignId));
+  const opportunityConfig = realEstate ? { ...config, ...config.realEstateRoute } : config;
   if (event.scope !== 'contact') {
     await ledger.append(instantlyLedgerEvent(event, ''));
     return {
@@ -747,13 +754,16 @@ export async function processInstantlyOutreach(
       'ghl_interested_stage',
     );
     if (!receipt) {
-      const opportunity = await ghl.moveInterested(updated, config);
+      const opportunity = await ghl.moveInterested(updated, opportunityConfig);
       await ledger.recordEffectCompletion(
         appended.record,
         'ghl_interested_stage',
         opportunity.id,
       );
     }
+    // Apply after the opportunity write, avoiding an enrollment/create race.
+    // GHL handoff has reentry disabled and preserves an existing opportunity.
+    if (realEstate) await ghl.addTags(contact.id, [REAL_ESTATE_INTERESTED_TAG]);
   }
   if (!historical && plan.requiresSuppression) {
     const lifecycle = {

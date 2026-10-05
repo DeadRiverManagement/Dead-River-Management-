@@ -4,6 +4,7 @@ import { normalizeGhlLifecycle, readLifecycleConfig, verifyGhlLifecycle, createG
 import { createGhlLifecycleWebhookHandler } from '../api/ghl-lifecycle-webhook.js';
 import { ACTIVITY_SCHEMA_KEY, activityProperties, deriveActivityMetrics } from '../api/_lib/ghl-activity.js';
 import { OUTREACH_CONTACT_FIELDS } from '../api/_lib/outreach-sync.js';
+import { REAL_ESTATE_LOCATION, REAL_ESTATE_CALENDAR, REAL_ESTATE_PIPELINE, REAL_ESTATE_WON_STAGE } from '../api/_lib/real-estate-config.js';
 
 const fieldMap = Object.fromEntries(OUTREACH_CONTACT_FIELDS.map((f) => [f.key, `testfield_${f.key}`]));
 const payload = (overrides = {}) => ({
@@ -27,6 +28,13 @@ const env = (overrides = {}) => ({
   GHL_OUTREACH_AUTOMATIONS_REVIEWED: 'true', GHL_LIFECYCLE_CALENDAR_IDS: '["calendar_1"]',
   GHL_LIFECYCLE_STAGE_MAP: JSON.stringify(config().pipelineStages),
   GHL_PAYMENT_REVENUE_MAPPING_VERIFIED: 'true', GHL_PAYMENT_AMOUNT_UNIT: 'major', ...overrides,
+});
+test('real estate lifecycle mappings are isolated to the verified account and preserve existing calendars', () => {
+  const mapped = readLifecycleConfig(env({ GHL_LOCATION_ID: REAL_ESTATE_LOCATION }));
+  assert.deepEqual(mapped.calendarIds, ['calendar_1', REAL_ESTATE_CALENDAR]);
+  assert.deepEqual(mapped.pipelineStages[REAL_ESTATE_PIPELINE].wonStageIds, [REAL_ESTATE_WON_STAGE]);
+  assert.deepEqual(mapped.pipelineStages.pipeline_1, config().pipelineStages.pipeline_1);
+  assert.equal(readLifecycleConfig(env()).calendarIds.includes(REAL_ESTATE_CALENDAR), false);
 });
 
 function dependencies({ withInstantly = true } = {}) {

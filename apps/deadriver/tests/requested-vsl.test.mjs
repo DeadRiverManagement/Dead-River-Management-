@@ -2,12 +2,13 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { createRequestedVslHandler } from '../api/requested-vsl.js';
 import { REQUESTED_VSL_CAMPAIGN } from '../api/_lib/requested-vsl-config.js';
+import { REAL_ESTATE_LOCATION, REAL_ESTATE_VSL_CAMPAIGN, REAL_ESTATE_COLD_EMAIL_CAMPAIGN } from '../api/_lib/real-estate-config.js';
 
 const secret = 'test-secret-not-live-'.repeat(3);
 function fixture(options = {}) {
   const env = { VERCEL_ENV: 'production', ENABLE_INSTANTLY_GHL_SYNC: 'true',
     DRM_GHL_LIFECYCLE_WEBHOOK_SECRET: secret, GHL_OUTREACH_PIT: 'fixture-ghl-key',
-    GHL_LOCATION_ID: 'fixture-location', INSTANTLY_WORKSPACE_ID: 'fixture-workspace', INSTANTLY_API_KEY: 'fixture-instantly-key' };
+    GHL_LOCATION_ID: options.realEstate ? REAL_ESTATE_LOCATION : 'fixture-location', INSTANTLY_WORKSPACE_ID: 'fixture-workspace', INSTANTLY_API_KEY: 'fixture-instantly-key' };
   const contact = { id: 'fixture-contact', locationId: env.GHL_LOCATION_ID, email: 'qa@example.test',
     firstName: 'QA', lastName: 'Owner', tags: ['send demand flow vsl'], ...options.contact };
   const calls = [];
@@ -20,7 +21,7 @@ function fixture(options = {}) {
     else if (url.endsWith('/leads/list')) data = { items: leads };
     else if (url.includes('/campaigns/')) data = { organization: options.wrongWorkspace ? 'other' : env.INSTANTLY_WORKSPACE_ID };
     else if (url.endsWith('/leads') && init.method === 'POST') {
-      leads = [{ id: 'fixture-lead', campaign: REQUESTED_VSL_CAMPAIGN, organization: env.INSTANTLY_WORKSPACE_ID, email: contact.email }];
+      leads = [{ id: 'fixture-lead', campaign: JSON.parse(init.body).campaign, organization: env.INSTANTLY_WORKSPACE_ID, email: contact.email }];
       data = leads[0];
     } else throw new Error('Unexpected request');
     return { ok: !options.providerFailure, status: options.providerFailure ? 503 : 200, json: async () => data };
@@ -68,4 +69,27 @@ test('validation mode checks readiness without any create request', async () => 
 test('provider failure is retryable and response does not leak contact or secrets', async () => {
   const f = fixture({ providerFailure: true }); const res = await f.run();
   assert.equal(res.code, 502); assert.deepEqual(res.result, { ok: false, error: 'handoff_failed_retry' });
+});
+test('real estate requires its own tag and enrolls only its isolated campaign', async () => {
+  const f = fixture({ realEstate: true, contact: { tags: ['realestate-interested'] } });
+  const body = { customData: { contact_id: f.contact.id, offer: 'real_estate' } };
+  assert.equal((await f.run(body)).result.enrolled, true);
+  assert.equal(JSON.parse(f.calls.find(c => c.url.endsWith('/leads')).init.body).campaign, REAL_ESTATE_VSL_CAMPAIGN);
+  assert.equal((await f.run(body)).result.duplicate, true);
+});
+test('real estate rejects Demand Flow tags, booking suppression and unknown offers', async () => {
+  for (const tags of [['send demand flow vsl'], ['realestate-interested', 'realestate-booked']]) {
+    const f = fixture({ realEstate: true, contact: { tags } });
+    await f.run({ contact_id: f.contact.id, offer: 'real_estate' });
+    assert.equal(f.calls.some(c => c.url.endsWith('/leads')), false);
+  }
+  const f = fixture();
+  assert.equal((await f.run({ contact_id: f.contact.id, offer: 'other' })).code, 400);
+  assert.equal(f.calls.length, 0);
+});
+test('interested real estate cold email is handled by reply agent without duplicate VSL enrollment', async () => {
+  const f = fixture({ realEstate: true, contact: { tags: ['realestate-interested'] },
+    leads: [{ id: 'cold-email-lead', email: 'qa@example.test', campaign: REAL_ESTATE_COLD_EMAIL_CAMPAIGN, lt_interest_status: 1 }] });
+  assert.equal((await f.run({ contact_id: f.contact.id, offer: 'real_estate' })).result.skipped, 'real_estate_reply_agent_handles_vsl');
+  assert.equal(f.calls.some(c => c.url.endsWith('/leads')), false);
 });

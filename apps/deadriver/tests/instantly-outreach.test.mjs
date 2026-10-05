@@ -14,6 +14,7 @@ import {
 import { activityProperties } from '../api/_lib/ghl-activity.js';
 import { normalizeInstantlyEvent } from '../api/_lib/instantly-events.js';
 import { createInstantlyWebhookHandler } from '../api/instantly-webhook.js';
+import { REAL_ESTATE_LOCATION, REAL_ESTATE_COLD_EMAIL_CAMPAIGN, REAL_ESTATE_PIPELINE, REAL_ESTATE_LEAD_STAGE } from '../api/_lib/real-estate-config.js';
 
 const email = 'integration.test@example.test';
 const fieldMap = Object.fromEntries(
@@ -239,6 +240,25 @@ test('interested maps once to configured in-conversation milestone, never qualif
     [...f.records.values()][0].properties.event_type,
     'lead_interested',
   );
+});
+test('real estate interest targets its own pipeline before triggering its handoff', async () => {
+  const f = fixture();
+  const configured = readOutreachConfig({ ...env(), GHL_LOCATION_ID: REAL_ESTATE_LOCATION });
+  const moved = [];
+  f.ghl.moveInterested = async (contact, route) => { moved.push(route); f.calls.push('interested'); return { id: 'fixture-real-estate-opportunity' }; };
+  await processInstantlyOutreach(event({ event_type: 'lead_interested', campaign_id: REAL_ESTATE_COLD_EMAIL_CAMPAIGN }), configured, f);
+  assert.equal(moved[0].pipelineId, REAL_ESTATE_PIPELINE);
+  assert.equal(moved[0].interestedStageId, REAL_ESTATE_LEAD_STAGE);
+  const contact = await f.ghl.getContact();
+  assert.ok(contact.tags.includes('realestate-interested'));
+  assert.ok(f.calls.indexOf('interested') < f.calls.lastIndexOf('tags'));
+});
+test('Demand Flow interest remains on its original route in the same account', async () => {
+  const f = fixture();
+  const configured = readOutreachConfig({ ...env(), GHL_LOCATION_ID: REAL_ESTATE_LOCATION });
+  f.ghl.moveInterested = async (contact, route) => { assert.equal(route.pipelineId, 'fixture-pipeline'); return { id: 'fixture-opportunity' }; };
+  await processInstantlyOutreach(event({ event_type: 'lead_interested' }), configured, f);
+  assert.equal((await f.ghl.getContact()).tags.includes('realestate-interested'), false);
 });
 
 test('historical interested or customer statuses never move stage, stop sequences, or fire conversions', async () => {
