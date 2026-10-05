@@ -30,12 +30,39 @@ const faqs = [
     a: 'Book a strategy call, or call (915) 228-3054. Read the full guarantee terms.',
   },
 ];
+const url = 'https://www.deadrivermanagement.com/demand-flow';
+const serviceLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  '@id': `${url}#service`,
+  name: 'Demand Flow',
+  serviceType: 'Demand generation and revenue system',
+  url,
+  description: 'Demand Flow is the system that creates, captures, and converts demand. Accepted businesses get $50,000 in new revenue in 45-60 days, or service fees refunded plus $500. Ad spend is not refunded.',
+  provider: { '@id': 'https://www.deadrivermanagement.com/#organization' },
+  areaServed: { '@type': 'Country', name: 'United States' },
+  audience: { '@type': 'BusinessAudience', name: 'Accepted businesses' },
+  offers: {
+    '@type': 'Offer',
+    name: 'Demand Flow guarantee',
+    url: 'https://www.deadrivermanagement.com/legal/guarantee',
+    description: '$50,000 in new revenue in 45-60 days, or service fees refunded plus $500. Ad spend is not refunded. Accepted businesses only.',
+  },
+};
+const breadcrumbLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.deadrivermanagement.com/' },
+    { '@type': 'ListItem', position: 2, name: 'Demand Flow', item: url },
+  ],
+};
 ---
 
 <Growth
   title="Demand Flow Guarantee | Dead River Management"
   description="Demand Flow is the public offer: $50,000 in new revenue in 45-60 days for accepted businesses, or service fees refunded plus $500. Ad spend is not refunded."
-  schema={faqPage(faqs)}
+  schema={[serviceLd, faqPage(faqs), breadcrumbLd]}
 >
   <Hero
     eyebrow="Demand Flow"

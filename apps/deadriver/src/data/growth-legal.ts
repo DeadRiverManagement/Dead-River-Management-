@@ -26,7 +26,7 @@ export const legal = {
       ['Agreement to these terms', 'By using this website, you agree to these terms and our Privacy Notice. If you do not agree, do not use the site. You must be legally able to enter into an agreement and use the site only for lawful business purposes.'],
       ['Website use and prohibited conduct', 'You may use this site to learn about our services, use our free tools, and contact us. Do not interfere with site security or operation, attempt unauthorized access, introduce harmful code, scrape or harvest information in violation of law, impersonate another person, submit unlawful or misleading material, or use the site to violate another person’s rights.'],
       ['Intellectual property', 'The site, brand, copy, designs, graphics, tools, calculations, workflows, and other materials are owned by Dead River Management or used with permission and are protected by applicable intellectual-property laws. You may use the site for your own internal evaluation. You may not copy, resell, publish, reverse engineer, or create derivative commercial products from our materials without written permission. Client ownership and license rights are governed by the signed client agreement.'],
-      ['Plans, pricing, and signed agreements', 'Scope and price for Foundation, Growth Partner, and Scale are confirmed in the signed agreement before work starts. Setup may be higher when the work requires it. Ad spend is paid separately. Every plan starts with a three-month commitment, then continues month to month with 30 days written notice unless the signed agreement says otherwise. Dead River Demand Intelligence is a separate product with scope and fees confirmed in its own agreement.'],
+      ['Plans, pricing, and signed agreements', 'Scope and price for Demand Flow and any other engagement are confirmed in the signed agreement before work starts. Setup may be higher when the work requires it. Ad spend is paid separately. Every plan starts with a three-month commitment, then continues month to month with 30 days written notice unless the signed agreement says otherwise. Dead River Demand Intelligence is a separate product with scope and fees confirmed in its own agreement.'],
       ['Scope and client responsibilities', 'Full website rebuilds, major rebrands, photo or video production, custom software, complex integrations, large-scale content production, and extensive manual outbound are quoted separately unless included in writing. Clients must provide accurate information, required access and approvals, agreed advertising funds, and lawful instructions and content. Delays in access, approvals, or funding may delay launch dates, performance windows, and delivery.'],
       ['Tools, estimates, and results', 'Free tools and calculators provide estimates based on information entered and are for general planning, not legal, financial, accounting, or investment advice. Case studies describe particular clients and periods. Past performance does not guarantee future results. No lead, revenue, profit, ranking, or advertising result is guaranteed unless a specific written guarantee is included in an eligible client agreement.'],
       ['Third-party services and links', 'The site and our services may use or link to third-party platforms. We do not control their availability, security, policies, content, pricing, or decisions. Your use of third-party services may be governed by separate terms, and we are not responsible for a third party’s acts or omissions.'],
@@ -80,7 +80,7 @@ export const legal = {
     updated: 'September 18, 2026',
     intro: 'How to read the numbers on this site.',
     description:
-      'How to read results and claims on this site. Context for case studies, examples, and nationwide Growth Partner work from Dead River Management.',
+      'How to read results and claims on this site. Context for case studies, examples, and Demand Flow and Demand Intelligence work from Dead River Management.',
     sections: [
       [
         'The Parcel Management Group result',
@@ -101,10 +101,12 @@ export const legal = {
     ],
   },
   guarantee: {
-    name: 'Guarantee terms',
+    name: 'Demand Flow guarantee terms',
     updated: 'September 29, 2026',
     intro:
       'The Demand Flow guarantee in plain words: what we promise, what counts, and what happens if we miss. Your signed agreement controls.',
+    description:
+      'Demand Flow guarantee terms: $50,000 in new revenue in 45-60 days for accepted businesses, or service fees refunded plus $500. Ad spend is not refunded.',
     sections: [
       [
         'The Demand Flow guarantee',

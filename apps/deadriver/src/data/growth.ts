@@ -8,7 +8,7 @@ export const brand = {
   mapHref: 'https://www.google.com/maps/search/?api=1&query=416+N+Stanton+St+Suite+120-M+El+Paso+TX+79901',
   location: 'Based in El Paso, Texas · Serving businesses nationwide',
   description:
-    'A growth partner for businesses ready to break through the next stage. Dead River builds and manages the infrastructure behind growth: acquisition, conversion, follow-up, retention, measurement, and strategy in one managed system. Based in Texas, working with growing businesses nationwide.',
+    'Dead River Management builds Demand Flow: $50,000 in new revenue in 45-60 days for accepted businesses, or service fees refunded plus $500.',
 };
 
 export const engagements = [

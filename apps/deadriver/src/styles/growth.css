@@ -411,6 +411,9 @@ button:active,
   font-size: 15px;
   font-weight: 500;
 }
+#main-nav {
+  gap: 21px;
+}
 .nav-wrap a[aria-current='page'] {
   text-decoration: underline;
   text-underline-offset: 7px;
@@ -2493,6 +2496,9 @@ dialog::backdrop {
   .nav-wrap nav {
     gap: 18px;
   }
+  #main-nav {
+    gap: 16px;
+  }
   .nav-cta {
     font-size: 13px;
     padding-inline: 12px;
@@ -2588,6 +2594,9 @@ dialog::backdrop {
     padding: 20px 32px;
     align-items: stretch;
     font-size: 14px;
+    gap: 5px;
+  }
+  #main-nav {
     gap: 5px;
   }
   .nav-wrap nav.is-open {
