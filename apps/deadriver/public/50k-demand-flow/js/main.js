@@ -257,7 +257,7 @@
   var videoUrl = 'https://d2ol7oe51mr4n9.cloudfront.net/user_3JQHnLTq89zb3rmd2x4Z53G0lE3/52a05e7d-44fc-4cb0-9aab-4269f45edef3.mp4';
   var figure = document.createElement('figure');
   figure.id = 'total-auto-repair-testimonial';
-  figure.style.cssText = 'margin:28px 0 0;padding-top:26px;border-top:1px solid var(--border);text-align:center;';
+  figure.style.cssText = 'margin:0;text-align:center;';
 
   var caption = document.createElement('figcaption');
   caption.id = 'total-auto-repair-testimonial-caption';
@@ -306,6 +306,17 @@
   video.addEventListener('error', function () { errorNote.hidden = false; });
   source.addEventListener('error', function () { errorNote.hidden = false; });
 
-  // Preserve all case-study content; no autoplay or lead/conversion events.
-  card.appendChild(figure);
+  // Replace the static case-study graphic with the testimonial video.
+  var artwork = card.querySelector('.case-art');
+  if (artwork) artwork.parentNode.replaceChild(figure, artwork);
+  else card.appendChild(figure);
+
+  // Lead with Total Auto Repair and keep example numbers in reading order.
+  var firstGroup = document.querySelector('#case-studies .cs-wrap');
+  if (firstGroup) firstGroup.insertBefore(card, firstGroup.firstChild);
+  document.querySelectorAll('#case-studies article.cs').forEach(function (article, index) {
+    var label = article.querySelector('.cs-eyebrow');
+    if (label) label.textContent = label.textContent.replace(/^Example\s+\d+/, 'Example ' + (index + 1));
+  });
+  // No autoplay or lead/conversion events; booking links stay unchanged.
 })();
