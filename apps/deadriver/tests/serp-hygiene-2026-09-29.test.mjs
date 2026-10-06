@@ -76,10 +76,10 @@ const locked = {
     },
   ],
   demandIntelligence: {
-    title: '2x Email Response & Ad ROAS in 60 Days | Demand Intelligence',
+    title: 'Buyer Intent & Audience Data | Demand Intelligence',
     description:
-      'Unlimited daily purchase intent data for agencies and SaaS. 2x email response rates and double ad ROAS in 60 days, or you pay nothing. Book a demo.',
-    titleChars: 60,
+      'Find people researching what you sell. Build audiences, identify website visitors, enrich contacts and activate your data with Demand Intelligence.',
+    titleChars: 50,
     descriptionChars: 147,
   },
 };
@@ -119,7 +119,7 @@ test('six service titles and metas match the locked SERP strings', () => {
   }
 });
 
-test('/demand-intelligence title and meta stay on the live offer', () => {
+test('/demand-intelligence metadata describes the product without price or guarantee', () => {
   const page = read('src/pages/demand-intelligence.astro');
   const di = locked.demandIntelligence;
   assert.equal(di.title.length, di.titleChars);
@@ -127,10 +127,10 @@ test('/demand-intelligence title and meta stay on the live offer', () => {
   assert.match(page, new RegExp(`title="${di.title.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}"`));
   assert.match(page, new RegExp(`description="${di.description.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}"`));
   assert.doesNotMatch(di.description, /\$3,000\/month|3000/);
-  assert.match(di.description, /Book a demo/);
-  assert.match(di.description, /or you pay nothing/);
+  assert.match(di.description, /Build audiences/);
+  assert.doesNotMatch(di.description, /guarantee|refund|2x|pay nothing/i);
   assert.match(page, /<h1>/);
-  assert.match(page, /2x your email response rates and double your ad ROAS in 60 days/);
+  assert.doesNotMatch(page, /priceSpecification|priceCurrency|\$3,000|partial refund|2x your email response/i);
   assert.equal(pageTitle(di.title), di.title);
 });
 
