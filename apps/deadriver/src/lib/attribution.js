@@ -9,6 +9,7 @@ export const UTM_KEYS = [
   'utm_term',
 ];
 export const CLICK_KEYS = ['gclid', 'gbraid', 'wbraid', 'fbclid', 'fbc', 'fbp'];
+export const CAMPAIGN_KEYS = ['campaign_id'];
 export const TOUCH_KEYS = [
   ...UTM_KEYS,
   ...CLICK_KEYS,
@@ -44,7 +45,7 @@ export function pageAddress(value) {
 export function sanitizeTouch(input, now = Date.now()) {
   const touch = {};
   if (!input || typeof input !== 'object' || Array.isArray(input)) return touch;
-  for (const key of UTM_KEYS) {
+  for (const key of [...UTM_KEYS, ...CAMPAIGN_KEYS]) {
     const value = text(input[key]);
     if (value) touch[key] = value;
   }
@@ -93,7 +94,7 @@ export function captureTouch({
 }) {
   const url = new URL(href);
   const input = Object.fromEntries(
-    [...UTM_KEYS, ...CLICK_KEYS.slice(0, 4)].map((key) => [
+    [...UTM_KEYS, ...CAMPAIGN_KEYS, ...CLICK_KEYS.slice(0, 4)].map((key) => [
       key,
       url.searchParams.get(key),
     ]),
@@ -112,7 +113,7 @@ export function captureTouch({
 }
 
 export function hasCampaign(touch) {
-  return [...UTM_KEYS, 'gclid', 'gbraid', 'wbraid', 'fbclid'].some((key) =>
+  return [...UTM_KEYS, ...CAMPAIGN_KEYS, 'gclid', 'gbraid', 'wbraid', 'fbclid'].some((key) =>
     Boolean(touch?.[key]),
   );
 }
@@ -131,7 +132,7 @@ export function mergeAttribution(previous, incoming, now = Date.now()) {
   const sameVisit =
     latest &&
     latest.landing_page === touch.landing_page &&
-    [...UTM_KEYS, 'gclid', 'gbraid', 'wbraid', 'fbclid'].every(
+    [...UTM_KEYS, ...CAMPAIGN_KEYS, 'gclid', 'gbraid', 'wbraid', 'fbclid'].every(
       (key) => latest[key] === touch[key],
     );
   const next = {

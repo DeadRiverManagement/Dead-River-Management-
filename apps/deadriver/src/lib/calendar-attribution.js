@@ -2,7 +2,7 @@
 // only carries campaign context into it; clicks and page views are not bookings.
 export function connectCalendarAttribution(win, collectAttribution) {
   const calendar = 'https://api.leadconnectorhq.com/widget/bookings/demandflow';
-  const keys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term',
+  const keys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'campaign_id',
     'gclid', 'gbraid', 'wbraid', 'fbclid'];
   const analyticsDenied = (win.dataLayer || []).some(e => e?.[0] === 'consent' &&
     ['default', 'update'].includes(e[1]) && e[2]?.analytics_storage === 'denied');
