@@ -59,7 +59,7 @@ const schema = [
       <div class="di-audience-visual" aria-label="Illustration of audience research filters, not a live search result">
         <div class="di-visual-top"><span class="di-mini-mark">di</span><span>Audience explorer</span><span class="di-visual-caption">Illustration</span></div>
         <div class="di-search"><span aria-hidden="true">⌕</span> What is your audience researching?</div>
-        <div class="di-filters"><span>Roofing</span><span>Dallas, Texas</span><span>Last 2–7 days</span></div>
+        <div class="di-filters"><span>Roofing</span><span>Dallas, Texas</span><span>Last 2-7 days</span></div>
         <div class="di-bars" aria-hidden="true">
           <div><span>Last 2 days</span><i style="--w:42%"></i><b>1,900</b></div>
           <div><span>Last 7 days</span><i style="--w:100%"></i><b>4,500</b></div>
@@ -125,7 +125,7 @@ const schema = [
       </div>
     </section>
 
-    <section class="di-questions di-wrap di-reveal" aria-labelledby="questions-heading"><div><p class="di-label">A closer look</p><h2 id="questions-heading">What you<br />want to know.</h2></div><div>{faqs.map(([question, answer]) => <article><h3>{question}</h3><p>{answer}</p></article>)}</div></section>
+    <section class="di-questions di-wrap di-reveal" aria-labelledby="questions-heading"><div><p class="di-label">A closer look</p><h2 id="questions-heading">What you<br />want to know.</h2></div><div>{faqs.map(([question, answer]) => <article><h3>{question}</h3><p>{answer}</p></article>)}<nav aria-label="Related"><p class="di-label"><span></span> Related</p><p><a class="di-text-link" href="/audience-builder">Audience builder</a></p><p><a class="di-text-link" href="/intent-data-providers">Intent data providers</a></p><p><a class="di-text-link" href="/website-visitor-identification">Website visitor identification</a></p></nav></div></section>
 
     <section class="di-demo-section di-wrap di-reveal">
       <svg class="di-prism" viewBox="0 0 320 360" aria-hidden="true">
