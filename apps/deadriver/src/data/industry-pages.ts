@@ -190,7 +190,7 @@ export const industryPages: IndustryPage[] = [
     guides: [
       { label: 'Five habits for a year-round busy season', href: '/marketing-advice/five-habits-for-a-year-round-busy-season' },
       { label: 'Rank higher on Google Maps checklist', href: '/marketing-advice/rank-higher-on-google-maps-checklist' },
-      { label: 'The Google Ads fix that stops wasted spend', href: '/marketing-advice/google-ads-fix-that-stops-wasted-spend' },
+      { label: 'The Google Ads fix that stops wasted spend', href: '/marketing-advice/google-ads-form-that-stops-wasted-spend' },
     ],
     faqs: [
       { q: 'How do you handle the summer rush and the winter lull?', a: 'Ad budgets rise with the temperature and fall when the schedule is full. Maintenance plans and heating pages are sold during the busy months so winter has work booked in advance.' },

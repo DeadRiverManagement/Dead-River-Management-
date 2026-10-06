@@ -1076,22 +1076,32 @@
     },
     {
       "source": "/marketing-advice/google-ads-structure-that-stops-wasted-spend",
-      "destination": "/marketing-advice/google-ads-fix-that-stops-wasted-spend",
+      "destination": "/marketing-advice/google-ads-form-that-stops-wasted-spend",
       "statusCode": 301
     },
     {
       "source": "/marketing-advice/google-ads-structure-that-stops-wasted-spend.html",
-      "destination": "/marketing-advice/google-ads-fix-that-stops-wasted-spend",
+      "destination": "/marketing-advice/google-ads-form-that-stops-wasted-spend",
       "statusCode": 301
     },
     {
       "source": "/marketing-advice/google-ads-search-that-stops-wasted-spend",
-      "destination": "/marketing-advice/google-ads-fix-that-stops-wasted-spend",
+      "destination": "/marketing-advice/google-ads-form-that-stops-wasted-spend",
       "statusCode": 301
     },
     {
       "source": "/marketing-advice/google-ads-search-that-stops-wasted-spend.html",
-      "destination": "/marketing-advice/google-ads-fix-that-stops-wasted-spend",
+      "destination": "/marketing-advice/google-ads-form-that-stops-wasted-spend",
+      "statusCode": 301
+    },
+    {
+      "source": "/marketing-advice/google-ads-fix-that-stops-wasted-spend",
+      "destination": "/marketing-advice/google-ads-form-that-stops-wasted-spend",
+      "statusCode": 301
+    },
+    {
+      "source": "/marketing-advice/google-ads-fix-that-stops-wasted-spend.html",
+      "destination": "/marketing-advice/google-ads-form-that-stops-wasted-spend",
       "statusCode": 301
     },
     {
