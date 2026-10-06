@@ -14,11 +14,12 @@ function browser(query = '', storage = new Map()) {
   };
 }
 test('campaign and click ID reach both calendar links and embed, without conversions', () => {
-  const win=browser('?utm_source=facebook&utm_campaign=50k&fbclid=click123&email=private');
+  const win=browser('?utm_source=facebook&utm_campaign=50k&campaign_id=120250024069110352&fbclid=click123&email=private');
   connectCalendarAttribution(win,collectAttribution);
   const url=new URL(win.frame.src);
   assert.equal(url.searchParams.get('fbclid'),'click123');
   assert.equal(url.searchParams.get('utm_campaign'),'50k');
+  assert.equal(url.searchParams.get('campaign_id'),'120250024069110352');
   assert.equal(url.searchParams.has('email'),false);
   assert.equal(win.links[0].href,win.frame.src);
   assert.equal(win.links[1].href,'https://example.com/');
@@ -26,11 +27,13 @@ test('campaign and click ID reach both calendar links and embed, without convers
 });
 test('direct return retains campaign; new campaign does not inherit old click ID', () => {
   const storage=new Map();
-  connectCalendarAttribution(browser('?utm_source=facebook&fbclid=old',storage),collectAttribution);
+  connectCalendarAttribution(browser('?utm_source=facebook&campaign_id=oldcampaign&fbclid=old',storage),collectAttribution);
   const returning=browser('',storage); connectCalendarAttribution(returning,collectAttribution);
   assert.equal(new URL(returning.frame.src).searchParams.get('fbclid'),'old');
+  assert.equal(new URL(returning.frame.src).searchParams.get('campaign_id'),'oldcampaign');
   const newer=browser('?utm_source=google&gclid=new',storage); connectCalendarAttribution(newer,collectAttribution);
   assert.equal(new URL(newer.frame.src).searchParams.has('fbclid'),false);
+  assert.equal(new URL(newer.frame.src).searchParams.has('campaign_id'),false);
   assert.equal(new URL(newer.frame.src).searchParams.get('gclid'),'new');
 });
 test('GPC and consent denials keep booking usable without forwarding attribution', () => {
