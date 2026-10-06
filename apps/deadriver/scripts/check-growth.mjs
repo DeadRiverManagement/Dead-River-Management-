@@ -345,7 +345,6 @@ const sitemapKeep = new Set([
   '/tools/search-preview',
   '/tools/campaign-url',
   '/marketing-advice',
-  '/marketing-advice/30-leads-in-60-days-guarantee',
   '/marketing-advice/ai-receptionist-cost',
   '/marketing-advice/ai-search-for-local-business',
   '/marketing-advice/el-paso-home-services-marketing-agency',

@@ -76,6 +76,13 @@ export default defineConfig({
           '/google-business-profile-el-paso',
           '/local-seo-el-paso',
         ]);
+        // Retired 30-leads stays published but undiscoverable via sitemap.
+        // Demand Flow and real-estate VSL landers stay out.
+        const hiddenFromSitemap = new Set([
+          '/marketing-advice/30-leads-in-60-days-guarantee',
+          '/50k-demand-flow',
+          '/real-estate-buyer-appointments',
+        ]);
         return (
           !path.startsWith('/welcome/') &&
           path !== '/onboarding' &&
@@ -87,6 +94,7 @@ export default defineConfig({
           path !== '/book/thanks' &&
           path !== '/demand-intelligence/thanks' &&
           !oldPlanPaths.has(path) &&
+          !hiddenFromSitemap.has(path) &&
           !redirected.has(path)
         );
       },
