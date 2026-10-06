@@ -52,6 +52,7 @@ export default defineConfig({
   // Purchase, gated content and paid-campaign steps are not discovery URLs.
   integrations: [
     sitemap({
+      customPages: ['https://www.deadrivermanagement.com/real-estate-buyer-appointments'],
       serialize: (item) => {
         const path = new URL(item.url).pathname.replace(/\/$/, '') || '/';
         const date = articleDates[path];
