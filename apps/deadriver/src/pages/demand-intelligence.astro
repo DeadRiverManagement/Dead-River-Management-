@@ -20,6 +20,8 @@ const faqs = [
   ['How recent are the signals?', 'The platform refreshes intent data daily. You can filter by the available lookback windows, including the last two or seven days shown in our Dallas roofing walkthrough.'],
   ['Does it support businesses and consumers?', 'Yes. Build business and consumer audiences nationwide, using the topics, locations and attributes available for your market.'],
   ['Can I use the audiences in my existing tools?', 'You can export lists and prepare audiences for Meta and Google. On the demo, we show how the available exports and connections fit your current tools.'],
+  ['What is buyer intent data?', 'Buyer intent data is the same thing as purchase intent data: signals that a person or company is actively researching a product or service right now, such as searches, page visits and content reads in the last few days. It tells you who is in the market today, so you can reach them before they pick someone else.'],
+  ['How do I get intent data for my business?', 'Through a platform that collects and matches the signals, like Demand Intelligence. You tell us the topics and locations that matter, the platform delivers the matching audiences daily, and you use them in email, ads or calls. Book a demo and we will show you the live reach for your market.'],
   ['Is this the same as Demand Flow?', 'Demand Intelligence is the data platform. Demand Flow is our managed marketing system, which uses audience intelligence alongside advertising, landing pages and follow-up.'],
 ];
 const schema = [
@@ -29,9 +31,11 @@ const schema = [
 ];
 ---
 
-<Growth title="Buyer Intent & Audience Data | Demand Intelligence" description="Find people researching what you sell. Build audiences, identify website visitors, enrich contacts and activate your data with Demand Intelligence." ogImage="/media/demand-intelligence-walkthrough-poster.jpg" schema={schema} campaign={true} campaignHref="#di-demo" campaignLabel="See a live demo" campaignShort="See a demo">
+<Growth title="Buyer Intent & Audience Data | Demand Intelligence" description="Find people researching what you sell. Build audiences, identify website visitors, enrich contacts and activate your data with Demand Intelligence." ogImage="/media/demand-intelligence-walkthrough-poster.jpg" schema={schema}>
   <div class="di-product">
     <section class="di-hero di-wrap">
+      <div class="di-glass di-glass-a" aria-hidden="true"></div>
+      <div class="di-glass di-glass-b" aria-hidden="true"></div>
       <div class="di-hero-copy">
         <p class="di-label"><span></span> Demand Intelligence</p>
         <h1>Find the people.<br />See the intent.<br /><em>Reach your market.</em></h1>
@@ -44,14 +48,18 @@ const schema = [
         <div class="di-search"><span aria-hidden="true">⌕</span> What is your audience researching?</div>
         <div class="di-filters"><span>Roofing</span><span>Dallas, Texas</span><span>Last 2–7 days</span></div>
         <svg class="di-network" viewBox="0 0 520 280" fill="none" aria-hidden="true">
-          <defs><radialGradient id="di-glow"><stop stop-color="#b6f5c9" stop-opacity=".28"/><stop offset="1" stop-color="#b6f5c9" stop-opacity="0"/></radialGradient></defs>
-          <circle cx="260" cy="140" r="134" fill="url(#di-glow)"/>
-          <g stroke="#587666" stroke-width="1"><path d="M260 140L90 52M260 140L170 38M260 140L340 40M260 140L432 88M260 140L430 220M260 140L320 245M260 140L115 225M260 140L52 148M90 52L170 38L340 40L432 88L430 220L320 245L115 225L52 148Z"/><path d="M90 52L115 225M170 38L320 245M340 40L430 220M52 148L432 88" stroke-opacity=".35"/></g>
-          <g fill="#b6f5c9"><circle cx="90" cy="52" r="6"/><circle cx="170" cy="38" r="5"/><circle cx="340" cy="40" r="7"/><circle cx="432" cy="88" r="5"/><circle cx="430" cy="220" r="7"/><circle cx="320" cy="245" r="5"/><circle cx="115" cy="225" r="7"/><circle cx="52" cy="148" r="5"/></g>
-          <circle cx="260" cy="140" r="52" fill="#14281e" stroke="#b6f5c9" stroke-opacity=".45"/><circle cx="260" cy="140" r="38" stroke="#b6f5c9" stroke-opacity=".25"/>
+          <defs>
+            <radialGradient id="di-glow"><stop stop-color="#b6f5c9" stop-opacity=".32"/><stop offset="1" stop-color="#b6f5c9" stop-opacity="0"/></radialGradient>
+            <linearGradient id="di-core" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#1c3a2a"/><stop offset="1" stop-color="#0b1a12"/></linearGradient>
+          </defs>
+          <circle cx="260" cy="140" r="140" fill="url(#di-glow)"/>
+          <g stroke="#5f8a72" stroke-width="1"><path d="M260 140L90 52M260 140L170 38M260 140L340 40M260 140L432 88M260 140L430 220M260 140L320 245M260 140L115 225M260 140L52 148M90 52L170 38L340 40L432 88L430 220L320 245L115 225L52 148Z"/><path d="M90 52L115 225M170 38L320 245M340 40L430 220M52 148L432 88" stroke-opacity=".3"/></g>
+          <g class="di-nodes" fill="#b6f5c9"><circle cx="90" cy="52" r="6"/><circle cx="170" cy="38" r="5"/><circle cx="340" cy="40" r="7"/><circle cx="432" cy="88" r="5"/><circle cx="430" cy="220" r="7"/><circle cx="320" cy="245" r="5"/><circle cx="115" cy="225" r="7"/><circle cx="52" cy="148" r="5"/></g>
+          <circle class="di-ring" cx="260" cy="140" r="62" stroke="#b6f5c9" stroke-opacity=".25"/>
+          <circle cx="260" cy="140" r="52" fill="url(#di-core)" stroke="#b6f5c9" stroke-opacity=".6"/><circle cx="260" cy="140" r="38" stroke="#b6f5c9" stroke-opacity=".3"/>
           <path d="M245 140l10 10 22-23" stroke="#b6f5c9" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
-        <div class="di-visual-bottom"><span><i></i> Recent research activity</span><span>Focused audience <Arrow /></span></div>
+        <div class="di-visual-bottom"><span><i></i> Recent research activity</span><span class="di-reach"><strong data-count="4500">4,500</strong> matching contacts</span><span>Focused audience <Arrow /></span></div>
       </div>
     </section>
 
@@ -61,30 +69,60 @@ const schema = [
     </section>
 
     <section class="di-problem di-wrap">
-      <p class="di-label">Take control of your targeting</p>
-      <h2>A broad audience is easy.<br /><em>A relevant audience is the point.</em></h2>
-      <p class="di-section-copy">A job title or a location only tells you part of the story. Add what people are researching, when they researched it and how it fits your market. Give your next campaign a more focused starting point.</p>
-      <div class="di-process"><span>Research activity</span><b aria-hidden="true">→</b><span>Matched profiles</span><b aria-hidden="true">→</b><span>Your audience</span><b aria-hidden="true">→</b><span>Your campaigns</span></div>
+      <div class="di-problem-copy">
+        <p class="di-label">Take control of your targeting</p>
+        <h2>A broad audience is easy.<br /><em>A relevant audience is the point.</em></h2>
+        <p class="di-section-copy">A job title or a location only tells you part of the story. Add what people are researching, when they researched it and how it fits your market. Give your next campaign a more focused starting point.</p>
+      </div>
+      <div class="di-flow" role="list" aria-label="How an audience is built">
+        <svg class="di-flow-line" viewBox="0 0 1000 220" preserveAspectRatio="none" fill="none" aria-hidden="true">
+          <defs><linearGradient id="di-flow-grad" x1="0" x2="1"><stop stop-color="#b6f5c9" stop-opacity=".15"/><stop offset="1" stop-color="#b6f5c9"/></linearGradient></defs>
+          <path d="M40 190 C 260 190, 260 130, 360 130 S 560 70, 660 70 S 880 30, 960 30" stroke="url(#di-flow-grad)" stroke-width="2"/>
+        </svg>
+        {[['Research activity', 'What people searched, read and compared in the last few days.'], ['Matched profiles', 'That activity matched to real business and consumer records.'], ['Your audience', 'Filtered by topic, location, recency and the attributes you choose.'], ['Your campaigns', 'Exported to ads, email and sales tools, ready to run.']].map(([t, d], i) => (
+          <div class="di-flow-step" role="listitem" style={`--i:${i}`}><span class="di-flow-dot" aria-hidden="true"></span><strong>{t}</strong><p>{d}</p></div>
+        ))}
+      </div>
     </section>
 
     <section class="di-capabilities di-wrap" id="capabilities">
       <div class="di-section-intro"><p class="di-label">One platform. Four practical jobs.</p><h2>From intent to action.</h2></div>
-      {capabilities.map(([number, title, description, tags]) => <article class="di-capability"><span class="di-step">{number}</span><div><h3>{title}</h3><p>{description}</p></div><ul>{tags.map(tag => <li>{tag}</li>)}</ul></article>)}
+      <div class="di-cap-grid">
+        {capabilities.map(([number, title, description, tags], i) => (
+          <article class="di-capability">
+            <span class="di-cap-icon" aria-hidden="true">
+              {i === 0 && <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l5 5"/></svg>}
+              {i === 1 && <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg>}
+              {i === 2 && <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M7 9h10M7 13h7M7 17h4"/></svg>}
+              {i === 3 && <svg viewBox="0 0 24 24"><path d="M4 12h12M12 6l6 6-6 6"/><path d="M20 4v16"/></svg>}
+            </span>
+            <span class="di-step">{number}</span>
+            <h3>{title}</h3>
+            <p>{description}</p>
+            <ul>{tags.map(tag => <li>{tag}</li>)}</ul>
+          </article>
+        ))}
+      </div>
     </section>
 
     <section class="di-demo-video di-wrap" id="platform">
       <div class="di-section-intro di-video-intro"><div><p class="di-label">See the actual platform</p><h2>Your market.<br />Your audience.<br /><em>Right on screen.</em></h2></div><p>Watch us search the Dallas roofing market and filter recent research activity. The walkthrough shows the last two days and the last seven days, so you can see how recency changes the audience.</p></div>
-      <figure><video controls preload="metadata" playsinline poster="/media/demand-intelligence-walkthrough-poster.jpg" width="1920" height="1080" aria-label="Demand Intelligence Dallas roofing walkthrough"><source src="/media/demand-intelligence-walkthrough.mp4" type="video/mp4" />Your browser does not support this video. <a href="/media/demand-intelligence-walkthrough.mp4">Download the walkthrough.</a></video><figcaption>Dallas roofing demonstration. Audience counts reflect the recorded search.</figcaption></figure>
+      <figure class="di-screen"><video controls preload="metadata" playsinline poster="/media/demand-intelligence-walkthrough-poster.jpg" width="1920" height="1080" aria-label="Demand Intelligence Dallas roofing walkthrough"><source src="/media/demand-intelligence-walkthrough.mp4" type="video/mp4" />Your browser does not support this video. <a href="/media/demand-intelligence-walkthrough.mp4">Download the walkthrough.</a></video><figcaption>Dallas roofing demonstration. Audience counts reflect the recorded search.</figcaption></figure>
     </section>
 
     <section class="di-activation di-wrap">
       <div><p class="di-label">Built for the way you work</p><h2>Your data should<br />move with you.</h2><p class="di-section-copy">Build the audience once. Export the list, prepare an advertising audience or bring enriched contact information into your sales tools.</p><a class="di-text-link" href="#di-demo">See it with your use case <Arrow /></a></div>
-      <div class="di-tools" aria-label="Audience activation use cases"><span>Meta Ads</span><span>Google Ads</span><span>Contact lists</span><span>Customer management</span><span>Audience exports</span><span>Sales tools</span></div>
+      <div class="di-tools" aria-label="Audience activation use cases">
+        {[['Meta Ads', 'M8 12c0-3 1.6-5 3.2-5s2.6 2 4 5 2.4 5 4 5 3.2-2 3.2-5-1.6-5-3.2-5-2.6 2-4 5-2.4 5-4 5S8 15 8 12z'], ['Google Ads', 'M12 3l8 14H4z'], ['Contact lists', 'M5 6h14M5 12h14M5 18h9'], ['Customer management', 'M12 4a4 4 0 110 8 4 4 0 010-8zM4 20c0-4 3.6-6 8-6s8 2 8 6'], ['Audience exports', 'M12 4v12M6 10l6 6 6-6M4 20h16'], ['Sales tools', 'M4 18l5-6 4 3 7-9']].map(([label, d]) => (
+          <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d={d}/></svg>{label}</span>
+        ))}
+      </div>
     </section>
 
     <section class="di-questions di-wrap" aria-labelledby="questions-heading"><div><p class="di-label">A closer look</p><h2 id="questions-heading">What you<br />want to know.</h2></div><div>{faqs.map(([question, answer]) => <article><h3>{question}</h3><p>{answer}</p></article>)}</div></section>
 
     <section class="di-demo-section di-wrap">
+      <div class="di-glass di-glass-c" aria-hidden="true"></div>
       <div><p class="di-label">See Demand Intelligence</p><h2>Let’s look at<br /><em>your market.</em></h2><p class="di-section-copy">Tell us who you want to reach. We’ll walk through the platform and show how to build an audience around your business, your location and what your customers are researching.</p><p class="di-demo-detail">A live product walkthrough with the Dead River Management team.</p></div>
       <form class="di-form" id="di-demo" data-redirect="/demand-intelligence/thanks">
         <h3>Request your demo</h3><p class="di-form-sub">See what the platform can do for your team.</p>
@@ -100,33 +138,77 @@ const schema = [
   </div>
 </Growth>
 
-<script>import '../scripts/di-lead.js';</script>
+<script>
+  import '../scripts/di-lead.js';
+  // Count the reach number up once it scrolls into view. Static text stays if motion is off.
+  const el = document.querySelector('[data-count]');
+  if (el && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const target = Number(el.dataset.count);
+    const io = new IntersectionObserver((entries) => {
+      if (!entries[0].isIntersecting) return;
+      io.disconnect();
+      const start = performance.now();
+      const tick = (t) => {
+        const p = Math.min(1, (t - start) / 1400);
+        el.textContent = Math.round(target * (1 - Math.pow(1 - p, 3))).toLocaleString('en-US');
+        if (p < 1) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+    });
+    io.observe(el);
+  }
+</script>
 
 <style>
-  :global(body:has(.di-product)) { --paper:#0b100e; --ink:#f3f6f3; --muted:#a5b2aa; --green:#b6f5c9; --line:#28362e; --copper:#b6f5c9; background:var(--paper); }
-  :global(body:has(.di-product) .site-header) { background:#0b100ef2; border-color:#28362e; }
+  /* Dark product theme: deep forest black, mint signal, a warm copper glow. */
+  :global(body:has(.di-product)) { --paper:#070c0a; --ink:#f3f6f3; --muted:#a5b2aa; --green:#b6f5c9; --sage:#13211a; --line:#243129; --copper:#e39a6b; background:var(--paper); }
+  :global(body:has(.di-product) .site-header) { background:#070c0aeb; border-color:#243129; }
   :global(body:has(.di-product) .brand img) { filter:brightness(0) invert(1); }
-  :global(body:has(.di-product) .site-header .button) { background:#b6f5c9; color:#10251a; border-color:#b6f5c9; }
-  :global(body:has(.di-product) .site-footer) { background:#0b100e; color:#a5b2aa; border-top:1px solid #28362e; }
-  :global(body:has(.di-product) .nav-contact) { color:#a5b2aa; }
-  .di-product { overflow:hidden; background:radial-gradient(ellipse at 75% 8%,#193b2626,transparent 30%),#0b100e; }
-  .di-wrap { width:min(1280px,calc(100% - 96px)); margin-inline:auto; }
+  :global(body:has(.di-product) .nav-wrap nav a) { color:#e6efe8; }
+  :global(body:has(.di-product) .nav-cta),:global(body:has(.di-product) .nav-text) { border-color:#3a4f42; color:#f3f6f3; }
+  :global(body:has(.di-product) .nav-dropdown > div),:global(body:has(.di-product) .nav-wrap nav.is-open) { background:#0d1511; border-color:#243129; }
+  :global(body:has(.di-product) .nav-contact) { color:#a5b2aa; border-color:#243129; }
+  :global(body:has(.di-product) .nav-contact a) { color:#f3f6f3; }
+  :global(body:has(.di-product) .nav-contact .nav-text) { border-color:#f3f6f3; }
+  :global(body:has(.di-product) .menu-toggle) { border-color:#3a4f42; }
+  :global(body:has(.di-product) .menu-toggle span) { background:#f3f6f3; }
+  :global(body:has(.di-product) .site-footer) { background:#070c0a; border-top:1px solid #243129; }
+  :global(body:has(.di-product) .site-footer .button) { background:#b6f5c9; color:#10251a; border-color:#b6f5c9; }
+  :global(body:has(.di-product) .site-footer .button.secondary) { background:transparent; color:#f3f6f3; border-color:#3a4f42; }
+  :global(body:has(.di-product) .footer-social a) { border-color:#3a4f42; color:#a5b2aa; }
+  :global(body:has(.di-product) .footer-bottom) { border-color:#243129; }
+  :global(body:has(.di-product) .footer-bottom .brand img) { filter:brightness(0) invert(1); }
+
+  .di-product { overflow:hidden; position:relative; background:radial-gradient(900px 600px at 82% 0%,#1a3f2a55,transparent 60%),radial-gradient(700px 500px at 0% 40%,#7a3d1e33,transparent 60%),#070c0a; }
+  .di-wrap { width:min(1280px,calc(100% - 96px)); margin-inline:auto; position:relative; }
   .di-label { color:#b6f5c9; font-size:12px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; margin-bottom:25px; display:flex; align-items:center; gap:10px; }
-  .di-label span { width:7px; height:7px; background:#b6f5c9; border-radius:50%; }
+  .di-label span { width:7px; height:7px; background:#b6f5c9; border-radius:50%; box-shadow:0 0 12px #b6f5c9; }
   h1,h2,h3 { color:#f3f6f3; }
-  h1 { font-size:clamp(48px,5.2vw,76px); line-height:1.06; letter-spacing:-.055em; }
-  h2 { font-size:clamp(36px,4vw,56px); line-height:1.1; letter-spacing:-.045em; }
-  em { color:#b6f5c9; font-style:normal; }
+  h1 { font-size:clamp(48px,5.2vw,78px); line-height:1.04; letter-spacing:-.055em; }
+  h2 { font-size:clamp(36px,4vw,56px); line-height:1.08; letter-spacing:-.045em; }
+  em { color:#b6f5c9; font-style:normal; background:linear-gradient(90deg,#b6f5c9,#e9fff0 60%,#b6f5c9); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
+
+  /* Glass shards: the one piece of theatre on the page. */
+  .di-glass { position:absolute; pointer-events:none; border-radius:28px; background:linear-gradient(135deg,#ffffff38,#ffffff0a 40%,#b6f5c926 70%,#ffffff1f); border:1px solid #ffffff4d; box-shadow:inset 0 1px 0 #ffffff80, inset 0 -30px 60px #b6f5c926, 0 0 60px #b6f5c922, 0 40px 90px #00000080; backdrop-filter:blur(6px); transform:rotate(-14deg) skewY(6deg); animation:di-float 11s ease-in-out infinite; }
+  .di-glass::after { content:""; position:absolute; inset:14%; border-radius:18px; background:linear-gradient(120deg,#ffffff18,transparent 55%,#e39a6b22); filter:blur(2px); }
+  .di-glass-a { width:260px; height:380px; right:-90px; top:30px; }
+  .di-glass-b { width:180px; height:260px; right:260px; bottom:-60px; transform:rotate(22deg) skewY(-6deg); animation-delay:-5s; opacity:.8; }
+  .di-glass-c { width:320px; height:320px; left:-140px; bottom:-120px; border-radius:50%; transform:none; background:radial-gradient(circle at 35% 30%,#ffffff33,#b6f5c922 35%,#070c0a00 70%); border-color:#ffffff1a; animation-delay:-3s; }
+  @keyframes di-float { 0%,100% { translate:0 0; } 50% { translate:0 -18px; } }
+
   .di-hero { display:grid; grid-template-columns:1.15fr 1fr; gap:64px; align-items:center; padding:98px 0 110px; }
+  .di-hero-copy { position:relative; z-index:1; }
   .di-intro { font-size:18px; line-height:1.7; max-width:510px; margin-top:28px; }
   .di-actions { display:flex; gap:28px; align-items:center; margin-top:34px; flex-wrap:wrap; }
-  .di-button { display:inline-flex; align-items:center; justify-content:center; gap:24px; background:#b6f5c9; color:#10251a; border:1px solid #b6f5c9; border-radius:7px; padding:17px 23px; font-weight:600; font-size:15px; }
-  .di-button:hover { background:#d0ffdf; color:#10251a; transform:translateY(-2px); }
+  .di-button { display:inline-flex; align-items:center; justify-content:center; gap:24px; background:#b6f5c9; color:#10251a; border:1px solid #b6f5c9; border-radius:7px; padding:17px 23px; font-weight:600; font-size:15px; box-shadow:0 0 0 0 #b6f5c900; transition:transform .2s ease, box-shadow .2s ease, background .2s ease; }
+  .di-button:hover { background:#d0ffdf; color:#10251a; transform:translateY(-2px); box-shadow:0 10px 40px #b6f5c955; }
   .di-button svg,.di-text-link svg,.di-visual-bottom svg { width:18px; }
   .di-watch { font-size:14px; color:#f3f6f3; display:flex; align-items:center; gap:12px; }
   .di-watch span { width:32px; height:32px; display:grid; place-items:center; border:1px solid #425d4e; border-radius:50%; font-size:10px; color:#b6f5c9; }
   .di-hero-note { margin-top:28px; font-size:12px; color:#82958a; max-width:410px; }
-  .di-audience-visual { background:linear-gradient(150deg,#15231b,#0e1712); border:1px solid #344d3e; border-radius:14px; padding:24px; transform:rotate(-2deg); box-shadow:0 35px 70px #030b0640; }
+
+  .di-audience-visual { position:relative; z-index:1; background:linear-gradient(150deg,#15231bcc,#0e1712e6); border:1px solid #3a5a48; border-radius:16px; padding:24px; transform:rotate(-2deg); box-shadow:0 35px 70px #00000080, 0 0 0 1px #b6f5c91a, inset 0 1px 0 #ffffff14; backdrop-filter:blur(10px); }
+  .di-audience-visual::before { content:""; position:absolute; inset:-1px; border-radius:17px; padding:1px; background:linear-gradient(135deg,#b6f5c966,transparent 40%,transparent 60%,#e39a6b55); -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0); mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0); -webkit-mask-composite:xor; mask-composite:exclude; pointer-events:none; }
   .di-visual-top { display:flex; align-items:center; gap:12px; color:#e6efe8; font-size:13px; }
   .di-mini-mark { color:#b6f5c9; font-size:24px; font-weight:600; letter-spacing:-.08em; }
   .di-visual-caption { margin-left:auto; color:#819488; font-size:10px; text-transform:uppercase; letter-spacing:.1em; }
@@ -135,49 +217,74 @@ const schema = [
   .di-filters { display:flex; flex-wrap:wrap; gap:7px; margin-top:12px; }
   .di-filters span { padding:5px 9px; background:#223c2c; border:1px solid #36513f; color:#c4e4cf; font-size:10px; border-radius:4px; }
   .di-network { width:100%; display:block; margin:5px 0; }
-  .di-visual-bottom { display:flex; justify-content:space-between; gap:15px; padding-top:17px; border-top:1px solid #2d4134; color:#a8bfb0; font-size:10px; }
+  .di-nodes circle { animation:di-pulse 3s ease-in-out infinite; transform-box:fill-box; transform-origin:center; }
+  .di-nodes circle:nth-child(2n) { animation-delay:-1s; } .di-nodes circle:nth-child(3n) { animation-delay:-2s; }
+  .di-ring { animation:di-ring 4s ease-out infinite; transform-box:fill-box; transform-origin:center; }
+  @keyframes di-pulse { 0%,100% { opacity:.55; scale:1; } 50% { opacity:1; scale:1.35; } }
+  @keyframes di-ring { 0% { scale:.8; opacity:.6; } 100% { scale:1.5; opacity:0; } }
+  .di-visual-bottom { display:flex; justify-content:space-between; gap:15px; padding-top:17px; border-top:1px solid #2d4134; color:#a8bfb0; font-size:10px; flex-wrap:wrap; }
   .di-visual-bottom span { display:flex; gap:7px; align-items:center; }
-  .di-visual-bottom i { width:5px; height:5px; border-radius:50%; background:#b6f5c9; }
-  .di-data { border-top:1px solid #28362e; padding-top:62px; padding-bottom:88px; }
+  .di-visual-bottom i { width:5px; height:5px; border-radius:50%; background:#b6f5c9; box-shadow:0 0 8px #b6f5c9; }
+  .di-reach strong { color:#b6f5c9; font-family:var(--display); font-size:18px; letter-spacing:-.03em; font-variant-numeric:tabular-nums; }
+
+  .di-data { padding:30px 0 88px; }
   .di-section-intro { margin-bottom:42px; }
   .di-section-intro .di-label { margin-bottom:18px; }
-  .di-stats { display:grid; grid-template-columns:repeat(3,1fr); gap:40px; }
-  .di-stats article { padding:15px 0 5px; border-top:1px solid #34483b; }
-  .di-stats strong { display:block; font-size:clamp(60px,6.6vw,90px); font-family:var(--display); font-variant-numeric:tabular-nums; line-height:1.2; letter-spacing:-.06em; color:#b6f5c9; }
+  .di-stats { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; padding:36px; border-radius:18px; background:linear-gradient(135deg,#132a1d,#0b1a12 55%,#1a2a20); border:1px solid #2c4435; box-shadow:inset 0 1px 0 #ffffff12, 0 30px 80px #00000066; position:relative; overflow:hidden; }
+  .di-stats::before { content:""; position:absolute; inset:0; background:radial-gradient(500px 220px at 20% 100%,#b6f5c922,transparent 60%),radial-gradient(400px 200px at 90% 0%,#e39a6b1f,transparent 60%); pointer-events:none; }
+  .di-stats article { position:relative; padding:10px 20px 5px; border-left:1px solid #34483b; }
+  .di-stats article:first-child { border-left:0; }
+  .di-stats strong { display:block; font-size:clamp(56px,6.2vw,88px); font-family:var(--display); font-variant-numeric:tabular-nums; line-height:1.1; letter-spacing:-.06em; background:linear-gradient(180deg,#eafff0,#b6f5c9 55%,#6fd59a); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
   .di-stats h3 { font-family:var(--body); font-size:16px; letter-spacing:0; margin:14px 0 10px; }
   .di-stats p { font-size:13px; max-width:270px; }
-  .di-problem { border-top:1px solid #28362e; padding:84px 0; }
+
+  .di-problem { border-top:1px solid #243129; padding:84px 0; display:grid; grid-template-columns:.9fr 1.1fr; gap:60px; align-items:center; }
   .di-section-copy { font-size:17px; line-height:1.8; max-width:600px; margin-top:25px; }
-  .di-process { margin-top:38px; display:flex; align-items:center; gap:20px; flex-wrap:wrap; font-size:13px; }
-  .di-process span { padding:12px 17px; background:#14221a; border:1px solid #2f4537; border-radius:4px; }
-  .di-process b { color:#b6f5c9; font-weight:400; }
+  .di-flow { position:relative; display:grid; grid-template-columns:repeat(4,1fr); gap:14px; align-items:end; min-height:300px; padding-top:40px; }
+  .di-flow-line { position:absolute; inset:0 0 auto 0; width:100%; height:220px; pointer-events:none; }
+  .di-flow-step { position:relative; padding-top:28px; margin-top:calc((3 - var(--i)) * 42px); }
+  .di-flow-dot { position:absolute; top:0; left:0; width:16px; height:16px; border-radius:50%; background:#b6f5c9; box-shadow:0 0 0 6px #b6f5c922, 0 0 24px #b6f5c9; }
+  .di-flow-step strong { display:block; color:#f3f6f3; font-size:16px; margin-bottom:8px; }
+  .di-flow-step p { font-size:13px; line-height:1.6; }
+
   .di-capabilities { padding:50px 0 80px; }
-  .di-capability { display:grid; grid-template-columns:70px 1fr .6fr; gap:35px; padding:38px 0; border-top:1px solid #28362e; align-items:start; }
-  .di-step { font-family:var(--display); color:#698674; font-size:23px; }
-  .di-capability h3 { font-size:31px; margin-bottom:15px; }
-  .di-capability p { font-size:15px; max-width:560px; line-height:1.8; }
-  .di-capability ul { list-style:none; padding:0; display:flex; flex-direction:column; gap:12px; font-size:13px; color:#c3d4c8; }
-  .di-capability li::before { content:'↗'; color:#b6f5c9; margin-right:12px; }
-  .di-demo-video { padding:70px 0 90px; border-top:1px solid #28362e; }
+  .di-cap-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:20px; }
+  .di-capability { position:relative; padding:30px; border-radius:16px; background:linear-gradient(160deg,#121f18,#0b1310); border:1px solid #243129; transition:transform .25s ease, border-color .25s ease, box-shadow .25s ease; }
+  .di-capability:hover { transform:translateY(-4px); border-color:#3f6350; box-shadow:0 24px 60px #00000066, 0 0 40px #b6f5c914; }
+  .di-cap-icon { display:grid; place-items:center; width:52px; height:52px; border-radius:14px; background:radial-gradient(circle at 30% 30%,#2d5a40,#132a1d); border:1px solid #3f6350; box-shadow:0 0 30px #b6f5c92e, inset 0 1px 0 #ffffff1f; margin-bottom:22px; }
+  .di-cap-icon svg { width:24px; height:24px; stroke:#b6f5c9; stroke-width:1.8; fill:none; stroke-linecap:round; stroke-linejoin:round; }
+  .di-step { position:absolute; top:28px; right:28px; font-family:var(--display); color:#4f6b5c; font-size:22px; }
+  .di-capability h3 { font-size:26px; margin-bottom:12px; }
+  .di-capability p { font-size:15px; line-height:1.75; }
+  .di-capability ul { list-style:none; padding:0; margin:18px 0 0; display:flex; flex-wrap:wrap; gap:8px; font-size:12px; color:#c3d4c8; }
+  .di-capability li { padding:6px 11px; border:1px solid #2f4537; border-radius:999px; background:#0f1a14; }
+
+  .di-demo-video { padding:70px 0 90px; border-top:1px solid #243129; }
   .di-video-intro { display:grid; grid-template-columns:1fr .7fr; align-items:end; gap:70px; }
   .di-video-intro > p { max-width:430px; font-size:16px; line-height:1.8; }
-  video { width:100%; height:auto; display:block; border-radius:10px; background:#14221a; border:1px solid #34483b; }
-  figcaption { color:#82958a; font-size:12px; margin-top:12px; }
+  .di-screen { margin:0; padding:12px; border-radius:18px; background:linear-gradient(135deg,#1a2e23,#0b1310); border:1px solid #34483b; box-shadow:0 40px 100px #00000080, 0 0 60px #b6f5c91c, inset 0 1px 0 #ffffff14; }
+  video { width:100%; height:auto; display:block; border-radius:10px; background:#14221a; }
+  figcaption { color:#82958a; font-size:12px; margin:12px 6px 2px; }
+
   .di-activation { padding:60px 0 100px; display:grid; grid-template-columns:1fr 1fr; gap:100px; align-items:center; }
   .di-text-link { display:inline-flex; align-items:center; gap:20px; color:#b6f5c9; font-size:14px; margin-top:25px; }
   .di-tools { display:grid; grid-template-columns:1fr 1fr; gap:15px; }
-  .di-tools span { border:1px solid #32473a; border-radius:6px; padding:30px 18px; text-align:center; font-size:15px; color:#d5e2d9; background:#14221a; }
-  .di-questions { border-top:1px solid #28362e; padding:85px 0; display:grid; grid-template-columns:.7fr 1fr; gap:100px; }
-  .di-questions article { margin-bottom:28px; padding-bottom:28px; border-bottom:1px solid #28362e; }
+  .di-tools span { display:flex; flex-direction:column; align-items:center; gap:12px; border:1px solid #2c4435; border-radius:12px; padding:26px 18px; text-align:center; font-size:15px; color:#d5e2d9; background:linear-gradient(160deg,#121f18,#0b1310); box-shadow:inset 0 1px 0 #ffffff0f; }
+  .di-tools svg { width:26px; height:26px; stroke:#b6f5c9; stroke-width:1.8; fill:none; stroke-linecap:round; stroke-linejoin:round; filter:drop-shadow(0 0 8px #b6f5c966); }
+
+  .di-questions { border-top:1px solid #243129; padding:85px 0; display:grid; grid-template-columns:.7fr 1fr; gap:100px; }
+  .di-questions article { margin-bottom:28px; padding-bottom:28px; border-bottom:1px solid #243129; }
   .di-questions h3 { font-family:var(--body); font-size:17px; letter-spacing:-.01em; margin-bottom:13px; }
   .di-questions p { font-size:14px; line-height:1.8; }
-  .di-demo-section { border-top:1px solid #28362e; padding:95px 0 110px; display:grid; grid-template-columns:1fr .8fr; gap:100px; align-items:center; }
+
+  .di-demo-section { border-top:1px solid #243129; padding:95px 0 110px; display:grid; grid-template-columns:1fr .8fr; gap:100px; align-items:center; }
   .di-demo-detail { font-size:13px; color:#b6f5c9; margin-top:25px; }
-  .di-form { background:#14221a; border:1px solid #34483b; border-radius:12px; padding:32px; }
+  .di-form { position:relative; z-index:1; background:linear-gradient(160deg,#142419f2,#0b1310f2); border:1px solid #34483b; border-radius:16px; padding:32px; box-shadow:0 30px 80px #00000080, 0 0 50px #b6f5c91a, inset 0 1px 0 #ffffff14; backdrop-filter:blur(8px); }
   .di-form h3 { font-size:28px; }
   .di-form-sub { font-size:14px; margin:10px 0 24px; }
   .di-form .field { display:flex; flex-direction:column; gap:7px; margin-bottom:17px; color:#d5e2d9; font-size:13px; }
-  .di-form input { background:#0b120e; border:1px solid #405648; border-radius:5px; color:#f3f6f3; padding:13px; width:100%; }
+  .di-form input { background:#0b120e; border:1px solid #405648; border-radius:6px; color:#f3f6f3; padding:13px; width:100%; }
+  .di-form input:focus { outline:2px solid #b6f5c9; outline-offset:1px; border-color:#b6f5c9; }
   .di-submit { width:100%; margin-top:6px; }
   .di-submit:disabled { opacity:.6; cursor:wait; }
   .di-hp { position:absolute; left:-9999px; }
@@ -186,8 +293,19 @@ const schema = [
   .di-form-status[data-state='error'] { color:#ffb8a4; }
   .di-form-fine { font-size:11px; color:#91a398; margin-top:16px; line-height:1.7; }
   .di-form-fine a { text-decoration:underline; }
-  @media(max-width:1000px) { .di-hero { gap:35px; } h1 { font-size:54px; } .di-activation,.di-questions,.di-demo-section { gap:45px; } .di-wrap { width:calc(100% - 64px); } }
-  @media(max-width:760px) { .di-wrap { width:calc(100% - 40px); } .di-hero { grid-template-columns:1fr; padding:62px 0 72px; gap:46px; } h1 { font-size:clamp(43px,9vw,62px); } .di-audience-visual { transform:none; } .di-stats { gap:18px; } .di-stats strong { font-size:49px; } .di-stats h3 { font-size:13px; } .di-stats p { font-size:11px; } .di-capability { grid-template-columns:35px 1fr; gap:17px; } .di-capability ul { grid-column:2; } .di-video-intro,.di-activation,.di-questions,.di-demo-section { grid-template-columns:1fr; gap:35px; } .di-video-intro > p { max-width:100%; } .di-data,.di-problem,.di-demo-video,.di-questions,.di-demo-section { padding-block:60px; } .di-process { gap:9px; } .di-process span { padding:9px 11px; font-size:11px; } .di-process b { display:none; } .di-tools span { padding:24px 12px; } }
-  @media(max-width:420px) { .di-stats { grid-template-columns:1fr; gap:24px; } .di-stats article { display:grid; grid-template-columns:115px 1fr; column-gap:15px; } .di-stats strong { grid-row:span 2; font-size:50px; } .di-stats h3 { margin:8px 0; } .di-actions { gap:20px; } .di-form { padding:25px 20px; } }
-  @media(prefers-reduced-motion:reduce) { .di-button { transition:none; } .di-button:hover { transform:none; } }
+
+  @media(max-width:1000px) { .di-hero { gap:35px; } h1 { font-size:54px; } .di-activation,.di-questions,.di-demo-section { gap:45px; } .di-wrap { width:calc(100% - 64px); } .di-problem { grid-template-columns:1fr; gap:30px; } .di-glass-a { right:-140px; } }
+  @media(max-width:760px) {
+    .di-wrap { width:calc(100% - 40px); }
+    .di-hero { grid-template-columns:1fr; padding:62px 0 72px; gap:46px; } h1 { font-size:clamp(43px,9vw,62px); }
+    .di-audience-visual { transform:none; } .di-glass-a,.di-glass-b { display:none; } .di-glass-c { width:220px; height:220px; left:-120px; bottom:-80px; }
+    .di-stats { grid-template-columns:1fr; gap:6px; padding:22px; } .di-stats article { border-left:0; border-top:1px solid #34483b; padding:18px 4px 12px; } .di-stats article:first-child { border-top:0; } .di-stats strong { font-size:52px; } .di-stats h3 { font-size:14px; } .di-stats p { font-size:12px; }
+    .di-flow { grid-template-columns:1fr; min-height:0; padding:0 0 0 12px; border-left:1px solid #2c4435; gap:26px; } .di-flow-line { display:none; } .di-flow-step { margin-top:0; padding:0 0 0 22px; } .di-flow-dot { left:-21px; top:2px; width:14px; height:14px; }
+    .di-cap-grid { grid-template-columns:1fr; } .di-capability { padding:24px; } .di-capability h3 { font-size:22px; padding-right:40px; }
+    .di-video-intro,.di-activation,.di-questions,.di-demo-section { grid-template-columns:1fr; gap:35px; } .di-video-intro > p { max-width:100%; }
+    .di-data,.di-demo-video,.di-questions,.di-demo-section { padding-block:60px; } .di-problem { padding:60px 0; }
+    .di-screen { padding:8px; } .di-tools span { padding:20px 12px; font-size:14px; }
+  }
+  @media(max-width:420px) { .di-actions { gap:20px; } .di-form { padding:25px 20px; } .di-visual-bottom { gap:10px; } }
+  @media(prefers-reduced-motion:reduce) { .di-glass,.di-nodes circle,.di-ring { animation:none; } .di-button,.di-capability { transition:none; } .di-button:hover,.di-capability:hover { transform:none; } }
 </style>
