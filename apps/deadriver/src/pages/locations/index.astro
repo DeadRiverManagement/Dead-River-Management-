@@ -4,11 +4,34 @@ import Hero from '../../components/growth/Hero.astro';
 import Arrow from '../../components/growth/Arrow.astro';
 import CTA from '../../components/growth/CTA.astro';
 import { locations } from '../../data/growth-locations';
+
+const SITE = 'https://www.deadrivermanagement.com';
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` },
+      { '@type': 'ListItem', position: 2, name: 'Locations', item: `${SITE}/locations` },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    itemListElement: locations.map((location, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: location.name,
+      url: `${SITE}/locations/${location.slug}`,
+    })),
+  },
+];
 ---
 
 <Growth
   title="Where we work"
   description="Dead River Management is based in El Paso, Texas, and works with businesses across the borderland and the United States."
+  schema={schema}
 >
   <Hero
     eyebrow="Locations"
