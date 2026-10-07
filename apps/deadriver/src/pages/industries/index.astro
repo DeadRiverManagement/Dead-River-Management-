@@ -4,11 +4,34 @@ import Hero from '../../components/growth/Hero.astro';
 import CTA from '../../components/growth/CTA.astro';
 import ServiceLinks from '../../components/growth/ServiceLinks.astro';
 import { industryPages } from '../../data/industry-pages';
+
+const SITE = 'https://www.deadrivermanagement.com';
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` },
+      { '@type': 'ListItem', position: 2, name: 'Industries', item: `${SITE}/industries` },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    itemListElement: industryPages.map((page, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: page.name,
+      url: `${SITE}/industries/${page.slug}`,
+    })),
+  },
+];
 ---
 
 <Growth
   title="Marketing by Industry"
   description="Marketing built for roofers, plumbers, HVAC companies, and auto repair shops. One offer, tuned to how each trade gets the call. Nationwide and in El Paso."
+  schema={schema}
 >
   <Hero
     eyebrow="Industries · Nationwide and El Paso"

@@ -4,11 +4,34 @@ import Hero from '../../components/growth/Hero.astro';
 import Arrow from '../../components/growth/Arrow.astro';
 import CTA from '../../components/growth/CTA.astro';
 import { toolCatalog } from '../../data/growth';
+
+const SITE = 'https://www.deadrivermanagement.com';
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` },
+      { '@type': 'ListItem', position: 2, name: 'Tools', item: `${SITE}/tools` },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    itemListElement: toolCatalog.map((tool, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: tool.name,
+      url: `${SITE}/tools/${tool.slug}`,
+    })),
+  },
+];
 ---
 
 <Growth
   title="Free Marketing Tools & Calculators | Dead River Management"
   description="Free ROI, budget, CAC, and SEO tools from Dead River Management. No email required. Built for businesses nationwide."
+  schema={schema}
 >
   <Hero
     eyebrow="The Dead River toolkit"
