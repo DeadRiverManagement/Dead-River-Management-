@@ -7,7 +7,6 @@ import FaqList from '../components/FaqList.astro';
 import Reviews from '../components/growth/Reviews.astro';
 import { faqPage } from '../lib/schema';
 import { googleReviews, facebookReviews } from '../data/reviews';
-import Threads from '../components/react-bits/Threads.jsx';
 
 // Demand Intelligence, in plain words: what it is, what it sees, what it changes.
 const intelligence = [
@@ -101,9 +100,6 @@ const demandFlowFaq = [
   schema={faqPage(demandFlowFaq)}
 >
   <section class="hero wrap">
-    <div class="hero-current" aria-hidden="true">
-      <Threads client:load color={[0.89, 0.55, 0.3]} amplitude={1.6} distance={0.35} enableMouseInteraction />
-    </div>
     <div class="hero-copy">
       <p class="eyebrow" data-rise>The Demand Flow guarantee · Nationwide</p>
       <h1 data-split>We'll help your business generate $50,000 in new revenue with our Demand Flow system in 45 to 60 days. <em>Or your money back, and we pay you $500 for wasting your time.</em></h1>
@@ -126,9 +122,7 @@ const demandFlowFaq = [
         </div>
       </div>
     </div>
-    <div class="hero-stage" data-stage>
-      <River />
-    </div>
+    <River />
   </section>
   <ClientTrust />
   <section class="section soft" id="intelligence">

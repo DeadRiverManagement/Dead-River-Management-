@@ -63,37 +63,6 @@ if (!reduce) {
       clearProps: 'all',
     });
 
-    const river = document.querySelector('.river-visual');
-    if (river) {
-      gsap.from(river.querySelectorAll('.river-path'), {
-        drawSVG: 0,
-        duration: 2.2,
-        stagger: 0.12,
-        delay: 0.2,
-        ease: 'power2.inOut',
-      });
-      gsap.from(river.querySelectorAll('.river-label, .river-art circle'), {
-        scale: 0.8,
-        opacity: 0,
-        duration: 0.7,
-        stagger: 0.18,
-        delay: 1.1,
-        ease: 'back.out(1.7)',
-        transformOrigin: 'center',
-        clearProps: 'all',
-      });
-      gsap.to(river, {
-        y: -48,
-        ease: 'none',
-        scrollTrigger: {
-          trigger: river,
-          start: 'top 60%',
-          end: 'bottom top',
-          scrub: true,
-        },
-      });
-    }
-
     // Reveal below-the-fold content as it scrolls in. Elements inside another
     // target are left alone so a section head and its heading do not both run.
     const all = gsap.utils.toArray(
@@ -120,53 +89,6 @@ if (!reduce) {
           clearProps: 'transform',
         }),
     });
-
-    // The DemandFlow panel settles from a tilted table onto the page as it
-    // scrolls in, then leans with the pointer. Labels drift the other way so
-    // they read as sitting above the surface.
-    const stage = document.querySelector('[data-stage]');
-    const panel = stage?.querySelector('.river-visual');
-    if (panel) {
-      gsap.set(panel, { transformPerspective: 1800, rotateX: 16, y: 40, opacity: 0.6 });
-      gsap.to(panel, {
-        rotateX: 0,
-        y: 0,
-        opacity: 1,
-        ease: 'none',
-        scrollTrigger: { trigger: stage, start: 'top 95%', end: 'top 35%', scrub: 0.6 },
-      });
-      if (window.matchMedia('(pointer: fine)').matches) {
-        const labels = panel.querySelectorAll('.river-label');
-        const rx = gsap.quickTo(panel, 'rotateX', { duration: 0.6, ease: 'power3' });
-        const ry = gsap.quickTo(panel, 'rotateY', { duration: 0.6, ease: 'power3' });
-        const lx = gsap.quickTo(labels, 'x', { duration: 0.8, ease: 'power3' });
-        const ly = gsap.quickTo(labels, 'y', { duration: 0.8, ease: 'power3' });
-        let settled = false;
-        ScrollTrigger.create({
-          trigger: stage,
-          start: 'top 35%',
-          onEnter: () => (settled = true),
-          onLeaveBack: () => (settled = false),
-        });
-        stage.addEventListener('mousemove', (e) => {
-          if (!settled) return;
-          const r = panel.getBoundingClientRect();
-          const px = (e.clientX - r.left) / r.width - 0.5;
-          const py = (e.clientY - r.top) / r.height - 0.5;
-          rx(-py * 7);
-          ry(px * 9);
-          lx(-px * 18);
-          ly(-py * 18);
-        });
-        stage.addEventListener('mouseleave', () => {
-          if (!settled) return;
-          rx(0);
-          ry(0);
-          lx(0);
-          ly(0);
-        });
-      }
-    }
 
     // Create, capture, convert: pinned on wide screens. The river draws across
     // the stage and each step surfaces from depth in order.

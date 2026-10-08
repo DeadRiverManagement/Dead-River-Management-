@@ -154,7 +154,12 @@ a:hover {
   min-height: 56px;
   border-radius: 999px;
   border: 0;
-  background: linear-gradient(180deg, var(--ember), var(--copper-deep) 62%, #b3642f);
+  background: linear-gradient(
+    180deg,
+    var(--ember),
+    var(--copper-deep) 62%,
+    #b3642f
+  );
   color: #150a04;
   font-size: 15px;
   box-shadow:
@@ -169,7 +174,12 @@ a:hover {
     color 0.3s var(--ease);
 }
 .button:hover {
-  background: linear-gradient(180deg, var(--ember), var(--copper-deep) 62%, #b3642f);
+  background: linear-gradient(
+    180deg,
+    var(--ember),
+    var(--copper-deep) 62%,
+    #b3642f
+  );
   color: #150a04;
   filter: brightness(1.08);
   transform: none;
@@ -298,37 +308,20 @@ a:hover {
 .hero {
   position: relative;
   display: block;
-  padding: clamp(72px, 9vw, 128px) 0 0;
-  min-height: 92svh;
-}
-.hero-current {
-  position: absolute;
-  top: -140px;
-  left: 50%;
-  width: 100vw;
-  height: min(110vh, 1100px);
-  transform: translateX(-50%);
-  z-index: 0;
-  pointer-events: none;
-  opacity: 0.95;
-  -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 12%, #000 62%, transparent 100%);
-  mask-image: linear-gradient(180deg, transparent 0%, #000 12%, #000 62%, transparent 100%);
-}
-.hero-current canvas {
-  display: block;
-  width: 100% !important;
-  height: 100% !important;
+  padding: clamp(96px, 12vw, 160px) 0 220px;
+  min-height: 100svh;
 }
 .hero-copy {
   position: relative;
   z-index: 2;
+  max-width: 1120px;
 }
 .hero h1 {
   font-size: clamp(38px, 5.1vw, 78px);
   line-height: 0.98;
   letter-spacing: -0.045em;
   max-width: 1120px;
-  text-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+  text-shadow: 0 30px 80px rgba(0, 0, 0, 0.7);
 }
 .hero h1 em {
   color: var(--ember);
@@ -344,12 +337,18 @@ a:hover {
 .hero .intro {
   margin-top: 0;
   max-width: 560px;
+  color: #c9d5cc;
 }
 .hero .button-row {
   margin-top: 4px;
 }
 .hero-note {
+  display: block;
   margin-top: 20px;
+  line-height: 1.6;
+}
+.hero-note:before {
+  margin-right: 8px;
 }
 .hero-proof {
   display: flex;
@@ -370,40 +369,56 @@ a:hover {
   color: var(--copper);
 }
 
-/* The DemandFlow panel: an instrument on a tilted table. */
-.hero-stage {
-  position: relative;
-  z-index: 2;
-  margin-top: clamp(48px, 6vw, 88px);
-  perspective: 1800px;
-  perspective-origin: 50% 0;
+/* The river itself: full-bleed liquid behind the copy, labels riding it. */
+.river-visual {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: calc(50% - 50vw);
+  width: 100vw;
+  min-height: 0;
+  border: 0;
+  border-radius: 0;
+  background: var(--paper);
+  z-index: 0;
+  overflow: hidden;
 }
-.hero-stage::after {
+.river-scene,
+.river-scene canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.river-visual::after {
   content: '';
   position: absolute;
-  left: 10%;
-  right: 10%;
-  bottom: -40px;
-  height: 120px;
-  background: radial-gradient(50% 100% at 50% 100%, rgba(200, 116, 63, 0.28), transparent 70%);
-  filter: blur(20px);
+  inset: 0;
   pointer-events: none;
-}
-.river-visual {
-  position: relative;
-  min-height: clamp(420px, 42vw, 560px);
-  border-radius: 24px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
   background:
-    radial-gradient(60% 50% at 80% 0%, rgba(226, 160, 112, 0.18), transparent 70%),
-    linear-gradient(170deg, #142a23, #08130f 70%);
-  color: var(--ink);
-  box-shadow:
-    0 80px 140px -60px rgba(0, 0, 0, 0.9),
-    0 0 0 1px rgba(255, 255, 255, 0.04) inset,
-    0 1px 0 rgba(255, 255, 255, 0.08) inset;
-  transform-origin: 50% 0;
-  will-change: transform;
+    linear-gradient(
+      90deg,
+      rgba(7, 17, 14, 0.88) 0%,
+      rgba(7, 17, 14, 0.62) 40%,
+      rgba(7, 17, 14, 0.18) 72%,
+      transparent 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(7, 17, 14, 0.92) 0%,
+      transparent 24%,
+      transparent 72%,
+      var(--paper) 100%
+    );
+}
+.river-top {
+  position: absolute;
+  z-index: 2;
+  right: calc(50% - min(640px, 50% - 52px));
+  top: 28px;
+  padding: 0;
+  gap: 12px;
 }
 .river-visual .mini-label {
   color: var(--muted);
@@ -412,49 +427,62 @@ a:hover {
   background: var(--ember);
   box-shadow: 0 0 0 6px rgba(242, 177, 131, 0.16);
 }
-.river-art {
+.river-stages {
   position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  max-width: none;
+  z-index: 2;
   left: 0;
-  top: 0;
+  right: 0;
+  bottom: 72px;
+  width: min(1280px, calc(100% - 104px));
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
 }
 .river-label {
-  background: rgba(7, 17, 14, 0.72);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 12px;
-  padding: 13px 18px;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 24px 48px -20px rgba(0, 0, 0, 0.8);
-  will-change: transform;
+  position: static;
+  margin: 0;
+  padding: 18px 22px;
+  background: rgba(7, 17, 14, 0.62);
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  white-space: normal;
 }
 .river-label span {
   color: var(--ember);
   font-family: var(--mono);
+  float: none;
+  display: inline-block;
+  margin-right: 10px;
 }
 .river-label strong {
+  display: inline;
   color: #fff;
+  font-size: 15px;
 }
 .river-label small {
+  display: block;
+  margin-top: 4px;
   color: var(--muted);
 }
-.label-one {
-  left: 6%;
-  top: 52%;
-}
-.label-two {
-  left: 38%;
-  top: 22%;
-}
-.label-three {
-  right: 7%;
-  top: 60%;
-}
 .river-bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  background: rgba(7, 17, 14, 0.55);
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  right: 0;
+  bottom: 30px;
+  width: min(1280px, calc(100% - 104px));
+  margin-inline: auto;
+  padding: 0;
+  border: 0;
+  background: none;
   color: var(--muted);
   font-family: var(--mono);
   font-size: 12px;
@@ -713,7 +741,11 @@ textarea::placeholder {
   filter: drop-shadow(0 0 6px rgba(242, 177, 131, 0.9));
 }
 .flow-steps article {
-  background: linear-gradient(180deg, rgba(16, 35, 29, 0.72), rgba(11, 25, 21, 0.78));
+  background: linear-gradient(
+    180deg,
+    rgba(16, 35, 29, 0.72),
+    rgba(11, 25, 21, 0.78)
+  );
 }
 .flow-steps {
   position: relative;
@@ -723,7 +755,11 @@ textarea::placeholder {
 .flow-steps article {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  background: linear-gradient(180deg, rgba(16, 35, 29, 0.85), rgba(11, 25, 21, 0.85));
+  background: linear-gradient(
+    180deg,
+    rgba(16, 35, 29, 0.85),
+    rgba(11, 25, 21, 0.85)
+  );
 }
 .flow-steps article:nth-child(2) {
   margin-top: 64px;
@@ -740,8 +776,16 @@ textarea::placeholder {
 .section.soft.band-dark {
   position: relative;
   background:
-    radial-gradient(50% 60% at 85% 20%, rgba(226, 160, 112, 0.18), transparent 70%),
-    radial-gradient(40% 50% at 10% 90%, rgba(31, 77, 60, 0.35), transparent 70%),
+    radial-gradient(
+      50% 60% at 85% 20%,
+      rgba(226, 160, 112, 0.18),
+      transparent 70%
+    ),
+    radial-gradient(
+      40% 50% at 10% 90%,
+      rgba(31, 77, 60, 0.35),
+      transparent 70%
+    ),
     var(--paper-2);
 }
 .band-dark h2 {
@@ -766,7 +810,11 @@ textarea::placeholder {
 /* ---------- footer ---------- */
 .site-footer {
   background:
-    radial-gradient(50% 50% at 90% 0%, rgba(226, 160, 112, 0.14), transparent 70%),
+    radial-gradient(
+      50% 50% at 90% 0%,
+      rgba(226, 160, 112, 0.14),
+      transparent 70%
+    ),
     #050d0a;
   border-top: 1px solid var(--line);
   color: var(--ink);
@@ -828,20 +876,33 @@ textarea::placeholder {
     backdrop-filter: blur(16px);
   }
   .hero {
-    padding-top: 40px;
+    padding-top: 48px;
     min-height: 0;
   }
-  .hero-current {
-    top: -60px;
-    height: 90vh;
-    opacity: 0.8;
+  .hero {
+    padding-bottom: 300px;
   }
-  .river-visual {
-    min-height: 420px;
+  .river-top {
+    display: none;
   }
-  .river-art {
-    width: 140%;
-    left: -20%;
+  .river-stages {
+    grid-template-columns: 1fr;
+    width: calc(100% - 40px);
+    bottom: 64px;
+  }
+  .river-label {
+    padding: 12px 16px;
+  }
+  .river-visual::after {
+    background: linear-gradient(
+      180deg,
+      rgba(7, 17, 14, 0.8),
+      rgba(7, 17, 14, 0.45) 50%,
+      var(--paper) 100%
+    );
+  }
+  .river-bottom {
+    width: calc(100% - 40px);
   }
   .flow-steps article:nth-child(2),
   .flow-steps article:nth-child(3) {

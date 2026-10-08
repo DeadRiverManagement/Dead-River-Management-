@@ -20,7 +20,7 @@ const assets = [
 
 test('homepage includes the trust section once, immediately after the hero', () => {
   assert.equal((home.match(/<ClientTrust\s*\/>/g) || []).length, 1);
-  assert.match(home, /<River\s*\/>\s*<\/div>\s*<\/section>\s*<ClientTrust\s*\/>/);
+  assert.match(home, /<River\s*\/>\s*<\/section>\s*<ClientTrust\s*\/>/);
   assert.doesNotMatch(home, /class="proof-strip wrap"/);
   assert.doesNotMatch(home, /id="home-services"/);
 });
