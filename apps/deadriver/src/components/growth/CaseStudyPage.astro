@@ -1,15 +1,45 @@
 ---
 import Growth from '../../layouts/Growth.astro';
 import Arrow from './Arrow.astro';
+import PageFaq from './PageFaq.astro';
 import type { CaseStudyPage } from '../../data/case-study-pages';
+import { caseStudyFaqs } from '../../data/tool-work-faq';
+import { faqPage } from '../../lib/schema';
 const { c, logo } = Astro.props as {
   c: CaseStudyPage;
   logo?: { src: string; width: number; height: number };
 };
 const name = c.company;
+const SITE = 'https://www.deadrivermanagement.com';
+const url = `${SITE}/work/${c.slug}`;
+const faqs = caseStudyFaqs[c.slug];
+if (!faqs) throw new Error(`Missing case study FAQ for ${c.slug}`);
+// Article: https://schema.org/Article
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` },
+      { '@type': 'ListItem', position: 2, name: 'Work', item: `${SITE}/work` },
+      { '@type': 'ListItem', position: 3, name, item: url },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: c.headline,
+    url,
+    mainEntityOfPage: url,
+    description: c.description,
+    author: { '@id': `${SITE}/#organization` },
+    publisher: { '@id': `${SITE}/#organization` },
+  },
+  faqPage(faqs),
+];
 ---
 
-<Growth title={c.seoTitle} description={c.description}>
+<Growth title={c.seoTitle} description={c.description} schema={schema}>
   {c.slug === 'total-auto-repair' ? (
     <section class="page-hero wrap cs-video-hero">
       <div class="cs-hero-copy">
@@ -174,6 +204,7 @@ const name = c.company;
       <a class="button" href="/book">{c.apply.button} <Arrow /></a>
     </div>
   </section>
+  <PageFaq items={faqs} />
 </Growth>
 
 <style>

@@ -4,10 +4,41 @@
 // what it means, bigger picture, next steps), so it has its own template.
 import Growth from '../../layouts/Growth.astro';
 import Arrow from './Arrow.astro';
+import PageFaq from './PageFaq.astro';
+import { caseStudyFaqs } from '../../data/tool-work-faq';
+import { faqPage } from '../../lib/schema';
 const { logo, proof } = Astro.props as {
   logo?: { src: string; width: number; height: number };
   proof: { src: string; width: number; height: number; alt: string };
 };
+const SITE = 'https://www.deadrivermanagement.com';
+const url = `${SITE}/work/parcel-management-group`;
+const headline = '49 Facebook leads in 30 days at $17.70 each.';
+const description =
+  'Parcel Management Group generated 49 Facebook leads at $17.70 each in 30 days with Meta ads, lead capture, and automated follow-up.';
+const faqs = caseStudyFaqs['parcel-management-group'];
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` },
+      { '@type': 'ListItem', position: 2, name: 'Work', item: `${SITE}/work` },
+      { '@type': 'ListItem', position: 3, name: 'Parcel Management Group', item: url },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline,
+    url,
+    mainEntityOfPage: url,
+    description,
+    author: { '@id': `${SITE}/#organization` },
+    publisher: { '@id': `${SITE}/#organization` },
+  },
+  faqPage(faqs),
+];
 const quickStats: [string, string][] = [
   ['Industry', 'Freight consulting'],
   ['Location', 'Ventura, CA'],
@@ -21,11 +52,12 @@ const quickStats: [string, string][] = [
 
 <Growth
   title="49 Leads at $17.70 Each in 30 Days"
-  description="Parcel Management Group generated 49 Facebook leads at $17.70 each in 30 days with Meta ads, lead capture, and automated follow-up."
+  description={description}
+  schema={schema}
 >
   <section class="page-hero wrap">
     <p class="eyebrow">Freight consulting · Facebook lead generation</p>
-    <h1>49 Facebook leads in 30 days at $17.70 each.</h1>
+    <h1>{headline}</h1>
     <p class="intro">
       For Parcel Management Group, we built a Facebook advertising system that
       captured inquiries and followed up automatically, turning ad clicks into
@@ -231,6 +263,7 @@ const quickStats: [string, string][] = [
       <li><a href="/solutions">Explore our full lead generation system</a></li>
     </ul>
   </section>
+  <PageFaq items={faqs} />
 </Growth>
 
 <style>

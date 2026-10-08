@@ -2,10 +2,13 @@
 import Growth from '../../layouts/Growth.astro';
 import Hero from '../../components/growth/Hero.astro';
 import CTA from '../../components/growth/CTA.astro';
+import PageFaq from '../../components/growth/PageFaq.astro';
 import CaseStudyPage from '../../components/growth/CaseStudyPage.astro';
 import PmgCaseStudy from '../../components/growth/PmgCaseStudy.astro';
 import { work } from '../../data/growth-work';
 import { caseStudyPages } from '../../data/case-study-pages';
+import { caseStudyFaqs } from '../../data/tool-work-faq';
+import { faqPage } from '../../lib/schema';
 export function getStaticPaths() {
   return work.map((study) => ({
     params: { slug: study.slug },
@@ -14,11 +17,38 @@ export function getStaticPaths() {
 }
 const { study: w } = Astro.props;
 const rewrite = caseStudyPages.find((c) => c.slug === w.slug);
+const SITE = 'https://www.deadrivermanagement.com';
+const essayFaqs = caseStudyFaqs[w.slug];
+const essayUrl = `${SITE}/work/${w.slug}`;
+const essaySchema = essayFaqs
+  ? [
+      {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` },
+          { '@type': 'ListItem', position: 2, name: 'Work', item: `${SITE}/work` },
+          { '@type': 'ListItem', position: 3, name: w.name, item: essayUrl },
+        ],
+      },
+      {
+        '@context': 'https://schema.org',
+        '@type': 'Article',
+        headline: w.headline,
+        url: essayUrl,
+        mainEntityOfPage: essayUrl,
+        description: w.description,
+        author: { '@id': `${SITE}/#organization` },
+        publisher: { '@id': `${SITE}/#organization` },
+      },
+      faqPage(essayFaqs),
+    ]
+  : undefined;
 ---
 
 {w.slug === 'parcel-management-group' && w.proof ? <PmgCaseStudy logo={w.logo} proof={w.proof} /> : rewrite ? <CaseStudyPage c={rewrite} logo={w.logo} /> : (
 
-<Growth title={w.seoTitle} description={w.description}>
+<Growth title={w.seoTitle} description={w.description} schema={essaySchema}>
   <Hero eyebrow={w.category} title={w.headline} intro={w.intro}>
     <p class="case-client">
       <strong>{w.name}</strong>
@@ -78,6 +108,7 @@ const rewrite = caseStudyPages.find((c) => c.slug === w.slug);
     )}
   </section>
   <CTA title={w.cta.title} text={w.cta.text} />
+  {essayFaqs && <PageFaq items={essayFaqs} />}
 </Growth>
 )}
 

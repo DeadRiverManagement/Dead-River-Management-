@@ -1,7 +1,10 @@
 ---
 import Growth from '../../layouts/Growth.astro';
 import Arrow from '../../components/growth/Arrow.astro';
+import PageFaq from '../../components/growth/PageFaq.astro';
 import { work } from '../../data/growth-work';
+import { workHubFaqs } from '../../data/tool-work-faq';
+import { faqPage } from '../../lib/schema';
 
 // Biggest wins first; Total Auto Repair is featured above the list.
 const order = [
@@ -40,11 +43,36 @@ const filters = [
   'Freight/Logistics',
   'Branding',
 ];
+const SITE = 'https://www.deadrivermanagement.com';
+// Featured study renders first, then the cards in `order`.
+const caseCards = [featured, ...more];
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` },
+      { '@type': 'ListItem', position: 2, name: 'Work', item: `${SITE}/work` },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    itemListElement: caseCards.map((study, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: study.name,
+      url: `${SITE}/work/${study.slug}`,
+    })),
+  },
+  faqPage(workHubFaqs),
+];
 ---
 
 <Growth
   title="Client Results: $20K to $100K Months"
   description="Real client results: Total Auto Repair went from $20K to $100K a month, The Pipe Whisperers from $60K to $250K a year, and Wicked Logistics to 5-6 leads a day."
+  schema={schema}
 >
   <section class="page-hero wrap">
     <p class="eyebrow">Client Results &amp; Case Studies</p>
@@ -148,6 +176,8 @@ const filters = [
       ))}
     </div>
   </section>
+
+  <PageFaq items={workHubFaqs} />
 
   <section class="closing wrap">
     <div>
