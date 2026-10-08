@@ -6,6 +6,7 @@ import River from '../components/growth/River.astro';
 import FaqList from '../components/FaqList.astro';
 import Reviews from '../components/growth/Reviews.astro';
 import { faqPage } from '../lib/schema';
+import { googleReviews, facebookReviews } from '../data/reviews';
 
 // Demand Intelligence, in plain words: what it is, what it sees, what it changes.
 const intelligence = [
@@ -99,17 +100,24 @@ const demandFlowFaq = [
   schema={faqPage(demandFlowFaq)}
 >
   <section class="hero wrap">
+    <div class="hero-glow" aria-hidden="true"></div>
     <div>
-      <p class="eyebrow">The Demand Flow guarantee · Nationwide</p>
-      <h1>We'll help your business generate $50,000 in new revenue with our Demand Flow system in 45 to 60 days. <em>Or your money back, and we pay you $500 for wasting your time.</em></h1>
-      <p class="intro">
+      <p class="eyebrow" data-rise>The Demand Flow guarantee · Nationwide</p>
+      <h1 data-split>We'll help your business generate $50,000 in new revenue with our Demand Flow system in 45 to 60 days. <em>Or your money back, and we pay you $500 for wasting your time.</em></h1>
+      <p class="intro" data-rise>
         Most marketing guesses who might buy. We don't. Dead River uses purchase intent data to find the people shopping for what you sell right now, puts your offer in front of only them, and makes sure every one of them gets answered, followed up with, and booked.
       </p>
-      <div class="button-row">
+      <div class="button-row" data-rise>
         <a class="button" href="/book">Book a strategy call <Arrow /></a>
         <a class="button secondary" href="#how">See how Demand Flow works <Arrow /></a>
       </div>
-      <p class="hero-note">Applies to businesses accepted into <a class="inline-link" href="/demand-flow">Demand Flow</a>. <a class="inline-link" href="/legal/guarantee">Read the guarantee terms.</a></p>
+      <p class="hero-note" data-rise>Applies to businesses accepted into <a class="inline-link" href="/demand-flow">Demand Flow</a>. <a class="inline-link" href="/legal/guarantee">Read the guarantee terms.</a></p>
+      <p class="hero-proof" data-rise>
+        <span class="rv-stars" aria-hidden="true">★★★★★</span>
+        <span><strong>{googleReviews.rating.toFixed(1)} on Google</strong> · {googleReviews.count} {googleReviews.count === 1 ? 'review' : 'reviews'}</span>
+        <span><strong>{facebookReviews.count}</strong> Facebook recommendations</span>
+        <span>Based in El Paso, Texas · Working nationwide</span>
+      </p>
     </div>
     <River />
   </section>
@@ -158,7 +166,7 @@ const demandFlowFaq = [
       </div>
     </div>
   </section>
-  <section class="section soft" id="why-now">
+  <section class="section soft band-dark" id="why-now">
     <div class="wrap urgency">
       <div>
         <p class="eyebrow">Why now</p>
@@ -214,15 +222,16 @@ const demandFlowFaq = [
   /* The guarantee headline is a full sentence, so it runs smaller than the
      default hero H1 and a little wider to hold it in about six lines. */
   .hero h1 {
-    font-size: clamp(34px, 3.4vw, 50px);
-    line-height: 1.08;
-    max-width: 700px;
+    font-size: clamp(36px, 3.7vw, 54px);
+    line-height: 1.04;
+    max-width: 720px;
   }
   .section .text-link {
     margin-top: 28px;
   }
   .home-steps {
     grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
   }
   .urgency {
     display: grid;

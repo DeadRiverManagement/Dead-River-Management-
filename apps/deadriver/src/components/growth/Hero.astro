@@ -4,7 +4,7 @@ const { eyebrow, title, intro } = Astro.props;
 
 <section class="page-hero wrap">
   <p class="eyebrow">{eyebrow}</p>
-  <h1>{title}</h1>
+  <h1 data-split>{title}</h1>
   <p class="intro">{intro}</p>
   <slot />
 </section>

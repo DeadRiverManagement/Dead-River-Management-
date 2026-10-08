@@ -1,97 +1,33 @@
-<!-- Client artwork links to each case study. Wicked uses a transparent cutout. -->
+---
+// Client artwork links to each case study, running as a React Bits LogoLoop
+// marquee (src/components/react-bits). Wicked uses a transparent cutout.
+import ClientLogoLoop from '../react-bits/ClientLogoLoop.jsx';
+const logos = [
+  { src: '/images/clients/total-auto-repair.webp', alt: 'Total Auto Repair', href: '/work/total-auto-repair', width: 240, height: 220 },
+  { src: '/images/clients/gonzalez-and-sons-roofing.webp', alt: 'Gonzalez and Sons Roofing', href: '/work/gonzalez-and-sons-roofing', width: 240, height: 179 },
+  { src: '/images/clients/the-pipe-whisperers.webp', alt: 'The Pipe Whisperers', href: '/work/the-pipe-whisperers', width: 235, height: 240 },
+  { src: '/images/clients/parcel-management-group.webp', alt: 'Parcel Management Group', href: '/work/parcel-management-group', width: 209, height: 240 },
+  { src: '/images/clients/wicked-logistics-transparent.webp', alt: 'Wicked Logistics', href: '/work/wicked-logistics', width: 240, height: 202, className: 'client-trust-wicked-logo' },
+  { src: '/images/clients/only-fish.webp', alt: 'Only Fish', href: '/work/only-fish', width: 153, height: 93, className: 'client-trust-fish-logo' },
+];
+---
 <section class="client-trust wrap" aria-labelledby="client-trust-title">
   <h2 id="client-trust-title" class="client-trust-heading">
     Trusted by businesses we’ve helped grow
   </h2>
-  <ul class="client-trust-grid" role="list">
-    <li>
-      <a href="/work/total-auto-repair">
-      <img
-        src="/images/clients/total-auto-repair.webp"
-        alt="Total Auto Repair"
-        title="Total Auto Repair"
-        width="240"
-        height="220"
-        loading="lazy"
-        decoding="async"
-      />
-      </a>
-    </li>
-    <li>
-      <a href="/work/gonzalez-and-sons-roofing">
-      <img
-        src="/images/clients/gonzalez-and-sons-roofing.webp"
-        alt="Gonzalez and Sons Roofing"
-        title="Gonzalez and Sons Roofing"
-        width="240"
-        height="179"
-        loading="lazy"
-        decoding="async"
-      />
-      </a>
-    </li>
-    <li>
-      <a href="/work/the-pipe-whisperers">
-      <img
-        src="/images/clients/the-pipe-whisperers.webp"
-        alt="The Pipe Whisperers"
-        title="The Pipe Whisperers"
-        width="235"
-        height="240"
-        loading="lazy"
-        decoding="async"
-      />
-      </a>
-    </li>
-    <li>
-      <a href="/work/parcel-management-group">
-      <img
-        src="/images/clients/parcel-management-group.webp"
-        alt="Parcel Management Group"
-        title="Parcel Management Group"
-        width="209"
-        height="240"
-        loading="lazy"
-        decoding="async"
-      />
-      </a>
-    </li>
-    <li>
-      <a href="/work/wicked-logistics">
-      <img
-        class="client-trust-wicked-logo"
-        src="/images/clients/wicked-logistics-transparent.webp"
-        alt="Wicked Logistics"
-        title="Wicked Logistics"
-        width="240"
-        height="202"
-        loading="lazy"
-        decoding="async"
-      />
-      </a>
-    </li>
-    <li>
-      <a href="/work/only-fish">
-      <img
-        class="client-trust-fish-logo"
-        src="/images/clients/only-fish.webp"
-        alt="Only Fish"
-        title="Only Fish"
-        width="153"
-        height="93"
-        loading="lazy"
-        decoding="async"
-      />
-      </a>
-    </li>
-  </ul>
+  <ClientLogoLoop
+    client:idle
+    logos={logos}
+    speed={46}
+    gap={72}
+    logoHeight={72}
+    fadeOut
+    pauseOnHover
+    ariaLabel="Clients we have helped grow"
+  />
 </section>
 
 <style>
-  .client-trust {
-    padding-block: 30px 38px;
-    border-top: 1px solid var(--line);
-  }
   .client-trust-heading {
     margin: 0 0 24px;
     color: var(--muted);
@@ -103,64 +39,4 @@
     text-align: center;
     text-transform: uppercase;
   }
-  .client-trust-grid {
-    display: grid;
-    grid-template-columns: repeat(6, minmax(0, 1fr));
-    align-items: center;
-    gap: 18px 26px;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-  .client-trust-grid li {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 0;
-    min-height: 108px;
-    padding: 4px;
-  }
-  .client-trust-grid a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    border-radius: 8px;
-  }
-  .client-trust-grid a:focus-visible { outline: 2px solid var(--copper); outline-offset: 6px; }
-  .client-trust-grid img {
-    display: block;
-    width: 100%;
-    max-width: 152px;
-    height: 100px;
-    object-fit: contain;
-    mix-blend-mode: multiply;
-  }
-  /* The transparent Wicked cutout keeps the mark's teal and green colors. */
-  .client-trust-grid .client-trust-wicked-logo {
-    mix-blend-mode: normal;
-  }
-  /* Preserve the supplied Only Fish artwork's original blues. */
-  .client-trust-grid .client-trust-fish-logo {
-    mix-blend-mode: normal;
-  }
-  @media (max-width: 960px) {
-    .client-trust-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-  }
-  @media (max-width: 520px) {
-    .client-trust { padding-block: 24px 30px; }
-    .client-trust-heading { max-width: 280px; margin-inline: auto; font-size: 11px; }
-    .client-trust-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
-    .client-trust-grid li { min-height: 100px; }
-    .client-trust-grid a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    border-radius: 8px;
-  }
-  .client-trust-grid a:focus-visible { outline: 2px solid var(--copper); outline-offset: 6px; }
-  .client-trust-grid img { height: 92px; max-width: 136px; }
-  }
 </style>
-

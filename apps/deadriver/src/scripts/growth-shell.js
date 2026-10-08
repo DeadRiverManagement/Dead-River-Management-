@@ -86,38 +86,3 @@ document.querySelectorAll('[data-filter]').forEach((button) =>
       );
   }),
 );
-
-// Fade content up as it scrolls into view. Only elements that start below the
-// fold get hidden, so nothing on the first screen ever flickers, and nothing is
-// hidden at all when JavaScript, IntersectionObserver, or motion is off.
-(() => {
-  if (
-    !('IntersectionObserver' in window) ||
-    window.matchMedia('(prefers-reduced-motion: reduce)').matches
-  )
-    return;
-  const targets = document.querySelectorAll(
-    'main > section:not(:first-child) :is(h2, .section-head, .ms-lead, .ms-offer, .feature-panel, .trade-card, .faq-list, .faq, .ms-plans-head, .button-row, .split > *)',
-  );
-  const fold = window.innerHeight * 0.92;
-  const io = new IntersectionObserver(
-    (entries) =>
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-        entry.target.classList.add('is-in');
-        io.unobserve(entry.target);
-      }),
-    { rootMargin: '0px 0px -8% 0px', threshold: 0.08 },
-  );
-  targets.forEach((el) => {
-    if (el.parentElement?.closest('.reveal')) return;
-    if (el.getBoundingClientRect().top < fold) return;
-    const siblings = [...el.parentElement.children].filter((c) =>
-      c.matches('.feature-panel, .trade-card'),
-    );
-    const index = siblings.indexOf(el);
-    if (index > 0) el.style.setProperty('--reveal-delay', Math.min(index, 4) * 0.07 + 's');
-    el.classList.add('reveal');
-    io.observe(el);
-  });
-})();
