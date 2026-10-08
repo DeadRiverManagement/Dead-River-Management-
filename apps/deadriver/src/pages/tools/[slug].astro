@@ -2,8 +2,11 @@
 import Growth from '../../layouts/Growth.astro';
 import Hero from '../../components/growth/Hero.astro';
 import Arrow from '../../components/growth/Arrow.astro';
+import PageFaq from '../../components/growth/PageFaq.astro';
 import { toolCatalog } from '../../data/growth';
+import { toolFaqs } from '../../data/tool-work-faq';
 import { numericTools, checklists } from '../../lib/growth-tools.js';
+import { faqPage } from '../../lib/schema';
 export function getStaticPaths() {
   return toolCatalog.map((tool) => ({
     params: { slug: tool.slug },
@@ -41,9 +44,40 @@ const toolMeta: Record<string, string> = {
   'revenue-goal':
     'Free revenue goal planner. Work backward from a revenue target to the leads you need. No email required. Nationwide.',
 };
+const SITE = 'https://www.deadrivermanagement.com';
+const toolUrl = `${SITE}/tools/${tool.slug}`;
+const description = toolMeta[tool.slug] ?? tool.description;
+const faqs = toolFaqs[tool.slug];
+if (!faqs) throw new Error(`Missing tool FAQ for ${tool.slug}`);
+// WebApplication: https://schema.org/WebApplication (offers, operatingSystem, applicationCategory)
+// BreadcrumbList: https://schema.org/BreadcrumbList
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebApplication',
+    name: tool.name,
+    url: toolUrl,
+    description,
+    applicationCategory: 'BusinessApplication',
+    operatingSystem: 'Any',
+    offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+    isAccessibleForFree: true,
+    provider: { '@id': `${SITE}/#organization` },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` },
+      { '@type': 'ListItem', position: 2, name: 'Tools', item: `${SITE}/tools` },
+      { '@type': 'ListItem', position: 3, name: tool.name, item: toolUrl },
+    ],
+  },
+  faqPage(faqs),
+];
 ---
 
-<Growth title={toolTitle} description={toolMeta[tool.slug] ?? tool.description}>
+<Growth title={toolTitle} description={description} schema={schema}>
   <Hero
     eyebrow={tool.category + ' · Free tool'}
     title={tool.name}
@@ -198,6 +232,7 @@ const toolMeta: Record<string, string> = {
       </aside>
     </div>
   </section>
+  <PageFaq items={faqs} />
   <script>
     import '../../scripts/growth-tools-ui.js';
   </script>
