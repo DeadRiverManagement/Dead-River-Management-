@@ -71,7 +71,7 @@ test('marquee images have intrinsic sizes, accessible names, and lazy decoding',
   assert.match(tag, /loading="lazy"/);
   assert.match(tag, /decoding="async"/);
   // Case-study links stay in the same tab, unlike LogoLoop's own link rendering.
-  assert.match(wrapper, /<a className="logoloop__link" href=\{item\.href\}/);
+  assert.match(wrapper, /<a\s+className="logoloop__link"\s+href=\{item\.href\}/);
   assert.doesNotMatch(wrapper, /target=/);
   assert.match(markup, /aria-labelledby="client-trust-title"/);
   assert.match(markup, /id="client-trust-title"/);
