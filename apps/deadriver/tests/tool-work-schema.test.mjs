@@ -87,12 +87,12 @@ const caseFaqs = {
     [moreResults.q, moreResults.a],
   ],
   'gonzalez-and-sons-roofing': [
-    ['What result did Gonzalez and Sons Roofing see?', 'Gonzalez and Sons Roofing went from 2 roofs a month to 8 roofs a month, and from about $50,000 a month to $200,000 a month in revenue with Dead River Management.'],
+    ['What result did Gonzalez & Sons Roofing see?', 'Gonzalez & Sons Roofing went from 2 roofs a month to 8 roofs a month, and from about $50,000 a month to $200,000 a month in revenue with Dead River Management.'],
     ['What kind of business is this case study about?', 'A roofing company that needed more installed jobs per month and higher monthly revenue.'],
     [moreResults.q, moreResults.a],
   ],
   'wicked-logistics': [
-    ['What result did Wicked Logistics see?', 'Wicked Logistics went from 1-2 leads a week to 5-6 leads a day in 3 months with Dead River Management. One lead became a $1M account.'],
+    ['What result did Wicked Logistics see?', 'Wicked Logistics went from 1-2 leads a week to 5-6 leads a day in 3 months with Dead River Management. One lead became a $1.2M/year shipping contract.'],
     ['What kind of business is this case study about?', 'A logistics company that needed a much higher daily lead volume.'],
     [moreResults.q, moreResults.a],
   ],
@@ -160,6 +160,13 @@ function faqNodes(html) {
   return jsonLd(html).filter((node) => node['@type'] === 'FAQPage');
 }
 
+function assertSingleFaqHeading(html, label) {
+  const section = html.match(/<section\b[^>]*id=["']faq["'][^>]*>([\s\S]*?)<\/section>/i)?.[1] ?? '';
+  const headings = [...section.matchAll(/<h2\b[^>]*>([\s\S]*?)<\/h2>/gi)].map((match) => text(match[1]));
+  assert.deepEqual(headings, ['FAQ'], label + ': one FAQ heading');
+  assert.equal(/<p\b[^>]*class=["'][^"']*eyebrow[^"']*["'][^>]*>\s*FAQ\s*<\/p>/i.test(section), false, label + ': no extra FAQ label');
+}
+
 function assertFaqs(html, pairs, label) {
   const pages = faqNodes(html);
   assert.equal(pages.length, 1, label + ': one FAQPage');
@@ -167,6 +174,7 @@ function assertFaqs(html, pairs, label) {
   assert.equal(questions.length, pairs.length, label + ': FAQ count');
   const shown = visibleFaq(html);
   assert.equal(shown.length, pairs.length, label + ': visible FAQ count');
+  assertSingleFaqHeading(html, label);
   pairs.forEach(([q, a], index) => {
     assert.equal(questions[index]['@type'], 'Question', label);
     assert.equal(questions[index].name, q, label + ': schema question');
@@ -254,6 +262,11 @@ test('built tools, work hub, and case studies expose locked schema and FAQ', () 
     const meta = text(html.match(/<meta name="description" content="([^"]*)"/)?.[1] ?? '');
     assert.equal(article.headline, h1, label + ': headline is the H1');
     assert.equal(article.url, `${SITE}/work/${slug}`);
+    const canonical = html.match(/<link rel="canonical" href="([^"]+)"/)?.[1];
+    assert.equal(article.mainEntityOfPage, `${SITE}/work/${slug}`, label + ': mainEntityOfPage');
+    assert.equal(article.mainEntityOfPage, canonical, label + ': mainEntityOfPage is the canonical');
+    assert.equal(Object.hasOwn(article, 'datePublished'), false, label + ': no invented datePublished');
+    assert.equal(Object.hasOwn(article, 'dateModified'), false, label + ': no invented dateModified');
     assert.equal(article.description, meta, label + ': description is the meta');
     assert.equal(article.author?.['@id'], ORG);
     assert.equal(article.publisher?.['@id'], ORG);

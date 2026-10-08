@@ -30,6 +30,7 @@ const schema = [
     '@type': 'Article',
     headline: c.headline,
     url,
+    mainEntityOfPage: url,
     description: c.description,
     author: { '@id': `${SITE}/#organization` },
     publisher: { '@id': `${SITE}/#organization` },

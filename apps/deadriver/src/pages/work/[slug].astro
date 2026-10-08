@@ -36,6 +36,7 @@ const essaySchema = essayFaqs
         '@type': 'Article',
         headline: w.headline,
         url: essayUrl,
+        mainEntityOfPage: essayUrl,
         description: w.description,
         author: { '@id': `${SITE}/#organization` },
         publisher: { '@id': `${SITE}/#organization` },

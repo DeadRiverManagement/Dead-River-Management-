@@ -166,8 +166,8 @@ export const caseStudyFaqs: Record<string, readonly FaqItem[]> = {
   ],
   'gonzalez-and-sons-roofing': [
     {
-      q: 'What result did Gonzalez and Sons Roofing see?',
-      a: 'Gonzalez and Sons Roofing went from 2 roofs a month to 8 roofs a month, and from about $50,000 a month to $200,000 a month in revenue with Dead River Management.',
+      q: 'What result did Gonzalez & Sons Roofing see?',
+      a: 'Gonzalez & Sons Roofing went from 2 roofs a month to 8 roofs a month, and from about $50,000 a month to $200,000 a month in revenue with Dead River Management.',
     },
     {
       q: 'What kind of business is this case study about?',
@@ -178,7 +178,7 @@ export const caseStudyFaqs: Record<string, readonly FaqItem[]> = {
   'wicked-logistics': [
     {
       q: 'What result did Wicked Logistics see?',
-      a: 'Wicked Logistics went from 1-2 leads a week to 5-6 leads a day in 3 months with Dead River Management. One lead became a $1M account.',
+      a: 'Wicked Logistics went from 1-2 leads a week to 5-6 leads a day in 3 months with Dead River Management. One lead became a $1.2M/year shipping contract.',
     },
     {
       q: 'What kind of business is this case study about?',
