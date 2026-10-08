@@ -7,6 +7,7 @@ import FaqList from '../components/FaqList.astro';
 import Reviews from '../components/growth/Reviews.astro';
 import { faqPage } from '../lib/schema';
 import { googleReviews, facebookReviews } from '../data/reviews';
+import Threads from '../components/react-bits/Threads.jsx';
 
 // Demand Intelligence, in plain words: what it is, what it sees, what it changes.
 const intelligence = [
@@ -100,26 +101,34 @@ const demandFlowFaq = [
   schema={faqPage(demandFlowFaq)}
 >
   <section class="hero wrap">
-    <div class="hero-glow" aria-hidden="true"></div>
-    <div>
+    <div class="hero-current" aria-hidden="true">
+      <Threads client:load color={[0.89, 0.55, 0.3]} amplitude={1.6} distance={0.35} enableMouseInteraction />
+    </div>
+    <div class="hero-copy">
       <p class="eyebrow" data-rise>The Demand Flow guarantee · Nationwide</p>
       <h1 data-split>We'll help your business generate $50,000 in new revenue with our Demand Flow system in 45 to 60 days. <em>Or your money back, and we pay you $500 for wasting your time.</em></h1>
-      <p class="intro" data-rise>
-        Most marketing guesses who might buy. We don't. Dead River uses purchase intent data to find the people shopping for what you sell right now, puts your offer in front of only them, and makes sure every one of them gets answered, followed up with, and booked.
-      </p>
-      <div class="button-row" data-rise>
-        <a class="button" href="/book">Book a strategy call <Arrow /></a>
-        <a class="button secondary" href="#how">See how Demand Flow works <Arrow /></a>
+      <div class="hero-row">
+        <p class="intro" data-rise>
+          Most marketing guesses who might buy. We don't. Dead River uses purchase intent data to find the people shopping for what you sell right now, puts your offer in front of only them, and makes sure every one of them gets answered, followed up with, and booked.
+        </p>
+        <div>
+          <div class="button-row" data-rise>
+            <a class="button" href="/book">Book a strategy call <Arrow /></a>
+            <a class="button secondary" href="#how">See how Demand Flow works <Arrow /></a>
+          </div>
+          <p class="hero-note" data-rise>Applies to businesses accepted into <a class="inline-link" href="/demand-flow">Demand Flow</a>. <a class="inline-link" href="/legal/guarantee">Read the guarantee terms.</a></p>
+          <p class="hero-proof" data-rise>
+            <span class="rv-stars" aria-hidden="true">★★★★★</span>
+            <span><strong>{googleReviews.rating.toFixed(1)} on Google</strong> · {googleReviews.count} {googleReviews.count === 1 ? 'review' : 'reviews'}</span>
+            <span><strong>{facebookReviews.count}</strong> Facebook recommendations</span>
+            <span>Based in El Paso, Texas · Working nationwide</span>
+          </p>
+        </div>
       </div>
-      <p class="hero-note" data-rise>Applies to businesses accepted into <a class="inline-link" href="/demand-flow">Demand Flow</a>. <a class="inline-link" href="/legal/guarantee">Read the guarantee terms.</a></p>
-      <p class="hero-proof" data-rise>
-        <span class="rv-stars" aria-hidden="true">★★★★★</span>
-        <span><strong>{googleReviews.rating.toFixed(1)} on Google</strong> · {googleReviews.count} {googleReviews.count === 1 ? 'review' : 'reviews'}</span>
-        <span><strong>{facebookReviews.count}</strong> Facebook recommendations</span>
-        <span>Based in El Paso, Texas · Working nationwide</span>
-      </p>
     </div>
-    <River />
+    <div class="hero-stage" data-stage>
+      <River />
+    </div>
   </section>
   <ClientTrust />
   <section class="section soft" id="intelligence">
@@ -155,14 +164,22 @@ const demandFlowFaq = [
           </p>
         </div>
       </div>
-      <div class="steps home-steps">
-        {steps.map(([title, body], index) => (
-          <article>
-            <span class="number">Step {index + 1}</span>
-            <h3>{title}</h3>
-            <p>{body}</p>
-          </article>
-        ))}
+    </div>
+    <div class="flow-stage" data-flow>
+      <div class="wrap flow-track">
+        <svg class="flow-line" viewBox="0 0 1200 220" preserveAspectRatio="none" aria-hidden="true">
+          <path class="flow-glow flow-draw" d="M-20 170C180 175 230 40 420 60C600 80 560 190 760 150C930 115 980 20 1220 50" fill="none" stroke-linecap="round" />
+          <path class="flow-path flow-draw" d="M-20 170C180 175 230 40 420 60C600 80 560 190 760 150C930 115 980 20 1220 50" fill="none" stroke-linecap="round" />
+        </svg>
+        <div class="steps home-steps flow-steps">
+          {steps.map(([title, body], index) => (
+            <article data-flow-step>
+              <span class="number">Step {index + 1}</span>
+              <h3>{title}</h3>
+              <p>{body}</p>
+            </article>
+          ))}
+        </div>
       </div>
     </div>
   </section>
@@ -219,13 +236,6 @@ const demandFlowFaq = [
 </Growth>
 
 <style>
-  /* The guarantee headline is a full sentence, so it runs smaller than the
-     default hero H1 and a little wider to hold it in about six lines. */
-  .hero h1 {
-    font-size: clamp(36px, 3.7vw, 54px);
-    line-height: 1.04;
-    max-width: 720px;
-  }
   .section .text-link {
     margin-top: 28px;
   }
@@ -240,7 +250,7 @@ const demandFlowFaq = [
     align-items: center;
   }
   .urgency h2 {
-    max-width: 640px;
+    max-width: 760px;
   }
   .urgency-actions {
     display: flex;

@@ -97,7 +97,7 @@ if (!reduce) {
     // Reveal below-the-fold content as it scrolls in. Elements inside another
     // target are left alone so a section head and its heading do not both run.
     const all = gsap.utils.toArray(
-      'main > :not(:first-child) :is(h2, .section-head, .steps > article, .rv-card, .faq, .split > *, .feature-panel, .trade-card, .button-row, .urgency > *, .home-testimonial, .client-trust-heading, .resource-card, .tier, .metric-cell, .outcome-item, .case-feature > *, .prose, .closing > *)',
+      'main > :not(:first-child) :is(h2, .section-head, .steps > article:not([data-flow-step]), .rv-card, .faq, .split > *, .feature-panel, .trade-card, .button-row, .urgency > *, .home-testimonial, .client-trust-heading, .resource-card, .tier, .metric-cell, .outcome-item, .case-feature > *, .prose, .closing > *)',
     );
     const fold = window.innerHeight * 0.9;
     const targets = all.filter(
@@ -120,6 +120,96 @@ if (!reduce) {
           clearProps: 'transform',
         }),
     });
+
+    // The DemandFlow panel settles from a tilted table onto the page as it
+    // scrolls in, then leans with the pointer. Labels drift the other way so
+    // they read as sitting above the surface.
+    const stage = document.querySelector('[data-stage]');
+    const panel = stage?.querySelector('.river-visual');
+    if (panel) {
+      gsap.set(panel, { transformPerspective: 1800, rotateX: 16, y: 40, opacity: 0.6 });
+      gsap.to(panel, {
+        rotateX: 0,
+        y: 0,
+        opacity: 1,
+        ease: 'none',
+        scrollTrigger: { trigger: stage, start: 'top 95%', end: 'top 35%', scrub: 0.6 },
+      });
+      if (window.matchMedia('(pointer: fine)').matches) {
+        const labels = panel.querySelectorAll('.river-label');
+        const rx = gsap.quickTo(panel, 'rotateX', { duration: 0.6, ease: 'power3' });
+        const ry = gsap.quickTo(panel, 'rotateY', { duration: 0.6, ease: 'power3' });
+        const lx = gsap.quickTo(labels, 'x', { duration: 0.8, ease: 'power3' });
+        const ly = gsap.quickTo(labels, 'y', { duration: 0.8, ease: 'power3' });
+        let settled = false;
+        ScrollTrigger.create({
+          trigger: stage,
+          start: 'top 35%',
+          onEnter: () => (settled = true),
+          onLeaveBack: () => (settled = false),
+        });
+        stage.addEventListener('mousemove', (e) => {
+          if (!settled) return;
+          const r = panel.getBoundingClientRect();
+          const px = (e.clientX - r.left) / r.width - 0.5;
+          const py = (e.clientY - r.top) / r.height - 0.5;
+          rx(-py * 7);
+          ry(px * 9);
+          lx(-px * 18);
+          ly(-py * 18);
+        });
+        stage.addEventListener('mouseleave', () => {
+          if (!settled) return;
+          rx(0);
+          ry(0);
+          lx(0);
+          ly(0);
+        });
+      }
+    }
+
+    // Create, capture, convert: pinned on wide screens. The river draws across
+    // the stage and each step surfaces from depth in order.
+    const flow = document.querySelector('[data-flow]');
+    if (flow) {
+      const draw = flow.querySelectorAll('.flow-draw');
+      const cards = flow.querySelectorAll('[data-flow-step]');
+      gsap.matchMedia().add('(min-width: 861px)', () => {
+        gsap.set(cards, { transformPerspective: 1400, z: -520, y: 80, opacity: 0 });
+        gsap.set(draw, { drawSVG: '0%' });
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: flow,
+            start: 'top 18%',
+            end: '+=170%',
+            pin: true,
+            scrub: 0.8,
+            anticipatePin: 1,
+          },
+        });
+        tl.to(draw, { drawSVG: '100%', duration: 3, ease: 'none' }, 0);
+        cards.forEach((card, i) =>
+          tl.to(card, { z: 0, y: 0, opacity: 1, duration: 1, ease: 'power2.out' }, i * 0.85 + 0.2),
+        );
+        return () => tl.scrollTrigger?.kill();
+      });
+      gsap.matchMedia().add('(max-width: 860px)', () => {
+        gsap.set(cards, { clearProps: 'all' });
+        gsap.set(draw, { clearProps: 'all' });
+      });
+    }
+
+    // Copper spotlight that follows the pointer across cards.
+    document
+      .querySelectorAll('.home-steps article, .rv-card, .feature-panel, .resource-card')
+      .forEach((card) => {
+        card.classList.add('spot');
+        card.addEventListener('mousemove', (e) => {
+          const r = card.getBoundingClientRect();
+          card.style.setProperty('--mx', e.clientX - r.left + 'px');
+          card.style.setProperty('--my', e.clientY - r.top + 'px');
+        });
+      });
 
     // Buttons lean toward the pointer on desktop.
     if (window.matchMedia('(pointer: fine)').matches)
