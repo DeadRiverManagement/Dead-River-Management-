@@ -30,7 +30,7 @@ export const homeServicesBook: BookPageCopy = {
     'Book a free strategy call with Dead River Management. See if your business qualifies for the Demand Flow guarantee: $50,000 in new revenue in 45 to 60 days.',
   eyebrow: 'Free Demand Flow Strategy Call',
   headline:
-    'We’ll help your business generate $50,000 in new revenue with our Demand Flow system in 45 to 60 days. Or your money back, and we pay you $500 for wasting your time.',
+    '$50,000 in new revenue in 45-60 days. Or your money back, plus $500 for wasting your time.',
   intro:
     'We build and run the whole Demand Flow system: purchase intent data to find the people ready to buy, ads that reach only them, landing pages, instant follow-up, CRM, and booking. Miss the $50,000 and you get your service fees back, plus $500 from us. No commitment required to apply.',
   happens:

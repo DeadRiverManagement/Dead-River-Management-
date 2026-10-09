@@ -27,7 +27,7 @@ test('homepage includes the trust section once, immediately after the hero', () 
 test('homepage is the Demand Flow guarantee home', () => {
   assert.match(home, /title="\$50,000 in 45-60 Days, Guaranteed"/);
   assert.match(home, /description="Purchase intent data finds people ready to buy now\. We create, capture, and convert that demand\. \$50,000 in 45 to 60 days or money back \+ \$500\."/);
-  assert.match(home, /<h1 data-split>We'll help your business generate \$50,000 in new revenue with our Demand Flow system in 45 to 60 days\. <em>Or your money back, and we pay you \$500 for wasting your time\.<\/em><\/h1>/);
+  assert.match(home, /<h1 data-split>\$50,000 in new revenue in 45-60 days\. <em>Or your money back, plus \$500 for wasting your time\.<\/em><\/h1>/);
   assert.match(home, /Create demand\. Capture demand\. Convert demand\./);
   assert.match(home, /purchase intent data/);
   assert.doesNotMatch(home, /Choose your industry|\/industries/);

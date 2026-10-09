@@ -17,7 +17,7 @@ const locked = {
     description:
       'Book a free strategy call with Dead River Management. See if your business qualifies for the Demand Flow guarantee: $50,000 in new revenue in 45 to 60 days.',
     descriptionChars: 156,
-    headline: 'We’ll help your business generate $50,000 in new revenue with our Demand Flow system in 45 to 60 days. Or your money back, and we pay you $500 for wasting your time.',
+    headline: '$50,000 in new revenue in 45-60 days. Or your money back, plus $500 for wasting your time.',
   },
   services: [
     {
