@@ -6,7 +6,7 @@ import River from '../components/growth/River.astro';
 import FaqList from '../components/FaqList.astro';
 import Reviews from '../components/growth/Reviews.astro';
 import { faqPage } from '../lib/schema';
-import { googleReviews, facebookReviews } from '../data/reviews';
+import { googleReviews, facebookReviews, SHOW_COUNT_FROM } from '../data/reviews';
 
 // Demand Flow, the short version. The full nutshell lives on /demand-flow.
 const stages = [
@@ -87,8 +87,8 @@ const demandFlowFaq = [
         </div>
         <p class="hero-proof" data-rise>
           <span class="rv-stars" aria-hidden="true">★★★★★</span>
-          <span><strong>{googleReviews.rating.toFixed(1)} on Google</strong> · {googleReviews.count} {googleReviews.count === 1 ? 'review' : 'reviews'}</span>
-          <span><strong>{facebookReviews.count}</strong> Facebook recommendations</span>
+          <span><strong>Rated {googleReviews.rating.toFixed(1)} on Google</strong>{googleReviews.count >= SHOW_COUNT_FROM && ` · ${googleReviews.count} reviews`}</span>
+          <span>{facebookReviews.count >= SHOW_COUNT_FROM ? <><strong>{facebookReviews.count}</strong> Facebook recommendations</> : 'Recommended on Facebook'}</span>
           <span>Based in El Paso, Texas · Working nationwide</span>
         </p>
       </div>
