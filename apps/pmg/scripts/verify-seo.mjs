@@ -159,8 +159,19 @@ if (sitemap) {
   if (!sitemap.includes(`${WWW}/ltl-freight-quote/`)) {
     fail('sitemap.xml is missing the ltl-freight-quote loc');
   }
+  for (const guide of [
+    '/what-is-freight-class/',
+    '/what-is-a-bill-of-lading/',
+    '/accessorial-charges/',
+    '/what-is-a-freight-forwarder/',
+    '/what-is-ftl/',
+    '/what-is-fob/',
+    '/what-is-cross-docking/',
+  ]) {
+    if (!sitemap.includes(`${WWW}${guide}`)) fail(`sitemap.xml is missing the ${guide} loc`);
+  }
   const sitemapCount = (sitemap.match(/<loc>/g) || []).length;
-  if (sitemapCount !== 21) fail(`sitemap.xml should list 21 URLs (found ${sitemapCount})`);
+  if (sitemapCount !== 28) fail(`sitemap.xml should list 28 URLs (found ${sitemapCount})`);
   if (sitemap.includes('/404')) fail('sitemap.xml includes the 404 document');
   assertNoBareApex('sitemap.xml', sitemap);
 }
@@ -199,8 +210,19 @@ if (urlset) {
   if (!urlset.includes(`${WWW}/ltl-freight-quote/`)) {
     fail('sitemap-0.xml is missing the ltl-freight-quote loc');
   }
+  for (const guide of [
+    '/what-is-freight-class/',
+    '/what-is-a-bill-of-lading/',
+    '/accessorial-charges/',
+    '/what-is-a-freight-forwarder/',
+    '/what-is-ftl/',
+    '/what-is-fob/',
+    '/what-is-cross-docking/',
+  ]) {
+    if (!urlset.includes(`${WWW}${guide}`)) fail(`sitemap-0.xml is missing the ${guide} loc`);
+  }
   const sitemap0Count = (urlset.match(/<loc>/g) || []).length;
-  if (sitemap0Count !== 21) fail(`sitemap-0.xml should list 21 URLs (found ${sitemap0Count})`);
+  if (sitemap0Count !== 28) fail(`sitemap-0.xml should list 28 URLs (found ${sitemap0Count})`);
   assertNoBareApex('sitemap-0.xml', urlset);
 }
 

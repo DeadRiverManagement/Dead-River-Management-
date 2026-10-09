@@ -1,0 +1,112 @@
+---
+/**
+ * What is cross docking. City-level NAP only. No street. No lead form.
+ * Title, meta, H1, and FAQ copy match the live pmg-site guide.
+ */
+import Base from '../layouts/Base.astro';
+import site from '../data/site.json';
+
+const siteURL = Astro.site?.toString() ?? `${site.canonicalOrigin}/`;
+const pagePath = '/what-is-cross-docking/';
+
+const title = 'What Is Cross Docking? | Parcel Management Group';
+const description =
+  'Cross docking moves freight from inbound to outbound trucks with little or no storage. See how it works in LTL. Ventura, CA 93001. Call (805) 984-4114.';
+
+const faq = [
+  {
+    q: 'What is cross docking?',
+    a: 'Cross docking moves freight from an inbound truck to an outbound truck with little or no storage. Parcel Management Group is a registered broker in Ventura, CA 93001. Call (805) 984-4114.',
+  },
+  {
+    q: 'Why do LTL carriers use cross docking?',
+    a: 'LTL carriers combine freight from many shippers. Cross docks sort that freight by destination so it keeps moving.',
+  },
+  {
+    q: 'Does FTL freight go through a cross dock?',
+    a: 'Full truckload freight often moves direct from pickup to delivery without a cross dock. Ask PMG which option fits your freight.',
+  },
+  {
+    q: 'How can I avoid delays at a cross dock?',
+    a: 'Share accurate weight, dimensions, and packaging. Label each piece clearly. PMG compares carriers and sends a clear rate. Call (805) 984-4114.',
+  },
+];
+
+const seo = {
+  title,
+  description,
+  schema: [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      name: 'What is cross docking?',
+      url: `${siteURL}what-is-cross-docking/`,
+      description,
+      mainEntity: { '@id': `${siteURL}#organization` },
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: faq.map((qa) => ({
+        '@type': 'Question',
+        name: qa.q,
+        acceptedAnswer: { '@type': 'Answer', text: qa.a },
+      })),
+    },
+  ],
+};
+---
+<Base title={seo.title} description={seo.description} canonical={pagePath} schema={seo.schema}>
+  <section class="page-hero" aria-label="What is cross docking">
+    <div class="wrap">
+      <span class="eyebrow">Cross docking</span>
+      <h1>What is cross docking?</h1>
+    </div>
+  </section>
+  <section class="page-body">
+    <div class="wrap prose">
+      <p>Cross docking moves freight from an inbound truck to an outbound truck at a terminal with little or no time in storage. It helps LTL freight keep moving toward its destination. Parcel Management Group is a registered freight broker (USDOT 3266041 · MC 1030328) in Ventura, CA 93001. Call <a href="tel:+18059844114">(805) 984-4114</a>.</p>
+
+      <h2>How cross docking works</h2>
+      <ul>
+        <li>Inbound freight is unloaded at a terminal or cross dock.</li>
+        <li>Freight is sorted by destination.</li>
+        <li>Freight is loaded onto outbound trucks, often the same day.</li>
+      </ul>
+
+      <h2>Cross docking and LTL</h2>
+      <p>LTL carriers use terminals to combine shipments from many shippers. That is one reason LTL is priced by space, weight, and class: <a href="/what-is-ltl-shipping/">/what-is-ltl-shipping/</a> · <a href="/what-is-freight-class/">/what-is-freight-class/</a>. A full truckload often goes direct with no cross dock: <a href="/what-is-ftl/">/what-is-ftl/</a> · <a href="/ltl-vs-ftl/">/ltl-vs-ftl/</a>.</p>
+
+      <h2>What shippers should share</h2>
+      <p>Accurate weight, dimensions, and packaging help freight move cleanly through a cross dock. Extra handling can add charges: <a href="/accessorial-charges/">/accessorial-charges/</a>. Get a rate: <a href="/ltl-freight-quote/">/ltl-freight-quote/</a>.</p>
+
+      <p>Call <a href="tel:+18059844114">(805) 984-4114</a> or <a href="/#contact">/#contact</a>.</p>
+
+      <p class="related">
+        <a href="/what-is-fob/">What is FOB</a>
+        <span aria-hidden="true">·</span>
+        <a href="/what-is-a-freight-broker/">What is a freight broker</a>
+        <span aria-hidden="true">·</span>
+        <a href="/services/">Services</a>
+        <span aria-hidden="true">·</span>
+        <a href="/about/">About</a>
+      </p>
+    </div>
+  </section>
+  <section class="page-body" aria-label="Cross docking questions">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">FAQ</span>
+        <h2>Cross docking FAQ</h2>
+      </div>
+      <div class="faq faq-static">
+        {faq.map((qa) => (
+          <div class="qa">
+            <h3>{qa.q}</h3>
+            <div class="a"><p>{qa.a}</p></div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</Base>

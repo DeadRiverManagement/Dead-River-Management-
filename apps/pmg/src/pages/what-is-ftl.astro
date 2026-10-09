@@ -1,0 +1,111 @@
+---
+/**
+ * What is FTL shipping. City-level NAP only. No street. No lead form.
+ * Title, meta, H1, and FAQ copy match the live pmg-site guide.
+ */
+import Base from '../layouts/Base.astro';
+import site from '../data/site.json';
+
+const siteURL = Astro.site?.toString() ?? `${site.canonicalOrigin}/`;
+const pagePath = '/what-is-ftl/';
+
+const title = 'What Is FTL Shipping? | Parcel Management Group';
+const description =
+  'FTL means full truckload: your freight uses a full trailer. Learn when FTL fits vs LTL. Ventura, CA 93001. Call (805) 984-4114.';
+
+const faq = [
+  {
+    q: 'What is FTL shipping?',
+    a: 'FTL means full truckload. Your freight uses a full trailer instead of sharing space with other shippers. Parcel Management Group is a registered broker in Ventura, CA 93001. Call (805) 984-4114.',
+  },
+  {
+    q: 'When should I choose FTL over LTL?',
+    a: 'Choose FTL when you can fill a trailer, need exclusive use, or timing and handling make shared LTL space a poor fit. Compare modes on LTL vs FTL.',
+  },
+  {
+    q: 'Is FTL the same as a dedicated truck?',
+    a: 'FTL usually means your freight fills or exclusively uses a trailer for that move. Ask PMG which option fits your freight and timing.',
+  },
+  {
+    q: 'How do I get an FTL quote from PMG?',
+    a: 'Share origin, destination, weight, and timing. PMG compares carriers and sends a clear rate. Call (805) 984-4114 or start a chat.',
+  },
+];
+
+const seo = {
+  title,
+  description,
+  schema: [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      name: 'What is FTL shipping?',
+      url: `${siteURL}what-is-ftl/`,
+      description,
+      mainEntity: { '@id': `${siteURL}#organization` },
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: faq.map((qa) => ({
+        '@type': 'Question',
+        name: qa.q,
+        acceptedAnswer: { '@type': 'Answer', text: qa.a },
+      })),
+    },
+  ],
+};
+---
+<Base title={seo.title} description={seo.description} canonical={pagePath} schema={seo.schema}>
+  <section class="page-hero" aria-label="What is FTL shipping">
+    <div class="wrap">
+      <span class="eyebrow">FTL shipping</span>
+      <h1>What is FTL shipping?</h1>
+    </div>
+  </section>
+  <section class="page-body">
+    <div class="wrap prose">
+      <p>FTL means full truckload shipping. Your freight uses a full trailer, so you do not share space with other shippers on that trailer. Parcel Management Group is a registered freight broker (USDOT 3266041 · MC 1030328) in Ventura, CA 93001. Call <a href="tel:+18059844114">(805) 984-4114</a>.</p>
+
+      <h2>When FTL fits</h2>
+      <ul>
+        <li>You can fill a trailer, or you need exclusive use of one.</li>
+        <li>Timing or handling makes shared LTL space a poor fit.</li>
+        <li>The freight should ride alone from pickup to delivery.</li>
+        <li>Compare modes: <a href="/ltl-vs-ftl/">LTL vs FTL</a>. LTL basics: <a href="/what-is-ltl-shipping/">what is LTL shipping</a>.</li>
+      </ul>
+
+      <h2>FTL vs LTL in plain terms</h2>
+      <p>LTL shares a trailer and you pay for the space you use. FTL means your freight fills or exclusively uses a trailer for that move. Freight class mainly shapes LTL rates: <a href="/what-is-freight-class/">what is freight class</a>. Extra fees can apply on either mode: <a href="/accessorial-charges/">accessorial charges</a>.</p>
+
+      <h2>How PMG helps</h2>
+      <p>Share origin, destination, weight, and timing. PMG compares carriers and sends a clear rate. PMG is a registered freight broker. A forwarder is a different role: <a href="/what-is-a-freight-forwarder/">what is a freight forwarder</a>. Broker role: <a href="/what-is-a-freight-broker/">what is a freight broker</a>. How a quote is built: <a href="/how-freight-quoting-works/">how freight quoting works</a>. When LTL fits better: <a href="/ltl-freight-quote/">LTL freight quote</a>.</p>
+
+      <p>Call <a href="tel:+18059844114">(805) 984-4114</a> or <a href="/#contact">start a chat</a>.</p>
+
+      <p class="related">
+        <a href="/services/">Services</a>
+        <span aria-hidden="true">·</span>
+        <a href="/about/">About</a>
+        <span aria-hidden="true">·</span>
+        <a href="/ltl-vs-ftl/">LTL vs FTL</a>
+      </p>
+    </div>
+  </section>
+  <section class="page-body" aria-label="FTL shipping questions">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">FAQ</span>
+        <h2>FTL shipping FAQ</h2>
+      </div>
+      <div class="faq faq-static">
+        {faq.map((qa) => (
+          <div class="qa">
+            <h3>{qa.q}</h3>
+            <div class="a"><p>{qa.a}</p></div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</Base>
