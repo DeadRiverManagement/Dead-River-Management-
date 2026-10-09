@@ -4,9 +4,9 @@ import Arrow from '../components/growth/Arrow.astro';
 // Owner confirmed these shared platform figures on October 5, 2026.
 // AudienceLab customer counts and customer results do not belong to DRM.
 const stats = [
-  ['280M', "U.S. consumer profiles', 'Coverage across consumer markets."],
-  ['95%', "Contact-data accuracy', 'How accurate the matched contact details are."],
-  ['60B', "Weekly behaviors and URLs', 'The research activity we use to build your list."],
+  ['280M', 'U.S. consumer profiles', 'Coverage across consumer markets.'],
+  ['95%', 'Contact-data accuracy', 'How accurate the matched contact details are.'],
+  ['60B', 'Weekly behaviors and URLs', 'The research activity we use to build your list.'],
 ];
 const capabilities = [
   ['01', 'Find your audience.', 'Start with what people are looking up. Narrow the list by topic, location, and how recent the activity is. Then add the business or consumer filters that matter to you.', ['Purchase-intent signals', 'Location and recency filters', 'Business and consumer audiences']],
@@ -53,11 +53,11 @@ const schema = [
         <div class="di-orbit" aria-label="Illustration: research signals orbiting a live intent core">
           <div class="di-core"><i></i></div>
           {[
-            ['a', "Searching', '2 days"],
-            ['b', "Comparing', '7 days"],
-            ['c', "Reading reviews', 'today"],
-            ['d', "Pricing pages', '3 days"],
-            ['e', "Booking', 'now"],
+            ['a', 'Searching', '2 days'],
+            ['b', 'Comparing', '7 days'],
+            ['c', 'Reading reviews', 'today'],
+            ['d', 'Pricing pages', '3 days'],
+            ['e', 'Booking', 'now'],
           ].map(([ring, label, when]) => (
             <div class={`di-ring di-ring-${ring}`}><div class="di-node"><div class="di-node-face"><b></b><span>{label}</span><small>{when}</small></div></div></div>
           ))}
