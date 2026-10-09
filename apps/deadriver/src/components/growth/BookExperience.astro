@@ -14,7 +14,7 @@ interface Props {
 const { page } = Astro.props;
 ---
 
-<Growth title={page.title} description={page.description}>
+<Growth ogImage="/images/og/book.jpg" title={page.title} description={page.description}>
   <section class="has-scene page-hero wrap book-hero">
   <HeroScene />
     <p class="eyebrow">{page.eyebrow}</p>
