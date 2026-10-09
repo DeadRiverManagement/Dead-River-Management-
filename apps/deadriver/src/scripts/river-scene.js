@@ -66,18 +66,18 @@ const liquidFrag = /* glsl */ `
     float spec2 = pow(max(dot(n, H), 0.0), 8.0);
     float rim = pow(1.0 - max(dot(n, V), 0.0), 2.2);
 
-    vec3 bed = vec3(0.02, 0.045, 0.038);
+    vec3 bed = vec3(0.012, 0.011, 0.012);
     vec3 copper = vec3(0.78, 0.42, 0.22);
     vec3 ember = vec3(1.0, 0.70, 0.46);
-    vec3 moss = vec3(0.12, 0.25, 0.2);
+    vec3 shadow = vec3(0.16, 0.1, 0.07);
 
     vec3 metal = mix(copper * 0.35, copper, diff);
     metal += ember * spec * 1.4 + ember * spec2 * 0.25;
-    metal += moss * rim * 0.9;
+    metal += shadow * rim * 0.9;
     metal *= 0.55 + 0.45 * core;
 
     // Dark liquid outside the band still catches a little light.
-    vec3 outer = bed + moss * rim * 0.35 + vec3(0.6, 0.5, 0.42) * spec * 0.25;
+    vec3 outer = bed + shadow * rim * 0.45 + vec3(0.6, 0.5, 0.42) * spec * 0.25;
     vec3 col = mix(outer, metal, inside);
 
     float vig = smoothstep(1.25, 0.35, length((vUv - 0.5) * vec2(1.1, 1.4)));
