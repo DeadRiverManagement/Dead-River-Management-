@@ -1,4 +1,5 @@
 ---
+import HeroScene from './HeroScene.astro';
 // Parcel Management Group case study, coach rewrite. Its structure differs
 // from the CaseStudyPage formula (challenge, solution, results, why it worked,
 // what it means, bigger picture, next steps), so it has its own template.
@@ -55,7 +56,8 @@ const quickStats: [string, string][] = [
   description={description}
   schema={schema}
 >
-  <section class="page-hero wrap">
+  <section class="has-scene page-hero wrap">
+  <HeroScene />
     <p class="eyebrow">Freight consulting · Facebook lead generation</p>
     <h1>{headline}</h1>
     <p class="intro">

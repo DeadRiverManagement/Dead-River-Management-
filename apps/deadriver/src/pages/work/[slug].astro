@@ -49,7 +49,7 @@ const essaySchema = essayFaqs
 {w.slug === 'parcel-management-group' && w.proof ? <PmgCaseStudy logo={w.logo} proof={w.proof} /> : rewrite ? <CaseStudyPage c={rewrite} logo={w.logo} /> : (
 
 <Growth title={w.seoTitle} description={w.description} schema={essaySchema}>
-  <Hero eyebrow={w.category} title={w.headline} intro={w.intro}>
+  <Hero scene="liquid" eyebrow={w.category} title={w.headline} intro={w.intro}>
     <p class="case-client">
       <strong>{w.name}</strong>
     </p>

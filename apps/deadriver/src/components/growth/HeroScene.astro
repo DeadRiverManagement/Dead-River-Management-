@@ -1,0 +1,10 @@
+---
+// Live header backdrop: drop inside any .page-hero (add class has-scene).
+// variant: "liquid" (the current) or "signals" (the intent field).
+const { variant = 'liquid' } = Astro.props;
+---
+<div class="hero-scene" data-scene={variant} aria-hidden="true"></div>
+<script>
+  import { mountRiver } from '../../scripts/river-scene.js';
+  document.querySelectorAll('[data-scene]').forEach((el) => mountRiver(el, { variant: el.dataset.scene }));
+</script>

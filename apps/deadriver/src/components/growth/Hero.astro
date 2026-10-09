@@ -1,11 +1,11 @@
 ---
-// Page hero. Pass scene="liquid" or scene="signals" for a live WebGL header
-// (src/scripts/river-scene.js) behind the copy.
+// Page hero. Pass scene="liquid" or scene="signals" for a live WebGL header.
+import HeroScene from './HeroScene.astro';
 const { eyebrow, title, intro, scene } = Astro.props;
 ---
 
 <section class:list={['page-hero', 'wrap', { 'has-scene': !!scene }]}>
-  {scene && <div class="hero-scene" data-scene={scene} aria-hidden="true"></div>}
+  {scene && <HeroScene variant={scene} />}
   <div class="page-hero-copy">
     <p class="eyebrow" data-rise>{eyebrow}</p>
     <h1 data-split>{title}</h1>
@@ -13,7 +13,3 @@ const { eyebrow, title, intro, scene } = Astro.props;
     <slot />
   </div>
 </section>
-<script>
-  import { mountRiver } from '../../scripts/river-scene.js';
-  document.querySelectorAll('[data-scene]').forEach((el) => mountRiver(el, { variant: el.dataset.scene }));
-</script>

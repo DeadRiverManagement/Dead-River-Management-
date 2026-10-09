@@ -1,4 +1,5 @@
 ---
+import HeroScene from '../../components/growth/HeroScene.astro';
 // Service pages (/services/facebook-ads and so on), in the same structure as
 // the industry pages: hero, problem, offer, what we build, results, fit, FAQ,
 // final call. The offer section routes every visitor to an industry page,
@@ -43,7 +44,8 @@ const serviceSchema = {
   description={page.description}
   schema={[serviceSchema, faqPage(page.faqs)]}
 >
-  <section class="page-hero wrap ms-hero">
+  <section class="has-scene page-hero wrap ms-hero">
+  <HeroScene />
     <p class="eyebrow">{page.eyebrow}</p>
     <h1>{page.headline}</h1>
     <p class="ms-sub">{page.sub}</p>
