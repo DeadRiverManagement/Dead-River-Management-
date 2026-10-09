@@ -492,7 +492,7 @@ a:hover {
   width: min(1280px, calc(100% - 104px));
   margin-inline: auto;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 1px;
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 14px;

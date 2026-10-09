@@ -66,7 +66,7 @@ if (!reduce) {
     // Reveal below-the-fold content as it scrolls in. Elements inside another
     // target are left alone so a section head and its heading do not both run.
     const all = gsap.utils.toArray(
-      'main > :not(:first-child) :is(h2, .section-head, .steps > article:not([data-flow-step]), .rv-card, .faq, .split > *, .feature-panel, .trade-card, .button-row, .urgency > *, .home-testimonial, .client-trust-heading, .resource-card, .tier, .metric-cell, .outcome-item, .case-feature > *, .prose, .closing > *)',
+      'main > :not(:first-child) :is(h2, .section-head, .steps > article:not([data-flow-step]), .stage, .rv-card, .faq, .split > *, .feature-panel, .trade-card, .button-row, .urgency > *, .home-testimonial, .client-trust-heading, .resource-card, .tier, .metric-cell, .outcome-item, .case-feature > *, .prose, .closing > *)',
     );
     const fold = window.innerHeight * 0.9;
     const targets = all.filter(

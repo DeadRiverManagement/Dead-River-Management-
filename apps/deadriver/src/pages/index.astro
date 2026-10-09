@@ -8,39 +8,13 @@ import Reviews from '../components/growth/Reviews.astro';
 import { faqPage } from '../lib/schema';
 import { googleReviews, facebookReviews } from '../data/reviews';
 
-// Demand Intelligence, in plain words: what it is, what it sees, what it changes.
-const intelligence = [
-  [
-    'Who is shopping',
-    'Every day, people search for, read about, and compare the services you offer. That leaves a trail. We call it purchase intent data.',
-  ],
-  [
-    'How fresh it is',
-    'We pull those signals from the last 24 to 48 hours. Not an old list. The people looking for a business like yours this week.',
-  ],
-  [
-    'What we do with it',
-    'We put that list to work. Your ads, your emails, and your follow-up go to the people already looking. Not to everyone in your zip code.',
-  ],
+// Demand Flow, the short version. The full nutshell lives on /demand-flow.
+const stages = [
+  ['Target', 'We find people showing recent buying signals for what you sell. That beats throwing spaghetti at a wall and seeing what sticks.'],
+  ['Create', 'Landing pages built to convert, and ads that put your offer in front of the right people. The ad and the page work together.'],
+  ['Capture', 'A form, a quote, a booking, a call or a purchase. Every inquiry lands in your customer management system, so you know who reached out and what happens next.'],
+  ['Convert', 'Quick replies, follow-up and reminders take care of every inquiry. We track bookings and sales, then tune what’s working.'],
 ];
-
-// Demand Flow: create it, capture it, convert it.
-const steps = [
-  [
-    'Create demand',
-    'We put your offer in front of the people our data says are ready to buy. On Facebook, Instagram, Google, and email. No guessing. No wasted spend.',
-  ],
-  [
-    'Capture demand',
-    'When someone raises their hand, a landing page, a quick text back, and a booking link catch them right then. Nobody waits until tomorrow.',
-  ],
-  [
-    'Convert demand',
-    "Reminders, follow-up, and weekly tuning turn those leads into booked work and paid invoices. That's where the $50,000 comes from.",
-  ],
-];
-
-
 
 const demandFlowFaq = [
   {
@@ -124,38 +98,15 @@ const demandFlowFaq = [
     <River />
   </section>
   <ClientTrust />
-  <section class="section soft" id="intelligence">
-    <div class="wrap">
-      <div class="section-head">
-        <div>
-          <p class="eyebrow">Demand Intelligence</p>
-          <h2>We know who is about to buy. Before they call anyone.</h2>
-          <p class="intro">
-            Demand Intelligence is the tool behind everything we do. It shows us who is looking for your service right now. So your ads go to real buyers, not to everyone in town.
-          </p>
-        </div>
-      </div>
-      <div class="steps home-steps">
-        {intelligence.map(([title, body]) => (
-          <article>
-            <h3>{title}</h3>
-            <p>{body}</p>
-          </article>
-        ))}
-      </div>
-      <a class="text-link" href="/demand-intelligence">See the Demand Intelligence platform <Arrow /></a>
-    </div>
-  </section>
   <section class="section" id="how">
     <div class="wrap">
       <div class="section-head">
         <div>
           <p class="eyebrow">Demand Flow</p>
-          <h2>Create demand. Capture demand. Convert demand.</h2>
-          <p class="intro">
-            We call the whole system Demand Flow. Three steps, one team, and one number we stand behind: new revenue on your books.
-          </p>
+          <h2>Target demand. Create demand. Capture demand. Convert demand.</h2>
+          <p class="intro">Demand Flow is how we help your business reach people actively looking for your services or products, capture their interest and help turn them into paying customers.</p>
         </div>
+        <a class="text-link" href="/demand-flow#how">How Demand Flow works, start to finish <Arrow /></a>
       </div>
     </div>
     <div class="flow-stage" data-flow>
@@ -165,9 +116,9 @@ const demandFlowFaq = [
           <path class="flow-path flow-draw" d="M-20 170C180 175 230 40 420 60C600 80 560 190 760 150C930 115 980 20 1220 50" fill="none" stroke-linecap="round" />
         </svg>
         <div class="steps home-steps flow-steps">
-          {steps.map(([title, body], index) => (
+          {stages.map(([title, body], i) => (
             <article data-flow-step>
-              <span class="number">Step {index + 1}</span>
+              <span class="number">Stage {i + 1}</span>
               <h3>{title}</h3>
               <p>{body}</p>
             </article>
@@ -232,10 +183,6 @@ const demandFlowFaq = [
   .section .text-link {
     margin-top: 28px;
   }
-  .home-steps {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 22px;
-  }
   .urgency {
     display: grid;
     grid-template-columns: 1.2fr 1fr;
@@ -254,9 +201,6 @@ const demandFlowFaq = [
   .home-testimonial { display: flex; justify-content: center; }
   .home-testimonial video { display: block; width: 100%; max-width: 360px; height: auto; aspect-ratio: 512 / 910; object-fit: contain; border: 1px solid var(--line); border-radius: 18px; background: #111111; }
   @media (max-width: 1100px) {
-    .home-steps {
-      grid-template-columns: 1fr;
-    }
     .urgency {
       grid-template-columns: 1fr;
       gap: 32px;
