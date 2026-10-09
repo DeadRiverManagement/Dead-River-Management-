@@ -1253,18 +1253,25 @@ textarea::placeholder {
     min-height: 0;
   }
   .hero {
-    padding-bottom: 300px;
+    padding-bottom: 340px;
   }
   .river-top {
     display: none;
   }
   .river-stages {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     width: calc(100% - 40px);
     bottom: 64px;
   }
   .river-label {
-    padding: 12px 16px;
+    padding: 12px 14px;
+  }
+  .river-label strong {
+    font-size: 14px;
+  }
+  .river-label small {
+    font-size: 12px;
+    line-height: 1.35;
   }
   .river-visual::after {
     background: linear-gradient(
