@@ -42,14 +42,10 @@ const VERSION = 1;
       <circle cx="10" cy="15.5" r="1.25" fill="currentColor" />
       <circle cx="15" cy="14" r="1.25" fill="currentColor" />
     </svg>
-    <div class="cc-body">
-      <p class="cc-title">This site uses cookies.</p>
-      <p class="cc-text">
-        They show us which ads and pages bring people here, so we can spend
-        money on what works. No form answers are stored in them.{' '}
-        <a href="/legal/cookies">Read the cookie notice</a>
-      </p>
-    </div>
+    <p class="cc-text">
+      We use cookies to see which ads and pages bring people here.{' '}
+      <a href="/legal/cookies">Cookie notice</a>
+    </p>
     <button class="cc-accept" type="button" data-cc-accept>
       Accept
     </button>
@@ -123,11 +119,10 @@ const VERSION = 1;
     position: relative;
     max-width: 520px;
     margin: 0 auto;
-    display: grid;
-    grid-template-columns: auto minmax(0, 1fr);
-    gap: 12px 14px;
-    align-items: start;
-    padding: 18px 18px 16px;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    padding: 10px 10px 10px 16px;
     border-radius: var(--cc-radius);
     background: var(--cc-bg);
     color: var(--cc-fg);
@@ -172,27 +167,17 @@ const VERSION = 1;
   }
 
   .cc-mark {
-    width: 26px;
-    height: 26px;
-    margin-top: 2px;
+    width: 22px;
+    height: 22px;
     color: var(--cc-mark);
     flex: none;
   }
-  .cc-body {
-    min-width: 0;
-  }
-  .cc-title {
-    margin: 0 0 4px;
-    font-family: var(--display, inherit);
-    font-weight: 700;
-    font-size: 16px;
-    letter-spacing: -0.01em;
-    line-height: 1.2;
-  }
   .cc-text {
+    flex: 1 1 auto;
+    min-width: 0;
     margin: 0;
-    font-size: 14px;
-    line-height: 1.5;
+    font-size: 13px;
+    line-height: 1.4;
     color: var(--cc-muted);
   }
   .cc-text a {
@@ -208,12 +193,11 @@ const VERSION = 1;
   }
 
   .cc-accept {
-    grid-column: 2;
-    justify-self: start;
+    flex: none;
     display: inline-flex;
     align-items: center;
-    height: 44px;
-    padding: 0 22px;
+    height: 38px;
+    padding: 0 18px;
     border-radius: var(--cc-btn-radius);
     font: inherit;
     font-weight: 600;
@@ -253,7 +237,7 @@ const VERSION = 1;
     }
     .cc-card {
       margin: 0;
-      max-width: 460px;
+      max-width: 520px;
     }
   }
 </style>
