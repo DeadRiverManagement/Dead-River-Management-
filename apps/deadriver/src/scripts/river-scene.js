@@ -86,6 +86,46 @@ const liquidFrag = /* glsl */ `
   }
 `;
 
+// Variant: the signal field. A floor of research signals receding to a
+// horizon, lighting up as intent fires, for the Demand Intelligence hero.
+const signalFrag = /* glsl */ `
+  precision highp float;
+  uniform float uTime;
+  uniform vec2 uRes;
+  varying vec2 vUv;
+  ${noise}
+  void main() {
+    float aspect = uRes.x / uRes.y;
+    vec3 bed = vec3(0.012, 0.011, 0.012);
+    vec3 copper = vec3(0.78, 0.42, 0.22);
+    vec3 ember = vec3(1.0, 0.70, 0.46);
+    vec3 col = bed;
+    float hz = 0.64;
+    float fy = hz - vUv.y;
+    if (fy > 0.002) {
+      float depth = 0.05 / fy;
+      vec2 g = vec2((vUv.x - 0.5) * aspect * depth * 2.4, depth * 1.6 + uTime * 0.25);
+      vec2 cell = floor(g);
+      vec2 f = fract(g) - 0.5;
+      float r = length(f);
+      float sig = fbm(cell * 0.3 + uTime * 0.04);
+      float seed = hash(cell);
+      float pulse = pow(max(0.0, sin(uTime * 1.3 + seed * 6.283)), 8.0) * step(0.82, hash(cell + 3.1));
+      float dot = smoothstep(0.14 + sig * 0.08, 0.0, r);
+      float fog = exp(-depth * 0.16);
+      vec3 c = mix(copper * 0.5, ember, sig) * (0.2 + 0.8 * sig) + ember * pulse * 1.8;
+      col += c * dot * fog;
+      float gl = smoothstep(0.02, 0.0, min(abs(f.x), abs(f.y))) * 0.05 * fog;
+      col += copper * gl;
+    }
+    col += copper * exp(-abs(vUv.y - hz) * 26.0) * 0.22;
+    col += ember * exp(-abs(vUv.y - hz) * 90.0) * 0.28;
+    float vig = smoothstep(1.3, 0.4, length((vUv - 0.5) * vec2(1.1, 1.3)));
+    col *= 0.6 + 0.4 * vig;
+    gl_FragColor = vec4(col, 1.0);
+  }
+`;
+
 // Pass 2: wave equation on a small float texture. R = height, G = previous.
 const simFrag = /* glsl */ `
   precision highp float;
@@ -106,7 +146,8 @@ const simFrag = /* glsl */ `
     next *= 0.985;
     vec2 dm = (vUv - uMouse) * vec2(uAspect, 1.0);
     float drop = exp(-dot(dm, dm) / (uRadius * uRadius));
-    next += drop * min(length(uVel) * 60.0, 1.6);
+    next += drop * min(length(uVel) * 60.0, 1.0);
+    next = clamp(next, -1.0, 1.0);
     gl_FragColor = vec4(next, c.r, 0.0, 1.0);
   }
 `;
@@ -117,6 +158,8 @@ const compFrag = /* glsl */ `
   uniform sampler2D tBase;
   uniform sampler2D tSim;
   uniform vec2 uTexel;
+  uniform float uRefr;
+  uniform float uSpec;
   varying vec2 vUv;
   void main() {
     float hl = texture2D(tSim, vUv - vec2(uTexel.x, 0.0)).r;
@@ -124,8 +167,8 @@ const compFrag = /* glsl */ `
     float hd = texture2D(tSim, vUv - vec2(0.0, uTexel.y)).r;
     float hu = texture2D(tSim, vUv + vec2(0.0, uTexel.y)).r;
     vec2 grad = vec2(hr - hl, hu - hd);
-    float refr = 0.3;
-    float ca = 0.07;
+    float refr = uRefr;
+    float ca = uRefr * 0.23;
     float r = texture2D(tBase, vUv + grad * (refr + ca)).r;
     float g = texture2D(tBase, vUv + grad * refr).g;
     float b = texture2D(tBase, vUv + grad * (refr - ca)).b;
@@ -134,13 +177,13 @@ const compFrag = /* glsl */ `
     vec3 L = normalize(vec3(-0.4, 0.7, 0.6));
     vec3 H = normalize(L + vec3(0.0, 0.0, 1.0));
     float spec = pow(max(dot(n, H), 0.0), 90.0);
-    col += vec3(1.0, 0.93, 0.85) * spec * 1.2;
-    col -= (hr + hl + hu + hd) * 0.08;
+    col += vec3(1.0, 0.93, 0.85) * spec * uSpec;
+    col -= (hr + hl + hu + hd) * 0.02;
     gl_FragColor = vec4(col, 1.0);
   }
 `;
 
-export function mountRiver(host) {
+export function mountRiver(host, { variant = 'liquid' } = {}) {
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const renderer = new Renderer({
     dpr: Math.min(window.devicePixelRatio || 1, 1.5),
@@ -160,7 +203,7 @@ export function mountRiver(host) {
     geometry,
     program: new Program(gl, {
       vertex: quad,
-      fragment: liquidFrag,
+      fragment: variant === 'signals' ? signalFrag : liquidFrag,
       uniforms: { uTime: { value: 0 }, uRes: { value: res } },
     }),
   });
@@ -219,6 +262,8 @@ export function mountRiver(host) {
           tBase: { value: base.texture },
           tSim: { value: simA.texture },
           uTexel: { value: compTexel },
+          uRefr: { value: variant === 'signals' ? 0.05 : 0.3 },
+          uSpec: { value: variant === 'signals' ? 0.35 : 1.2 },
         },
       }),
     });
