@@ -46,7 +46,7 @@ const schema = [
         <p class="di-label"><span></span> Demand Intelligence</p>
         <h1>Find the people.<br />See the intent.<br /><em>Reach your market.</em></h1>
         <p class="di-intro">Your next customer is already researching. Demand Intelligence helps you find that audience and put it to work across your advertising and sales tools.</p>
-        <div class="di-actions"><a class="di-button" href="#di-demo">See a live demo <Arrow /></a><a class="di-watch" href="#platform"><span aria-hidden="true">▶</span> Watch the platform</a></div>
+        <div class="di-actions"><a class="di-button" href="#di-demo">See a live demo <Arrow /></a></div>
         <p class="di-hero-note">Business and consumer data. Nationwide coverage. Daily intent refresh.</p>
       </div>
       <div class="di-stage">
@@ -110,14 +110,34 @@ const schema = [
         <h2>A broad audience is easy.<br /><em>A relevant audience is the point.</em></h2>
         <p class="di-section-copy">A job title or a location only tells you part of the story. Add what people are researching, when they researched it and how it fits your market. Give your next campaign a more focused starting point.</p>
       </div>
-      <div class="di-flow" role="list" aria-label="How an audience is built">
-        <svg class="di-flow-line" viewBox="0 0 1000 220" preserveAspectRatio="none" fill="none" aria-hidden="true">
-          <defs><linearGradient id="di-flow-grad" x1="0" x2="1"><stop stop-color="#f2b183" stop-opacity=".15"/><stop offset="1" stop-color="#f2b183"/></linearGradient></defs>
-          <path d="M40 190 C 260 190, 260 130, 360 130 S 560 70, 660 70 S 880 30, 960 30" stroke="url(#di-flow-grad)" stroke-width="2"/>
-        </svg>
-        {[['Research activity', 'What people searched, read and compared in the last few days.'], ['Matched profiles', 'That activity matched to real business and consumer records.'], ['Your audience', 'Filtered by topic, location, recency and the attributes you choose.'], ['Your campaigns', 'Exported to ads, email and sales tools, ready to run.']].map(([t, d], i) => (
-          <div class="di-flow-step di-reveal" role="listitem" style={`--i:${i};--reveal-delay:${i * 0.12}s`}><span class="di-flow-dot" aria-hidden="true"></span><strong>{t}</strong><p>{d}</p></div>
-        ))}
+    </section>
+
+    <section class="di-mechanism" id="how">
+      <div class="di-wrap di-reveal">
+        <p class="di-label">The mechanism</p>
+        <h2>Target. Create.<br />Capture. <em>Convert.</em></h2>
+      </div>
+      <div class="flow-stage" data-flow>
+        <div class="wrap flow-track">
+          <svg class="flow-line" viewBox="0 0 1200 220" preserveAspectRatio="none" aria-hidden="true">
+            <path class="flow-glow flow-draw" d="M-20 170C180 175 230 40 420 60C600 80 560 190 760 150C930 115 980 20 1220 50" fill="none" stroke-linecap="round" />
+            <path class="flow-path flow-draw" d="M-20 170C180 175 230 40 420 60C600 80 560 190 760 150C930 115 980 20 1220 50" fill="none" stroke-linecap="round" />
+          </svg>
+          <div class="steps home-steps flow-steps">
+            {[
+              ['Target', 'Purchase intent data finds the people researching what you sell right now: what they searched, read and compared in the last few days, matched to real business and consumer records.'],
+              ['Create', 'Your offer goes in front of only those people, on Facebook, Instagram, Google and email. No broad audiences. No wasted spend.'],
+              ['Capture', 'When they raise their hand, a landing page, an instant text-back and a booking link catch them in the moment. Nobody waits until tomorrow.'],
+              ['Convert', 'Reminders, follow-up and weekly tuning turn inquiries into booked work and paid invoices, synced to your ads, CRM and sales tools.'],
+            ].map(([title, body], i) => (
+              <article data-flow-step>
+                <span class="number">Stage {i + 1}</span>
+                <h3>{title}</h3>
+                <p>{body}</p>
+              </article>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
 
@@ -139,11 +159,6 @@ const schema = [
           </article>
         ))}
       </div>
-    </section>
-
-    <section class="di-demo-video di-wrap di-reveal" id="platform">
-      <div class="di-section-intro di-video-intro"><div><p class="di-label">See the actual platform</p><h2>Your market.<br />Your audience.<br /><em>Right on screen.</em></h2></div><p>Watch us search the Dallas roofing market and filter recent research activity. The walkthrough shows the last two days and the last seven days, so you can see how recency changes the audience.</p></div>
-      <figure class="di-screen"><video controls preload="metadata" playsinline poster="/media/demand-intelligence-walkthrough-poster.jpg" width="1920" height="1080" aria-label="Demand Intelligence Dallas roofing walkthrough"><source src="/media/demand-intelligence-walkthrough.mp4" type="video/mp4" />Your browser does not support this video. <a href="/media/demand-intelligence-walkthrough.mp4">Download the walkthrough.</a></video><figcaption>Dallas roofing demonstration. Audience counts reflect the recorded search.</figcaption></figure>
     </section>
 
     <section class="di-activation di-wrap di-reveal">
@@ -295,8 +310,6 @@ const schema = [
   .di-button { display:inline-flex; align-items:center; justify-content:center; gap:24px; background:#f2b183; color:#150a04; border:1px solid #f2b183; border-radius:7px; padding:17px 23px; font-weight:600; font-size:15px; box-shadow:0 0 0 0 #f2b18300; transition:transform .2s ease, box-shadow .2s ease, background .2s ease; }
   .di-button:hover { background:#ffc9a6; color:#150a04; transform:translateY(-2px); box-shadow:0 10px 40px #f2b18355; }
   .di-button svg,.di-text-link svg { width:18px; }
-  .di-watch { font-size:14px; color:#f1efea; display:flex; align-items:center; gap:12px; }
-  .di-watch span { width:32px; height:32px; display:grid; place-items:center; border:1px solid #45454a; border-radius:50%; font-size:10px; color:#f2b183; }
   .di-hero-note { margin-top:28px; font-size:12px; color:#8d8b84; max-width:410px; }
 
   
@@ -311,14 +324,14 @@ const schema = [
   .di-stats h3 { font-family:var(--body); font-size:16px; letter-spacing:0; margin:14px 0 10px; }
   .di-stats p { font-size:13px; max-width:270px; }
 
-  .di-problem { border-top:1px solid #262628; padding:84px 0; display:grid; grid-template-columns:.9fr 1.1fr; gap:60px; align-items:center; }
+  .di-problem { border-top:1px solid #262628; padding:84px 0 20px; }
+  .di-problem-copy { max-width:760px; }
+  .di-mechanism { padding:40px 0 100px; }
+  .di-mechanism .di-wrap { margin-bottom:40px; }
+  .di-mechanism .flow-steps article { padding:30px 26px; }
+  .di-mechanism .flow-steps h3 { font-size:clamp(24px,2.2vw,30px); }
+  .di-mechanism .flow-steps p { font-size:14px; }
   .di-section-copy { font-size:17px; line-height:1.8; max-width:600px; margin-top:25px; }
-  .di-flow { position:relative; display:grid; grid-template-columns:repeat(4,1fr); gap:14px; align-items:end; min-height:300px; padding-top:40px; }
-  .di-flow-line { position:absolute; inset:0 0 auto 0; width:100%; height:220px; pointer-events:none; }
-  .di-flow-step { position:relative; padding-top:28px; margin-top:calc((3 - var(--i)) * 42px); }
-  .di-flow-dot { position:absolute; top:0; left:0; width:16px; height:16px; border-radius:50%; background:#f2b183; box-shadow:0 0 0 6px #f2b18322, 0 0 24px #f2b183; }
-  .di-flow-step strong { display:block; color:#f1efea; font-size:16px; margin-bottom:8px; }
-  .di-flow-step p { font-size:13px; line-height:1.6; }
 
   .di-capabilities { padding:50px 0 80px; }
   .di-cap-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:20px; }
@@ -332,12 +345,6 @@ const schema = [
   .di-capability ul { list-style:none; padding:0; margin:18px 0 0; display:flex; flex-wrap:wrap; gap:8px; font-size:12px; color:#cfcac2; }
   .di-capability li { padding:6px 11px; border:1px solid #2b2b2e; border-radius:999px; background:#141416; }
 
-  .di-demo-video { padding:70px 0 90px; border-top:1px solid #262628; }
-  .di-video-intro { display:grid; grid-template-columns:1fr .7fr; align-items:end; gap:70px; }
-  .di-video-intro > p { max-width:430px; font-size:16px; line-height:1.8; }
-  .di-screen { margin:0; padding:12px; border-radius:18px; background:linear-gradient(135deg,#1f1f22,#111112); border:1px solid #303033; box-shadow:0 40px 100px #00000080, 0 0 60px #f2b1831c, inset 0 1px 0 #ffffff14; }
-  video { width:100%; height:auto; display:block; border-radius:10px; background:#131315; }
-  figcaption { color:#8d8b84; font-size:12px; margin:12px 6px 2px; }
 
   .di-activation { padding:60px 0 100px; display:grid; grid-template-columns:1fr 1fr; gap:100px; align-items:center; }
   .di-text-link { display:inline-flex; align-items:center; gap:20px; color:#f2b183; font-size:14px; margin-top:25px; }
@@ -373,12 +380,10 @@ const schema = [
     .di-hero { grid-template-columns:1fr; padding:62px 0 72px; gap:46px; } h1 { font-size:clamp(43px,9vw,62px); }
     .di-stage { min-height:0; display:grid; gap:24px; } .di-app { position:relative; left:0; bottom:0; width:100%; grid-template-columns:1fr; transform:none; } .di-app-side { display:none; } .di-stage:hover .di-app { transform:none; } .di-orbit { position:relative; margin:0 auto; } .di-orbit { right:auto; left:50%; top:0; width:360px; margin-left:-180px; } .di-ring-c, .di-ring-e { display:none; } .di-map-tag { font-size:10px; } .di-glass-a,.di-glass-b { display:none; } .di-prism { width:180px; left:auto; right:-40px; bottom:-30px; opacity:.6; }
     .di-stats { grid-template-columns:1fr; gap:6px; padding:22px; } .di-stats article { border-left:0; border-top:1px solid #303033; padding:18px 4px 12px; } .di-stats article:first-child { border-top:0; } .di-stats strong { font-size:52px; } .di-stats h3 { font-size:14px; } .di-stats p { font-size:12px; }
-    .di-flow { grid-template-columns:1fr; min-height:0; padding:0 0 0 12px; border-left:1px solid #2b2b2e; gap:26px; } .di-flow-line { display:none; } .di-flow-step { margin-top:0; padding:0 0 0 22px; } .di-flow-dot { left:-21px; top:2px; width:14px; height:14px; }
-    .di-cap-grid { grid-template-columns:1fr; } .di-capability { padding:24px; } .di-capability h3 { font-size:22px; padding-right:40px; }
-    .di-video-intro,.di-activation,.di-questions,.di-demo-section { grid-template-columns:1fr; gap:35px; } .di-video-intro > p { max-width:100%; }
-    .di-data,.di-demo-video,.di-questions,.di-demo-section { padding-block:60px; } .di-problem { padding:60px 0; }
-    .di-screen { padding:8px; } .di-tools span { padding:20px 12px; font-size:14px; }
-  }
+      .di-cap-grid { grid-template-columns:1fr; } .di-capability { padding:24px; } .di-capability h3 { font-size:22px; padding-right:40px; }
+    .di-activation,.di-questions,.di-demo-section { grid-template-columns:1fr; gap:35px; }
+    .di-data,.di-questions,.di-demo-section { padding-block:60px; } .di-problem { padding:60px 0; }
+    }
   @media(max-width:420px) { .di-actions { gap:20px; } .di-form { padding:25px 20px; } }
   @media(prefers-reduced-motion:reduce) {.di-product::before { animation:none; } .di-reveal { opacity:1; transform:none; transition:none; } .di-button,.di-capability { transition:none; } .di-button:hover,.di-capability:hover { transform:none; } }
 </style>
