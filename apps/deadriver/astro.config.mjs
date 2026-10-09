@@ -83,6 +83,7 @@ export default defineConfig({
         '/marketing-advice/30-leads-in-60-days-guarantee',
         '/50k-demand-flow',
         '/real-estate-buyer-appointments',
+        '/demand-intelligence/demo',
       ]);
       return (
         !path.startsWith('/welcome/') &&
