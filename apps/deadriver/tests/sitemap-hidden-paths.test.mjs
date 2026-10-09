@@ -10,6 +10,7 @@ test('sitemap filter drops retired 30-leads and keeps VSL landers out', () => {
     '/marketing-advice/30-leads-in-60-days-guarantee',
     '/50k-demand-flow',
     '/real-estate-buyer-appointments',
+    '/demand-intelligence/demo',
   ]) {
     assert.match(filter, new RegExp("'" + path.replaceAll('/', '\\/') + "'"));
   }
