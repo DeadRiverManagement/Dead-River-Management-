@@ -1294,14 +1294,16 @@ textarea::placeholder {
   .river-top {
     display: flex;
     top: auto;
-    bottom: 300px;
+    bottom: 56px;
     left: 20px;
     right: auto;
   }
+  /* The strip sits right under the copy; the water runs out below it. */
   .river-stages {
     grid-template-columns: 1fr 1fr;
     width: calc(100% - 40px);
-    bottom: 64px;
+    top: calc(100% - 584px);
+    bottom: auto;
   }
   .river-label {
     padding: 12px 14px;
@@ -1319,7 +1321,7 @@ textarea::placeholder {
       180deg,
       rgba(10, 10, 11, 0.55) 0%,
       transparent 30%,
-      transparent 82%,
+      transparent 88%,
       var(--paper) 100%
     );
   }
