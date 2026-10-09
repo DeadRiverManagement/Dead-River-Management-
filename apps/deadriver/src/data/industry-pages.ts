@@ -43,13 +43,13 @@ export const industryPages: IndustryPage[] = [
     intro:
       'A roof is a $10,000 to $30,000 decision made in a hurry, often with an insurance adjuster in the middle. We build the pages, ads, listings, and follow-up that get the call, book the inspection, and keep the job from going to whoever answered faster.',
     scene:
-      'You are on a roof, nail gun going, phone in the truck. The homeowner with water coming through the ceiling leaves no voicemail and calls the next roofer.',
+      "You're on a roof, nail gun going, phone in the truck. The homeowner with water coming through the ceiling leaves no voicemail and calls the next roofer.",
     quote:
       'You inspected and sent the estimate for the replacement. They said they were waiting on the insurance adjuster. Nobody followed up, and the roof went to whoever did.',
     problems: [
       ['Storm leads go to the fastest phone.', 'After a storm, every roofer in town is buying the same clicks. The one who answers in minutes and books the inspection wins the week.'],
       ['Estimates die in the insurance wait.', 'The homeowner is waiting on an adjuster. Two weeks pass. Without follow-up, the signed contract goes to the roofer who checked in.'],
-      ['Nobody can prove which ad paid for the roof.', 'A $25,000 job came from somewhere. If you cannot trace it, you cannot spend more where it works.'],
+      ['Nobody can prove which ad paid for the roof.', "A $25,000 job came from somewhere. If you can't trace it, you can't spend more where it works."],
     ],
     built: [
       ['Pages for each job you want', 'Roof repair, roof replacement, storm damage, inspections, and commercial, each with your service areas, a gallery, and a free-inspection form that texts you.'],
@@ -78,7 +78,7 @@ export const industryPages: IndustryPage[] = [
     ],
     faqs: [
       { q: 'Do you handle storm season differently?', a: 'Yes. We keep storm damage pages and ads ready, raise budgets the day a storm hits, and route every call to someone who can book an inspection within the hour. When the calendar fills, we pull spend back.' },
-      { q: 'Can you help with insurance claim jobs?', a: 'We cannot do the claim, but we can keep the homeowner warm through it. Follow-up texts and calls during the adjuster wait are where most roofing contracts are won or lost.' },
+      { q: 'Can you help with insurance claim jobs?', a: "We can't do the claim, but we can keep the homeowner warm through it. Follow-up texts and calls during the adjuster wait are where most roofing contracts are won or lost." },
       { q: 'What does it cost?', a: 'Roofing is a Demand Flow trade: $50,000 in new revenue in 45 to 60 days for accepted companies, or service fees refunded plus $500. Ad spend is separate and paid from your own account. Gonzalez & Sons invested about $3,500 a month including ads.' },
       { q: 'Do you work with roofers outside El Paso?', a: 'Yes. The same system runs for roofers nationwide. We adjust service areas, storm patterns, and ad budgets to your market.' },
       { q: 'How fast will I see roofs on the calendar?', a: 'Ads and the phone system go live in the first two weeks. Gonzalez & Sons went from 2 to 8 roofs a month over six months. Your first booked inspections usually come inside the first month.' },
@@ -86,7 +86,7 @@ export const industryPages: IndustryPage[] = [
       { q: 'What should a roofing website include?', a: 'A page for each service (roof repair, roof replacement, storm damage, inspections, commercial), a page for each area you serve, a free-inspection form that texts you, a gallery of finished roofs, reviews, your licence and insurance, and the phone number on every screen. Add a storm page you can switch on the day a storm hits.' },
       { q: 'How do roofing companies get leads?', a: 'Four ways that work: Google Ads and Local Services Ads for people searching right now, a Google Business Profile that ranks in the map pack, storm pages and Facebook ads for replacement work, and follow-up that stays on every estimate through the insurance wait. Door knocking and bought leads work until the first storm, when everyone has them.' },
       { q: 'How much do roofing leads cost?', a: 'Bought leads from marketplaces run $50 to $300 each and are shared with other roofers. Leads from your own ads usually cost $40 to $150 and are yours alone. Gonzalez & Sons invested about $3,500 a month, ads included, for about 8 roofs a month, which is roughly $440 per booked roof at around $25,000 a job.' },
-      { q: 'Are roofing leads worth buying?', a: 'Rarely. Marketplace leads are sold to three to five roofers at once, so you are racing on price. The same money spent on your own ads, profile, and follow-up brings leads that only you have. Buy leads only to fill a gap while your own system ramps up.' },
+      { q: 'Are roofing leads worth buying?', a: "Rarely. Marketplace leads are sold to three to five roofers at once, so you're racing on price. The same money spent on your own ads, profile, and follow-up brings leads that only you've. Buy leads only to fill a gap while your own system ramps up." },
     ],
   },
   {
@@ -99,18 +99,18 @@ export const industryPages: IndustryPage[] = [
       'Marketing for plumbers that books the 9 PM call. Emergency pages, Google and Facebook ads, reviews, and text follow-up. Nationwide and in El Paso.',
     headline: 'Marketing for plumbers that books the 9 PM call.',
     intro:
-      'A burst pipe does not wait for business hours, and neither does the homeowner. We build the emergency pages, ads, listings, and after-hours phone system that get the call, book the job, and follow up on every water heater quote until it closes.',
+      "A burst pipe doesn't wait for business hours, and neither does the homeowner. We build the emergency pages, ads, listings, and after-hours phone system that get the call, book the job, and follow up on every water heater quote until it closes.",
     scene:
-      'You are under a house, hands full. The phone rings, goes to voicemail, and the caller is already dialing the next plumber. That is a job, gone in twenty seconds.',
+      "You're under a house, hands full. The phone rings, goes to voicemail, and the caller is already dialing the next plumber. That's a job, gone in twenty seconds.",
     quote:
-      'You priced the water heater. They said they would think about it. Nobody called back, so they went with whoever did. Follow-up is not pushy. It is how the quote closes.',
+      "You priced the water heater. They said they would think about it. Nobody called back, so they went with whoever did. Follow-up isn't pushy. It's how the quote closes.",
     problems: [
       ['The emergency call goes to voicemail.', 'An "emergency plumber" search at 11 PM is the most expensive click in the trade. If nobody picks up, you paid for the lead and someone else got the job.'],
       ['Water heater quotes drift away.', 'A $2,500 replacement quote gets a "let me think about it." Without a follow-up text and a call, that job goes to the next plumber who asks.'],
-      ['Ads bring calls you cannot track.', 'Google, Facebook, and the Local Services Ads all ring the same phone. Without call tracking you cannot tell which one is paying for itself.'],
+      ["Ads bring calls you can't track.", "Google, Facebook, and the Local Services Ads all ring the same phone. Without call tracking you can't tell which one is paying for itself."],
     ],
     built: [
-      ['Pages for the work you want', 'Water heaters, repipes, drain cleaning, slab leaks, and emergency service, each with your service areas, click-to-call on every screen, and a form that texts you the second it is filled out.'],
+      ['Pages for the work you want', "Water heaters, repipes, drain cleaning, slab leaks, and emergency service, each with your service areas, click-to-call on every screen, and a form that texts you the second it's filled out."],
       ['Google Ads, Local Services Ads, and Facebook', 'Search ads for emergencies, Google Guaranteed listings for trust, and Facebook ads aimed at homeowners with water heaters over 15 years old.'],
       ['Google Business Profile', 'Categories set to Plumber, Water heater repair, and Drain cleaning, service areas filled in, posts every week, and a review ask after every job.'],
       ['Phones answered at 11 PM', 'A missed-call text in under a minute, and an AI receptionist trained on plumbing questions that can book a time when the crew is under a house.'],
@@ -135,13 +135,13 @@ export const industryPages: IndustryPage[] = [
       { label: 'What an AI receptionist costs', href: '/marketing-advice/ai-receptionist-cost' },
     ],
     faqs: [
-      { q: 'Can you really answer after-hours calls?', a: 'Yes. A missed-call text goes out in under a minute. If you want, an AI receptionist trained on plumbing questions picks up, quotes your after-hours rate, and books the first slot. You decide what it can and cannot say.' },
+      { q: 'Can you really answer after-hours calls?', a: "Yes. A missed-call text goes out in under a minute. If you want, an AI receptionist trained on plumbing questions picks up, quotes your after-hours rate, and books the first slot. You decide what it can and can't say." },
       { q: 'Do Facebook ads work for plumbers?', a: 'For the right job, yes. Emergency work comes from Google. Water heater replacements, repipes, and maintenance plans come from Facebook ads aimed at the right homes, with fast follow-up. The Pipe Whisperers grew on both.' },
       { q: 'What does it cost?', a: 'Plumbing is a Demand Flow trade: $50,000 in new revenue in 45 to 60 days for accepted companies, or service fees refunded plus $500. Ad spend is separate. The Pipe Whisperers invested about $2,000 a month including ads.' },
       { q: 'Do you work with plumbers outside El Paso?', a: 'Yes. We run the same system for plumbers nationwide and adjust service areas and budgets to your market.' },
       { q: 'How soon do calls start?', a: 'Ads and the phone system go live in the first two weeks. Emergency search ads bring calls almost immediately. Water heater campaigns build over the first one to two months.' },
       { q: 'Do you work with residential and commercial plumbers?', a: 'Yes. Residential plumbing runs on emergency search ads, Local Services Ads, and after-hours phone handling. Commercial plumbing adds cold email to property managers and contractors, and a slower follow-up for maintenance contracts. We set the system up for whichever mix you want more of.' },
-      { q: 'What should a plumbing website include?', a: 'A page for each service (water heaters, drain cleaning, repipes, slab leaks, emergency service), a page for each area you serve, click-to-call on every screen, a form that texts you the second it is filled out, your after-hours rate, reviews, and your licence number. Spanish pages where your customers use them.' },
+      { q: 'What should a plumbing website include?', a: "A page for each service (water heaters, drain cleaning, repipes, slab leaks, emergency service), a page for each area you serve, click-to-call on every screen, a form that texts you the second it's filled out, your after-hours rate, reviews, and your licence number. Spanish pages where your customers use them." },
       { q: 'How do I get more plumbing leads?', a: 'Answer every call, including after hours. Rank your Google Business Profile for your city. Run search ads for emergency work and Facebook ads for water heaters and repipes. Then text and call every quote until it books. The Pipe Whisperers grew from about $60,000 a year to about $250,000 doing exactly that.' },
       { q: 'How much do plumbing leads cost?', a: 'Bought leads from marketplaces run $25 to $150 each and are shared. Leads from your own Google and Facebook ads usually cost $20 to $80 and are yours alone. The Pipe Whisperers invested about $2,000 a month including ads. Judge any lead by what it costs per booked job, not per name.' },
       { q: 'What is the best way to get plumbing leads online?', a: 'The map pack first, because a Maps call is free and the person needs you now. Then Google Local Services Ads for the Google Guaranteed badge. Then search ads for emergencies and Facebook ads for planned work. All of it fails if the phone goes to voicemail, so fix the phone first.' },
@@ -159,7 +159,7 @@ export const industryPages: IndustryPage[] = [
     intro:
       'When the AC quits at 4 PM in July, the family calls the first company that answers. We build the pages, ads, listings, and phone system that make that company yours, then follow up on every replacement quote until it closes.',
     scene:
-      'You are on a roof unit at 105 degrees, phone in the truck. The family whose AC just quit is not leaving a voicemail. They are calling the next HVAC company.',
+      "You're on a roof unit at 105 degrees, phone in the truck. The family whose AC just quit isn't leaving a voicemail. They're calling the next HVAC company.",
     quote:
       'You quoted the new system. They said they would get the old one through one more summer. Nobody followed up, and when it finally died, they called whoever answered.',
     problems: [
@@ -177,7 +177,7 @@ export const industryPages: IndustryPage[] = [
     ],
     proof: {
       label: 'The Pipe Whisperers',
-      text: 'We have not published an HVAC case study yet. The closest is a plumbing company with the same emergency-call pattern: about $60,000 a year to about $250,000 in 24 months with emergency pages, Google Ads, and text follow-up.',
+      text: "We haven't published an HVAC case study yet. The closest is a plumbing company with the same emergency-call pattern: about $60,000 a year to about $250,000 in 24 months with emergency pages, Google Ads, and text follow-up.",
       href: '/work/the-pipe-whisperers',
       linkText: 'Read the plumbing case study',
       note: 'Plumbing result, shown as the nearest trade. Not an HVAC benchmark.',
@@ -194,10 +194,10 @@ export const industryPages: IndustryPage[] = [
     ],
     faqs: [
       { q: 'How do you handle the summer rush and the winter lull?', a: 'Ad budgets rise with the temperature and fall when the schedule is full. Maintenance plans and heating pages are sold during the busy months so winter has work booked in advance.' },
-      { q: 'Can you follow up on replacement quotes for months?', a: 'Yes. A replacement quote gets a text the same day, a call the next week, and a check-in each month until the homeowner decides. When the old system fails, you are the company that stayed in touch.' },
+      { q: 'Can you follow up on replacement quotes for months?', a: "Yes. A replacement quote gets a text the same day, a call the next week, and a check-in each month until the homeowner decides. When the old system fails, you're the company that stayed in touch." },
       { q: 'What does it cost?', a: 'HVAC is a Demand Flow trade: $50,000 in new revenue in 45 to 60 days for accepted companies, or service fees refunded plus $500. Ad spend is separate and paid from your own account.' },
       { q: 'Do you work with HVAC companies outside El Paso?', a: 'Yes. We run the same system nationwide. Service areas, seasons, and budgets are set to your market.' },
-      { q: 'Do you have HVAC results?', a: 'Not published yet. Our nearest result is a plumbing company with the same emergency-call business, shown above and labelled as such. We do not claim it as an HVAC benchmark.' },
+      { q: "Do you've HVAC results?", a: "Not published yet. Our nearest result is a plumbing company with the same emergency-call business, shown above and labelled as such. We don't claim it as an HVAC benchmark." },
       { q: 'Do you work with residential and commercial HVAC companies?', a: 'Yes. Residential HVAC runs on seasonal search ads, Local Services Ads, maintenance plans, and long follow-up on replacement quotes. Commercial HVAC adds cold email to property managers and facilities teams and a slower nurture for service contracts. We build for whichever side you want to grow.' },
       { q: 'What should an HVAC website include?', a: 'A page for each service (AC repair, AC replacement, heating, maintenance plans, ductwork, mini-splits), a page for each area you serve, financing options, same-day availability, click-to-call on every screen, a form that texts you, reviews, and your licence. Add a heat-wave page with a same-day promise you can switch on in summer.' },
       { q: 'How do HVAC companies get leads?', a: 'Search ads and Local Services Ads for the summer and winter rush, a Google Business Profile that ranks for AC repair and heating in your city, maintenance plans sold to every customer, and long follow-up on replacement quotes. The company that stays in touch for a year gets the install when the old system finally fails.' },
@@ -217,11 +217,11 @@ export const industryPages: IndustryPage[] = [
     intro:
       '"Mechanic near me" is a driver with a problem today and a car for years. We build the pages, ads, listings, and follow-up that get that first visit, then bring the customer back for every oil change and brake job after it.',
     scene:
-      'You are under a car, phone in the office ringing out. The driver with a check engine light and a road trip Friday leaves no voicemail and calls the next shop.',
+      "You're under a car, phone in the office ringing out. The driver with a check engine light and a road trip Friday leaves no voicemail and calls the next shop.",
     quote:
       'You diagnosed it and quoted the repair. They said they would think about it. Nobody followed up, and the repair went to whoever did, or the car got traded in.',
     problems: [
-      ['Drive-by traffic is not a plan.', 'Word of mouth and a sign on the street give you some months and starve you in others. Growth needs a channel you control.'],
+      ["Drive-by traffic isn't a plan.", 'Word of mouth and a sign on the street give you some months and starve you in others. Growth needs a channel you control.'],
       ['Quotes leave without booking.', 'A $900 repair quote walks out the door with "let me think about it." Without a follow-up text, the car goes to another shop or gets traded in.'],
       ['Past customers forget you.', 'Every car in your system needs an oil change, brakes, and tires on a schedule. If nobody reminds them, they go wherever is closest that day.'],
     ],
@@ -231,7 +231,7 @@ export const industryPages: IndustryPage[] = [
       ['Google Business Profile', 'Categories set to Auto repair shop, Mechanic, and Brake shop, photos of the bays, weekly posts, and a review ask after every visit.'],
       ['Phones answered from under the car', 'A missed-call text in under a minute, and an AI receptionist trained on repair questions: diagnostic fees, timelines, loaners, warranties, and which makes you service.'],
       follow('A repair quote that leaves the shop needs a text that evening.'),
-      ['Reminders that bring cars back', 'Oil change, brake, and inspection reminders by text and email, timed to each car. Past customers are the cheapest work you will ever book.'],
+      ['Reminders that bring cars back', "Oil change, brake, and inspection reminders by text and email, timed to each car. Past customers are the cheapest work you'll ever book."],
     ],
     proof: {
       label: 'Total Auto Repair',

@@ -1,4 +1,5 @@
 ---
+import HeroScene from './HeroScene.astro';
 // Parcel Management Group case study, coach rewrite. Its structure differs
 // from the CaseStudyPage formula (challenge, solution, results, why it worked,
 // what it means, bigger picture, next steps), so it has its own template.
@@ -55,12 +56,13 @@ const quickStats: [string, string][] = [
   description={description}
   schema={schema}
 >
-  <section class="page-hero wrap">
+  <section class="has-scene page-hero wrap">
+  <HeroScene />
     <p class="eyebrow">Freight consulting · Facebook lead generation</p>
     <h1>{headline}</h1>
     <p class="intro">
       For Parcel Management Group, we built a Facebook advertising system that
-      captured inquiries and followed up automatically, turning ad clicks into
+      captured leads and followed up automatically, turning ad clicks into
       sales conversations.
     </p>
     <div class="pm-hero-row">
@@ -78,7 +80,7 @@ const quickStats: [string, string][] = [
     <div class="wrap split pm-body">
       <div class="pm-main">
         <p class="eyebrow">The challenge</p>
-        <h2>A freight consulting business that needed a predictable source of new inquiries.</h2>
+        <h2>A freight consulting business that needed a predictable source of new leads.</h2>
         <p>
           Parcel Management Group helps businesses reduce shipping costs and
           optimize freight operations. They had a strong service offering, but
@@ -97,7 +99,7 @@ const quickStats: [string, string][] = [
         <p>We didn't just run ads. We built the entire system behind the ads:</p>
         <ul class="check-list">
           <li>Facebook lead-form campaigns targeting freight decision-makers</li>
-          <li>Lead capture that pulled inquiries directly into their CRM</li>
+          <li>Lead capture that pulled leads directly into their CRM</li>
           <li>Automated follow-up sequences that engaged prospects immediately</li>
           <li>Two-campaign split test to optimize cost per lead</li>
         </ul>
@@ -183,7 +185,7 @@ const quickStats: [string, string][] = [
   <section class="section wrap split pm-two">
     <div>
       <p class="eyebrow">What this means for your business</p>
-      <h2>What would 49 new inquiries do for your pipeline?</h2>
+      <h2>What would 49 new leads do for your pipeline?</h2>
       <p>Think about it:</p>
       <ul class="check-list">
         <li>49 people who raised their hand and said "I'm interested"</li>
@@ -194,12 +196,12 @@ const quickStats: [string, string][] = [
     <div>
       <p>Now ask yourself:</p>
       <ul class="pm-q">
-        <li>Who on your team would respond to those inquiries?</li>
+        <li>Who on your team would respond to those leads?</li>
         <li>Where would those conversations live?</li>
         <li>What happens when a prospect is interested but not ready to buy yet?</li>
       </ul>
       <p class="pm-lead">
-        If you don't have clear answers, you don't have a system. You have a
+        If you don't have clear answers, you don't have a system. You've a
         hope.
       </p>
       <p class="pm-lead"><strong>We build systems.</strong></p>
@@ -212,7 +214,7 @@ const quickStats: [string, string][] = [
       <h2>This is what freight marketing looks like in 2026.</h2>
       <p class="intro">
         Freight and logistics businesses don't need more "brand awareness."
-        They need qualified inquiries from decision-makers who have a shipping
+        They need qualified leads from decision-makers who have a shipping
         problem right now.
       </p>
       <p>Facebook advertising works for B2B freight when you:</p>
@@ -252,7 +254,7 @@ const quickStats: [string, string][] = [
     </div>
     <div class="closing-actions">
       <a class="button" href="/book">Book a Strategy Call <Arrow /></a>
-      <a class="text-link" href="/solutions">See Our Lead Generation Process <Arrow /></a>
+      <a class="text-link" href="/demand-flow">See Our Lead Generation Process <Arrow /></a>
     </div>
   </section>
 
@@ -260,7 +262,7 @@ const quickStats: [string, string][] = [
     <h2>Keep exploring</h2>
     <ul>
       <li><a href="/work/wicked-logistics">See how Wicked Logistics went from 1-2 leads/week to 5-6/day</a></li>
-      <li><a href="/solutions">Explore our full lead generation system</a></li>
+      <li><a href="/demand-flow">Explore our full lead generation system</a></li>
     </ul>
   </section>
   <PageFaq items={faqs} />

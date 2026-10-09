@@ -1,69 +1,47 @@
+---
+// The DemandFlow current. src/scripts/river-scene.js renders the 3D river
+// into .river-scene and pins each label to a point on the water.
+---
+
 <div
   class="river-visual"
   role="img"
   aria-label="DemandFlow: create demand, capture demand, convert demand"
 >
+  <div class="river-scene" data-river></div>
   <div class="river-top">
     <span class="mini-label">DemandFlow</span>
     <span class="small-dot"></span>
   </div>
-  <svg class="river-art" viewBox="0 0 600 410" fill="none" aria-hidden="true">
-    <defs>
-      <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse">
-        <path d="M30 0H0V30" stroke="#254f4310" stroke-width="1" />
-      </pattern>
-    </defs>
-    <rect width="600" height="410" fill="url(#grid)" />
-    <path
-      d="M-70 365C70 375 85 115 230 123C351 130 279 294 410 267C509 247 530 88 665 70"
-      stroke="#c1d5c5"
-      stroke-width="86"
-    />
-    <path
-      d="M-70 365C70 375 85 115 230 123C351 130 279 294 410 267C509 247 530 88 665 70"
-      stroke="#749b87"
-      stroke-width="45"
-    />
-    <path
-      class="river-center"
-      d="M-70 365C70 375 85 115 230 123C351 130 279 294 410 267C509 247 530 88 665 70"
-      stroke="#245749"
-      stroke-width="5"
-    />
-    <circle
-      cx="227"
-      cy="123"
-      r="13"
-      fill="#bb7955"
-      stroke="#fffdf8"
-      stroke-width="5"
-    />
-    <circle
-      cx="410"
-      cy="267"
-      r="13"
-      fill="#bb7955"
-      stroke="#fffdf8"
-      stroke-width="5"
-    />
-  </svg>
-  <div class="river-label label-one">
-    <span>1</span>
-    <strong>Create Demand</strong>
-    <small>The right buyers, the right channels</small>
-  </div>
-  <div class="river-label label-two">
-    <span>2</span>
-    <strong>Capture Demand</strong>
-    <small>Every inquiry caught, fast</small>
-  </div>
-  <div class="river-label label-three">
-    <span>3</span>
-    <strong>Convert Demand</strong>
-    <small>Booked, paying customers</small>
+  <div class="river-stages">
+    <div class="river-label label-zero">
+      <span>1</span>
+      <strong>Target Demand</strong>
+      <small>Recent buying signals, not guesses</small>
+    </div>
+    <div class="river-label label-one">
+      <span>2</span>
+      <strong>Create Demand</strong>
+      <small>The right buyers, the right channels</small>
+    </div>
+    <div class="river-label label-two">
+      <span>3</span>
+      <strong>Capture Demand</strong>
+      <small>Every inquiry caught, fast</small>
+    </div>
+    <div class="river-label label-three">
+      <span>4</span>
+      <strong>Convert Demand</strong>
+      <small>Booked, paying customers</small>
+    </div>
   </div>
   <div class="river-bottom">
     <span>Strategy and measurement connect every stage.</span>
     <span aria-hidden="true">↗</span>
   </div>
 </div>
+<script>
+  import { mountRiver } from '../../scripts/river-scene.js';
+  const host = document.querySelector('[data-river]');
+  if (host) mountRiver(host);
+</script>

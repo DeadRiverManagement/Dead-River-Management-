@@ -40,7 +40,7 @@ export const homeServicesBook: BookPageCopy = {
     'A look at the purchase intent data for your market and who your ideal customer really is',
     'The exact investment and a no-pressure next step',
   ],
-  reassurance: 'This is not a sales ambush. If we’re not a fit, we’ll tell you.',
+  reassurance: "This isn't a sales ambush. If we’re not a fit, we’ll tell you.",
   whoFor:
     'Business owners who sell a high-ticket product or service, can handle $50,000 of new work in the next two months, and want a system that brings buyers to them instead of chasing leads.',
   quote: {
@@ -57,7 +57,7 @@ export const homeServicesBook: BookPageCopy = {
   faqs: [
     {
       q: 'What does it cost?',
-      a: 'We go over the exact investment on the call, after we have looked at your market. Ad spend is paid directly to the platforms and is separate from our fees.',
+      a: "We go over the exact investment on the call, after we've looked at your market. Ad spend is paid directly to the platforms and is separate from our fees.",
     },
     {
       q: 'What if I’m not ready to start?',
@@ -69,7 +69,7 @@ export const homeServicesBook: BookPageCopy = {
     },
     {
       q: 'What counts toward the $50,000?',
-      a: 'New revenue from customers who came in through the system we build, tracked in your CRM and confirmed against your invoices. Customers you already had do not count.',
+      a: "New revenue from customers who came in through the system we build, tracked in your CRM and confirmed against your invoices. Customers you already had don't count.",
     },
   ],
   scarcity: '',

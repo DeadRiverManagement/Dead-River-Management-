@@ -7,8 +7,8 @@ import OfficeMap from '../components/growth/OfficeMap.astro';
 import FaqList from '../components/FaqList.astro';
 import { faqPage } from '../lib/schema';
 
-const fuelLine = 'Not Dead River Company (New England fuel), we do not sell fuel.';
-const fuelFaqAnswer = 'No. Not Dead River Company (New England fuel), we do not sell fuel. Dead River Management is based in El Paso, Texas, and works with accepted businesses nationwide.';
+const fuelLine = "Not Dead River Company (New England fuel), we don't sell fuel.";
+const fuelFaqAnswer = "No. Not Dead River Company (New England fuel), we don't sell fuel. Dead River Management is based in El Paso, Texas, and works with accepted businesses nationwide.";
 const companyFaq = [
   {
     q: 'Is Dead River Management the same as Dead River Company?',
@@ -16,11 +16,11 @@ const companyFaq = [
   },
   {
     q: 'What is the Demand Flow guarantee?',
-    a: 'Demand Flow is Dead River Management’s public performance guarantee for accepted businesses: $50,000 in new revenue in 45 to 60 days. If we miss, service fees are refunded plus $500. Ad spend paid to the ad platforms is not refunded. Read the Guarantee terms page on this site.',
+    a: "It's simple. If we accept your business, we'll help you generate $50,000 in new revenue in 45 to 60 days. If we miss, you get your service fees back plus $500 for wasting your time. Ad spend paid to the ad platforms isn't refunded. The full terms are on the Guarantee terms page.",
   },
   {
     q: 'Does Dead River Management still offer a 30 leads in 60 days guarantee?',
-    a: 'No. The older 30 leads in 60 days / work-for-free promise is no longer a public offer. The live public guarantee is Demand Flow: $50,000 in new revenue in 45 to 60 days, or service fees refunded + $500 (ad spend not refunded), for accepted businesses only. Read the Guarantee terms page on this site.',
+    a: "No. The old 30 leads in 60 days offer and the work-for-free offer are gone. The live offer is Demand Flow: $50,000 in new revenue in 45 to 60 days, or your service fees back plus $500. Ad spend isn't refunded. It's for accepted businesses only. The full terms are on the Guarantee terms page.",
   },
 ];
 ---
@@ -30,10 +30,10 @@ const companyFaq = [
   description="Based in El Paso, working nationwide. Dead River Management helps accepted businesses add $50,000 in new revenue in 45-60 days with Demand Flow."
   schema={faqPage(companyFaq)}
 >
-  <Hero
+  <Hero scene="liquid"
     eyebrow="Company"
-    title="Good businesses deserve a clearer path forward."
-    intro={`Dead River Management brings strategy, marketing, and the systems behind them into one connected strategy, so you know what you are investing in and what it returns. ${fuelLine}`}
+    title="Good businesses deserve a clear path to more customers."
+    intro={`We bring the strategy, the marketing, and the systems behind them into one plan. So you know what you're paying for and what it brings back. ${fuelLine}`}
   />
   <section class="section wrap split">
     <img
@@ -45,20 +45,15 @@ const companyFaq = [
     />
     <div>
       <p class="eyebrow">Brandon Aubey · Founder</p>
-      <h2>Close to the work. Focused on what changes.</h2>
+      <h2>Close to the work. Focused on what brings in business.</h2>
       <p class="intro">
-        Founded in El Paso and built to work nationwide, Dead River partners
-        with growing businesses that have something worth scaling and need a
-        more connected way to do it.
+        I started Dead River in El Paso, and we work with businesses all over the country. We partner with growing businesses that have something worth growing and need a better way to do it.
       </p>
       <p>
-        That starts with useful questions. Where does demand come from? What
-        happens to an inquiry? What brings a customer back? Which numbers can we
-        actually trust?
+        It starts with simple questions. Where do your customers come from? What happens when someone reaches out? What brings a customer back? Which numbers can we actually trust?
       </p>
       <p>
-        We turn those answers into a scoped plan, build the supporting
-        infrastructure, and use reporting to guide the next decision.
+        We turn those answers into a plan with a clear scope, build the systems behind it, and use the numbers to decide what to do next.
       </p>
     </div>
   </section>
@@ -68,19 +63,19 @@ const companyFaq = [
         {[
           [
             'Clarity before activity',
-            'Know the goal, the constraint, and the agreed scope before anything starts.',
+            'Know the goal, the problem, and what we agreed to do before anything starts.',
           ],
           [
             'One connected system',
-            'Acquisition, conversion, and retention should support each other, not live in separate tools.',
+            'Getting customers, booking them, and keeping them should work together, not live in separate tools.',
           ],
           [
             'Evidence over noise',
-            'Documented work and honest measurement. If we cannot measure it, we say so.',
+            "Real work and honest numbers. If we can't measure it, we'll tell you.",
           ],
           [
             'A partnership you can reach',
-            'A named point of contact, structured reviews, and clear next steps, wherever you are based.',
+            'A real person you can call, regular reviews, and clear next steps, wherever you are.',
           ],
         ].map(([h, p]) => (
           <article>
@@ -95,23 +90,20 @@ const companyFaq = [
     <div class="section-head">
       <div>
         <p class="eyebrow">Who you’ll work with</p>
-        <h2>Clear ownership from the first conversation.</h2>
+        <h2>You'll know who's handling what from day one.</h2>
       </div>
     </div>
     <div class="feature-grid">
       <article class="feature-panel">
         <h3>Your strategist</h3>
         <p>
-          Your first conversations are with a strategist who helps clarify fit,
-          scope, the proposal, and next steps.
+          Your first conversations are with a strategist who helps figure out if we're a fit, what the scope is, and what happens next.
         </p>
       </article>
       <article class="feature-panel">
         <h3>Brandon and the delivery team</h3>
         <p>
-          Brandon leads fulfillment and oversees the agreed implementation. You
-          receive a named point of contact, a shared access checklist, and a
-          review rhythm matched to your engagement.
+          Brandon leads the work and makes sure what we agreed to gets done. You get a named point of contact, a shared access checklist, and reviews on a schedule that fits your engagement.
         </p>
       </article>
     </div>
@@ -121,7 +113,7 @@ const companyFaq = [
     <div class="section-head">
       <div>
         <p class="eyebrow">Questions</p>
-        <h2>Straight answers.</h2>
+        <h2>What people ask us.</h2>
       </div>
     </div>
     <FaqList items={companyFaq} />

@@ -29,7 +29,7 @@ export const work: CaseStudy[] = [
       {
         heading: 'A Facebook campaign with somewhere for every lead to go',
         paragraphs: [
-          'Parcel Management Group is a freight consulting business. Our work brought together a Facebook ad campaign and the system behind it: a way to capture inquiries and automatically follow up when someone raised their hand.',
+          "Parcel Management Group is a freight consulting business. Our work brought together a Facebook ad campaign and the system behind it: a way to capture leads and automatically follow up when someone raised their hand.",
           'That connection matters in B2B lead generation. A prospect can show interest while the business is busy serving existing customers. The campaign opens the conversation; the follow-up gives that conversation a next step. We built those pieces together for PMG, then launched the campaign.',
         ],
       },
@@ -37,18 +37,18 @@ export const work: CaseStudy[] = [
         heading: 'The 30-day campaign results',
         paragraphs: [
           'From August 11 through September 9, 2026, Meta Ads Manager recorded 49 Facebook lead-form completions at an average cost of $17.70 per lead. One campaign generated 25 leads at $22.48 each. The other generated 24 leads at $12.72 each.',
-          'Nearly the same number of inquiries came from each campaign, with a meaningful difference in cost per lead. That is useful detail when reviewing where advertising dollars are going. The screenshot shows the two campaign rows and the combined result for the same reporting window.',
+          "Nearly the same number of leads came from each campaign, with a meaningful difference in cost per lead. That's useful detail when reviewing where advertising dollars are going. The screenshot shows the two campaign rows and the combined result for the same reporting window.",
         ],
       },
       {
         heading: 'Freight marketing beyond the first click',
         paragraphs: [
-          'For a freight or logistics business, an inquiry is the start of a conversation about a shipping need. Lead capture and automatic follow-up give the team a way to carry that interest forward.',
-          'PMG’s project brought advertising and response into the same process. The Facebook campaign created a source of new inquiries, while the lead system supplied the next step. That is the connection we look for when planning a lead generation campaign: how someone discovers the business, how they make contact, and what happens immediately afterward.',
+          "For a freight or logistics business, an lead is the start of a conversation about a shipping need. Lead capture and automatic follow-up give the team a way to carry that interest forward.",
+          "PMG’s project brought advertising and response into the same process. The Facebook campaign created a source of new leads, while the lead system supplied the next step. That's the connection we look for when planning a lead generation campaign: how someone discovers the business, how they make contact, and what happens immediately afterward.",
         ],
       },
       {
-        heading: 'What would 49 new inquiries look like in your pipeline?',
+        heading: "What would 49 new leads look like in your pipeline?",
         paragraphs: [
           'Start with what your team would do with them. Who responds? Where does the conversation live? What happens when the prospect is interested but needs more time? Those questions help turn an advertising discussion into a practical plan. Bring us your current process, and we can look at the next opportunity together.',
         ],
@@ -63,7 +63,7 @@ export const work: CaseStudy[] = [
     ],
     highlights: ['Lead capture', 'Automatic follow-up', 'Facebook ad campaign'],
     related: [
-      { label: 'Explore our lead generation and follow-up approach', href: '/solutions' },
+      { label: 'Explore our lead generation and follow-up approach', href: '/demand-flow' },
       { label: 'See the Wicked Logistics growth story', href: '/work/wicked-logistics' },
     ],
     cta: { title: 'What happens after someone clicks your ad?', text: 'Let’s look at your campaign, your response process, and the next conversation your business could be missing.' },
@@ -88,20 +88,20 @@ export const work: CaseStudy[] = [
         heading: 'The shop at $20K a month',
         paragraphs: [
           'Total Auto Repair started at roughly $20,000 in monthly revenue. The growth story is about the distance between that starting point and what came next.',
-          'For an auto repair owner, monthly revenue is a number with immediate meaning. It connects the work coming into the shop with the business you are trying to build. Total Auto Repair’s result puts that question in concrete terms: what would it take to move beyond the level your shop is operating at today?',
+          "For an auto repair owner, monthly revenue is a number with immediate meaning. It connects the work coming into the shop with the business you're trying to build. Total Auto Repair’s result puts that question in concrete terms: what would it take to move beyond the level your shop is operating at today?",
         ],
       },
       {
         heading: 'The move to $100K months',
         paragraphs: [
-          'Monthly revenue grew to roughly $100,000, about five times the earlier level. That is an increase of around $80,000 a month, and the reason Total Auto Repair is one of the client stories featured in DemandFlow.',
-          'The comparison is simple enough to remember: $20K months became $100K months. If you run a repair shop, it is an invitation to examine your own next stage. How much work do you want coming in, which services do you want more of, and where does your current customer journey leave room to improve?',
+          "Monthly revenue grew to roughly $100,000, about five times the earlier level. That's an increase of around $80,000 a month, and the reason Total Auto Repair is one of the client stories featured in DemandFlow.",
+          "The comparison is simple enough to remember: $20K months became $100K months. If you run a repair shop, it's an invitation to examine your own next stage. How much work do you want coming in, which services do you want more of, and where does your current customer journey leave room to improve?",
         ],
       },
       {
         heading: 'Auto repair marketing starts with the customer journey',
         paragraphs: [
-          'When we discuss auto repair lead generation with a shop owner, we look at the path from finding the business to getting a vehicle on the schedule. Can a driver quickly understand what you do? Is it easy to call or request service? Does an unanswered inquiry get another chance?',
+          "When we discuss auto repair lead generation with a shop owner, we look at the path from finding the business to getting a vehicle on the schedule. Can a driver quickly understand what you do? Is it easy to call or request service? Does an unanswered lead get another chance?",
           'Those are useful places to begin an auto repair marketing plan. Advertising, the website, response time, and follow-up all have a role. Looking at them together helps reveal whether the next opportunity is reaching more drivers or doing more with the interest already arriving.',
         ],
       },
@@ -137,15 +137,15 @@ export const work: CaseStudy[] = [
       {
         heading: 'A roofing business doing two roofs a month',
         paragraphs: [
-          'Gonzalez & Sons Roofing was doing around two roofs a month. That is the starting point for this client’s growth story: a roofing business with work coming in and room for the monthly volume to grow.',
+          "Gonzalez & Sons Roofing was doing around two roofs a month. That's the starting point for this client’s growth story: a roofing business with work coming in and room for the monthly volume to grow.",
           'Roofing owners think in terms of the jobs on the calendar, the crews available, and the next estimate. A monthly roof count makes the growth question easy to picture. If your business is doing two roofs today, what would a month with eight look like?',
         ],
       },
       {
         heading: 'Four times the monthly roof volume',
         paragraphs: [
-          'Gonzalez & Sons grew to around eight roofs a month. That is roughly four times the starting volume, or about six additional roofs each month. It is the result that puts this roofing company in our DemandFlow client stories.',
-          'Two roofs and eight roofs describe very different months for a roofing business. For an owner considering their next move, that comparison creates a useful starting point: how much more work do you want, and what would need to happen between the first inquiry and the next job?',
+          "Gonzalez & Sons grew to around eight roofs a month. That's roughly four times the starting volume, or about six additional roofs each month. It's the result that puts this roofing company in our DemandFlow client stories.",
+          "Two roofs and eight roofs describe very different months for a roofing business. For an owner considering their next move, that comparison creates a useful starting point: how much more work do you want, and what would need to happen between the first lead and the next job?",
         ],
       },
       {
@@ -158,7 +158,7 @@ export const work: CaseStudy[] = [
       {
         heading: 'How many roofs do you want on next month’s calendar?',
         paragraphs: [
-          'Start with the number your crews can handle and the areas you want to serve. Then look at the inquiries and estimates it would take to support that goal. We can walk through that with you and identify where a more connected marketing and follow-up process could help your roofing business.',
+          "Start with the number your crews can handle and the areas you want to serve. Then look at the leads and estimates it would take to support that goal. We can walk through that with you and identify where a more connected marketing and follow-up process could help your roofing business.",
         ],
       },
     ],
@@ -188,14 +188,14 @@ export const work: CaseStudy[] = [
         heading: 'A plumbing business ready for its next chapter',
         paragraphs: [
           'The Pipe Whisperers was bringing in roughly $60,000 a year. What followed was growth large enough to change the size of the operation.',
-          'For a plumbing owner, that is the question behind the marketing conversation. What would it look like to build a bigger business around the work you already know how to do? The Pipe Whisperers gives that question a memorable set of numbers.',
+          "For a plumbing owner, that's the question behind the marketing conversation. What would it look like to build a bigger business around the work you already know how to do? The Pipe Whisperers gives that question a memorable set of numbers.",
         ],
       },
       {
         heading: '$250K a year, and the need to expand',
         paragraphs: [
           'Annual revenue grew to roughly $250,000, more than four times the earlier level. The increase was around $190,000 a year. Growth reached the point where the business had to expand to support it.',
-          'That expansion is what makes this story stand out. The result went beyond a larger revenue figure: the business needed room for its next stage. It is why The Pipe Whisperers is one of the plumbing business growth stories we share through DemandFlow.',
+          "That expansion is what makes this story stand out. The result went beyond a larger revenue figure: the business needed room for its next stage. It's why The Pipe Whisperers is one of the plumbing business growth stories we share through DemandFlow.",
         ],
       },
       {
@@ -208,7 +208,7 @@ export const work: CaseStudy[] = [
       {
         heading: 'Could your plumbing business be ready to expand?',
         paragraphs: [
-          'You do not need to have the whole plan figured out before the first conversation. Bring the numbers you know, the work you want more of, and the questions you have about bringing in customers. We will look at the next move with you, including how demand fits the capacity of your business.',
+          "You don't need to have the whole plan figured out before the first conversation. Bring the numbers you know, the work you want more of, and the questions you've about bringing in customers. We'll look at the next move with you, including how demand fits the capacity of your business.",
         ],
       },
     ],
@@ -235,30 +235,30 @@ export const work: CaseStudy[] = [
     description: 'Wicked Logistics went from 1-2 leads a week to 5-6 a day. One lead became a $1.2 million contract. Explore the website, campaigns, and follow-up behind it.',
     sections: [
       {
-        heading: 'When a week’s inquiries became part of a single day',
+        heading: "When a week’s leads became part of a single day",
         paragraphs: [
           'Wicked Logistics was receiving one or two leads a week. For a trucking and freight business looking for its next shipping customer, that meant a small number of new opportunities entering the conversation.',
-          'The change was substantial: lead volume grew to five or six a day. A single day was bringing in more inquiries than the business previously saw in a week. That shift is the starting point of the Wicked Logistics growth story, but the value of one particular inquiry made it even more memorable.',
+          "The change was substantial: lead volume grew to five or six a day. A single day was bringing in more leads than the business previously saw in a week. That shift is the starting point of the Wicked Logistics growth story, but the value of one particular lead made it even more memorable.",
         ],
       },
       {
         heading: 'One lead. A $1.2 million contract.',
         paragraphs: [
-          'One of those inbound leads turned into a contract worth $1.2 million. It is the result at the center of this case study: a new inquiry that developed into a major piece of business.',
-          'For a logistics owner, that is a reason to look closely at how new shipping inquiries reach the team. The person filling out a form or starting a conversation could have a much larger need than the first message reveals. Wicked Logistics’ story shows why the path from interest to sales deserves attention.',
+          "One of those inbound leads turned into a contract worth $1.2 million. It's the result at the center of this case study: a new lead that developed into a major piece of business.",
+          "For a logistics owner, that's a reason to look closely at how new shipping leads reach the team. The person filling out a form or starting a conversation could have a much larger need than the first message reveals. Wicked Logistics’ story shows why the path from interest to sales deserves attention.",
         ],
       },
       {
         heading: 'The logistics website and lead system behind the opportunity',
         paragraphs: [
-          'Our work brought together a mobile-first website, search campaigns, and a CRM follow-up workflow. The website gave prospects a place to learn about the business and make an inquiry. Search campaigns supported freight lead generation, while the CRM connected those inquiries to a shared pipeline.',
-          'Each inquiry had an owner and a next step. The pieces worked together around the sales conversation: attract interest, make contact straightforward, and give the team a process for following up. That connected approach was the foundation of the project for Wicked Logistics.',
+          "Our work brought together a mobile-first website, search campaigns, and a CRM follow-up workflow. The website gave prospects a place to learn about the business and make an lead. Search campaigns supported freight lead generation, while the CRM connected those leads to a shared pipeline.",
+          "Each lead had an owner and a next step. The pieces worked together around the sales conversation: attract interest, make contact straightforward, and give the team a process for following up. That connected approach was the foundation of the project for Wicked Logistics.",
         ],
       },
       {
-        heading: 'What could your next freight inquiry be worth?',
+        heading: "What could your next freight lead be worth?",
         paragraphs: [
-          'If your logistics marketing brings in a handful of inquiries, start by looking at what happens to each one. Where does it arrive? Who picks it up? How does the team keep the conversation moving? Then consider where additional demand could come from.',
+          "If your logistics marketing brings in a handful of leads, start by looking at what happens to each one. Where does it arrive? Who picks it up? How does the team keep the conversation moving? Then consider where additional demand could come from.",
           'We can review your website, your current lead sources, and your follow-up process with you. The goal is to find the next opportunity, and build a clear path for your business to pursue it.',
         ],
       },
@@ -270,10 +270,10 @@ export const work: CaseStudy[] = [
       { value: '5-6', label: 'Leads per day after' },
       { value: '$1.2M', label: 'Contract from one lead' },
     ],
-    highlights: ['From weekly inquiries to daily leads', '$1.2 million contract from one lead', 'Website, search campaigns, and CRM follow-up'],
+    highlights: ["From weekly leads to daily leads", '$1.2 million contract from one lead', 'Website, search campaigns, and CRM follow-up'],
     related: [
       { label: 'See PMG’s freight consulting lead generation results', href: '/work/parcel-management-group' },
-      { label: 'Explore acquisition, conversion, and follow-up', href: '/solutions' },
+      { label: 'Explore acquisition, conversion, and follow-up', href: '/demand-flow' },
     ],
     cta: { title: 'What could the next conversation lead to?', text: 'Let’s look at your logistics business, the shipping customers you want to reach, and the process that gets them talking to you.' },
   },
@@ -310,7 +310,7 @@ export const work: CaseStudy[] = [
       {
         heading: 'What does your business need before launch?',
         paragraphs: [
-          'If you are starting a business, think about what someone should understand the first time they see it. What do you offer? What should they remember? Where should they go next? Those answers give logo design, website copy, and social content a shared purpose. Bring us the idea and the stage you are at, and we can discuss what belongs in your launch.',
+          "If you're starting a business, think about what someone should understand the first time they see it. What do you offer? What should they remember? Where should they go next? Those answers give logo design, website copy, and social content a shared purpose. Bring us the idea and the stage you're at, and we can discuss what belongs in your launch.",
         ],
       },
     ],
@@ -318,9 +318,9 @@ export const work: CaseStudy[] = [
     logo: { src: '/images/clients/only-fish.webp', width: 153, height: 93 },
     highlights: ['Logo and brand identity', 'Custom website', 'May 2024 social launch'],
     related: [
-      { label: 'Explore website and business growth services', href: '/solutions' },
+      { label: 'Explore website and business growth services', href: '/demand-flow' },
       { label: 'Talk about a website project', href: '/book' },
     ],
-    cta: { title: 'Have a business idea people should see?', text: 'Tell us what you are building. We can help you think through the brand, website, and launch that bring it to life.' },
+    cta: { title: 'Have a business idea people should see?', text: "Tell us what you're building. We can help you think through the brand, website, and launch that bring it to life." },
   },
 ];

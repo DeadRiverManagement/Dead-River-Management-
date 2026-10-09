@@ -2,6 +2,8 @@ import { defineConfig, fontProviders } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import { readFileSync, readdirSync } from 'node:fs';
 
+import react from '@astrojs/react';
+
 // Any path that vercel.json redirects unconditionally is an old URL that
 // still builds (so old links keep working) but should not be in the sitemap.
 const redirected = new Set(
@@ -50,54 +52,52 @@ export default defineConfig({
     },
   ],
   // Purchase, gated content and paid-campaign steps are not discovery URLs.
-  integrations: [
-    sitemap({
-      serialize: (item) => {
-        const path = new URL(item.url).pathname.replace(/\/$/, '') || '/';
-        const date = articleDates[path];
-        return date ? { ...item, lastmod: new Date(date).toISOString() } : item;
-      },
-      filter: (page) => {
-        const path = new URL(page).pathname.replace(/\/$/, '') || '/';
-        const oldPlanPaths = new Set([
-          '/missed-call-rescue',
-          '/lead-rescue',
-          '/website-rescue',
-          '/local-growth',
-          '/growth-engine',
-          '/whole-river-plan',
-          '/front-desk-essentials',
-          '/el-paso-home-services-marketing',
-          '/ai-receptionist-el-paso',
-          '/google-ads-management-el-paso',
-          '/social-media-management-el-paso',
-          '/web-design-el-paso',
-          '/ai-search-optimization-el-paso',
-          '/google-business-profile-el-paso',
-          '/local-seo-el-paso',
-        ]);
-        // Retired 30-leads stays published but undiscoverable via sitemap.
-        // Demand Flow and real-estate VSL landers stay out.
-        const hiddenFromSitemap = new Set([
-          '/marketing-advice/30-leads-in-60-days-guarantee',
-          '/50k-demand-flow',
-          '/real-estate-buyer-appointments',
-        ]);
-        return (
-          !path.startsWith('/welcome/') &&
-          path !== '/onboarding' &&
-          !path.startsWith('/onboarding/') &&
-          path !== '/watch' &&
-          path !== '/free-playbook' &&
-          path !== '/flagship-offer' &&
-          path !== '/404' &&
-          path !== '/book/thanks' &&
-          path !== '/demand-intelligence/thanks' &&
-          !oldPlanPaths.has(path) &&
-          !hiddenFromSitemap.has(path) &&
-          !redirected.has(path)
-        );
-      },
-    }),
-  ],
+  integrations: [sitemap({
+    serialize: (item) => {
+      const path = new URL(item.url).pathname.replace(/\/$/, '') || '/';
+      const date = articleDates[path];
+      return date ? { ...item, lastmod: new Date(date).toISOString() } : item;
+    },
+    filter: (page) => {
+      const path = new URL(page).pathname.replace(/\/$/, '') || '/';
+      const oldPlanPaths = new Set([
+        '/missed-call-rescue',
+        '/lead-rescue',
+        '/website-rescue',
+        '/local-growth',
+        '/growth-engine',
+        '/whole-river-plan',
+        '/front-desk-essentials',
+        '/el-paso-home-services-marketing',
+        '/ai-receptionist-el-paso',
+        '/google-ads-management-el-paso',
+        '/social-media-management-el-paso',
+        '/web-design-el-paso',
+        '/ai-search-optimization-el-paso',
+        '/google-business-profile-el-paso',
+        '/local-seo-el-paso',
+      ]);
+      // Retired 30-leads stays published but undiscoverable via sitemap.
+      // Demand Flow and real-estate VSL landers stay out.
+      const hiddenFromSitemap = new Set([
+        '/marketing-advice/30-leads-in-60-days-guarantee',
+        '/50k-demand-flow',
+        '/real-estate-buyer-appointments',
+      ]);
+      return (
+        !path.startsWith('/welcome/') &&
+        path !== '/onboarding' &&
+        !path.startsWith('/onboarding/') &&
+        path !== '/watch' &&
+        path !== '/free-playbook' &&
+        path !== '/flagship-offer' &&
+        path !== '/404' &&
+        path !== '/book/thanks' &&
+        path !== '/demand-intelligence/thanks' &&
+        !oldPlanPaths.has(path) &&
+        !hiddenFromSitemap.has(path) &&
+        !redirected.has(path)
+      );
+    },
+  }), react()],
 });

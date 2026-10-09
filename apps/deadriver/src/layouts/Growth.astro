@@ -2,6 +2,7 @@
 import PreferredSource from '../components/PreferredSource.astro';
 import { Font } from 'astro:assets';
 import '../styles/growth.css';
+import '../styles/premium.css';
 import Logo from '../components/growth/Logo.astro';
 import Arrow from '../components/growth/Arrow.astro';
 import CookieBanner from '../components/CookieBanner.astro';
@@ -134,7 +135,7 @@ const schemas = [org, site, ...(schema ? [schema] : [])];
       href="/llms.txt"
       title="LLM information"
     />
-    <meta name="theme-color" content="#fafbf7" />
+    <meta name="theme-color" content="#0a0a0b" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content={brand.name} />
     <meta property="og:title" content={pageTitle} />
@@ -168,7 +169,7 @@ const schemas = [org, site, ...(schema ? [schema] : [])];
     </script>
 
   </head>
-  <body>
+  <body data-motion="full">
     <a href="#main" class="skip-link">
       Skip to content
     </a>
@@ -277,8 +278,6 @@ const schemas = [org, site, ...(schema ? [schema] : [])];
           ['Industries', industryPages.map((p) => [p.name, `/industries/${p.slug}`])],
           ['Clients', [
             ['Sign in', 'https://app.deadrivermanagement.com/v2/'],
-            ['Onboarding', '/onboarding'],
-            ['Solutions', '/solutions'],
             ['Scale playbook', '/free-playbook'],
           ]],
         ].map(([group, links]) => (
@@ -330,6 +329,7 @@ const schemas = [org, site, ...(schema ? [schema] : [])];
     <CookieBanner variant="light" />
     <script>
       import '../scripts/growth-shell.js';
+      import '../scripts/motion.js';
     </script>
     <!-- Load third-party chat only after cookie consent. This keeps the mobile
          notice unobstructed and avoids setting chat identifiers beforehand. -->

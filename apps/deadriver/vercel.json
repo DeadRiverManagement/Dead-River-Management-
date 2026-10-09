@@ -325,12 +325,12 @@
     },
     {
       "source": "/services",
-      "destination": "/solutions",
+      "destination": "/demand-flow",
       "statusCode": 301
     },
     {
       "source": "/services.html",
-      "destination": "/solutions",
+      "destination": "/demand-flow",
       "statusCode": 301
     },
     {
@@ -1392,6 +1392,26 @@
     {
       "source": "/demandflow/book.html",
       "destination": "/book/thanks",
+      "statusCode": 301
+    },
+    {
+      "source": "/solutions",
+      "destination": "/demand-flow",
+      "statusCode": 301
+    },
+    {
+      "source": "/solutions.html",
+      "destination": "/demand-flow",
+      "statusCode": 301
+    },
+    {
+      "source": "/onboarding",
+      "destination": "/book",
+      "statusCode": 301
+    },
+    {
+      "source": "/onboarding.html",
+      "destination": "/book",
       "statusCode": 301
     }
   ]

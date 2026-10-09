@@ -7,23 +7,39 @@ import { faqPage } from '../lib/schema';
 const faqs = [
   {
     q: 'What is Demand Flow?',
-    a: "Demand Flow is Dead River Management's live public offer for accepted businesses: $50,000 in new revenue in 45-60 days after the system goes live. If we miss, service fees are refunded plus $500. Ad spend is not refunded.",
+    a: "Demand Flow is our offer for accepted businesses: $50,000 in new revenue in 45 to 60 days after the system goes live. If we miss, you get your service fees back plus $500 for wasting your time. Ad spend isn't refunded.",
   },
   {
     q: 'Is ad spend refunded if you miss?',
-    a: 'No. Ad spend is paid to the advertising platforms and is not refunded. The miss clause covers service fees plus $500 only. Your signed agreement controls.',
+    a: "No. Ad spend goes to the ad platforms and isn't refunded. If we miss, you get your service fees back plus $500. Your signed agreement controls.",
   },
   {
     q: 'Is Demand Flow open to every business?',
-    a: 'No. It is for accepted businesses with a signed agreement. If we do not think we can hit the number, we say so and do not offer the guarantee.',
+    a: "No. It's for accepted businesses with a signed agreement. If we don't think we can hit the number, we'll tell you, and we won't offer the guarantee.",
   },
   {
     q: 'Is the old 30 leads in 60 days guarantee still sold?',
-    a: 'No. Lead-count and work-for-free style offers are not live public offers. Demand Flow is current. Terms updated September 29, 2026.',
+    a: "No. Lead-count and work-for-free style offers aren't live public offers. Demand Flow is current. Terms updated September 29, 2026.",
   },
   {
     q: 'How is Demand Intelligence different?',
-    a: 'Demand Intelligence is a separate product for purchase intent data and audiences. It is not the Demand Flow revenue guarantee. Scope is confirmed on a demo. See the Demand Intelligence page.',
+    a: "Demand Intelligence is a separate product for purchase intent data and audiences. It isn't the Demand Flow revenue guarantee. Scope is confirmed on a demo. See the Demand Intelligence page.",
+  },
+  {
+    q: 'How can you make this offer?',
+    a: "Before we take you on, we look at the demand in your market, your offer, how much work you can handle, and your ad budget. Demand Intelligence finds the people already looking. Demand Flow connects the ads, fast replies, booking, and follow-up to sales. If we don't think we can hit the number, we don't offer the guarantee.",
+  },
+  {
+    q: 'What revenue counts?',
+    a: "Revenue from new customers that came through the Demand Flow system we build for you. We track leads and results in your CRM and check them against closed jobs or invoices. Money from existing customers, or work you won outside the system, doesn't count.",
+  },
+  {
+    q: 'What does my team need to do?',
+    a: 'Give us access to your accounts, approve things when we ask, fund the agreed ad budget, share your revenue numbers, and answer the leads the system sends you. Delays pause the clock. Turning off campaigns, cutting the budget, or not answering leads ends the guarantee. Your signed agreement controls.',
+  },
+  {
+    q: 'What does it cost and when does it start?',
+    a: "Before we go over pricing, we make sure we're a fit for your business. We go over the scope, the investment, and the ad budget on your strategy call. The clock starts when your Demand Flow system goes live. Your agreement sets the exact deadline inside the 45 to 60 day window.",
   },
   {
     q: 'Where do I start?',
@@ -65,19 +81,130 @@ const breadcrumbLd = {
   schema={[serviceLd, faqPage(faqs), breadcrumbLd]}
 >
   <Hero
-    eyebrow="Demand Flow"
+    scene="liquid"
+    eyebrow="Demand Flow · The guarantee"
     title="Demand Flow: $50,000 in new revenue in 45-60 days."
-    intro="Dead River Management builds the system that creates, captures, and converts demand. For accepted businesses, the public offer is Demand Flow: hit $50,000 in new revenue in 45-60 days, or service fees are refunded plus $500. Ad spend is not refunded."
+    intro="We build the system that creates, captures, and converts demand. If we accept your business, the offer is simple: $50,000 in new revenue in 45 to 60 days. If we miss, you get your service fees back plus $500 for wasting your time. Ad spend isn't refunded."
   >
-    <div class="button-row">
+    <div class="button-row" data-rise>
       <a class="button" href="/book">Book a strategy call <Arrow /></a>
       <a class="text-link" href="tel:+19152283054">Call (915) 228-3054 <Arrow /></a>
     </div>
   </Hero>
 
-  <section class="section wrap">
+  <section class="section wrap" id="fit">
     <div class="section-head">
-      <h2>What you get</h2>
+      <div>
+        <p class="eyebrow">This is for you if</p>
+        <h2>You need customers. Not just more clicks.</h2>
+        <p class="intro">If any of these sound familiar, Demand Flow fills in the missing steps.</p>
+      </div>
+    </div>
+    <div class="steps home-steps df-pains">
+      {[
+        ['Reaching the wrong people', 'Your ads reach a broad audience, but too few people are ready to buy.'],
+        ['Paying for clicks', 'People visit your site and leave before taking the next step.'],
+        ['Unpredictable sales', 'You can take on more customers, but new business is inconsistent.'],
+        ['Leads go quiet', 'Someone asks a question, then disappears before making a decision.'],
+        ['Follow-up gets missed', 'Slow replies and missed follow-up let interested buyers slip away.'],
+        ['No clear picture', 'You can see clicks and leads, but cannot tell which ones became revenue.'],
+      ].map(([title, body]) => (
+        <article>
+          <h3>{title}</h3>
+          <p>{body}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="section soft" id="intelligence">
+    <div class="wrap split">
+      <div>
+        <p class="eyebrow">Demand Intelligence</p>
+        <h2>Start with people already looking to buy.</h2>
+        <p class="intro">People search, read, and compare before they buy. Demand Intelligence uses that activity, called purchase intent data, to find the people looking for the services you offer.</p>
+        <a class="text-link" href="/demand-intelligence">Explore Demand Intelligence <Arrow /></a>
+      </div>
+      <ul class="check-list df-checks">
+        <li><strong>Find the demand.</strong> Find the people looking up your service right now.</li>
+        <li><strong>Keep it fresh.</strong> Use purchase signals from the last 24 to 48 hours.</li>
+        <li><strong>Reach those buyers.</strong> Point your ads and email at people already showing interest.</li>
+        <li><strong>Connect the next steps.</strong> Demand Flow turns that list into leads, bookings, and paying customers.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section df-mechanism" id="how">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Demand Flow, in a nutshell</p>
+          <h2>Target. Create. Capture. Convert.</h2>
+          <p class="intro">Demand Flow is how we help your business reach people actively looking for your services or products, capture their interest and help turn them into paying customers.</p>
+          <p class="intro">We’re a marketing agency, but we do things a little differently. We use our Demand Intelligence to focus on people showing recent interest in what you sell. Then we connect the ads, landing pages and follow-up so those people have a clear path to doing business with you.</p>
+        </div>
+      </div>
+      <div class="stages">
+        {[
+          ['Target', [
+            'We start by going over what you sell, who your customers are and where you serve them. Then we use Demand Intelligence to find recent buying signals from people researching and comparing services or products like yours. That gives us a more focused starting point than throwing spaghetti at a wall and seeing what sticks.',
+          ], ['See the Demand Intelligence platform', '/demand-intelligence']],
+          ['Create', [
+            'We build landing pages designed to convert. We explain your offer, show relevant examples of your work and make it easy for someone to request a quote, book a call or buy.',
+            'Then we create ads that put that offer in front of the people we’re trying to reach. We choose the right mix of Facebook and Instagram ads, Google Ads, TikTok ads, Reddit ads, ChatGPT ads and Google Local Services Ads, depending on what fits your business and which channels are available.',
+            'The ad and the landing page work together. If someone clicks an ad for a specific service, they land on a page about that service with a clear next step.',
+          ]],
+          ['Capture', [
+            'Once someone’s interested, we make it easy for them to reach you. They can fill out a form, request a quote, book an appointment, call or purchase. We can also capture leads directly through an ad’s lead form or a call from Google Local Services Ads.',
+            'We connect those leads to your customer management system so you know who reached out, where they came from and what needs to happen next.',
+          ]],
+          ['Convert', [
+            'Then we set up quick replies, follow-up and appointment reminders so those leads get taken care of. If someone has questions or isn’t ready right away, there’s a process to keep the conversation going.',
+            'We track what happens after the lead, including bookings and sales. Then we go over what’s working and what we should change in the ads, landing pages or follow-up to help bring in more business.',
+          ]],
+        ].map(([title, body, link], i) => (
+          <article class="stage">
+            <div class="stage-head">
+              <span class="number">Stage {i + 1}</span>
+              <h3>{title}</h3>
+            </div>
+            <div class="stage-body">
+              {body.map((text) => <p>{text}</p>)}
+              {link && <a class="text-link" href={link[1]}>{link[0]} <Arrow /></a>}
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section soft band-dark" id="included">
+    <div class="wrap split">
+      <div>
+        <p class="eyebrow">Our offering</p>
+        <h2>What you'll get.</h2>
+        <p class="intro">Everything here connects the right people to new revenue.</p>
+        <div class="button-row">
+          <a class="button" href="/book">Book a strategy call <Arrow /></a>
+        </div>
+      </div>
+      <ul class="check-list df-checks">
+        <li>Demand Intelligence to find the people already looking for the services you offer.</li>
+        <li>Targeted campaigns across Facebook, Instagram, Google and email.</li>
+        <li>Landing pages and booking links that give buyers a clear next step.</li>
+        <li>Fast replies, reminders, and follow-up so interested people don't get forgotten.</li>
+        <li>CRM tracking from the first lead through closed jobs and paid invoices.</li>
+        <li>Weekly campaign improvements and a written revenue goal for accepted businesses.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section wrap" id="guarantee">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">The guarantee, in plain terms</p>
+        <h2>What you get</h2>
+      </div>
     </div>
     <div class="feature-grid">
       <article class="feature-panel">
@@ -87,13 +214,13 @@ const breadcrumbLd = {
           follow-up, and booking.
         </p>
         <p>
-          <a class="inline-link" href="/solutions">See how the system connects</a>.
+          <a class="inline-link" href="#how">See how the system connects</a>.
         </p>
       </article>
       <article class="feature-panel">
         <h3>What happens if we miss</h3>
         <p>
-          Service fees are refunded plus $500. Ad spend is not refunded. Your
+          Service fees are refunded plus $500. Ad spend isn't refunded. Your
           signed agreement controls.
         </p>
         <p>
@@ -102,12 +229,39 @@ const breadcrumbLd = {
       </article>
       <article class="feature-panel">
         <h3>Accepted businesses only</h3>
-        <p>We decline when we do not believe we can hit the number.</p>
+        <p>We decline when we don't believe we can hit the number.</p>
       </article>
       <article class="feature-panel">
         <h3>Not the old lead-count offers</h3>
-        <p>30-in-60 and work-for-free offers are not live public offers.</p>
+        <p>30-in-60 and work-for-free offers aren't live public offers.</p>
       </article>
+    </div>
+  </section>
+
+  <section class="section soft" id="results">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Proven results</p>
+          <h2>Results from businesses we’ve worked with.</h2>
+          <p class="intro">Real businesses in different markets. Each case study shows its own results and timeframe. Your results will depend on your business.</p>
+        </div>
+        <a class="text-link" href="/work">View all case studies <Arrow /></a>
+      </div>
+      <div class="steps home-steps df-results">
+        {[
+          ['Gonzalez & Sons Roofing', 'From 2 to 8 roofs a month in 6 months', ['2 to 8 roofs per month', '$50K to $200K monthly revenue', '6-month case study'], '/work/gonzalez-and-sons-roofing'],
+          ['The Pipe Whisperers', 'From $60K to $250K in annual revenue', ['About $60K annual revenue before', 'About $250K annual revenue after', '24-month case study'], '/work/the-pipe-whisperers'],
+          ['Wicked Logistics', 'From 1 to 2 leads a week to 5 to 6 a day', ['1 to 2 leads per week before', '5 to 6 leads per day within 3 months', 'One contract valued at $1.2M per year'], '/work/wicked-logistics'],
+        ].map(([name, headline, facts, href]) => (
+          <article>
+            <span class="number">{name}</span>
+            <h3>{headline}</h3>
+            <ul class="check-list">{facts.map((f) => <li>{f}</li>)}</ul>
+            <a class="text-link" href={href}>Read the case study <Arrow /></a>
+          </article>
+        ))}
+      </div>
     </div>
   </section>
 
@@ -119,7 +273,7 @@ const breadcrumbLd = {
       </div>
       <div>
         <p>
-          Demand Intelligence is purchase intent data and audiences. It is not
+          Demand Intelligence is purchase intent data and audiences. It isn't
           the Demand Flow revenue guarantee. Scope is confirmed on a demo. No
           public price is listed here.
         </p>
@@ -151,17 +305,22 @@ const breadcrumbLd = {
     </div>
   </section>
 
-  <section class="section soft">
+  <section class="section soft band-dark" id="book">
     <div class="wrap split">
       <div>
         <p class="eyebrow">Next step</p>
         <h2>See if your business qualifies.</h2>
+        <p class="intro">Your market. Your numbers. A clear plan. Here's what we'll go over together.</p>
+        <ul class="check-list df-checks">
+          <li>The live demand for your product or service in your market.</li>
+          <li>What a customer is worth to you, how much work you can take on, and how a lead becomes a sale.</li>
+          <li>Whether your business qualifies for the $50,000 Demand Flow guarantee.</li>
+        </ul>
       </div>
       <div class="stack">
         <p>
-          Dead River Management is headquartered in El Paso, Texas, and works
-          with accepted businesses nationwide. Call (915) 228-3054 or book a
-          strategy call.
+          We're based in El Paso, Texas, and we work with accepted businesses
+          all over the country. Call (915) 228-3054 or book a strategy call.
         </p>
         <div class="button-row">
           <a class="button" href="/book">Book a strategy call <Arrow /></a>
@@ -176,3 +335,81 @@ const breadcrumbLd = {
     </div>
   </section>
 </Growth>
+
+<style>
+  .df-pains,
+  .df-results {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+  }
+  .df-results .number {
+    color: var(--muted);
+  }
+  .df-results .check-list li {
+    font-size: 14px;
+    padding-block: 6px;
+  }
+  .df-results .text-link {
+    margin-top: 18px;
+  }
+  .df-checks li {
+    font-size: 16px;
+    padding-block: 10px;
+  }
+  .df-checks strong {
+    color: var(--ink);
+  }
+  .section-head .intro + .intro {
+    margin-top: 16px;
+  }
+  .stages {
+    margin-top: 8px;
+    border-top: 1px solid var(--line);
+  }
+  .stage {
+    display: grid;
+    grid-template-columns: 260px minmax(0, 1fr);
+    gap: 40px;
+    padding: 52px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .stage h3 {
+    font-size: clamp(34px, 3.6vw, 52px);
+    margin-top: 10px;
+  }
+  .stage-body p {
+    max-width: 760px;
+    font-size: 17px;
+  }
+  .stage-body p + p {
+    margin-top: 14px;
+  }
+  .stage-body .text-link {
+    margin-top: 20px;
+  }
+  .df-chain {
+    display: block;
+    margin-top: 18px;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    color: var(--copper);
+  }
+  .df-track {
+    max-width: 720px;
+    margin-top: 48px;
+    font-size: 17px;
+  }
+  @media (max-width: 1100px) {
+    .df-pains,
+    .df-results {
+      grid-template-columns: 1fr;
+    }
+    .stage {
+      grid-template-columns: 1fr;
+      gap: 16px;
+      padding: 36px 0;
+    }
+  }
+</style>
+

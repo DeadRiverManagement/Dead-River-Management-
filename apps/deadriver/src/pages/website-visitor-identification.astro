@@ -5,7 +5,7 @@ import Arrow from '../components/growth/Arrow.astro';
 const faqs = [
   ['What is website visitor identification?', 'Website visitor identification uses available identity and business data to resolve a portion of otherwise anonymous website traffic into usable audience records. Match rates vary by traffic, geography, device, consent, and data availability.'],
   ['Does it identify every visitor?', 'No. No responsible provider should promise that every anonymous visitor can be identified. Coverage and match rates vary, and some visitors will remain anonymous.'],
-  ['Can identified visitors be contacted automatically?', 'Identification does not itself create permission to email, call, or text someone. Any activation must follow applicable privacy, marketing, outreach, and platform rules.'],
+  ['Can identified visitors be contacted automatically?', "Identification doesn't itself create permission to email, call, or text someone. Any activation must follow applicable privacy, marketing, outreach, and platform rules."],
   ['How is this different from ordinary analytics?', 'Analytics usually reports sessions, sources, and behavior in aggregate. Visitor identification attempts to connect eligible traffic with additional person or company data so teams can build audiences and prioritize follow-up.'],
 ];
 const schema = [
@@ -32,7 +32,7 @@ const schema = [
   description="Identify a portion of anonymous website traffic, enrich eligible audience records, and activate them responsibly across sales and advertising workflows."
   schema={schema}
 >
-  <Hero
+  <Hero scene="signals"
     eyebrow="Website visitor identification · B2B and B2C"
     title="Turn more anonymous website activity into useful audience intelligence."
     intro="Website visitor identification helps eligible teams understand more of the people and businesses reaching their site, enrich available records, and build better audiences for permitted sales and advertising workflows."
@@ -71,7 +71,7 @@ const schema = [
       </div>
       <div>
         <p>Not every visitor can or should be identified. Coverage varies, and identity data can be incomplete or wrong.</p>
-        <p>Use the information to improve prioritization and audience strategy. Do not treat an identified record as permission for unsolicited calls, texts, or email.</p>
+        <p>Use the information to improve prioritization and audience strategy. Don't treat an identified record as permission for unsolicited calls, texts, or email.</p>
       </div>
     </div>
   </section>
@@ -80,7 +80,7 @@ const schema = [
     <div class="section-head">
       <div><p class="eyebrow">Common questions</p><h2>Website visitor identification FAQ.</h2></div>
     </div>
-    <div class="faq-list">
+    <div class="faq">
       {faqs.map(([q, a]) => <details><summary>{q}</summary><p>{a}</p></details>)}
     </div>
   </section>

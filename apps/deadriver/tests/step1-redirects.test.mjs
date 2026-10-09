@@ -20,7 +20,7 @@ function assert301(source, destination) {
 
 const harden = {
   '/about': '/company',
-  '/services': '/solutions',
+  '/services': '/demand-flow',
   '/industries-we-serve': '/',
   '/contact': '/book',
   '/case-studies/parcel-management-group': '/work/parcel-management-group',

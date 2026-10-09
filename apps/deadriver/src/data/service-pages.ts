@@ -64,7 +64,7 @@ export type ServicePageData = {
 
 const pricingFaq = {
   q: 'What does it cost?',
-  a: 'It depends on your market and goals. For home services, med spas, dental, real estate, and ecommerce we have set offers with a guaranteed target, listed on each industry page. For anything else, we quote on a short call. Ad spend is always separate and paid from your own account.',
+  a: "It depends on your market and goals. For home services, med spas, dental, real estate, and ecommerce we've set offers with a guaranteed target, listed on each industry page. For anything else, we quote on a short call. Ad spend is always separate and paid from your own account.",
 };
 
 export const servicePages: ServicePageData[] = [
@@ -83,24 +83,24 @@ export const servicePages: ServicePageData[] = [
       'Most of your visitors are on a phone with a problem. We design and build sites that load fast, answer the question, and make calling or booking the easiest thing on the screen. Then we track which pages turn into jobs.',
     problemHeading: 'Most service websites look fine and book nothing.',
     problems: [
-      ['Pretty, slow, and silent.', 'A site that takes five seconds to load on a phone loses half its visitors before the headline. The ones who stay cannot find the phone number.'],
-      ['One page for everything.', 'A plumber with one "services" paragraph cannot rank for water heaters, drains, or repipes. Google needs a page per job, and so does the homeowner.'],
+      ['Pretty, slow, and silent.', "A site that takes five seconds to load on a phone loses half its visitors before the headline. The ones who stay can't find the phone number."],
+      ['One page for everything.', 'A plumber with one "services" paragraph can\'t rank for water heaters, drains, or repipes. Google needs a page per job, and so does the homeowner.'],
       ['Forms that go nowhere.', 'A form fill that lands in an inbox nobody checks until tomorrow is a lead you paid for and lost.'],
     ],
     builtHeading: 'Everything a site needs to turn visitors into booked work.',
     built: [
       ['Mobile first', 'Designed on a phone screen first. Fast, readable, with the number and the booking button always in reach.'],
       ['A page for every service and area', 'Each job you want and each area you serve gets its own page, written to answer the question a buyer types into Google or asks an AI assistant.'],
-      ['Calls and forms that reach you', 'Click-to-call on every screen, and forms that text you the second they are filled out, with follow-up if you miss them.'],
+      ['Calls and forms that reach you', "Click-to-call on every screen, and forms that text you the second they're filled out, with follow-up if you miss them."],
       ['SEO built in', 'Titles, structure, speed, schema, and internal links done at build time, not bolted on later. Your Google Business Profile and site match.'],
       ['Proof on the page', 'Reviews, job photos, and case-study numbers placed where a buyer decides.'],
       ['Tracking to the job', 'Every call and form is recorded against the page it came from, so you know which pages book work.'],
     ],
-    proofHeading: 'Sites we have built',
+    proofHeading: "Sites we've built",
     proof: [
       {
         label: 'Total Auto Repair',
-        text: 'A mobile-friendly rebuild, with Google Ads and local SEO, took the shop from about $20,000 a month to about $100,000 a month in 18 months. Sixty percent of their traffic was mobile and the old site did not work on a phone.',
+        text: "A mobile-friendly rebuild, with Google Ads and local SEO, took the shop from about $20,000 a month to about $100,000 a month in 18 months. Sixty percent of their traffic was mobile and the old site didn't work on a phone.",
         href: '/work/total-auto-repair',
         linkText: 'Read the case study',
       },
@@ -112,12 +112,12 @@ export const servicePages: ServicePageData[] = [
       },
     ],
     elPaso:
-      'We are based in El Paso and build websites for businesses across El Paso County, Las Cruces, and the rest of the country.',
+      "We're based in El Paso and build websites for businesses across El Paso County, Las Cruces, and the rest of the country.",
     offerLead:
-      'The website is one part of our Demand Flow system. It is where the ad click lands and where the call starts, so we build it to do that one job well.',
+      "The website is one part of our Demand Flow system. It's where the ad click lands and where the call starts, so we build it to do that one job well.",
     fit: [
       'Your site is slow on a phone or hard to call from',
-      'You have one services page where you need ten',
+      "You've one services page where you need ten",
       'You run ads and want pages built for them',
       'You want to own your site and its content outright',
     ],
@@ -125,6 +125,22 @@ export const servicePages: ServicePageData[] = [
       { label: 'Is your website on Google?', href: '/marketing-advice/is-your-website-on-google' },
       { label: 'AI content and your website', href: '/marketing-advice/ai-content-and-your-website' },
       { label: 'Website conversion review', href: '/tools/website-conversion' },
+    ],
+    longform: [
+      {
+        heading: 'What a service business website is actually for',
+        paragraphs: [
+          'A website for a service business has one job. Someone on their phone has a problem, they find you, and they call or book. That\'s it. Every choice we make in web design for contractors, roofers, plumbers, HVAC companies and auto shops comes back to that. Fast load time on a phone, the phone number and the booking button on every screen, and a page for each service and each city you serve.',
+          'That\'s also what Google and the AI assistants want. A roofing website with one page for roof repair, one for roof replacement and one for storm damage ranks for all three. One page that says "we do roofing" ranks for none of them. Local SEO is built into the site from day one, so the website and your Google Business Profile tell the same story.',
+        ],
+      },
+      {
+        heading: 'What a small business website costs, and what you get',
+        paragraphs: [
+          'Most custom websites for service businesses run from a few thousand dollars to the low five figures, depending on how many service and location pages you need and whether you want photos and video done too. Cheap page-builder sites cost less up front and lose you leads every month, because they load slow and bury the call button. We\'d rather build it once, build it right, and track which pages turn into jobs.',
+          'You own everything. The domain, the hosting, the design and the content stay with you. If you ever leave, the site goes with you. Ask any web design agency that question before you sign.',
+        ],
+      },
     ],
     faqs: [
       {
@@ -137,7 +153,7 @@ export const servicePages: ServicePageData[] = [
       },
       {
         q: 'What is the difference between web design and web development?',
-        a: 'Web design is what the visitor sees: layout, type, colour, and the path to the call. Web development is what makes it work: the code, speed, forms, tracking, and hosting. We do both, because a beautiful site that loads slowly or drops form fills does not book jobs.',
+        a: "Web design is what the visitor sees: layout, type, colour, and the path to the call. Web development is what makes it work: the code, speed, forms, tracking, and hosting. We do both, because a beautiful site that loads slowly or drops form fills doesn't book jobs.",
       },
       {
         q: 'Is SEO included in web design?',
@@ -145,7 +161,7 @@ export const servicePages: ServicePageData[] = [
       },
       {
         q: 'Can you redo my existing website instead of starting over?',
-        a: 'Often, yes. If the platform is sound we rebuild the pages, speed, and conversion path on it. If it is a slow page builder or an old template we usually rebuild from scratch, because fixing it costs more than replacing it. We tell you which on the first call.',
+        a: "Often, yes. If the platform is sound we rebuild the pages, speed, and conversion path on it. If it's a slow page builder or an old template we usually rebuild from scratch, because fixing it costs more than replacing it. We tell you which on the first call.",
       },
       {
         q: 'Who owns the website when it is done?',
@@ -180,14 +196,14 @@ export const servicePages: ServicePageData[] = [
       'More people now ask an AI assistant "who should I call" instead of scrolling ten blue links. The assistant names two or three businesses. We make sure yours is one of them, and that the person who asked becomes a booked job.',
     problemHeading: 'AI answers are replacing the search results page.',
     problems: [
-      ['The assistant names someone else.', 'Ask ChatGPT for the best roofer in your city. It names three companies. If you are not one of them, that buyer never sees you.'],
+      ['The assistant names someone else.', "Ask ChatGPT for the best roofer in your city. It names three companies. If you aren't one of them, that buyer never sees you."],
       ['Your site was built for Google, not for AI.', 'AI models need plain facts, clear structure, and proof they can quote. Most service sites bury all three under slogans.'],
-      ['Nobody can tell if it is working.', 'Rank trackers do not watch ChatGPT. Without a way to test the real answers, you are guessing.'],
+      ["Nobody can tell if it's working.", "Rank trackers don't watch ChatGPT. Without a way to test the real answers, you're guessing."],
     ],
     builtHeading: 'Everything an AI assistant needs to recommend you.',
     built: [
       ['Entity and listing cleanup', 'Your name, address, phone, hours, services, and service area, identical on your site, Google Business Profile, Bing, Apple, and the directories AI models read.'],
-      ['Answer-first pages', 'Each service page answers the question a buyer asks, in the first paragraph, with the price range, the timeline, and who it is for.'],
+      ['Answer-first pages', "Each service page answers the question a buyer asks, in the first paragraph, with the price range, the timeline, and who it's for."],
       ['Structured data', 'Organization, LocalBusiness, Service, FAQ, Article, and Review schema on every page, validated, so models can read the facts without guessing.'],
       ['Proof the model can quote', 'Case studies with real numbers and dates, reviews with replies, and a clear guarantee. Models cite specifics, not claims.'],
       ['Citations and mentions', 'Profiles and mentions on the directories, review sites, and local press AI assistants already cite for your trade.'],
@@ -197,14 +213,14 @@ export const servicePages: ServicePageData[] = [
       {
         heading: 'What AI search optimization is, in plain words',
         paragraphs: [
-          'AI search optimization is the work of making your business the answer when someone asks an AI assistant for a recommendation. People call it answer engine optimization (AEO) or generative engine optimization (GEO). The names differ. The job is the same: give ChatGPT, Google AI Overviews, Google AI Mode, Perplexity, Gemini, Claude, and Copilot clear, consistent, provable facts about what you do, where you do it, and why you are a safe pick.',
-          'These assistants do not rank pages the way Google does. They read a handful of trusted sources, pull out facts, and write an answer. The sources they trust for a local service business are your own site, your Google Business Profile, your reviews, the directories that list you, and anything written about you elsewhere. If those sources disagree, or say nothing specific, the assistant names a competitor who made it easier.',
+          "AI search optimization is the work of making your business the answer when someone asks an AI assistant for a recommendation. People call it answer engine optimization (AEO) or generative engine optimization (GEO). The names differ. The job is the same: give ChatGPT, Google AI Overviews, Google AI Mode, Perplexity, Gemini, Claude, and Copilot clear, consistent, provable facts about what you do, where you do it, and why you're a safe pick.",
+          "These assistants don't rank pages the way Google does. They read a handful of trusted sources, pull out facts, and write an answer. The sources they trust for a local service business are your own site, your Google Business Profile, your reviews, the directories that list you, and anything written about you elsewhere. If those sources disagree, or say nothing specific, the assistant names a competitor who made it easier.",
         ],
       },
       {
         heading: 'How it works with the SEO you already have',
         paragraphs: [
-          'AI search optimization sits on top of normal SEO. It does not replace it. A page still has to be indexed, fast, and clear for Google before an assistant will read it. What changes is what goes on the page: direct answers, numbers, named service areas, and structured data, instead of long introductions and vague promises.',
+          "AI search optimization sits on top of normal SEO. It doesn't replace it. A page still has to be indexed, fast, and clear for Google before an assistant will read it. What changes is what goes on the page: direct answers, numbers, named service areas, and structured data, instead of long introductions and vague promises.",
           'Our local SEO and SEO work handles the foundation. This service adds the layer that gets you quoted: entity cleanup, answer-first copy, schema, citable proof, mentions, and monthly testing against the real assistants.',
         ],
       },
@@ -232,7 +248,7 @@ export const servicePages: ServicePageData[] = [
     proof: [
       {
         label: 'Our own site',
-        text: 'Every page carries validated Organization, Service, FAQ, and Article schema, a public llms.txt file for AI crawlers, and case studies with dated numbers. It is the same build we do for clients.',
+        text: "Every page carries validated Organization, Service, FAQ, and Article schema, a public llms.txt file for AI crawlers, and case studies with dated numbers. It's the same build we do for clients.",
         href: '/marketing-advice/get-ai-to-recommend-your-business',
         linkText: 'Read how to get AI to recommend your business',
       },
@@ -244,13 +260,13 @@ export const servicePages: ServicePageData[] = [
       },
     ],
     elPaso:
-      'We are based in El Paso and test the assistants from here, so El Paso and borderland businesses see exactly what a local buyer is told. The same process works for businesses in any city.',
+      "We're based in El Paso and test the assistants from here, so El Paso and borderland businesses see exactly what a local buyer is told. The same process works for businesses in any city.",
     offerLead:
       'AI search optimization is one of the channels inside our Demand Flow system. It makes sure the buyers who ask an assistant end up on your calendar.',
     fit: [
       'You sell a service people research before they hire',
       'Your listings and site are mostly accurate and you want them airtight',
-      'You have at least a few reviews and one result you can prove',
+      "You've at least a few reviews and one result you can prove",
       'You want to be early, before every competitor in your trade does this',
     ],
     related: [
@@ -262,7 +278,7 @@ export const servicePages: ServicePageData[] = [
     faqs: [
       {
         q: 'What is the difference between AEO, GEO, and AI SEO?',
-        a: 'They are three names for the same work. AEO means answer engine optimization. GEO means generative engine optimization. AI SEO is the casual term. All of them mean making your business the answer an AI assistant gives.',
+        a: "They're three names for the same work. AEO means answer engine optimization. GEO means generative engine optimization. AI SEO is the casual term. All of them mean making your business the answer an AI assistant gives.",
       },
       {
         q: 'Which AI tools does this cover?',
@@ -270,7 +286,7 @@ export const servicePages: ServicePageData[] = [
       },
       {
         q: 'Do I still need regular SEO?',
-        a: 'Yes. An assistant will not cite a page Google cannot find. We run the SEO foundation and the AI layer together, or add the AI layer to SEO you already have.',
+        a: "Yes. An assistant won't cite a page Google can't find. We run the SEO foundation and the AI layer together, or add the AI layer to SEO you already have.",
       },
       {
         q: 'How long until an AI assistant names my business?',
@@ -294,15 +310,15 @@ export const servicePages: ServicePageData[] = [
       },
       {
         q: 'Can AI do my SEO for me?',
-        a: 'AI can draft pages, suggest keywords, and write schema, and we use it for all three. It cannot earn reviews, fix your listings, build real links, or decide what is true about your business. Pages written by AI with nothing specific in them do not get cited. The work is still the work; AI makes it faster.',
+        a: "AI can draft pages, suggest keywords, and write schema, and we use it for all three. It can't earn reviews, fix your listings, build real links, or decide what is true about your business. Pages written by AI with nothing specific in them don't get cited. The work is still the work; AI makes it faster.",
       },
       {
         q: 'Does AI SEO really work?',
-        a: 'Yes, when it means making your business easy for AI assistants to find, read, and trust. Businesses with complete listings, structured data, direct answers, and real proof get named in ChatGPT and Google AI answers. Businesses that just publish more AI-written text do not.',
+        a: "Yes, when it means making your business easy for AI assistants to find, read, and trust. Businesses with complete listings, structured data, direct answers, and real proof get named in ChatGPT and Google AI answers. Businesses that just publish more AI-written text don't.",
       },
       {
         q: 'How do I measure ROI from AI search optimization?',
-        a: 'Three ways. Ask the assistants your buyers\' questions each month and log whether you are named. Track referral traffic from chatgpt.com, perplexity.ai, and Google AI in your analytics. And ask every new lead how they found you. Then count booked jobs from those sources against what you spent.',
+        a: "Three ways. Ask the assistants your buyers' questions each month and log whether you're named. Track referral traffic from chatgpt.com, perplexity.ai, and Google AI in your analytics. And ask every new lead how they found you. Then count booked jobs from those sources against what you spent.",
       },
       pricingFaq,
     ],
@@ -322,9 +338,9 @@ export const servicePages: ServicePageData[] = [
       'We write, build, and run your Facebook and Instagram campaigns, then catch every lead with fast follow-up. The money you spend turns into booked work, not a list of names nobody called.',
     problemHeading: 'Most Facebook ads get attention. Not customers.',
     problems: [
-      ['Boosted posts and likes.', 'Likes and reach look good in a report. They do not put a job on the calendar.'],
+      ['Boosted posts and likes.', "Likes and reach look good in a report. They don't put a job on the calendar."],
       ['Lead forms nobody works.', 'A lead comes in at 7pm, nobody answers until tomorrow, and they already booked someone else.'],
-      ['No idea what a customer costs.', 'Without tracking from ad to booked job, you cannot tell which campaign is paying for itself.'],
+      ['No idea what a customer costs.', "Without tracking from ad to booked job, you can't tell which campaign is paying for itself."],
     ],
     builtHeading: 'Everything it takes to turn ads into booked work.',
     built: [
@@ -335,11 +351,11 @@ export const servicePages: ServicePageData[] = [
       ['Tracking you can trust', 'Cost per lead and cost per booked job, from ad to calendar. The ad account is yours.'],
       ['Posting, if you want it', 'Need organic posts too? We can run your Facebook and Instagram posting alongside the ads.'],
     ],
-    proofHeading: 'Facebook ads we have run',
+    proofHeading: "Facebook ads we've run",
     proof: [
       {
         label: 'Parcel Management Group',
-        text: '49 Facebook lead-form leads in 30 days at $17.70 each (August 11 to September 9, 2026), with every inquiry followed up automatically.',
+        text: "49 Facebook lead-form leads in 30 days at $17.70 each (August 11 to September 9, 2026), with every lead followed up automatically.",
         href: '/work/parcel-management-group',
         linkText: 'Read the case study',
       },
@@ -351,7 +367,7 @@ export const servicePages: ServicePageData[] = [
       },
     ],
     elPaso:
-      'We are based in El Paso and run Facebook and Instagram ads for businesses across El Paso County and the borderland, and for businesses across the country.',
+      "We're based in El Paso and run Facebook and Instagram ads for businesses across El Paso County and the borderland, and for businesses across the country.",
     offerLead:
       'Facebook ads are one of the channels inside our Demand Flow system, aimed at the people purchase intent data says are ready to buy.',
     fit: [
@@ -364,6 +380,22 @@ export const servicePages: ServicePageData[] = [
       { label: 'Do Facebook ads work for plumbers?', href: '/marketing-advice/facebook-ads-for-plumbers' },
       { label: 'Ad budget calculator', href: '/tools/ad-budget' },
       { label: 'Cost per customer calculator', href: '/tools/customer-acquisition-cost' },
+    ],
+    longform: [
+      {
+        heading: 'Facebook and Instagram ads for service businesses, in plain words',
+        paragraphs: [
+          'Facebook ads management for a home service business is not about likes or followers. It\'s about putting a clear offer in front of the right people in your area and getting them to call, fill out a lead form or book. We use purchase intent data to build the audience, so your ads go to people already looking for the services you offer instead of everyone in the zip code.',
+          'Then we write the ad, build the landing page and connect the lead form to fast follow-up. If someone fills out a form at 9 PM, they get a text back right away. That\'s where most Facebook lead generation campaigns fall apart, and it\'s the part we spend the most time on.',
+        ],
+      },
+      {
+        heading: 'What Facebook ads cost per lead for roofing, plumbing and HVAC',
+        paragraphs: [
+          'Published benchmarks for Facebook lead costs in the trades move around a lot. Roofing leads tend to cost the most because a roof is a big ticket job. HVAC and plumbing usually come in lower. The number that matters is not cost per lead, it\'s cost per booked job. A campaign with cheap leads that nobody answers is more expensive than one with pricier leads that get booked.',
+          'We track every lead from the ad to the CRM to the closed job, so you can see what a booked customer costs you on Facebook and Instagram, and we tune the campaign every week based on that number.',
+        ],
+      },
     ],
     faqs: [
       {
@@ -396,7 +428,7 @@ export const servicePages: ServicePageData[] = [
       },
       {
         q: 'How much should a local business spend on Facebook ads?',
-        a: 'Enough to get 30 to 50 leads a month, so the campaign has data to improve on. For most home service businesses that is $750 to $2,000 a month in ad spend, on top of management. Start with one offer and one audience, then add budget to what books jobs. Ad spend is paid from your own account.',
+        a: "Enough to get 30 to 50 leads a month, so the campaign has data to improve on. For most home service businesses that's $750 to $2,000 a month in ad spend, on top of management. Start with one offer and one audience, then add budget to what books jobs. Ad spend is paid from your own account.",
       },
       {
         q: 'How do Facebook ads work?',
@@ -408,7 +440,7 @@ export const servicePages: ServicePageData[] = [
       },
       {
         q: 'Are Facebook ads worth it for a small business?',
-        a: 'They are worth it when every lead gets a reply in minutes and cost per booked job is tracked. A freight client got 49 leads in 30 days at $17.70 each with automatic follow-up. They are not worth it when leads sit in an inbox until tomorrow. The ads are cheap. The missed follow-up is what costs you.',
+        a: "They're worth it when every lead gets a reply in minutes and cost per booked job is tracked. A freight client got 49 leads in 30 days at $17.70 each with automatic follow-up. They aren't worth it when leads sit in an inbox until tomorrow. The ads are cheap. The missed follow-up is what costs you.",
       },
       pricingFaq,
     ],
@@ -434,14 +466,14 @@ export const servicePages: ServicePageData[] = [
     ],
     builtHeading: 'Everything it takes to make search ads pay.',
     built: [
-      ['Account audit or rebuild', 'We start with what you have: what books work, what burns budget, and what to cut.'],
+      ['Account audit or rebuild', "We start with what you've: what books work, what burns budget, and what to cut."],
       ['High-intent campaigns', 'Keywords and campaigns aimed at people searching for your services right now.'],
       ['Ad copy', 'Written for the job the searcher wants, not a generic pitch.'],
       ['Landing pages', 'One page per service, built for calls and form fills.'],
       ['Call and form tracking', 'Every call and form traced to the campaign and keyword that drove it.'],
       ['Weekly optimization', 'Budget moved toward what books, every week. The ad account is yours.'],
     ],
-    proofHeading: 'Google Ads we have run',
+    proofHeading: "Google Ads we've run",
     proof: [
       {
         label: 'Gonzalez & Sons Roofing',
@@ -451,7 +483,7 @@ export const servicePages: ServicePageData[] = [
       },
     ],
     elPaso:
-      'We are based in El Paso and run Google Ads for businesses across El Paso County and the borderland, and for businesses across the country.',
+      "We're based in El Paso and run Google Ads for businesses across El Paso County and the borderland, and for businesses across the country.",
     offerLead:
       'Google Ads are one of the channels inside our Demand Flow system, aimed at the people purchase intent data says are ready to buy.',
     fit: [
@@ -465,6 +497,22 @@ export const servicePages: ServicePageData[] = [
       { label: 'Ad budget calculator', href: '/tools/ad-budget' },
       { label: 'Search ad preview tool', href: '/tools/search-preview' },
       { label: 'Google Local Services Ads', href: '/services/google-local-services-ads' },
+    ],
+    longform: [
+      {
+        heading: 'Google Ads management for contractors and service businesses',
+        paragraphs: [
+          'Google Ads is where people go when they need a plumber today, a roofer this week or a mechanic right now. PPC management for a service business means picking the searches that bring real jobs, writing ads that match them, and sending each click to a landing page about that exact service. A click on "water heater repair" should land on your water heater page, not your homepage.',
+          'We run search campaigns alongside Google Local Services Ads so you show up in both spots at the top of the page. Local Services Ads are capped by how many people search, so regular search ads pick up the rest of the volume.',
+        ],
+      },
+      {
+        heading: 'What Google Ads cost for home services, and who owns the account',
+        paragraphs: [
+          'Home improvement is one of the pricier categories on Google. Clicks can run from a few dollars to well over ten in competitive cities, and most service businesses spend somewhere between a thousand and five thousand a month on ads to see steady calls. The way to make that spend work is tracking calls and forms back to the keyword and the page, then cutting what doesn\'t book jobs.',
+          'The ad account is in your name, not ours. If you ever leave, you keep the account, the history and the data. Any Google Ads agency that won\'t do that is holding your business hostage.',
+        ],
+      },
     ],
     faqs: [
       {
@@ -485,7 +533,7 @@ export const servicePages: ServicePageData[] = [
       },
       {
         q: 'Should I do Google Ads or SEO?',
-        a: 'Google Ads bring calls as soon as they are live. SEO takes longer and keeps paying off. Most businesses start with ads and build SEO underneath them.',
+        a: "Google Ads bring calls as soon as they're live. SEO takes longer and keeps paying off. Most businesses start with ads and build SEO underneath them.",
       },
       {
         q: 'Do you work outside El Paso?',
@@ -493,11 +541,11 @@ export const servicePages: ServicePageData[] = [
       },
       {
         q: 'What is Google Ads?',
-        a: 'Google Ads is the paid listing at the top of a Google search. You pay each time someone clicks. For a service business, it means showing up for "AC repair near me" the minute someone types it, without waiting months for SEO. It is the fastest way to book jobs, and the fastest way to waste money if nobody tracks what each click became.',
+        a: 'Google Ads is the paid listing at the top of a Google search. You pay each time someone clicks. For a service business, it means showing up for "AC repair near me" the minute someone types it, without waiting months for SEO. It\'s the fastest way to book jobs, and the fastest way to waste money if nobody tracks what each click became.',
       },
       {
         q: 'Is Google Ads worth it for a local service business?',
-        a: 'Yes, when the campaign targets the jobs you want, in the area you serve, and every call is tracked to a booked job. Gonzalez & Sons Roofing went from 2 to 8 roofs a month with Google Ads as the lead channel. It is not worth it if calls go to voicemail or the budget runs on broad keywords across the whole city.',
+        a: "Yes, when the campaign targets the jobs you want, in the area you serve, and every call is tracked to a booked job. Gonzalez & Sons Roofing went from 2 to 8 roofs a month with Google Ads as the lead channel. It isn't worth it if calls go to voicemail or the budget runs on broad keywords across the whole city.",
       },
       {
         q: 'How do you measure Google Ads?',
@@ -513,7 +561,7 @@ export const servicePages: ServicePageData[] = [
       },
       {
         q: 'Can Google Ads target zip codes?',
-        a: 'Yes. You can target cities, zip codes, or a radius around your shop, and exclude areas you do not serve. Set it to where your crews actually go. That stops you paying for clicks from a town you will never drive to.',
+        a: "Yes. You can target cities, zip codes, or a radius around your shop, and exclude areas you don't serve. Set it to where your crews actually go. That stops you paying for clicks from a town you'll never drive to.",
       },
       {
         q: 'How long does it take for Google Ads to work?',
@@ -534,7 +582,7 @@ export const servicePages: ServicePageData[] = [
     headline: 'Google Local Services Ads That Put You at the Very Top.',
     sub: 'Local Services Ads (LSA) management, from Google Guaranteed and Google Screened setup to answering every lead. Nationwide and in El Paso.',
     intro:
-      'Local Services Ads sit above everything else on Google, with a badge that tells searchers you are checked and trusted. You pay per lead, not per click. We get you verified, set the profile up to win, and make sure every lead gets answered.',
+      "Local Services Ads sit above everything else on Google, with a badge that tells searchers you're checked and trusted. You pay per lead, not per click. We get you verified, set the profile up to win, and make sure every lead gets answered.",
     problemHeading: 'Most Local Services Ads profiles lose leads they already paid for.',
     problems: [
       ['Stuck in verification.', 'Background checks, licenses, and insurance paperwork stall, and the ads never go live.'],
@@ -552,7 +600,7 @@ export const servicePages: ServicePageData[] = [
     ],
     proof: [],
     elPaso:
-      'We are based in El Paso and run Local Services Ads for businesses across El Paso County and the borderland, and for businesses across the country.',
+      "We're based in El Paso and run Local Services Ads for businesses across El Paso County and the borderland, and for businesses across the country.",
     offerLead:
       'Local Services Ads can run inside our Demand Flow system alongside the intent-targeted channels.',
     fit: [
@@ -565,6 +613,22 @@ export const servicePages: ServicePageData[] = [
       { label: 'Lead response calculator', href: '/tools/lead-response' },
       { label: 'Google Ads management', href: '/services/google-ads' },
       { label: 'Local SEO services', href: '/services/local-seo' },
+    ],
+    longform: [
+      {
+        heading: 'How Google Local Services Ads work for home service businesses',
+        paragraphs: [
+          'Local Services Ads sit at the very top of Google, above the regular ads and the map, with a verified badge next to your name. You don\'t pay per click. You pay per lead, when someone calls or messages you through the ad. You set a weekly budget, and you can dispute leads that aren\'t real jobs.',
+          'Getting the badge means passing Google\'s checks: license, insurance and background checks for the owner and the people in the field. We handle the setup and the verification paperwork, then manage the profile, the reviews and the budget so the leads keep coming at a price that makes sense for your trade.',
+        ],
+      },
+      {
+        heading: 'What Local Services Ads cost per lead',
+        paragraphs: [
+          'Industry benchmarks put the average Local Services lead for home service contractors somewhere around fifty dollars, with most trades landing between roughly twenty five and eighty. Roofing runs higher, HVAC and plumbing usually lower. Your city and your review count move the number too.',
+          'The real question is how many of those leads turn into booked jobs. We connect every Local Services lead to your CRM and your follow-up, so a missed call doesn\'t become a wasted lead, and we track the cost of a booked customer, not just the cost of a phone ring.',
+        ],
+      },
     ],
     faqs: [
       {
@@ -593,11 +657,11 @@ export const servicePages: ServicePageData[] = [
       },
       {
         q: 'How do Local Services Ads decide who shows first?',
-        a: 'Google ranks Local Services Ads on review count and rating, how fast you answer calls and messages, your hours, your distance from the searcher, and how many leads you have paused or disputed. Answering every call and asking every customer for a review are the two biggest levers. Budget matters less than responsiveness.',
+        a: "Google ranks Local Services Ads on review count and rating, how fast you answer calls and messages, your hours, your distance from the searcher, and how many leads you've paused or disputed. Answering every call and asking every customer for a review are the two biggest levers. Budget matters less than responsiveness.",
       },
       {
         q: 'How much do Google Local Services Ads cost?',
-        a: 'You pay per lead, not per click. Lead prices vary by trade and city, from about $15 for a cleaning lead to $50 or more for roofing or HVAC. You set a weekly budget and can dispute leads that were spam or outside your area. There is no fee for the Google Guaranteed badge itself.',
+        a: "You pay per lead, not per click. Lead prices vary by trade and city, from about $15 for a cleaning lead to $50 or more for roofing or HVAC. You set a weekly budget and can dispute leads that were spam or outside your area. There's no fee for the Google Guaranteed badge itself.",
       },
       {
         q: 'How do I get the Google Guaranteed badge?',
@@ -629,9 +693,9 @@ export const servicePages: ServicePageData[] = [
       'We fix what stops Google from understanding your site, build the pages your customers are searching for, and make your business easy for AI answers like ChatGPT and Google’s AI Overviews to cite.',
     problemHeading: 'Most SEO reports rankings. Not customers.',
     problems: [
-      ['Rankings for words nobody buys from.', 'Page 1 for a term that never brings a call is not a win.'],
-      ['A site Google cannot read.', 'Slow pages, missing structure, and thin service pages keep good businesses buried.'],
-      ['Invisible in AI answers.', 'More people ask ChatGPT and Google’s AI who to call. If your site does not answer clearly, you are not in the answer.'],
+      ['Rankings for words nobody buys from.', "Page 1 for a term that never brings a call isn't a win."],
+      ["A site Google can't read.", 'Slow pages, missing structure, and thin service pages keep good businesses buried.'],
+      ['Invisible in AI answers.', "More people ask ChatGPT and Google’s AI who to call. If your site doesn't answer clearly, you aren't in the answer."],
     ],
     builtHeading: 'Everything it takes to be found by buyers.',
     built: [
@@ -652,12 +716,12 @@ export const servicePages: ServicePageData[] = [
       },
     ],
     elPaso:
-      'We are based in El Paso and do SEO for businesses across El Paso County and the borderland, and for businesses across the country.',
+      "We're based in El Paso and do SEO for businesses across El Paso County and the borderland, and for businesses across the country.",
     offerLead:
       'SEO backs up the paid work inside our Demand Flow system, so the buyers we reach can find and trust you.',
     fit: [
       'Customers search for your services online',
-      'You want leads that do not stop when ad spend does',
+      "You want leads that don't stop when ad spend does",
       'You can give it months, not weeks',
       'You want reports in leads, not just rankings',
     ],
@@ -665,6 +729,22 @@ export const servicePages: ServicePageData[] = [
       { label: 'SEO foundations checker', href: '/tools/seo-foundations' },
       { label: 'Show up when people ask AI who to call', href: '/marketing-advice/ai-search-for-local-business' },
       { label: 'Local SEO and Google Maps', href: '/services/local-seo' },
+    ],
+    longform: [
+      {
+        heading: 'SEO for service businesses, without the jargon',
+        paragraphs: [
+          'SEO for a service business means showing up on Google when someone searches for what you do, without paying for every click. It takes a site that loads fast, a page for each service you sell, plain answers to the questions people type into Google, and other websites that mention you. We build the pages, fix the technical stuff and earn the mentions.',
+          'It also means showing up in AI answers now. ChatGPT, Google AI Overviews and Perplexity read the same pages Google does. Clear facts, real numbers and consistent business details across the web are what get you named.',
+        ],
+      },
+      {
+        heading: 'How long SEO takes and what it costs',
+        paragraphs: [
+          'Most service businesses see early movement in two to three months and real results in three to six, with bigger gains by month six to twelve. The businesses that quit at month three are quitting right before it starts to work. That\'s why we pair SEO with paid ads, so you have calls coming in while the organic side builds.',
+          'Monthly SEO for a local service business usually runs from several hundred to a few thousand dollars a month depending on the market and how many pages and locations you need. We go over the scope on a call, and the plan is tied to booked jobs, not rankings.',
+        ],
+      },
     ],
     faqs: [
       {
@@ -677,7 +757,7 @@ export const servicePages: ServicePageData[] = [
       },
       {
         q: 'What about AI search like ChatGPT?',
-        a: 'We build pages with clear, citable answers and the structured data AI tools read. It is part of our SEO work, not an extra.',
+        a: "We build pages with clear, citable answers and the structured data AI tools read. It's part of our SEO work, not an extra.",
       },
       {
         q: 'What is the difference between SEO and local SEO?',
@@ -689,7 +769,7 @@ export const servicePages: ServicePageData[] = [
       },
       {
         q: 'What is SEO?',
-        a: 'SEO, search engine optimization, is the work of making your website show up when someone searches Google for what you sell. It covers the words on your pages, how fast the site loads, how it is structured, and how many trusted sites link to it. For a service business, SEO means ranking for "roof repair" or "emergency plumber" plus your city, without paying per click.',
+        a: 'SEO, search engine optimization, is the work of making your website show up when someone searches Google for what you sell. It covers the words on your pages, how fast the site loads, how it\'s structured, and how many trusted sites link to it. For a service business, SEO means ranking for "roof repair" or "emergency plumber" plus your city, without paying per click.',
       },
       {
         q: 'Is SEO still worth it in 2026 with AI search?',
@@ -697,7 +777,7 @@ export const servicePages: ServicePageData[] = [
       },
       {
         q: 'Is SEO dead now that AI answers questions?',
-        a: 'No. Fewer clicks go to page one than before, but the businesses AI assistants recommend are the ones with strong, well-structured pages, consistent listings, and real reviews. That is SEO. What is dead is thin content written for keywords. Pages have to earn a citation now, not just a ranking.',
+        a: "No. Fewer clicks go to page one than before, but the businesses AI assistants recommend are the ones with strong, well-structured pages, consistent listings, and real reviews. That's SEO. What is dead is thin content written for keywords. Pages have to earn a citation now, not just a ranking.",
       },
       {
         q: 'What does an SEO agency actually do each month?',
@@ -737,7 +817,7 @@ export const servicePages: ServicePageData[] = [
       'When someone nearby searches for what you do, the map results get the calls. We optimize your Google Business Profile, set up a steady review system, and make your website back it up.',
     problemHeading: 'Most local businesses are invisible on the map.',
     problems: [
-      ['A half-finished profile.', 'Wrong categories, missing services, and no photos tell Google you are not the best answer.'],
+      ['A half-finished profile.', "Wrong categories, missing services, and no photos tell Google you aren't the best answer."],
       ['Too few reviews.', 'Nearby buyers compare star ratings and review counts before they call anyone.'],
       ['Listings that disagree.', 'Different names, phone numbers, or hours across the web make Google trust you less.'],
     ],
@@ -760,12 +840,12 @@ export const servicePages: ServicePageData[] = [
       },
     ],
     elPaso:
-      'We are based in El Paso and do local SEO for businesses across El Paso County and the borderland, and for businesses across the country.',
+      "We're based in El Paso and do local SEO for businesses across El Paso County and the borderland, and for businesses across the country.",
     offerLead:
       'Local SEO backs up the paid work inside our Demand Flow system, so the buyers we reach can find and trust you.',
     fit: [
       'Customers find you on Google Maps or search “near me”',
-      'You have or can set up a Google Business Profile',
+      "You've or can set up a Google Business Profile",
       'You can ask customers for reviews after each job',
       'Storefront or service area, both work',
     ],
@@ -773,6 +853,22 @@ export const servicePages: ServicePageData[] = [
       { label: 'SEO foundations checker', href: '/tools/seo-foundations' },
       { label: 'Lead response calculator', href: '/tools/lead-response' },
       { label: 'SEO for your website', href: '/services/seo' },
+    ],
+    longform: [
+      {
+        heading: 'Local SEO and the Google map pack, explained',
+        paragraphs: [
+          'When someone searches "roofer near me" or "HVAC repair" plus your city, Google shows three businesses on a map before anything else. That\'s the map pack, and local SEO is how you get into it. Google ranks the map on relevance, distance and prominence. In plain words: does your profile say you do this, are you close to the searcher, and does the web trust you.',
+          'Your Google Business Profile is the center of all of it. We set up the right categories and service areas, fill it out completely, keep the photos and posts fresh, and build a steady flow of reviews. Then we make sure your name, address and phone number match on every directory that matters.',
+        ],
+      },
+      {
+        heading: 'What moves a contractor up in local search',
+        paragraphs: [
+          'An incomplete or unverified Google Business Profile is still the most common reason a contractor is missing from the map. After that it\'s wrong service area settings, mismatched business details across the web, too few recent reviews, and no pages on your website for the cities you serve.',
+          'We fix those in order, build a location page for each area you want to win, and keep ownership of your profile locked down so you never lose it during a re-verification. Local SEO is the cheapest high-impact work in marketing for a service business, and it\'s usually where we start.',
+        ],
+      },
     ],
     faqs: [
       {
@@ -793,11 +889,11 @@ export const servicePages: ServicePageData[] = [
       },
       {
         q: 'What is local SEO?',
-        a: 'Local SEO is the work of showing up in the Google map pack and in "near me" searches for your area. It is driven by your Google Business Profile, your reviews, your name, address, and phone number being identical everywhere, and pages on your site for each area you serve. For a service business, local SEO is usually the highest-return marketing there is.',
+        a: 'Local SEO is the work of showing up in the Google map pack and in "near me" searches for your area. It\'s driven by your Google Business Profile, your reviews, your name, address, and phone number being identical everywhere, and pages on your site for each area you serve. For a service business, local SEO is usually the highest-return marketing there\'s.',
       },
       {
         q: 'What is a Google Business Profile and why does it matter?',
-        a: 'A Google Business Profile is the free listing that shows your business on Google Maps and in the map pack with your hours, phone, reviews, and photos. It is the single biggest factor in local search. Most profiles we audit are half built: wrong category, empty service area, no photos, no replies to reviews. Fixing those usually moves rankings within weeks.',
+        a: "A Google Business Profile is the free listing that shows your business on Google Maps and in the map pack with your hours, phone, reviews, and photos. It's the single biggest factor in local search. Most profiles we audit are half built: wrong category, empty service area, no photos, no replies to reviews. Fixing those usually moves rankings within weeks.",
       },
       {
         q: 'How do I rank higher on Google Maps?',
@@ -809,11 +905,11 @@ export const servicePages: ServicePageData[] = [
       },
       {
         q: 'Is it worth paying for local SEO?',
-        a: 'For a service business, yes. A map pack call is someone nearby who needs the job now and did not cost a click. The Pipe Whisperers went from about $60,000 a year to about $250,000 with local SEO as one of three channels. It is not worth paying for if the agency cannot show you calls from Maps in your reporting.',
+        a: "For a service business, yes. A map pack call is someone nearby who needs the job now and didn't cost a click. The Pipe Whisperers went from about $60,000 a year to about $250,000 with local SEO as one of three channels. It isn't worth paying for if the agency can't show you calls from Maps in your reporting.",
       },
       {
         q: 'Why do citations and links matter for local SEO?',
-        a: 'Citations are listings of your name, address, and phone on directories like Yelp, Bing, Apple, and the BBB. When they all match, Google trusts the business exists where it says. Links from local sites, suppliers, and trade associations add prominence. Together they are the trust layer under the map pack.',
+        a: "Citations are listings of your name, address, and phone on directories like Yelp, Bing, Apple, and the BBB. When they all match, Google trusts the business exists where it says. Links from local sites, suppliers, and trade associations add prominence. Together they're the trust layer under the map pack.",
       },
       {
         q: 'Does a Google Business Profile cost money?',
@@ -864,7 +960,7 @@ export const servicePages: ServicePageData[] = [
     ],
     proof: [],
     elPaso:
-      'We are based in El Paso and run cold email for businesses here and across the country. Cold email is not tied to a location, so we target buyers wherever they are.',
+      "We're based in El Paso and run cold email for businesses here and across the country. Cold email isn't tied to a location, so we target buyers wherever they're.",
     offerLead:
       'Cold email can run inside our Demand Flow system, sent to the businesses purchase intent data says are in the market.',
     fit: [
@@ -877,6 +973,22 @@ export const servicePages: ServicePageData[] = [
       { label: 'Demand Intelligence: find buyers showing intent', href: '/demand-intelligence' },
       { label: 'Cost per customer calculator', href: '/tools/customer-acquisition-cost' },
       { label: 'Revenue goal calculator', href: '/tools/revenue-goal' },
+    ],
+    longform: [
+      {
+        heading: 'Cold email that gets replies, not spam complaints',
+        paragraphs: [
+          'Cold email outreach works when the list is tight, the email is short and the inbox setup is right. We build the list from purchase intent data and real business records, so you\'re writing to companies that have been looking for what you sell. Then the first email is a few sentences, one ask, no links. Follow-ups go out over the next couple of weeks, because the first follow-up alone brings in a big share of the replies.',
+          'Published B2B benchmarks put a typical cold email reply rate in the low single digits, with well-targeted campaigns doing much better. The difference is almost always the list and the offer, not the subject line.',
+        ],
+      },
+      {
+        heading: 'Deliverability is the whole game',
+        paragraphs: [
+          'Google and Microsoft now reject bulk mail that isn\'t set up right. That means SPF, DKIM and DMARC on the sending domains, separate domains so your main one stays protected, warmed-up inboxes, low daily volume per inbox, and bounce and complaint rates kept near zero. We handle all of that before a single email goes out.',
+          'Every reply lands in your CRM with the context of what they were looking for, and interested replies get a fast, personal follow-up and a booking link. Cold email is one channel inside the Demand Flow system, and it\'s the one that works best for B2B services and commercial work.',
+        ],
+      },
     ],
     faqs: [
       {
@@ -901,7 +1013,7 @@ export const servicePages: ServicePageData[] = [
       },
       {
         q: 'What is cold email?',
-        a: 'Cold email is a short, personal email to a business that has not heard from you, asking for a reply or a meeting. It works for B2B services when the list is accurate, the sending domains are warmed up, and the message is about the reader\'s problem, not your company. It is sent from separate domains so your main email stays safe.',
+        a: "Cold email is a short, personal email to a business that hasn't heard from you, asking for a reply or a meeting. It works for B2B services when the list is accurate, the sending domains are warmed up, and the message is about the reader's problem, not your company. It's sent from separate domains so your main email stays safe.",
       },
       {
         q: 'How many cold emails does it take to get a meeting?',
@@ -909,7 +1021,7 @@ export const servicePages: ServicePageData[] = [
       },
       {
         q: 'Do cold emails go to spam?',
-        a: 'They do when they are sent from your main domain, in bulk, with links and attachments, to a bad list. We send from separate warmed-up domains, keep each message short and plain, verify every address, and cap volume per inbox. Done that way, most cold email lands in the inbox.',
+        a: "They do when they're sent from your main domain, in bulk, with links and attachments, to a bad list. We send from separate warmed-up domains, keep each message short and plain, verify every address, and cap volume per inbox. Done that way, most cold email lands in the inbox.",
       },
       {
         q: 'How long should a cold email be?',
