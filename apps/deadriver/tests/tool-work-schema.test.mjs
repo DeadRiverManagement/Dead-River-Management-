@@ -43,7 +43,7 @@ const toolFaqs = {
     [noEmail.q, noEmail.a],
   ],
   'lead-response': [
-    ['What does the Lead Response Scorecard find?', 'It finds gaps between a new inquiry and a useful reply so you can tighten follow-up speed.'],
+    ['What does the Lead Response Scorecard find?', 'It finds gaps between a new lead and a useful reply so you can tighten follow-up speed.'],
     ['Who is this scorecard for?', 'Growing businesses nationwide that lose leads to slow or unclear responses.'],
     [noEmail.q, noEmail.a],
   ],
@@ -64,14 +64,14 @@ const toolFaqs = {
   ],
   'website-conversion': [
     ['What does the Website Conversion Review assess?', 'It assesses the path from first visit to next step so you can find friction on the site.'],
-    ['Who is this review for?', 'Growing businesses nationwide that need a clearer path from visit to inquiry or sale.'],
+    ['Who is this review for?', 'Growing businesses nationwide that need a clearer path from visit to lead or sale.'],
     [noEmail.q, noEmail.a],
   ],
 };
 
 const workFaqs = [
   ['What kind of results are on this page?', 'Real client outcomes Dead River Management helped deliver, including Total Auto Repair going from $20K to $100K months, The Pipe Whisperers from $60K to $250K a year, and Wicked Logistics reaching 5-6 leads a day.'],
-  ['Are these guaranteed outcomes for every business?', 'No. These are case studies for specific clients. Demand Flow for accepted businesses targets $50,000 in new revenue in 45-60 days, or service fees refunded plus $500; ad spend is not refunded.'],
+  ['Are these guaranteed outcomes for every business?', "No. These are case studies for specific clients. Demand Flow for accepted businesses targets $50,000 in new revenue in 45-60 days, or service fees refunded plus $500; ad spend isn't refunded."],
   ['Can I see the full story for each client?', 'Yes. Each card links to a dedicated case study page with the before-and-after numbers for that business.'],
 ];
 
@@ -284,6 +284,6 @@ test('built tools, work hub, and case studies expose locked schema and FAQ', () 
     .filter((name) => /^sitemap-\d+\.xml$/.test(name))
     .flatMap((name) => [...readFileSync(join('dist', name), 'utf8').matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]))
     .filter((loc) => !/sitemap-\d+\.xml$/.test(loc));
-  assert.equal(locs.length, 86, 'sitemap URL count');
-  assert.equal(new Set(locs).size, 86, 'sitemap URLs are unique');
+  assert.equal(locs.length, 85, 'sitemap URL count');
+  assert.equal(new Set(locs).size, 85, 'sitemap URLs are unique');
 });
