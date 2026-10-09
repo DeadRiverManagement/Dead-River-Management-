@@ -278,8 +278,6 @@ const schemas = [org, site, ...(schema ? [schema] : [])];
           ['Industries', industryPages.map((p) => [p.name, `/industries/${p.slug}`])],
           ['Clients', [
             ['Sign in', 'https://app.deadrivermanagement.com/v2/'],
-            ['Onboarding', '/onboarding'],
-            ['Solutions', '/solutions'],
             ['Scale playbook', '/free-playbook'],
           ]],
         ].map(([group, links]) => (

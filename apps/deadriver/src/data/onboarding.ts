@@ -56,7 +56,7 @@ export const CORE3_AD_BUDGET_RANGES = {
 const NATIONWIDE_ADDRESS = {
   addressPlaceholder: 'City, State',
   addressHelp:
-    'City and state is enough. Use the address customers should see, anywhere you serve. Do not use a home street.',
+    "City and state is enough. Use the address customers should see, anywhere you serve. Don't use a home street.",
 } as const;
 
 function core3AdBudgetExtras(range: string): OnboardingSection[] {
@@ -277,7 +277,7 @@ export const ONBOARDING_PLANS: Record<string, OnboardingPlan> = {
             type: 'textarea',
             required: true,
             rows: 3,
-            help: 'A link to the listing, or how we get access. We do not need the password here.',
+            help: "A link to the listing, or how we get access. We don't need the password here.",
           },
           {
             name: 'review_request_source',
@@ -323,7 +323,7 @@ export const ONBOARDING_PLANS: Record<string, OnboardingPlan> = {
             type: 'textarea',
             required: true,
             rows: 2,
-            help: 'A link to the listing, or how we get access. We do not need the password here.',
+            help: "A link to the listing, or how we get access. We don't need the password here.",
           },
           {
             name: 'pages_that_must_stay',
@@ -354,7 +354,7 @@ export const ONBOARDING_PLANS: Record<string, OnboardingPlan> = {
             type: 'textarea',
             required: true,
             rows: 3,
-            help: 'How we get into the ads accounts. We do not need the password here.',
+            help: "How we get into the ads accounts. We don't need the password here.",
           },
           {
             name: 'monthly_ad_budget',
@@ -400,7 +400,7 @@ export const ONBOARDING_PLANS: Record<string, OnboardingPlan> = {
             type: 'select',
             required: true,
             options: [
-              { value: 'We have a domain', label: 'We have a domain' },
+              { value: "We've a domain", label: "We've a domain" },
               { value: 'We need a domain', label: 'We need a domain' },
               { value: 'Not sure', label: 'Not sure' },
             ],
@@ -443,7 +443,7 @@ export const ONBOARDING_PLANS: Record<string, OnboardingPlan> = {
             type: 'textarea',
             required: true,
             rows: 3,
-            help: 'How we reach the Google listing and the ads accounts. We do not need passwords here.',
+            help: "How we reach the Google listing and the ads accounts. We don't need passwords here.",
           },
           {
             name: 'ad_budget_60_days',
@@ -472,7 +472,7 @@ export const ONBOARDING_PLANS: Record<string, OnboardingPlan> = {
     description:
       'Tell us how to start Foundation setup and your monthly ad budget. Available to businesses nationwide.',
     lede:
-      'You paid for Foundation. This form tells us who you are, the business the public sees, and what you can spend on ads each month. We work with growing businesses nationwide.',
+      "You paid for Foundation. This form tells us who you're, the business the public sees, and what you can spend on ads each month. We work with growing businesses nationwide.",
     extras: core3AdBudgetExtras(CORE3_AD_BUDGET_RANGES.foundation),
     ...NATIONWIDE_ADDRESS,
   },
@@ -484,7 +484,7 @@ export const ONBOARDING_PLANS: Record<string, OnboardingPlan> = {
     description:
       'Tell us how to start Growth Partner setup and your monthly ad budget. Available to businesses nationwide.',
     lede:
-      'You paid for Growth Partner. This form tells us who you are, the business the public sees, and what you can spend on ads each month. We work with growing businesses nationwide.',
+      "You paid for Growth Partner. This form tells us who you're, the business the public sees, and what you can spend on ads each month. We work with growing businesses nationwide.",
     extras: core3AdBudgetExtras(CORE3_AD_BUDGET_RANGES['growth-partner']),
     ...NATIONWIDE_ADDRESS,
   },
@@ -496,7 +496,7 @@ export const ONBOARDING_PLANS: Record<string, OnboardingPlan> = {
     description:
       'Tell us how to start Scale setup and your monthly ad budget. Available to businesses nationwide.',
     lede:
-      'You paid for Scale. This form tells us who you are, the business the public sees, and what you can spend on ads each month. We work with growing businesses nationwide.',
+      "You paid for Scale. This form tells us who you're, the business the public sees, and what you can spend on ads each month. We work with growing businesses nationwide.",
     extras: core3AdBudgetExtras(CORE3_AD_BUDGET_RANGES.scale),
     ...NATIONWIDE_ADDRESS,
   },

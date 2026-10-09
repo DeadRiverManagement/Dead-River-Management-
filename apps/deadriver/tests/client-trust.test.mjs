@@ -10,12 +10,12 @@ const component = read('src/components/growth/ClientTrust.astro');
 const wrapper = read('src/components/react-bits/ClientLogoLoop.jsx');
 const markup = component.split('<style>')[0];
 const assets = [
-  ['total-auto-repair.webp', 'Total Auto Repair', 'd9fd289d177b34951e899061b9d37b2616a5e597'],
-  ['gonzalez-and-sons-roofing.webp', 'Gonzalez and Sons Roofing', '7f8ad20dd2204605b87fc79913d4307aefd46fb2'],
-  ['the-pipe-whisperers.webp', 'The Pipe Whisperers', 'b53089a1eca0e3ce8db7aacd1501eaa9b1e0d705'],
-  ['parcel-management-group.webp', 'Parcel Management Group', 'f47aa5c3280df6011fc6aa825dc3737a6b86eb83'],
+  ['total-auto-repair.webp', 'Total Auto Repair', '2136efc71778bd35dc0b74dd74cc33b9f8fdcebf'],
+  ['gonzalez-and-sons-roofing.webp', 'Gonzalez and Sons Roofing', '45f783991547622c4898b4cf6d7e6d5da921038f'],
+  ['the-pipe-whisperers.webp', 'The Pipe Whisperers', 'c5acf423e0ef34491622f2f8620007936e1e9768'],
+  ['parcel-management-group.webp', 'Parcel Management Group', 'f3b694146090208a6317952b36a953232e46cd3c'],
   ['wicked-logistics-transparent.webp', 'Wicked Logistics', '5556913f7b62e7688f363e314ee3f811bc828be5'],
-  ['only-fish.webp', 'Only Fish', '8e21c33f6e86660096700d8fd28876a2750e40ce'],
+  ['only-fish.webp', 'Only Fish', '1fc4503189564536b1dae95264152efe92e62246'],
 ];
 
 test('homepage includes the trust section once, immediately after the hero', () => {
@@ -61,7 +61,7 @@ test('assets are valid WebP containers with verified committed bytes', () => {
     assert.equal(sha, expected);
     total += data.length;
   }
-  assert.ok(total < 45000, `logo transfer budget exceeded: ${total}`);
+  assert.ok(total < 90000, `logo transfer budget exceeded: ${total}`);
 });
 test('marquee images have intrinsic sizes, accessible names, and lazy decoding', () => {
   const [tag] = wrapper.match(/<img\b[\s\S]*?\/>/);

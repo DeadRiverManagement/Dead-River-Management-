@@ -436,7 +436,7 @@ export const caseStudyPages: CaseStudyPage[] = [
       ],
       after: 'They also hired 2 additional crews to handle the increased workload.',
       quote:
-        'We used to pray for leads. Now we have more than we can handle. Dead River Management didn’t just help us grow, they helped us build a real business.',
+        "We used to pray for leads. Now we've more than we can handle. Dead River Management didn’t just help us grow, they helped us build a real business.",
       cite: 'Gonzalez, Owner, Gonzalez & Sons Roofing',
     },
     beforeAfter: [
@@ -506,7 +506,7 @@ export const caseStudyPages: CaseStudyPage[] = [
     headline:
       'From 1-2 leads/week to 5-6 leads/day in 3 months. One lead became a $1.2 million contract.',
     intro: [
-      'Wicked Logistics was stuck at 1-2 inbound leads per week with no predictable system for bringing in new shipping customers. We rebuilt their lead generation engine with new ads, a landing page built to capture shipping inquiries, and follow-up that gets every lead a response fast.',
+      "Wicked Logistics was stuck at 1-2 inbound leads per week with no predictable system for bringing in new shipping customers. We rebuilt their lead generation engine with new ads, a landing page built to capture shipping leads, and follow-up that gets every lead a response fast.",
       '3 months later, they’re getting 5-6 leads per day, and one of those leads became a $1.2 million/year shipping contract.',
     ],
     stats: [
@@ -523,20 +523,20 @@ export const caseStudyPages: CaseStudyPage[] = [
       ],
       listLead: 'Their challenges:',
       list: [
-        'Website wasn’t mobile-friendly (most freight inquiries happen on mobile)',
+        "Website wasn’t mobile-friendly (most freight leads happen on mobile)",
         'No Google Ads or search campaigns (100% reliant on word-of-mouth and referrals)',
-        'No landing page optimized for shipping inquiries (generic contact form, no clear CTA)',
+        "No landing page optimized for shipping leads (generic contact form, no clear CTA)",
         'No CRM or follow-up workflow (leads would come in and get lost)',
         'No fast response system (leads would wait days for a response)',
       ],
       after:
-        'The owner knew they could handle more work, but they didn’t have a system for bringing in qualified shipping inquiries consistently.',
+        "The owner knew they could handle more work, but they didn’t have a system for bringing in qualified shipping leads consistently.",
     },
     solution: {
       heading: 'What we did: Mobile-first website, Google Ads, and automated follow-up.',
       intro: 'We built a complete freight lead generation system focused on three things:',
       goals: [
-        'Get more qualified shipping inquiries from businesses actively looking for freight services',
+        "Get more qualified shipping leads from businesses actively looking for freight services",
         'Convert more website visitors into quote requests',
         'Follow up with every lead fast (within 1 hour)',
       ],
@@ -546,10 +546,10 @@ export const caseStudyPages: CaseStudyPage[] = [
           title: 'Month 1: Foundation & website rebuild',
           items: [
             'Rebuilt website for mobile conversions (click-to-call buttons, easy quote request forms)',
-            'Created dedicated landing page for freight quotes (optimized for shipping inquiries)',
+            "Created dedicated landing page for freight quotes (optimized for shipping leads)",
             'Set up call tracking and conversion tracking to measure which ads were driving leads',
             'Set up CRM follow-up workflow (every lead gets assigned to a sales rep immediately)',
-            'Created automated fast response system (text + email within 1 hour of inquiry)',
+            "Created automated fast response system (text + email within 1 hour of lead)",
           ],
         },
         {
@@ -588,7 +588,7 @@ export const caseStudyPages: CaseStudyPage[] = [
       ],
       after: 'The $1.2M contract alone paid for the entire marketing investment 160x over.',
       quote:
-        'Dead River turned our website into a lead generation machine. We went from hoping the phone would ring to getting 5-6 qualified inquiries every single day. And one of those leads became a $1.2 million contract. That’s life-changing.',
+        "Dead River turned our website into a lead generation machine. We went from hoping the phone would ring to getting 5-6 qualified leads every single day. And one of those leads became a $1.2 million contract. That’s life-changing.",
       cite: 'JR, Owner, Wicked Logistics',
     },
     beforeAfter: [
@@ -633,7 +633,7 @@ export const caseStudyPages: CaseStudyPage[] = [
         ['Result', '1-2 leads/week → 5-6 leads/day (25x growth)'],
       ],
       did: [
-        'Rebuilt website (mobile-first, optimized for shipping inquiries)',
+        "Rebuilt website (mobile-first, optimized for shipping leads)",
         'Created landing page for freight quotes',
         'Launched Google Ads (search campaigns)',
         'Set up CRM follow-up workflow',

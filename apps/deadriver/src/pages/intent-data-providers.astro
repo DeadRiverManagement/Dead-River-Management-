@@ -33,17 +33,17 @@ const priceRows = [
 ];
 const criteria = [
   ['B2B and B2C coverage', 'Decide whether you need company-level business signals, consumer audiences, or both. Many intent data providers specialize in only one side.'],
-  ['Signal source and freshness', 'Ask what activity contributes to a signal, how recently it occurred, how frequently data refreshes, and what a signal does not prove.'],
+  ['Signal source and freshness', "Ask what activity contributes to a signal, how recently it occurred, how frequently data refreshes, and what a signal doesn't prove."],
   ['Identity and visitor matching', 'Confirm whether the platform only scores companies or can also support eligible person-level audiences and website visitor identification.'],
   ['Audience activation', 'Check whether audiences can move into the advertising platforms, CRM, and sales workflows your team actually uses.'],
   ['Pricing and limits', 'Compare monthly access, record or credit limits, seats, exports, destinations, onboarding costs, and contract length.'],
-  ['Privacy and permitted use', 'A provider should explain coverage and restrictions clearly. Intent or identity data does not automatically create consent for outreach.'],
+  ['Privacy and permitted use', "A provider should explain coverage and restrictions clearly. Intent or identity data doesn't automatically create consent for outreach."],
 ];
 const faqs = [
   ['What is an intent data provider?', 'An intent data provider collects or organizes behavioral signals that may indicate people or businesses are researching particular topics, products, or services.'],
   ['Which intent data provider is best?', 'The best provider depends on whether you need B2B, B2C, visitor identification, advertising activation, sales prioritization, or a combination. Compare coverage, freshness, integrations, limits, and permitted use.'],
   ['How does Demand Intelligence pricing work?', 'Pricing varies widely by coverage, seats, records, exports, integrations, and contract terms. Dead River Demand Intelligence scope and fees are confirmed during a demo based on the use case.'],
-  ['Does intent data guarantee someone is ready to buy?', 'No. Intent data is a prioritization signal. It does not guarantee identity, interest, timing, permission, or a purchase.'],
+  ['Does intent data guarantee someone is ready to buy?', "No. Intent data is a prioritization signal. It doesn't guarantee identity, interest, timing, permission, or a purchase."],
 ];
 const schema = [
   {
@@ -74,7 +74,7 @@ const schema = [
   <Hero scene="signals"
     eyebrow="Intent data providers · Independent buying guide"
     title="Compare intent data providers by what your team can actually use."
-    intro="The best buyer intent data platform is not the one with the longest feature list. It is the one with the right coverage, fresh enough signals, usable activation, clear limits, and responsible rules for your market."
+    intro="The best buyer intent data platform isn't the one with the longest feature list. It's the one with the right coverage, fresh enough signals, usable activation, clear limits, and responsible rules for your market."
   >
     <div class="button-row">
       <a class="button" href="/demand-intelligence">See Dead River Demand Intelligence <Arrow /></a>
@@ -129,7 +129,7 @@ const schema = [
   <section class="section wrap">
     <div class="section-head">
       <div><p class="eyebrow">Six buying criteria</p><h2>What to ask every intent data provider.</h2></div>
-      <p>Use the same questions in every demo so a polished dashboard does not hide weak coverage, stale data, or unusable exports.</p>
+      <p>Use the same questions in every demo so a polished dashboard doesn't hide weak coverage, stale data, or unusable exports.</p>
     </div>
     <div class="capability-grid">
       {criteria.map(([h, p]) => <article><h3>{h}</h3><p>{p}</p></article>)}
@@ -162,13 +162,13 @@ const schema = [
     </div>
     <div class="feature-grid">
       <article class="feature-panel"><h3>Full platform access</h3><p><strong>Scope confirmed on a demo.</strong> Exact coverage, destinations, and agency arrangements are confirmed during the demo.</p></article>
-      <article class="feature-panel"><h3>Use signals responsibly</h3><p>Signals help prioritize attention. They do not prove someone will buy and do not grant permission for unsolicited outreach.</p></article>
+      <article class="feature-panel"><h3>Use signals responsibly</h3><p>Signals help prioritize attention. They don't prove someone will buy and don't grant permission for unsolicited outreach.</p></article>
     </div>
   </section>
 
   <section class="section wrap">
     <div class="section-head"><div><p class="eyebrow">Common questions</p><h2>Intent data provider FAQ.</h2></div></div>
-    <div class="faq-list">
+    <div class="faq">
       {faqs.map(([q, a]) => <details><summary>{q}</summary><p>{a}</p></details>)}
     </div>
   </section>

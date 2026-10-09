@@ -5,11 +5,11 @@ export type FaqItem = { q: string; a: string };
 export const homeFaq: FaqItem[] = [
   {
     q: 'What does Dead River Management actually do?',
-    a: 'We build and manage the demand, conversion, follow-up, and measurement infrastructure behind growth. Our live public engagement is Demand Flow for accepted businesses: $50,000 in new revenue in 45 to 60 days. If we miss, service fees are refunded plus $500; ad spend is not refunded. Read the Guarantee terms page on this site, then book a strategy call to talk through fit.',
+    a: "We build and manage the demand, conversion, follow-up, and measurement infrastructure behind growth. Our live public engagement is Demand Flow for accepted businesses: $50,000 in new revenue in 45 to 60 days. If we miss, service fees are refunded plus $500; ad spend isn't refunded. Read the Guarantee terms page on this site, then book a strategy call to talk through fit.",
   },
   {
     q: 'Do you only work with businesses in El Paso?',
-    a: 'No. We are based in El Paso, Texas, and work with growing businesses nationwide. Every engagement is run remotely with a named strategist, shared reporting, and a regular review rhythm.',
+    a: "No. We're based in El Paso, Texas, and work with growing businesses nationwide. Every engagement is run remotely with a named strategist, shared reporting, and a regular review rhythm.",
   },
   {
     q: 'How long is the commitment?',
@@ -21,7 +21,7 @@ export const homeFaq: FaqItem[] = [
   },
   {
     q: 'Is Demand Intelligence included?',
-    a: 'Audience intelligence can inform Demand Flow and acquisition work where it is useful. Full platform access, covering both B2B and B2C purchase-intent audiences, is a standalone product; scope and fees are confirmed on a call. See Demand Intelligence.',
+    a: "Audience intelligence can inform Demand Flow and acquisition work where it's useful. Full platform access, covering both B2B and B2C purchase-intent audiences, is a standalone product; scope and fees are confirmed on a call. See Demand Intelligence.",
   },
   {
     q: 'How does Demand Flow pricing work?',
@@ -29,14 +29,14 @@ export const homeFaq: FaqItem[] = [
   },
   {
     q: 'Is Dead River Management the same as Dead River Company?',
-    a: 'No. Not Dead River Company (New England fuel), we do not sell fuel. Dead River Management is a growth partner based in El Paso, Texas, working with businesses nationwide.',
+    a: "No. Not Dead River Company (New England fuel), we don't sell fuel. Dead River Management is a growth partner based in El Paso, Texas, working with businesses nationwide.",
   },
 ];
 
 export const pricingFaq: FaqItem[] = [
   {
     q: 'What is Demand Flow?',
-    a: 'Demand Flow is the live public engagement for accepted businesses: $50,000 in new revenue in 45 to 60 days. If we miss, service fees are refunded plus $500; ad spend is not refunded. Read the Guarantee terms page on this site, then book a conversation to see whether your business qualifies.',
+    a: "Demand Flow is the live public engagement for accepted businesses: $50,000 in new revenue in 45 to 60 days. If we miss, service fees are refunded plus $500; ad spend isn't refunded. Read the Guarantee terms page on this site, then book a conversation to see whether your business qualifies.",
   },
   {
     q: 'What is included in the monthly fee?',
@@ -71,11 +71,11 @@ export const homeServicesFaq: FaqItem[] = [
   },
   {
     q: 'What does Demand Flow cover for home services?',
-    a: 'Demand Flow connects demand creation, fast response, booking, follow-up, and measurement around your trade, service area, and capacity. It is offered to accepted businesses with scope confirmed before work starts.',
+    a: "Demand Flow connects demand creation, fast response, booking, follow-up, and measurement around your trade, service area, and capacity. It's offered to accepted businesses with scope confirmed before work starts.",
   },
   {
     q: 'Do you only serve El Paso home services?',
-    a: 'No. We are based in El Paso and work with home services businesses across the U.S.',
+    a: "No. We're based in El Paso and work with home services businesses across the U.S.",
   },
   {
     q: 'Is missed-call recovery included?',
@@ -94,11 +94,11 @@ export const homeServicesFaq: FaqItem[] = [
 export const elPasoLocationFaq: FaqItem[] = [
   {
     q: 'Are you an El Paso-only agency?',
-    a: 'We are based in El Paso, Texas, and serve growing businesses nationwide. This page is for local context. Demand Flow is the live public engagement for accepted businesses.',
+    a: "We're based in El Paso, Texas, and serve growing businesses nationwide. This page is for local context. Demand Flow is the live public engagement for accepted businesses.",
   },
   {
     q: 'What public offer do you make now?',
-    a: 'Demand Flow is the live public offer for accepted businesses: $50,000 in new revenue in 45 to 60 days, or service fees refunded plus $500; ad spend is not refunded. Book a conversation to talk through fit and scope.',
+    a: "Demand Flow is the live public offer for accepted businesses: $50,000 in new revenue in 45 to 60 days, or service fees refunded plus $500; ad spend isn't refunded. Book a conversation to talk through fit and scope.",
   },
   {
     q: 'Where is your El Paso office?',
@@ -114,11 +114,11 @@ export const elPasoLocationFaq: FaqItem[] = [
   },
   {
     q: 'How much does local SEO cost in El Paso?',
-    a: 'El Paso agencies charge roughly $300 to $1,500 a month for local SEO, and Google Business Profile management alone runs $125 to $400 a month. Most do not publish a number. We include local SEO inside Demand Flow and quote it on its own on a short call, and we report it by calls from Maps and booked jobs.',
+    a: "El Paso agencies charge roughly $300 to $1,500 a month for local SEO, and Google Business Profile management alone runs $125 to $400 a month. Most don't publish a number. We include local SEO inside Demand Flow and quote it on its own on a short call, and we report it by calls from Maps and booked jobs.",
   },
   {
     q: 'Is it worth hiring a marketing agency in El Paso?',
-    a: 'It is worth it when the agency can show you El Paso client numbers, a written miss rule, and who owns your ad accounts and website if you leave. El Paso has several agencies with good reviews and no published results. Ask for the calendar, not the dashboard. Our guarantee and case studies are on this site so you can check before you call.',
+    a: "It's worth it when the agency can show you El Paso client numbers, a written miss rule, and who owns your ad accounts and website if you leave. El Paso has several agencies with good reviews and no published results. Ask for the calendar, not the dashboard. Our guarantee and case studies are on this site so you can check before you call.",
   },
   {
     q: 'Do you serve Horizon City, Socorro, and Las Cruces?',
@@ -133,7 +133,7 @@ export const sitemapKeepPaths = [
   '/audience-builder',
   '/website-visitor-identification',
   '/intent-data-providers',
-  '/solutions',
+  '/demand-flow',
   '/book',
   '/company',
   '/resources',

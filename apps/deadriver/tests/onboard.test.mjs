@@ -367,7 +367,6 @@ test('Core 3 onboarding slugs, live prices, and nationwide copy are wired', () =
   const config = readFileSync('src/data/onboarding.ts', 'utf8');
   const webhook = readFileSync('api/stripe/onboarding.js', 'utf8');
   const slugPage = readFileSync('src/pages/onboarding/[slug].astro', 'utf8');
-  const hub = readFileSync('src/pages/onboarding/index.astro', 'utf8');
   const prices = {
     foundation: 'price_1UHpijRtJXKDYNEJfnEM7HqW',
     'growth-partner': 'price_1UHpl0RtJXKDYNEJjEaguvcR',
@@ -380,7 +379,6 @@ test('Core 3 onboarding slugs, live prices, and nationwide copy are wired', () =
   };
   assert.match(slugPage, /ONBOARDING_SLUGS/);
   assert.match(slugPage, /noindex/);
-  assert.doesNotMatch(hub, /monthly_ad_budget/);
   for (const [slug, id] of Object.entries(prices)) {
     assert.match(config, new RegExp(`slug: '${slug}'`));
     assert.match(config, new RegExp(id));

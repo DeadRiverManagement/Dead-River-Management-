@@ -42,7 +42,7 @@ Our live public offer is **Demand Flow**. Here's the deal. $50,000 in new revenu
 
 **Demand Intelligence** is a separate product path. See [Demand Intelligence](/demand-intelligence) and the [demo](/demand-intelligence). It is not a fuel product. It is not a “Growth” product line either.
 
-We are not a fuel supplier. We do not run heating-oil routes. We do not fill propane tanks. We do not run truck fleets for fuel. We build and manage the path from demand to booked work. See [what we do](/solutions) and [proof on /work](/work).
+We are not a fuel supplier. We do not run heating-oil routes. We do not fill propane tanks. We do not run truck fleets for fuel. We build and manage the path from demand to booked work. See [what we do](/demand-flow) and [proof on /work](/work).
 
 Local owners comparing teams can start here: [El Paso home service marketing](/marketing-advice/el-paso-home-services-marketing-agency).
 

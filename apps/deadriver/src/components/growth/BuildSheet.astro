@@ -1,0 +1,23 @@
+---
+// A build sheet: what gets built for this service or trade, drawn as a
+// product-style panel beside the page hero. No invented numbers, just the
+// real scope rows from the page data.
+import Arrow from './Arrow.astro';
+const { title, rows = [], caption = 'Tracked to the booked job', href = '/book' } = Astro.props;
+---
+<aside class="build-sheet" aria-label={`What we build for ${title}`}>
+  <div class="bs-head">
+    <span class="bs-kicker">Build sheet</span>
+    <strong>{title}</strong>
+    <span class="bs-tag">Illustration</span>
+  </div>
+  <ul class="bs-rows">
+    {rows.slice(0, 6).map((r, i) => (
+      <li style={`--i:${i}`}><i>{String(i + 1).padStart(2, '0')}</i><span>{r}</span><b aria-hidden="true">✓</b></li>
+    ))}
+  </ul>
+  <div class="bs-foot">
+    <span class="bs-stages"><em>Target</em><em>Create</em><em>Capture</em><em>Convert</em></span>
+    <a class="bs-link" href={href}>{caption} <Arrow /></a>
+  </div>
+</aside>

@@ -99,7 +99,7 @@ export const addOns = [
   {
     name: 'Small-business website',
     price: 'From $3,497',
-    note: 'A separately scoped project. Monthly engagements do not include a full rebuild.',
+    note: "A separately scoped project. Monthly engagements don't include a full rebuild.",
   },
 ];
 
@@ -135,7 +135,7 @@ export const industries = [
     conversion:
       'Missed-call recovery, booking, new-lead nurture, and estimate follow-up. Scale adds database reactivation and deeper segmentation.',
     metrics: [
-      'Qualified inquiries',
+      "Qualified leads",
       'Booked estimates',
       'Cost per booked job',
       'Revenue, where attributable',
@@ -145,7 +145,7 @@ export const industries = [
       'Seasonal campaigns',
       'Additional acquisition channels',
     ],
-    note: 'Job value, service area, and crew capacity shape the plan. Home-services businesses that qualify can be offered a separate 30-leads-in-60-days package with written terms. It is not automatically part of any tier.',
+    note: "Job value, service area, and crew capacity shape the plan. Home-services businesses that qualify can be offered a separate 30-leads-in-60-days package with written terms. It isn't automatically part of any tier.",
   },
   {
     slug: 'med-spas',
@@ -154,9 +154,9 @@ export const industries = [
     title: 'A fuller appointment book. A stronger patient journey.',
     intro:
       'Acquisition, consultation booking, and thoughtful follow-up brought together around the treatments that matter most to your practice.',
-    problem: 'More inquiries do not always mean more appointments.',
+    problem: "More leads don't always mean more appointments.",
     pain: [
-      'New inquiries cool off before the team replies.',
+      "New leads cool off before the team replies.",
       'Promotions attract interest without the right patient fit.',
       'Past patients rarely hear from you at the right moment.',
     ],
@@ -167,7 +167,7 @@ export const industries = [
     conversion:
       'Consultation nurture, reminders, and reactivation. Scale adds segmented campaigns by treatment and opportunity, using approved data and workflows.',
     metrics: [
-      'Consultation inquiries',
+      "Consultation leads",
       'Booked consultations',
       'Attendance rate',
       'Cost per booked consultation',
@@ -177,7 +177,7 @@ export const industries = [
       'Additional locations',
       'Advanced lifecycle campaigns',
     ],
-    note: 'We do not promise a volume of bookings or any treatment outcome. Medical claims, consent, patient privacy, and creative approvals are reviewed with your practice. Please do not submit patient information through this site.',
+    note: "We don't promise a volume of bookings or any treatment outcome. Medical claims, consent, patient privacy, and creative approvals are reviewed with your practice. Please don't submit patient information through this site.",
   },
   {
     slug: 'dental',
@@ -188,7 +188,7 @@ export const industries = [
       'A connected strategy for general dentistry and high-value procedures, built around the capacity and priorities of your practice.',
     problem: 'A lead only matters when the patient takes the next step.',
     pain: [
-      'Procedure inquiries disappear between the form and the front desk.',
+      "Procedure leads disappear between the form and the front desk.",
       'Recall opportunities sit in a disconnected database.',
       'Marketing spend is hard to connect to scheduled visits.',
     ],
@@ -197,9 +197,9 @@ export const industries = [
     acquisition:
       'Growth Partner manages one primary acquisition channel based on your procedure mix and patient economics. Scale adds a second.',
     conversion:
-      'Booking, inquiry follow-up, and recall reactivation. Scale adds deeper segmentation by procedure and opportunity with approved data controls.',
+      "Booking, lead follow-up, and recall reactivation. Scale adds deeper segmentation by procedure and opportunity with approved data controls.",
     metrics: [
-      'Qualified inquiries',
+      "Qualified leads",
       'Scheduled consultations',
       'Attendance rate',
       'Cost per scheduled visit',
@@ -209,12 +209,12 @@ export const industries = [
       'Multi-location reporting',
       'Advanced recall workflows',
     ],
-    note: 'We do not promise a volume of patients or any clinical outcome. Patient data handling, advertising claims, and practice-specific requirements are confirmed before activation. Please do not submit patient information here.',
+    note: "We don't promise a volume of patients or any clinical outcome. Patient data handling, advertising claims, and practice-specific requirements are confirmed before activation. Please don't submit patient information here.",
   },
   {
     slug: 'real-estate',
     name: 'Real Estate',
-    eyebrow: 'Stay relevant until they are ready',
+    eyebrow: "Stay relevant until they're ready",
     title: 'Build a pipeline that works beyond the first inquiry.',
     intro:
       'For agents, teams, and brokerages that need a consistent system for reaching buyers and sellers and nurturing the next conversation, in any market.',
@@ -222,14 +222,14 @@ export const industries = [
     pain: [
       'Lead sources feed different tools with no clear ownership.',
       'Long-term prospects fall out of follow-up.',
-      'New inquiries and ready-to-act opportunities look the same.',
+      "New leads and ready-to-act opportunities look the same.",
     ],
     outcome:
       'We organize the pipeline, nurture each relationship, and help your team focus on the conversations that are ready to happen.',
     acquisition:
       'One primary acquisition channel in Growth Partner. Two coordinated channels at Scale, with additional channels scoped separately.',
     conversion:
-      'Full inquiry-to-appointment nurture and long-term follow-up in Growth Partner. Scale adds database reactivation, deeper segmentation, and outbound workflow support.',
+      "Full lead-to-appointment nurture and long-term follow-up in Growth Partner. Scale adds database reactivation, deeper segmentation, and outbound workflow support.",
     metrics: [
       'Qualified conversations',
       'Appointments set',
@@ -241,7 +241,7 @@ export const industries = [
       'Brokerage reporting',
       'Additional market campaigns',
     ],
-    note: 'We do not promise transactions or commission income. Fair-housing advertising rules, targeting limits, licensing, and disclosure requirements are reviewed for every campaign. Extensive manual outbound is scoped separately.',
+    note: "We don't promise transactions or commission income. Fair-housing advertising rules, targeting limits, licensing, and disclosure requirements are reviewed for every campaign. Extensive manual outbound is scoped separately.",
   },
   {
     slug: 'ecommerce',
@@ -250,7 +250,7 @@ export const industries = [
     title: 'More than the next purchase. A better growth engine.',
     intro:
       'Paid acquisition, conversion improvements, and email and SMS retention working together around your store’s real margins.',
-    problem: 'Buying more traffic cannot fix a leaky customer journey.',
+    problem: "Buying more traffic can't fix a leaky customer journey.",
     pain: [
       'Acquisition costs rise faster than contribution margin.',
       'Product pages and checkout lose high-intent shoppers.',

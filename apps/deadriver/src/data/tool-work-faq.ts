@@ -67,7 +67,7 @@ export const toolFaqs: Record<string, readonly FaqItem[]> = {
   'lead-response': [
     {
       q: 'What does the Lead Response Scorecard find?',
-      a: 'It finds gaps between a new inquiry and a useful reply so you can tighten follow-up speed.',
+      a: "It finds gaps between a new lead and a useful reply so you can tighten follow-up speed.",
     },
     {
       q: 'Who is this scorecard for?',
@@ -115,7 +115,7 @@ export const toolFaqs: Record<string, readonly FaqItem[]> = {
     },
     {
       q: 'Who is this review for?',
-      a: 'Growing businesses nationwide that need a clearer path from visit to inquiry or sale.',
+      a: "Growing businesses nationwide that need a clearer path from visit to lead or sale.",
     },
     noEmail,
   ],
@@ -128,7 +128,7 @@ export const workHubFaqs: readonly FaqItem[] = [
   },
   {
     q: 'Are these guaranteed outcomes for every business?',
-    a: 'No. These are case studies for specific clients. Demand Flow for accepted businesses targets $50,000 in new revenue in 45-60 days, or service fees refunded plus $500; ad spend is not refunded.',
+    a: "No. These are case studies for specific clients. Demand Flow for accepted businesses targets $50,000 in new revenue in 45-60 days, or service fees refunded plus $500; ad spend isn't refunded.",
   },
   {
     q: 'Can I see the full story for each client?',

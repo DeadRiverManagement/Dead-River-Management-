@@ -90,7 +90,7 @@ This article is a summary. It does not replace the guarantee page or your agreem
 2. [Book a strategy call](/book). We will see if your business can be accepted.
 3. Or call **(915) 228-3054**. We are in El Paso, on Mountain Time. Hours are Mon to Sat, 9 to 6.
 
-More context: [home](/), [company](/company), [solutions](/solutions), [work and case studies](/work), [El Paso](/locations/el-paso).
+More context: [home](/), [company](/company), [solutions](/demand-flow), [work and case studies](/work), [El Paso](/locations/el-paso).
 
 ## We can do this for you
 

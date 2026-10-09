@@ -6,6 +6,7 @@ import HeroScene from '../../components/growth/HeroScene.astro';
 import Growth from '../../layouts/Growth.astro';
 import Arrow from '../../components/growth/Arrow.astro';
 import ServiceLinks from '../../components/growth/ServiceLinks.astro';
+import BuildSheet from '../../components/growth/BuildSheet.astro';
 import { faqPage } from '../../lib/schema';
 import { linkify } from '../../lib/linkify';
 import { industryPages } from '../../data/industry-pages';
@@ -57,6 +58,7 @@ const schema = [
       <a class="button" href="/book" data-cta="hero">Book a Strategy Call <Arrow /></a>
       <a class="button secondary" href="#proof" data-cta="hero-proof">See the {page.name.toLowerCase()} result</a>
     </div>
+    <BuildSheet title={`${page.name} system`} rows={page.built.map(([t]) => t)} caption="Book a strategy call" />
   </section>
 
   <section class="section soft">
@@ -126,7 +128,7 @@ const schema = [
       </article>
       <article class="feature-panel">
         <h3>In El Paso</h3>
-        <p>We are based in El Paso and work with {page.trade} across the borderland, and across the country.</p>
+        <p>We're based in El Paso and work with {page.trade} across the borderland, and across the country.</p>
         <ul class="sv-areas" aria-label="Areas we serve">
           {elPasoAreas.map((a) => <li>{areaHrefs[a] ? <a href={areaHrefs[a]}>{a}</a> : a}</li>)}
         </ul>
@@ -147,9 +149,8 @@ const schema = [
 
   <section class="section soft">
     <div class="wrap">
-      <p class="eyebrow">FAQ</p>
-      <h2>Questions {page.trade} ask us.</h2>
-      <div class="faq-list">
+      <div class="section-head"><div><p class="eyebrow">FAQ</p><h2>Questions {page.trade} ask us.</h2></div></div>
+      <div class="faq">
         {page.faqs.map((f) => (
           <details>
             <summary>{f.q}</summary>
@@ -164,7 +165,7 @@ const schema = [
     <div class="ms-offer">
       <p class="eyebrow">Next step</p>
       <h2>Ready to see what this books for your {page.biz}?</h2>
-      <p>Book a short strategy call. We will look at your market and what you run today, then tell you if you qualify. If we are not a fit, we will say so.</p>
+      <p>Book a short strategy call. We'll look at your market and what you run today, then tell you if you qualify. If we aren't a fit, we'll say so.</p>
       <div class="button-row">
         <a class="button ms-invert" href="/book" data-cta="final">Book a Strategy Call <Arrow /></a>
       </div>
@@ -193,16 +194,10 @@ const schema = [
   .in-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
   .in-proof { align-items: start; }
   .sv-proof { font-size: 18px; color: var(--ink); margin: 8px 0 12px; }
-  .ms-offer { background: var(--green); border-radius: 12px; padding: 40px; }
-  .ms-offer h2, .ms-offer .eyebrow { color: #fff; }
-  .ms-offer p { color: #e3ece0; max-width: 760px; margin-bottom: 18px; }
-  .ms-invert { background: #fff; color: var(--green); border-color: #fff; }
-  .ms-invert:hover { background: var(--sage); color: var(--green); }
   .sv-areas { list-style: none; padding: 0; margin: 14px 0 16px; display: flex; flex-wrap: wrap; gap: 6px; }
   .sv-areas a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
   .sv-areas li { font-size: 13px; padding: 4px 10px; border: 1px solid var(--line); border-radius: 999px; color: var(--ink); background: var(--paper); }
   .service-links { margin-top: 36px; }
   .ms-close { padding-bottom: 72px; }
   @media (max-width: 1000px) { .ms-grid { grid-template-columns: 1fr; } }
-  @media (max-width: 620px) { .ms-offer { padding: 28px 20px; } }
 </style>
