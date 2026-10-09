@@ -4,8 +4,10 @@
 // composite with refraction, chromatic aberration and specular. One static
 // frame under reduced motion, paused when off screen or the tab is hidden.
 // Mounts after load, during idle time. A software GL context never starts
-// the loop (the CSS backdrop stays). If frames stay slower than about 50ms,
-// drop to dpr 1 and then hold the last frame.
+// the loop (the CSS backdrop stays). Frame gaps are the rAF timestamp
+// interval, not the work inside the callback. If 3 of the last 10 gaps
+// exceed about 50ms, or the 10-frame average does, drop to dpr 1 and then
+// hold the last frame. A resize while that frame is held paints it once.
 import { Renderer, Program, Mesh, Triangle, RenderTarget, Vec2 } from 'ogl';
 
 const quad = /* glsl */ `
@@ -301,13 +303,18 @@ function mountRiverNow(host, { variant = 'liquid' } = {}) {
     });
   };
 
+  // setSize clears the drawing buffer. The running loop paints the next
+  // frame itself. A frozen loop or a reduced-motion still has nothing
+  // scheduled, so paint exactly one frame or the hero stays black.
+  let lastT = 0;
+  let frozen = false;
   const resize = () => {
     renderer.setSize(host.clientWidth, host.clientHeight);
     res.set(gl.canvas.width, gl.canvas.height);
     makeTargets();
+    if (frozen || reduce) render(lastT, true);
   };
   window.addEventListener('resize', resize);
-  resize();
 
   const area = host.parentElement;
   area.addEventListener('pointermove', (e) => {
@@ -331,9 +338,12 @@ function mountRiverNow(host, { variant = 'liquid' } = {}) {
   const present = () => {
     if (!host.contains(gl.canvas)) host.appendChild(gl.canvas);
   };
-  const render = (t) => {
+  // complete: a held frame must reach the screen. The running loop still
+  // drops a later pass once this callback has spent the budget.
+  const render = (t, complete = false) => {
+    lastT = t;
     const started = performance.now();
-    const over = () => performance.now() - started > FRAME_BUDGET;
+    const over = () => !complete && performance.now() - started > FRAME_BUDGET;
     liquid.program.uniforms.uTime.value = t / 1000;
     if (!floatOk) {
       renderer.render({ scene: liquid });
@@ -356,19 +366,23 @@ function mountRiverNow(host, { variant = 'liquid' } = {}) {
     return performance.now() - started;
   };
 
+  resize();
+
   let frame = 0;
   let running = false;
-  let frozen = false;
   let degraded = false;
+  let prevTs = 0;
+  let warm = 0;
   const costs = [];
   const stop = () => {
     cancelAnimationFrame(frame);
     running = false;
+    prevTs = 0;
   };
-  // 3 slow frames in the window, or a 10-frame average past the budget:
+  // 3 slow frame gaps in the window, or a 10-frame average past the budget:
   // step down to dpr 1 once, then hold whatever frame is already on screen.
-  const judge = (cost) => {
-    costs.push(cost);
+  const judge = (interval) => {
+    costs.push(interval);
     if (costs.length > 10) costs.shift();
     const slow = costs.reduce((n, c) => n + (c > FRAME_BUDGET ? 1 : 0), 0);
     const avg = costs.reduce((n, c) => n + c, 0) / costs.length;
@@ -382,7 +396,18 @@ function mountRiverNow(host, { variant = 'liquid' } = {}) {
   };
   const loop = (t) => {
     if (!running || frozen) return;
-    const action = judge(render(t));
+    const interval = prevTs > 0 ? t - prevTs : 0;
+    prevTs = t;
+    render(t);
+    // A zero interval means prevTs was cleared in start or stop, so a pause
+    // (hidden tab, scrolled off screen) is not scored. The next two real
+    // gaps cover shader compile and the first present.
+    if (interval <= 0 || warm > 0) {
+      if (interval > 0) warm -= 1;
+      frame = requestAnimationFrame(loop);
+      return;
+    }
+    const action = judge(interval);
     if (action === 'freeze') {
       frozen = true;
       running = false;
@@ -404,12 +429,11 @@ function mountRiverNow(host, { variant = 'liquid' } = {}) {
   const start = () => {
     if (running || reduce || frozen || !onScreen || !visible) return;
     running = true;
+    prevTs = 0;
+    warm = 2;
     frame = requestAnimationFrame(loop);
   };
-  if (reduce) {
-    render(0);
-    return;
-  }
+  if (reduce) return;
   new IntersectionObserver(([entry]) => {
     onScreen = entry.isIntersecting;
     if (onScreen) start();
