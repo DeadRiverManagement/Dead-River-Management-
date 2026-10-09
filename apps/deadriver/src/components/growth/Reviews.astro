@@ -3,7 +3,7 @@
 // links to both profiles. No schema: Google ignores self-served review markup
 // on a business's own site.
 import Arrow from './Arrow.astro';
-import { googleReviews, facebookReviews } from '../../data/reviews';
+import { googleReviews, facebookReviews, SHOW_COUNT_FROM } from '../../data/reviews';
 const fmt = (d: string) =>
   new Date(d).toLocaleDateString('en-US', { month: 'long', year: 'numeric', timeZone: 'UTC' });
 const cards = [
@@ -20,13 +20,13 @@ const cards = [
         <h2>What clients say.</h2>
       </div>
       <div class="rv-scores">
-        <p class="rv-score" aria-label={`Rated ${googleReviews.rating.toFixed(1)} out of 5 on Google from ${googleReviews.count} reviews`}>
+        <p class="rv-score" aria-label={`Rated ${googleReviews.rating.toFixed(1)} out of 5 on Google`}>
           <span class="rv-stars" aria-hidden="true">★★★★★</span>
-          <strong>{googleReviews.rating.toFixed(1)}</strong> on Google · {googleReviews.count} {googleReviews.count === 1 ? 'review' : 'reviews'}
+          Rated <strong>{googleReviews.rating.toFixed(1)}</strong> on Google{googleReviews.count >= SHOW_COUNT_FROM && ` · ${googleReviews.count} reviews`}
         </p>
         <p class="rv-score">
           <span class="rv-rec" aria-hidden="true">👍</span>
-          <strong>{facebookReviews.count}</strong> Facebook recommendations
+          {facebookReviews.count >= SHOW_COUNT_FROM ? <><strong>{facebookReviews.count}</strong> Facebook recommendations</> : 'Recommended on Facebook'}
         </p>
       </div>
     </div>

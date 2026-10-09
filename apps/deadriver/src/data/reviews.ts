@@ -2,6 +2,10 @@
 // Google Business Profile through Windsor.ai (location 2881403402914855967)
 // and pasted here verbatim. Re-pull and update when new reviews land.
 // Last pulled: 2026-10-02.
+// Counts show once they're big enough to help. Under this, the site says
+// "Rated 5.0 on Google" and "Recommended on Facebook" with no number.
+export const SHOW_COUNT_FROM = 10;
+
 export const googleReviews = {
   rating: 5.0,
   count: 2,
