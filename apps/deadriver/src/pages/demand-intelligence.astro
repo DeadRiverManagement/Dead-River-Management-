@@ -4,25 +4,25 @@ import Arrow from '../components/growth/Arrow.astro';
 // Owner confirmed these shared platform figures on October 5, 2026.
 // AudienceLab customer counts and customer results do not belong to DRM.
 const stats = [
-  ['280M', 'U.S. consumer profiles', 'Audience coverage across consumer markets.'],
-  ['95%', 'Contact-data accuracy', 'Accuracy of matched contact information.'],
-  ['60B', 'Weekly behaviors and URLs', 'Research activity used to build focused audiences.'],
+  ['280M', 'U.S. consumer profiles', 'Coverage across consumer markets.'],
+  ['95%', 'Contact-data accuracy', 'How accurate the matched contact details are.'],
+  ['60B', 'Weekly behaviors and URLs', 'The research activity we use to build your list.'],
 ];
 const capabilities = [
-  ['01', 'Find your audience.', 'Start with what people are researching. Narrow your audience by topic, location and recent activity, then add the business or consumer filters that matter to your campaign.', ['Purchase-intent signals', 'Location and recency filters', 'Business and consumer audiences']],
-  ['02', 'Identify website visitors.', 'Connect website activity with matched visitor profiles. See who is engaging with your business and build audiences for your next campaign.', ['Visitor identification', 'Matched contact profiles', 'Retargeting audiences']],
-  ['03', 'Fill in the missing details.', 'Enrich contact records with available consumer and business information. Give your sales and marketing teams a clearer picture of who they are trying to reach.', ['Contact enrichment', 'Business attributes', 'Consumer attributes']],
-  ['04', 'Put your data to work.', 'Export focused lists and prepare audiences for your advertising and sales tools. Use the same audience intelligence across your campaigns instead of starting from scratch in each platform.', ['Audience exports', 'Meta and Google audiences', 'Sales and marketing activation']],
+  ['01', 'Find your audience.', 'Start with what people are looking up. Narrow the list by topic, location, and how recent the activity is. Then add the business or consumer filters that matter to you.', ['Purchase-intent signals', 'Location and recency filters', 'Business and consumer audiences']],
+  ['02', 'Identify website visitors.', 'Match the people visiting your website to real profiles. See who is checking out your business and build a list for your next campaign.', ['Visitor identification', 'Matched contact profiles', 'Retargeting audiences']],
+  ['03', 'Fill in the missing details.', 'Add the consumer and business details we have to your contact records. Your sales and marketing teams get a clearer picture of who they are reaching.', ['Contact enrichment', 'Business attributes', 'Consumer attributes']],
+  ['04', 'Put your data to work.', 'Export your lists and set up audiences for your ad and sales tools. Use the same list across all your campaigns instead of starting over in each platform.', ['Audience exports', 'Meta and Google audiences', 'Sales and marketing activation']],
 ];
 const faqs = [
-  ['What does Demand Intelligence do?', 'Demand Intelligence helps you find audiences showing relevant research activity, identify matched website visitors, enrich contact information and use those audiences in your marketing and sales tools.'],
-  ['What does purchase intent mean?', 'Purchase-intent signals indicate that someone has recently researched a relevant topic, product or service. They help you focus your audience, but do not guarantee that a person is qualified or ready to buy.'],
-  ['How recent are the signals?', 'The platform refreshes intent data daily. You can filter by the available lookback windows, including the last two or seven days shown in our Dallas roofing walkthrough.'],
-  ['Does it support businesses and consumers?', 'Yes. Build business and consumer audiences nationwide, using the topics, locations and attributes available for your market.'],
-  ['Can I use the audiences in my existing tools?', 'You can export lists and prepare audiences for Meta and Google. On the demo, we show how the available exports and connections fit your current tools.'],
-  ['What is buyer intent data?', 'Buyer intent data is the same thing as purchase intent data: signals that a person or company is actively researching a product or service right now, such as searches, page visits and content reads in the last few days. It tells you who is in the market today, so you can reach them before they pick someone else.'],
-  ['How do I get intent data for my business?', 'Through a platform that collects and matches the signals, like Demand Intelligence. You tell us the topics and locations that matter, the platform delivers the matching audiences daily, and you use them in email, ads or calls. Book a demo and we will show you the live reach for your market.'],
-  ['Is this the same as Demand Flow?', 'Demand Intelligence is the data platform. Demand Flow is our managed marketing system, which uses audience intelligence alongside advertising, landing pages and follow-up.'],
+  ['What does Demand Intelligence do?', 'It finds people who have been looking up what you offer, matches your website visitors to real profiles, fills in missing contact details, and lets you use those lists in your marketing and sales tools.'],
+  ['What does purchase intent mean?', 'It means someone recently looked up a topic, product, or service like yours. It helps you focus on the right people. It does not guarantee that person is ready to buy.'],
+  ['How recent are the signals?', 'The data updates every day. You can filter by how far back to look, like the last two days or the last seven days.'],
+  ['Does it support businesses and consumers?', 'Yes. You can build business and consumer lists anywhere in the country, using the topics, locations, and details available for your market.'],
+  ['Can I use the audiences in my existing tools?', 'Yes. You can export lists and set up audiences for Meta and Google. On the demo, we show you how the exports and connections fit the tools you already use.'],
+  ['What is buyer intent data?', 'Same thing as purchase intent data. It's the signs that a person or company is looking up a product or service right now, like searches, page visits, and articles read in the last few days. It tells you who is in the market today, so you can reach them before they pick someone else.'],
+  ['How do I get intent data for my business?', 'Through a platform that collects and matches the signals, like Demand Intelligence. You tell us the topics and locations that matter. The platform sends you the matching list every day, and you use it in email, ads, or calls. Book a demo and we'll show you the live numbers for your market.'],
+  ['Is this the same as Demand Flow?', 'No. Demand Intelligence is the data platform. Demand Flow is the marketing system we run for you. It uses this data along with ads, landing pages, and follow-up.'],
 ];
 // Pulse points on the intent map (percent positions on the lower-48 dot map).
 const _unusedPulses = [
@@ -45,9 +45,9 @@ const schema = [
       <div class="di-hero-copy">
         <p class="di-label"><span></span> Demand Intelligence</p>
         <h1>Find the people.<br />See the intent.<br /><em>Reach your market.</em></h1>
-        <p class="di-intro">Your next customer is already researching. Demand Intelligence helps you find that audience and put it to work across your advertising and sales tools.</p>
+        <p class="di-intro">Your next customer is already looking. Demand Intelligence finds those people and lets you use that list in your ads and your sales tools.</p>
         <div class="di-actions"><a class="di-button" href="#di-demo">See a live demo <Arrow /></a></div>
-        <p class="di-hero-note">Business and consumer data. Nationwide coverage. Daily intent refresh.</p>
+        <p class="di-hero-note">Business and consumer data. Nationwide. Updated every day.</p>
       </div>
       <div class="di-stage">
         <div class="di-orbit" aria-label="Illustration: research signals orbiting a live intent core">
@@ -108,7 +108,7 @@ const schema = [
       <div class="di-problem-copy">
         <p class="di-label">Take control of your targeting</p>
         <h2>A broad audience is easy.<br /><em>A relevant audience is the point.</em></h2>
-        <p class="di-section-copy">A job title or a location only tells you part of the story. Add what people are researching, when they researched it and how it fits your market. Give your next campaign a more focused starting point.</p>
+        <p class="di-section-copy">A job title or a zip code only tells you part of the story. Add what people are looking up, when they looked it up, and how it fits your market. Now your next campaign starts with the right people.</p>
       </div>
     </section>
 
@@ -125,10 +125,10 @@ const schema = [
           </svg>
           <div class="steps home-steps flow-steps">
             {[
-              ['Target', 'Purchase intent data finds the people researching what you sell right now: what they searched, read and compared in the last few days, matched to real business and consumer records.'],
-              ['Create', 'Your offer goes in front of only those people, on Facebook, Instagram, Google and email. No broad audiences. No wasted spend.'],
-              ['Capture', 'When they raise their hand, a landing page, an instant text-back and a booking link catch them in the moment. Nobody waits until tomorrow.'],
-              ['Convert', 'Reminders, follow-up and weekly tuning turn inquiries into booked work and paid invoices, synced to your ads, CRM and sales tools.'],
+              ['Target', 'Purchase intent data finds the people looking up your services right now. What they searched, read, and compared in the last few days, matched to real business and consumer records.'],
+              ['Create', 'Your offer goes in front of only those people, on Facebook, Instagram, Google, and email. No broad audiences. No wasted spend.'],
+              ['Capture', 'When someone raises their hand, a landing page, a quick text back, and a booking link catch them right then. Nobody waits until tomorrow.'],
+              ['Convert', 'Reminders, follow-up, and weekly tuning turn those leads into booked work and paid invoices, synced to your ads, CRM, and sales tools.'],
             ].map(([title, body], i) => (
               <article data-flow-step>
                 <span class="number">Stage {i + 1}</span>
@@ -162,7 +162,7 @@ const schema = [
     </section>
 
     <section class="di-activation di-wrap di-reveal">
-      <div><p class="di-label">Built for the way you work</p><h2>Your data should<br />move with you.</h2><p class="di-section-copy">Build the audience once. Export the list, prepare an advertising audience or bring enriched contact information into your sales tools.</p><a class="di-text-link" href="#di-demo">See it with your use case <Arrow /></a></div>
+      <div><p class="di-label">Built for the way you work</p><h2>Your data should<br />move with you.</h2><p class="di-section-copy">Build the list once. Export it, turn it into an ad audience, or send the contact details to your sales tools.</p><a class="di-text-link" href="#di-demo">See it with your use case <Arrow /></a></div>
       <div class="di-tools" aria-label="Audience activation use cases">
         {[['Meta Ads', 'M8 12c0-3 1.6-5 3.2-5s2.6 2 4 5 2.4 5 4 5 3.2-2 3.2-5-1.6-5-3.2-5-2.6 2-4 5-2.4 5-4 5S8 15 8 12z'], ['Google Ads', 'M12 3l8 14H4z'], ['Contact lists', 'M5 6h14M5 12h14M5 18h9'], ['Customer management', 'M12 4a4 4 0 110 8 4 4 0 010-8zM4 20c0-4 3.6-6 8-6s8 2 8 6'], ['Audience exports', 'M12 4v12M6 10l6 6 6-6M4 20h16'], ['Sales tools', 'M4 18l5-6 4 3 7-9']].map(([label, d]) => (
           <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d={d}/></svg>{label}</span>
@@ -173,9 +173,9 @@ const schema = [
     <section class="di-questions di-wrap di-reveal" aria-labelledby="questions-heading"><div><p class="di-label">A closer look</p><h2 id="questions-heading">What you<br />want to know.</h2></div><div>{faqs.map(([question, answer]) => <article><h3>{question}</h3><p>{answer}</p></article>)}<nav aria-label="Related"><p class="di-label"><span></span> Related</p><p><a class="di-text-link" href="/audience-builder">Audience builder</a></p><p><a class="di-text-link" href="/intent-data-providers">Intent data providers</a></p><p><a class="di-text-link" href="/website-visitor-identification">Website visitor identification</a></p></nav></div></section>
 
     <section class="di-demo-section di-wrap di-reveal">
-      <div><p class="di-label">See Demand Intelligence</p><h2>Let’s look at<br /><em>your market.</em></h2><p class="di-section-copy">Tell us who you want to reach. We’ll walk through the platform and show how to build an audience around your business, your location and what your customers are researching.</p><p class="di-demo-detail">A live product walkthrough with the Dead River Management team.</p></div>
+      <div><p class="di-label">See Demand Intelligence</p><h2>Let’s look at<br /><em>your market.</em></h2><p class="di-section-copy">Tell us who you want to reach. We'll walk through the platform with you and build a list around your business, your area, and what your customers are looking up.</p><p class="di-demo-detail">A live walkthrough with the Dead River Management team.</p></div>
       <form class="di-form" id="di-demo" data-redirect="/demand-intelligence/thanks">
-        <h3>Request your demo</h3><p class="di-form-sub">See what the platform can do for your team.</p>
+        <h3>Request your demo</h3><p class="di-form-sub">See what the platform can do for your business.</p>
         <label class="field">Name<input name="name" type="text" autocomplete="name" maxlength="120" required /></label>
         <label class="field">Phone number<input name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="40" pattern="[+()\d\s.\-]{7,40}" required /></label>
         <label class="field">Email<input name="email" type="email" autocomplete="email" maxlength="200" required /></label>
