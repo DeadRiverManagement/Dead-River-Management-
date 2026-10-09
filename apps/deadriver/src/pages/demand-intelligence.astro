@@ -4,9 +4,9 @@ import Arrow from '../components/growth/Arrow.astro';
 // Owner confirmed these shared platform figures on October 5, 2026.
 // AudienceLab customer counts and customer results do not belong to DRM.
 const stats = [
-  ['280M', 'U.S. consumer profiles', 'Coverage across consumer markets.'],
-  ['95%', 'Contact-data accuracy', 'How accurate the matched contact details are.'],
-  ['60B', 'Weekly behaviors and URLs', 'The research activity we use to build your list.'],
+  ['280M', "U.S. consumer profiles', 'Coverage across consumer markets."],
+  ['95%', "Contact-data accuracy', 'How accurate the matched contact details are."],
+  ['60B', "Weekly behaviors and URLs', 'The research activity we use to build your list."],
 ];
 const capabilities = [
   ['01', 'Find your audience.', 'Start with what people are looking up. Narrow the list by topic, location, and how recent the activity is. Then add the business or consumer filters that matter to you.', ['Purchase-intent signals', 'Location and recency filters', 'Business and consumer audiences']],
@@ -20,8 +20,8 @@ const faqs = [
   ['How recent are the signals?', 'The data updates every day. You can filter by how far back to look, like the last two days or the last seven days.'],
   ['Does it support businesses and consumers?', 'Yes. You can build business and consumer lists anywhere in the country, using the topics, locations, and details available for your market.'],
   ['Can I use the audiences in my existing tools?', 'Yes. You can export lists and set up audiences for Meta and Google. On the demo, we show you how the exports and connections fit the tools you already use.'],
-  ['What is buyer intent data?', 'Same thing as purchase intent data. It's the signs that a person or company is looking up a product or service right now, like searches, page visits, and articles read in the last few days. It tells you who is in the market today, so you can reach them before they pick someone else.'],
-  ['How do I get intent data for my business?', 'Through a platform that collects and matches the signals, like Demand Intelligence. You tell us the topics and locations that matter. The platform sends you the matching list every day, and you use it in email, ads, or calls. Book a demo and we'll show you the live numbers for your market.'],
+  ['What is buyer intent data?', "Same thing as purchase intent data. It's the signs that a person or company is looking up a product or service right now, like searches, page visits, and articles read in the last few days. It tells you who is in the market today, so you can reach them before they pick someone else."],
+  ['How do I get intent data for my business?', "Through a platform that collects and matches the signals, like Demand Intelligence. You tell us the topics and locations that matter. The platform sends you the matching list every day, and you use it in email, ads, or calls. Book a demo and we'll show you the live numbers for your market."],
   ['Is this the same as Demand Flow?', 'No. Demand Intelligence is the data platform. Demand Flow is the marketing system we run for you. It uses this data along with ads, landing pages, and follow-up.'],
 ];
 // Pulse points on the intent map (percent positions on the lower-48 dot map).
@@ -53,11 +53,11 @@ const schema = [
         <div class="di-orbit" aria-label="Illustration: research signals orbiting a live intent core">
           <div class="di-core"><i></i></div>
           {[
-            ['a', 'Searching', '2 days'],
-            ['b', 'Comparing', '7 days'],
-            ['c', 'Reading reviews', 'today'],
-            ['d', 'Pricing pages', '3 days'],
-            ['e', 'Booking', 'now'],
+            ['a', "Searching', '2 days"],
+            ['b', "Comparing', '7 days"],
+            ['c', "Reading reviews', 'today"],
+            ['d', "Pricing pages', '3 days"],
+            ['e', "Booking', 'now"],
           ].map(([ring, label, when]) => (
             <div class={`di-ring di-ring-${ring}`}><div class="di-node"><div class="di-node-face"><b></b><span>{label}</span><small>{when}</small></div></div></div>
           ))}
