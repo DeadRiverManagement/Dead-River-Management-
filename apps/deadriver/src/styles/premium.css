@@ -1271,11 +1271,31 @@ textarea::placeholder {
     padding-top: 48px;
     min-height: 0;
   }
+  /* Phones: the copy keeps a dark backing, then a clear band of water opens
+     between the buttons and the stage strip so the river is seen at full
+     strength instead of as a glow behind text. */
   .hero {
-    padding-bottom: 340px;
+    padding-bottom: 620px;
+  }
+  .hero-copy::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    inset: -120px -50vw -24px;
+    background: linear-gradient(
+      180deg,
+      rgba(10, 10, 11, 0.82) 0%,
+      rgba(10, 10, 11, 0.7) 78%,
+      transparent 100%
+    );
+    pointer-events: none;
   }
   .river-top {
-    display: none;
+    display: flex;
+    top: auto;
+    bottom: 300px;
+    left: 20px;
+    right: auto;
   }
   .river-stages {
     grid-template-columns: 1fr 1fr;
@@ -1284,6 +1304,7 @@ textarea::placeholder {
   }
   .river-label {
     padding: 12px 14px;
+    background: rgba(10, 10, 11, 0.74);
   }
   .river-label strong {
     font-size: 14px;
@@ -1295,8 +1316,9 @@ textarea::placeholder {
   .river-visual::after {
     background: linear-gradient(
       180deg,
-      rgba(10, 10, 11, 0.8),
-      rgba(10, 10, 11, 0.45) 50%,
+      rgba(10, 10, 11, 0.55) 0%,
+      transparent 30%,
+      transparent 82%,
       var(--paper) 100%
     );
   }
