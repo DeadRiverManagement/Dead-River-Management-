@@ -1,10 +1,10 @@
 /* ---------- tokens ---------- */
 :root{
-  --ink:#0f2019;
-  --ink-2:#152b24;
-  --ink-3:#1b362d;
-  --line:#24403a;
-  --line-2:#2f4f46;
+  --ink:#0E0F11;
+  --ink-2:#16181C;
+  --ink-3:#1D2025;
+  --line:#26292F;
+  --line-2:#33373E;
   --bone:#F2F0EB;
   --ash:#9A9890;
   --ash-2:#858479;   /* 5.09:1 on --ink, 4.72:1 on --ink-2, AA for the footer fine print and placeholders that use it */
@@ -77,7 +77,7 @@ h3{font-size:clamp(22px,2.2vw,28px);font-weight:700;letter-spacing:-.015em;line-
 .link:hover svg{transform:translateX(3px)}
 
 /* ---------- nav ---------- */
-.nav{position:sticky;top:0;z-index:50;background:rgba(15,32,25,.72);backdrop-filter:blur(16px) saturate(1.2);-webkit-backdrop-filter:blur(16px) saturate(1.2);border-bottom:1px solid transparent;transition:border-color var(--t),transform .5s var(--ease-2)}
+.nav{position:sticky;top:0;z-index:50;background:rgba(14,15,17,.72);backdrop-filter:blur(16px) saturate(1.2);-webkit-backdrop-filter:blur(16px) saturate(1.2);border-bottom:1px solid transparent;transition:border-color var(--t),transform .5s var(--ease-2)}
 .nav.is-stuck{border-bottom-color:var(--line)}
 .nav.is-hidden{transform:translateY(-100%)}
 .nav .progress{position:absolute;left:0;top:0;height:1px;width:100%;transform-origin:left;transform:scaleX(0);background:linear-gradient(90deg,var(--copper),var(--copper-2));opacity:0;transition:opacity var(--t)}

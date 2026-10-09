@@ -2,15 +2,15 @@
    re-points the tokens and re-skins shared surfaces so every page runs on the
    same material. Copy and structure stay where they are. */
 :root {
-  --paper: #07110e;
-  --paper-2: #0b1915;
-  --cream: #10231d;
-  --cream-2: #162d26;
-  --ink: #e9efe9;
+  --paper: #0a0a0b;
+  --paper-2: #111112;
+  --cream: #161618;
+  --cream-2: #1d1d20;
+  --ink: #ecebe6;
   --ink-2: #ffffff;
-  --muted: #93a79b;
+  --muted: #9c9b94;
   --green: #e3a070;
-  --sage: #14281f;
+  --sage: #1a1a1d;
   --line: rgba(255, 255, 255, 0.1);
   --line-2: rgba(255, 255, 255, 0.18);
   --copper: #e3a070;
@@ -89,7 +89,7 @@ p {
 .intro {
   font-size: clamp(18px, 1.35vw, 21px);
   line-height: 1.55;
-  color: #b9c7bd;
+  color: #c9c7c0;
 }
 .eyebrow,
 .number,
@@ -232,7 +232,7 @@ a:hover {
     border-color 0.4s var(--ease);
 }
 .site-header.is-stuck {
-  background: rgba(7, 17, 14, 0.72);
+  background: rgba(10, 10, 11, 0.72);
   border-bottom-color: var(--line);
   backdrop-filter: blur(18px) saturate(1.3);
   -webkit-backdrop-filter: blur(18px) saturate(1.3);
@@ -244,7 +244,7 @@ a:hover {
   filter: brightness(0) invert(1);
 }
 .nav-wrap nav {
-  color: #c9d4cc;
+  color: #cfcfc9;
 }
 #main-nav > a:not(.button) {
   position: relative;
@@ -277,7 +277,7 @@ a:hover {
 .nav-dropdown > div,
 .nav-wrap nav.is-open,
 .nav-contact {
-  background: rgba(10, 22, 18, 0.96);
+  background: rgba(14, 14, 15, 0.96);
   border-color: var(--line);
   color: var(--ink);
 }
@@ -337,7 +337,7 @@ a:hover {
 .hero .intro {
   margin-top: 0;
   max-width: 560px;
-  color: #c9d5cc;
+  color: #cfccc4;
 }
 .hero .button-row {
   margin-top: 4px;
@@ -399,14 +399,14 @@ a:hover {
   background:
     linear-gradient(
       90deg,
-      rgba(7, 17, 14, 0.88) 0%,
-      rgba(7, 17, 14, 0.62) 40%,
-      rgba(7, 17, 14, 0.18) 72%,
+      rgba(10, 10, 11, 0.88) 0%,
+      rgba(10, 10, 11, 0.62) 40%,
+      rgba(10, 10, 11, 0.18) 72%,
       transparent 100%
     ),
     linear-gradient(
       180deg,
-      rgba(7, 17, 14, 0.92) 0%,
+      rgba(10, 10, 11, 0.92) 0%,
       transparent 24%,
       transparent 72%,
       var(--paper) 100%
@@ -449,7 +449,7 @@ a:hover {
   position: static;
   margin: 0;
   padding: 18px 22px;
-  background: rgba(7, 17, 14, 0.62);
+  background: rgba(10, 10, 11, 0.62);
   border: 0;
   border-radius: 0;
   box-shadow: none;
@@ -602,7 +602,7 @@ select {
 }
 .field input::placeholder,
 textarea::placeholder {
-  color: #6f8378;
+  color: #77766f;
 }
 .steps article,
 .feature-panel,
@@ -743,8 +743,8 @@ textarea::placeholder {
 .flow-steps article {
   background: linear-gradient(
     180deg,
-    rgba(16, 35, 29, 0.72),
-    rgba(11, 25, 21, 0.78)
+    rgba(22, 22, 24, 0.72),
+    rgba(16, 16, 17, 0.78)
   );
 }
 .flow-steps {
@@ -757,8 +757,8 @@ textarea::placeholder {
   -webkit-backdrop-filter: blur(12px);
   background: linear-gradient(
     180deg,
-    rgba(16, 35, 29, 0.85),
-    rgba(11, 25, 21, 0.85)
+    rgba(22, 22, 24, 0.85),
+    rgba(16, 16, 17, 0.85)
   );
 }
 .flow-steps article:nth-child(2) {
@@ -783,7 +783,7 @@ textarea::placeholder {
     ),
     radial-gradient(
       40% 50% at 10% 90%,
-      rgba(31, 77, 60, 0.35),
+      rgba(200, 116, 63, 0.08),
       transparent 70%
     ),
     var(--paper-2);
@@ -792,7 +792,7 @@ textarea::placeholder {
   font-size: clamp(38px, 5vw, 72px);
 }
 .band-dark .intro {
-  color: #c9d5cc;
+  color: #cfccc4;
 }
 
 /* ---------- testimonial ---------- */
@@ -815,7 +815,7 @@ textarea::placeholder {
       rgba(226, 160, 112, 0.14),
       transparent 70%
     ),
-    #050d0a;
+    #060607;
   border-top: 1px solid var(--line);
   color: var(--ink);
 }
@@ -871,7 +871,7 @@ textarea::placeholder {
 }
 @media (max-width: 860px) {
   .site-header {
-    background: rgba(7, 17, 14, 0.85);
+    background: rgba(10, 10, 11, 0.85);
     border-bottom-color: var(--line);
     backdrop-filter: blur(16px);
   }
@@ -896,8 +896,8 @@ textarea::placeholder {
   .river-visual::after {
     background: linear-gradient(
       180deg,
-      rgba(7, 17, 14, 0.8),
-      rgba(7, 17, 14, 0.45) 50%,
+      rgba(10, 10, 11, 0.8),
+      rgba(10, 10, 11, 0.45) 50%,
       var(--paper) 100%
     );
   }
