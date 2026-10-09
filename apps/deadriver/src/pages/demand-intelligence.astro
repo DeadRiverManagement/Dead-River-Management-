@@ -353,7 +353,11 @@ const schema = [
   .di-tools svg { width:26px; height:26px; stroke:#f2b183; stroke-width:1.8; fill:none; stroke-linecap:round; stroke-linejoin:round; filter:drop-shadow(0 0 8px #f2b18366); }
 
   .di-questions { border-top:1px solid #262628; padding:85px 0; display:grid; grid-template-columns:.7fr 1fr; gap:100px; }
-  .di-questions article { margin-bottom:28px; padding-bottom:28px; border-bottom:1px solid #262628; }
+  .di-questions > div:last-child { display:grid; gap:12px; counter-reset:q; }
+  .di-questions article { position:relative; margin:0; padding:24px 24px 24px 72px; border:1px solid #262628; border-radius:18px; background:linear-gradient(180deg,#161618,#111112); transition:border-color .35s ease, transform .35s ease; }
+  .di-questions article::before { counter-increment:q; content:counter(q, decimal-leading-zero); position:absolute; left:24px; top:28px; font-family:var(--mono); font-size:12px; letter-spacing:.1em; color:#f2b183; }
+  .di-questions article:hover { border-color:#f2b18555; transform:translateY(-2px); }
+  .di-questions nav { margin-top:12px; }
   .di-questions h3 { font-family:var(--body); font-size:17px; letter-spacing:-.01em; margin-bottom:13px; }
   .di-questions p { font-size:14px; line-height:1.8; }
 

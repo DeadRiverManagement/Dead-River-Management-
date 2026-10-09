@@ -126,6 +126,22 @@ export const servicePages: ServicePageData[] = [
       { label: 'AI content and your website', href: '/marketing-advice/ai-content-and-your-website' },
       { label: 'Website conversion review', href: '/tools/website-conversion' },
     ],
+    longform: [
+      {
+        heading: 'What a service business website is actually for',
+        paragraphs: [
+          'A website for a service business has one job. Someone on their phone has a problem, they find you, and they call or book. That\'s it. Every choice we make in web design for contractors, roofers, plumbers, HVAC companies and auto shops comes back to that. Fast load time on a phone, the phone number and the booking button on every screen, and a page for each service and each city you serve.',
+          'That\'s also what Google and the AI assistants want. A roofing website with one page for roof repair, one for roof replacement and one for storm damage ranks for all three. One page that says "we do roofing" ranks for none of them. Local SEO is built into the site from day one, so the website and your Google Business Profile tell the same story.',
+        ],
+      },
+      {
+        heading: 'What a small business website costs, and what you get',
+        paragraphs: [
+          'Most custom websites for service businesses run from a few thousand dollars to the low five figures, depending on how many service and location pages you need and whether you want photos and video done too. Cheap page-builder sites cost less up front and lose you leads every month, because they load slow and bury the call button. We\'d rather build it once, build it right, and track which pages turn into jobs.',
+          'You own everything. The domain, the hosting, the design and the content stay with you. If you ever leave, the site goes with you. Ask any web design agency that question before you sign.',
+        ],
+      },
+    ],
     faqs: [
       {
         q: 'How long does a website take to build?',
@@ -365,6 +381,22 @@ export const servicePages: ServicePageData[] = [
       { label: 'Ad budget calculator', href: '/tools/ad-budget' },
       { label: 'Cost per customer calculator', href: '/tools/customer-acquisition-cost' },
     ],
+    longform: [
+      {
+        heading: 'Facebook and Instagram ads for service businesses, in plain words',
+        paragraphs: [
+          'Facebook ads management for a home service business is not about likes or followers. It\'s about putting a clear offer in front of the right people in your area and getting them to call, fill out a lead form or book. We use purchase intent data to build the audience, so your ads go to people already looking for the services you offer instead of everyone in the zip code.',
+          'Then we write the ad, build the landing page and connect the lead form to fast follow-up. If someone fills out a form at 9 PM, they get a text back right away. That\'s where most Facebook lead generation campaigns fall apart, and it\'s the part we spend the most time on.',
+        ],
+      },
+      {
+        heading: 'What Facebook ads cost per lead for roofing, plumbing and HVAC',
+        paragraphs: [
+          'Published benchmarks for Facebook lead costs in the trades move around a lot. Roofing leads tend to cost the most because a roof is a big ticket job. HVAC and plumbing usually come in lower. The number that matters is not cost per lead, it\'s cost per booked job. A campaign with cheap leads that nobody answers is more expensive than one with pricier leads that get booked.',
+          'We track every lead from the ad to the CRM to the closed job, so you can see what a booked customer costs you on Facebook and Instagram, and we tune the campaign every week based on that number.',
+        ],
+      },
+    ],
     faqs: [
       {
         q: 'Is it Facebook ads or Meta ads?',
@@ -466,6 +498,22 @@ export const servicePages: ServicePageData[] = [
       { label: 'Search ad preview tool', href: '/tools/search-preview' },
       { label: 'Google Local Services Ads', href: '/services/google-local-services-ads' },
     ],
+    longform: [
+      {
+        heading: 'Google Ads management for contractors and service businesses',
+        paragraphs: [
+          'Google Ads is where people go when they need a plumber today, a roofer this week or a mechanic right now. PPC management for a service business means picking the searches that bring real jobs, writing ads that match them, and sending each click to a landing page about that exact service. A click on "water heater repair" should land on your water heater page, not your homepage.',
+          'We run search campaigns alongside Google Local Services Ads so you show up in both spots at the top of the page. Local Services Ads are capped by how many people search, so regular search ads pick up the rest of the volume.',
+        ],
+      },
+      {
+        heading: 'What Google Ads cost for home services, and who owns the account',
+        paragraphs: [
+          'Home improvement is one of the pricier categories on Google. Clicks can run from a few dollars to well over ten in competitive cities, and most service businesses spend somewhere between a thousand and five thousand a month on ads to see steady calls. The way to make that spend work is tracking calls and forms back to the keyword and the page, then cutting what doesn\'t book jobs.',
+          'The ad account is in your name, not ours. If you ever leave, you keep the account, the history and the data. Any Google Ads agency that won\'t do that is holding your business hostage.',
+        ],
+      },
+    ],
     faqs: [
       {
         q: 'Is ad spend included?',
@@ -566,6 +614,22 @@ export const servicePages: ServicePageData[] = [
       { label: 'Google Ads management', href: '/services/google-ads' },
       { label: 'Local SEO services', href: '/services/local-seo' },
     ],
+    longform: [
+      {
+        heading: 'How Google Local Services Ads work for home service businesses',
+        paragraphs: [
+          'Local Services Ads sit at the very top of Google, above the regular ads and the map, with a verified badge next to your name. You don\'t pay per click. You pay per lead, when someone calls or messages you through the ad. You set a weekly budget, and you can dispute leads that aren\'t real jobs.',
+          'Getting the badge means passing Google\'s checks: license, insurance and background checks for the owner and the people in the field. We handle the setup and the verification paperwork, then manage the profile, the reviews and the budget so the leads keep coming at a price that makes sense for your trade.',
+        ],
+      },
+      {
+        heading: 'What Local Services Ads cost per lead',
+        paragraphs: [
+          'Industry benchmarks put the average Local Services lead for home service contractors somewhere around fifty dollars, with most trades landing between roughly twenty five and eighty. Roofing runs higher, HVAC and plumbing usually lower. Your city and your review count move the number too.',
+          'The real question is how many of those leads turn into booked jobs. We connect every Local Services lead to your CRM and your follow-up, so a missed call doesn\'t become a wasted lead, and we track the cost of a booked customer, not just the cost of a phone ring.',
+        ],
+      },
+    ],
     faqs: [
       {
         q: 'What are Google Local Services Ads?',
@@ -665,6 +729,22 @@ export const servicePages: ServicePageData[] = [
       { label: 'SEO foundations checker', href: '/tools/seo-foundations' },
       { label: 'Show up when people ask AI who to call', href: '/marketing-advice/ai-search-for-local-business' },
       { label: 'Local SEO and Google Maps', href: '/services/local-seo' },
+    ],
+    longform: [
+      {
+        heading: 'SEO for service businesses, without the jargon',
+        paragraphs: [
+          'SEO for a service business means showing up on Google when someone searches for what you do, without paying for every click. It takes a site that loads fast, a page for each service you sell, plain answers to the questions people type into Google, and other websites that mention you. We build the pages, fix the technical stuff and earn the mentions.',
+          'It also means showing up in AI answers now. ChatGPT, Google AI Overviews and Perplexity read the same pages Google does. Clear facts, real numbers and consistent business details across the web are what get you named.',
+        ],
+      },
+      {
+        heading: 'How long SEO takes and what it costs',
+        paragraphs: [
+          'Most service businesses see early movement in two to three months and real results in three to six, with bigger gains by month six to twelve. The businesses that quit at month three are quitting right before it starts to work. That\'s why we pair SEO with paid ads, so you have calls coming in while the organic side builds.',
+          'Monthly SEO for a local service business usually runs from several hundred to a few thousand dollars a month depending on the market and how many pages and locations you need. We go over the scope on a call, and the plan is tied to booked jobs, not rankings.',
+        ],
+      },
     ],
     faqs: [
       {
@@ -774,6 +854,22 @@ export const servicePages: ServicePageData[] = [
       { label: 'Lead response calculator', href: '/tools/lead-response' },
       { label: 'SEO for your website', href: '/services/seo' },
     ],
+    longform: [
+      {
+        heading: 'Local SEO and the Google map pack, explained',
+        paragraphs: [
+          'When someone searches "roofer near me" or "HVAC repair" plus your city, Google shows three businesses on a map before anything else. That\'s the map pack, and local SEO is how you get into it. Google ranks the map on relevance, distance and prominence. In plain words: does your profile say you do this, are you close to the searcher, and does the web trust you.',
+          'Your Google Business Profile is the center of all of it. We set up the right categories and service areas, fill it out completely, keep the photos and posts fresh, and build a steady flow of reviews. Then we make sure your name, address and phone number match on every directory that matters.',
+        ],
+      },
+      {
+        heading: 'What moves a contractor up in local search',
+        paragraphs: [
+          'An incomplete or unverified Google Business Profile is still the most common reason a contractor is missing from the map. After that it\'s wrong service area settings, mismatched business details across the web, too few recent reviews, and no pages on your website for the cities you serve.',
+          'We fix those in order, build a location page for each area you want to win, and keep ownership of your profile locked down so you never lose it during a re-verification. Local SEO is the cheapest high-impact work in marketing for a service business, and it\'s usually where we start.',
+        ],
+      },
+    ],
     faqs: [
       {
         q: 'I do not have a storefront. Can I still rank on the map?',
@@ -877,6 +973,22 @@ export const servicePages: ServicePageData[] = [
       { label: 'Demand Intelligence: find buyers showing intent', href: '/demand-intelligence' },
       { label: 'Cost per customer calculator', href: '/tools/customer-acquisition-cost' },
       { label: 'Revenue goal calculator', href: '/tools/revenue-goal' },
+    ],
+    longform: [
+      {
+        heading: 'Cold email that gets replies, not spam complaints',
+        paragraphs: [
+          'Cold email outreach works when the list is tight, the email is short and the inbox setup is right. We build the list from purchase intent data and real business records, so you\'re writing to companies that have been looking for what you sell. Then the first email is a few sentences, one ask, no links. Follow-ups go out over the next couple of weeks, because the first follow-up alone brings in a big share of the replies.',
+          'Published B2B benchmarks put a typical cold email reply rate in the low single digits, with well-targeted campaigns doing much better. The difference is almost always the list and the offer, not the subject line.',
+        ],
+      },
+      {
+        heading: 'Deliverability is the whole game',
+        paragraphs: [
+          'Google and Microsoft now reject bulk mail that isn\'t set up right. That means SPF, DKIM and DMARC on the sending domains, separate domains so your main one stays protected, warmed-up inboxes, low daily volume per inbox, and bounce and complaint rates kept near zero. We handle all of that before a single email goes out.',
+          'Every reply lands in your CRM with the context of what they were looking for, and interested replies get a fast, personal follow-up and a booking link. Cold email is one channel inside the Demand Flow system, and it\'s the one that works best for B2B services and commercial work.',
+        ],
+      },
     ],
     faqs: [
       {

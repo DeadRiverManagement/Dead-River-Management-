@@ -937,21 +937,132 @@ textarea::placeholder {
 .tiers {
   border-radius: var(--r);
 }
+/* ---------- FAQ: numbered cards, sticky heading beside them ---------- */
+.section:has(> .section-head + .faq),
+.section > .wrap:has(> .section-head + .faq) {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: clamp(32px, 5vw, 72px);
+  align-items: start;
+}
+.section:has(> .section-head + .faq) > .section-head,
+.section > .wrap:has(> .section-head + .faq) > .section-head {
+  position: sticky;
+  top: 120px;
+  display: block;
+  margin: 0;
+}
 .faq {
-  max-width: 1000px;
+  max-width: none;
+  margin: 0;
+  border-top: 0;
+  display: grid;
+  gap: 12px;
+  counter-reset: faq;
+}
+.faq details {
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: linear-gradient(180deg, var(--cream), var(--paper-2));
+  overflow: hidden;
+  transition:
+    border-color 0.35s var(--ease),
+    box-shadow 0.35s var(--ease),
+    transform 0.35s var(--ease);
+}
+.faq details:hover {
+  border-color: rgba(242, 177, 131, 0.3);
+  transform: translateY(-2px);
+}
+.faq details[open] {
+  border-color: rgba(242, 177, 131, 0.45);
+  box-shadow:
+    0 40px 70px -40px rgba(0, 0, 0, 0.9),
+    0 0 0 1px rgba(242, 177, 131, 0.08) inset;
 }
 .faq summary {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr) 40px;
+  align-items: center;
+  gap: 16px;
+  padding: 22px 22px 22px 24px;
   color: var(--ink);
-  font-size: 19px;
+  font-size: 18px;
   font-weight: 600;
-  padding: 26px 0;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
 }
-.faq summary:after {
+.faq summary::before {
+  counter-increment: faq;
+  content: counter(faq, decimal-leading-zero);
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.1em;
   color: var(--copper);
-  font-size: 22px;
 }
-.faq details p {
+.faq summary::after,
+.faq details[open] summary::after {
+  content: '';
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--line-2);
+  background:
+    linear-gradient(var(--ember), var(--ember)) center / 14px 1.5px no-repeat,
+    linear-gradient(var(--ember), var(--ember)) center / 1.5px 14px no-repeat;
+  transition:
+    transform 0.4s var(--ease),
+    background-color 0.3s var(--ease),
+    border-color 0.3s var(--ease);
+}
+.faq details[open] summary::after {
+  transform: rotate(45deg);
+  border-color: var(--ember);
+  background-color: rgba(242, 177, 131, 0.12);
+}
+.faq summary .plus {
+  display: none;
+}
+.faq details p,
+.faq details .a {
+  padding: 0 72px 26px 84px;
+  max-width: none;
   font-size: 17px;
+  line-height: 1.65;
+  color: var(--muted);
+}
+.faq details .a p {
+  padding: 0;
+}
+.faq details .a p + p {
+  margin-top: 10px;
+}
+@media (max-width: 860px) {
+  .section:has(> .section-head + .faq),
+  .section > .wrap:has(> .section-head + .faq) {
+    grid-template-columns: 1fr;
+  }
+  .section:has(> .section-head + .faq) > .section-head,
+  .section > .wrap:has(> .section-head + .faq) > .section-head {
+    position: static;
+    margin-bottom: 8px;
+  }
+  .faq summary {
+    grid-template-columns: 34px minmax(0, 1fr) 36px;
+    padding: 18px 16px 18px 18px;
+    font-size: 16px;
+    gap: 10px;
+  }
+  .faq summary::after,
+  .faq details[open] summary::after {
+    width: 36px;
+    height: 36px;
+  }
+  .faq details p,
+  .faq details .a {
+    padding: 0 18px 22px 62px;
+    font-size: 15px;
+  }
 }
 .check-list li:before {
   color: var(--copper);
