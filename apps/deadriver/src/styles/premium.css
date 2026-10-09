@@ -364,7 +364,7 @@ a:hover {
 .hero {
   position: relative;
   display: block;
-  padding: clamp(96px, 12vw, 160px) 0 220px;
+  padding: clamp(64px, 8vw, 112px) 0 220px;
   min-height: 100svh;
 }
 .hero-copy {
@@ -386,9 +386,21 @@ a:hover {
 .hero-row {
   display: grid;
   grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-  gap: clamp(28px, 5vw, 80px);
+  grid-template-areas:
+    'intro buttons'
+    'intro proof';
+  gap: 0 clamp(28px, 5vw, 80px);
   align-items: start;
   margin-top: clamp(28px, 3vw, 44px);
+}
+.hero-row .intro {
+  grid-area: intro;
+}
+.hero-row .button-row {
+  grid-area: buttons;
+}
+.hero-row .hero-proof {
+  grid-area: proof;
 }
 .hero .intro {
   margin-top: 0;
@@ -1240,6 +1252,13 @@ textarea::placeholder {
 @media (max-width: 1100px) {
   .hero-row {
     grid-template-columns: 1fr;
+    grid-template-areas:
+      'buttons'
+      'intro'
+      'proof';
+  }
+  .hero-row .intro {
+    margin-top: 28px;
   }
 }
 @media (max-width: 860px) {
@@ -1301,7 +1320,7 @@ textarea::placeholder {
     width: auto;
   }
   .hero h1 {
-    font-size: clamp(34px, 9.6vw, 44px);
+    font-size: clamp(31px, 8.6vw, 40px);
   }
   .home-steps article {
     padding: 28px 24px;
