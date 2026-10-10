@@ -145,12 +145,13 @@ const faqs = [
           <p class="kk-lead">Skip the trial and error and the never-ending shit show of trying to figure it all out yourself. And instead, grow your business with <u>people who are already looking for what you sell</u>, a phone that gets answered in <strong>5 minutes</strong>, and a guarantee with your name on it (not hopes and prayers).</p>
         </div>
       </div>
-      <div class="wrap">
+      <div class="wrap kk-reach">
+        <canvas class="kk-globe" aria-hidden="true" data-kk-globe></canvas>
         <dl class="kk-stats">
-          <div><dt>Revenue Generated</dt><dd>$7M+</dd><small>We let the numbers do the talking. Over $7 million in client revenue we can point to, and counting.</small></div>
-          <div><dt>Businesses</dt><dd>40+</dd><small>Over 40 businesses have trusted the Dead River name with their phone.</small></div>
-          <div><dt>Our Reach</dt><dd>20</dd><small>Clients in 20 states and counting.</small></div>
-          <div><dt>Battle Tested</dt><dd>30</dd><small>Our system has worked in 30 different niches, from roofing to freight.</small></div>
+          <div><dt>Revenue Generated</dt><dd data-count="7" data-prefix="$" data-suffix="M+">$7M+</dd><small>We let the numbers do the talking. Over $7 million in client revenue we can point to, and counting.</small></div>
+          <div><dt>Businesses</dt><dd data-count="40" data-suffix="+">40+</dd><small>Over 40 businesses have trusted the Dead River name with their phone.</small></div>
+          <div><dt>Our Reach</dt><dd data-count="20">20</dd><small>Clients in 20 states and counting.</small></div>
+          <div><dt>Battle Tested</dt><dd data-count="30">30</dd><small>Our system has worked in 30 different niches, from roofing to freight.</small></div>
         </dl>
       </div>
     </section>
@@ -158,6 +159,11 @@ const faqs = [
     <section class="kk-band kk-dark kk-flat-top kk-cases">
       <div class="wrap">
         <h3>BECOME OUR NEXT SUCCESS STORY</h3>
+        <div class="kk-marquee" aria-hidden="true">
+          <div class="kk-marquee-track">
+            {[0, 1].map(() => ['total-auto-repair', 'gonzalez-and-sons-roofing', 'the-pipe-whisperers', 'wicked-logistics', 'parcel-management-group', 'only-fish'].map((n) => <img src={`/images/clients/${n}.webp`} alt="" loading="lazy" />))}
+          </div>
+        </div>
         <div class="kk-grid kk-grid-6">
           {cases.map(([c, href]) => <a class="kk-tile" href={href}>{c}</a>)}
         </div>
@@ -209,7 +215,7 @@ const faqs = [
         <p class="kk-kicker">WE LITERALLY WROTE THE BOOK ON…</p>
         <h2>HOW TO GET AS MANY CUSTOMERS AS YOU CAN POSSIBLY HANDLE</h2>
         <div class="kk-book-grid">
-          <img class="kk-bookimg" src="/images/kk/book-3d.png" alt="Marketing is F*cking Easy, the Dead River playbook" width="760" height="910" loading="lazy" />
+          <div class="kk-booktilt" data-tilt><img class="kk-bookimg" src="/images/kk/book-3d.png" alt="Marketing is F*cking Easy, the Dead River playbook" width="760" height="910" loading="lazy" /></div>
           <div>
             <p>Marketing is F*cking Easy is the playbook we run inside Dead River, written so you can do it yourself. The system, the people already looking, the ads, and your first 90 days. <strong>92 pages, no fluff, straight to what to do Monday morning.</strong></p>
             <p><u>You get steps you can use right away</u> to get more calls from the people already looking for you, in most cases without spending another dollar on ads.</p>

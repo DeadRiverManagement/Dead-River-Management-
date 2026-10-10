@@ -91,6 +91,7 @@
 .kk-capture .button { flex: none; }
 .kk-foot { margin: 14px 0 0 !important; font-size: 13px !important; color: var(--muted) !important; }
 .kk-video { position: relative; max-width: 760px; margin: 56px auto 0; border-radius: 14px; overflow: hidden; background: #000; box-shadow: 0 60px 120px -30px rgba(0, 0, 0, 0.95); transform: perspective(1600px) rotateY(-8deg) rotateX(4deg); }
+.kk-hero .kk-video { --p: 0; transform: perspective(1600px) rotateY(calc(-10deg * (1 - var(--p)))) rotateX(calc(5deg * (1 - var(--p)))) scale(calc(0.74 + 0.26 * var(--p))); transform-origin: 50% 20%; will-change: transform; }
 .kk-video video { display: block; width: 100%; aspect-ratio: 16 / 9; background: #000; }
 .kk-hero .kk-slash-left { position: absolute; left: 0; bottom: calc(var(--slant) + 40px); width: 220px; height: 34px; transform: skewY(-6deg); background: var(--kk-stripe); }
 .kk-hero .kk-slash-left::after { content: ''; position: absolute; left: 150px; top: -40px; width: 180px; height: 34px; background: var(--kk-stripe-pale); }
@@ -121,7 +122,14 @@
 .kk-promise-tint::after { content: ''; position: absolute; left: 0; right: 0; bottom: -2px; height: clamp(90px, 10vw, 140px); background: var(--kk-white); clip-path: ellipse(70% 100% at 30% 100%); }
 .kk-promise-tint h2 { color: var(--kk-ink); }
 .kk-promise-tint p { color: var(--kk-ink-2); }
-.kk-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; margin: 0; }
+.kk-reach { position: relative; padding-top: clamp(40px, 6vw, 90px); }
+.kk-globe { position: absolute; left: 50%; top: 50%; width: min(760px, 90vw); aspect-ratio: 1; transform: translate(-50%, -54%); pointer-events: none; opacity: 0.9; }
+.kk-rv { opacity: 0; transform: translateY(22px); transition: opacity 0.7s ease var(--rd, 0s), transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) var(--rd, 0s); }
+.kk-rv.kk-in { opacity: 1; transform: none; }
+@keyframes kk-ping { 0%, 100% { transform: scale(0.8); opacity: 0.5; } 20% { transform: scale(1.4); opacity: 1; } }
+@keyframes kk-ring { 0% { transform: scale(0.3); opacity: 0.9; } 60% { transform: scale(1.6); opacity: 0; } 100% { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .kk-hero .kk-video { --p: 1; } }
+.kk-stats { position: relative; display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; margin: 0; }
 .kk-stats > div { text-align: center; }
 .kk-stats dt { font-family: var(--display); font-weight: 800; font-size: 18px; text-transform: uppercase; letter-spacing: -0.01em; color: var(--kk-ink); }
 .kk-stats dd { margin: 8px 0; font-family: var(--display); font-weight: 800; font-size: clamp(36px, 4vw, 60px); letter-spacing: -0.045em; color: var(--copper-deep); line-height: 1; }
@@ -192,8 +200,8 @@
   .kk-book-cover { max-width: 280px; }
   .kk-offers article { margin-top: 50px; }
   .kk-slash { width: 150px; height: 22px; }
-  .kk-video { transform: none; z-index: 2; }
-  .kk-hero .kk-slash-left, .kk-hero .kk-slash-right { width: 120px; height: 20px; }
+  .kk-video, .kk-hero .kk-video { transform: none; z-index: 2; }
+    .kk-hero .kk-slash-left, .kk-hero .kk-slash-right { width: 120px; height: 20px; }
   .kk-hero .kk-slash-left::after, .kk-hero .kk-slash-right::after, .kk-hero .kk-slash-right::before { height: 20px; width: 120px; }
   .kk-hero .kk-slash-left::before { display: none; }
   .kk-hero .kk-slash-left { bottom: var(--slant); }
@@ -201,5 +209,13 @@
   .kk-capture input { font-size: 15px; }
 }
 
-.kk-bookimg { display: block; width: min(340px, 100%); height: auto; margin: 0 auto; }
+.kk-booktilt { perspective: 1200px; }
+.kk-bookimg { display: block; width: min(340px, 100%); height: auto; margin: 0 auto; transform: rotateY(var(--ry, 0deg)) rotateX(var(--rx, 0deg)); transition: transform 0.25s ease-out; will-change: transform; animation: kk-float 6s ease-in-out infinite; }
+@keyframes kk-float { 0%, 100% { translate: 0 0; } 50% { translate: 0 -10px; } }
+.kk-marquee { overflow: hidden; margin: 8px auto 40px; -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); }
+.kk-marquee-track { display: flex; gap: 64px; width: max-content; animation: kk-marquee 32s linear infinite; }
+.kk-marquee img { height: 44px; width: auto; filter: brightness(0) invert(1); opacity: 0.75; }
+.kk-marquee:hover .kk-marquee-track { animation-play-state: paused; }
+@keyframes kk-marquee { to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) { .kk-marquee-track, .kk-bookimg { animation: none; } }
 @media (max-width: 860px) { .kk-bookimg { width: min(280px, 82%); } }
