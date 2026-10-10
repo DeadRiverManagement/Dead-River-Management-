@@ -1125,6 +1125,11 @@
       "statusCode": 301
     },
     {
+      "source": "/chatgpt-ads",
+      "destination": "/demand-flow",
+      "statusCode": 301
+    },
+    {
       "source": "/google-business-profile-el-paso",
       "destination": "/services/local-seo",
       "statusCode": 301

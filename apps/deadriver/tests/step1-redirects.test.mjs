@@ -186,7 +186,7 @@ test('ambiguity paths are unchanged pending Rowan', () => {
     assert301(source, '/');
     assert301(`${source}.html`, '/');
   }
-  assert.equal(bySource.has('/chatgpt-ads'), false);
+  assert301('/chatgpt-ads', '/demand-flow');
   assert.equal(bySource.has('/chatgpt-ads.html'), false);
 });
 
