@@ -1,0 +1,32 @@
+---
+// Short, plain answer shown near the H1 on striking distance pages.
+// `html` and `related` are authored strings from our own data files
+// (plain text plus <a> links), never user input.
+const { html, related } = Astro.props as { html: string; related?: string };
+---
+
+<div class="answer-block" data-answer-block>
+  <p set:html={html} />
+  {related && <p class="small answer-related" set:html={related} />}
+</div>
+
+<!-- Inline so the CSS ships only on pages that render an answer block. -->
+<style is:inline>
+  .answer-block {
+    margin-top: 1.25rem;
+    max-width: var(--maxw-text, 66ch);
+    padding-left: 1rem;
+    border-left: 2px solid var(--copper, #C8722E);
+  }
+  .answer-block p {
+    margin: 0 0 0.5rem;
+  }
+  .answer-block a {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  .answer-related {
+    opacity: 0.8;
+  }
+</style>

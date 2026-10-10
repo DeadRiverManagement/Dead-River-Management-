@@ -6,6 +6,7 @@ import { getCollection, render } from 'astro:content';
 import { faqPage } from '../../lib/schema';
 import { linkify } from '../../lib/linkify';
 import ServiceLinks from '../../components/growth/ServiceLinks.astro';
+import AnswerBlock from '../../components/growth/AnswerBlock.astro';
 export async function getStaticPaths() {
   return (await getCollection('blog', ({ data }) => !data.draft)).map(
     (post) => ({ params: { slug: post.id }, props: { post } }),
@@ -47,7 +48,7 @@ const schema = post.data.faq?.length ? [article, faqPage(post.data.faq)] : artic
 
 <Growth
   title={post.data.pageTitle || post.data.title}
-  description={post.data.description}
+  description={post.data.metaDescription || post.data.description}
   schema={schema}
   ogImage={post.data.heroImage || '/images/og/marketing-advice.jpg'}
 >
@@ -64,7 +65,9 @@ const schema = post.data.faq?.length ? [article, faqPage(post.data.faq)] : artic
     }
     title={post.data.headline || post.data.title}
     intro={post.data.description}
-  />
+  >
+    {post.data.answer && <AnswerBlock html={post.data.answer} related={post.data.answerRelated} />}
+  </Hero>
   <article class="section wrap">
     <div class="prose">
       <a class="back-link" href="/marketing-advice">

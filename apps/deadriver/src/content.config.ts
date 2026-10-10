@@ -18,6 +18,11 @@ const blog = defineCollection({
     headline: z.string().optional(),
     faqHeading: z.string().optional(),
     faq: z.array(z.object({ q: z.string(), a: z.string() })).optional(),
+    /** Meta description when it must differ from the visible hero intro. */
+    metaDescription: z.string().optional(),
+    /** Short plain answer shown under the hero intro (authored HTML links only). */
+    answer: z.string().optional(),
+    answerRelated: z.string().optional(),
   }),
 });
 

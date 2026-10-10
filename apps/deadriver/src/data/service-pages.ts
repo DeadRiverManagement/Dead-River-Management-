@@ -60,6 +60,9 @@ export type ServicePageData = {
   // (AI search). Rendered between "what we build" and results.
   longform?: { heading: string; paragraphs: string[] }[];
   compare?: { heading: string; columns: [string, string, string]; rows: [string, string, string][] };
+  // Short plain answer near the H1 (authored HTML links only). Not offer text.
+  answer?: string;
+  answerRelated?: string;
 };
 
 const pricingFaq = {
@@ -813,6 +816,10 @@ export const servicePages: ServicePageData[] = [
     eyebrow: 'Local SEO',
     headline: 'Local SEO Services That Put You in the Map Results.',
     sub: 'Google Business Profile and local search for service businesses, nationwide and in El Paso.',
+    answer:
+      'Local SEO is the work that gets your business into the Google map pack and "near me" searches for the areas you serve. We do it <a href="/locations/el-paso">from El Paso</a> for businesses here and across the country. That means a complete Google Business Profile, a steady flow of reviews, <a href="/marketing-advice/free-business-listings-worth-claiming">listings that match everywhere</a>, and a page for each area you want to win.',
+    answerRelated:
+      'Doing it yourself? Start with the <a href="/marketing-advice/rank-higher-on-google-maps-checklist">Google Maps checklist</a>.',
     intro:
       'When someone nearby searches for what you do, the map results get the calls. We optimize your Google Business Profile, set up a steady review system, and make your website back it up.',
     problemHeading: 'Most local businesses are invisible on the map.',
