@@ -16,9 +16,9 @@ export const css = `
 .fig { margin: 0 0 14px; }
 .fig svg { display: block; max-width: 100%; height: auto; }
 .fig .cap { font-family: ui-monospace, Menlo, monospace; font-size: 9.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin-top: 8px; }
-.shot { border-radius: 12px; overflow: hidden; border: 1px solid var(--line); background: #fff; box-shadow: 0 18px 40px -24px rgba(0,0,0,.45); }
+.shot { border-radius: 12px; overflow: hidden; border: 1px solid var(--line); background: #fff; }
 .shot img { display: block; width: 100%; }
-.fb { width: 320px; border: 1px solid var(--line); border-radius: 12px; background: #fff; overflow: hidden; font-size: 12px; line-height: 1.4; color: var(--ink); box-shadow: 0 18px 40px -24px rgba(0,0,0,.45); }
+.fb { width: 320px; border: 1px solid var(--line); border-radius: 12px; background: #fff; overflow: hidden; font-size: 12px; line-height: 1.4; color: var(--ink); }
 .fb .top { display: flex; gap: 9px; align-items: center; padding: 10px 12px; }
 .fb .top img, .fb .top i { width: 30px; height: 30px; border-radius: 50%; object-fit: cover; display: block; background: var(--charcoal); }
 .fb .top b { display: block; font-size: 12px; }
@@ -30,7 +30,7 @@ export const css = `
 .fb .media.tall img { height: 260px; }
 .fb .media .ov { position: absolute; left: 12px; right: 12px; bottom: 12px; color: #fff; font-family: Bricolage, sans-serif; font-weight: 800; font-size: 17px; line-height: 1.05; letter-spacing: -.02em; text-shadow: 0 2px 12px rgba(0,0,0,.8); text-transform: uppercase; }
 .fb .media .ov em { font-style: normal; color: var(--ember); }
-.fb .media .inset { position: absolute; right: 10px; bottom: 10px; width: 92px; height: 70px; object-fit: cover; border: 2px solid #fff; border-radius: 6px; box-shadow: 0 6px 16px rgba(0,0,0,.5); }
+.fb .media .inset { position: absolute; right: 10px; bottom: 10px; width: 92px; height: 70px; object-fit: cover; border: 2px solid #fff; border-radius: 6px; }
 .fb .media .circ { position: absolute; width: 110px; height: 70px; border: 3px solid ${C.red}; border-radius: 50%; transform: rotate(-8deg); }
 .fb .media .arrow { position: absolute; width: 60px; height: 30px; }
 .fb .media .tag { position: absolute; left: 0; top: 14px; background: ${C.red}; color: #fff; font-family: Bricolage, sans-serif; font-weight: 800; font-size: 11px; letter-spacing: .08em; padding: 4px 10px; text-transform: uppercase; }
@@ -45,7 +45,7 @@ export const css = `
 .fbrow { display: grid; grid-template-columns: repeat(auto-fit, 320px); gap: 16px; justify-content: start; }
 .fbrow.sm .fb { width: 210px; font-size: 10px; } .fbrow.sm { grid-template-columns: repeat(auto-fit, 210px); }
 .fbrow.sm .fb .media img { height: 124px; } .fbrow.sm .fb .media .ov { font-size: 13px; }
-.phone { width: 230px; padding: 12px 10px; border-radius: 28px; background: var(--charcoal); box-shadow: 0 20px 40px -22px rgba(0,0,0,.6); }
+.phone { width: 230px; padding: 12px 10px; border-radius: 28px; background: var(--charcoal); border: 1px solid rgba(0,0,0,.2); }
 .phone .scr { background: #f4f1ea; border-radius: 18px; padding: 14px 10px 16px; display: grid; gap: 7px; min-height: 200px; }
 .phone .scr .who { text-align: center; font-size: 10px; color: var(--muted); margin-bottom: 4px; }
 .phone .scr div.b { max-width: 88%; padding: 8px 10px; border-radius: 14px; background: #fff; font-size: 11px; line-height: 1.35; border: 1px solid var(--line); }
@@ -55,7 +55,7 @@ export const css = `
 .side.l { grid-template-columns: 1fr 1.3fr; }
 .logos { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; padding: 14px 16px; border-radius: 12px; background: #fff; border: 1px solid var(--line); }
 .logos img { height: 44px; width: auto; object-fit: contain; }
-.portrait { width: 150px; height: 150px; border-radius: 16px; object-fit: cover; object-position: top; float: right; margin: 0 0 12px 18px; box-shadow: 0 18px 40px -24px rgba(0,0,0,.5); }
+.portrait { width: 150px; height: 150px; border-radius: 16px; object-fit: cover; object-position: top; float: right; margin: 0 0 12px 18px; }
 `;
 
 const svg = (w, h, inner, extra = '') => `<svg viewBox="0 0 ${w} ${h}" width="${w}" height="${h}" xmlns="http://www.w3.org/2000/svg" ${extra}>${inner}</svg>`;
