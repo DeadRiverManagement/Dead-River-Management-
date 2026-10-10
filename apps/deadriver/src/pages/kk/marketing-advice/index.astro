@@ -1,0 +1,45 @@
+---
+// Preview only: the marketing advice index on the King Kong frame, so the menu stays on the clone.
+import KkShell from '../../../components/KkShell.astro';
+import Arrow from '../../../components/growth/Arrow.astro';
+import { getCollection } from 'astro:content';
+const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+const faqs = [
+  { q: 'Who writes these?', a: "Brandon and the Dead River team. Everything here is something we've done for a client or for ourselves. No guest posts, no filler." },
+  { q: 'Can I just use this and not hire you?', a: "Yes. That's the point. The book is the same deal. If you'd rather have us do it, you know where the button is." },
+  { q: 'How often do you add to it?', a: "When we've got something worth saying. Usually when a client asks the same question three times in a month." },
+];
+---
+
+<KkShell
+  title="Marketing Advice (Preview)"
+  description="Plain-language guides on getting found, your website, fast follow-up and growing a local business."
+  kicker="MARKETING ADVICE"
+  headline="SIMPLE IDEAS TO GET MORE CUSTOMERS. WRITTEN FOR OWNERS, NOT MARKETERS."
+  sub="Short guides on getting found, your website, fast follow-up and growth. Plain words, no jargon, things you can do this week."
+  faqTitle="STRAIGHT ANSWERS"
+  faqs={faqs}
+>
+  <p class="kk-dear">Hey,</p>
+  <p>Everything below is something we've actually done, for a client or for ourselves, written up so you can do it too. Pick the one that sounds like your problem and start there.</p>
+  <div class="kk-articles">
+    {posts.map((p) => (
+      <a class="kk-article" href={'/kk/marketing-advice/' + p.id}>
+        <small>{p.data.category} · {p.data.date.toLocaleDateString('en-US', { month: 'short', year: 'numeric', timeZone: 'UTC' })}</small>
+        <strong>{p.data.title}</strong>
+        <span>{p.data.description}</span>
+        <em>Read it <Arrow /></em>
+      </a>
+    ))}
+  </div>
+</KkShell>
+
+<style is:global>
+  .kk-articles { display: grid; gap: 14px; margin: 28px 0 8px; }
+  .kk-article { display: grid; gap: 6px; padding: 20px 22px; border: 1px solid rgba(18, 18, 20, 0.12); border-radius: 12px; background: #fff; color: var(--kk-ink, #121214); text-decoration: none; transition: border-color 0.15s ease; }
+  .kk-article:hover { border-color: var(--copper-deep, #c8743f); }
+  .kk-article small { font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--copper-deep, #c8743f); }
+  .kk-article strong { font-family: var(--display); font-size: 22px; line-height: 1.15; letter-spacing: -0.02em; }
+  .kk-article span { font-size: 16px; line-height: 1.5; color: var(--kk-ink-muted, #3a3936); }
+  .kk-article em { font-style: normal; font-weight: 700; font-size: 14px; display: inline-flex; align-items: center; gap: 6px; color: var(--copper-deep, #c8743f); }
+</style>
