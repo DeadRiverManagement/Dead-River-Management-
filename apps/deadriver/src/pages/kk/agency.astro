@@ -20,8 +20,8 @@ const cases = [
 
 const TAR_VIDEO = 'https://d2ol7oe51mr4n9.cloudfront.net/user_3JQHnLTq89zb3rmd2x4Z53G0lE3/52a05e7d-44fc-4cb0-9aab-4269f45edef3.mp4';
 // Video wall: add a line per video as Brandon sends them. No placeholders.
+const featured = ['“They did all of our social media management, set up our website, and optimized everything. We get 5-6 calls and multiple emails a day for shipments. One of those leads turned into a $1.2 million contract.”', 'Wicked Logistics'];
 const testimonials = [
-  ['“They did all of our social media management, set up our website, and optimized everything. We get 5-6 calls and multiple emails a day for shipments. One of those leads turned into a $1.2 million contract.”', 'Wicked Logistics'],
   ['“From $20K To $100K A Month”', 'Total Auto Repair', TAR_VIDEO],
 ];
 ---
@@ -261,6 +261,10 @@ const testimonials = [
       <i class="kk-slash kk-slash-tl" aria-hidden="true"></i>
       <i class="kk-slash kk-slash-br" aria-hidden="true"></i>
       <div class="wrap">
+        <div class="kk-feature-t">
+          <p>{featured[0]}</p>
+          <footer>{featured[1]}</footer>
+        </div>
         <div class="kk-tgrid">
           {testimonials.map(([quote, who, video]) => (
             <article class="kk-t" title={quote}>
