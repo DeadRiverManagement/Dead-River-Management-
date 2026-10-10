@@ -1,0 +1,156 @@
+---
+// Preview only: the shared frame for the King Kong style service pages.
+// Hero, the letter (default slot), then the proof, guarantee, FAQ and final
+// bands every page shares, with the King Kong header on top.
+import Growth from '../layouts/Growth.astro';
+import KkHeader from './KkHeader.astro';
+import Arrow from './growth/Arrow.astro';
+import FaqList from './FaqList.astro';
+import '../styles/kk.css';
+
+interface Props {
+  title: string;
+  description: string;
+  kicker?: string;
+  headline: string;
+  sub?: string;
+  video?: string;
+  poster?: string;
+  faqTitle?: string;
+  faqs?: { q: string; a: string }[];
+  ctaLabel?: string;
+}
+const { title, description, kicker = 'THE DEAD RIVER GUARANTEE', headline, sub, video, poster = '/images/og/demand-flow.jpg', faqTitle = 'STRAIGHT ANSWERS', faqs = [], ctaLabel = 'CLAIM YOUR FREE 30-MINUTE STRATEGY SESSION' } = Astro.props;
+const CTA = '/kk/strategy-session';
+const RATING = '5-star rated on Google and Facebook';
+const cases = [
+  ['TOTAL AUTO REPAIR', '/work/total-auto-repair'],
+  ['GONZALEZ & SONS ROOFING', '/work/gonzalez-and-sons-roofing'],
+  ['THE PIPE WHISPERERS', '/work/the-pipe-whisperers'],
+  ['WICKED LOGISTICS', '/work/wicked-logistics'],
+  ['PARCEL MANAGEMENT GROUP', '/work/parcel-management-group'],
+  ['ONLY FISH', '/work/only-fish'],
+];
+---
+
+<Growth title={title} description={description} ogImage="/images/og/demand-flow.jpg" robots="noindex,nofollow" noHeader campaign campaignHref={CTA} campaignLabel="Hit the damn button" campaignShort="Book a call">
+  <KkHeader />
+  <div class="kk kk-agency">
+    <section class="kk-hero">
+      <i class="kk-slash-left" aria-hidden="true"></i>
+      <i class="kk-slash-right" aria-hidden="true"></i>
+      <div class="wrap">
+        <p class="kk-kicker">{kicker}</p>
+        <h1 data-split set:html={headline} />
+        {sub && <p class="kk-sub" set:html={sub} />}
+        {video && <div class="kk-video"><video controls playsinline preload="metadata" poster={poster} src={video}></video></div>}
+      </div>
+    </section>
+
+    <section class="kk-band kk-white kk-letter">
+      <i class="kk-slash kk-slash-tl" aria-hidden="true"></i>
+      <i class="kk-slash kk-slash-br" aria-hidden="true"></i>
+      <div class="wrap">
+        <p class="kk-updated">Updated: 10th of October, 2026</p>
+        <slot />
+        <div class="button-row kk-cta-stack">
+          <a class="button" href={CTA}>{ctaLabel} <Arrow /></a>
+          <small>Free. 30 minutes. No pitch until we know it's a fit.</small>
+        </div>
+        <p class="kk-rating"><span class="rv-stars" aria-hidden="true">★★★★★</span> {RATING}</p>
+      </div>
+    </section>
+
+    <section class="kk-band kk-dark kk-cases">
+      <i class="kk-slash kk-slash-tl" aria-hidden="true"></i>
+      <i class="kk-slash kk-slash-br" aria-hidden="true"></i>
+      <div class="wrap">
+        <h3>BECOME OUR NEXT SUCCESS STORY</h3>
+        <div class="kk-grid kk-grid-6">
+          {cases.map(([c, href]) => <a class="kk-tile" href={href}><span>{c}</span><em>Read it <Arrow /></em></a>)}
+        </div>
+        <dl class="kk-stats">
+          <div><dt>Revenue Generated</dt><dd>$7M+</dd><small>Over $7 million in client revenue we can point to.</small></div>
+          <div><dt>Jobs Booked</dt><dd>5,000+</dd><small>Over 5,000 jobs booked for our clients.</small></div>
+          <div><dt>Battle Tested</dt><dd>30</dd><small>30 niches across 20 states.</small></div>
+          <div><dt>Businesses</dt><dd>40+</dd><small>Over 40 businesses under the Dead River name.</small></div>
+        </dl>
+        <div class="button-row"><a class="button" href={CTA}>HIT THE DAMN BUTTON <Arrow /></a></div>
+      </div>
+    </section>
+
+    <section class="kk-band kk-stone kk-guarantee">
+      <i class="kk-slash kk-slash-tl" aria-hidden="true"></i>
+      <i class="kk-slash kk-slash-br" aria-hidden="true"></i>
+      <div class="wrap">
+        <h2>$50,000 IN NEW REVENUE IN 45-60 DAYS OR YOUR MONEY BACK, PLUS $500 FOR WASTING YOUR TIME.</h2>
+        <p class="kk-lead">If we miss, you get every dollar you paid us back, plus a $500 check. Your side: keep $3,000 a month in ad spend funded and don't lower it, get back to every lead within 5 minutes, log every lead in the CRM, and give it the full 60 days. No fine print. That's the whole deal.</p>
+        <div class="button-row"><a class="button" href={CTA}>{ctaLabel} <Arrow /></a></div>
+      </div>
+    </section>
+
+    <section class="kk-band kk-white kk-flat-bottom kk-book">
+      <i class="kk-slash kk-slash-tl" aria-hidden="true"></i>
+      <div class="wrap">
+        <p class="kk-kicker">WE LITERALLY WROTE THE BOOK ON…</p>
+        <h2>HOW TO GET AS MANY CUSTOMERS AS YOU CAN POSSIBLY HANDLE</h2>
+        <div class="kk-book-grid">
+          <div class="kk-book-cover" aria-hidden="true"><span>Free · 92 pages</span><strong>Marketing is F*cking Easy</strong></div>
+          <div>
+            <p>Marketing is F*cking Easy is the playbook we run inside Dead River, written so you can do it yourself. The system, the people already looking, the ads, and your first 90 days. <strong>92 pages, no fluff, straight to what to do Monday morning.</strong></p>
+            <div class="button-row"><a class="button secondary" href="/downloads/marketing-is-fcking-easy.pdf" download="marketing-is-fcking-easy.pdf">GET THE BOOK</a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {faqs.length > 0 && (
+      <section class="kk-band kk-white kk-flat kk-faq">
+        <div class="wrap">
+          <h2 class="kk-h2-sm">{faqTitle}</h2>
+          <FaqList items={faqs} />
+        </div>
+      </section>
+    )}
+
+    <section class="kk-band kk-black kk-flat kk-final">
+      <i class="kk-slash kk-slash-tl" aria-hidden="true"></i>
+      <div class="wrap">
+        <p class="kk-lead">We find the people in your market already looking for what you sell and get them to call you. $50,000 in new revenue in 45-60 days or your money back, plus $500 for wasting your time.</p>
+        <h2>HIT THE DAMN BUTTON</h2>
+        <div class="button-row"><a class="button" href={CTA}>HIT THE DAMN BUTTON <Arrow /></a></div>
+        <p class="kk-tag">People who are already looking. A phone that actually rings. A guarantee with your name on it.</p>
+      </div>
+    </section>
+  </div>
+</Growth>
+
+<style is:global>
+  .kk-agency .kk-hero h1 { max-width: 22ch; font-size: clamp(36px, 6vw, 84px); line-height: 0.95; }
+  .kk-agency .kk-letter h2 { text-align: left; margin-left: 0; max-width: 16ch; margin-top: 24px; }
+  .kk-agency .kk-letter h3 { text-align: left; margin: 22px 0 8px; font-size: clamp(22px, 2.6vw, 30px); letter-spacing: -0.02em; }
+  .kk-agency .kk-cta-stack { justify-content: flex-start; }
+  .kk-agency .kk-letter .kk-rating, .kk-agency .kk-letter .kk-kicker { text-align: left; }
+  .kk-list { padding-left: 22px; margin: 0 0 22px; display: grid; gap: 12px; }
+  .kk-list li { font-size: 18px; line-height: 1.6; color: var(--kk-ink-2); }
+  .kk-list li::marker { color: var(--copper); }
+  .kk-ol { padding-left: 26px; }
+  .kk-cta-stack { flex-direction: column; align-items: flex-start; gap: 10px; }
+  .kk-cta-stack small { font-size: 13px; color: var(--ember); }
+  .kk-video-sm { max-width: 720px; margin: 30px 0 36px; }
+  .kk-quote { margin: 0 0 20px; padding: 32px 36px; border-left: 3px solid var(--copper); background: var(--kk-stone); border-radius: 0 20px 20px 0; }
+  .kk-quote p { font-family: var(--display); font-size: clamp(20px, 2.4vw, 28px); line-height: 1.3; letter-spacing: -0.02em; color: var(--kk-ink); margin-bottom: 14px; text-align: left; }
+  .kk-quote footer { font-family: var(--mono); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+  .kk-ps { font-weight: 700; color: var(--kk-ink) !important; }
+  .kk-final .kk-lead { max-width: 820px; }
+  .kk-grid-6 { grid-template-columns: repeat(3, 1fr); max-width: 860px; }
+  .kk-cases .kk-stats { margin: 36px auto 28px; max-width: 1000px; }
+  .kk-cases .kk-stats dt, .kk-cases .kk-stats small { color: #cfccc4; }
+  .kk-cases .kk-stats dd { color: var(--ember); }
+  .kk-gallery { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin: 24px 0 28px; }
+  .kk-gallery figure { margin: 0; border-radius: 12px; overflow: hidden; border: 1px solid rgba(0, 0, 0, 0.1); background: #fff; }
+  .kk-gallery img { display: block; width: 100%; aspect-ratio: 3 / 4; object-fit: cover; object-position: top; }
+  .kk-gallery figcaption { font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); padding: 10px 12px; }
+  .kk-letter .kk-photo { float: right; width: min(300px, 42%); margin: 0 0 16px 24px; border-radius: 16px; }
+  @media (max-width: 860px) { .kk-grid-6 { grid-template-columns: 1fr 1fr; } .kk-gallery { grid-template-columns: 1fr 1fr; } .kk-letter .kk-photo { float: none; width: 100%; margin: 0 0 18px; } }
+</style>

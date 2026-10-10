@@ -1,0 +1,55 @@
+---
+// Preview only: King Kong's landing page agency page, rebuilt in Brandon's voice, with Dead River's own pages as the gallery.
+import KkShell from '../../components/KkShell.astro';
+const faqs = [
+  { q: 'What is the difference between a landing page and a website?', a: "Your home page introduces the whole business and invites people to look around. A landing page does one job. One offer, one next step, no menu, no distractions. You run ads to landing pages, not to home pages." },
+  { q: 'Should I send ads to a landing page or my home page?', a: "A landing page, every time. Somebody searched for drain clearing and clicked your ad. If they land on your home page, they're now looking at a page about everything you do, with a menu. They have to go find the drain clearing. Most won't." },
+  { q: 'Do I need one for each service?', a: "Yes. One page, one thing. A page about everything converts like a page about nothing. The water heater page talks only about water heaters, what's included, what it costs, and how to book." },
+  { q: 'Can you make landing pages for an online store?', a: "Yes, and they work best when you're pushing one product or one offer. A headline that makes the promise, proof it's real, and one button. Once you're selling a big range, the product pages themselves have to do that job." },
+  { q: 'Why ours?', a: "Because they're built to make the phone ring, not to look pretty. Real photos, real numbers, the same words as the ad, a phone number you can hit with a thumb, and a form that goes straight to a person who calls back in five minutes. Pretty counts for nothing if nobody calls." },
+];
+const gallery = [
+  ['/images/kk/lp-demand-flow.jpg', 'Demand Flow, the $50K guarantee'],
+  ['/images/kk/lp-di-demo.jpg', 'Demand Intelligence demo'],
+  ['/images/kk/lp-home.jpg', 'deadrivermanagement.com'],
+  ['/images/kk/lp-demand-intelligence.jpg', 'Demand Intelligence'],
+];
+---
+
+<KkShell
+  title="Landing Page Agency (Preview)"
+  description="Landing pages built to make the phone ring, in the Dead River look."
+  kicker="LANDING PAGES"
+  headline="MORE LEADS FROM THE SAME ADS. WITHOUT SPENDING ONE MORE DOLLAR ON TRAFFIC."
+  sub="The best salesperson you'll ever hire works 24 hours a day, never calls in sick, and never leaves for a competitor."
+  faqTitle="LANDING PAGES, STRAIGHT ANSWERS"
+  faqs={faqs}
+>
+  <p class="kk-dear">Hey,</p>
+  <p>Let me guess. You're looking for ways to get more customers, and you're thinking "if only I could get more people to my website."</p>
+  <p>Okay, I'll shoot you straight. Most people don't have a traffic problem. They have a conversion problem.</p>
+  <p>There is no shortage of traffic. Billions of people on Facebook. Tens of thousands of Google searches a second. You can go to the traffic store, which is Google and Facebook, and buy as much as you want, today.</p>
+  <p>The problem is getting that traffic to turn into calls at a rate that makes money.</p>
+  <p>And here's what most people miss. Google and Facebook don't set the price of a click. Your competition does. So instead of complaining about what you can't control, you work on the one thing you can: how many of the people who click actually call.</p>
+  <h2>SO WHAT YOU NEED IS…</h2>
+  <p>A salesperson who never sleeps, never calls in sick, never takes a day off, and never goes to work for the guy across town.</p>
+  <p>Their name is Landing Page.</p>
+  <p>A good landing page is a salesperson that works for you day and night. Set it up right once and it brings in calls, texts, and form fills while you're on a roof, in a treatment room, or asleep.</p>
+  <p>Here's what a few of ours look like.</p>
+  <div class="kk-gallery">
+    {gallery.map(([src, cap]) => <figure><img src={src} alt="" loading="lazy" /><figcaption>{cap}</figcaption></figure>)}
+  </div>
+  <h2>WHAT MAKES ONE WORK</h2>
+  <ul class="kk-list">
+    <li><strong>It says the same thing the ad said.</strong> Same headline, same promise, same photo. Break that trail and you lose half the clicks before they read a word.</li>
+    <li><strong>One job.</strong> No menu. No "about us." No six services. The person wanted drain clearing, so the page is about drain clearing.</li>
+    <li><strong>Real proof, not "quality you can trust."</strong> Real photos of real work. Reviews with names. The real number of jobs. A guarantee you'll honor.</li>
+    <li><strong>A phone number you can hit with a thumb.</strong> And again further down. People scroll.</li>
+    <li><strong>A short form that goes to a person.</strong> Name, phone, ZIP, what do you need. Then a human calls back inside five minutes. The page gets the lead. The call gets the job.</li>
+  </ul>
+  <p>We've built these for over 40 businesses in 30 niches, and we test them the cheap way: run twenty headlines as ads, let Facebook pick the winner for pocket change, and put the winning headline on the page. The page converts better because the ad already proved the words.</p>
+  <h2>THE OFFER</h2>
+  <p>For Demand Flow clients, the landing pages are built in. We don't send ads to a page that leaks. And the whole thing is under the one guarantee. $50,000 in new revenue in 45-60 days, or your money back, plus $500 for wasting your time.</p>
+  <p>No set-up fee for the page. No design fee. No copywriting fee. It's part of the system, because without it the system doesn't work.</p>
+  <p class="kk-ps">P.S. The page checklist, and the trick for testing headlines with ads before you put them on the page, is in Part 3 of Marketing is F*cking Easy. Free, further down.</p>
+</KkShell>
