@@ -1,0 +1,298 @@
+---
+// Preview: King Kong's 30-minute strategy session form, step for step, in the
+// Dead River look. One question per screen, progress dots, exit-intent catch,
+// a "verifying your answers" beat, then the calendar or the not-yet page.
+import Growth from '../../layouts/Growth.astro';
+import Arrow from '../../components/growth/Arrow.astro';
+
+const marketing = ['Facebook Ads', 'Google Ads', 'SEO', 'Television', 'Radio', 'Newspaper / Print', 'Other', 'None'];
+const countries = ['United States', 'Canada', 'United Kingdom', 'Australia', 'Other'];
+const budgets = ['Under $5k', '$5k to $10k', '$10k to $20k', '$20k to $30k', '$30k to $50k', '$50k+'];
+const timing = ['Immediately', 'In the next 2 weeks', '2 to 4 weeks', '4 to 6 weeks', '6 weeks+', 'Never', "I'm just shooting the shit"];
+const sources = ['Google', 'Facebook or Instagram', 'YouTube', 'TikTok', 'A friend or referral', 'Upwork', 'An email or text from us', 'Other'];
+---
+
+<Growth
+  title="Free 30-Minute Strategy Session (Preview)"
+  description="Claim your free, no-obligation 30-minute strategy session."
+  robots="noindex,nofollow"
+>
+  <section class="kkf wrap" data-kkf>
+    <ol class="kkf-dots" aria-hidden="true">{Array.from({ length: 10 }).map(() => <li></li>)}</ol>
+
+    <form class="kkf-form" novalidate>
+      <div class="kkf-step is-active" data-step="intro">
+        <p class="eyebrow">Servicing clients nationwide</p>
+        <h1>Free 30-minute strategy session</h1>
+        <p class="kkf-lead">Claim your free, no-obligation 30-minute strategy session. We pull the live demand in your market and show you what a plan would look like. This is strictly for people who are hungry for growth. If that's you, let's go.</p>
+        <button class="button" type="button" data-next>See if you qualify <Arrow /></button>
+        <p class="kkf-rating"><span class="rv-stars" aria-hidden="true">★★★★★</span> Rated 5.0 on Google</p>
+      </div>
+
+      <div class="kkf-step" data-step="first">
+        <h2>Okay, we'll make this quick and painless. Pinky promise. But before we start, we don't wanna be rude. So what's your name?</h2>
+        <input name="first" type="text" autocomplete="given-name" placeholder="Enter your first name" required />
+        <p class="kkf-error"></p>
+        <button class="button" type="button" data-next>Continue <Arrow /></button>
+      </div>
+
+      <div class="kkf-step" data-step="email">
+        <h2>Awesome! What's your email, <span data-name>there</span>?</h2>
+        <input name="email" type="email" autocomplete="email" placeholder="Email" required />
+        <p class="kkf-error"></p>
+        <button class="button" type="button" data-next>Continue <Arrow /></button>
+      </div>
+
+      <div class="kkf-step" data-step="sell">
+        <p class="kkf-note">Okay thanks for that, <span data-name>there</span>. To find out if Dead River is a good fit for helping you grow your business, we've got a few questions.</p>
+        <h2>First, what do you sell?</h2>
+        <div class="kkf-choices" data-auto>
+          <label><input type="radio" name="sell" value="Product" /><span>Product</span></label>
+          <label><input type="radio" name="sell" value="Service" /><span>Service</span></label>
+        </div>
+        <p class="kkf-error"></p>
+      </div>
+
+      <div class="kkf-step" data-step="marketing">
+        <h2>What marketing are you doing right now?</h2>
+        <p class="kkf-help">Select more than one if that applies.</p>
+        <div class="kkf-choices kkf-multi">
+          {marketing.map((m) => <label><input type="checkbox" name="marketing" value={m} /><span>{m}</span></label>)}
+        </div>
+        <p class="kkf-error"></p>
+        <button class="button" type="button" data-next>Continue <Arrow /></button>
+      </div>
+
+      <div class="kkf-step" data-step="country">
+        <h2>Where's your business?</h2>
+        <select name="country" required>
+          <option value="">Pick a country</option>
+          {countries.map((c) => <option value={c}>{c}</option>)}
+        </select>
+        <p class="kkf-error"></p>
+        <button class="button" type="button" data-next>Continue <Arrow /></button>
+      </div>
+
+      <div class="kkf-step" data-step="budget">
+        <h2>How much is your monthly marketing budget?</h2>
+        <p class="kkf-help">We're asking this first to see if we'd be a good fit, and so we can tell you what's realistic for that budget.</p>
+        <div class="kkf-choices" data-auto>
+          {budgets.map((b) => <label><input type="radio" name="budget" value={b} /><span>{b}</span></label>)}
+        </div>
+        <p class="kkf-error"></p>
+      </div>
+
+      <div class="kkf-step" data-step="website">
+        <h2>What's your website?</h2>
+        <p class="kkf-help">If you don't have one, type "don't have one".</p>
+        <input name="website" type="text" autocomplete="url" placeholder="yourbusiness.com" required />
+        <p class="kkf-error"></p>
+        <button class="button" type="button" data-next>Continue <Arrow /></button>
+      </div>
+
+      <div class="kkf-step" data-step="about">
+        <h2>Tell us about your business.</h2>
+        <p class="kkf-help">What do you sell, who buys it, and what does a typical job cost?</p>
+        <textarea name="about" rows="4" required placeholder="We do residential roofing in Dallas. Average job is around $12,000."></textarea>
+        <p class="kkf-error"></p>
+        <button class="button" type="button" data-next>Continue <Arrow /></button>
+      </div>
+
+      <div class="kkf-step" data-step="revenue">
+        <h2>What's your current monthly revenue?</h2>
+        <p class="kkf-help">We're asking so we only suggest things that will actually move the needle for you.</p>
+        <input name="revenue" type="text" inputmode="numeric" placeholder="$40,000" required />
+        <p class="kkf-error"></p>
+        <button class="button" type="button" data-next>Continue <Arrow /></button>
+      </div>
+
+      <div class="kkf-step" data-step="target">
+        <h2>What's your target monthly revenue?</h2>
+        <p class="kkf-help">We'll build the plan around this number.</p>
+        <input name="target" type="text" inputmode="numeric" placeholder="$100,000" required />
+        <p class="kkf-error"></p>
+        <button class="button" type="button" data-next>Continue <Arrow /></button>
+      </div>
+
+      <div class="kkf-step" data-step="obstacle">
+        <h2>What's the #1 biggest obstacle holding your business back?</h2>
+        <p class="kkf-help">Give us as much detail as you can. The more we know, the better the plan.</p>
+        <textarea name="obstacle" rows="5" required placeholder="Leads come in waves. Some weeks nothing, some weeks we can't keep up."></textarea>
+        <p class="kkf-error"></p>
+        <button class="button" type="button" data-next>Continue <Arrow /></button>
+      </div>
+
+      <div class="kkf-step" data-step="timing">
+        <h2>If we're a fit, when would you want to start?</h2>
+        <div class="kkf-choices" data-auto>
+          {timing.map((t) => <label><input type="radio" name="timing" value={t} /><span>{t}</span></label>)}
+        </div>
+        <p class="kkf-error"></p>
+      </div>
+
+      <div class="kkf-step" data-step="path">
+        <h2>Which sounds more like you?</h2>
+        <div class="kkf-paths" data-auto>
+          <label>
+            <input type="radio" name="path" value="Do it for me" />
+            <span class="kkf-path-card">
+              <span class="eyebrow">Agency</span>
+              <strong>Do it for me</strong>
+              <small>More investment, less work on your end. We run the whole system.</small>
+              <span class="button">Get started <Arrow /></span>
+            </span>
+          </label>
+          <label>
+            <input type="radio" name="path" value="Teach me how to do it" />
+            <span class="kkf-path-card">
+              <span class="eyebrow">Software</span>
+              <strong>Teach me how to do it</strong>
+              <small>Less investment, more work on your end. You use Demand Intelligence yourself.</small>
+              <span class="button secondary">Get started <Arrow /></span>
+            </span>
+          </label>
+        </div>
+        <p class="kkf-error"></p>
+      </div>
+
+      <div class="kkf-step" data-step="commit">
+        <h2>On a scale of 1 to 10, how committed are you to hitting that revenue goal?</h2>
+        <p class="kkf-help">1 means you're happy where you are. 10 means you'll do anything to get there.</p>
+        <div class="kkf-scale" data-auto>
+          {Array.from({ length: 10 }, (_, i) => i + 1).map((n) => <label><input type="radio" name="commit" value={String(n)} /><span>{n}</span></label>)}
+        </div>
+        <p class="kkf-error"></p>
+      </div>
+
+      <div class="kkf-step" data-step="source">
+        <h2>Where did you first hear about us?</h2>
+        <div class="kkf-choices" data-auto>
+          {sources.map((s) => <label><input type="radio" name="source" value={s} /><span>{s}</span></label>)}
+        </div>
+        <p class="kkf-error"></p>
+      </div>
+
+      <div class="kkf-step" data-step="pledge">
+        <h2>Do you pinky promise that if you qualify for a call, you'll show up at the time you pick?</h2>
+        <div class="kkf-choices" data-auto>
+          <label><input type="radio" name="pledge" value="Yes" /><span>Yes, I'll be there</span></label>
+          <label><input type="radio" name="pledge" value="No" /><span>No</span></label>
+        </div>
+        <p class="kkf-error"></p>
+      </div>
+
+      <div class="kkf-step" data-step="contact">
+        <h2>Last one. Where do we send the invite?</h2>
+        <div class="kkf-contact">
+          <label><span>Last name</span><input name="last" type="text" autocomplete="family-name" required /></label>
+          <label><span>Mobile</span><input name="phone" type="tel" autocomplete="tel" required /></label>
+          <label><span>Company name</span><input name="company" type="text" autocomplete="organization" required /></label>
+        </div>
+        <p class="kkf-help">Hit the button and you'll pick a time on the next page.</p>
+        <input type="text" name="fax" tabindex="-1" autocomplete="off" aria-hidden="true" class="kkf-hp" />
+        <p class="kkf-error"></p>
+        <button class="button" type="submit">Book my strategy session <Arrow /></button>
+      </div>
+
+      <div class="kkf-step kkf-verify" data-step="verify">
+        <h2>Please be patient while we verify your answers.</h2>
+        <div class="kkf-bar"><span></span></div>
+        <p class="kkf-pct">0%</p>
+      </div>
+    </form>
+
+    <button class="kkf-back" type="button" data-back hidden>Back</button>
+  </section>
+
+  <div class="kkf-exit" data-exit hidden role="dialog" aria-modal="true" aria-labelledby="kkf-exit-title">
+    <div class="kkf-exit-card">
+      <h2 id="kkf-exit-title">Hold up there, tiger.</h2>
+      <p>Alright, let's try this again. It takes less than two minutes to fill out this form, and then you'll get a free plan for your market. Worth a couple of minutes, right?</p>
+      <div class="button-row">
+        <button class="button" type="button" data-exit-stay>Give me the free plan <Arrow /></button>
+        <button class="text-link" type="button" data-exit-close>No thanks</button>
+      </div>
+    </div>
+  </div>
+</Growth>
+
+<script>
+  import '../../scripts/kk-form.js';
+</script>
+
+<style>
+  .kkf { position: relative; max-width: 760px; padding: clamp(40px, 6vw, 72px) 0 120px; min-height: 70svh; }
+  .kkf-dots { display: flex; justify-content: center; gap: 0; list-style: none; margin: 0 auto 44px; padding: 0; max-width: 560px; }
+  .kkf-dots li { position: relative; flex: 1; height: 2px; background: rgba(255, 255, 255, 0.12); }
+  .kkf-dots li::after { content: ''; position: absolute; right: -6px; top: -5px; width: 12px; height: 12px; border-radius: 50%; background: #2a2a2e; border: 1px solid rgba(255, 255, 255, 0.12); transition: background 0.3s ease, border-color 0.3s ease; }
+  .kkf-dots li:first-child { flex: 0; }
+  .kkf-dots li.is-done { background: var(--copper); }
+  .kkf-dots li.is-done::after, .kkf-dots li.is-current::after { background: var(--copper); border-color: var(--copper); box-shadow: 0 0 0 5px rgba(227, 160, 112, 0.16); }
+
+  .kkf-step { display: none; text-align: center; }
+  .kkf-step.is-active { display: block; animation: kkf-in 0.45s cubic-bezier(0.22, 1, 0.36, 1); }
+  @keyframes kkf-in { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+  @media (prefers-reduced-motion: reduce) { .kkf-step.is-active { animation: none; } }
+  .kkf h1 { font-size: clamp(40px, 7vw, 84px); line-height: 0.95; letter-spacing: -0.05em; text-transform: uppercase; max-width: 14ch; margin: 14px auto 0; }
+  .kkf h2 { font-size: clamp(24px, 3.2vw, 36px); line-height: 1.15; letter-spacing: -0.03em; max-width: 22ch; margin: 0 auto 22px; }
+  .kkf-lead { max-width: 600px; margin: 22px auto 30px; font-size: 18px; color: #cfccc4; }
+  .kkf-note { max-width: 560px; margin: 0 auto 16px; font-size: 16px; color: var(--muted); }
+  .kkf-help { max-width: 560px; margin: -8px auto 22px; font-size: 15px; color: var(--muted); }
+  .kkf-rating { margin-top: 18px; font-size: 13px; color: var(--muted); }
+  .kkf-rating .rv-stars { color: var(--copper); margin-right: 6px; }
+
+  .kkf input[type='text'], .kkf input[type='email'], .kkf input[type='tel'], .kkf select, .kkf textarea {
+    width: 100%; max-width: 560px; margin: 0 auto; display: block;
+    padding: 18px 20px; font-size: 18px; border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.14); background: var(--cream); color: var(--ink);
+  }
+  .kkf input:focus, .kkf select:focus, .kkf textarea:focus { outline: 2px solid var(--copper); outline-offset: 2px; }
+  .kkf textarea { resize: vertical; }
+  .kkf .button { margin-top: 22px; }
+  .kkf-error { min-height: 22px; margin: 10px 0 0; font-size: 14px; color: var(--ember); }
+  .kkf-hp { position: absolute; left: -9999px; }
+
+  .kkf-choices { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; max-width: 560px; margin: 0 auto; }
+  .kkf-choices label, .kkf-scale label { cursor: pointer; }
+  .kkf-choices input, .kkf-scale input, .kkf-paths input { position: absolute; opacity: 0; pointer-events: none; }
+  .kkf-choices span { display: block; padding: 16px 18px; border: 1px solid rgba(255, 255, 255, 0.14); border-radius: 14px; background: var(--cream); font-size: 16px; font-weight: 500; transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease; }
+  .kkf-choices label:hover span { border-color: #f2b18555; transform: translateY(-1px); }
+  .kkf-choices input:checked + span { border-color: var(--copper); background: rgba(227, 160, 112, 0.12); color: var(--ember); }
+  .kkf-choices input:focus-visible + span { outline: 2px solid var(--copper); outline-offset: 2px; }
+
+  .kkf-scale { display: grid; grid-template-columns: repeat(10, 1fr); gap: 6px; max-width: 620px; margin: 0 auto; }
+  .kkf-scale span { display: grid; place-items: center; aspect-ratio: 1; border: 1px solid rgba(255, 255, 255, 0.14); border-radius: 12px; background: var(--cream); font-family: var(--mono); font-size: 16px; transition: border-color 0.2s ease, background 0.2s ease; }
+  .kkf-scale input:checked + span { border-color: var(--copper); background: rgba(227, 160, 112, 0.12); color: var(--ember); }
+
+  .kkf-paths { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .kkf-paths label { cursor: pointer; }
+  .kkf-path-card { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; text-align: left; padding: 28px; border: 1px solid rgba(255, 255, 255, 0.14); border-radius: 20px; background: linear-gradient(180deg, #161618, #111112); height: 100%; transition: border-color 0.2s ease, transform 0.2s ease; }
+  .kkf-paths label:hover .kkf-path-card { border-color: #f2b18555; transform: translateY(-2px); }
+  .kkf-paths input:checked + .kkf-path-card { border-color: var(--copper); }
+  .kkf-path-card strong { font-family: var(--display); font-size: 28px; letter-spacing: -0.03em; line-height: 1; }
+  .kkf-path-card small { font-size: 15px; color: var(--muted); }
+  .kkf-path-card .button { margin-top: 8px; }
+
+  .kkf-contact { display: grid; gap: 14px; max-width: 560px; margin: 0 auto 18px; text-align: left; }
+  .kkf-contact label span { display: block; font-size: 13px; color: var(--muted); margin-bottom: 6px; }
+
+  .kkf-bar { max-width: 420px; height: 8px; margin: 26px auto 12px; border-radius: 999px; background: rgba(255, 255, 255, 0.1); overflow: hidden; }
+  .kkf-bar span { display: block; width: 0; height: 100%; background: linear-gradient(90deg, var(--copper-deep), var(--ember)); transition: width 0.25s linear; }
+  .kkf-pct { font-family: var(--mono); color: var(--muted); }
+
+  .kkf-back { position: absolute; left: 0; bottom: 48px; background: none; border: 0; color: var(--muted); font: inherit; cursor: pointer; text-decoration: underline; text-underline-offset: 4px; }
+  .kkf-back[hidden] { display: none; }
+
+  .kkf-exit { position: fixed; inset: 0; z-index: 90; display: grid; place-items: center; padding: 20px; background: rgba(10, 10, 11, 0.8); backdrop-filter: blur(10px); }
+  .kkf-exit[hidden] { display: none; }
+  .kkf-exit-card { max-width: 520px; padding: 36px; border-radius: 22px; border: 1px solid rgba(255, 255, 255, 0.14); background: linear-gradient(180deg, #161618, #111112); box-shadow: 0 40px 120px -30px rgba(0, 0, 0, 0.95); }
+  .kkf-exit-card h2 { font-size: clamp(28px, 4vw, 40px); letter-spacing: -0.04em; text-transform: uppercase; margin-bottom: 12px; }
+  .kkf-exit-card p { color: #cfccc4; margin-bottom: 22px; }
+  .kkf-exit-card .text-link { background: none; border: 0; cursor: pointer; font: inherit; }
+
+  @media (max-width: 620px) {
+    .kkf-choices, .kkf-paths { grid-template-columns: 1fr; }
+    .kkf-scale { grid-template-columns: repeat(5, 1fr); }
+    .kkf-back { position: static; display: block; margin: 24px auto 0; }
+  }
+</style>
