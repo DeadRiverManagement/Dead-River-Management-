@@ -18,7 +18,7 @@ export const pages = (page, divider, F) => {
         <ul>
           <li><strong>Part 1: The system.</strong> How a lead turns into a paid customer, and where it leaks. Numbers, your CRM, follow-up, your Google profile, your website. Boring, and it's where most of the money is.</li>
           <li><strong>Part 2: The people already looking.</strong> How we find the people in your market who are searching for what you sell right now, before they fill out a form anywhere.</li>
-          <li><strong>Part 3: The ads.</strong> How to write a Facebook or Instagram ad somebody actually stops for, and how to set the account up so a winning ad keeps winning.</li>
+          <li><strong>Part 3: The ads.</strong> How to write a Facebook or Instagram ad somebody actually stops for, how to set the account up so a winning ad keeps winning, and how to catch the people typing it into Google.</li>
           <li><strong>Part 4: Your 90 days.</strong> What to do first, what to do next, and the worksheets.</li>
         </ul>
         <p>Most owners get this backwards. They run ads before the phone gets answered. Or they fix the phone and never run an ad. The ones who win do both, in that order.</p>

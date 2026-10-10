@@ -4,7 +4,7 @@ export const pages = (page, divider, F) => {
   return [
     divider(4, 'Your 90 days.', 'What to do first, what to do next, and the worksheets to do it with.'),
 
-    page({ part: P, kicker: '31 / The plan', title: 'Build it in three steps.', sub: 'Do the next phase when the first one actually works. Not when the calendar says so.',
+    page({ part: P, kicker: '32 / The plan', title: 'Build it in three steps.', sub: 'Do the next phase when the first one actually works. Not when the calendar says so.',
       body: `
         ${F.fig(F.timeline())}
         <div class="cards c3">
@@ -16,7 +16,7 @@ export const pages = (page, divider, F) => {
         <p>When you pray for rain, you have to deal with the mud. If the leads double and you can't answer the phone or fill the orders, that's not growth, that's a bad month with more expensive reviews.</p>`,
       doNow: 'Start with phase one. Put the work on the calendar with names next to it.' }),
 
-    page({ part: P, kicker: '31 / The plan', title: 'Your first week.', sub: 'One small task a day gets the whole thing moving.',
+    page({ part: P, kicker: '32 / The plan', title: 'Your first week.', sub: 'One small task a day gets the whole thing moving.',
       body: `
         <div class="steps">
           <div class="step"><i>1</i><div><b>Day 1</b><small>Pull ten leads. Find the first leak.</small></div></div>
@@ -28,7 +28,7 @@ export const pages = (page, divider, F) => {
         <p class="note">A broken contact path gets fixed the day you find it, not on day 5. Everything else can wait its turn.</p>`,
       doNow: 'Pick the day you start.' }),
 
-    page({ part: P, kicker: '32 / Worksheets', title: 'Your one-fix worksheet.', sub: 'Turn an idea into a task with a name and a date on it.',
+    page({ part: P, kicker: '33 / Worksheets', title: 'Your one-fix worksheet.', sub: 'Turn an idea into a task with a name and a date on it.',
       body: `
         <div class="worksheet">
           <div><b>The product or service we want to grow</b></div>
@@ -41,7 +41,7 @@ export const pages = (page, divider, F) => {
         <p class="note">Use a clear task. "Fix the form alert by Friday." Then test it. Save what changed and what you learned, because you will forget by next month.</p>`,
       doNow: 'Fill this out with the person who owns the work.' }),
 
-    page({ part: P, kicker: '32 / Worksheets', title: 'Your numbers worksheet.', sub: 'One product or service, one time period. Write "not sure" where you don\'t know. That\'s an answer too.',
+    page({ part: P, kicker: '33 / Worksheets', title: 'Your numbers worksheet.', sub: 'One product or service, one time period. Write "not sure" where you don\'t know. That\'s an answer too.',
       body: `
         <div class="worksheet">
           <div><b>Average sale</b>Money from finished jobs or orders ÷ number of them</div>
@@ -54,7 +54,7 @@ export const pages = (page, divider, F) => {
         </div>`,
       doNow: 'Use real numbers. This page is the first thing we go over on a call.' }),
 
-    page({ part: P, kicker: '32 / Worksheets', title: 'Your ad worksheet.', sub: 'Fill this out before you build the ad. If a box is empty, the ad isn\'t ready.',
+    page({ part: P, kicker: '33 / Worksheets', title: 'Your ad worksheet.', sub: 'Fill this out before you build the ad. If a box is empty, the ad isn\'t ready.',
       body: `
         <div class="worksheet">
           <div><b>Who is it for (one person, not a group)</b></div>
