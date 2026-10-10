@@ -8,7 +8,7 @@ export const pages = (page, divider, F) => {
     page({ part: P, kicker: '17 / The algorithm trap', title: 'Stop obsessing over the algorithm.', sub: 'The biggest mistake we see with owners running their own ads. They think the edge is in the settings.',
       body: `
         <p>They believe the win is in their targeting, their account structure, their bidding, and whatever "hack" some guy posted at 2am. Those guys are selling courses. They make it sound complicated on purpose, because the more confusing it sounds, the more the $1,997 price tag feels justified.</p>
-        ${F.fig(F.obsess())}
+        ${F.pic('obsess', '', 'max-width:460px')}
         <p>Here's why. You can have the cleanest account setup on the planet running an ad that's flat, boring, and looks like every other ad in your industry, and it will get beat every time by a guy with a messy account and one ad that makes people stop.</p>
         <p class="big">The ad is the lever. Everything else is the fulcrum.</p>
         <p>Whatever you learn about the technical side today has a shelf life of about a year. The interface changes. The buttons get renamed. What makes a person stop and look at a picture of a roof doesn't change. Learn that, and you're set for as long as you own the business.</p>`,
@@ -16,7 +16,7 @@ export const pages = (page, divider, F) => {
 
     page({ part: P, kicker: '18 / How Meta picks ads', title: 'Your ad is your targeting now.', sub: 'Meta reads the ad itself to decide who sees it. That changes everything about how you write one.',
       body: `
-        <div class="side l">${F.ad({ lead: 'Most owners in {city} find out about this the expensive way. Here\'s what we check first…', photo: F.img.mic, tall: true, ov: 'The 3 things we check <em>before</em> we quote', headline: 'Took us ten years to get the list down to three', react: true })}<div>
+        <div class="side l">${F.ad({ lead: 'Most owners in {city} find out about this the expensive way. Here\'s what we check first…', photo: F.img.g['photo-roof'], tall: true, ov: 'The 3 things we check <em>before</em> we quote', headline: 'Took us ten years to get the list down to three', react: true })}<div>
         <p>Here's how it works, in plain words. Somebody opens Facebook or Instagram. Meta has tens of millions of ads in a pile. Its system sorts that pile in a fraction of a second and picks a short list that might fit this one person. Then it picks the winners off that short list.</p>
         <p>The part that matters to you: it reads your picture, your headline, your copy, and your offer, and matches all of that against what it knows about each person. The ad with a photo of a shingled roof and the words "roof replacement in Dallas" gets shown to people whose behavior looks like they're thinking about a roof. Same with a photo of a smile and "Invisalign," or a pair of trail shoes and "flat feet."</p>
         <p>So the words and the picture you put in the ad are the audience signal you're sending. Whoever you describe in the ad is who Meta goes looking for.</p></div></div>
@@ -27,7 +27,7 @@ export const pages = (page, divider, F) => {
     page({ part: P, kicker: '19 / The two jobs', title: 'Every ad has two jobs.', sub: 'What people actually look at on these platforms is news and gossip. Not your logo. Not your mission statement.',
       body: `
         <p>Every year Meta publishes a report on the most-viewed content on the platform. It's the same every year. News, local updates, gossip. You might be thinking "I'm not turning my company into a tabloid." Fair. But we're not going to change what people look at. We're going to put your business in the stream that already exists.</p>
-        <div class="fbrow sm" style="margin-bottom:12px">${F.ad({ photo: F.img.desk, tag: 'Heads up', ov: 'What we found under 40 roofs in {city} this summer', headline: 'Twelve had the same problem. It wasn\'t the hail.', react: false })}${F.ad({ photo: F.img.mic, ov: 'The $90 fix most techs <em>skip</em>', headline: 'Why nobody tells you about it', react: false })}</div>
+        <div class="side l">${F.pic('two-jobs', '', 'max-width:300px')}<div class="fbrow sm" style="grid-template-columns:1fr">${F.ad({ photo: F.img.g['photo-roof-hail'], tag: 'Heads up', ov: 'What the hail did to 14 roofs on {street}', headline: 'Twelve had the same problem underneath.', react: false })}</div></div>
         <div class="cards c2">
           <div class="card"><span class="tag">Job 1</span><b>Give them something worth looking at</b><small>Real news, a real finding, something useful. "Here's what we found under 40 roofs in your neighborhood this summer." That's content. People stop for content.</small></div>
           <div class="card"><span class="tag">Job 2</span><b>Sell the click</b><small>Enough curiosity that more people click yours than the other guys' in the same auction. When that happens, Meta rewards you with cheaper placements and better people.</small></div>
@@ -39,7 +39,7 @@ export const pages = (page, divider, F) => {
     page({ part: P, kicker: '20 / The ad skeleton', title: 'The anatomy of an ad that works.', sub: 'Every winning ad we run has the same bones. Learn them.',
       body: `
         <div class="anat">
-          ${F.ad({ lead: 'Most people in {city} don\'t find out until the ceiling stain shows up. Here\'s what we look for first…', photo: F.img.desk, headline: 'The 3 things we check before we quote a roof', desc: 'Took us 10 years to get the list down to three' })}
+          ${F.ad({ lead: 'Most people in {city} don\'t find out until the ceiling stain shows up. Here\'s what we look for first…', photo: F.img.g['photo-roof'], headline: 'The 3 things we check before we quote a roof', desc: 'Took us 10 years to get the list down to three' })}
           <div class="labels">
             <div><b>1. Scroll-stopping image</b>The pattern interrupt. The first thing the eye lands on. Real photo, something slightly off.</div>
             <div><b>2. Headline</b>Curiosity plus one specific benefit, in one line.</div>
@@ -100,7 +100,7 @@ export const pages = (page, divider, F) => {
 
     page({ part: P, kicker: '22 / Pattern interrupts', title: 'Win the scroll.', sub: 'The picture stops the thumb. The headline closes the deal. Half a second is all you need.',
       body: `
-        <div class="fbrow sm" style="margin-bottom:12px">${F.ad({ photo: F.img.mic, tall: false, headline: 'Raw native. Phone photo, no polish.', react: false })}${F.ad({ photo: F.img.desk, circle: [60, 40], headline: 'The highlight. One red circle on a real photo.', react: false })}</div>
+        <div class="side" style="grid-template-columns:1fr 210px 210px">${F.pic('scroll', '', 'max-width:220px')}${F.ad({ photo: F.img.g['photo-water-heater'], headline: 'Raw native. Phone photo, no polish.', react: false })}${F.ad({ photo: F.img.g['photo-roof'], circle: [80, 30], headline: 'The highlight. One red circle on a real photo.', react: false })}</div>
         <h2>Things that stop the scroll</h2>
         <ul>
           <li><strong>A raw phone photo</strong> from a job site. It doesn't look like an ad, so it doesn't get skipped like one.</li>
@@ -110,22 +110,18 @@ export const pages = (page, divider, F) => {
           <li><strong>A face with a real expression.</strong> Your tech grimacing at what he found. A customer laughing. Not a thumbs-up.</li>
           <li><strong>A map or a chart.</strong> A map of the 40 streets you worked on this year. A chart of what your customers saved. Implies data. People trust data.</li>
         </ul>
-        <h2>Things that don't</h2>
-        <ul>
-          <li>Stock photos of smiling people in polos.</li>
-          <li>Your logo. Your truck wrap by itself. A product on a white background.</li>
-          <li>Anything that looks like an ad.</li>
-        </ul>`,
+        <p><strong>Things that don't:</strong> stock photos of smiling people in polos, your logo, your truck wrap by itself, a product on a white background, and anything that looks like an ad.</p>`,
       doNow: 'Go through your phone. Pull the ten ugliest, most real photos of the work you have. Those are your next ads.' }),
 
     page({ part: P, kicker: '22 / Pattern interrupts', title: 'Make the ad look like a post. Not an ad.', sub: "People have been trained for thirty years to skip ads. Don't fight it. Use it.",
       body: `
         <p>Before somebody can buy from you, they have to read. Before they read, they have to not skip. Everything about the ad should look like something a neighbor posted, not something a company paid for.</p>
+        <div class="side l">${F.ad({ lead: 'Saturday job. Took the crew four hours. Owner said the neighbors already asked who did it…', photo: F.img.g['photo-before-after-yard'], headline: 'The post that already worked, now an ad', react: true })}<div>
         <h2>The burner account trick</h2>
         <p>If you don't know what "native" looks like in your niche, do this. Make a fresh Facebook or TikTok account. Follow the big pages in your trade, the local news, the neighborhood groups, and a few competitors. Spend twenty minutes liking and reading. Now every time you open that account, the algorithm shows you what's actually working in your market, sorted by what people engage with.</p>
         <p>That's your swipe file. Make your ads look like that.</p>
         <h2>Even better</h2>
-        <p>If you've posted something in the last six months that got unusual engagement, a job photo, a before and after, a rant about a bad install you fixed, take it. Don't reinvent it. Put it in Ads Manager, write a headline and a lead-in, and run it. A post that already worked for free is the cheapest ad test there is.</p>`,
+        <p>If you've posted something in the last six months that got unusual engagement, a job photo, a before and after, a rant about a bad install you fixed, take it. Don't reinvent it. Put it in Ads Manager, write a headline and a lead-in, and run it. A post that already worked for free is the cheapest ad test there is.</p></div></div>`,
       doNow: 'Find your best organic post from the last six months. Turn it into an ad this week.' }),
 
     page({ part: P, kicker: '23 / Formats', title: 'Statics first. Video second.', sub: 'A quick word on pictures versus video before the formats.',
@@ -140,7 +136,7 @@ export const pages = (page, divider, F) => {
 
     page({ part: P, kicker: '23 / Formats', title: 'What the formats look like.', sub: 'Three of the six, built with our own photos. Yours should look like yours, not like these.',
       body: `
-        <div class="fbrow sm" style="margin-bottom:12px">${F.ad({ photo: F.img.mic, headline: '1 · Raw native', react: false })}<div class="fb" style="width:210px"><div class="top"><img src="${F.img.brandon}" alt=""><div><b>Dead River Management</b><small>Sponsored</small></div></div><div class="sms"><div>Hey Brandon, phone\'s been ringing all week since the ads went live. Booked 6 roofs.</div><div class="me">That\'s what we like to hear. Keep answering in 5 min.</div></div><div class="link"><div><b>2 · The text mockup</b><small>Real text, with permission</small></div><span>Learn more</span></div></div>${F.ad({ photo: F.img.desk, tag: 'Local update', ov: 'What the hail did to 14 roofs on {street}', headline: '3 · The local update', react: false })}</div>
+        <div class="fbrow sm" style="margin-bottom:12px">${F.ad({ photo: F.img.g['photo-auto-shop'], headline: '1 · Raw native', react: false })}<div class="fb" style="width:210px"><div class="top"><img src="${F.img.brandon}" alt=""><div><b>Dead River Management</b><small>Sponsored</small></div></div><div class="sms"><div>Hey Brandon, phone\'s been ringing all week since the ads went live. Booked 6 roofs.</div><div class="me">That\'s what we like to hear. Keep answering in 5 min.</div></div><div class="link"><div><b>2 · The text mockup</b><small>Real text, with permission</small></div><span>Learn more</span></div></div>${F.ad({ photo: F.img.g['photo-roof-hail'], tag: 'Local update', ov: 'What the hail did to 14 roofs on {street}', headline: '3 · The local update', react: false })}</div>
         <p>The raw native is you, on the job, shot on a phone. The text mockup is a real customer text with the photo of the work next to it. The local update looks like a neighborhood post because it is one: a real finding, real photos, your name on it.</p>
         <p>Notice what none of them have. A logo in the corner. Brand colors. A stock photo. A headline that reads like a slogan. They look like something a person posted, which is exactly why they get read.</p>`,
       doNow: 'Make one ad in each of these three formats from photos you already have.' }),
@@ -167,7 +163,7 @@ export const pages = (page, divider, F) => {
           <li>Sounds like a person talking. "Most people don't find out until..."</li>
           <li>Ends mid-thought, so they have to hit "See more."</li>
         </ul>
-        <div class="side l">${F.ad({ lead: 'We pulled the shingles off 14 houses on {street} after the storm. Twelve of them had the same thing going on underneath, and it wasn\'t the hail', photo: F.img.desk, headline: 'The thing under 12 of 14 roofs', react: false })}<div>
+        <div class="side l">${F.ad({ lead: 'We pulled the shingles off 14 houses on {street} after the storm. Twelve of them had the same thing going on underneath, and it wasn\'t the hail', photo: F.img.g['photo-roof'], headline: 'The thing under 12 of 14 roofs', react: false })}<div>
         <div class="compare" style="grid-template-columns:1fr">
           <div class="bad"><b>Bad lead-in</b>"Are you a homeowner in {city} who needs a new roof? Then you need to read this!"</div>
           <div class="good"><b>Good lead-in</b>"We pulled the shingles off 14 houses on {street} after the storm. Twelve of them had the same thing going on underneath, and it wasn't the hail...</div>
@@ -205,9 +201,10 @@ export const pages = (page, divider, F) => {
 
     page({ part: P, kicker: '26 / The button', title: '"Learn more." That\'s the button.', sub: 'Not "Book now." Not "Get a quote." Not "Call now." Learn more.',
       body: `
+        <div class="side l">${F.ad({ lead: 'Three of our drivers used to spend Mondays on the phone chasing a rate. Here\'s what changed…', photo: F.img.g['photo-warehouse'], headline: 'One lane, one rate, 15 minutes', react: false })}<div>
         <p>Here's why. The whole ad up to this point has been selling the click, not the job. Then you put a high-pressure button on the end of it and it contradicts everything above it. The person was reading a post, and now it's a sales pitch.</p>
         <p>"Learn more" is non-threatening. It promises information, not a commitment. It gets the click. And the click is the only thing the ad is for.</p>
-        <p class="big">You sell on the page and on the phone. Not in the ad.</p>
+        <p class="big">You sell on the page and on the phone. Not in the ad.</p></div></div>
         <div class="callout">One exception. If the campaign's whole job is phone calls from people with an emergency right now, a call button can be the right move. Test it against "Learn more" to a page with a big phone number on it. Let the cost per booked job decide, not the cost per click.</div>`,
       doNow: 'Switch your prospecting ads to "Learn more." Watch the cost per lead for a week.' }),
 
@@ -219,7 +216,7 @@ export const pages = (page, divider, F) => {
           <div class="good"><b>One word swapped</b>"Here's what we found under 40 roofs in {Westside} this summer."<br><br>"...under 40 roofs on 1990s builds..."<br><br>"...under 40 roofs on rental properties..."</div>
         </div>
         <p>Same offer. Same photo. One word. Meta reads "rental properties" and goes looking for landlords. You just reached a group the generic ad was never going to find.</p>
-        <p>Same idea for the picture. If your med spa does well with women in their fifties and also women in their thirties, don't narrow the age in the settings. Run one ad with each in the photo. Meta reads the age off the picture and the copy.</p>`,
+        <div class="side l">${F.ad({ photo: F.img.g['photo-med-spa'], ov: 'Same room. Same offer. <em>Different person</em> in the photo.', headline: 'Swap the person, open a new pocket', react: false })}<div><p>Same idea for the picture. If your med spa does well with women in their fifties and also women in their thirties, don't narrow the age in the settings. Run one ad with each in the photo. Meta reads the age off the picture and the copy.</p></div></div>`,
       doNow: 'Duplicate your best ad. Swap one word. Change nothing else. Launch. Check in 48 hours.' }),
 
     page({ part: P, kicker: '28 / More ads from one winner', title: 'A winner is a seed. Not a finish line.', sub: 'Most people find one ad that works, turn everything else off, and ride it until it dies. Then they panic and start over.',
@@ -263,7 +260,10 @@ export const pages = (page, divider, F) => {
         <p class="big">The ad is the signal. The account is the amplifier. A weak signal through a great amplifier is still weak.</p>
         <p>But once you've got an ad that stops thumbs and gets clicks, the structure matters a lot. The right setup can squeeze noticeably more out of the exact same ad, stop you wasting money on bad days, and let you turn the budget up without the whole thing falling apart.</p>
         <h2>Two campaigns. That's it.</h2>
-        ${F.fig(F.twoCampaigns())}
+        <div class="side l">${F.pic('two-campaigns', '', 'max-width:300px')}<div class="cards">
+          <div class="card"><span class="tag">Launch</span><b>Where every new ad goes first</b><small>One ad set per 10 to 20 ads. Mix the formats. Campaign budget, cost cap. The campaign sorts winners from losers.</small></div>
+          <div class="card"><span class="tag">Scale</span><b>Where the winners get amplified</b><small>Winners get copied here, one ad set per page or offer. Original stays on in Launch. Budget ceiling at 2x expected spend.</small></div>
+        </div></div>
         <p class="note">No more "prospecting vs retargeting." No more interest-stack campaigns. One service or offer, two campaigns.</p>`,
       doNow: 'Draw your account on paper. If there are more than two campaigns per offer, ask why.' }),
 
@@ -345,6 +345,7 @@ export const pages = (page, divider, F) => {
 
     page({ part: P, kicker: '30 / Account structure', title: 'Track the number that pays the crew.', sub: 'This is what separates people who run ads from people who run a business.',
       body: `
+        ${F.pic('numbers-day', '', 'max-width:380px')}
         <p>Meta's dashboard shows you a number. Your bank account shows you a different number. Both are true. If you're optimizing for the dashboard, you can optimize yourself right out of business.</p>
         <div class="cards c3">
           <div class="card"><b>Cost per paid job</b><small>Not cost per lead. Not cost per click. Total spend across every channel, divided by jobs that finished and paid. From your job records, not the ad platform.</small></div>

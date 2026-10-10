@@ -6,6 +6,7 @@ const b64 = (f) => { const ext = f.split('.').pop(); const mime = ext === 'png' 
 export const img = {
   brandon: b64('brandon.jpg'), mic: b64('brandon-mic.jpg'), pmg: b64('pmg-results.png'), diScreens: b64('di-screens.png'),
   desk: b64('desk.jpg'), diDemo: b64('di-demo.jpg'), diFrame: b64('di-frame.jpg'), map: b64('map.png'),
+  g: Object.fromEntries(['anatomy', 'five-minutes', 'funnel-people', 'lead-in', 'map-signals', 'numbers-day', 'obsess', 'pyramid', 'scroll', 'spaghetti', 'two-campaigns', 'two-jobs', 'photo-auto-shop', 'photo-before-after-yard', 'photo-med-spa', 'photo-roof-hail', 'photo-roof', 'photo-warehouse', 'photo-water-heater'].map((n) => [n, b64(`g-${n}.jpg`)])),
   logos: Object.fromEntries(['total-auto-repair', 'wicked-logistics', 'gonzalez-and-sons-roofing', 'parcel-management-group', 'the-pipe-whisperers', 'only-fish'].map((n) => [n, b64(`logo-${n}.png`)])),
 };
 
@@ -201,4 +202,9 @@ export function crmCard() {
 export function swipe() {
   const tiles = [['LOCAL', 'Mechanic explains the three sounds most people ignore before the transmission goes'], ['HEADS UP', '{City} homeowners surprised by what\'s hiding in their attic insulation'], ['REVEALED', 'The $90 AC fix most techs in {city} skip'], ['NEW', 'Dentist shares the one habit that saves patients a crown']];
   return `<div class="cards c2">${tiles.map(([k, h]) => `<div class="card" style="padding:0;overflow:hidden"><div style="height:64px;background:linear-gradient(135deg,#2b2b2f,#141416);position:relative"><span style="position:absolute;left:0;top:12px;background:${C.red};color:#fff;${F.display};font-size:10px;letter-spacing:.08em;padding:3px 9px">${k}</span></div><div style="padding:10px 12px;${F.display};font-size:13px;line-height:1.2;letter-spacing:-.01em">${h}</div></div>`).join('')}</div>`;
+}
+
+// Generated illustration, no frame: its off-white background matches the page.
+export function pic(name, cap, style = 'max-width:520px') {
+  return `<div class="fig"><img src="${img.g[name]}" alt="" style="display:block;width:100%;${style};border-radius:12px">${cap ? `<div class="cap">${cap}</div>` : ''}</div>`;
 }

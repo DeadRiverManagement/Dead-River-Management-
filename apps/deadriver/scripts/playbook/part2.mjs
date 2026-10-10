@@ -3,11 +3,11 @@
 export const pages = (page, divider, F) => {
   const P = 'The people already looking';
   return [
-    divider(2, 'The people already looking.', 'Stop showing your ad to everybody. Show it to the ones who are searching for you right now.'),
+    divider(2, 'The people already looking.', 'Stop showing your ad to everybody. Show it to the ones who are searching for you right now.', F.img.g['map-signals']),
 
     page({ part: P, kicker: '15 / Buying signals', title: 'Most ads go to the wrong people.', sub: 'That is the whole problem with "ads don\'t work for my business."',
       body: `
-        ${F.fig(F.mapFig(), 'Demand Intelligence · recent search activity, by area')}
+        ${F.pic('spaghetti', 'Most advertising. A little of this, a little of that, and one strand sticks.', 'max-width:420px')}
         <p class="big">Here's what I'd tell you on a call. We're a marketing agency, but we're a little bit different, because we start with who's looking, not with the ad.</p>
         <p>Most agencies pick an audience by checking boxes. Homeowners, 35 to 65, within 25 miles. Or "small business owners." Then they put an ad in front of all of them and hope the one person who needs you this week is scrolling. That's throwing spaghetti at the wall and seeing what sticks. You pay for every throw.</p>
         <p>What we do instead is look at what people are actually looking up. Somebody in your market has been reading about water heater prices for two days. Somebody else just compared three dentists. Those are buying signals. They're what a person does right before they buy.</p>`,
@@ -16,7 +16,7 @@ export const pages = (page, divider, F) => {
 
     page({ part: P, kicker: '15 / Buying signals', title: 'Where your customers are.', sub: 'An old sales rule, and it still holds. In any market, the buyers break down about like this.', ex: true,
       body: `
-        ${F.fig(F.pyramid())}
+        ${F.pic('pyramid', 'Top to bottom: 3% buying now · 17% gathering information · 20% know they have the problem · 60% don\'t know yet', 'max-width:420px')}
         <p>Most advertisers fight over the 3%. Everybody's bidding on "emergency plumber near me" or "buy running shoes." It's expensive, and you're one of eight businesses on the same search.</p>
         <p>The 17% and the 20% are where the money is. They're reading, comparing, asking a friend. Nobody's talking to them yet. Buying signals tell you who they are, so you can get in front of them with something useful before they ever type "near me" or "best."</p>
         <p class="big">You're not just hunting the 3%. You're farming the 97%. With a list, not a guess.</p>`,
@@ -25,7 +25,7 @@ export const pages = (page, divider, F) => {
 
     page({ part: P, kicker: '16 / Build the list', title: 'Build your list.', sub: 'Four steps. You can do this yourself with the software, or we do it for you.',
       body: `
-        ${F.shot(F.img.diScreens, 'Demand Intelligence · topics, lookback window, and the matching count')}
+        ${F.fig(F.mapFig(), 'Demand Intelligence · recent search activity, by area')}
         <div class="steps">
           <div class="step"><i>1</i><div><b>Pick the topics</b><small>What people look up before they buy from you. "Roof replacement cost." "Botox near me." "Freight broker for LTL." "Best running shoes for flat feet." Be specific.</small></div></div>
           <div class="step"><i>2</i><div><b>Pick the area and the window</b><small>Your real market, whether that's a ZIP code or the whole country. Then how recent: the last two days for hot, the last seven for warm.</small></div></div>

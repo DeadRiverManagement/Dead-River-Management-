@@ -186,10 +186,11 @@ export function page({ part, kicker, title, wide, sub, ex, body, note, doNow, da
      ${DONOW(doNow)}${foot(part, n)}</section>` };
 }
 
-export function divider(num, title, sub) {
+export function divider(num, title, sub, pic) {
   return { title: `Part ${num}: ${title}`, divider: true, sub, render: (n) => `<section class="page dark divider">
      <div class="head"><img src="${logo}" alt=""><span class="part">Part ${num}</span></div>
-     <p class="n">0${num}</p><div class="rule"></div><h1>${title}</h1><p class="sub">${sub}</p>${foot('', n)}</section>` };
+     <p class="n">0${num}</p><div class="rule"></div><h1>${title}</h1><p class="sub">${sub}</p>
+     ${pic ? `<img src="${pic}" alt="" style="position:absolute;right:.75in;bottom:1.1in;width:300px;border-radius:14px">` : ''}${foot('', n)}</section>` };
 }
 
 const cover = { render: () => `<section class="page dark cover">

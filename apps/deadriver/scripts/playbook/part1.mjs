@@ -80,7 +80,7 @@ export const pages = (page, divider, F) => {
 
     page({ part: P, kicker: '02 / Know your numbers', title: 'Follow the people.', sub: 'A reply, a booking, and a paid job are three different things.', ex: true,
       body: `
-        <div class="funnel">
+        <div class="side l">${F.pic('funnel-people', '', 'max-width:300px')}<div class="funnel">
           <div><span>Asked about work</span><b>100</b></div>
           <div style="width:92%"><span>Talked with us</span><b>80</b></div>
           <div style="width:76%"><span>Booked a visit</span><b>50</b></div>
@@ -88,7 +88,7 @@ export const pages = (page, divider, F) => {
           <div style="width:60%"><span>Got a quote</span><b>36</b></div>
           <div style="width:44%"><span>Said yes</span><b>18</b></div>
           <div style="width:40%"><span>Finished and paid</span><b>16</b></div>
-        </div>
+        </div></div>
         <p>Painting example. Two of the sold jobs aren't done yet, so don't count their quotes as money collected. The place the numbers drop the hardest is the place to fix first.</p>`,
       doNow: 'Count each step for one group of past leads.' }),
 
@@ -152,7 +152,7 @@ export const pages = (page, divider, F) => {
 
     page({ part: P, kicker: '04 / Fix the leads you have', title: 'Five minutes. Not five hours.', sub: 'A lead that gets a call back in 5 minutes books. A lead that gets a call back tomorrow already hired the other guy.',
       body: `
-        ${F.fig(F.flow([['Lead comes in', 'form, call, chat, cart'], ['Phone alert', 'a person, not an inbox'], ['Reply in 5 min', 'call or text'], ['Logged', 'owner and next task']], { last: true }))}
+        ${F.pic('five-minutes', '', 'max-width:360px')}
         <div class="steps">
           <div class="step"><i>1</i><div><b>New lead</b><small>Check for spam, repeats, and whether it's something you actually sell.</small></div></div>
           <div class="step"><i>2</i><div><b>Ready to help</b><small>Assign an owner. Alert the team. The alert goes to a phone, not an inbox.</small></div></div>
