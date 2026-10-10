@@ -3,7 +3,7 @@
 export const pages = (page, divider, F) => {
   const P = 'The system';
   const toc = { isToc: true, title: '', render: (n) => '' }; // filled by build.mjs
-  toc.render = (n) => `<section class="page"><div class="head"><span class="part">Contents</span></div><h1 style="font-size:34px">What's in here.</h1><p class="sub" style="margin-bottom:14px">Four parts. Start wherever it hurts.</p><div class="body"><div class="toc toc2">${toc.entries || ''}</div></div><div class="foot"><span>The Dead River Playbook</span><span>${n}</span></div></section>`;
+  toc.render = (n) => `<section class="page"><div class="head"><span class="part">Contents</span></div><h1 style="font-size:34px">What's in here.</h1><p class="sub" style="margin-bottom:14px">Four parts. Start wherever it hurts.</p><div class="body"><div class="toc toc2">${toc.entries || ''}</div></div><div class="foot"><span>Marketing is F*cking Easy</span><span>${n}</span></div></section>`;
 
   return [
     page({

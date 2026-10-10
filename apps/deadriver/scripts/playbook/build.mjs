@@ -144,7 +144,7 @@ h1.wide { max-width: 20ch; }
 .toc div { display: flex; justify-content: space-between; gap: 10px; padding: 2.5px 0; border-bottom: 1px dotted var(--line); color: var(--ink-2); }
 .toc div span:last-child { font-family: ui-monospace, Menlo, monospace; font-size: 10px; color: var(--muted); }
 .toc2 { columns: 2; column-gap: 30px; } .toc h3 { break-inside: avoid; break-after: avoid; } .toc div { break-inside: avoid; }
-.cover .big { font-family: Bricolage, sans-serif; font-weight: 800; font-size: 74px; line-height: .92; letter-spacing: -.05em; margin: 0; text-transform: uppercase; }
+.cover .big { font-family: Bricolage, sans-serif; font-weight: 800; font-size: 64px; line-height: .92; letter-spacing: -.05em; margin: 0; text-transform: uppercase; }
 .cover .big em { font-style: normal; color: var(--ember); }
 .cover .slash { position: absolute; right: -40px; bottom: 150px; width: 320px; height: 36px; background: var(--copper); transform: skewY(-6deg); }
 .cover .slash2 { position: absolute; right: 60px; bottom: 120px; width: 260px; height: 36px; background: rgba(227,160,112,.3); transform: skewY(-6deg); }
@@ -174,7 +174,7 @@ h1.wide { max-width: 20ch; }
 
 const DONOW = (t) => (t ? `<div class="donow"><b>Do this now</b><span>${t}</span></div>` : '');
 
-const foot = (partLabel, n) => `<div class="foot"><span>The Dead River Playbook</span><span>${partLabel ? partLabel + ' · ' : ''}${n}</span></div>`;
+const foot = (partLabel, n) => `<div class="foot"><span>Marketing is F*cking Easy</span><span>${partLabel ? partLabel + ' · ' : ''}${n}</span></div>`;
 
 export function page({ part, kicker, title, wide, sub, ex, body, note, doNow, dark, toc }) {
   return { title: toc || title, part, render: (n) => `<section class="page ${dark ? 'dark' : ''}">
@@ -197,8 +197,8 @@ export function divider(num, title, sub, pic) {
 const cover = { render: () => `<section class="page dark cover">
      <div class="head"><img src="${logo}" alt="" style="height:30px"></div>
      <p class="sub" style="color:#cfccc4;max-width:46ch;margin-top:40px">“This is the system we run for our clients. Over 5,000 jobs booked. Over $7 million in client revenue. 30 niches, 20 states.”<br><span style="color:var(--copper)">Brandon Aubey, Dead River Management</span></p>
-     <p class="big" style="margin-top:50px">The Dead<br>River<br><em>Playbook</em></p>
-     <p class="sub lg" style="color:#ecebe6;margin-top:36px;max-width:40ch">How to get the phone ringing with people who are already looking for what you sell. And what to do when it does.</p>
+     <p class="big" style="margin-top:40px;font-size:64px">Marketing<br>is F*cking<br><em>Easy</em></p>
+     <p class="sub lg" style="color:#ecebe6;margin-top:30px;max-width:40ch">The Dead River Playbook. How to get the phone ringing with people who are already looking for what you sell. And what to do when it does.</p>
      <div class="slash3"></div><div class="slash"></div><div class="slash2"></div>
      <p class="kicker" style="position:absolute;bottom:.7in;left:.75in">deadrivermanagement.com · El Paso, Texas · Nationwide</p></section>` };
 
@@ -215,7 +215,7 @@ if (tocItem) {
   }
   tocItem.entries = html;
 }
-const html = `<!doctype html><html><head><meta charset="utf-8"><title>The Dead River Playbook</title><style>${css}</style></head><body>${items.map((it) => it.render(it.n)).join('\n')}</body></html>`;
+const html = `<!doctype html><html><head><meta charset="utf-8"><title>Marketing is F*cking Easy</title><style>${css}</style></head><body>${items.map((it) => it.render(it.n)).join('\n')}</body></html>`;
 // writeFileSync(dir + 'playbook.html', html); // uncomment to inspect the HTML
 
 const b = await chromium.launch();
