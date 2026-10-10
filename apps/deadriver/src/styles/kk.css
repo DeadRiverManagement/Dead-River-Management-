@@ -192,5 +192,11 @@
   .kk-book-cover { max-width: 280px; }
   .kk-offers article { margin-top: 50px; }
   .kk-slash { width: 150px; height: 22px; }
-  .kk-video { transform: none; }
+  .kk-video { transform: none; z-index: 2; }
+  .kk-hero .kk-slash-left, .kk-hero .kk-slash-right { width: 120px; height: 20px; }
+  .kk-hero .kk-slash-left::after, .kk-hero .kk-slash-right::after, .kk-hero .kk-slash-right::before { height: 20px; width: 120px; }
+  .kk-hero .kk-slash-left::before { display: none; }
+  .kk-hero .kk-slash-left { bottom: var(--slant); }
+  .kk-hero .kk-slash-right { bottom: calc(var(--slant) + 60px); }
+  .kk-capture input { font-size: 15px; }
 }
