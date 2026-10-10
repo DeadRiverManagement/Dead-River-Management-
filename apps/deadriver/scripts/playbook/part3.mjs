@@ -155,7 +155,6 @@ export const pages = (page, divider, F) => {
           <div class="card"><span class="tag">5 · The social post</span><b>Main photo plus a small inset photo</b><small>The format every news page uses. Before in the corner, after in the main frame. Plain headline underneath.</small></div>
           <div class="card"><span class="tag">6 · The reveal</span><b>A map, chart, or screenshot plus a teaser</b><small>"We mapped every job we did in {city} this year. One ZIP code had 3x the failures." Data gets trusted.</small></div>
         </div>`,
-      note: 'Format 3 is a real update about real work. Never a fake headline or a made-up event. The honest version works, and you keep the account.',
       doNow: 'Make at least one ad in four of the six formats before your next launch.' }),
 
     page({ part: P, kicker: '24 / The lead-in', title: 'The two lines everybody wastes.', sub: 'The lead-in is the first one to three lines of copy, the part above "See more." It is the single most overlooked piece of the ad.',
