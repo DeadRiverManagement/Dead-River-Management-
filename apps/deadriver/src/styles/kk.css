@@ -143,6 +143,11 @@
 .kk-tile:hover { color: var(--ember); }
 
 /* ---------- platform ---------- */
+.kk-scale { text-align: center; }
+.kk-scale .kk-chip { display: inline-block; padding: 8px 18px; border-radius: 999px; background: var(--copper); color: #140b04; font-family: var(--mono); font-size: 12px; letter-spacing: 0.22em; font-weight: 700; margin-bottom: 22px; }
+.kk-scale h2 { max-width: 980px; margin: 0 auto 26px; font-size: clamp(38px, 5vw, 72px); }
+.kk-scale .kk-lead { max-width: 720px; margin: 0 auto 18px; }
+.kk-devices { display: block; width: min(1100px, 100%); height: auto; margin: 36px auto 8px; }
 .kk-platform h2 { margin-bottom: 18px; }
 .kk-platform .kk-body { max-width: 640px; margin: 0 auto; }
 .kk-platform .kk-video { max-width: 720px; margin-top: 36px; transform: none; }
