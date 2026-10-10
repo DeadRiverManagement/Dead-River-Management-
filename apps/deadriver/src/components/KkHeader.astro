@@ -64,13 +64,17 @@ const items = [
   document.querySelectorAll('[data-tilt]').forEach((box) => { const img = box.firstElementChild; box.addEventListener('pointermove', (e) => { const r = box.getBoundingClientRect(); img.style.setProperty('--ry', ((e.clientX - r.left) / r.width - 0.5) * 22 + 'deg'); img.style.setProperty('--rx', (0.5 - (e.clientY - r.top) / r.height) * 16 + 'deg'); }); box.addEventListener('pointerleave', () => { img.style.removeProperty('--ry'); img.style.removeProperty('--rx'); }); });
   const globe = document.querySelector('[data-kk-globe]');
   if (globe && motionOk) import('../scripts/kk-globe.js').then((m) => m.mountGlobe(globe));
-  // The hero video grows from a tilted thumbnail to full size as it scrolls up into view.
+  // The hero video starts tilted and smaller, then widens to nearly full screen as you scroll,
+  // finishing when its top reaches the upper fifth of the window. Like King Kong's hero.
   const v = document.querySelector('.kk-hero .kk-video');
-  if (v && window.matchMedia('(min-width: 861px) and (prefers-reduced-motion: no-preference)').matches) {
-    let raf = 0;
-    const tick = () => { raf = 0; const r = v.getBoundingClientRect(); const p = Math.min(1, Math.max(0, (window.innerHeight - r.top) / (window.innerHeight * 0.55))); v.style.setProperty('--p', p.toFixed(3)); };
-    const onScroll = () => { if (!raf) raf = requestAnimationFrame(tick); };
-    addEventListener('scroll', onScroll, { passive: true }); addEventListener('resize', onScroll); tick();
+  if (v) {
+    if (!window.matchMedia('(prefers-reduced-motion: no-preference)').matches) v.classList.add('kk-grown');
+    else {
+      let raf = 0;
+      const tick = () => { raf = 0; v.style.setProperty('--p', '0'); const top = v.getBoundingClientRect().top + scrollY; const end = Math.max(120, top - innerHeight * 0.2); const p = Math.min(1, Math.max(0, scrollY / end)); v.style.setProperty('--p', (1 - Math.pow(1 - p, 2)).toFixed(4)); };
+      const onScroll = () => { if (!raf) raf = requestAnimationFrame(tick); };
+      addEventListener('scroll', onScroll, { passive: true }); addEventListener('resize', onScroll); tick();
+    }
   }
 </script>
 
