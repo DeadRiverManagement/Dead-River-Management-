@@ -152,11 +152,14 @@
 .kk-feature-t footer { font-weight: 700; color: var(--ember); font-size: 15px; }
 .kk-play { width: 56px; height: 56px; border-radius: 50%; border: 0; cursor: pointer; background: var(--copper); display: grid; place-items: center; box-shadow: 0 0 0 6px rgba(227, 160, 112, 0.2); margin: 18px auto 0; }
 .kk-play span { margin-left: 4px; border-left: 16px solid #140b04; border-top: 10px solid transparent; border-bottom: 10px solid transparent; }
-.kk-tgrid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; }
-.kk-t { position: relative; aspect-ratio: 16 / 10; border-radius: 6px; background: #2b2b2f; display: flex; align-items: flex-end; padding: 14px; cursor: pointer; }
-.kk-t::after { content: ''; position: absolute; right: 12px; top: 12px; border-left: 12px solid #fff; border-top: 7px solid transparent; border-bottom: 7px solid transparent; }
+.kk-tgrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.kk-t { position: relative; border-radius: 10px; background: #2b2b2f; display: flex; flex-direction: column; justify-content: flex-end; gap: 10px; padding: 22px; min-height: 180px; }
+.kk-t:has(video) { padding: 0; overflow: hidden; }
+.kk-t:has(video) p, .kk-t:has(video) footer { padding: 0 18px; }
+.kk-t:has(video) footer { padding-bottom: 16px; }
+.kk-t video { width: 100%; aspect-ratio: 16 / 9; background: #000; margin: 0; border-radius: 0; }
+.kk-t p { font-family: var(--display); font-size: clamp(17px, 1.5vw, 21px); line-height: 1.25; letter-spacing: -0.02em; color: var(--ink); margin: 0; }
 .kk-t footer { font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ember); }
-.kk-t p { display: none; }
 .kk-t.is-open p { display: block; }
 
 /* ---------- faq ---------- */
@@ -180,7 +183,7 @@
   .kk-offer-grid, .kk-book-grid, .kk-news-grid { grid-template-columns: 1fr; }
   .kk-grid { grid-template-columns: 1fr 1fr; }
   .kk-stats { grid-template-columns: 1fr 1fr; gap: 28px; }
-  .kk-tgrid { grid-template-columns: repeat(2, 1fr); }
+  .kk-tgrid { grid-template-columns: 1fr; }
   .kk-capture { flex-direction: column; border-radius: 20px; padding: 10px; }
   .kk-capture input { padding: 12px 10px; }
   .kk-capture .button { width: 100%; justify-content: center; }

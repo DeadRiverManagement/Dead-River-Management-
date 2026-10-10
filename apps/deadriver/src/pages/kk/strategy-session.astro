@@ -7,7 +7,7 @@ import Arrow from '../../components/growth/Arrow.astro';
 import options from '../../data/kk-form-options.json';
 
 const marketing = ['Facebook Ads', 'Google Adwords', 'SEO', 'Television', 'Radio', 'Newspaper / Print', 'Other', 'None'];
-const budgets = ['Under $5k', '$5k - $10k', '$10k - $20k', '$20k - $35k', '$35k - $50k', '$50k+'];
+const budgets = ['Under $3k', '$3k - $5k', '$5k - $10k', '$10k - $20k', '$20k - $35k', '$35k+'];
 const timing = ['Immediately', 'In the next 2 weeks', '2-4 weeks', '4-6 weeks', '6 weeks+', 'Never', 'I’m just shooting the shit'];
 const sources = options.sources.map((s) => s.replace("Sabri's YouTube Channel", "Brandon's YouTube Channel"));
 ---
@@ -25,13 +25,13 @@ const sources = options.sources.map((s) => s.replace("Sabri's YouTube Channel", 
         <p class="kkf-wave" aria-hidden="true">👋</p>
         <p class="kkf-serving">SERVICING CLIENTS IN: 🇺🇸</p>
         <h1>FREE 30-MINUTE SCALING GROWTH MAP SESSION</h1>
-        <p class="kkf-lead">Claim your 100% FREE no-obligation 30-minute scaling growth map call ($1,000 value). This is strictly for people who are hungry for growth. If that's you, then let's scale your biz to the moon! 🚀 🌕</p>
+        <p class="kkf-lead">Claim your 100% FREE no-obligation 30-minute scaling growth map call ($1,000 value). This is strictly for owners who want more jobs on the board and will answer the phone when they come in. If that's you, let's go. 🚀</p>
         <button class="button" type="button" data-next>See If You Qualify <Arrow /></button>
-        <p class="kkf-rating"><span class="rv-stars" aria-hidden="true">★★★★★</span> 4.8 stars out of 7,568 reviews</p>
+        <p class="kkf-rating"><span class="rv-stars" aria-hidden="true">★★★★★</span> 5-star rated on Google and Facebook</p>
       </div>
 
       <div class="kkf-step" data-step="first">
-        <h2>Okay, we’ll make this quick and painless (pinky promise). But before we start - we don't wanna be rude...So what’s your name?</h2>
+        <h2>Okay, we’ll make this quick and painless (pinky promise). But before we start, we don't wanna be rude... So what’s your name?</h2>
         <input name="first" type="text" autocomplete="given-name" placeholder="Enter your first name" required />
         <p class="kkf-error"></p>
         <button class="button" type="button" data-next>Continue <Arrow /></button>
@@ -45,7 +45,7 @@ const sources = options.sources.map((s) => s.replace("Sabri's YouTube Channel", 
       </div>
 
       <div class="kkf-step" data-step="sell">
-        <p class="kkf-note">Okay thanks for that <span data-name></span>, to find out if Dead River is a good fit for helping you grow your business... We've got a few questions.</p>
+        <p class="kkf-note">Okay thanks for that <span data-name></span>, to find out if Dead River is a good fit for your business... we've got a few questions.</p>
         <h2>First, what do you sell?</h2>
         <div class="kkf-choices" data-auto>
           <label><input type="radio" name="sell" value="Product" /><span>Product</span></label>
@@ -75,7 +75,7 @@ const sources = options.sources.map((s) => s.replace("Sabri's YouTube Channel", 
 
       <div class="kkf-step" data-step="budget">
         <h2>How much is your monthly marketing budget?</h2>
-        <p class="kkf-help">We're asking you this first to see if we'd be a good fit. And Secondly to identify what the best strategies for growth are within your budget.</p>
+        <p class="kkf-help">We're asking this first to see if we'd be a good fit. The guarantee needs $3,000 a month in ad spend to work. And second, so we know what's actually doable within your budget.</p>
         <div class="kkf-choices" data-auto>
           {budgets.map((b) => <label><input type="radio" name="budget" value={b} /><span>{b}</span></label>)}
         </div>
@@ -99,7 +99,7 @@ const sources = options.sources.map((s) => s.replace("Sabri's YouTube Channel", 
 
       <div class="kkf-step" data-step="revenue">
         <h2>What is your current MONTHLY revenue?</h2>
-        <p class="kkf-help">We're asking you, so we only prescribe strategies that are going to have a meaningful impact on your company's revenue.</p>
+        <p class="kkf-help">We're asking so we only bring you things that are going to actually move the needle for your business.</p>
         <div class="kkf-range">
           <output data-out="revenue">$50,000</output>
           <input name="revenue" type="range" min="0" max="1000000" step="5000" value="50000" />
@@ -110,7 +110,7 @@ const sources = options.sources.map((s) => s.replace("Sabri's YouTube Channel", 
 
       <div class="kkf-step" data-step="target">
         <h2>What is your TARGET monthly revenue?</h2>
-        <p class="kkf-help">We're asking so we can build you a growth plan to help you achieve this.</p>
+        <p class="kkf-help">We're asking so we can build you a plan to get there, not a plan for somebody else's business.</p>
         <div class="kkf-range">
           <output data-out="target">$100,000</output>
           <input name="target" type="range" min="0" max="2000000" step="10000" value="100000" />
@@ -121,7 +121,7 @@ const sources = options.sources.map((s) => s.replace("Sabri's YouTube Channel", 
 
       <div class="kkf-step" data-step="obstacle">
         <h2>Alright, be honest…what’s the #1 biggest obstacle holding you back from hitting your revenue goal?</h2>
-        <p class="kkf-help">(Don’t skip the hairy details. We need to know about every score and every sore…. so give as much detail as you can about WHAT it is you feel is holding you back)</p>
+        <p class="kkf-help">(Don’t skip the ugly details. Not enough calls, calls that don't turn into jobs, no time to follow up, a guy who quit… give us as much as you can about WHAT is holding you back)</p>
         <textarea name="obstacle" rows="5" required></textarea>
         <p class="kkf-error"></p>
         <button class="button" type="button" data-next>Continue <Arrow /></button>
@@ -143,9 +143,9 @@ const sources = options.sources.map((s) => s.replace("Sabri's YouTube Channel", 
             <span class="kkf-path-card">
               <strong>Do It For Me</strong>
               <span class="kkf-path-sub">Agency</span>
-              <small>I’d prefer to just hire you guys to do it all for me. (This option is more expensive, but involves less work and time from you). P.S. We’re unlike any agency you’ve ever worked with, because we guarantee results and smell like frangipanis in the summer.</small>
+              <small>I’d rather just hire you guys to do it all for me. (This option costs more, but takes less of your time.) P.S. We’re not like any agency you’ve worked with, because we put $50,000 in writing and pay you $500 if we miss.</small>
               <span class="button">Get Started <Arrow /></span>
-              <span class="kkf-path-rating"><span class="rv-stars" aria-hidden="true">★★★★★</span> 4.6 stars out of 607 reviews</span>
+              <span class="kkf-path-rating"><span class="rv-stars" aria-hidden="true">★★★★★</span> 5-star rated on Google and Facebook</span>
             </span>
           </label>
           <label>
@@ -153,9 +153,9 @@ const sources = options.sources.map((s) => s.replace("Sabri's YouTube Channel", 
             <span class="kkf-path-card">
               <strong>Teach Me How To Do It</strong>
               <span class="kkf-path-sub">Software</span>
-              <small>I’d like to learn your magic witchcraft for myself. Gimme the copy, paste, plug-and-play software, frameworks and tools to do it myself. (This option is cheaper, but involves more work and time from you) P.S. Includes an awesome global community and weekly Q&A calls.)</small>
+              <small>I’d like to run it myself. Give me the software: the list of people in my area already looking for what I sell, the cold emails written for me, the ad scripts and the video outlines. (This option is cheaper, but takes more of your time.) P.S. Pay per lead, or a flat monthly rate for unlimited.</small>
               <span class="button secondary">Get Started <Arrow /></span>
-              <span class="kkf-path-rating"><span class="rv-stars" aria-hidden="true">★★★★★</span> 4.8 stars out of 6,961 reviews</span>
+              <span class="kkf-path-rating"><span class="rv-stars" aria-hidden="true">★★★★★</span> 280M U.S. profiles, updated daily</span>
             </span>
           </label>
         </div>
@@ -164,7 +164,7 @@ const sources = options.sources.map((s) => s.replace("Sabri's YouTube Channel", 
 
       <div class="kkf-step" data-step="commit">
         <p class="kkf-note">We're almost done, just 2 more questions.</p>
-        <h2>On a scale of 1-10... (1 being I'm fine where I am, and 10 being I'll do anything to reach my revenue goals.) What number are you?</h2>
+        <h2>On a scale of 1-10... (1 being I'm fine where I am, and 10 being I'll answer the phone at dinner to hit my number.) What number are you?</h2>
         <div class="kkf-scale" data-auto>
           {Array.from({ length: 10 }, (_, i) => i + 1).map((n) => <label><input type="radio" name="commit" value={String(n)} /><span>{n}</span></label>)}
         </div>
@@ -173,7 +173,7 @@ const sources = options.sources.map((s) => s.replace("Sabri's YouTube Channel", 
 
       <div class="kkf-step" data-step="source">
         <h2>Where did you FIRST hear about us?</h2>
-        <p class="kkf-help">Seriously, we are curious :) Please answer this simple question and help us get better.</p>
+        <p class="kkf-help">Seriously, we're curious. It helps us know what's working.</p>
         <select name="source" required>
           {sources.map((s, i) => <option value={i === 0 ? '' : s}>{s}</option>)}
         </select>
@@ -183,7 +183,7 @@ const sources = options.sources.map((s) => s.replace("Sabri's YouTube Channel", 
       </div>
 
       <div class="kkf-step" data-step="pledge">
-        <p class="kkf-note">Okay you made it – last question…</p>
+        <p class="kkf-note">Okay you made it, last question…</p>
         <h2>Do you pinky promise that if you qualify for a phone call, you will show up at the selected time?</h2>
         <div class="kkf-choices" data-auto>
           <label><input type="radio" name="pledge" value="No" /><span>🙅‍♂️No</span></label>
@@ -193,7 +193,7 @@ const sources = options.sources.map((s) => s.replace("Sabri's YouTube Channel", 
       </div>
 
       <div class="kkf-step" data-step="contact">
-        <h2>BOOM! 👊 It looks like we can DRAMATICALLY help you grow your business using some of our proven funnels and marketing strategies, simply enter your details below!</h2>
+        <h2>BOOM! 👊 It looks like we can help you get a lot more jobs on the board. Enter your details below!</h2>
         <p class="kkf-help">Please fill out your details and you will be taken to a calendar on the next page to pick a time and date that works best for you.</p>
         <div class="kkf-contact">
           <input name="firstName" type="text" autocomplete="given-name" placeholder="First Name *" required />
@@ -220,12 +220,12 @@ const sources = options.sources.map((s) => s.replace("Sabri's YouTube Channel", 
   <div class="kkf-exit" data-exit hidden role="dialog" aria-modal="true" aria-labelledby="kkf-exit-title">
     <div class="kkf-exit-card">
       <h2 id="kkf-exit-title">HOLD UP THERE, TIGER.</h2>
-      <p>Alright let's try this again, shall we? Look, it takes less than 2-minutes to fill out this form…*focus*... and then you'll get your hot little hands on a free marketing blueprint ($1,000 value).</p>
+      <p>Alright, let's try this again, shall we? Look, it takes less than 2 minutes to fill out this form… *focus*… and then you'll get the free Dead River playbook ($1,000 value) and a 30-minute call with us.</p>
       <div class="button-row">
         <button class="button" type="button" data-exit-stay>GIVE ME THE $1,000 STRATEGY FOR FREE <Arrow /></button>
         <button class="text-link" type="button" data-exit-close>No thanks</button>
       </div>
-      <p class="kkf-privacy">Privacy Policy: There is a special place in hell for spammers and we never wanna visit.</p>
+      <p class="kkf-privacy">Privacy: there's a special place in hell for spammers and we never wanna visit.</p>
     </div>
   </div>
 </Growth>

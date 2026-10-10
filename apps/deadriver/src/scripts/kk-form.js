@@ -92,7 +92,7 @@ if (root) {
   exit.querySelector('[data-exit-close]').addEventListener('click', () => { exit.hidden = true; });
 
   const qualifies = () => {
-    const lowBudget = form.budget.value === 'Under $5k';
+    const lowBudget = form.budget.value === 'Under $3k';
     const noStart = ['Never', 'I’m just shooting the shit'].includes(form.timing.value);
     const noShow = form.pledge.value === 'No';
     return !(lowBudget || noStart || noShow);

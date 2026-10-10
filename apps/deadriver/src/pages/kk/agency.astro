@@ -1,38 +1,41 @@
 ---
-// Preview only: kingkong.co/agency, copy and section order verbatim, in the
-// Dead River look. Brand name, phone, links and media point at Dead River.
+// Preview only: King Kong's agency sales letter structure, in the Dead River
+// look, with Brandon's offer, numbers and voice. Facts confirmed October 10, 2026.
 import Growth from '../../layouts/Growth.astro';
 import Arrow from '../../components/growth/Arrow.astro';
 import '../../styles/kk.css';
 
 const CTA = '/kk/strategy-session';
+const RATING = '5-star rated on Google and Facebook';
 
-const cases = ['THE MASSAGE CHAIR COMPANY', "LET'S GET CARE", 'GLENVILL HOMES', 'NIMBLE TRANSFORMATION', 'SCOTLAND TITLES', 'MY MUSCLE CHEF', 'RENT BUY IT', 'ORIGINAL UGG AUSTRALIA CLASSIC', 'AUSSIE ENVIRONMENTAL', 'ELECTROLUX PROFESSIONAL', 'MOXIE PEST CONTROL', 'AIV AUSTRALIAN', 'KOALA', 'AQUATIC PERFORMANCE', 'PURPLE BRICKS', 'GREEN GOO', 'KOIKAS ACOUSTICS', 'PURE PUBLIC RELATIONS', 'MARSHALL WHITE', 'HURDLEYS OFFICE FURNITURE', 'CLEARANCE SOLUTIONS AUSTRALIA'];
+const cases = [
+  ['TOTAL AUTO REPAIR', '/work/total-auto-repair'],
+  ['GONZALEZ & SONS ROOFING', '/work/gonzalez-and-sons-roofing'],
+  ['THE PIPE WHISPERERS', '/work/the-pipe-whisperers'],
+  ['WICKED LOGISTICS', '/work/wicked-logistics'],
+  ['PARCEL MANAGEMENT GROUP', '/work/parcel-management-group'],
+  ['ONLY FISH', '/work/only-fish'],
+];
 
+const TAR_VIDEO = 'https://d2ol7oe51mr4n9.cloudfront.net/user_3JQHnLTq89zb3rmd2x4Z53G0lE3/52a05e7d-44fc-4cb0-9aab-4269f45edef3.mp4';
+// Med spa video testimonial slot: add here when Brandon sends the file.
 const testimonials = [
-  ['“Since partnering with Dead River the results have been nothing short of outstanding. There are three simple words here and that is: Leads! Leads! Leads!”', 'Domenic Varese, Marketing Manager, Metricon'],
-  ['“From Cold-calling To 200 New Customers In 12 Months”', 'Emma & Jim Elliott, Owners, Little Big Dairy'],
-  ['“From $4 Million To $25,000,000+ In 18 Months”', "Michael Argent, Managing Director, Let's Get Care"],
-  ['“Our Pipeline Got Completely Flooded Overnight”', 'Wade Tink, Managing Director, Project Everest'],
-  ['“From $0 To $18 Million In 18 Months (During A Recession)”', 'Danny Coyne, New Sensation Homes'],
-  ['“Working With Dead River Has Transformed Our Whole Lives. The Growth That We\'ve Experienced Has Been Astronomical.”', 'Marco Maisano, CEO & Founder, NSR Australia & NZ'],
-  ['“Initially I was worried about where my first job was coming from. After using Dead River I was more worried about how I was going to manage the job. My business has increased 200%, so I got my return on investment 10-20 times over.”', "Ged, Owner, Ged's Mobile Car Cleaning"],
-  ['“Since starting work with Dead River 9 months ago our sales have tripled and we\'ve expanded into 3 other states. These guys are amazing!”', 'Raphael Bender, Founder, Breathe Education'],
-  ['“We’ve Increased Our Revenue By 35-40% By Working With Dead River”', 'Colin Battersby, Principal, Discover Stradbroke'],
-  ['“After 18 Months, We’ve Got A 49% Increase In Leads. I’d Never Go Back To Not Using Dead River.”', 'Beth Hourigan, Director, Aged Care Financial Services'],
-  ['“From $3 Million To $50 Million In 12 Months With Dead River”', 'Dylan Trickey, Marketing Coordinator'],
-  ['“The goal was to get 8 sales in the first year. It’s been 11 months now and we’ve had 23 sales. Which is $7 million in revenue. The money I spent with Dead River I’ve seen a return on investment of five to six times.”', 'Lee Selkrig, Founder, Enso Homes'],
-  ['“We\'ve Doubled In Staff Numbers”', 'Selma Christofi, Original UGG Australia Classic'],
-  ['“We\'ve Increased Our Revenue By 50 Percent”', 'Adam Hurdley, Managing Director, Hurdleys Office Furniture'],
-  ['“From 3 Weeks Of Jobs To 6 Months Booked In Advance”', 'Tye Spierings, Owner & Director, Ultimate Windows'],
-  ['“Generated 95 to 100 Closed Jobs”', 'Rohan Fisher, Director, Fisher Roofing'],
-  ['“Since We\'ve Started Working With Dead River We\'ve Generated Over 2 Million Dollars”', 'Eva Hussein, Founder & Director, Polaron'],
+  ['“They did all of our social media management, set up our website, and optimized everything. We get 5-6 calls and multiple emails a day for shipments. One of those leads turned into a $1.2 million contract.”', 'Wicked Logistics'],
+  ['“From $20K To $100K A Month”', 'Total Auto Repair', TAR_VIDEO],
+  ['“From 2 Roofs A Month To 8”', 'Gonzalez & Sons Roofing'],
+  ['“From $60K A Year To $250K”', 'The Pipe Whisperers'],
+  ['“From 1-2 Leads A Week To 5-6 A Day”', 'Wicked Logistics'],
+  ['“49 Leads At $17.70 Each In 30 Days”', 'Parcel Management Group'],
+  ['“Great Service. They do my meta ads, google ads, seo and geo, and manage my leads!”', 'Parcel Management Group'],
+  ['“Very satisfied with my service, got tons of leads with it!”', 'Mat S.'],
+  ['“Very satisfied with the marketing great team”', 'Edgar Aguirre'],
+  ['“Dead River Management made our website and helped set up our social media! They ran Google ads and made everything smooth”', 'OnlyFish'],
 ];
 ---
 
 <Growth
-  title="We Guarantee To Beat Any Agency By 30% Or We Work For Free (Preview)"
-  description="Preview clone of the King Kong agency page in the Dead River look."
+  title="$50,000 In New Revenue In 45-60 Days Or Your Money Back, Plus $500 (Preview)"
+  description="Preview of the Dead River agency page in the King Kong structure."
   ogImage="/images/og/demand-flow.jpg"
   robots="noindex,nofollow"
   campaign
@@ -45,8 +48,8 @@ const testimonials = [
       <i class="kk-slash-left" aria-hidden="true"></i>
       <i class="kk-slash-right" aria-hidden="true"></i>
       <div class="wrap">
-        <p class="kk-kicker">LIMITED OFFER</p>
-        <h1 data-split>WE GUARANTEE TO BEAT ANY AGENCY, MARKETER OR TRAFFIC EXPERT ON PLANET EARTH BY A MINIMUM OF 30% OR WE'LL WORK FOR FREE!</h1>
+        <p class="kk-kicker">THE DEAD RIVER GUARANTEE</p>
+        <h1 data-split>$50,000 IN NEW REVENUE IN 45-60 DAYS, OR YOUR MONEY BACK. PLUS $500 FOR WASTING YOUR TIME.</h1>
         <div class="kk-video">
           <video controls playsinline preload="metadata" poster="/images/og/demand-flow.jpg" src="/50k-demand-flow/assets/demand-flow-vsl-1080p.mp4"></video>
         </div>
@@ -57,117 +60,119 @@ const testimonials = [
       <i class="kk-slash kk-slash-tl" aria-hidden="true"></i>
       <i class="kk-slash kk-slash-br" aria-hidden="true"></i>
       <div class="wrap">
-        <p class="kk-updated">Updated: 8th of October, 2026</p>
-        <p class="kk-dear">Dear Business Builder,</p>
-        <p>If you would like to get as many clients, customers and sales as your business could possibly handle…</p>
-        <p>Then this will be the most exciting message you’ll ever read.</p>
-        <p>Here’s why:</p>
-        <p>Let’s face it…You would have to be a zombie from the Walking Dead – for the above offer not to have your pulse racing, greed glands pumping…</p>
-        <p>And no doubt your inner sceptic screaming “what on earth is this all about?!!”</p>
-        <p>I mean what business owner, in their right mind, wouldn’t question a company making such a bold claim?</p>
-        <p>But don’t worry your pretty little mittens, because we’ve come with a mountain of credentials and a parade of proof to back it all up…</p>
-        <p><em>*grabs popcorn*</em></p>
-        <p>For starters, we’ve developed a unique ‘selling system’ which is unlike anything you’ve ever seen or heard about before…</p>
-        <p>(this is just one of the things that makes this all possible) and we’ve used it in over…</p>
-        <h2 class="kk-h2-sm">1184 DIFFERENT INDUSTRIES AND NICHES</h2>
-        <p>And we’ve also used this selling system to…</p>
+        <p class="kk-updated">Updated: 10th of October, 2026</p>
+        <p class="kk-dear">Hey,</p>
+        <p>If you'd like your phone to ring with people who are already looking for what you sell…</p>
+        <p>Then this is going to be the most useful thing you read this week.</p>
+        <p>Here's why:</p>
+        <p>Let's face it. You'd have to be half asleep for the offer up top not to get your attention…</p>
+        <p>And your inner skeptic going “okay, what's the catch?”</p>
+        <p>I mean what owner, in their right mind, wouldn't question an agency putting a number like that in writing?</p>
+        <p>I would. I've been on your side of the table for ten years.</p>
+        <p>So let me show you the receipts before I ask you for anything.</p>
+        <p><em>*grabs coffee*</em></p>
+        <p>For starters, we built a tool called Demand Intelligence that finds the people in your area who are actively searching for what you sell, before they ever fill out a form…</p>
+        <p>(that's just one of the things that makes this possible) and we've used it in over…</p>
+        <h2 class="kk-h2-sm">30 DIFFERENT NICHES ACROSS 20 STATES</h2>
+        <p>And we've used the same system to…</p>
         <ul class="kk-list">
-          <li>Take a home building start-up from $0 to $7 million in 8 months flat…(they hit their building insurance quota and couldn’t take on any more clients!)</li>
-          <li>Transform a Pilates instructor training business, from barely breaking even at $200k in revenue… to a wildly successful business with $2 million in annual sales in 14 months.</li>
-          <li>Launch a mattress start-up from $0 to $13 million in revenue in their first 12 months….(Literally selling out warehouses full of stock and the manufacturer couldn’t keep up!)</li>
-          <li>Take a small father and son building business from $3 million to $50 million in sales in just 18 MONTHS!</li>
-          <li>Skyrocket the sales of an Aged Care provider from $4 million to $25 million in sales in 12 months flat! (This was all done with a basic 2-step funnel and one traffic source!)</li>
-          <li>Sell $51 million dollars’ worth of property in 8 WEEKS through one funnel! (This was for a client in a super-niche property market and took him from zero to hero within two months)</li>
+          <li>Take an auto repair shop from about $20,000 a month to $100,000 a month. And hold it there for three years.</li>
+          <li>Take a father and son roofing company from 2 roofs a month to 8. At a $15,000 average ticket, that's about $1.4 million a year in roofs.</li>
+          <li>Grow a plumbing company from about $60,000 a year to $250,000 a year, to the point where they had to expand to keep up. Four years and counting.</li>
+          <li>Turn a freight broker's 1-2 leads a week into 5-6 leads a day. One of those leads became a $1.2 million contract.</li>
+          <li>Get a logistics consultant 49 leads in 30 days at $17.70 a lead, from one Facebook campaign.</li>
+          <li>Build the website, the social media and the Google ads for a seafood company, so the owner could go back to running the business instead of chasing it.</li>
         </ul>
-        <p>And so on…..Listen, we could easily fill up this entire page with hundreds of success stories like this…</p>
-        <p>Because we’ve used this ‘selling system’ in almost every industry you can think of.</p>
-        <p>And we’ve worked with small businesses, all the way up to multi-billion dollar brands to apply this “selling system”…</p>
-        <p>In other words, our “system” for selling is the hottest (and highest converting) sales vehicle we’ve ever seen for…</p>
-        <h2 class="kk-h2-sm">GETTING AS MANY CLIENTS, CUSTOMERS AND SALES AS YOU CAN POSSIBLY HANDLE</h2>
+        <p>And so on. Listen, we could fill this page with stories like that…</p>
+        <p>Because we've run this system for over 40 businesses.</p>
+        <p>Roofers, plumbers, auto shops, med spas, freight brokers. Businesses with a phone that needs to ring.</p>
+        <p>In other words, this is the most reliable way we've ever seen for…</p>
+        <h2 class="kk-h2-sm">GETTING AS MANY JOBS AS YOU CAN POSSIBLY HANDLE</h2>
         <div class="button-row kk-cta-stack">
           <a class="button" href={CTA}>CLAIM YOUR FREE 30-MINUTE STRATEGY SESSION <Arrow /></a>
-          <small>Be quick! FREE spots are almost gone for October</small>
+          <small>Free. 30 minutes. No pitch until we know it's a fit.</small>
         </div>
-        <p class="kk-rating"><span class="rv-stars" aria-hidden="true">★★★★★</span> 4.6 stars out of 607 reviews</p>
+        <p class="kk-rating"><span class="rv-stars" aria-hidden="true">★★★★★</span> {RATING}</p>
         <div class="kk-video kk-video-sm">
           <video controls playsinline preload="metadata" poster="/images/og/work.jpg" src="/media/flagship-offer.mp4"></video>
         </div>
-        <p>And now, we’re truly making an offer which would be difficult for any sane business owner to refuse – to try it out risk-free!</p>
-        <p>Firstly, if you have an ad campaign on Google or Facebook, we’ll completely rewrite your ads.</p>
-        <p>Secondly, unless we beat your ads by a minimum of 30%, we work for free.</p>
+        <p>And now, we're making an offer that's hard for any sane owner to say no to. Try it with the risk on us.</p>
+        <p>First, we find the people in your area who are already looking for what you sell, and we build the ads, the page and the follow-up to get them to call you.</p>
+        <p>Second, if you don't see $50,000 in new revenue in 45-60 days, you get your money back.</p>
+        <p>Third, we send you a $500 check for wasting your time.</p>
         <p>What this means is simple.</p>
-        <p>If we fail (very unlikely) to beat your current campaigns by at least 30% on CPL or ROAS, we keep working for free until we do.</p>
+        <p>If we miss (hasn't happened yet), you're not out a dime. You're up $500.</p>
         <p>That means:</p>
         <ul class="kk-list">
-          <li>No management fee if we don’t beat your results.</li>
           <li>No paying for promises.</li>
           <li>No paying for effort.</li>
+          <li>No paying for “impressions” and “engagement”.</li>
           <li>No paying for “we just need a couple more weeks”.</li>
-          <li>No unicorn-catching fees. Had to check I still have your attention.</li>
+          <li>No paying for a report nobody reads. Had to check I still have your attention.</li>
         </ul>
         <p>And guess what else?</p>
-        <p>If we do beat your current ad campaigns (highly likely) you’ll still not be out of any money…</p>
-        <p>Because every dollar you pay us will come from the EXTRA sales you wouldn’t have made unless we created our new campaign for you!</p>
-        <p>Why are we making such an offer?</p>
-        <p>Well, It’s very simple…</p>
-        <p>If you’re like most business owners you’ve likely tried almost every conceivable way to grow your business.</p>
-        <p>Some of it’s worked, but most of it hasn’t.</p>
-        <p>And at this point, you’ve probably been lied to, cheated by, stolen from, extorted and downright…</p>
-        <h2>RIPPED OFF BY FILTHY MARKETING SCUM BAGS!</h2>
-        <p>Who sold you the world, and at best, delivered the moon.</p>
-        <p>I know you know the type…</p>
-        <p>These hipsters sitting around in front of white boards talkin’ about vegan cheese, thigh gaps and how many “impressions” your ads got….</p>
-        <p>(Uuurrgghh! Makes my blood boil just thinking about it)</p>
-        <p>Because in a world of coaches coaching coaches… Most digital marketers are like shady rug merchants.</p>
-        <p>So rather than spend our time and resources trying to convince you we’re different…</p>
-        <p>For a limited time we’ve decided to risk our own money to SHOW YOU we’re different.</p>
-        <p>Because, in our opinion, the profession of digital marketing has more incompetence per capita than any other profession. Period.</p>
-        <p>(Except for maybe solar companies and chiropractors)</p>
-        <p>Anyhoo, whether it was a digital marketing agency, an internal employee, business consultant or some almond latte drinking “marketing expert”….that has promised you results in the past…</p>
-        <p>But, when it was all said and done, simply left you with more excuses than they did results.</p>
-        <p>We have a saying that, “digital marketing is 80% confusion and 20% commission”. It’s sad, but mostly true.</p>
-        <p>And most business owners approach growing their business with digital marketing like…</p>
-        <h2>WALKING ACROSS A LIVE MINEFIELD STARK NAKED AND BLINDFOLDED!</h2>
-        <p>So how are we different from these armchair “experts” and theory peddlers who talk a good game but rarely deliver?</p>
-        <p>Well, firstly, we’re the only agency confident (or crazy) enough to actually guarantee results or we don’t get paid.</p>
-        <p>Secondly, we’re not some hack job company that was started yesterday…</p>
-        <p>Nope, we’ve been in the game since 2014, which is like a five-thousand years online….</p>
-        <p>Not only that, we’ve been ranked as the #1 fastest growing digital agency in Australia for several years in a row.</p>
-        <p>And the 17th fastest growing company across all industries by the Australian Financial Review.</p>
-        <p>But more importantly, a bunch of our clients have also been ranked as the fastest-growing companies in their respective industries.</p>
-        <p>Look, our strategies are proven….</p>
-        <p>Battle-hardened by over $200+ million in ad spend in 1184 different industries and niches – and $10.2 billion in reported client revenue.</p>
-        <p>We’ve got this stuff down to a science.</p>
-        <p>A mathematical equation.</p>
-        <p>But we don’t expect you to take our word for it.</p>
+        <p>If we do hit it (very likely), you still won't feel it…</p>
+        <p>Because every dollar you pay us comes out of the new jobs you wouldn't have had without us.</p>
+        <p>Why would we make an offer like this?</p>
+        <p>Well, it's very simple…</p>
+        <p>If you're like most owners, you've tried just about everything to grow your business.</p>
+        <p>Some of it worked. Most of it didn't.</p>
+        <p>And by now you've probably been lied to, ghosted, nickel-and-dimed, and flat out…</p>
+        <h2>RIPPED OFF BY A MARKETING GUY WHO NEVER PICKED UP THE PHONE AGAIN!</h2>
+        <p>Who sold you the world and, at best, delivered a logo.</p>
+        <p>You know the type…</p>
+        <p>Sends you a pretty report every month talking about “impressions” and “reach” while your phone sits there doing nothing…</p>
+        <p>(Makes my blood boil just thinking about it)</p>
+        <p>Because in a world of gurus coaching gurus, most marketing agencies are selling you the same spaghetti and hoping it sticks to your wall.</p>
+        <p>So rather than spend our time trying to convince you we're different…</p>
+        <p>We decided to put our own money on the line to SHOW you we're different.</p>
+        <p>Because, in my opinion, nobody wastes more of a small business owner's money than a marketing agency. Period.</p>
+        <p>(Except maybe the guy who sold you the lead list)</p>
+        <p>Anyhoo, whether it was an agency, your nephew, a “consultant” or some guy in a Facebook group that promised you results…</p>
+        <p>When it was all said and done, you got more excuses than jobs.</p>
+        <p>We have a saying: “most marketing is 80% confusion and 20% commission.” It's sad, but it's mostly true.</p>
+        <p>And most owners approach growing their business like…</p>
+        <h2>WALKING ACROSS A LIVE MINEFIELD BLINDFOLDED!</h2>
+        <p>So how are we different from the armchair “experts” who talk a good game but never make your phone ring?</p>
+        <p>Well, first, we're the only agency we know of that's confident (or crazy) enough to put $50,000 in writing and pay you $500 if we miss.</p>
+        <p>Second, this isn't our first rodeo…</p>
+        <p>Brandon spent ten years helping local businesses get more jobs before starting Dead River out of El Paso.</p>
+        <p>Ten years of watching good businesses pay for clicks while the phone went to voicemail.</p>
+        <p>That's the problem Dead River was built to fix.</p>
+        <p>And we're a Google and Meta partner, which means we run the ads the way the platforms want them run, not the way some course taught us.</p>
+        <p>Look, the system is proven…</p>
+        <p>Over 5,000 jobs booked, over 40 businesses, 30 niches, 20 states, and over $7 million in client revenue we can point to.</p>
+        <p>We've got this stuff down to a process.</p>
+        <p>Find the people looking. Get them to call. Pick up in 5 minutes. Repeat.</p>
+        <p>But don't take our word for it.</p>
         <p><em>*Wink*</em></p>
-        <p>Let’s get down to the juicy proof pie we’ve been baking for the better half of a decade!…</p>
+        <p>Let's get into the proof…</p>
         <h2>PROOF!</h2>
         <dl class="kk-stats">
-          <div><dt>Revenue Generated</dt><dd>$10.2B</dd><small>$10.2 Billion in reported client revenue and counting.</small></div>
-          <div><dt>Ad Spend</dt><dd>$200M+</dd><small>Battle-hardened by over $200+ million in ad spend.</small></div>
-          <div><dt>Battle Tested</dt><dd>1184</dd><small>1184 different industries and niches.</small></div>
-          <div><dt>Reviews</dt><dd>4.6★</dd><small>607 reviews.</small></div>
+          <div><dt>Revenue Generated</dt><dd>$7M+</dd><small>Over $7 million in client revenue we can point to, and counting.</small></div>
+          <div><dt>Jobs Booked</dt><dd>5,000+</dd><small>Over 5,000 jobs booked for our clients.</small></div>
+          <div><dt>Battle Tested</dt><dd>30</dd><small>30 different niches across 20 states.</small></div>
+          <div><dt>Businesses</dt><dd>40+</dd><small>Over 40 businesses under the Dead River name.</small></div>
         </dl>
-        <p>It’s stories like these that (almost) make our eyes sweat.</p>
-        <p>Okay, enough of that….</p>
-        <p class="kk-kicker">AS FEATURED IN</p>
-        <p class="kk-featured">Forbes · Entrepreneur · Inc. · The Sydney Morning Herald · Australian Financial Review · Smart Company</p>
-        <p>Let me answer the question that’s burning a hole in your head…</p>
+        <p>It's stories like these that (almost) make my eyes sweat.</p>
+        <p>Okay, enough of that…</p>
+        <p class="kk-kicker">PARTNERS</p>
+        <p class="kk-featured">Google Partner · Meta Business Partner</p>
+        <p>Let me answer the question that's burning a hole in your head…</p>
         <h2>HOW THE HELL CAN WE GUARANTEE RESULTS?</h2>
-        <p>It’s very simple.</p>
-        <p>We’re willing and able to guarantee results because of our unique approach and ‘selling system’.</p>
-        <p>You see, most digital agencies are good at the “technical stuff”, but know nothing whatsoever about selling, especially in today’s new digital economy.</p>
-        <p>Everything we do at Dead River has one goal, to SELL!</p>
-        <p>Heck, we don’t get paid if we don’t.</p>
-        <p>(Can you hear that? That’s the sound of my accountant screaming in the wind!)</p>
+        <p>It's very simple.</p>
+        <p>We can guarantee results because we don't start with the ad. We start with the people.</p>
+        <p>You see, most agencies are good at the “technical stuff,” but they're showing your ads to everybody and hoping the right person is in there somewhere.</p>
+        <p>Everything we do at Dead River starts with one question: who, in your area, is looking for this right now?</p>
+        <p>Demand Intelligence answers it. 280 million U.S. consumer profiles, 60 billion behaviors a week, updated every day.</p>
+        <p>(Can you hear that? That's the sound of your competitor's ad budget going to the wrong people.)</p>
         <p>But come closer, listen…</p>
-        <p>We’ve engineered a new and unique “system” to sell almost anything, to any one, at any price point.</p>
-        <p>It’s a combination of “mind hijacking” persuasion techniques, world-class media buying and something we call the “attention-flywheel”.</p>
-        <p>The total combination makes for an unusually effective marketing system, that truly makes it possible for almost any business to sell like crazy!</p>
-        <p>And If it doesn’t, we insist you don’t pay us a single cent.</p>
-        <p>But listen, lemme level with you for a moment…</p>
-        <p>Achieving predictable and consistent results online is never a result of…</p>
+        <p>Knowing who's looking is half of it. The other half is speed.</p>
+        <p>A lead that gets a call back in 5 minutes books. A lead that gets a call back tomorrow already hired the other guy.</p>
+        <p>So we build the follow-up, the texts and the emails, and we make sure somebody is picking up. That combination is why we can put $50,000 in writing.</p>
+        <p>And if it doesn't work, we insist you don't pay us a dime.</p>
+        <p>But listen, let me level with you for a moment…</p>
+        <p>Getting predictable results online is never the result of…</p>
       </div>
     </section>
 
@@ -176,8 +181,8 @@ const testimonials = [
       <i class="kk-slash kk-slash-br" aria-hidden="true"></i>
       <div class="wrap">
         <h3>BECOME OUR NEXT SUCCESS STORY</h3>
-        <div class="kk-grid">
-          {cases.map((c) => <a class="kk-tile" href="/work"><span>{c}</span><em>Read it <Arrow /></em></a>)}
+        <div class="kk-grid kk-grid-6">
+          {cases.map(([c, href]) => <a class="kk-tile" href={href}><span>{c}</span><em>Read it <Arrow /></em></a>)}
         </div>
         <div class="button-row"><a class="button" href={CTA}>HIT THE DAMN BUTTON <Arrow /></a></div>
       </div>
@@ -187,32 +192,32 @@ const testimonials = [
       <i class="kk-slash kk-slash-tl" aria-hidden="true"></i>
       <i class="kk-slash kk-slash-br" aria-hidden="true"></i>
       <div class="wrap">
-        <h2>‘MAGIC PIXIE DUST’ SPRINKLED ON ‘CROSSED FINGERS’ WITH A DASH OF ‘HOPE AND PRAY FOR THE BEST’</h2>
-        <p>It’s not about this…It’s about having a predictable and reliable “system” for selling.</p>
-        <p>And our “selling system” includes a war chest of proven strategies and tactics that most digital agencies don’t know even exist.</p>
+        <h2>‘MAGIC PIXIE DUST’ SPRINKLED ON ‘CROSSED FINGERS’ WITH A DASH OF ‘HOPE FOR THE BEST’</h2>
+        <p>It's not about that. It's about having a reliable system for getting jobs.</p>
+        <p>And our system has a whole toolbox most agencies don't even know exists.</p>
         <p>For example…</p>
         <ul class="kk-list">
-          <li>We know how to make a simple tweak to almost any landing page that will increase conversions by up to 400%! (Think about that. How would you like to increase your leads by 4X whilst reducing what you pay per lead by 375%!?)</li>
-          <li>We’ve discovered how to write Google and Facebook ads that use psychological triggers that “hijack” your prospect’s attention, practically forcing them to click and take action! (Not one digital agency or “expert” in a hundred even have a clue how to do this!)</li>
-          <li>We’ve discovered the secret “scroll stopping” strategy for Facebook Ads that siphons off more traffic for LESS money (Even the world’s most experienced Facebook marketers don’t fully understand how to do this)</li>
-          <li>We can tell you the biggest mistake made by businesses using Google Ads! (This mistake costs business owners and marketers a small fortune in lost profits and market share)</li>
-          <li>We know how to uncover large new “starving crowds” of prospects in ANY market – who spend like sailors on leave (even when the economy is hurting and you’re far more expensive than the competition)</li>
+          <li>We know who in your area is searching for what you sell before they ever call anybody. (Think about that. Your ad shows up for the guy whose water heater just died, not for everybody within 20 miles.)</li>
+          <li>We know how to write Facebook and Google ads that sound like you, not like an agency, so the right person stops scrolling and actually calls.</li>
+          <li>We know how to build a landing page that does one job: get the phone to ring. No menus, no “about us,” no 14 things to click.</li>
+          <li>We know the biggest mistake local businesses make with Google ads (paying for clicks from people three cities over who were never going to call) and how to shut it off.</li>
+          <li>We know how to find the people who looked you up and didn't call, and get back in front of them on YouTube, Facebook and Google until they do.</li>
         </ul>
-        <p>But that isn’t all, we also know how to…</p>
-        <p>We’ve used this strategy in hundreds of the most hyper-competitive markets to outsell and dominate the most ferocious competitors.</p>
+        <p>But that isn't all. We also know how to…</p>
+        <p>We've run this in some of the most competitive local markets there are, against the guys with the big trucks and the billboards.</p>
         <ul class="kk-list">
-          <li>We’ve discovered (from spending $200 million on ads) what you need to do to the ‘appearance’ of your ads on both Google and Facebook to skyrocket conversions (It’s the opposite to what most people have been told and could DRAMATICALLY increase your sales!)</li>
-          <li>We’ve developed a proven and predictable way to get highly-qualified prospects coming to you… ONLY when they’re ready, willing and able to BUY! Forget the usual “digital marketing stuff” that leaves you or your sales team speaking with looky-loos and price shoppers)</li>
-          <li>We know a way to dramatically increase the quantity of ‘eager-to-buy’ leads that your ads generate… often while spending the same amount, if not less, on traffic! (not one in a hundred agencies even have a clue this is possible)</li>
-          <li>We know one small tweak you can make to your Google Ads which often increases the Click-Through-Rates by 650%! (This drives Google’s algorithm wild and they give you the very best traffic as a reward!)</li>
-          <li>We know how to make a small ‘bidding adjustment’ change to increase your Google and Facebook Ads profits by 50%…even if…you don’t change a word of copy on your ads or landing pages!</li>
-          <li>We know how to… you get the idea, don’t you? The point is, because of our deep experience in working in over 1184 different industries and niches, and generating our clients over $10.2 billion in sales…</li>
+          <li>We know what a lead is worth to you, and what your average ticket is, before we spend a dollar. (That's the first thing we go over on the call, not the price.)</li>
+          <li>We've built a reliable way to get the right people calling you, when they're ready to buy, so you're not wasting your afternoon on price shoppers.</li>
+          <li>We know how to follow up by text and email in the first 5 minutes, so the lead you paid for doesn't go cold while you're on a roof.</li>
+          <li>We know how to set up the CRM so you can see every lead, every call and every job in one place. No more “I think we got a few calls last week.”</li>
+          <li>We know how to get the ads shown to the people who are actually looking, instead of everybody, so the same budget brings in more calls.</li>
+          <li>We know how to… you get the idea. The point is, after over 40 businesses, 30 niches, and over $7 million in client revenue…</li>
         </ul>
         <p>We truly believe that…</p>
         <h2>HERE'S SOME GOSSIP... EXCEPT IT'S REAL</h2>
         <blockquote class="kk-quote">
-          <p>“The agency’s results-driven approach is very different to the one used by most marketing agencies. It is a scientific, numbers-driven way of winning business, which is giving Dead River an edge that other agencies may find difficult to compete with in the future.”</p>
-          <footer>The Sydney Morning Herald</footer>
+          <p>“They did all of our social media management, set up our website, and optimized everything. We get 5-6 calls and multiple emails a day for shipments!”</p>
+          <footer>Wicked Logistics, client for two years</footer>
         </blockquote>
       </div>
     </section>
@@ -221,9 +226,9 @@ const testimonials = [
       <i class="kk-slash kk-slash-tl" aria-hidden="true"></i>
       <i class="kk-slash kk-slash-br" aria-hidden="true"></i>
       <div class="wrap">
-        <h2>WE CAN BEAT ANY AGENCY, MARKETER OR TRAFFIC EXPERT ON PLANET EARTH OR WE WORK FOR FREE!</h2>
-        <p>If we fail (very unlikely) to beat your current campaigns by at least 30% on CPL or ROAS, we keep working for free until we do. No management fee if we don’t beat your results. Every dollar you pay us will come from the EXTRA sales you wouldn’t have made unless we created our new campaign for you!</p>
-        <p class="kk-warn">Warning: We reserve the right to revoke this offer at any time.</p>
+        <h2>$50,000 IN NEW REVENUE IN 45-60 DAYS OR YOUR MONEY BACK, PLUS $500 FOR WASTING YOUR TIME.</h2>
+        <p>If we miss (hasn't happened yet), you get every dollar you paid us back, plus a $500 check. Your side: keep $3,000 a month in ad spend funded and don't lower it, get back to every lead within 5 minutes, log every lead in the CRM, and give it the full 60 days. Every dollar you pay us comes out of the new jobs you wouldn't have had without us.</p>
+        <p class="kk-warn">No fine print. The four things above are the whole deal.</p>
         <div class="button-row"><a class="button" href={CTA}>CLAIM YOUR FREE 30-MINUTE STRATEGY SESSION <Arrow /></a></div>
       </div>
     </section>
@@ -232,26 +237,27 @@ const testimonials = [
       <i class="kk-slash kk-slash-tl" aria-hidden="true"></i>
       <i class="kk-slash kk-slash-br" aria-hidden="true"></i>
       <div class="wrap">
-        <p>Does this offer excite you? Interested in putting us to the test?</p>
-        <h2>HOLD ON THERE, TIGER…NOT SO FAST.</h2>
+        <p>Does this offer get your attention? Want to put us to the test?</p>
+        <h2>HOLD ON THERE, TIGER… NOT SO FAST.</h2>
         <p>Gotta back up a little first.</p>
         <p>Because this is not for everybody.</p>
-        <p>There are three important factors which must exist before you should even think about applying for this opportunity:</p>
+        <p>There are three things that have to be true before you should even think about applying:</p>
         <ol class="kk-list kk-ol">
-          <li>You must already be running ads on either Google or Facebook, and they must be running profitably. This opportunity isn’t for newbies or businesses that aren’t already advertising online. (If you want us to create a funnel and ads from scratch – you can see if you qualify here).</li>
-          <li>You must be willing to let us create ads we think will sell. Listen, since we’re doing this all on our own dime…Frankly, we don’t care what you, your business partner, your spouse, your friends or Snow White and the seven dwarfs think about our work. Except for checking the ads for your legal and factual approval – we’ll hold all creative control. Because, if an ad isn’t ours – we can’t guarantee its success.</li>
-          <li>You must not be selling anything even remotely shady, illegal, scammy, dangerous or in any way be involved in multi-level marketing. That’s it.</li>
+          <li>You must already be up and running, with real customers and real revenue, and able to fund $3,000 a month in ad spend without lowering it. This isn't for brand new businesses or people still deciding what to sell. (If that's you, grab the free playbook and come back when you're ready.)</li>
+          <li>You must be willing to let us build the ads and the page the way we know works. Listen, since our money is on the line… frankly, we don't care what your business partner, your spouse, or your cousin who “does marketing” thinks about the ad. Other than checking it for anything legally or factually wrong, we keep creative control. Because if the ad isn't ours, we can't guarantee it.</li>
+          <li>You must not be selling anything shady, illegal, dangerous, or multi-level marketing. That's it.</li>
         </ol>
-        <p>Does this opportunity interest you? Do you meet the above qualifications? If so, go here and book in a 30-minute strategy session with our team to see if we’d be a good fit.</p>
-        <p class="kk-ps">P.S. Oh, well, hello there…need some more convincing huh?</p>
-        <p>Ok listen up chicken nugget, you could continue to work your arse off, round the clock, dealing with all this stress, hassle and uncertainty…Of constantly worrying about where your next client will come from…</p>
-        <p>Pulling your hair out and dealing with the never-ending shit storm of lying ad agencies, rising ad costs, unreliable staff members, poor conversion rates, and an income that’s a feast one month and famine the next.</p>
-        <p>Or you could click the link below, book a call in with my team and explore how to rapidly and radically grow the sales of your company in the next 6 months. Risk-free!</p>
-        <p>But a word of warning, when you pray for the rain, you have to deal with the mud. So you better have the infrastructure in your business to SCALE!</p>
-        <p>No, “oh can we pause the ads for a week”. Time to put your grown-up pants on, and SCALE.</p>
-        <p>Speak soon.</p>
+        <p>Does this interest you? Do you meet the three above? If so, go here and book a 30-minute strategy session with us to see if we'd be a good fit.</p>
+        <p class="kk-ps">P.S. Oh, well, hello there… need some more convincing huh?</p>
+        <p>Okay, listen. You could keep working your tail off, round the clock, dealing with all the stress and the uncertainty… constantly worrying about where the next job is coming from…</p>
+        <p>Pulling your hair out over agencies that don't call back, rising ad costs, a guy who didn't show up, and an income that's feast one month and famine the next.</p>
+        <p>Or you could click the button below, book a call, and find out how to get more jobs on the board in the next 60 days. With the risk on us.</p>
+        <p>But a word of warning: when you pray for rain, you have to deal with the mud. So you better have the crew to handle the jobs when they come in.</p>
+        <p>No “can we pause the ads for a week.” Time to put your grown-up pants on and scale.</p>
+        <p>Talk soon.</p>
+        <p>Brandon</p>
         <p class="kk-ps">The TL;DR Version:</p>
-        <p>We’ll build a campaign to beat your best ads for you – and if we don’t beat them we’ll work for free until we do. But act now before there’s a waiting list, and a strict dress code…because we’re only taking on 8 new clients per month with this offer.</p>
+        <p>We find the people in your area already looking for what you sell and get them to call you. $50,000 in new revenue in 45-60 days or your money back, plus $500 for wasting your time. Book the call and we'll figure out in 30 minutes if it's a fit.</p>
         <div class="button-row"><a class="button" href={CTA}>HIT THE DAMN BUTTON ALREADY <Arrow /></a></div>
       </div>
     </section>
@@ -261,8 +267,9 @@ const testimonials = [
       <i class="kk-slash kk-slash-br" aria-hidden="true"></i>
       <div class="wrap">
         <div class="kk-tgrid">
-          {testimonials.map(([quote, who]) => (
+          {testimonials.map(([quote, who, video]) => (
             <article class="kk-t" title={quote}>
+              {video && <video controls playsinline preload="metadata" src={video}></video>}
               <p>{quote}</p>
               <footer>{who}</footer>
             </article>
@@ -275,10 +282,10 @@ const testimonials = [
       <i class="kk-slash kk-slash-tl" aria-hidden="true"></i>
       <i class="kk-slash kk-slash-br" aria-hidden="true"></i>
       <div class="wrap">
-        <p class="kk-lead">We’ll build a campaign to beat your best ads for you – and if we don’t beat them we’ll work for FREE until we do. But act now before there’s a waiting list, and a strict dress code…because we’re only taking on 8 new clients per month with this offer.</p>
+        <p class="kk-lead">We find the people in your area already looking for what you sell and get them to call you. $50,000 in new revenue in 45-60 days or your money back, plus $500 for wasting your time.</p>
         <h2>HIT THE DAMN BUTTON</h2>
         <div class="button-row"><a class="button" href={CTA}>HIT THE DAMN BUTTON <Arrow /></a></div>
-        <p class="kk-tag">The most ruthlessly effective platform for rapidly scaling businesses on planet earth.</p>
+        <p class="kk-tag">People who are already looking. A phone that actually rings. A guarantee with your name on it.</p>
       </div>
     </section>
   </div>
@@ -303,4 +310,6 @@ const testimonials = [
   .kk-warn { font-family: var(--mono) !important; font-size: 13px !important; color: var(--ember) !important; }
   .kk-ps { font-weight: 700; color: var(--kk-ink) !important; }
   .kk-final .kk-lead { max-width: 820px; }
+  .kk-grid-6 { grid-template-columns: repeat(3, 1fr); max-width: 860px; }
+  @media (max-width: 860px) { .kk-grid-6 { grid-template-columns: 1fr 1fr; } }
 </style>
