@@ -486,7 +486,7 @@
     },
     {
       "source": "/rapids-plan",
-      "destination": "/plans",
+      "destination": "/",
       "statusCode": 301
     },
     {
@@ -1105,6 +1105,31 @@
       "statusCode": 301
     },
     {
+      "source": "/marketing-advice/30-leads-in-60-days-guarantee",
+      "destination": "/demand-flow",
+      "statusCode": 301
+    },
+    {
+      "source": "/marketing-advice/aeo-vs-seo-el-paso",
+      "destination": "/marketing-advice/ai-search-for-local-business",
+      "statusCode": 301
+    },
+    {
+      "source": "/marketing-advice/how-el-paso-plumbers-get-more-customers",
+      "destination": "/locations/el-paso",
+      "statusCode": 301
+    },
+    {
+      "source": "/marketing-advice/google-business-profile-more-calls",
+      "destination": "/marketing-advice/google-business-profile-services-and-posts",
+      "statusCode": 301
+    },
+    {
+      "source": "/chatgpt-ads",
+      "destination": "/demand-flow",
+      "statusCode": 301
+    },
+    {
       "source": "/google-business-profile-el-paso",
       "destination": "/services/local-seo",
       "statusCode": 301
@@ -1366,6 +1391,11 @@
     },
     {
       "source": "/demandflow",
+      "destination": "/demand-flow",
+      "statusCode": 301
+    },
+    {
+      "source": "/demandflow/home-services",
       "destination": "/demand-flow",
       "statusCode": 301
     },

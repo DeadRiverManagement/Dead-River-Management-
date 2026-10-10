@@ -1,13 +1,12 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { readFileSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import middleware from '../middleware.js';
 
 const read = (name) => readFileSync(resolve('src/content/blog', name), 'utf8');
 
 const published = [
-  '30-leads-in-60-days-guarantee.md',
   'el-paso-home-services-marketing-agency.md',
   'ai-receptionist-cost.md',
   'ai-search-for-local-business.md',
@@ -38,19 +37,13 @@ test('published marketing advice does not sell retired offers', () => {
   }
 });
 
-test('30-leads article matches Demand Flow SoR', () => {
-  const text = read('30-leads-in-60-days-guarantee.md');
-  assert.match(text, new RegExp('description: "' + DEK.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '"'));
-  assert.match(text, /Demand Flow/);
-  assert.match(text, /\$50,000 in new revenue in 45 to 60 days/);
-  assert.match(text, /service fees refunded \+ \$500/);
-  assert.match(text, /ad spend/i);
-  assert.match(text, /no longer a public offer|not.*current public offer/i);
-  assert.doesNotMatch(text, /Foundation, Growth Partner, and Scale/);
-  assert.doesNotMatch(text, /\/talk/);
-  assert.match(text, /\/book/);
-  assert.doesNotMatch(text, /\/pricing/);
-  assert.doesNotMatch(text, /work for free/);
+test('30-leads article is retired: source deleted and one-hop 301 to /demand-flow', () => {
+  assert.equal(existsSync(resolve('src/content/blog', '30-leads-in-60-days-guarantee.md')), false);
+  const vercel = JSON.parse(readFileSync(resolve('vercel.json'), 'utf8'));
+  const rule = vercel.redirects.find((r) => r.source === '/marketing-advice/30-leads-in-60-days-guarantee');
+  assert.ok(rule, '30-leads redirect missing');
+  assert.equal(rule.destination, '/demand-flow');
+  assert.equal(rule.statusCode, 301);
 });
 
 test('ai-receptionist-cost matches Demand Flow SoR without ladder-as-current', () => {
