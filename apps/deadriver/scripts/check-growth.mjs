@@ -402,7 +402,7 @@ const playbook = readFileSync(join(root, 'free-playbook.html'), 'utf8');
 assert.match(playbook, /<h1[^>]*>Get found\. Win the job\. Know the numbers\.<\/h1>/);
 assert.match(playbook, /Nationwide/);
 assert.match(playbook, /build demand/);
-assert.match(playbook, /\/downloads\/dead-river-scale-playbook\.pdf/);
+assert.match(playbook, /\/downloads\/marketing-is-fcking-easy\.pdf/);
 assert.match(playbook, /Download PDF/);
 assert.match(playbook, /title="Dead River Scale playbook"/);
 assert.match(playbook, /class="playbook-get"/);
@@ -418,7 +418,7 @@ assert.doesNotMatch(playbook, /trackSingle/);
 assert.doesNotMatch(playbook, /Dead River Complete/);
 assert.doesNotMatch(playbook, /\/welcome\//);
 assert.ok(
-  existsSync(join(root, 'downloads/dead-river-scale-playbook.pdf')),
+  existsSync(join(root, 'downloads/marketing-is-fcking-easy.pdf')),
   'Scale playbook PDF must be copied into the build',
 );
 assert.doesNotMatch(

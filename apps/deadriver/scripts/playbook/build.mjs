@@ -1,4 +1,4 @@
-// Builds public/downloads/dead-river-scale-playbook.pdf from the part*.mjs
+// Builds public/downloads/marketing-is-fcking-easy.pdf from the part*.mjs
 // content files and figs.mjs, in the site's dark/copper look, with Playwright's
 // Chromium. Run from apps/deadriver: node scripts/playbook/build.mjs
 // Needs Playwright with Chromium: npx playwright install chromium (or npm i -D playwright).
@@ -234,6 +234,6 @@ for (const cls of ['tight', 'tight2']) {
 }
 const still = (await p.evaluate(fit)).filter((r) => r.over > 2);
 if (still.length) console.log('still over', JSON.stringify(still));
-await p.pdf({ path: dir + '../../public/downloads/dead-river-scale-playbook.pdf', format: 'Letter', printBackground: true, preferCSSPageSize: true, margin: { top: 0, right: 0, bottom: 0, left: 0 } });
+await p.pdf({ path: dir + '../../public/downloads/marketing-is-fcking-easy.pdf', format: 'Letter', printBackground: true, preferCSSPageSize: true, margin: { top: 0, right: 0, bottom: 0, left: 0 } });
 await b.close();
 console.log('pages', items.length);
