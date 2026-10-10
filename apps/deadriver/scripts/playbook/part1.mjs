@@ -1,6 +1,6 @@
 // Part 1: The system. Rewritten from the old Home Service Growth Playbook for
 // every local service business Dead River works with, in Brandon's voice.
-export const pages = (page, divider) => {
+export const pages = (page, divider, F) => {
   const P = 'The system';
   const toc = { isToc: true, title: '', render: (n) => '' }; // filled by build.mjs
   toc.render = (n) => `<section class="page"><div class="head"><span class="part">Contents</span></div><h1 style="font-size:34px">What's in here.</h1><p class="sub" style="margin-bottom:14px">Four parts. Start wherever it hurts.</p><div class="body"><div class="toc toc2">${toc.entries || ''}</div></div><div class="foot"><span>The Dead River Playbook</span><span>${n}</span></div></section>`;
@@ -10,14 +10,14 @@ export const pages = (page, divider) => {
       part: 'Read this first',
       title: 'Hey,',
       body: `
-        <p class="big">This isn't another guide from some marketing guy about how to set up a business page or install a pixel. There are nine thousand of those on YouTube already, and most of them are written by people who have never had to make payroll off the jobs that came in.</p>
+        <img class="portrait" src="${F.img.brandon}" alt=""><p class="big">This isn't another guide from some marketing guy about how to set up a business page or install a pixel. There are nine thousand of those on YouTube already, and most of them are written by people who have never had to make payroll off the jobs that came in.</p>
         <p class="big">This is what we actually do.</p>
-        <p>This is the playbook we run inside Dead River for roofers, plumbers, auto shops, med spas, freight brokers, and about 25 other kinds of local business. It's what's behind the auto shop that went from $20,000 a month to $100,000, the roofer that went from 2 roofs a month to 8, and the plumber that went from $60,000 a year to $250,000.</p>
-        <p>I spent ten years helping local businesses get more jobs before I started Dead River. And the thing I saw over and over was good businesses paying for clicks while the phone went to voicemail. Spaghetti at the wall. A little bit of this, a little bit of that, and nothing sticks.</p>
+        <p>This is the playbook we run inside Dead River for roofers, plumbers, auto shops, med spas, dentists, freight brokers, online stores, real estate agents, and about 20 other kinds of business. It's what's behind the auto shop that went from $20,000 a month to $100,000, the roofer that went from 2 roofs a month to 8, and the plumber that went from $60,000 a year to $250,000.</p>
+        <p>I spent ten years helping businesses get more customers before I started Dead River. And the thing I saw over and over was good businesses paying for clicks while the phone went to voicemail and the cart got abandoned. Spaghetti at the wall. A little bit of this, a little bit of that, and nothing sticks.</p>
         <p>So here's how this is split up:</p>
         <ul>
-          <li><strong>Part 1: The system.</strong> How a lead turns into a paid job, and where it leaks. Numbers, your CRM, follow-up, your Google profile, your website. Boring, and it's where most of the money is.</li>
-          <li><strong>Part 2: The people already looking.</strong> How we find the people in your area who are searching for what you sell right now, before they fill out a form anywhere.</li>
+          <li><strong>Part 1: The system.</strong> How a lead turns into a paid customer, and where it leaks. Numbers, your CRM, follow-up, your Google profile, your website. Boring, and it's where most of the money is.</li>
+          <li><strong>Part 2: The people already looking.</strong> How we find the people in your market who are searching for what you sell right now, before they fill out a form anywhere.</li>
           <li><strong>Part 3: The ads.</strong> How to write a Facebook or Instagram ad somebody actually stops for, and how to set the account up so a winning ad keeps winning.</li>
           <li><strong>Part 4: Your 90 days.</strong> What to do first, what to do next, and the worksheets.</li>
         </ul>
@@ -27,7 +27,7 @@ export const pages = (page, divider) => {
         <p class="note">Dead River Management, El Paso, Texas. (915) 228-3054. brandon@deadrivermanagement.com</p>`,
     }),
     toc,
-    divider(1, 'The system.', 'How a lead becomes a paid job. Fix this before you spend a dollar on ads.'),
+    divider(1, 'The system.', 'How a lead becomes a paid customer. Fix this before you spend a dollar on ads.'),
 
     page({ part: P, kicker: 'Your starting point', title: 'Start with one fix.', sub: "You don't need to do all of this at once. Find the row that sounds like your business and go there first.",
       body: `
@@ -50,7 +50,9 @@ export const pages = (page, divider) => {
           <div class="step"><i>4</i><div><b>Do great work</b><small>Finish, check in, ask for the review.</small></div></div>
           <div class="step"><i>5</i><div><b>Grow again</b><small>Stay in touch, track it, fix what broke, then scale.</small></div></div>
         </div>
-        <p>If one step is broken, fix it before you send more people through it. Spending more on ads to feed a phone nobody answers is just a faster way to lose money.</p>`,
+        <p>If one step is broken, fix it before you send more people through it. Spending more on ads to feed a phone nobody answers is just a faster way to lose money.</p>
+        ${F.logos()}
+        <p class="note">Some of the businesses this system has run for.</p>`,
       doNow: 'Put a name next to each handoff. One person owns it.' }),
 
     page({ part: P, kicker: '01 / The growth system', title: 'Where do people get stuck?', sub: "Pull up your last ten leads. If you've got fewer, use all of them.",
@@ -71,6 +73,7 @@ export const pages = (page, divider) => {
           <div class="stat"><b>$100</b><small>What it cost to win the job. Ads, the person answering the phone.</small></div>
           <div class="stat"><b>$300</b><small>What's left for the bills and for you.</small></div>
         </div>
+        ${F.fig(F.bars([['The work', 600, '$600'], ['Winning the job', 100, '$100'], ['Left over', 300, '$300', true]]))}
         <p>That's a $1,000 job. The $300 still has to help pay the rent, the truck, and the insurance. Track taxes, refunds, and card fees the same way every time so the number means the same thing every month.</p>
         <p>This is the first thing we go over on a call with a new client, before anybody talks about price. What's a customer worth to you, and what's your average ticket. If you don't know those two numbers, you can't know what a lead is worth, and you'll either overpay for leads or walk away from good ones.</p>`,
       doNow: 'Check the real costs on one finished job.' }),
@@ -96,6 +99,7 @@ export const pages = (page, divider) => {
           <div class="row r3"><b>Cost per booking</b><span>$6,000 ÷ 50 booked</span><span><strong>$120</strong></span></div>
           <div class="row r3"><b>Cost per new customer</b><span>$6,000 ÷ 16 paid jobs</span><span><strong>$375</strong></span></div>
         </div>
+        ${F.fig(F.bars([['Per lead', 60, '$60'], ['Per booking', 120, '$120'], ['Per new customer', 375, '$375', true]]))}
         <p>This uses everything it cost to win those customers, not just the ad spend. Each of the 16 finished jobs is a new customer. Ad spend alone is a different number, and it's the one most agencies will show you because it looks better.</p>
         <p>Cheap leads can cost more. Thirty leads at $17 each that turn into one job cost you more than fifteen leads at $40 that turn into six. Always run it through to the paid job.</p>`,
       doNow: 'Fill in your cost per lead, per booking, and per new customer.' }),
@@ -131,37 +135,32 @@ export const pages = (page, divider) => {
       body: `
         <div class="cards c2">
           <div class="card"><span class="tag">Roofing</span><b>A roof check</b><small>Photos, what we found, and a repair or replace option with a price on each.</small></div>
-          <div class="card"><span class="tag">Auto repair</span><b>A diagnostic with a written estimate</b><small>What's wrong, what it costs to fix, what can wait.</small></div>
           <div class="card"><span class="tag">Med spa</span><b>A consult with a plan</b><small>What you want fixed, which treatment, how many sessions, and the total.</small></div>
-          <div class="card"><span class="tag">Plumbing</span><b>A drain clearing</b><small>What's included, what it costs if we find something bigger, and when we can be there.</small></div>
+          <div class="card"><span class="tag">Online store</span><b>A size guide and a 30-day return</b><small>Written out on the product page, so nobody has to email to ask.</small></div>
+          <div class="card"><span class="tag">Freight broker</span><b>A rate on one lane in 15 minutes</b><small>What's included, what isn't, and who to call when the truck's late.</small></div>
         </div>
-        <p>These are sample offers to show the shape, not Dead River results. The point is the same in every niche. A vague offer gets compared on price. A clear one gets compared on what's included, and you win that comparison.</p>`,
+        <p>These are sample offers to show the shape, not Dead River results. The point is the same whether you sell roofs, Botox, or shoes. A vague offer gets compared on price. A clear one gets compared on what's included, and you win that comparison.</p>`,
       doNow: 'Replace one vague offer with a list of what it actually includes.' }),
 
     page({ part: P, kicker: '04 / Fix the leads you have', title: 'Give every lead a home.', sub: "Your CRM is your lead list. It's what keeps a job from getting lost in somebody's text messages.", ex: true,
       body: `
-        <div class="cards c2">
-          <div class="card"><b>Source</b><small>Where they came from. Google, Facebook, referral, the truck.</small></div>
-          <div class="card"><b>Owner</b><small>Who's helping them. One name, not "the office."</small></div>
-          <div class="card"><b>Status</b><small>New, in contact, booked, quoted, won, lost, done, paid.</small></div>
-          <div class="card"><b>Next task</b><small>What happens next, and when. Every open lead has one.</small></div>
-          <div class="card"><b>Last contact</b><small>When you last actually spoke to them.</small></div>
-          <div class="card"><b>Visit and value</b><small>The date and what you expect the job to be worth.</small></div>
-        </div>
+        ${F.crmCard()}
+        <p>Source, owner, status, next task, last contact, and what it's worth. Every open lead has all six. "The office" is not an owner. A name is.</p>
         <p>Keep sold, finished, and paid as separate steps. Save the reason when you lose one. Three months from now, the reasons are the most useful thing in the whole system.</p>
         <p>This is also the one condition people push back on with our guarantee, and it's the one we won't drop. If every lead isn't logged, we can't both look at the same numbers, and then the guarantee is just an argument waiting to happen.</p>`,
       doNow: 'Give every open lead one owner and one dated next task.' }),
 
     page({ part: P, kicker: '04 / Fix the leads you have', title: 'Five minutes. Not five hours.', sub: 'A lead that gets a call back in 5 minutes books. A lead that gets a call back tomorrow already hired the other guy.',
       body: `
+        ${F.fig(F.flow([['Lead comes in', 'form, call, chat, cart'], ['Phone alert', 'a person, not an inbox'], ['Reply in 5 min', 'call or text'], ['Logged', 'owner and next task']], { last: true }))}
         <div class="steps">
-          <div class="step"><i>1</i><div><b>New lead</b><small>Check for spam, repeats, and whether it's work you actually do.</small></div></div>
+          <div class="step"><i>1</i><div><b>New lead</b><small>Check for spam, repeats, and whether it's something you actually sell.</small></div></div>
           <div class="step"><i>2</i><div><b>Ready to help</b><small>Assign an owner. Alert the team. The alert goes to a phone, not an inbox.</small></div></div>
           <div class="step"><i>3</i><div><b>First reply, inside 5 minutes</b><small>A real person calls or texts. Say what happens next.</small></div></div>
           <div class="step"><i>4</i><div><b>Human check</b><small>Did a person actually try to reach them on time? If not, the backup gets alerted.</small></div></div>
         </div>
         <p>An auto-reply is not a conversation. It buys you a minute, it doesn't buy you the job. Only promise a response time your team can actually hit, and then hit it.</p>
-        <p>Speed to lead is a must with us. It's written into the guarantee because it's the single biggest thing we've seen separate the shops that grow from the ones that say "ads don't work."</p>`,
+        <p>Speed to lead is a must with us. It's written into the guarantee because it's the single biggest thing we've seen separate the businesses that grow from the ones that say "ads don't work."</p>`,
       doNow: 'Send yourself a test lead. Time how long it takes a human to respond.' }),
 
     page({ part: P, kicker: '04 / Fix the leads you have', title: 'Build a stop button.', sub: 'The next message should fit what the person just did.',
@@ -178,23 +177,23 @@ export const pages = (page, divider) => {
 
     page({ part: P, kicker: '04 / Fix the leads you have', title: 'Missed a call? Reach back.', sub: 'Call back the second your team can. In the meantime, the text goes out.', ex: true,
       body: `
-        <div class="bubble">Hey {first_name}, this is {name} at {business}. Sorry we missed your call. What do you need done, and what's the ZIP code? Reply STOP to stop texts.</div>
+        <div class="side l">${F.sms([['Hey {first_name}, this is {name} at {business}. Sorry we missed your call. What do you need, and what\'s the ZIP code? Reply STOP to stop texts.', true], ['Hey, yeah, the water heater is leaking. 79912', false], ['Got it. I can have somebody there between 1 and 3 today. Does that work?', true]])}
         <div class="steps">
           <div class="step"><i>1</i><div><b>Check the number and the text permission.</b></div></div>
           <div class="step"><i>2</i><div><b>Send it once. Then make a real callback.</b></div></div>
           <div class="step"><i>3</i><div><b>If they reply, a person takes over.</b></div></div>
-        </div>
+        </div></div>
         <p class="note">Skip spam, wrong numbers, and repeats. Don't promise an open slot you haven't checked.</p>`,
       doNow: 'Give missed calls a callback task and a backup owner.' }),
 
     page({ part: P, kicker: '04 / Fix the leads you have', title: 'Show them the form worked.', sub: "Say you got it. Don't invent a booking.", ex: true,
       body: `
-        <div class="bubble"><b style="display:block;margin-bottom:4px">Subject: Your {service} request</b>Hey {first_name}, we got your request. I'm {name} at {business}. We'll {next_step} by {real_time}. You can reply here or call {phone}.</div>
+        <div class="side l"><div class="shot" style="padding:14px 16px;font-size:12.5px;line-height:1.5"><div style="font-family:ui-monospace,Menlo,monospace;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:#6b6963;margin-bottom:8px">Email · auto-sent, then a human follows</div><b>Subject: Your {service} request</b><br><br>Hey {first_name}, we got your request. I'm {name} at {business}. We'll {next_step} by {real_time}. You can reply here or call {phone}.<br><br>{name}</div>
         <div class="steps">
           <div class="step"><i>1</i><div><b>Save the source and what they asked for.</b></div></div>
           <div class="step"><i>2</i><div><b>Assign one person to follow up.</b></div></div>
           <div class="step"><i>3</i><div><b>Check the reply and failed-send routes actually work.</b></div></div>
-        </div>
+        </div></div>
         <p class="note">Only use a time you can meet. A request is not a confirmed visit. Keep the marketing sign-up separate from the request if you need to.</p>`,
       doNow: 'Send one test form from your site all the way to your lead list.' }),
 
@@ -206,7 +205,7 @@ export const pages = (page, divider) => {
           <div class="row"><b>What</b><span>{visit_scope} and {fee_or_terms}</span></div>
           <div class="row"><b>Access</b><span>{gate, pet, or entry needs}</span></div>
         </div>
-        <div class="bubble me">{business}: Your {service} visit is set for {date}, {window}. Please {access_step}. Need a different time? Call {phone}. Reply STOP to stop texts.</div>
+        <div class="side r"><div class="shot" style="padding:12px 14px;font-size:12px;color:#3a3936">Same details on the confirmation page, the email, and the text. People should never have to ask "what time again?"</div>${F.sms([['{business}: Your {service} visit is set for {date}, {window}. Please {access_step}. Need a different time? Call {phone}. Reply STOP to stop texts.', true], ['Perfect, see you then', false]])}</div>
         <p class="note">Remind them the day before and again close to the visit. Kill the old reminders if the time changes or the visit gets canceled.</p>`,
       doNow: 'Send the visit details and an easy way to change the time.' }),
 
@@ -217,7 +216,7 @@ export const pages = (page, divider) => {
           <div class="card"><b>Agree</b><small>Ask when they plan to decide. Write it down.</small></div>
           <div class="card"><b>Follow up</b><small>Use that date. Answer the next question.</small></div>
         </div>
-        <div class="bubble">Hey {first_name}, did the {service} quote come through okay? Happy to walk you through what's included. Would {time} work? {name}, {business}. Reply STOP to stop texts.</div>
+        <div class="side l">${F.sms([['Hey {first_name}, did the {service} quote come through okay? Happy to walk you through what\'s included. Would {time} work? {name}, {business}. Reply STOP to stop texts.', true], ['It did, we\'re comparing a couple. Tomorrow at 5 works.', false]])}<div class="card"><b>Write the date down</b><small>"Tomorrow at 5" goes in the CRM as the next task, with a name on it. That's the whole trick. Most quotes die because nobody owned the follow-up.</small></div></div>
         <p class="note">If they accept, decline, or ask you to stop, change the plan. No fake deadlines to push the sale. If the price is only good until Friday, it's because of something real, like material costs.</p>`,
       doNow: 'Ask every quoted lead when they want to go over it with you.' }),
 
@@ -228,31 +227,32 @@ export const pages = (page, divider) => {
           <div class="step"><i>2</i><div><b>Next business day</b><small>Try once more if it's still allowed and still useful.</small></div></div>
           <div class="step"><i>3</i><div><b>A few days later</b><small>Ask if they still need help, then close the loop.</small></div></div>
         </div>
-        <div class="bubble">Hey {first_name}, do you still need help with {service}? If now's not a good time, just let me know and I'll stop messaging you. {business}, {phone}.</div>
+        ${F.sms([['Hey {first_name}, do you still need help with {service}? If now\'s not a good time, just let me know and I\'ll stop messaging you. {business}, {phone}.', true]])}
         <p class="note">A reply, a booking, a sale, a no, or a stop changes this plan. Longer-term tips and seasonal check-ins need their own permission and a real reason.</p>`,
       doNow: 'Set a limit and a stop rule for leads that never answer.' }),
 
     page({ part: P, kicker: '04 / Fix the leads you have', title: 'Missed visit? Offer a reset.', sub: 'Find out what happened before you write someone off as a no-show.', ex: true,
       body: `
-        <div class="bubble">Hey {first_name}, this is {name} at {business}. We couldn't get the visit done today. Want to set a new time, or has the plan changed? Reply STOP to stop texts.</div>
+        <div class="side l">${F.sms([['Hey {first_name}, this is {name} at {business}. We couldn\'t get the visit done today. Want to set a new time, or has the plan changed? Reply STOP to stop texts.', true], ['Sorry, got stuck at work. Can we do Saturday?', false]])}
         <div class="steps">
           <div class="step"><i>1</i><div><b>Check for a delay, a change, or a canceled visit on your side first.</b></div></div>
           <div class="step"><i>2</i><div><b>Offer real open times if they still need help.</b></div></div>
           <div class="step"><i>3</i><div><b>Save the result and stop the old reminders.</b></div></div>
-        </div>
+        </div></div>
         <p class="note">If there was a service problem, hand it to a person to fix. Never send a sales message to somebody who's waiting on you to make something right.</p>`,
       doNow: 'Create a same-day recovery task for missed visits.' }),
 
-    page({ part: P, kicker: '05 / Google Business Profile', title: 'Make your map profile clear.', sub: 'For a local business, this is the front door. Most people see it before they see your website.',
+    page({ part: P, kicker: '05 / Google Business Profile', title: 'Make your map profile clear.', sub: 'If customers find you on a map, this is the front door. If you\'re online only, keep it accurate and move on.',
       body: `
+        <div class="side l"><div class="shot" style="padding:14px 16px"><div style="display:flex;gap:10px;align-items:center;margin-bottom:8px"><img src="${F.img.brandon}" alt="" style="width:44px;height:44px;border-radius:8px;object-fit:cover;object-position:top"><div><b style="font-size:14px">Dead River Management</b><div style="font-size:11px;color:#6b6963">Marketing agency · El Paso, TX</div></div></div><div style="font-size:12px;color:#c8743f;margin-bottom:6px">★★★★★ <span style="color:#3a3936">5.0 · Google reviews</span></div><div style="font-size:11.5px;line-height:1.5;color:#3a3936">Open · Closes 6 PM<br>(915) 228-3054<br>deadrivermanagement.com</div><div style="display:flex;gap:6px;margin-top:10px">${['Call', 'Website', 'Book'].map((b) => `<span style="font-size:10.5px;padding:5px 10px;border-radius:999px;border:1px solid rgba(18,18,20,.14)">${b}</span>`).join('')}</div></div>
         <div class="rows">
           <div class="row"><b>Name</b><span>Your real business name. Not "Best Roofer El Paso Cheap."</span></div>
           <div class="row"><b>Category</b><span>The closest match for your main work. Secondary categories for the rest.</span></div>
           <div class="row"><b>Area</b><span>The places you actually serve. Not the whole state.</span></div>
           <div class="row"><b>Hours</b><span>When a customer can actually reach a human.</span></div>
           <div class="row"><b>Links</b><span>Phone, website, and a booking link that works.</span></div>
-          <div class="row"><b>Photos</b><span>Real photos of real work. Your truck, your crew, a finished job. Not stock.</span></div>
-        </div>
+          <div class="row"><b>Photos</b><span>Real photos of real work. Your truck, your team, a finished job, your storefront. Not stock.</span></div>
+        </div></div>
         <p class="note">List your real services. Write a plain description. Keep the name, phone, and address the same across your site and every profile. Google notices when they don't match.</p>`,
       doNow: 'Check your name, phone, hours, and website on the profile today.' }),
 
@@ -269,11 +269,11 @@ export const pages = (page, divider) => {
 
     page({ part: P, kicker: '06 / Reviews', title: 'Ask for honest reviews.', sub: 'Every real customer gets the same ask. The ones who leave a review are the ones who were asked.', ex: true,
       body: `
-        <div class="bubble me">Hey {first_name}, thanks for going with {business}. Would you mind leaving an honest review? {review_link}. Good or bad, it helps us. If anything's not right, call me at {phone}. Reply STOP to stop texts.</div>
-        <div class="compare">
+        <div class="side l">${F.sms([['Hey {first_name}, thanks for going with {business}. Would you mind leaving an honest review? {review_link}. Good or bad, it helps us. If anything\'s not right, call me at {phone}. Reply STOP to stop texts.', true], ['Done! You guys were great.', false]])}
+        <div class="compare" style="grid-template-columns:1fr">
           <div class="good"><b>Do</b>Ask right after the job, while they're happy. Make it one tap. Use your review link or a QR code on the invoice.</div>
           <div class="bad"><b>Skip</b>Gifts for reviews, fake reviews, pressure, and only sending the happy people to Google. All of it can get you flagged.</div>
-        </div>
+        </div></div>
         <p class="note">Use a channel you have permission for. One reminder is plenty. Stop on a review, a stop reply, or a failed delivery.</p>`,
       doNow: 'Add a plain review request to the end of every job.' }),
 
@@ -284,19 +284,20 @@ export const pages = (page, divider) => {
         <p>If you messed up, say so. "I messed up, here's what happened, here's how we're fixing it." People trust that a lot more than a defensive paragraph. Keep private details out of the reply. Never make fixing the problem conditional on them changing the review.</p>`,
       doNow: 'Read your last ten reviews. Find one thing the team can do better.' }),
 
-    page({ part: P, kicker: '07 / Local search', title: 'Give each service its own page.', sub: 'Search engines rank pages, not businesses. One page for "plumbing" loses to one page per thing you fix.', ex: true,
+    page({ part: P, kicker: '07 / Search', title: 'Give each service its own page.', sub: 'Search engines rank pages, not businesses. One page for "plumbing" loses to one page per thing you fix.', ex: true,
       body: `
+        <div class="side l"><div class="shot" style="padding:0"><div style="display:flex;gap:5px;padding:8px 10px;border-bottom:1px solid rgba(18,18,20,.12)"><i style="width:8px;height:8px;border-radius:50%;background:#c9c5bc;display:block"></i><i style="width:8px;height:8px;border-radius:50%;background:#c9c5bc;display:block"></i><i style="width:8px;height:8px;border-radius:50%;background:#c9c5bc;display:block"></i></div><div style="padding:14px 16px"><div style="font-family:Bricolage,sans-serif;font-weight:800;font-size:18px;line-height:1.05;letter-spacing:-.02em;margin-bottom:8px">Water heater replacement in {city}</div><div style="display:grid;gap:5px">${['What\'s included', 'What changes the price', 'Real jobs and reviews', 'Questions people ask'].map((l) => `<div style="font-size:11px;padding:6px 8px;border-radius:6px;background:rgba(18,18,20,.05)">${l}</div>`).join('')}<div style="font-size:11px;padding:8px;border-radius:6px;background:#c8743f;color:#140b04;text-align:center;font-weight:600">Request a visit</div></div></div></div>
         <div class="rows">
-          <div class="row"><b>Title</b><span>Water heater replacement in {city}</span></div>
+          <div class="row"><b>Title</b><span>Water heater replacement in {city}. Or "Men's trail running shoes." One page per thing you sell.</span></div>
           <div class="row"><b>Scope</b><span>Removal, the new unit, permits, haul-away, what's not included.</span></div>
           <div class="row"><b>Cost</b><span>What changes the price. Tank or tankless, access, gas or electric.</span></div>
           <div class="row"><b>Proof</b><span>Real jobs, real photos, real reviews about this service.</span></div>
-          <div class="row"><b>Next step</b><span>Call or request a visit. One button, easy to find on a phone.</span></div>
-        </div>
+          <div class="row"><b>Next step</b><span>Call, request a visit, or add to cart. One button, easy to find on a phone.</span></div>
+        </div></div>
         <p class="note">Answer the questions people actually ask. Link related pages to each other. Clear headings, a useful description, and it has to work on a phone, because that's where most of your customers are reading it.</p>`,
       doNow: 'Build or fix one page for your best service.' }),
 
-    page({ part: P, kicker: '07 / Local search', title: 'Make each town page useful.', sub: 'Swapping the city name on the same page is not a town page. Google knows, and so does the person reading it.', ex: true,
+    page({ part: P, kicker: '07 / Search', title: 'Make each town page useful.', sub: 'Swapping the city name on the same page is not a town page. Same goes for swapping the product name. Google knows, and so does the person reading it.', ex: true,
       body: `
         <div class="compare">
           <div class="bad"><b>Thin page</b>Same text, different city name.<br><br>Claims an office that isn't there.<br><br>No real jobs from that area.</div>
@@ -305,7 +306,7 @@ export const pages = (page, divider) => {
         <p>Don't invent jobs or offices. If two pages are doing the same job, one strong page beats two weak ones.</p>`,
       doNow: 'Open one town page. Add a real reason for it to exist, or merge it.' }),
 
-    page({ part: P, kicker: '07 / Local search', title: 'Help search find the page.', sub: 'Good content still has to be easy to open and easy to use.',
+    page({ part: P, kicker: '07 / Search', title: 'Help search find the page.', sub: 'Good content still has to be easy to open and easy to use.',
       body: `
         <div class="steps">
           <div class="step"><i>1</i><div><b>Test the page</b><small>Does it load fast on a phone? Do the links and the form work?</small></div></div>
@@ -354,9 +355,9 @@ export const pages = (page, divider) => {
           <div class="row"><b>Process</b><span>How the job will go, step by step.</span></div>
           <div class="row"><b>Reviews</b><span>Real customer feedback, with names.</span></div>
           <div class="row"><b>Questions</b><span>Fees, timing, and the terms people ask about.</span></div>
-          <div class="row"><b>Next step</b><span>Call or a short form. Again. People scroll.</span></div>
+          <div class="row"><b>Next step</b><span>Call, a short form, or the buy button. Again. People scroll.</span></div>
         </div>
-        <p class="note">Put a working phone link where it's easy to hit with a thumb. Show only real licenses, terms, and payment plans.</p>`,
+        <p class="note">Put a working phone link or buy button where it's easy to hit with a thumb. Show only real licenses, terms, and payment plans.</p>`,
       doNow: 'Click one of your own ads. Does the page promise the same thing the ad did?' }),
 
     page({ part: P, kicker: '09 / Your website', title: 'Make asking for help easy.', sub: 'A short form collects what the team needs for the next step. Nothing more.', ex: true,
@@ -392,7 +393,7 @@ export const pages = (page, divider) => {
     page({ part: P, kicker: '11 / Bring people back', title: 'Start with the right group.', sub: 'Old records need a check before a new message goes out.',
       body: `
         <div class="cards c2">
-          <div class="card"><b>Old quotes</b><small>Ask if the project is still planned. Half of them are.</small></div>
+          <div class="card"><b>Old quotes and abandoned carts</b><small>Ask if it's still planned. Half of them are.</small></div>
           <div class="card"><b>Past customers</b><small>Offer a service they're due for. Filter change, tune-up, touch-up.</small></div>
           <div class="card"><b>Missed visits</b><small>Offer a new time if it's still useful to them.</small></div>
           <div class="card"><b>Seasonal work</b><small>Ask about the next job the season brings.</small></div>
@@ -402,12 +403,12 @@ export const pages = (page, divider) => {
 
     page({ part: P, kicker: '11 / Bring people back', title: 'Send a useful check-in.', sub: 'A specific reason beats a vague sales push.', ex: true,
       body: `
-        <div class="bubble me">Hey {first_name}, this is {name} at {business}. Are you planning a {seasonal_job} this year? We can quote {real_scope}. Want me to come take a look? Reply STOP to stop texts.</div>
-        <div class="cards c3">
+        <div class="side l">${F.sms([['Hey {first_name}, this is {name} at {business}. Are you planning a {seasonal_job} this year? We can quote {real_scope}. Want me to come take a look? Reply STOP to stop texts.', true], ['Yeah actually, probably next month', false], ['Perfect. I\'ll check back the first week. Thanks {first_name}.', true]])}
+        <div class="cards c3" style="grid-template-columns:1fr">
           <div class="card"><b>Yes</b><small>Ask about the work and offer real times.</small></div>
           <div class="card"><b>Later</b><small>Save the date they give you. Come back then.</small></div>
           <div class="card"><b>No or stop</b><small>Close the task or stop messages.</small></div>
-        </div>
+        </div></div>
         <p class="note">For old quotes, ask if the work is still needed first. Confirm the current scope and price before you send a number.</p>`,
       doNow: 'Try one small group first. Track replies, jobs, and what it cost.' }),
 
@@ -439,8 +440,9 @@ export const pages = (page, divider) => {
         <p class="note">Pool service teaching example. Track visits used, repeat work, and who leaves. Future payments are not cash in the bank yet.</p>`,
       doNow: 'Write the tasks, dates, price, and terms before you sell a plan.' }),
 
-    page({ part: P, kicker: '13 / Track the job', title: 'Connect the lead to the job.', sub: 'One job ID from the first call to the paid invoice. Otherwise you are guessing which ads work.', ex: true,
+    page({ part: P, kicker: '13 / Track the job', title: 'Connect the lead to the job.', sub: 'One ID from the first call to the paid invoice or the shipped order. Otherwise you are guessing which ads work.', ex: true,
       body: `
+        ${F.fig(F.flow([['Source', 'ad, search, referral'], ['Lead', 'job ID + owner'], ['Quote', 'what happened'], ['Done', 'work + costs'], ['Paid', 'money in']], { last: true, h: 80 }))}
         <div class="steps">
           <div class="step"><i>1</i><div><b>Source</b><small>Search, map, ad, referral, or other.</small></div></div>
           <div class="step"><i>2</i><div><b>Lead</b><small>Job ID, source, owner.</small></div></div>

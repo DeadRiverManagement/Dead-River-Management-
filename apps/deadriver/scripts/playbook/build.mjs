@@ -1,18 +1,19 @@
 // Builds public/downloads/dead-river-scale-playbook.pdf from the part*.mjs
-// content files, in the site's dark/copper look, with Playwright's Chromium.
-// Run from apps/deadriver: node scripts/playbook/build.mjs
+// content files and figs.mjs, in the site's dark/copper look, with Playwright's
+// Chromium. Run from apps/deadriver: node scripts/playbook/build.mjs
 // Needs Playwright with Chromium: npx playwright install chromium (or npm i -D playwright).
 import { chromium } from 'playwright';
 import { pages as part1 } from './part1.mjs';
 import { pages as part2 } from './part2.mjs';
 import { pages as part3 } from './part3.mjs';
 import { pages as part4 } from './part4.mjs';
+import * as Fg from './figs.mjs';
 
 const dir = new URL('.', import.meta.url).pathname;
 const logo = 'data:image/png;base64,' + readFileSync(dir + '../../public/images/logo.png').toString('base64');
 const font = (f) => 'data:font/woff2;base64,' + readFileSync(dir + 'fonts/' + f).toString('base64');
 
-const css = `
+const css = Fg.css + `
 @font-face { font-family: 'Bricolage'; font-weight: 700; src: url(${font('font-display-700-normal-latin-5049cd6d3ba1409d.woff2')}) format('woff2'); }
 @font-face { font-family: 'Bricolage'; font-weight: 800; src: url(${font('font-display-800-normal-latin-5049cd6d3ba1409d.woff2')}) format('woff2'); }
 @font-face { font-family: 'InterV'; font-weight: 100 900; src: url(${font('font-body-400-normal-latin-e868cdf4720e9ea5.woff2')}) format('woff2'); }
@@ -199,7 +200,7 @@ const cover = { render: () => `<section class="page dark cover">
      <div class="slash3"></div><div class="slash"></div><div class="slash2"></div>
      <p class="kicker" style="position:absolute;bottom:.7in;left:.75in">deadrivermanagement.com · El Paso, Texas · Nationwide</p></section>` };
 
-const items = [cover, ...part1(page, divider), ...part2(page, divider), ...part3(page, divider), ...part4(page, divider)];
+const items = [cover, ...part1(page, divider, Fg), ...part2(page, divider, Fg), ...part3(page, divider, Fg), ...part4(page, divider, Fg)];
 // Pass 1: numbers. The TOC is the item flagged toc:true; it gets its entries from the rest.
 items.forEach((it, i) => { it.n = i + 1; });
 const tocItem = items.find((it) => it.isToc);

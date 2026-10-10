@@ -1,18 +1,19 @@
 // Part 4: Your 90 days. Plan, first week, worksheets, next step.
-export const pages = (page, divider) => {
+export const pages = (page, divider, F) => {
   const P = 'Your 90 days';
   return [
     divider(4, 'Your 90 days.', 'What to do first, what to do next, and the worksheets to do it with.'),
 
     page({ part: P, kicker: '31 / The plan', title: 'Build it in three steps.', sub: 'Do the next phase when the first one actually works. Not when the calendar says so.',
       body: `
+        ${F.fig(F.timeline())}
         <div class="cards c3">
           <div class="card"><span class="tag">Days 1 to 30</span><b>Fix the basics</b><small>Test tracking and lead routing. Fix the phone, the form, and the 5-minute follow-up. Clean up the offer, the website, and the Google profile. Get the CRM honest.</small></div>
-          <div class="card"><span class="tag">Days 31 to 60</span><b>Get more good leads</b><small>Pull your buying-signal list. Build the service pages. Ask every customer for a review. Launch one funded ad test from Part 3 to that list.</small></div>
-          <div class="card"><span class="tag">Days 61 to 90</span><b>Keep what works</b><small>Reach the right past customers. Add service reminders. Scale the winning ad with the Launch and Scale setup. Review jobs, costs, and crew room.</small></div>
+          <div class="card"><span class="tag">Days 31 to 60</span><b>Get more good leads</b><small>Pull your buying-signal list. Build the service or product pages. Ask every customer for a review. Launch one funded ad test from Part 3 to that list.</small></div>
+          <div class="card"><span class="tag">Days 61 to 90</span><b>Keep what works</b><small>Reach the right past customers. Add reminders. Scale the winning ad with the Launch and Scale setup. Review jobs, costs, and capacity.</small></div>
         </div>
-        <p>Don't raise spend because the date changed. Raise it when the full path works, from ad to paid job, and the crew can actually do the work that comes in.</p>
-        <p>When you pray for rain, you have to deal with the mud. If the leads double and you can't answer the phone or do the jobs, that's not growth, that's a bad month with more expensive reviews.</p>`,
+        <p>Don't raise spend because the date changed. Raise it when the full path works, from ad to paid customer, and you can actually handle the work that comes in.</p>
+        <p>When you pray for rain, you have to deal with the mud. If the leads double and you can't answer the phone or fill the orders, that's not growth, that's a bad month with more expensive reviews.</p>`,
       doNow: 'Start with phase one. Put the work on the calendar with names next to it.' }),
 
     page({ part: P, kicker: '31 / The plan', title: 'Your first week.', sub: 'One small task a day gets the whole thing moving.',
@@ -21,8 +22,8 @@ export const pages = (page, divider) => {
           <div class="step"><i>1</i><div><b>Day 1</b><small>Pull ten leads. Find the first leak.</small></div></div>
           <div class="step"><i>2</i><div><b>Day 2</b><small>Test the phone, the form, and the chat. Time the response.</small></div></div>
           <div class="step"><i>3</i><div><b>Day 3</b><small>Give every open lead an owner and a dated next task.</small></div></div>
-          <div class="step"><i>4</i><div><b>Day 4</b><small>Go through old quotes. Reply to every open lead.</small></div></div>
-          <div class="step"><i>5</i><div><b>Day 5</b><small>Check one finished job's revenue and real costs.</small></div></div>
+          <div class="step"><i>4</i><div><b>Day 4</b><small>Go through old quotes and abandoned carts. Reply to every open lead.</small></div></div>
+          <div class="step"><i>5</i><div><b>Day 5</b><small>Check one finished job or order's revenue and real costs.</small></div></div>
         </div>
         <p class="note">A broken contact path gets fixed the day you find it, not on day 5. Everything else can wait its turn.</p>`,
       doNow: 'Pick the day you start.' }),
@@ -30,7 +31,7 @@ export const pages = (page, divider) => {
     page({ part: P, kicker: '32 / Worksheets', title: 'Your one-fix worksheet.', sub: 'Turn an idea into a task with a name and a date on it.',
       body: `
         <div class="worksheet">
-          <div><b>The service we want to grow</b></div>
+          <div><b>The product or service we want to grow</b></div>
           <div><b>The step where people get stuck</b></div>
           <div><b>What the records show</b></div>
           <div><b>The one change we will make</b></div>
@@ -40,16 +41,16 @@ export const pages = (page, divider) => {
         <p class="note">Use a clear task. "Fix the form alert by Friday." Then test it. Save what changed and what you learned, because you will forget by next month.</p>`,
       doNow: 'Fill this out with the person who owns the work.' }),
 
-    page({ part: P, kicker: '32 / Worksheets', title: 'Your numbers worksheet.', sub: 'One service, one time period. Write "not sure" where you don\'t know. That\'s an answer too.',
+    page({ part: P, kicker: '32 / Worksheets', title: 'Your numbers worksheet.', sub: 'One product or service, one time period. Write "not sure" where you don\'t know. That\'s an answer too.',
       body: `
         <div class="worksheet">
-          <div><b>Average job value</b>Money from finished jobs ÷ finished jobs</div>
-          <div><b>Gross profit per job</b>Revenue minus direct job costs</div>
+          <div><b>Average sale</b>Money from finished jobs or orders ÷ number of them</div>
+          <div><b>Gross profit per sale</b>Revenue minus direct costs</div>
           <div><b>Cost per lead</b>Cost to win leads ÷ number of leads</div>
-          <div><b>Cost per booking</b>Same cost ÷ number of bookings</div>
-          <div><b>Cost per new customer</b>Same cost ÷ new customers with finished jobs</div>
-          <div><b>Most you can pay for a lead</b>Gross profit per job × your close rate, minus the margin you need</div>
-          <div><b>Next month's job goal and crew room</b></div>
+          <div><b>Cost per booking or add-to-cart</b>Same cost ÷ number of bookings</div>
+          <div><b>Cost per new customer</b>Same cost ÷ new customers who paid</div>
+          <div><b>Most you can pay for a lead</b>Gross profit per sale × your close rate, minus the margin you need</div>
+          <div><b>Next month's goal and capacity</b></div>
         </div>`,
       doNow: 'Use real numbers. This page is the first thing we go over on a call.' }),
 
@@ -79,7 +80,8 @@ export const pages = (page, divider) => {
           <li>Log every lead in the CRM so we're both looking at the same numbers.</li>
           <li>Give it the full 60 days.</li>
         </ul>
-        <p>That's it. No fine print. On the call we go over what a customer is worth to you and what your average ticket is, and we figure out together whether this is a fit before anybody talks about price.</p>
+        <p>That's it. No fine print. On the call we go over what a customer is worth to you and what your average sale is, and we figure out together whether this is a fit before anybody talks about price.</p>
+        ${F.logos()}
         <div class="callout" style="margin-top:14px"><strong style="color:#fff">Book a free 30-minute strategy session at deadrivermanagement.com</strong><br>Or call or text Brandon at (915) 228-3054. brandon@deadrivermanagement.com</div>`,
       doNow: 'Keep one promise: give every customer a clear next step.' }),
   ];
