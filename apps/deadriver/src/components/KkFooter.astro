@@ -1,0 +1,79 @@
+---
+// Preview only: King Kong's footer. Logo, line and address on the left, three link
+// columns, the book signup on the right, then the legal row.
+import Logo from './growth/Logo.astro';
+import { brand } from '../data/growth';
+import { socials } from '../data/site';
+import { socialIcons } from '../data/social-icons';
+const cols = [
+  ['Company', [['About us', '/kk/about-us'], ['Results', '/kk/results'], ['Marketing advice', '/kk/marketing-advice'], ['Book a call', '/kk/strategy-session']]],
+  ['Services', [['Local SEO', '/kk/local-seo'], ['AEO', '/kk/aeo'], ['Google ads', '/kk/google-ads'], ['Local Services Ads', '/kk/local-services-ads'], ['Facebook ads', '/kk/facebook-ads'], ['Landing pages', '/kk/landing-pages'], ['Cold email', '/kk/cold-email']]],
+  ['Solutions', [['Agency', '/kk/agency'], ['Software', '/kk/software'], ['The book', '/downloads/marketing-is-fcking-easy.pdf']]],
+];
+const legal = [['Privacy', '/privacy'], ['Terms', '/terms'], ['Cookies', '/legal/cookies'], ['Text messages', '/legal/sms'], ['Results and claims', '/legal/advertising'], ['Demand Flow guarantee', '/legal/guarantee']];
+---
+
+<footer class="kkf">
+  <div class="kkf-grid">
+    <div class="kkf-brand">
+      <a class="kkf-logo" href="/kk" aria-label="Dead River Management home"><Logo /></a>
+      <p>The most reliable way we've seen to get a business's phone ringing.</p>
+      <address>
+        <a href={brand.mapHref} rel="noopener" target="_blank">416 N. Stanton St, Suite 120-M<br />El Paso, TX 79901<br />United States</a>
+        <span>Phone: <a href={brand.phoneHref}>{brand.phone}</a></span>
+        <span>Email: <a href={`mailto:${brand.email}`}>{brand.email}</a></span>
+      </address>
+      <ul class="kkf-social" aria-label="Dead River Management on social media">
+        {socials.map((s) => (
+          <li><a href={s.href} rel="me noopener" target="_blank" aria-label={s.label} title={s.label}>
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false"><path d={socialIcons[s.icon]} /></svg>
+          </a></li>
+        ))}
+      </ul>
+    </div>
+    {cols.map(([title, links]) => (
+      <nav class="kkf-col" aria-label={title as string}>
+        <p>{title}</p>
+        <ul>{(links as string[][]).map(([l, h]) => <li><a href={h}>{l}</a></li>)}</ul>
+      </nav>
+    ))}
+    <div class="kkf-news">
+      <p class="kkf-news-h">Want the book?</p>
+      <p>Get Marketing is F*cking Easy free, plus one email a week on what's actually working for local businesses. No spam.</p>
+      <form class="kkf-form" action="/kk/strategy-session" method="get">
+        <label class="sr-only" for="kkf-email">Email</label>
+        <input id="kkf-email" name="email" type="email" required placeholder="Enter your email..." />
+        <button class="button" type="submit">Let's Go</button>
+      </form>
+    </div>
+  </div>
+  <div class="kkf-bottom">
+    <span>© {new Date().getFullYear()} Dead River Management · El Paso, Texas</span>
+    <nav aria-label="Policies">{legal.map(([l, h]) => <a href={h}>{l}</a>)}</nav>
+  </div>
+</footer>
+
+<style is:global>
+  .kkf { background: #050506; color: #cfccc4; padding: clamp(56px, 7vw, 88px) 22px 28px; border-top: 1px solid rgba(255, 255, 255, 0.06); }
+  .kkf-grid { max-width: 1180px; margin: 0 auto; display: grid; grid-template-columns: 1.5fr 0.8fr 1fr 0.8fr 1.6fr; gap: 40px; }
+  .kkf-logo { display: inline-block; line-height: 0; margin-bottom: 18px; }
+  .kkf-logo img, .kkf-logo svg { height: 40px; width: auto; filter: brightness(0) invert(1); }
+  .kkf-brand > p { margin: 0 0 18px; font-size: 15px; line-height: 1.55; color: #cfccc4; max-width: 30ch; }
+  .kkf address { font-style: normal; display: grid; gap: 6px; font-size: 14px; line-height: 1.55; }
+  .kkf a { color: #cfccc4; text-decoration: none; }
+  .kkf a:hover { color: #fff; }
+  .kkf-social { list-style: none; display: flex; flex-wrap: wrap; gap: 10px; margin: 22px 0 0; padding: 0; }
+  .kkf-social a { display: grid; place-items: center; width: 36px; height: 36px; border-radius: 50%; background: rgba(255, 255, 255, 0.06); color: var(--copper, #e3a070); }
+  .kkf-social a:hover { background: var(--copper, #e3a070); color: #121214; }
+  .kkf-col p, .kkf-news-h { margin: 0 0 16px; font-family: var(--display); font-weight: 800; font-size: 16px; color: #fff; }
+  .kkf-col ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; font-size: 14px; }
+  .kkf-news > p:not(.kkf-news-h) { margin: 0 0 16px; font-size: 14px; line-height: 1.55; }
+  .kkf-form { display: flex; gap: 6px; padding: 6px; border-radius: 999px; background: #fff; }
+  .kkf-form input { flex: 1; min-width: 0; border: 0; background: transparent; padding: 10px 14px; font: inherit; font-size: 14px; color: #121214; outline: none; }
+  .kkf-form .button { flex: none; width: auto; padding: 10px 20px; border-radius: 999px; font-size: 14px; }
+  .kkf-bottom { max-width: 1180px; margin: 48px auto 0; padding-top: 22px; border-top: 1px solid rgba(255, 255, 255, 0.08); display: flex; flex-wrap: wrap; gap: 12px 24px; justify-content: space-between; font-size: 13px; color: #8f8b84; }
+  .kkf-bottom nav { display: flex; flex-wrap: wrap; gap: 8px 18px; }
+  .kkf-bottom a { color: #8f8b84; }
+  @media (max-width: 980px) { .kkf-grid { grid-template-columns: 1fr 1fr; } .kkf-brand, .kkf-news { grid-column: 1 / -1; } }
+  @media (max-width: 520px) { .kkf-grid { grid-template-columns: 1fr 1fr; gap: 32px 20px; } }
+</style>

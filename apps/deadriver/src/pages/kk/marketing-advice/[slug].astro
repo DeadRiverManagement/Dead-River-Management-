@@ -1,0 +1,34 @@
+---
+// Preview only: each marketing advice article on the King Kong frame. Same content as the live post.
+import KkShell from '../../../components/KkShell.astro';
+import { getCollection, render } from 'astro:content';
+export async function getStaticPaths() {
+  return (await getCollection('blog', ({ data }) => !data.draft)).map((post) => ({ params: { slug: post.id }, props: { post } }));
+}
+const { post } = Astro.props;
+const { Content } = await render(post);
+const when = post.data.date.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
+---
+
+<KkShell
+  title={`${post.data.title} (Preview)`}
+  description={post.data.description}
+  kicker={`${post.data.category} · ${when}`}
+  headline={(post.data.headline || post.data.title).toUpperCase()}
+  sub={post.data.description}
+  faqTitle={post.data.faqHeading || 'STRAIGHT ANSWERS'}
+  faqs={post.data.faq || []}
+>
+  <p class="kk-dear"><a class="kk-back" href="/kk/marketing-advice">All articles</a> · By {post.data.author}</p>
+  {post.data.heroImage && <img class="kk-article-hero" src={post.data.heroImage} width="1536" height="1024" alt={post.data.heroAlt || post.data.title} loading="lazy" />}
+  <Content />
+</KkShell>
+
+<style is:global>
+  .kk-letter .kk-article-hero { display: block; width: 100%; height: auto; border-radius: 12px; margin: 0 0 24px; }
+  .kk-letter img { max-width: 100%; height: auto; border-radius: 10px; }
+  .kk-letter .kk-back { color: var(--copper-deep, #c8743f); font-weight: 700; text-decoration: none; }
+  .kk-letter table { width: 100%; border-collapse: collapse; font-size: 15px; margin: 0 0 20px; }
+  .kk-letter th, .kk-letter td { text-align: left; padding: 8px 10px; border-bottom: 1px solid rgba(18, 18, 20, 0.12); vertical-align: top; }
+  .kk-letter blockquote { margin: 0 0 20px; padding: 4px 0 4px 18px; border-left: 3px solid var(--copper, #e3a070); }
+</style>

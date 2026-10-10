@@ -1,0 +1,90 @@
+---
+// Preview only: King Kong's landing page agency page, rebuilt in Brandon's voice, with Dead River's own pages as the gallery.
+import KkShell from '../../components/KkShell.astro';
+const faqs = [
+  { q: 'What is the difference between a landing page and a website?', a: "Your home page introduces the whole business and invites people to look around. A landing page does one job. One offer, one next step, no menu, no distractions. You run ads to landing pages, not to home pages." },
+  { q: 'Should I send ads to a landing page or my home page?', a: "A landing page, every time. Somebody searched for drain clearing and clicked your ad. If they land on your home page, they're now looking at a page about everything you do, with a menu. They have to go find the drain clearing. Most won't." },
+  { q: 'Do I need one for each service?', a: "Yes. One page, one thing. A page about everything converts like a page about nothing. The water heater page talks only about water heaters, what's included, what it costs, and how to book." },
+  { q: 'Can you make landing pages for an online store?', a: "Yes, and they work best when you're pushing one product or one offer. A headline that makes the promise, proof it's real, and one button. Once you're selling a big range, the product pages themselves have to do that job." },
+  { q: 'Why ours?', a: "Because they're built to make the phone ring, not to look pretty. Real photos, real numbers, the same words as the ad, a phone number you can hit with a thumb, and a form that goes straight to a person who calls back in five minutes. Pretty counts for nothing if nobody calls." },
+];
+const gallery = [
+  ['/images/kk/lp-elsewhere-travel.webp', 'Elsewhere Travel'],
+  ['/images/kk/lp-roomwise-storage.webp', 'Roomwise Storage'],
+  ['/images/kk/lp-boldmark-signs.webp', 'Boldmark Signs'],
+  ['/images/kk/lp-bluehaven-pools.webp', 'Bluehaven Pools'],
+  ['/images/kk/lp-voltara-electric.webp', 'Voltara Electric'],
+  ['/images/kk/lp-clearpath-family-law.webp', 'Clearpath Family Law'],
+  ['/images/kk/lp-northbyte-it.webp', 'Northbyte IT'],
+  ['/images/kk/lp-kindred-home-care.webp', 'Kindred Home Care'],
+  ['/images/kk/lp-goodhound-training.webp', 'GoodHound Training'],
+  ['/images/kk/lp-rosewood-estate.webp', 'Rosewood Estate'],
+  ['/images/kk/lp-beyoutiful-med-spa.webp', 'beYOUtiful Med Spa'],
+  ['/images/kk/lp-oakline-cover.webp', 'Oakline Cover'],
+  ['/images/kk/lp-harbor-smile-dental.webp', 'Harbor Smile Dental'],
+  ['/images/kk/lp-forge-fitness.webp', 'Forge Fitness'],
+  ['/images/kk/lp-willow-hair-studio.webp', 'Willow Hair Studio'],
+  ['/images/kk/lp-total-auto-repair.webp', 'Total Auto Repair'],
+  ['/images/kk/lp-pipe-whisperers.webp', 'The Pipe Whisperers'],
+  ['/images/kk/lp-ledger-lane.webp', 'Ledger Lane'],
+  ['/images/kk/lp-sage-skin-studio.webp', 'Sage Skin Studio'],
+  ['/images/kk/lp-sunwell-solar.webp', 'Sunwell Solar'],
+  ['/images/kk/lp-fresh-fork-kitchen.webp', 'Fresh Fork Kitchen, meal delivery'],
+  ['/images/kk/lp-brightpath-learning.webp', 'Brightpath Learning, online tutoring'],
+  ['/images/kk/lp-form-haus-living.webp', 'Form Haus Living, lighting and furniture'],
+  ['/images/kk/lp-wicked-logistics.webp', 'Wicked Logistics, freight'],
+  ['/images/kk/lp-gonzalez-sons-roofing.webp', 'Gonzalez & Sons Roofing'],
+  ['/images/kk/lp-summit-air-comfort.webp', 'Summit Air & Comfort, HVAC'],
+  ['/images/kk/lp-ridgeline-roofing.webp', 'Ridgeline Roofing'],
+  ['/images/kk/lp-cedar-key-realty.webp', 'Cedar Key Realty, real estate'],
+  ['/images/kk/lp-only-fish.webp', 'Only Fish, saltwater aquarium store'],
+  ['/images/kk/lp-parcel-management-group.webp', 'Parcel Management Group, freight consulting'],
+];
+---
+
+<KkShell
+  title="Landing Page Agency (Preview)"
+  description="Landing pages built to make the phone ring, in the Dead River look."
+  kicker="LANDING PAGES"
+  headline="MORE LEADS FROM THE SAME ADS. WITHOUT SPENDING ONE MORE DOLLAR ON TRAFFIC."
+  sub="The best salesperson you'll ever hire works 24 hours a day, never calls in sick, and never leaves for a competitor."
+  faqTitle="LANDING PAGES, STRAIGHT ANSWERS"
+  faqs={faqs}
+>
+  <p class="kk-dear">Hey,</p>
+  <p>Let me guess. You're looking for ways to get more customers, and you're thinking "if only I could get more people to my website."</p>
+  <p>Okay, I'll shoot you straight. Most people don't have a traffic problem. They have a conversion problem.</p>
+  <p>There is no shortage of traffic. Billions of people on Facebook. Tens of thousands of Google searches a second. You can go to the traffic store, which is Google and Facebook, and buy as much as you want, today.</p>
+  <p>The problem is getting that traffic to turn into calls at a rate that makes money.</p>
+  <p>And here's what most people miss. Google and Facebook don't set the price of a click. Your competition does. So instead of complaining about what you can't control, you work on the one thing you can: how many of the people who click actually call.</p>
+  <h2>SO WHAT YOU NEED IS…</h2>
+  <p>A salesperson who never sleeps, never calls in sick, never takes a day off, and never goes to work for the guy across town.</p>
+  <p>Their name is Landing Page.</p>
+  <p>A good landing page is a salesperson that works for you day and night. Set it up right once and it brings in calls, texts, and form fills while you're on a roof, in a treatment room, or asleep.</p>
+  <p>Here's what a few of ours look like. Tap one to see the whole page.</p>
+  <div class="kk-gallery" data-gallery>
+    {gallery.map(([src, cap], i) => <a class="kk-shot" href={src} target="_blank" rel="noopener" hidden={i >= 8}><img src={src} alt={`${cap} landing page`} loading="lazy" /></a>)}
+  </div>
+  {gallery.length > 8 && <div class="button-row"><button class="button secondary" type="button" data-load-more>LOAD MORE</button></div>}
+  <script>
+    const g = document.querySelector('[data-gallery]');
+    const b = document.querySelector('[data-load-more]');
+    b?.addEventListener('click', () => {
+      g.querySelectorAll('[hidden]').forEach((el, i) => { if (i < 8) el.hidden = false; });
+      if (!g.querySelector('[hidden]')) b.hidden = true;
+    });
+  </script>
+  <h2>WHAT MAKES ONE WORK</h2>
+  <ul class="kk-list">
+    <li><strong>It says the same thing the ad said.</strong> Same headline, same promise, same photo. Break that trail and you lose half the clicks before they read a word.</li>
+    <li><strong>One job.</strong> No menu. No "about us." No six services. The person wanted drain clearing, so the page is about drain clearing.</li>
+    <li><strong>Real proof, not "quality you can trust."</strong> Real photos of real work. Reviews with names. The real number of jobs. A guarantee you'll honor.</li>
+    <li><strong>A phone number you can hit with a thumb.</strong> And again further down. People scroll.</li>
+    <li><strong>A short form that goes to a person.</strong> Name, phone, ZIP, what do you need. Then a human calls back inside five minutes. The page gets the lead. The call gets the job.</li>
+  </ul>
+  <p>We've built these for over 40 businesses in 30 niches, and we test them the cheap way: run twenty headlines as ads, let Facebook pick the winner for pocket change, and put the winning headline on the page. The page converts better because the ad already proved the words.</p>
+  <h2>THE OFFER</h2>
+  <p>For Demand Flow clients, the landing pages are built in. We don't send ads to a page that leaks. And the whole thing is under the one guarantee. $50,000 in new revenue in 45-60 days, or your money back, plus $500 for wasting your time.</p>
+  <p>No set-up fee for the page. No design fee. No copywriting fee. It's part of the system, because without it the system doesn't work.</p>
+  <p class="kk-ps">P.S. The page checklist, and the trick for testing headlines with ads before you put them on the page, is in Part 3 of Marketing is F*cking Easy. Free, further down.</p>
+</KkShell>

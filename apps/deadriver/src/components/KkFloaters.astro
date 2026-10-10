@@ -1,0 +1,19 @@
+---
+// Preview only: King Kong's floating icons behind the final button band.
+import { socialIcons } from '../data/social-icons';
+const icons = [['facebook', 6, 16, 0], ['instagram', 16, 58, 1.2], ['youtube', 90, 62, 0.6], ['tiktok', 5, 82, 1.8], ['linkedin', 86, 14, 2.4], ['star', 80, 84, 0.9], ['facebook', 94, 38, 3], ['youtube', 11, 36, 2.1]];
+---
+<div class="kk-floaters" aria-hidden="true">
+  {icons.map(([n, x, y, d]) => (
+    <i style={`left:${x}%;top:${y}%;animation-delay:-${d}s`}><svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor"><path d={socialIcons[n as string]} /></svg></i>
+  ))}
+</div>
+<style is:global>
+  .kk-final { position: relative; overflow: hidden; }
+  .kk-final > .wrap { position: relative; z-index: 1; }
+  .kk-floaters { position: absolute; inset: 0; pointer-events: none; }
+  .kk-floaters i { position: absolute; display: grid; place-items: center; width: 58px; height: 58px; border-radius: 16px; background: linear-gradient(180deg, #2a2a2f, #151517); border: 1px solid rgba(255, 255, 255, 0.08); color: var(--copper, #e3a070); box-shadow: 0 20px 40px -18px rgba(0, 0, 0, 0.9); animation: kk-bob 7s ease-in-out infinite; opacity: 0.85; }
+  @keyframes kk-bob { 0%, 100% { transform: translateY(0) rotate(-4deg); } 50% { transform: translateY(-16px) rotate(4deg); } }
+  @media (max-width: 720px) { .kk-floaters i { width: 38px; height: 38px; opacity: 0.35; } .kk-floaters i svg { width: 16px; height: 16px; } .kk-floaters i:nth-child(n+5) { display: none; } }
+  @media (prefers-reduced-motion: reduce) { .kk-floaters i { animation: none; } }
+</style>

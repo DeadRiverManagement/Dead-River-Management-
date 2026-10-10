@@ -1,0 +1,44 @@
+---
+// Preview only: King Kong's "Courses" slot, replaced by Demand Intelligence, the software. Pricing left open per Brandon.
+import KkShell from '../../components/KkShell.astro';
+const faqs = [
+  { q: 'What does Demand Intelligence do?', a: "It finds the people in your market who are looking for what you sell right now, matches your website visitors to real profiles, fills in missing contact details, and lets you use those lists for ads, email, and calls. 280 million U.S. consumer profiles, 60 billion behaviors a week, updated every day." },
+  { q: 'What does purchase intent mean?', a: "It means somebody recently looked up a topic, product, or service like yours. It helps you focus on the right people. It doesn't guarantee that any one person is ready to buy today." },
+  { q: 'How recent are the signals?', a: "The data updates every day. You pick how far back to look. The last two days for hot, the last seven for warm." },
+  { q: 'Can I use the lists in my own tools?', a: "Yes. Export them and set up audiences for Meta and Google, or load them into your CRM. On the demo we show you how the exports fit the tools you already use." },
+  { q: 'What does it cost?', a: "Pay per lead, or a flat monthly rate for unlimited. We're finishing the pricing now and we'll go over it on the demo. No long contract." },
+  { q: 'Is this the same as the agency?', a: "No. Demand Intelligence is the software, you run it. The agency is us running the whole Demand Flow system for you, with the $50,000 guarantee. Same data either way." },
+];
+---
+
+<KkShell
+  title="Demand Intelligence Software (Preview)"
+  description="The same data we use, in your hands. Pull the list of people already looking for what you sell."
+  kicker="SOFTWARE"
+  headline="THE SAME DATA WE USE. IN YOUR HANDS."
+  sub="Pull the list of people in your market already looking for what you sell. Then email them, call them, or run your ads to them."
+  video="/media/demand-intelligence-walkthrough.mp4"
+  poster="/images/og/demand-intelligence.jpg"
+  faqTitle="DEMAND INTELLIGENCE, STRAIGHT ANSWERS"
+  faqs={faqs}
+  ctaLabel="BOOK A DEMO"
+>
+  <p class="kk-dear">Hey,</p>
+  <p>If you'd rather run it yourself than hire us, this is the page for you.</p>
+  <p>Most ads go to everybody. Most cold email goes to a list somebody bought three years ago. Most "lead gen" is spaghetti at the wall.</p>
+  <p>Demand Intelligence is the tool we built so our own team would stop guessing. It's what's behind every client result on this site. And now you can use it without us.</p>
+  <h2>WHAT IT DOES</h2>
+  <ul class="kk-list">
+    <li><strong>Finds the people already looking.</strong> You tell it the topics people look up before they buy from you, and the area. It gives you the list of people in your market who looked in the last two to seven days, with contact details about 95% accurate.</li>
+    <li><strong>Tells you who visited your site.</strong> Somebody reads your pricing page at 9pm and leaves. The next morning they're on your list with a name.</li>
+    <li><strong>Writes the cold emails for you.</strong> An AI trained on two follow-up strategies we developed, writing in your voice. You read it, you approve it, it goes.</li>
+    <li><strong>Hands you the ad scripts.</strong> Facebook ad copy built from the same playbook in Marketing is F*cking Easy, ready to paste.</li>
+    <li><strong>Helps you make the videos.</strong> Outlines for YouTube and TikTok clips, so you can shoot them on a phone in an afternoon.</li>
+  </ul>
+  <h2>WHO IT'S FOR</h2>
+  <p>Owners who want to run their own marketing and are tired of guessing who to run it to. A roofer who'll make the calls himself. A med spa with somebody on the front desk who can send twenty emails a day. A freight broker who wants a list of shippers that just started looking.</p>
+  <p>If you'd rather not touch any of it, that's the agency, and it's on the other door.</p>
+  <h2>WHAT IT COSTS</h2>
+  <p>Pay per lead, or a flat monthly rate for unlimited. We're finishing the pricing now. On the demo we go over it with you, show you a live pull for your market, and you decide.</p>
+  <p class="kk-ps">P.S. Watch the walkthrough at the top of this page. It's a live pull for roofing in Dallas, 4,500 people shopping in the last seven days, in under a minute. Then hit the button and we'll do one for your market.</p>
+</KkShell>

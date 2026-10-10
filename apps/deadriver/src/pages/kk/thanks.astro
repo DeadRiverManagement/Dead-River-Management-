@@ -1,0 +1,55 @@
+---
+// Preview only: the calendar step after the strategy session form, with the
+// King Kong "Last Step" copy verbatim.
+import Growth from '../../layouts/Growth.astro';
+import KkHeader from '../../components/KkHeader.astro';
+import { DEMANDFLOW_CALENDAR_URL } from '../../lib/demandflow-handoff.js';
+---
+
+<Growth
+  noHeader
+  title="Last Step: Schedule Your Free 30-Min Strategy Session Call Now (Preview)"
+  description="Schedule your free 30-minute strategy session call."
+  robots="noindex,nofollow"
+  campaign
+  campaignHref="#calendar"
+  campaignLabel="Pick a time"
+  campaignShort="Pick a time"
+>
+  <KkHeader />
+  <div class="kk-lightpage"><section class="kk-thanks wrap">
+    <h1>Last Step: Schedule Your Free 30-Min Strategy Session Call Now</h1>
+    <p class="intro">On the call we go over what a customer is worth to you, what your average ticket is, and whether the $50,000 guarantee is a fit for your business. No pitch until we know it is. PLUS you'll get a 100% free scaling growth map ($1,000 value) 🚀.</p>
+    <p class="kk-rating"><span class="rv-stars" aria-hidden="true">★★★★★</span> 5-star rated on Google and Facebook</p>
+    <div class="kk-calendar" id="calendar">
+      <iframe
+        src={DEMANDFLOW_CALENDAR_URL}
+        allow="payment"
+        style="width:100%;border:none;overflow:hidden;min-height:780px;"
+        height="1100"
+        scrolling="no"
+        id="rfaj3m31onqPQEFYhwyE_kk_thanks"
+        title="Pick a time for your strategy session"
+        referrerpolicy="no-referrer"
+      ></iframe>
+      <script is:inline src="https://link.msgsndr.com/js/form_embed.js" type="text/javascript"></script>
+    </div>
+  </section></div>
+</Growth>
+
+<style>
+  .kk-lightpage { background: #f4f1ea; color: #121214; }
+  .kk-lightpage h1, .kk-lightpage h2 { color: #121214; }
+  .kk-lightpage .intro, .kk-lightpage p { color: #3a3936; }
+  .kk-lightpage .kk-rating, .kk-lightpage .kk-notyet-foot { color: #5f5d57; }
+  .kk-lightpage .kk-notyet-grid article { background: #fff; border-color: rgba(0,0,0,.1); }
+  .kk-lightpage .button.secondary { color: #121214; border-color: #121214; }
+  .kk-lightpage .check-list li { color: #3a3936; }
+  .kk-lightpage a { color: var(--copper-deep); }
+  .kk-thanks { padding: clamp(56px, 8vw, 100px) 0 80px; max-width: 900px; text-align: center; }
+  .kk-thanks h1 { font-size: clamp(36px, 5.6vw, 72px); letter-spacing: -0.045em; line-height: 0.95; text-transform: uppercase; margin: 10px auto 18px; max-width: 16ch; }
+  .kk-thanks .intro { max-width: 680px; margin: 0 auto; }
+  .kk-rating { margin-top: 16px; font-size: 13px; color: var(--muted); }
+  .kk-rating .rv-stars { color: var(--copper); margin-right: 6px; }
+  .kk-calendar { margin-top: 36px; border-radius: 20px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.12); background: #fff; padding: 8px; }
+</style>

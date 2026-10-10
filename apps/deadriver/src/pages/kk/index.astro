@@ -1,0 +1,260 @@
+---
+// Preview only: King Kong's home page structure, sheared bands and corner
+// stripes, in Dead River colours, with Brandon's own numbers and voice.
+// Facts confirmed by Brandon on October 10, 2026. Login-gated Vercel preview; noindex.
+import Growth from '../../layouts/Growth.astro';
+import KkHeader from '../../components/KkHeader.astro';
+import KkFloaters from '../../components/KkFloaters.astro';
+import Arrow from '../../components/growth/Arrow.astro';
+import FaqList from '../../components/FaqList.astro';
+import '../../styles/kk.css';
+
+const CTA = '/kk/strategy-session';
+const RATING = '5-star rated on Google and Facebook';
+
+const cases = [
+  ['TOTAL AUTO REPAIR', '/kk/work/total-auto-repair'],
+  ['GONZALEZ & SONS ROOFING', '/kk/work/gonzalez-and-sons-roofing'],
+  ['THE PIPE WHISPERERS', '/kk/work/the-pipe-whisperers'],
+  ['WICKED LOGISTICS', '/kk/work/wicked-logistics'],
+  ['PARCEL MANAGEMENT GROUP', '/kk/work/parcel-management-group'],
+  ['ONLY FISH', '/kk/work/only-fish'],
+];
+
+const featured = ['“They did all of our social media management, set up our website, and optimized everything. We get 5-6 calls and multiple emails a day for shipments. One of those leads turned into a $1.2 million contract.”', 'Wicked Logistics'];
+const TAR_VIDEO = 'https://d2ol7oe51mr4n9.cloudfront.net/user_3JQHnLTq89zb3rmd2x4Z53G0lE3/52a05e7d-44fc-4cb0-9aab-4269f45edef3.mp4';
+// Video wall: add a line per video as Brandon sends them. No placeholders.
+const testimonials = [
+  ['“From $20K To $100K A Month”', 'Total Auto Repair', TAR_VIDEO],
+];
+
+const faqs = [
+  { q: 'What does Dead River actually do?', a: "We're a marketing agency, but we're a little bit different. We use our Demand Intelligence software to find the people in your area who are actively searching for what you sell. Then we go ahead and get in front of them with ads, email and text, send them to a page built to make them call, and make sure that call gets answered fast. Most agencies throw spaghetti at the wall and see what sticks. We start with the people who are already looking." },
+  { q: 'How do I know I will get a return on my investment?', a: "Because we put our money where our mouth is. $50,000 in new revenue in 45-60 days or your money back, plus $500 for wasting your time. No other agency we know of is willing to write that down. Read the terms on the agency page, they're short." },
+  { q: 'Do you work with big or small companies?', a: "We work with local businesses that are already up and running. Roofers, plumbers, auto shops, med spas, freight brokers, people with a phone that needs to ring. Our clients range from a one-truck operation to a shop doing $100K a month. If you can fund $3,000 a month in ad spend and you'll answer the phone, we can talk." },
+  { q: 'Why is Dead River the best agency for a local business?', a: "Why are burritos delicious? Why is water wet? No, but seriously. Marketers lie, numbers don't. So here are ours. Over $7 million in client revenue we can point to. Over 5,000 jobs booked. Over 40 businesses in 30 niches across 20 states. Brandon spent ten years helping local businesses get more jobs before starting Dead River, and watched too many of them pay for clicks while the phone went to voicemail. That's the problem we fix. Go read what our clients have said, then decide for yourself." },
+  { q: 'Can you guarantee results?', a: "Yes. $50,000 in new revenue in 45-60 days or your money back, plus $500. Your side of it: keep the $3,000 a month in ad spend funded, don't lower it, get back to every lead within 5 minutes, log every lead in the CRM so we're both looking at the same numbers, and give it the full 60 days." },
+  { q: "What's involved?", a: "That depends on your business, and we're not going to pretend otherwise. A roofer in Dallas and a med spa in El Paso don't need the same thing. What stays the same: we pull the list of people already looking, we run the ads and follow-up, you answer the phone within 5 minutes. On the call we go over what a customer is worth to you and what your average ticket is, and figure out if this is a fit before anybody talks about price." },
+];
+---
+
+<Growth
+  noHeader
+  title="Like a Cheat Code for Business (Preview)"
+  description="Preview of the Dead River home page in the King Kong structure."
+  ogImage="/images/og/home.jpg"
+  robots="noindex,nofollow"
+  campaign
+  campaignHref={CTA}
+  campaignLabel="Hit the damn button"
+  campaignShort="Book a call"
+>
+  <KkHeader />
+  <div class="kk">
+    <section class="kk-hero kk-hero-home">
+      <div class="kk-hero-bg" aria-hidden="true"><video autoplay muted loop playsinline preload="auto" poster="/media/kk-hero-bg.jpg" src="/media/kk-hero-bg.mp4"></video></div>
+      <div class="kk-hero-stripes" aria-hidden="true"><i class="s1"></i><i class="s2"></i><i class="s3"></i><i class="s4"></i><i class="s5"></i></div>
+      <div class="wrap">
+        <p class="kk-rating"><span class="rv-stars" aria-hidden="true">★★★★★</span> <strong>{RATING}</strong> <span class="kk-pill">40+ businesses</span></p>
+        <h1>LIKE A CHEAT CODE<br />FOR BUSINESS<sup>*</sup></h1>
+        <p class="kk-sub">Growing a business is hard. We make the phone ring with people already looking for what you sell.</p>
+        <form class="kk-capture" action={CTA} method="get">
+          <span aria-hidden="true">👋</span>
+          <label class="sr-only" for="kk-email">Email</label>
+          <input id="kk-email" name="email" type="email" required placeholder="Your email, we'll send you the book..." />
+          <button class="button" type="submit">Do it <Arrow /></button>
+        </form>
+        <p class="kk-foot">*Not actually cheating. We just know who's looking.</p>
+        <div class="kk-video">
+          <video controls playsinline preload="metadata" poster="/media/home-vsl-poster.jpg" src="/media/home-vsl.mp4"></video>
+        </div>
+      </div>
+    </section>
+
+    <section class="kk-band kk-white kk-letter">
+      <i class="kk-slash kk-slash-tl" aria-hidden="true"></i>
+      <div class="wrap">
+        <p class="kk-dear">Hey,</p>
+        <p>We get it.</p>
+        <p>Growing a local business is hard. Really hard.</p>
+        <p>You're probably worried about where your next job is coming from.</p>
+        <p>Sleeping like a teething two-year-old.</p>
+        <p>Checking your phone every ten minutes to see if it rang.</p>
+        <p>And to top it all off.</p>
+        <p>Everybody and their brother has an opinion on what you should be doing.</p>
+        <p>Should I boost a post? Get on TikTok?</p>
+        <p>Pay the guy who DM'd me about SEO?</p>
+        <p>What about AI?</p>
+        <p>Everybody's talking about AI.</p>
+        <p>Should I run some ads?</p>
+        <p>Buy a lead list?</p>
+        <p>Wrap the truck?</p>
+        <p><em>*somebody please make it stop*</em></p>
+        <p>Look, most owners end up throwing spaghetti at the wall and seeing what sticks.</p>
+        <p>A little bit of this. A little bit of that.</p>
+        <p>A couple hundred bucks here. A couple thousand there.</p>
+        <p>And nothing sticks.</p>
+        <p>We call that the shit show.</p>
+        <p>Brandon watched it for ten years before starting Dead River. Good businesses paying for clicks while the phone went to voicemail.</p>
+        <p>And we'd rather eat a bowl of nails than run a business that way.</p>
+        <p>But this isn't about us. It's about you.</p>
+        <p>You're reading this right now because, one way or another, your business isn't where you want it to be.</p>
+        <p>Or maybe you're doing fine, and you want more.</p>
+        <p>More jobs on the board.</p>
+        <p>More money.</p>
+        <p>More breathing room.</p>
+        <p>More time with your family.</p>
+        <p>More weekends where you're not the one answering the phone.</p>
+        <p>Whatever it is for you.</p>
+        <p>It starts by picking one of the two doors below.</p>
+        <p><em>*cue angels singing*</em></p>
+      </div>
+      <i class="kk-slash kk-slash-br" aria-hidden="true"></i>
+    </section>
+
+    <section class="kk-band kk-dark kk-offers">
+      <i class="kk-slash kk-slash-tr" aria-hidden="true"></i>
+      <i class="kk-slash kk-slash-tl" aria-hidden="true"></i>
+      <div class="wrap kk-offer-grid">
+        <article>
+          <p class="kk-kicker">HIRE US TO DO IT FOR YOU</p>
+          <h2>AGENCY</h2>
+          <p>We run the whole thing. Demand Intelligence finds the people in your area already looking for what you sell. The ads, emails and texts get them to call. You answer the phone. $50,000 in new revenue in 45-60 days or your money back, plus $500 for wasting your time.</p>
+          <a class="button" href="/kk/agency">Get Started</a>
+          <small><span class="rv-stars" aria-hidden="true">★★★★★</span> {RATING}</small>
+        </article>
+        <article>
+          <p class="kk-kicker">LEARN HOW TO DO IT YOURSELF</p>
+          <h2>SOFTWARE</h2>
+          <p>The same data we use, in your hands. Pull the list of people searching for what you sell, send the cold emails our AI writes for you, and get the ad scripts and video outlines to go with them. Pay per lead, or a flat monthly rate for unlimited.</p>
+          <a class="button" href="/kk/software">Get Started</a>
+          <small><span class="rv-stars" aria-hidden="true">★★★★★</span> 280M U.S. profiles, updated daily</small>
+        </article>
+      </div>
+      <i class="kk-slash kk-slash-br" aria-hidden="true"></i>
+      <i class="kk-slash kk-slash-bl" aria-hidden="true"></i>
+    </section>
+
+    <section class="kk-band kk-white kk-flat-bottom kk-promise">
+      <i class="kk-slash kk-slash-tl" aria-hidden="true"></i>
+      <div class="wrap">
+        <h2>STOP GUESSING. START BOOKING.</h2>
+      </div>
+      <div class="kk-promise-tint">
+        <div class="wrap">
+          <p class="kk-lead">Skip the trial and error and the never-ending shit show of trying to figure it all out yourself. And instead, grow your business with <u>people who are already looking for what you sell</u>, a phone that gets answered in <strong>5 minutes</strong>, and a guarantee with your name on it (not hopes and prayers).</p>
+        </div>
+      </div>
+      <div class="wrap kk-reach">
+        <canvas class="kk-globe" aria-hidden="true" data-kk-globe></canvas>
+        <dl class="kk-stats">
+          <div><dt>Revenue Generated</dt><dd data-count="7" data-prefix="$" data-suffix="M+">$7M+</dd><small>We let the numbers do the talking. Over $7 million in client revenue we can point to, and counting.</small></div>
+          <div><dt>Businesses</dt><dd data-count="40" data-suffix="+">40+</dd><small>Over 40 businesses have trusted the Dead River name with their phone.</small></div>
+          <div><dt>Our Reach</dt><dd data-count="20">20</dd><small>Clients in 20 states and counting.</small></div>
+          <div><dt>Battle Tested</dt><dd data-count="30">30</dd><small>Our system has worked in 30 different niches, from roofing to freight.</small></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="kk-band kk-dark kk-flat-top kk-cases">
+      <div class="wrap">
+        <h3>BECOME OUR NEXT SUCCESS STORY</h3>
+        <div class="kk-marquee" aria-hidden="true">
+          <div class="kk-marquee-track">
+            {[0, 1].map(() => ['total-auto-repair.webp', 'gonzalez-and-sons-roofing.webp', 'the-pipe-whisperers.webp', 'wicked-logistics-transparent.webp', 'parcel-management-group.webp', 'only-fish.webp', 'cedar-key-realty.png', 'summit-air-comfort.png', 'ridgeline-roofing.png', 'forge-fitness.png', 'form-haus-living.png', 'brightpath-learning.png', 'oakline-cover.png', 'fresh-fork-kitchen.png', 'sunwell-solar.png', 'harbor-smile-dental.png', 'sage-skin-studio.png', 'ledger-lane.png', 'rosewood-estate.png', 'goodhound-training.png', 'bluehaven-pools.png', 'voltara-electric.png', 'willow-hair-studio.png', 'clearpath-family-law.png', 'northbyte-it.png', 'kindred-home-care.png', 'elsewhere-travel.png', 'roomwise-storage.png', 'boldmark-signs.png', 'beyoutiful-med-spa.png'].map((f) => <span class="kk-logo"><img src={`/images/clients/${f}`} alt="" decoding="async" /></span>))}
+          </div>
+        </div>
+        <div class="kk-grid kk-grid-6">
+          {cases.map(([c, href]) => <a class="kk-tile" href={href}>{c}</a>)}
+        </div>
+      </div>
+      <i class="kk-slash kk-slash-br" aria-hidden="true"></i>
+    </section>
+
+    <section class="kk-band kk-stone kk-scale">
+      <i class="kk-slash kk-slash-tl" aria-hidden="true"></i>
+      <div class="wrap">
+        <p class="kk-chip">BUILT FOR SCALE</p>
+        <h2>THE MOST RELIABLE WAY WE'VE SEEN TO GET A BUSINESS'S PHONE RINGING</h2>
+        <p class="kk-lead">There are a lot of so-called “agencies” and “gurus” roaming around out there. Most of them are all bark, no bite. All talk, no phone calls. ‘Cause marketers lie, but numbers don’t. And <u>we’ve booked over 5,000 jobs</u> <strong>(and over $7 million)</strong> for our clients, in 30 different niches across 20 states.</p>
+        <p class="kk-lead">Ads work fine. You were just showing them to the wrong people. Demand Intelligence watches what people are looking up, <strong>280 million U.S. profiles and 60 billion behaviors a week</strong>, updated every day. So when somebody in your city starts searching for what you sell, we know before your competitor does. That’s who your ads go to.</p>
+        <img class="kk-devices" src="/images/kk/platform-devices.png" alt="Demand Intelligence on a monitor, a laptop, a tablet and a phone" width="1800" height="1000" loading="lazy" />
+        <div class="button-row"><a class="button" href={CTA}>HIT THE DAMN BUTTON</a></div>
+        <p class="kk-rating"><span class="rv-stars" aria-hidden="true">★★★★★</span> {RATING}</p>
+      </div>
+      <i class="kk-slash kk-slash-br" aria-hidden="true"></i>
+    </section>
+
+    <section class="kk-band kk-stone kk-guarantee">
+      <i class="kk-slash kk-slash-tl" aria-hidden="true"></i>
+      <div class="wrap">
+        <h2>$50,000 IN NEW REVENUE IN 45-60 DAYS OR YOUR MONEY BACK, PLUS $500 FOR WASTING YOUR TIME</h2>
+        <p class="kk-lead">This is for local businesses that are already up and running. We find the people looking, build the ads and the page, and run the follow-up. You keep $3,000 a month in ad spend funded and don't lower it, you get back to every lead within 5 minutes, you log every lead in the CRM so we're both looking at the same numbers, and you give it the full 60 days. If you do that and we don't hit $50,000 in new revenue, you get your money back and a $500 check for your trouble.</p>
+      </div>
+      <i class="kk-slash kk-slash-br" aria-hidden="true"></i>
+    </section>
+
+    <section class="kk-band kk-white kk-flat-bottom kk-book">
+      <i class="kk-slash kk-slash-tl" aria-hidden="true"></i>
+      <div class="wrap">
+        <p class="kk-kicker">WE LITERALLY WROTE THE BOOK ON…</p>
+        <h2>HOW TO GET AS MANY CUSTOMERS AS YOU CAN POSSIBLY HANDLE</h2>
+        <div class="kk-book-grid">
+          <div class="kk-booktilt" data-tilt><img class="kk-bookimg" src="/images/kk/book-3d.png" alt="Marketing is F*cking Easy, the Dead River playbook" width="760" height="910" loading="lazy" /></div>
+          <div>
+            <p>Marketing is F*cking Easy is the playbook we run inside Dead River, written so you can do it yourself. The system, the people already looking, the ads, and your first 90 days. <strong>92 pages, no fluff, straight to what to do Monday morning.</strong></p>
+            <p><u>You get steps you can use right away</u> to get more calls from the people already looking for you, in most cases without spending another dollar on ads.</p>
+            <div class="button-row"><a class="button secondary" href="/downloads/marketing-is-fcking-easy.pdf" download="marketing-is-fcking-easy.pdf">GET THE BOOK</a></div>
+            <p class="kk-rating"><span class="rv-stars" aria-hidden="true">★★★★★</span> {RATING}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="kk-band kk-dark kk-flat kk-testimonials">
+      <div class="wrap">
+        <div class="kk-feature-t">
+          <p>{featured[0]}</p>
+          <footer>{featured[1]}</footer>
+        </div>
+        <div class="kk-tgrid">
+          {testimonials.map(([quote, who, video]) => (
+            <article class="kk-t" title={quote}>
+              <video controls playsinline preload="metadata" src={video}></video>
+              <p>{quote}</p>
+              <footer>{who}</footer>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="kk-band kk-white kk-flat kk-faq">
+      <div class="wrap">
+        <h2 class="kk-h2-sm">STRAIGHT ANSWERS</h2>
+        <FaqList items={faqs} />
+      </div>
+    </section>
+
+    <section class="kk-band kk-black kk-flat kk-final">
+      <KkFloaters />
+      <div class="wrap">
+        <h2>HIT THE DAMN BUTTON</h2>
+        <div class="button-row"><a class="button" href={CTA}>HIT THE DAMN BUTTON</a></div>
+        <p class="kk-tag">People who are already looking. A phone that actually rings. A guarantee with your name on it.</p>
+      </div>
+    </section>
+  </div>
+</Growth>
+
+<style is:global>
+  .kk-final .kk-news-grid { margin-top: 64px; padding-top: 48px; border-top: 1px solid rgba(255, 255, 255, 0.12); text-align: left; }
+  .kk-final .kk-news-grid h2 { text-align: left; margin-left: 0; }
+  .kk-final .kk-news-grid p { text-align: left; }
+  .kk-promise h2 { color: var(--kk-ink); }
+  .kk-promise .kk-stats { margin-top: 40px; }
+  .kk-capture > span { align-self: center; font-size: 20px; }
+  .kk-hero h1 { font-size: clamp(44px, 9vw, 132px); }
+  .kk-grid-6 { grid-template-columns: repeat(3, 1fr); max-width: 860px; }
+  @media (max-width: 860px) { .kk-grid-6 { grid-template-columns: 1fr 1fr; } }
+</style>
