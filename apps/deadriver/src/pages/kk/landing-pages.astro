@@ -44,7 +44,7 @@ const gallery = [
   <p>A good landing page is a salesperson that works for you day and night. Set it up right once and it brings in calls, texts, and form fills while you're on a roof, in a treatment room, or asleep.</p>
   <p>Here's what a few of ours look like. Tap one to see the whole page.</p>
   <div class="kk-gallery">
-    {gallery.map(([src, cap]) => <figure><a href={src} target="_blank" rel="noopener"><img src={src} alt={`${cap} landing page`} loading="lazy" /></a><figcaption>{cap}</figcaption></figure>)}
+    {gallery.map(([src, cap]) => <a class="kk-shot" href={src} target="_blank" rel="noopener"><img src={src} alt={`${cap} landing page`} loading="lazy" /></a>)}
   </div>
   <h2>WHAT MAKES ONE WORK</h2>
   <ul class="kk-list">
