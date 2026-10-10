@@ -1,9 +1,12 @@
 ---
 title: "Free Business Listings for Local SEO: Claim These, Skip Those"
-pageTitle: "Free Business Listings to Claim | Dead River Management"
+pageTitle: "Free Business Listings for Local SEO | Dead River Management"
 description: "Nine free business listings for local SEO, rated 1 to 10. What each one does, why it matters, and how to claim it in one step."
 date: 2026-10-02
 category: "Local SEO"
+metaDescription: "Nine free business listings for local SEO, rated 1 to 10: Google, Apple Maps, Bing, Yelp, BBB, and more. What each one does and how to claim it in one step."
+answer: 'The free business listings worth claiming first are <a href="/marketing-advice/google-business-profile-categories">Google Business Profile</a>, Apple Maps, Bing Places, Yelp, and the basic Better Business Bureau listing. Each one takes five to ten minutes to claim. Your name, address, and phone must match exactly on every listing.'
+answerRelated: 'Not sure Google has your site at all? <a href="/marketing-advice/is-your-website-on-google">Check if your website is on Google</a>. Want it handled? See <a href="/services/local-seo">Local SEO services</a>.'
 author: "Brandon Aubey"
 source: drm-blog
 faqHeading: "Questions"

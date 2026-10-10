@@ -7,6 +7,7 @@ import Arrow from '../../components/growth/Arrow.astro';
 import { locations } from '../../data/growth-locations';
 import { industryPages } from '../../data/industry-pages';
 import OfficeMap from '../../components/growth/OfficeMap.astro';
+import AnswerBlock from '../../components/growth/AnswerBlock.astro';
 import { elPasoLocationFaq } from '../../data/nationwide-faq';
 import { faqPage } from '../../lib/schema';
 import { linkify } from '../../lib/linkify';
@@ -80,7 +81,9 @@ const schema = [
     eyebrow={l.eyebrow ?? l.name + ', ' + l.region}
     title={l.headline ?? 'A clearer path to growth, close to home.'}
     intro={l.intro}
-  />
+  >
+    {l.answer && <AnswerBlock html={l.answer} related={l.answerRelated} />}
+  </Hero>
   {rich && l.about && (
     <section class="section wrap loc-about">
       <p class="eyebrow">Local first</p>

@@ -22,6 +22,8 @@ export type CityPage = {
   faq?: { q: string; a: string }[];
   zip?: string;
   state?: string; // "TX" or "NM" for schema
+  answer?: string; // short plain answer near the H1, authored HTML links only, never offer text
+  answerRelated?: string;
 };
 
 export const locations: CityPage[] = [
@@ -29,6 +31,13 @@ export const locations: CityPage[] = [
     slug: 'el-paso',
     name: 'El Paso',
     region: 'Texas',
+    title: 'El Paso Marketing Agency, Local SEO',
+    description:
+      'Marketing agency based in downtown El Paso. Local SEO, Google Maps, ads, and follow up for home service trades across El Paso, Horizon City, and Socorro.',
+    answer:
+      'Dead River Management is a marketing agency based in downtown El Paso. We work with home service trades first, like roofing, plumbing, HVAC, and auto repair, across El Paso, Horizon City, Socorro, the Lower Valley, and Las Cruces. We handle <a href="/services/local-seo">local SEO</a>, your <a href="/marketing-advice/rank-higher-on-google-maps-checklist">Google Maps listing</a>, ads, and follow up, and we confirm the areas you cover before any ads run.',
+    answerRelated:
+      'Comparing El Paso teams? Read <a href="/marketing-advice/el-paso-home-services-marketing-agency">what to compare before you hire</a>.',
     intro:
       "We're based in El Paso and work with businesses across the borderland and beyond.",
     areas: [

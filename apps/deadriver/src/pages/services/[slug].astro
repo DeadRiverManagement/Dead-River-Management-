@@ -8,6 +8,7 @@ import Growth from '../../layouts/Growth.astro';
 import Arrow from '../../components/growth/Arrow.astro';
 import ServiceLinks from '../../components/growth/ServiceLinks.astro';
 import BuildSheet from '../../components/growth/BuildSheet.astro';
+import AnswerBlock from '../../components/growth/AnswerBlock.astro';
 import { breadcrumbList, faqPage } from '../../lib/schema';
 import { linkify } from '../../lib/linkify';
 import { servicePages, demandFlowOffer, elPasoAreas, areaHrefs } from '../../data/service-pages';
@@ -58,6 +59,7 @@ const serviceSchema = {
     <h1>{page.headline}</h1>
     <p class="ms-sub">{page.sub}</p>
     <p class="intro" set:html={linkify(page.intro, here)} />
+    {page.answer && <AnswerBlock html={page.answer} related={page.answerRelated} />}
     <div class="button-row">
       <a class="button" href={bookHref} data-cta="hero">{cta} <Arrow /></a>
       <a class="button secondary" href="#offer" data-cta="hero-offer">See the offers</a>

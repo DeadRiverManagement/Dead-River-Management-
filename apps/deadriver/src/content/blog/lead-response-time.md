@@ -64,7 +64,7 @@ Want a quick check of the gap between a new inquiry and a useful reply? Use the 
 Do these first. A campaign is a set of ads you pay for. Fix these before you fund another one.
 
 - Call routing that rings a live person. Call routing is where a call gets sent. It has to ring someone even when the owner is on a job.
-- A missed-call text within a minute that offers two bookable times. That text has to lead to a person who can book. Not a note that only says you saw it.
+- A [missed-call text](/marketing-advice/ai-receptionist-cost) within a minute that offers two bookable times. That text has to lead to a person who can book. Not a note that only says you saw it.
 - A calendar link only after a human qualifies the job. Qualifies means checks that the job is a real fit. The link is optional. It does not belong in the first auto-reply.
 - Stop judging channels until response time is stable. A channel is where a lead came from, like Google or a referral. A slow phone makes every source look like a bad lead.
 
