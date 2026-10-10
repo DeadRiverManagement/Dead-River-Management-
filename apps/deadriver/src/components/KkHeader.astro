@@ -7,12 +7,18 @@ const items = [
   ['Agency', '/kk/agency'],
   ['Software', '/kk/software'],
   ['SEO', '/kk/seo'],
-  ['CRO', '/kk/cro'],
+  ['AEO', '/kk/aeo'],
   ['Google ads', '/kk/google-ads'],
   ['Landing pages', '/kk/landing-pages'],
   ['Facebook ads', '/kk/facebook-ads'],
   ['About us', '/kk/about-us'],
   ['The book', '/downloads/marketing-is-fcking-easy.pdf'],
+];
+// The rest of the live site's menu, kept small so the big list stays the big list.
+const groups = [
+  ['Also', [['Demand Flow', '/demand-flow'], ['Web design', '/services/web-design'], ['Local SEO', '/services/local-seo'], ['Local Services Ads', '/services/google-local-services-ads'], ['Cold email', '/services/cold-email'], ['Results', '/work'], ['Marketing advice', '/marketing-advice']]],
+  ['Industries', [['Roofing', '/industries/roofing'], ['Plumbing', '/industries/plumbing'], ['HVAC', '/industries/hvac'], ['Auto repair', '/industries/auto-repair']]],
+  ['Clients', [['Sign in', 'https://app.deadrivermanagement.com/v2/']]],
 ];
 ---
 
@@ -33,6 +39,9 @@ const items = [
     <div class="kkh-ready">
       <p>Ready to take action?</p>
       <a class="button" href="/kk/strategy-session">Get Started</a>
+    </div>
+    <div class="kkh-more">
+      {groups.map(([name, links]) => <p><b>{name}</b>{links.map(([label, href]) => <a href={href}>{label}</a>)}</p>)}
     </div>
   </nav>
 </div>
@@ -62,13 +71,18 @@ const items = [
   .kkh-root.is-open .kkh-box i:nth-child(1) { top: 7.5px; transform: rotate(45deg); }
   .kkh-root.is-open .kkh-box i:nth-child(2) { opacity: 0; }
   .kkh-root.is-open .kkh-box i:nth-child(3) { top: 7.5px; transform: rotate(-45deg); }
-  .kkh-menu { position: fixed; inset: 64px 0 0 0; z-index: 120; display: none; flex-direction: column; align-items: center; justify-content: center; gap: 22px; padding: 20px 20px 36px; background: rgba(10, 10, 11, 0.92); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); overflow-y: auto; }
+  .kkh-menu { position: fixed; inset: 64px 0 0 0; z-index: 120; display: none; flex-direction: column; align-items: center; justify-content: safe center; gap: 18px; padding: 16px 20px 28px; background: rgba(10, 10, 11, 0.92); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); overflow-y: auto; }
   .kkh-root.is-open .kkh-menu { display: flex; }
   .kkh-menu ul { list-style: none; margin: 0; padding: 0; text-align: center; }
-  .kkh-menu li a { display: block; font-family: var(--display); font-weight: 800; font-size: clamp(38px, 5.4vw, 60px); line-height: 1.12; letter-spacing: -0.03em; text-transform: uppercase; color: #fff; text-decoration: none; transition: color 0.15s ease; }
+  .kkh-menu li a { display: block; font-family: var(--display); font-weight: 800; font-size: clamp(38px, 4.6vw, 52px); line-height: 1.08; letter-spacing: -0.03em; text-transform: uppercase; color: #fff; text-decoration: none; transition: color 0.15s ease; }
   .kkh-menu li a:hover { color: var(--ember); }
   .kkh-ready { text-align: center; }
   .kkh-ready p { margin: 0 0 12px; color: var(--muted); font-size: 15px; }
+  .kkh-more { width: min(100%, 880px); margin-top: 4px; padding-top: 16px; border-top: 1px solid rgba(255, 255, 255, 0.1); display: grid; gap: 8px; }
+  .kkh-more p { margin: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 16px; font-family: var(--mono, ui-monospace, monospace); font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; }
+  .kkh-more b { color: var(--copper); font-weight: 600; margin-right: 6px; }
+  .kkh-more a { color: var(--muted); text-decoration: none; }
+  .kkh-more a:hover { color: #fff; }
   html.kkh-lock { overflow: hidden; }
   .kk .kk-hero { padding-top: calc(clamp(56px, 8vw, 110px) + 64px); }
   .kkf-page, .kk-lightpage { padding-top: 64px; }
@@ -78,7 +92,9 @@ const items = [
     .kkh-phone em, .kkh-word { display: none; }
     .kkh-phone { width: 36px; height: 36px; border-radius: 50%; border: 1.5px solid var(--copper); justify-content: center; }
     .kkh-logo svg, .kkh-logo img { height: 28px; }
-    .kkh-menu { inset: 58px 0 0 0; }
+    .kkh-menu { inset: 58px 0 0 0; gap: 16px; }
+    .kkh-menu li a { font-size: clamp(28px, 8vw, 38px); }
+    .kkh-more p { font-size: 11px; gap: 2px 12px; }
     .kk .kk-hero { padding-top: calc(clamp(56px, 8vw, 110px) + 58px); }
     .kkf-page, .kk-lightpage { padding-top: 58px; }
   }
