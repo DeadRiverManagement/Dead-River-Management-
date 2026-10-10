@@ -217,9 +217,12 @@
 .kk-booktilt { perspective: 1200px; }
 .kk-bookimg { display: block; width: min(340px, 100%); height: auto; margin: 0 auto; transform: rotateY(var(--ry, 0deg)) rotateX(var(--rx, 0deg)); transition: transform 0.25s ease-out; will-change: transform; animation: kk-float 6s ease-in-out infinite; }
 @keyframes kk-float { 0%, 100% { translate: 0 0; } 50% { translate: 0 -10px; } }
-.kk-marquee { overflow: hidden; margin: 8px auto 40px; -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); }
-.kk-marquee-track { display: flex; gap: 64px; width: max-content; animation: kk-marquee 32s linear infinite; }
-.kk-marquee img { height: 52px; width: auto; filter: grayscale(1) brightness(1.7); opacity: 0.85; }
+.kk-marquee { overflow: hidden; width: 100vw; margin: 8px 0 44px calc(50% - 50vw); -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); }
+.kk-marquee-track { display: flex; width: max-content; animation: kk-marquee 60s linear infinite; }
+.kk-logo { flex: none; margin-right: 18px; display: grid; place-items: center; width: 190px; height: 96px; padding: 16px 22px; box-sizing: border-box; border-radius: 16px; background: #F4F1EA; box-shadow: inset 0 1px 0 rgba(255,255,255,.6), 0 14px 30px -18px rgba(0,0,0,.8); }
+.kk-marquee img { display: block; width: auto; height: auto; max-width: 146px; max-height: 62px; filter: grayscale(1) contrast(1.25) brightness(0.9); }
+.kk-marquee img[src*="wicked"] { filter: grayscale(1) brightness(0.35) contrast(1.6); }
+@media (max-width: 720px) { .kk-logo { width: 140px; height: 72px; padding: 12px 16px; } .kk-marquee img { max-width: 108px; max-height: 46px; } }
 .kk-marquee:hover .kk-marquee-track { animation-play-state: paused; }
 @keyframes kk-marquee { to { transform: translateX(-50%); } }
 @media (prefers-reduced-motion: reduce) { .kk-marquee-track, .kk-bookimg { animation: none; } }
