@@ -152,7 +152,8 @@
 .kk-feature-t footer { font-weight: 700; color: var(--ember); font-size: 15px; }
 .kk-play { width: 56px; height: 56px; border-radius: 50%; border: 0; cursor: pointer; background: var(--copper); display: grid; place-items: center; box-shadow: 0 0 0 6px rgba(227, 160, 112, 0.2); margin: 18px auto 0; }
 .kk-play span { margin-left: 4px; border-left: 16px solid #140b04; border-top: 10px solid transparent; border-bottom: 10px solid transparent; }
-.kk-tgrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.kk-tgrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; justify-content: center; }
+.kk-tgrid:has(> :only-child) { grid-template-columns: minmax(0, 560px); }
 .kk-t { position: relative; border-radius: 10px; background: #2b2b2f; overflow: hidden; display: flex; flex-direction: column; }
 .kk-t video, .kk-t-ph { width: 100%; aspect-ratio: 16 / 9; background: #000; margin: 0; display: block; }
 .kk-t-ph { position: relative; background: linear-gradient(160deg, #26262a, #141416); }
