@@ -486,7 +486,7 @@
     },
     {
       "source": "/rapids-plan",
-      "destination": "/plans",
+      "destination": "/",
       "statusCode": 301
     },
     {
@@ -1102,6 +1102,26 @@
     {
       "source": "/marketing-advice/google-ads-fix-that-stops-wasted-spend.html",
       "destination": "/marketing-advice/google-ads-form-that-stops-wasted-spend",
+      "statusCode": 301
+    },
+    {
+      "source": "/marketing-advice/30-leads-in-60-days-guarantee",
+      "destination": "/demand-flow",
+      "statusCode": 301
+    },
+    {
+      "source": "/marketing-advice/aeo-vs-seo-el-paso",
+      "destination": "/marketing-advice/ai-search-for-local-business",
+      "statusCode": 301
+    },
+    {
+      "source": "/marketing-advice/how-el-paso-plumbers-get-more-customers",
+      "destination": "/marketing-advice/el-paso-home-services-marketing-agency",
+      "statusCode": 301
+    },
+    {
+      "source": "/marketing-advice/google-business-profile-more-calls",
+      "destination": "/marketing-advice/google-business-profile-services-and-posts",
       "statusCode": 301
     },
     {
