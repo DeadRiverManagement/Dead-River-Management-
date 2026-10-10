@@ -44,9 +44,18 @@ const gallery = [
   <p>Their name is Landing Page.</p>
   <p>A good landing page is a salesperson that works for you day and night. Set it up right once and it brings in calls, texts, and form fills while you're on a roof, in a treatment room, or asleep.</p>
   <p>Here's what a few of ours look like. Tap one to see the whole page.</p>
-  <div class="kk-gallery">
-    {gallery.map(([src, cap]) => <a class="kk-shot" href={src} target="_blank" rel="noopener"><img src={src} alt={`${cap} landing page`} loading="lazy" /></a>)}
+  <div class="kk-gallery" data-gallery>
+    {gallery.map(([src, cap], i) => <a class="kk-shot" href={src} target="_blank" rel="noopener" hidden={i >= 8}><img src={src} alt={`${cap} landing page`} loading="lazy" /></a>)}
   </div>
+  {gallery.length > 8 && <div class="button-row"><button class="button secondary" type="button" data-load-more>LOAD MORE</button></div>}
+  <script>
+    const g = document.querySelector('[data-gallery]');
+    const b = document.querySelector('[data-load-more]');
+    b?.addEventListener('click', () => {
+      g.querySelectorAll('[hidden]').forEach((el, i) => { if (i < 8) el.hidden = false; });
+      if (!g.querySelector('[hidden]')) b.hidden = true;
+    });
+  </script>
   <h2>WHAT MAKES ONE WORK</h2>
   <ul class="kk-list">
     <li><strong>It says the same thing the ad said.</strong> Same headline, same promise, same photo. Break that trail and you lose half the clicks before they read a word.</li>
