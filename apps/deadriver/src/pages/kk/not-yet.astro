@@ -1,14 +1,17 @@
 ---
 // Preview: where the strategy session form sends people who don't qualify yet.
 import Growth from '../../layouts/Growth.astro';
+import KkHeader from '../../components/KkHeader.astro';
 import Arrow from '../../components/growth/Arrow.astro';
 ---
 
 <Growth
+  noHeader
   title="Not a Fit Yet (Preview)"
   description="Demand Flow isn't the right fit right now. Here's what to do instead."
   robots="noindex,nofollow"
 >
+  <KkHeader />
   <div class="kk-lightpage"><section class="kk-notyet wrap">
     <p class="eyebrow">Not a fit yet</p>
     <h1>Thanks for being straight with us. Demand Flow isn't the right fit right now.</h1>

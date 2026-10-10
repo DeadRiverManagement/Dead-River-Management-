@@ -2,10 +2,12 @@
 // Preview only: the calendar step after the strategy session form, with the
 // King Kong "Last Step" copy verbatim.
 import Growth from '../../layouts/Growth.astro';
+import KkHeader from '../../components/KkHeader.astro';
 import { DEMANDFLOW_CALENDAR_URL } from '../../lib/demandflow-handoff.js';
 ---
 
 <Growth
+  noHeader
   title="Last Step: Schedule Your Free 30-Min Strategy Session Call Now (Preview)"
   description="Schedule your free 30-minute strategy session call."
   robots="noindex,nofollow"
@@ -14,6 +16,7 @@ import { DEMANDFLOW_CALENDAR_URL } from '../../lib/demandflow-handoff.js';
   campaignLabel="Pick a time"
   campaignShort="Pick a time"
 >
+  <KkHeader />
   <div class="kk-lightpage"><section class="kk-thanks wrap">
     <h1>Last Step: Schedule Your Free 30-Min Strategy Session Call Now</h1>
     <p class="intro">On the call we go over what a customer is worth to you, what your average ticket is, and whether the $50,000 guarantee is a fit for your business. No pitch until we know it is. PLUS you'll get a 100% free scaling growth map ($1,000 value) 🚀.</p>

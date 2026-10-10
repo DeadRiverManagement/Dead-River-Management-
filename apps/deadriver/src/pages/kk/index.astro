@@ -3,6 +3,7 @@
 // stripes, in Dead River colours, with Brandon's own numbers and voice.
 // Facts confirmed by Brandon on October 10, 2026. Login-gated Vercel preview; noindex.
 import Growth from '../../layouts/Growth.astro';
+import KkHeader from '../../components/KkHeader.astro';
 import Arrow from '../../components/growth/Arrow.astro';
 import FaqList from '../../components/FaqList.astro';
 import '../../styles/kk.css';
@@ -37,6 +38,7 @@ const faqs = [
 ---
 
 <Growth
+  noHeader
   title="$50,000 In New Revenue In 45-60 Days Or Your Money Back (Preview)"
   description="Preview of the Dead River home page in the King Kong structure."
   ogImage="/images/og/home.jpg"
@@ -46,6 +48,7 @@ const faqs = [
   campaignLabel="Hit the damn button"
   campaignShort="Book a call"
 >
+  <KkHeader />
   <div class="kk">
     <section class="kk-hero">
       <div class="wrap">

@@ -2,6 +2,7 @@
 // Preview only: King Kong's agency sales letter structure, in the Dead River
 // look, with Brandon's offer, numbers and voice. Facts confirmed October 10, 2026.
 import Growth from '../../layouts/Growth.astro';
+import KkHeader from '../../components/KkHeader.astro';
 import Arrow from '../../components/growth/Arrow.astro';
 import '../../styles/kk.css';
 
@@ -26,6 +27,7 @@ const testimonials = [
 ---
 
 <Growth
+  noHeader
   title="$50,000 In New Revenue In 45-60 Days Or Your Money Back, Plus $500 (Preview)"
   description="Preview of the Dead River agency page in the King Kong structure."
   ogImage="/images/og/demand-flow.jpg"
@@ -35,6 +37,7 @@ const testimonials = [
   campaignLabel="Claim your free 30-minute strategy session"
   campaignShort="Book a call"
 >
+  <KkHeader />
   <div class="kk kk-agency">
     <section class="kk-hero">
       <i class="kk-slash-left" aria-hidden="true"></i>

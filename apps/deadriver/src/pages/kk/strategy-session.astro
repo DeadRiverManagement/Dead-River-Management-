@@ -3,6 +3,7 @@
 // helper line and option verbatim, in the Dead River look. Brand name and
 // destinations point at Dead River.
 import Growth from '../../layouts/Growth.astro';
+import KkHeader from '../../components/KkHeader.astro';
 import Arrow from '../../components/growth/Arrow.astro';
 import options from '../../data/kk-form-options.json';
 
@@ -13,10 +14,12 @@ const sources = options.sources.map((s) => s.replace("Sabri's YouTube Channel", 
 ---
 
 <Growth
+  noHeader
   title="Free 30-Minute Scaling Growth Map Session (Preview)"
   description="Claim your 100% FREE no-obligation 30-minute scaling growth map call."
   robots="noindex,nofollow"
 >
+  <KkHeader />
   <div class="kkf-page"><section class="kkf wrap" data-kkf>
     <ol class="kkf-dots" aria-hidden="true">{Array.from({ length: 10 }).map(() => <li></li>)}</ol>
 
