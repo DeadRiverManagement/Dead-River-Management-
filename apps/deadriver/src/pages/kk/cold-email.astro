@@ -1,0 +1,44 @@
+---
+// Preview only: cold email page in Brandon's voice, on the shared King Kong frame. For businesses that sell to businesses.
+import KkShell from '../../components/KkShell.astro';
+const faqs = [
+  { q: 'Is cold email legal?', a: "Yes, for business outreach in the U.S., when you follow CAN-SPAM: an honest subject line, a real business address, and an easy way to opt out that you actually honor. We build all of that in." },
+  { q: 'Will it hurt my email domain?', a: "Not the way we set it up. We send from separate domains and mailboxes, warmed up first, so your main business email is never at risk. Blasting from your main domain is how people burn their inbox, and we don't do it." },
+  { q: 'Who writes the emails?', a: "We do, in plain language, a few sentences, one ask. You approve every sequence before anything sends. Nothing goes out in your name that you haven't read." },
+  { q: 'What reply rate should I expect?', a: "Published B2B benchmarks put a typical cold email reply rate in the low single digits. Well-targeted campaigns do a lot better. The difference is almost always the list and the offer, not the subject line." },
+  { q: 'Who is this for?', a: "Businesses that sell to other businesses, where a new client is worth enough to justify the outreach, and somebody can take a sales call when the replies come in. Freight, commercial services, B2B anything. If you sell to homeowners, the ads and the map are your channels, not this." },
+  { q: 'Where does the list come from?', a: "Demand Intelligence, plus real business records. We build it from companies that have been looking for what you sell, with verified emails, instead of a scraped list of everybody with a pulse." },
+];
+---
+
+<KkShell
+  title="Cold Email Agency (Preview)"
+  description="Cold email that books sales calls, sent to the businesses already looking, in the Dead River look."
+  kicker="COLD EMAIL"
+  headline="SHORT EMAILS, TO THE RIGHT COMPANIES, THAT TURN INTO CALLS ON YOUR CALENDAR."
+  sub="Most cold email never gets read. The list is wrong, the inbox is burned, and the email is about you. We fix all three."
+  faqTitle="COLD EMAIL, STRAIGHT ANSWERS"
+  faqs={faqs}
+>
+  <p class="kk-dear">Hey,</p>
+  <p>If you sell to other businesses, you've probably tried cold email. And you've probably got the same story everybody has. Bought a list, blasted a few hundred emails, got two bounces, one angry reply, and a spam warning on your own domain.</p>
+  <p>So you decided cold email doesn't work.</p>
+  <p>It works. It's one of the best channels there is for B2B, and it's the one that got Wicked Logistics a $1.2 million contract. It just doesn't work the way most people do it.</p>
+  <h2>WHY MOST OF IT NEVER GETS READ</h2>
+  <p><strong>Straight to spam.</strong> Sending bulk mail from your main domain with no warm-up burns your sender reputation. Google and Microsoft now reject mail that isn't set up right, and once your domain is flagged, your normal emails to normal customers start landing in junk too.</p>
+  <p><strong>The wrong list.</strong> Scraped, outdated contacts mean bounces, complaints, and a lot of people who can't say yes even if they wanted to.</p>
+  <p><strong>Emails about you.</strong> Four paragraphs about your company, your history, your values, and three links. Deleted. A short email about their problem gets a reply.</p>
+  <h2>WHAT WE DO</h2>
+  <ul class="kk-list">
+    <li><strong>The list.</strong> Companies and decision-makers that look like your best customers, pulled from Demand Intelligence and real business records, with verified emails. People who've been looking for what you sell.</li>
+    <li><strong>The inbox setup.</strong> Separate sending domains and mailboxes, SPF, DKIM, DMARC, warmed up before a single email goes out, low volume per inbox, bounce and complaint rates kept near zero. Your main domain never touches it.</li>
+    <li><strong>The email.</strong> A few sentences. One ask. No links. Written for each audience, and you approve it before it sends.</li>
+    <li><strong>The follow-ups.</strong> A few, well timed, over a couple of weeks. The first follow-up alone brings in a big share of the replies.</li>
+    <li><strong>The reply.</strong> Interested replies land in your CRM with what they were looking for, and get a fast, personal answer and a link to book a call.</li>
+    <li><strong>The rules.</strong> Opt-outs honored, CAN-SPAM covered, and a report that shows replies and booked calls, not open rates.</li>
+  </ul>
+  <h2>THE AI PART</h2>
+  <p>We built our own software to write these, in your voice, using two strategies I developed from doing this by hand for years. It's the same tool we run for clients, and it's the same tool you can get your hands on in our software if you'd rather run it yourself.</p>
+  <p>Either way, the rule is the same. Short, specific, about them, and a person answers when they reply.</p>
+  <p class="kk-ps">P.S. Cold email is one channel inside Demand Flow, and the one that works best for B2B services and commercial work. If you sell to homeowners, skip this page and go read Google Ads or Local SEO.</p>
+</KkShell>
