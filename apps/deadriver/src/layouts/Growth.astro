@@ -9,6 +9,7 @@ import CookieBanner from '../components/CookieBanner.astro';
 import TrackingPrivacy from '../components/TrackingPrivacy.astro';
 import { brand } from '../data/growth';
 import { business, socials } from '../data/site';
+import KkFooter from '../components/KkFooter.astro';
 import { socialIcons } from '../data/social-icons';
 import { servicePages, elPasoAreas } from '../data/service-pages';
 import { industryPages } from '../data/industry-pages';
@@ -241,7 +242,7 @@ const schemas = [org, site, ...(schema ? [schema] : [])];
     <main id="main">
       <slot />
     </main>
-    {campaign ? (
+    {noHeader ? <KkFooter /> : campaign ? (
       <footer class="site-footer">
         <div class="wrap footer-bottom">
           <span>© {new Date().getFullYear()} Dead River Management · El Paso, Texas</span>

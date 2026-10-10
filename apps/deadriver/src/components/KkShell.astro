@@ -4,6 +4,7 @@
 // bands every page shares, with the King Kong header on top.
 import Growth from '../layouts/Growth.astro';
 import KkHeader from './KkHeader.astro';
+import KkFloaters from './KkFloaters.astro';
 import Arrow from './growth/Arrow.astro';
 import FaqList from './FaqList.astro';
 import '../styles/kk.css';
@@ -24,12 +25,12 @@ const { title, description, kicker = 'THE DEAD RIVER GUARANTEE', headline, sub, 
 const CTA = '/kk/strategy-session';
 const RATING = '5-star rated on Google and Facebook';
 const cases = [
-  ['TOTAL AUTO REPAIR', '/work/total-auto-repair'],
-  ['GONZALEZ & SONS ROOFING', '/work/gonzalez-and-sons-roofing'],
-  ['THE PIPE WHISPERERS', '/work/the-pipe-whisperers'],
-  ['WICKED LOGISTICS', '/work/wicked-logistics'],
-  ['PARCEL MANAGEMENT GROUP', '/work/parcel-management-group'],
-  ['ONLY FISH', '/work/only-fish'],
+  ['TOTAL AUTO REPAIR', '/kk/work/total-auto-repair'],
+  ['GONZALEZ & SONS ROOFING', '/kk/work/gonzalez-and-sons-roofing'],
+  ['THE PIPE WHISPERERS', '/kk/work/the-pipe-whisperers'],
+  ['WICKED LOGISTICS', '/kk/work/wicked-logistics'],
+  ['PARCEL MANAGEMENT GROUP', '/kk/work/parcel-management-group'],
+  ['ONLY FISH', '/kk/work/only-fish'],
 ];
 ---
 
@@ -113,6 +114,7 @@ const cases = [
     )}
 
     <section class="kk-band kk-black kk-flat kk-final">
+      <KkFloaters />
       <i class="kk-slash kk-slash-tl" aria-hidden="true"></i>
       <div class="wrap">
         <p class="kk-lead">We find the people in your market already looking for what you sell and get them to call you. $50,000 in new revenue in 45-60 days or your money back, plus $500 for wasting your time.</p>

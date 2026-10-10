@@ -3,6 +3,7 @@
 // look, with Brandon's offer, numbers and voice. Facts confirmed October 10, 2026.
 import Growth from '../../layouts/Growth.astro';
 import KkHeader from '../../components/KkHeader.astro';
+import KkFloaters from '../../components/KkFloaters.astro';
 import Arrow from '../../components/growth/Arrow.astro';
 import '../../styles/kk.css';
 
@@ -10,12 +11,12 @@ const CTA = '/kk/strategy-session';
 const RATING = '5-star rated on Google and Facebook';
 
 const cases = [
-  ['TOTAL AUTO REPAIR', '/work/total-auto-repair'],
-  ['GONZALEZ & SONS ROOFING', '/work/gonzalez-and-sons-roofing'],
-  ['THE PIPE WHISPERERS', '/work/the-pipe-whisperers'],
-  ['WICKED LOGISTICS', '/work/wicked-logistics'],
-  ['PARCEL MANAGEMENT GROUP', '/work/parcel-management-group'],
-  ['ONLY FISH', '/work/only-fish'],
+  ['TOTAL AUTO REPAIR', '/kk/work/total-auto-repair'],
+  ['GONZALEZ & SONS ROOFING', '/kk/work/gonzalez-and-sons-roofing'],
+  ['THE PIPE WHISPERERS', '/kk/work/the-pipe-whisperers'],
+  ['WICKED LOGISTICS', '/kk/work/wicked-logistics'],
+  ['PARCEL MANAGEMENT GROUP', '/kk/work/parcel-management-group'],
+  ['ONLY FISH', '/kk/work/only-fish'],
 ];
 
 const TAR_VIDEO = 'https://d2ol7oe51mr4n9.cloudfront.net/user_3JQHnLTq89zb3rmd2x4Z53G0lE3/52a05e7d-44fc-4cb0-9aab-4269f45edef3.mp4';
@@ -277,6 +278,7 @@ const testimonials = [
     </section>
 
     <section class="kk-band kk-black kk-flat kk-final">
+      <KkFloaters />
       <i class="kk-slash kk-slash-tl" aria-hidden="true"></i>
       <i class="kk-slash kk-slash-br" aria-hidden="true"></i>
       <div class="wrap">

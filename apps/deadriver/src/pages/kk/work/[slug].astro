@@ -1,0 +1,115 @@
+---
+// Preview only: every case study on the King Kong frame, so the case tiles stay on the clone.
+// Same content as the live /work pages: the rewritten studies where they exist, the essay version otherwise.
+import KkShell from '../../../components/KkShell.astro';
+import { work } from '../../../data/growth-work';
+import { caseStudyPages } from '../../../data/case-study-pages';
+import { caseStudyFaqs } from '../../../data/tool-work-faq';
+export function getStaticPaths() {
+  return work.map((w) => ({ params: { slug: w.slug }, props: { w } }));
+}
+const { w } = Astro.props;
+const c = caseStudyPages.find((x) => x.slug === w.slug);
+const faqs = [...(caseStudyFaqs[w.slug] || [])];
+const TAR_VIDEO = 'https://d2ol7oe51mr4n9.cloudfront.net/user_3JQHnLTq89zb3rmd2x4Z53G0lE3/52a05e7d-44fc-4cb0-9aab-4269f45edef3.mp4';
+const TAR_POSTER = 'https://d2ol7oe51mr4n9.cloudfront.net/user_3JQHnLTq89zb3rmd2x4Z53G0lE3/bc486f19-6b03-42e7-996b-7226bd18326e.jpg';
+const kicker = (c ? c.eyebrow : w.category).toUpperCase();
+const headline = (c ? c.headline : w.headline).toUpperCase();
+const sub = c ? c.intro[0] : w.intro;
+---
+
+<KkShell title={`${w.name} Case Study (Preview)`} description={c ? c.description : w.description} kicker={kicker} headline={headline} sub={sub} faqTitle={`${w.name.toUpperCase()}, STRAIGHT ANSWERS`} faqs={faqs}>
+  <div class="kk-cs">
+  <p class="kk-dear"><a class="kk-back" href="/kk/results">All results</a></p>
+  <div class="kk-cs-head">
+    {w.logo && <img class="kk-cs-logo" src={w.logo.src} width={w.logo.width} height={w.logo.height} alt={`${w.name} logo`} />}
+    <ul class="kk-cs-stats">
+      {c ? c.stats.filter((s) => !s.startsWith('Investment:')).map((s) => <li>{s}</li>) : (w.metrics || []).map((m) => <li><strong>{m.value}</strong> {m.label}</li>)}
+    </ul>
+  </div>
+  {w.slug === 'total-auto-repair' && (
+    <div class="kk-cs-video"><video controls playsinline preload="none" poster={TAR_POSTER} aria-label="Total Auto Repair client video testimonial"><source src={TAR_VIDEO} type="video/mp4" /></video></div>
+  )}
+
+  {c ? (
+    <>
+      {c.intro.slice(1).map((p) => <p>{p}</p>)}
+      <h2>{c.problem.heading.toUpperCase()}</h2>
+      {c.problem.paragraphs.map((p) => <p>{p}</p>)}
+      {c.problem.listLead && <p><strong>{c.problem.listLead}</strong></p>}
+      <ul class="kk-list kk-cs-x">{c.problem.list.map((x) => <li>{x}</li>)}</ul>
+      {c.problem.after && <p>{c.problem.after}</p>}
+
+      <h2>{c.solution.heading.toUpperCase()}</h2>
+      <p>{c.solution.intro}</p>
+      <ol class="kk-cs-goals">{c.solution.goals.map((g) => <li>{g}</li>)}</ol>
+      <p>{c.solution.lead}</p>
+      {c.solution.phases.map((ph) => (
+        <div class="kk-cs-phase">
+          <h3>{ph.title}</h3>
+          <ul class="kk-list">{ph.items.map((i) => <li>{i}</li>)}</ul>
+        </div>
+      ))}
+
+      <h2>{c.result.heading.toUpperCase()}</h2>
+      {c.result.paragraphs.map((p) => <p>{p}</p>)}
+      <p><strong>{c.result.metricsLead}</strong></p>
+      <ul class="kk-list">{c.result.metrics.map((m) => <li>{m}</li>)}</ul>
+      {c.beforeAfter && (
+        <div class="kk-cs-table"><table>
+          <thead><tr><th scope="col"><span class="sr-only">Metric</span></th><th scope="col">Before</th><th scope="col">After</th></tr></thead>
+          <tbody>{c.beforeAfter.map(([m, b, a]) => <tr><th scope="row">{m}</th><td>{b}</td><td>{a}</td></tr>)}</tbody>
+        </table></div>
+      )}
+      {c.cost && (
+        <div class="kk-cs-cost">{c.cost.map((x) => <div><small>{x.label}</small><strong>{x.value}</strong><span>{x.note}</span></div>)}</div>
+      )}
+      {c.result.after && <p>{c.result.after}</p>}
+      <blockquote class="kk-cs-quote"><p>“{c.result.quote}”</p><cite>{c.result.cite}</cite></blockquote>
+
+      <h2>{c.apply.heading.toUpperCase()}</h2>
+      {c.apply.paragraphs.map((p) => <p>{p}</p>)}
+      <ul class="kk-list">{c.apply.list.map((x) => <li>{x}</li>)}</ul>
+      {c.notFor && (<><p><strong>This system isn't a good fit if:</strong></p><ul class="kk-list kk-cs-x">{c.notFor.map((x) => <li>{x}</li>)}</ul></>)}
+      <p>{c.apply.cta}</p>
+    </>
+  ) : (
+    <>
+      {w.sections.map((s) => (<><h2>{s.heading.toUpperCase()}</h2>{s.paragraphs.map((p) => <p>{p}</p>)}</>))}
+      {w.proof && (
+        <figure class="kk-cs-proof"><img src={w.proof.src} width={w.proof.width} height={w.proof.height} alt={w.proof.alt} loading="lazy" /><figcaption>{w.proof.caption}</figcaption></figure>
+      )}
+      <h2>{w.quantified ? 'THE RESULT AT A GLANCE' : 'WHAT THE PROJECT INCLUDED'}</h2>
+      <ul class="kk-list">{w.highlights.map((x) => <li>{x}</li>)}</ul>
+    </>
+  )}
+  </div>
+</KkShell>
+
+<style is:global>
+  .kk-letter .kk-cs h2 { font-size: clamp(28px, 3.2vw, 40px); line-height: 1.02; margin: 44px 0 16px; }
+  .kk-letter .kk-back { color: var(--copper-deep, #c8743f); font-weight: 700; text-decoration: none; }
+  .kk-cs-head { display: flex; flex-wrap: wrap; align-items: center; gap: 18px 28px; margin: 6px 0 28px; padding: 22px; border-radius: 16px; background: #fff; border: 1px solid rgba(18, 18, 20, 0.08); }
+  .kk-cs-logo { width: 110px; height: 80px; object-fit: contain; }
+  .kk-cs-stats { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; flex: 1; }
+  .kk-cs-stats li { padding: 9px 16px; border-radius: 999px; background: rgba(227, 160, 112, 0.18); color: var(--kk-ink, #121214); font-weight: 700; font-size: 15px; }
+  .kk-cs-video { max-width: 340px; margin: 0 auto 28px; }
+  .kk-cs-video video { display: block; width: 100%; aspect-ratio: 512 / 910; border-radius: 18px; background: #000; }
+  .kk-cs-goals { padding-left: 22px; margin: 0 0 20px; } .kk-cs-goals li { margin-bottom: 6px; font-weight: 600; }
+  .kk-cs-phase { margin: 0 0 18px; padding: 20px 22px 6px; border-left: 4px solid var(--copper, #e3a070); background: #fff; border-radius: 0 14px 14px 0; }
+  .kk-cs-phase h3 { margin: 0 0 10px; font-size: 18px; text-transform: uppercase; }
+  .kk-cs-table { overflow-x: auto; margin: 0 0 22px; }
+  .kk-cs-table table { width: 100%; border-collapse: collapse; font-size: 15px; background: #fff; border-radius: 14px; overflow: hidden; }
+  .kk-cs-table th, .kk-cs-table td { padding: 12px 14px; text-align: left; border-bottom: 1px solid rgba(18, 18, 20, 0.08); }
+  .kk-cs-table thead th { font-family: var(--mono); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--copper-deep, #c8743f); }
+  .kk-cs-cost { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin: 0 0 22px; }
+  .kk-cs-cost > div { display: grid; gap: 4px; padding: 18px; border-radius: 14px; background: #fff; border: 1px solid rgba(18, 18, 20, 0.08); }
+  .kk-cs-cost small { font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--copper-deep, #c8743f); }
+  .kk-cs-cost strong { font-family: var(--display); font-size: 26px; }
+  .kk-cs-cost span { font-size: 14px; color: var(--kk-ink-muted, #3a3936); }
+  .kk-cs-quote { margin: 28px 0; padding: 26px 28px; border-radius: 18px; background: #121214; color: #f4f1ea; }
+  .kk-cs-quote p { margin: 0 0 12px; font-size: 20px; line-height: 1.5; color: #f4f1ea !important; }
+  .kk-cs-quote cite { font-style: normal; font-family: var(--mono); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--copper, #e3a070); }
+  .kk-cs-proof { margin: 24px 0; } .kk-cs-proof img { display: block; width: 100%; height: auto; border-radius: 14px; border: 1px solid rgba(18, 18, 20, 0.08); }
+  .kk-cs-proof figcaption { margin-top: 8px; font-size: 13px; color: var(--kk-ink-muted, #3a3936); }
+</style>

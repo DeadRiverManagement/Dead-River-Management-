@@ -4,6 +4,7 @@
 // Facts confirmed by Brandon on October 10, 2026. Login-gated Vercel preview; noindex.
 import Growth from '../../layouts/Growth.astro';
 import KkHeader from '../../components/KkHeader.astro';
+import KkFloaters from '../../components/KkFloaters.astro';
 import Arrow from '../../components/growth/Arrow.astro';
 import FaqList from '../../components/FaqList.astro';
 import '../../styles/kk.css';
@@ -12,12 +13,12 @@ const CTA = '/kk/strategy-session';
 const RATING = '5-star rated on Google and Facebook';
 
 const cases = [
-  ['TOTAL AUTO REPAIR', '/work/total-auto-repair'],
-  ['GONZALEZ & SONS ROOFING', '/work/gonzalez-and-sons-roofing'],
-  ['THE PIPE WHISPERERS', '/work/the-pipe-whisperers'],
-  ['WICKED LOGISTICS', '/work/wicked-logistics'],
-  ['PARCEL MANAGEMENT GROUP', '/work/parcel-management-group'],
-  ['ONLY FISH', '/work/only-fish'],
+  ['TOTAL AUTO REPAIR', '/kk/work/total-auto-repair'],
+  ['GONZALEZ & SONS ROOFING', '/kk/work/gonzalez-and-sons-roofing'],
+  ['THE PIPE WHISPERERS', '/kk/work/the-pipe-whisperers'],
+  ['WICKED LOGISTICS', '/kk/work/wicked-logistics'],
+  ['PARCEL MANAGEMENT GROUP', '/kk/work/parcel-management-group'],
+  ['ONLY FISH', '/kk/work/only-fish'],
 ];
 
 const featured = ['“They did all of our social media management, set up our website, and optimized everything. We get 5-6 calls and multiple emails a day for shipments. One of those leads turned into a $1.2 million contract.”', 'Wicked Logistics'];
@@ -236,21 +237,11 @@ const faqs = [
     </section>
 
     <section class="kk-band kk-black kk-flat kk-final">
+      <KkFloaters />
       <div class="wrap">
         <h2>HIT THE DAMN BUTTON</h2>
         <div class="button-row"><a class="button" href={CTA}>HIT THE DAMN BUTTON</a></div>
         <p class="kk-tag">People who are already looking. A phone that actually rings. A guarantee with your name on it.</p>
-        <div class="kk-news-grid">
-          <div>
-            <h2 class="kk-h2-sm">Want the book?</h2>
-            <p>Get Marketing is F*cking Easy free, plus one email a week on what's actually working for local businesses right now. No spam, just enter your email below.</p>
-          </div>
-          <form class="kk-capture" action={CTA} method="get">
-            <input name="email" type="email" required placeholder="Enter your email..." aria-label="Email" />
-            <input name="first" type="text" placeholder="Enter your name..." aria-label="Name" />
-            <button class="button" type="submit">Let's Go</button>
-          </form>
-        </div>
       </div>
     </section>
   </div>
