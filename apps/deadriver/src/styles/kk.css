@@ -214,7 +214,7 @@
 @keyframes kk-float { 0%, 100% { translate: 0 0; } 50% { translate: 0 -10px; } }
 .kk-marquee { overflow: hidden; margin: 8px auto 40px; -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); }
 .kk-marquee-track { display: flex; gap: 64px; width: max-content; animation: kk-marquee 32s linear infinite; }
-.kk-marquee img { height: 44px; width: auto; filter: brightness(0) invert(1); opacity: 0.75; }
+.kk-marquee img { height: 52px; width: auto; filter: grayscale(1) brightness(1.7); opacity: 0.85; }
 .kk-marquee:hover .kk-marquee-track { animation-play-state: paused; }
 @keyframes kk-marquee { to { transform: translateX(-50%); } }
 @media (prefers-reduced-motion: reduce) { .kk-marquee-track, .kk-bookimg { animation: none; } }
