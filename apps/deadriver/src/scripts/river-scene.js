@@ -2,7 +2,12 @@
 // simulation so the surface bends, refracts and splits colour under the
 // pointer. Three passes in ogl: liquid base -> ripple sim (ping-pong) ->
 // composite with refraction, chromatic aberration and specular. One static
-// frame under reduced motion, paused when off screen.
+// frame under reduced motion, paused when off screen or the tab is hidden.
+// Mounts after load, during idle time. A software GL context never starts
+// the loop (the CSS backdrop stays). Frame gaps are the rAF timestamp
+// interval, not the work inside the callback. If 3 of the last 10 gaps
+// exceed about 50ms, or the 10-frame average does, drop to dpr 1 and then
+// hold the last frame. A resize while that frame is held paints it once.
 import { Renderer, Program, Mesh, Triangle, RenderTarget, Vec2 } from 'ogl';
 
 const quad = /* glsl */ `
@@ -183,15 +188,44 @@ const compFrag = /* glsl */ `
   }
 `;
 
-export function mountRiver(host, { variant = 'liquid' } = {}) {
+const FRAME_BUDGET = 50;
+
+// SwiftShader, llvmpipe and the Windows basic renderer are software GL.
+// Same outcome for every visitor: no loop, CSS hero stays.
+function softwareGl(gl) {
+  const ext = gl.getExtension('WEBGL_debug_renderer_info');
+  if (!ext) return false;
+  const info = `${gl.getParameter(ext.UNMASKED_RENDERER_WEBGL) || ''}`;
+  return /swiftshader|llvmpipe|softpipe|lavapipe|basic render/i.test(info);
+}
+
+function mountRiverNow(host, { variant = 'liquid' } = {}) {
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const powerPreference = 'default';
+  const canvas = document.createElement('canvas');
+  const attributes = {
+    alpha: false,
+    antialias: false,
+    depth: true,
+    stencil: false,
+    premultipliedAlpha: false,
+    preserveDrawingBuffer: false,
+    powerPreference,
+    failIfMajorPerformanceCaveat: true,
+  };
+  const probe =
+    canvas.getContext('webgl2', attributes) || canvas.getContext('webgl', attributes);
+  if (!probe || softwareGl(probe)) return;
+
   const renderer = new Renderer({
+    canvas,
     dpr: Math.min(window.devicePixelRatio || 1, 1.5),
     alpha: false,
     antialias: false,
+    powerPreference,
   });
   const gl = renderer.gl;
-  host.appendChild(gl.canvas);
+  if (!gl) return;
   const floatOk = !!(
     gl.getExtension('EXT_color_buffer_float') ||
     gl.getExtension('EXT_color_buffer_half_float')
@@ -269,13 +303,18 @@ export function mountRiver(host, { variant = 'liquid' } = {}) {
     });
   };
 
+  // setSize clears the drawing buffer. The running loop paints the next
+  // frame itself. A frozen loop or a reduced-motion still has nothing
+  // scheduled, so paint exactly one frame or the hero stays black.
+  let lastT = 0;
+  let frozen = false;
   const resize = () => {
     renderer.setSize(host.clientWidth, host.clientHeight);
     res.set(gl.canvas.width, gl.canvas.height);
     makeTargets();
+    if (frozen || reduce) render(lastT, true);
   };
   window.addEventListener('resize', resize);
-  resize();
 
   const area = host.parentElement;
   area.addEventListener('pointermove', (e) => {
@@ -296,46 +335,130 @@ export function mountRiver(host, { variant = 'liquid' } = {}) {
     last.set(mouse.x - 0.02, mouse.y - 0.02);
   });
 
-  const render = (t) => {
+  const present = () => {
+    if (!host.contains(gl.canvas)) host.appendChild(gl.canvas);
+  };
+  // complete: a held frame must reach the screen. The running loop still
+  // drops a later pass once this callback has spent the budget.
+  const render = (t, complete = false) => {
+    lastT = t;
+    const started = performance.now();
+    const over = () => !complete && performance.now() - started > FRAME_BUDGET;
     liquid.program.uniforms.uTime.value = t / 1000;
     if (!floatOk) {
       renderer.render({ scene: liquid });
-      return;
+      present();
+      return performance.now() - started;
     }
     renderer.render({ scene: liquid, target: base });
+    if (over()) return performance.now() - started;
     vel.set(mouse.x - last.x, mouse.y - last.y);
     if (last.x < -1 || mouse.x < -1) vel.set(0, 0);
     last.copy(mouse);
     sim.program.uniforms.tPrev.value = simA.texture;
     renderer.render({ scene: sim, target: simB });
+    if (over()) return performance.now() - started;
     [simA, simB] = [simB, simA];
     comp.program.uniforms.tSim.value = simA.texture;
     comp.program.uniforms.tBase.value = base.texture;
     renderer.render({ scene: comp });
+    present();
+    return performance.now() - started;
   };
+
+  resize();
 
   let frame = 0;
   let running = false;
-  const loop = (t) => {
-    render(t);
-    frame = requestAnimationFrame(loop);
-  };
-  const start = () => {
-    if (running || reduce) return;
-    running = true;
-    frame = requestAnimationFrame(loop);
-  };
+  let degraded = false;
+  let prevTs = 0;
+  let warm = 0;
+  const costs = [];
   const stop = () => {
     cancelAnimationFrame(frame);
     running = false;
+    prevTs = 0;
   };
-  render(0);
-  if (!reduce) {
-    new IntersectionObserver(([e]) =>
-      e.isIntersecting ? start() : stop(),
-    ).observe(host);
-    document.addEventListener('visibilitychange', () =>
-      document.hidden ? stop() : start(),
-    );
-  }
+  // 3 slow frame gaps in the window, or a 10-frame average past the budget:
+  // step down to dpr 1 once, then hold whatever frame is already on screen.
+  const judge = (interval) => {
+    costs.push(interval);
+    if (costs.length > 10) costs.shift();
+    const slow = costs.reduce((n, c) => n + (c > FRAME_BUDGET ? 1 : 0), 0);
+    const avg = costs.reduce((n, c) => n + c, 0) / costs.length;
+    if (slow < 3 && !(costs.length >= 10 && avg > FRAME_BUDGET)) return 'ok';
+    costs.length = 0;
+    if (!degraded && renderer.dpr > 1) {
+      degraded = true;
+      return 'degrade';
+    }
+    return 'freeze';
+  };
+  const loop = (t) => {
+    if (!running || frozen) return;
+    const interval = prevTs > 0 ? t - prevTs : 0;
+    prevTs = t;
+    render(t);
+    // A zero interval means prevTs was cleared in start or stop, so a pause
+    // (hidden tab, scrolled off screen) is not scored. The next two real
+    // gaps cover shader compile and the first present.
+    if (interval <= 0 || warm > 0) {
+      if (interval > 0) warm -= 1;
+      frame = requestAnimationFrame(loop);
+      return;
+    }
+    const action = judge(interval);
+    if (action === 'freeze') {
+      frozen = true;
+      running = false;
+      return;
+    }
+    if (action === 'degrade') {
+      frame = requestAnimationFrame((now) => {
+        if (!running || frozen) return;
+        renderer.dpr = 1;
+        resize();
+        loop(now);
+      });
+      return;
+    }
+    frame = requestAnimationFrame(loop);
+  };
+  let onScreen = false;
+  let visible = !document.hidden;
+  const start = () => {
+    if (running || reduce || frozen || !onScreen || !visible) return;
+    running = true;
+    prevTs = 0;
+    warm = 2;
+    frame = requestAnimationFrame(loop);
+  };
+  if (reduce) return;
+  new IntersectionObserver(([entry]) => {
+    onScreen = entry.isIntersecting;
+    if (onScreen) start();
+    else stop();
+  }).observe(host);
+  document.addEventListener('visibilitychange', () => {
+    visible = !document.hidden;
+    if (visible) start();
+    else stop();
+  });
+}
+
+export function mountRiver(host, options) {
+  const boot = () => {
+    if (!host.isConnected) return;
+    try {
+      mountRiverNow(host, options);
+    } catch {
+      // A failed GL setup leaves the CSS backdrop in place.
+    }
+  };
+  const idle = () => {
+    if (typeof requestIdleCallback === 'function') requestIdleCallback(boot, { timeout: 2000 });
+    else setTimeout(boot, 1);
+  };
+  if (document.readyState === 'complete') idle();
+  else window.addEventListener('load', idle, { once: true });
 }
