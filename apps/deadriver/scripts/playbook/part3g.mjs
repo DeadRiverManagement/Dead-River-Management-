@@ -5,6 +5,7 @@ export const pages = (page, divider, F) => {
   return [
     page({ part: P, kicker: '31 / Google', title: 'Meta finds them. Google catches them.', sub: 'Two channels, two different jobs. Most owners pick one and wonder why the other guy is getting the calls.',
       body: `
+        <p>Everything so far has been Meta. One more channel before we get to the numbers, because for a lot of businesses it's the one that rings the phone first.</p>
         <div class="compare">
           <div class="good"><b>Meta</b>They see something useful while scrolling. You reach the 97% who are thinking about it but haven't typed anything yet. The Part 2 list and the Part 3 ads live here.</div>
           <div class="bad" style="background:var(--charcoal);color:var(--cream)"><b style="color:var(--copper)">Google</b>They typed it in. "Water heater replacement near me." "Invisalign cost." "LTL freight broker Dallas." These people are the 3%, ready now, and you want to be there when they look.</div>
@@ -72,5 +73,46 @@ export const pages = (page, divider, F) => {
         </div>
         <p>Change one weak step. Give it time to show a result, a week or two of real spend, not a day. Then look again. Scale only when the cost per paid job works, your team has the time, and the cash is there to wait for the job to finish.</p>`,
       doNow: 'Find the first step where the numbers drop. Fix that one. Only that one.' }),
+    page({ part: P, kicker: '32 / The number that matters', title: 'Track the number that pays the crew.', sub: 'This is what separates people who run ads from people who run a business.',
+      body: `
+        ${F.pic('numbers-day', '', 'max-width:380px')}
+        <p>Meta's dashboard shows you a number. Your bank account shows you a different number. Both are true. If you're optimizing for the dashboard, you can optimize yourself right out of business.</p>
+        <div class="cards c3">
+          <div class="card"><b>Cost per paid job</b><small>Not cost per lead. Not cost per click. Total spend across every channel, divided by jobs that finished and paid. From your job records, not the ad platform.</small></div>
+          <div class="card"><b>Net cash, 30 days</b><small>What went in. What came back after materials, labor, refunds, and fees. That gap, over a month. It's the only number that pays rent.</small></div>
+          <div class="card"><b>Max you can pay per customer</b><small>Sit down with your real margins. Figure out the most you can spend to get a customer and still hit your profit. Aim at that, not the cost per lead you got comfortable with two years ago.</small></div>
+        </div>
+        <h2>The trap</h2>
+        <p>"I tried spending more and the cost per lead went up." Right. That's how scaling works. The question isn't whether the cost per lead went up. It's whether more cash hit the bank this month. Going from $3,000 a month in ads to $9,000 at a higher cost per lead is usually the right call if the sales went from 12 to 30. Pay the team with the difference.</p>
+        `,
+      doNow: 'Write down your max cost per customer. If you don\'t know it, that\'s the first job.' }),
+
+    page({ part: P, kicker: '32 / The number that matters', title: 'The dashboard number and the bank number.', sub: 'A real account. Both numbers are true. Only one of them pays anybody.',
+      body: `
+        ${F.shot(F.img.pmg, 'Parcel Management Group · 49 leads at $17.70 each in 30 days, from two campaigns', 'max-width:400px')}
+        <p>That's a real screenshot from a client account. Two campaigns, one month, 49 leads, $17.70 a lead. It's a good month. It's also only half the story, because a lead at $17.70 that never becomes a customer cost $17.70 for nothing.</p>
+        <p>What made it a good month is what happened after the dashboard: the leads got called back inside five minutes, they got logged, and some of them became contracts. That's the number we report to the client. Cost per paid customer, and what hit the bank.</p>
+        <div class="callout dark">Numbers day. Block three hours, same day every month. You, the records, and the bank account. No media buyer, no report. It's not the fun thing on the calendar. It moves the money more than anything else on it.</div>`,
+      doNow: 'Put a recurring three-hour "Numbers day" on the first Friday of every month.' }),
+
+    page({ part: P, kicker: '32 / The number that matters', title: 'The most common mistakes.', sub: 'We see every one of these in accounts that come to us. Check yours.',
+      body: `
+        <ul>
+          <li><strong>Obsessing over settings instead of the ad.</strong> Backwards. Fix the ad first.</li>
+          <li><strong>Ads that look like ads.</strong> Logo, brand colors, stock photo. Dead on arrival.</li>
+          <li><strong>"Book now" buttons on cold traffic.</strong> Pressure breaks the flow. Learn more.</li>
+          <li><strong>Not excluding your customer list.</strong> You're paying to advertise to people who already paid you.</li>
+          <li><strong>1-day view attribution.</strong> Fluff in the report. Every decision after it is off.</li>
+          <li><strong>Narrowing the audience by hand.</strong> Let it run broad inside your area. Put the targeting in the ad.</li>
+          <li><strong>Budget equal to expected spend.</strong> Caps your best days. Set the ceiling at 2x.</li>
+          <li><strong>Killing winners after two bad days.</strong> Look at seven. Make variants before you kill anything.</li>
+          <li><strong>Treating long copy as the enemy.</strong> Long and interesting wins, and it feeds the targeting.</li>
+          <li><strong>Riding one winner until it dies.</strong> Clone it. Swap words. Make variants. Dozens of ads from one.</li>
+          <li><strong>Optimizing for the dashboard instead of the bank.</strong> Cost per paid job and net cash grow a business. Cost per lead grows a screenshot.</li>
+          <li><strong>Sending Google clicks to the home page.</strong> They searched for one thing. Land them on that one thing.</li>
+          <li><strong>Running ads to a phone nobody answers.</strong> Or a cart nobody follows up on. The most expensive one on this list. Five minutes. Every lead. Or don't run the ads.</li>
+        </ul>
+        <p>That goes for Google as much as Meta. The tactics on these pages will change. Buttons get renamed, settings move. The principles don't. The ad is the lever. The ad is the targeting. People stop for real things. Net cash is the only number that pays anybody.</p>`,
+      doNow: 'Count how many of the twelve you are doing right now. Fix the top one this week.' }),
   ];
 };
