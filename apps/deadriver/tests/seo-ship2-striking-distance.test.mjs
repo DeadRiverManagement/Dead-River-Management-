@@ -18,7 +18,7 @@ const text = (s) => decode(s.replace(/<[^>]+>/g, ' ')).replace(/\s+/g, ' ').trim
 const targets = {
   '/locations/el-paso': {
     title: 'El Paso Marketing Agency, Local SEO | Dead River Management',
-    links: ['/services/local-seo', '/marketing-advice/rank-higher-on-google-maps-checklist', '/marketing-advice/el-paso-home-services-marketing-agency'],
+    links: ['/services/local-seo', '/marketing-advice/rank-higher-on-google-maps-checklist', '/demand-flow'],
   },
   '/services/local-seo': {
     title: 'Local SEO & Google Business Profile | Dead River Management',
