@@ -148,8 +148,9 @@ const cases = [
   .kk-cases .kk-stats dt, .kk-cases .kk-stats small { color: #cfccc4; }
   .kk-cases .kk-stats dd { color: var(--ember); }
   .kk-gallery { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin: 24px 0 28px; }
-  .kk-gallery figure { margin: 0; border-radius: 12px; overflow: hidden; border: 1px solid rgba(0, 0, 0, 0.1); background: #fff; }
-  .kk-gallery img { display: block; width: 100%; aspect-ratio: 3 / 4; object-fit: cover; object-position: top; }
+  .kk-gallery figure { margin: 0; border-radius: 12px; overflow: hidden; border: 1px solid rgba(0, 0, 0, 0.1); background: #fff; align-self: start; }
+  .kk-gallery a { display: block; }
+  .kk-gallery img { display: block; width: 100%; height: auto; }
   .kk-gallery figcaption { font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); padding: 10px 12px; }
   .kk-letter .kk-photo { float: right; width: min(300px, 42%); margin: 0 0 16px 24px; border-radius: 16px; }
   @media (max-width: 860px) { .kk-grid-6 { grid-template-columns: 1fr 1fr; } .kk-gallery { grid-template-columns: 1fr 1fr; } .kk-letter .kk-photo { float: none; width: 100%; margin: 0 0 18px; } }

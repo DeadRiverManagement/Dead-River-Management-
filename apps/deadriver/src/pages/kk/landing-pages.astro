@@ -16,10 +16,6 @@ const gallery = [
   ['/images/kk/lp-cedar-key-realty.webp', 'Cedar Key Realty, real estate'],
   ['/images/kk/lp-only-fish.webp', 'Only Fish, saltwater aquarium store'],
   ['/images/kk/lp-parcel-management-group.webp', 'Parcel Management Group, freight consulting'],
-  ['/images/kk/lp-demand-flow.jpg', 'Demand Flow, the $50K guarantee'],
-  ['/images/kk/lp-di-demo.jpg', 'Demand Intelligence demo'],
-  ['/images/kk/lp-home.jpg', 'deadrivermanagement.com'],
-  ['/images/kk/lp-demand-intelligence.jpg', 'Demand Intelligence'],
 ];
 ---
 
@@ -42,9 +38,9 @@ const gallery = [
   <p>A salesperson who never sleeps, never calls in sick, never takes a day off, and never goes to work for the guy across town.</p>
   <p>Their name is Landing Page.</p>
   <p>A good landing page is a salesperson that works for you day and night. Set it up right once and it brings in calls, texts, and form fills while you're on a roof, in a treatment room, or asleep.</p>
-  <p>Here's what a few of ours look like.</p>
+  <p>Here's what a few of ours look like. Tap one to see the whole page.</p>
   <div class="kk-gallery">
-    {gallery.map(([src, cap]) => <figure><img src={src} alt="" loading="lazy" /><figcaption>{cap}</figcaption></figure>)}
+    {gallery.map(([src, cap]) => <figure><a href={src} target="_blank" rel="noopener"><img src={src} alt={`${cap} landing page`} loading="lazy" /></a><figcaption>{cap}</figcaption></figure>)}
   </div>
   <h2>WHAT MAKES ONE WORK</h2>
   <ul class="kk-list">
