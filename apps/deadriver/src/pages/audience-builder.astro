@@ -2,6 +2,7 @@
 import Growth from '../layouts/Growth.astro';
 import Hero from '../components/growth/Hero.astro';
 import Arrow from '../components/growth/Arrow.astro';
+import { breadcrumbList } from '../lib/schema';
 const faqs = [
   ['What is an audience builder?', 'An audience builder lets a team combine available consumer, business, behavioral, demographic, firmographic, and intent attributes to define a more focused group for analysis or activation.'],
   ['Can it build both B2B and B2C audiences?', 'Yes. Dead River Demand Intelligence supports both business and consumer audience use cases, subject to available data and applicable rules.'],
@@ -26,6 +27,10 @@ const schema = [
       acceptedAnswer: { '@type': 'Answer', text },
     })),
   },
+  breadcrumbList([
+    { name: 'Home', path: '/' },
+    { name: 'Audience Builder', path: '/audience-builder' },
+  ]),
 ];
 ---
 

@@ -4,14 +4,37 @@ import Hero from '../components/growth/Hero.astro';
 import Arrow from '../components/growth/Arrow.astro';
 import CTA from '../components/growth/CTA.astro';
 import { getCollection } from 'astro:content';
+import { breadcrumbList, faqPage } from '../lib/schema';
 const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
   (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
 );
+const resourceFaqs = [
+  {
+    q: 'Where should I start?',
+    a: 'Pick the calculator or diagnostic that matches the decision in front of you.',
+  },
+  {
+    q: 'Do the tools require my email?',
+    a: 'No. Every tool shows results on the page. Requesting an emailed plan or a conversation is optional.',
+  },
+  {
+    q: 'Are these forecasts or guarantees?',
+    a: 'No. Calculators model your assumptions. Diagnostics use your self-assessment. Case studies describe the stated account and timeframe, not a universal outcome.',
+  },
+];
+const schema = [
+  faqPage(resourceFaqs),
+  breadcrumbList([
+    { name: 'Home', path: '/' },
+    { name: 'Resources', path: '/resources' },
+  ]),
+];
 ---
 
 <Growth ogImage="/images/og/resources.jpg"
   title="Tools, Guides & Case Studies"
   description="Free calculators, diagnostics, practical guides, and documented client work from Dead River Management to help you decide what comes next."
+  schema={schema}
 >
   <Hero scene="liquid"
     eyebrow="Resources"
@@ -95,28 +118,12 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
         <h2>A little context before you begin.</h2>
       </div>
       <div class="stack">
-        <div>
-          <h3>Where should I start?</h3>
-          <p>
-            Pick the calculator or diagnostic that matches the decision in
-            front of you.
-          </p>
-        </div>
-        <div>
-          <h3>Do the tools require my email?</h3>
-          <p>
-            No. Every tool shows results on the page.
-            Requesting an emailed plan or a conversation is optional.
-          </p>
-        </div>
-        <div>
-          <h3>Are these forecasts or guarantees?</h3>
-          <p>
-            No. Calculators model your assumptions. Diagnostics use your
-            self-assessment. Case studies describe the stated account and
-            timeframe, not a universal outcome.
-          </p>
-        </div>
+        {resourceFaqs.map((item) => (
+          <div>
+            <h3>{item.q}</h3>
+            <p>{item.a}</p>
+          </div>
+        ))}
       </div>
     </div>
   </section>

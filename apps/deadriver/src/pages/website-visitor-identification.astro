@@ -2,6 +2,7 @@
 import Growth from '../layouts/Growth.astro';
 import Hero from '../components/growth/Hero.astro';
 import Arrow from '../components/growth/Arrow.astro';
+import { breadcrumbList } from '../lib/schema';
 const faqs = [
   ['What is website visitor identification?', 'Website visitor identification uses available identity and business data to resolve a portion of otherwise anonymous website traffic into usable audience records. Match rates vary by traffic, geography, device, consent, and data availability.'],
   ['Does it identify every visitor?', 'No. No responsible provider should promise that every anonymous visitor can be identified. Coverage and match rates vary, and some visitors will remain anonymous.'],
@@ -24,6 +25,10 @@ const schema = [
       acceptedAnswer: { '@type': 'Answer', text },
     })),
   },
+  breadcrumbList([
+    { name: 'Home', path: '/' },
+    { name: 'Website Visitor Identification', path: '/website-visitor-identification' },
+  ]),
 ];
 ---
 

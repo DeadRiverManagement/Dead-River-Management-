@@ -6,15 +6,23 @@ import { linkClients } from '../../lib/client-links';
 // lands on the shared /book/thanks calendar.
 import Growth from '../../layouts/Growth.astro';
 import type { BookPageCopy } from '../../data/book-pages';
+import { breadcrumbList, faqPage } from '../../lib/schema';
 
 interface Props {
   page: BookPageCopy;
 }
 
 const { page } = Astro.props;
+const schema = [
+  faqPage(page.faqs),
+  breadcrumbList([
+    { name: 'Home', path: '/' },
+    { name: 'Book', path: '/book' },
+  ]),
+];
 ---
 
-<Growth ogImage="/images/og/book.jpg" title={page.title} description={page.description}>
+<Growth ogImage="/images/og/book.jpg" title={page.title} description={page.description} schema={schema}>
   <section class="has-scene page-hero wrap book-hero">
   <HeroScene />
     <p class="eyebrow">{page.eyebrow}</p>

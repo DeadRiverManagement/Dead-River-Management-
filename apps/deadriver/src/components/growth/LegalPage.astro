@@ -2,10 +2,16 @@
 import Growth from '../../layouts/Growth.astro';
 import Hero from './Hero.astro';
 import { linkClients } from '../../lib/client-links';
+import { breadcrumbList } from '../../lib/schema';
 const { document: d } = Astro.props;
+const path = Astro.url.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/';
+const schema = breadcrumbList([
+  { name: 'Home', path: '/' },
+  { name: d.name, path },
+]);
 ---
 
-<Growth title={d.name} description={d.description ?? d.intro}>
+<Growth title={d.name} description={d.description ?? d.intro} schema={schema}>
   <Hero
     eyebrow={'Policies · Updated ' + d.updated}
     title={d.name}

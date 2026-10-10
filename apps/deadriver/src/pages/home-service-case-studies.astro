@@ -4,6 +4,7 @@
 import Growth from '../layouts/Growth.astro';
 import Hero from '../components/growth/Hero.astro';
 import Arrow from '../components/growth/Arrow.astro';
+import { breadcrumbList, itemList } from '../lib/schema';
 
 const cases = [
   {
@@ -53,11 +54,19 @@ const cases = [
     href: '/work/parcel-management-group',
   },
 ];
+const schema = [
+  breadcrumbList([
+    { name: 'Home', path: '/' },
+    { name: 'Home Service Case Studies', path: '/home-service-case-studies' },
+  ]),
+  itemList(cases.map((c) => ({ name: c.company, path: c.href }))),
+];
 ---
 
 <Growth ogImage="/images/og/work.jpg"
   title="Home Service Case Studies"
   description="Case studies from Dead River Management: Gonzalez & Sons Roofing, The Pipe Whisperers, Total Auto Repair, Wicked Logistics, and Parcel Management Group."
+  schema={schema}
 >
   <Hero scene="liquid"
     eyebrow="Home service case studies"
