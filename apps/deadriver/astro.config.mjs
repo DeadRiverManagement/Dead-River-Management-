@@ -89,7 +89,6 @@ export default defineConfig({
         !path.startsWith('/welcome/') &&
         path !== '/onboarding' &&
         !path.startsWith('/onboarding/') &&
-        !path.startsWith('/kk') &&
         path !== '/watch' &&
         path !== '/free-playbook' &&
         path !== '/flagship-offer' &&
