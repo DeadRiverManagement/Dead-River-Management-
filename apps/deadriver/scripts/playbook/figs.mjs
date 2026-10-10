@@ -43,8 +43,8 @@ export const css = `
 .fb .sms div { max-width: 82%; padding: 8px 11px; border-radius: 14px; background: #fff; font-size: 11.5px; line-height: 1.35; }
 .fb .sms div.me { background: var(--copper); color: #140b04; margin-left: auto; }
 .fbrow { display: grid; grid-template-columns: repeat(auto-fit, 320px); gap: 16px; justify-content: start; }
-.fbrow.sm .fb { width: 240px; font-size: 10.5px; } .fbrow.sm { grid-template-columns: repeat(auto-fit, 240px); }
-.fbrow.sm .fb .media img { height: 140px; } .fbrow.sm .fb .media .ov { font-size: 13px; }
+.fbrow.sm .fb { width: 210px; font-size: 10px; } .fbrow.sm { grid-template-columns: repeat(auto-fit, 210px); }
+.fbrow.sm .fb .media img { height: 124px; } .fbrow.sm .fb .media .ov { font-size: 13px; }
 .phone { width: 230px; padding: 12px 10px; border-radius: 28px; background: var(--charcoal); box-shadow: 0 20px 40px -22px rgba(0,0,0,.6); }
 .phone .scr { background: #f4f1ea; border-radius: 18px; padding: 14px 10px 16px; display: grid; gap: 7px; min-height: 200px; }
 .phone .scr .who { text-align: center; font-size: 10px; color: var(--muted); margin-bottom: 4px; }
