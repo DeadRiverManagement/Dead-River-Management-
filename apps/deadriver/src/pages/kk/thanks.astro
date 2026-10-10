@@ -14,7 +14,7 @@ import { DEMANDFLOW_CALENDAR_URL } from '../../lib/demandflow-handoff.js';
   campaignLabel="Pick a time"
   campaignShort="Pick a time"
 >
-  <section class="kk-thanks wrap">
+  <div class="kk-lightpage"><section class="kk-thanks wrap">
     <h1>Last Step: Schedule Your Free 30-Min Strategy Session Call Now</h1>
     <p class="intro">By claiming your free 30-minute strategy session call, you will experience faster and bigger results, with the lowest cost of mistakes than those who skip it. PLUS you'll also get a 100% free scaling growth map ($1,000 value) 🚀.</p>
     <p class="kk-rating"><span class="rv-stars" aria-hidden="true">★★★★★</span> 4.8 stars out of 7,568 reviews</p>
@@ -31,10 +31,18 @@ import { DEMANDFLOW_CALENDAR_URL } from '../../lib/demandflow-handoff.js';
       ></iframe>
       <script is:inline src="https://link.msgsndr.com/js/form_embed.js" type="text/javascript"></script>
     </div>
-  </section>
+  </section></div>
 </Growth>
 
 <style>
+  .kk-lightpage { background: #f4f1ea; color: #121214; }
+  .kk-lightpage h1, .kk-lightpage h2 { color: #121214; }
+  .kk-lightpage .intro, .kk-lightpage p { color: #3a3936; }
+  .kk-lightpage .kk-rating, .kk-lightpage .kk-notyet-foot { color: #5f5d57; }
+  .kk-lightpage .kk-notyet-grid article { background: #fff; border-color: rgba(0,0,0,.1); }
+  .kk-lightpage .button.secondary { color: #121214; border-color: #121214; }
+  .kk-lightpage .check-list li { color: #3a3936; }
+  .kk-lightpage a { color: var(--copper-deep); }
   .kk-thanks { padding: clamp(56px, 8vw, 100px) 0 80px; max-width: 900px; text-align: center; }
   .kk-thanks h1 { font-size: clamp(36px, 5.6vw, 72px); letter-spacing: -0.045em; line-height: 0.95; text-transform: uppercase; margin: 10px auto 18px; max-width: 16ch; }
   .kk-thanks .intro { max-width: 680px; margin: 0 auto; }

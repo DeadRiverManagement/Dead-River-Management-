@@ -9,7 +9,7 @@ import Arrow from '../../components/growth/Arrow.astro';
   description="Demand Flow isn't the right fit right now. Here's what to do instead."
   robots="noindex,nofollow"
 >
-  <section class="kk-notyet wrap">
+  <div class="kk-lightpage"><section class="kk-notyet wrap">
     <p class="eyebrow">Not a fit yet</p>
     <h1>Thanks for being straight with us. Demand Flow isn't the right fit right now.</h1>
     <p class="intro">Based on your answers, the $50,000 guarantee wouldn't be fair to you yet. That's not a no forever. Here's what we'd do in your spot.</p>
@@ -26,10 +26,18 @@ import Arrow from '../../components/growth/Arrow.astro';
       </article>
     </div>
     <p class="kk-notyet-foot">Think we got it wrong? Call or text <a href="tel:+19152283054">(915) 228-3054</a> and tell us.</p>
-  </section>
+  </section></div>
 </Growth>
 
 <style>
+  .kk-lightpage { background: #f4f1ea; color: #121214; }
+  .kk-lightpage h1, .kk-lightpage h2 { color: #121214; }
+  .kk-lightpage .intro, .kk-lightpage p { color: #3a3936; }
+  .kk-lightpage .kk-rating, .kk-lightpage .kk-notyet-foot { color: #5f5d57; }
+  .kk-lightpage .kk-notyet-grid article { background: #fff; border-color: rgba(0,0,0,.1); }
+  .kk-lightpage .button.secondary { color: #121214; border-color: #121214; }
+  .kk-lightpage .check-list li { color: #3a3936; }
+  .kk-lightpage a { color: var(--copper-deep); }
   .kk-notyet { padding: clamp(56px, 8vw, 100px) 0 80px; max-width: 900px; }
   .kk-notyet h1 { font-size: clamp(34px, 4.6vw, 58px); letter-spacing: -0.04em; margin: 10px 0 16px; }
   .kk-notyet-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 40px; }

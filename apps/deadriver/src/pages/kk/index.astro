@@ -1,7 +1,7 @@
 ---
-// Preview only: kingkong.co home page, copy and section order verbatim, in
-// the Dead River look. Brand name, phone, links and media point at Dead
-// River. Login-gated Vercel preview; noindex; not on the sitemap.
+// Preview only: kingkong.co home page, copy and section order verbatim, with
+// their sheared bands and corner stripes, in Dead River colours. "Courses"
+// is "Software" per Brandon. Login-gated Vercel preview; noindex.
 import Growth from '../../layouts/Growth.astro';
 import Arrow from '../../components/growth/Arrow.astro';
 import FaqList from '../../components/FaqList.astro';
@@ -11,28 +11,28 @@ const CTA = '/kk/strategy-session';
 
 const cases = ['THE MASSAGE CHAIR COMPANY', "LET'S GET CARE", 'GLENVILL HOMES', 'NIMBLE TRANSFORMATION', 'SCOTLAND TITLES', 'MY MUSCLE CHEF', 'RENT BUY IT', 'ORIGINAL UGG AUSTRALIA CLASSIC', 'AUSSIE ENVIRONMENTAL', 'ELECTROLUX PROFESSIONAL', 'MOXIE PEST CONTROL', 'AIV AUSTRALIAN', 'KOALA', 'AQUATIC PERFORMANCE', 'PURPLE BRICKS', 'GREEN GOO', 'KOIKAS ACOUSTICS', 'PURE PUBLIC RELATIONS', 'MARSHALL WHITE', 'HURDLEYS OFFICE FURNITURE', 'CLEARANCE SOLUTIONS AUSTRALIA'];
 
+const featured = ['“Since partnering with Dead River the results have been nothing short of outstanding. There are three simple words here and that is: Leads! Leads! Leads!”', 'Domenic Varese, Marketing Manager, Metricon'];
 const testimonials = [
-  ['“Since partnering with Dead River the results have been nothing short of outstanding. There are three simple words here and that is: Leads! Leads! Leads!”', 'Domenic Varese, Marketing Manager, Metricon'],
-  ['“From Cold-calling To 200 New Customers In 12 Months”', 'Emma & Jim Elliott, Owners, Little Big Dairy'],
-  ['“From $4 Million To $25,000,000+ In 18 Months”', "Michael Argent, Managing Director, Let's Get Care"],
-  ['“Our Pipeline Got Completely Flooded Overnight”', 'Wade Tink, Managing Director, Project Everest'],
-  ['“From $0 To $18 Million In 18 Months (During A Recession)”', 'Danny Coyne, New Sensation Homes'],
-  ['“Working With Dead River Has Transformed Our Whole Lives. The Growth That We\'ve Experienced Has Been Astronomical.”', 'Marco Maisano, CEO & Founder, NSR Australia & NZ'],
-  ['“Initially I was worried about where my first job was coming from. After using Dead River I was more worried about how I was going to manage the job. My business has increased 200%, so I got my return on investment 10-20 times over.”', "Ged, Owner, Ged's Mobile Car Cleaning"],
-  ['“Since starting work with Dead River 9 months ago our sales have tripled and we\'ve expanded into 3 other states. These guys are amazing!”', 'Raphael Bender, Founder, Breathe Education'],
-  ['“We’ve Increased Our Revenue By 35-40% By Working With Dead River”', 'Colin Battersby, Principal, Discover Stradbroke'],
-  ['“After 18 Months, We’ve Got A 49% Increase In Leads. I’d Never Go Back To Not Using Dead River.”', 'Beth Hourigan, Director, Aged Care Financial Services'],
-  ['“From $3 Million To $50 Million In 12 Months With Dead River”', 'Dylan Trickey, Marketing Coordinator'],
-  ['“The goal was to get 8 sales in the first year. It’s been 11 months now and we’ve had 23 sales. Which is $7 million in revenue. The money I spent with Dead River I’ve seen a return on investment of five to six times.”', 'Lee Selkrig, Founder, Enso Homes'],
-  ['“We\'ve Doubled In Staff Numbers”', 'Selma Christofi, Original UGG Australia Classic'],
-  ['“We\'ve Increased Our Revenue By 50 Percent”', 'Adam Hurdley, Managing Director, Hurdleys Office Furniture'],
-  ['“From 3 Weeks Of Jobs To 6 Months Booked In Advance”', 'Tye Spierings, Owner & Director, Ultimate Windows'],
-  ['“Generated 95 to 100 Closed Jobs”', 'Rohan Fisher, Director, Fisher Roofing'],
-  ['“Since We\'ve Started Working With Dead River We\'ve Generated Over 2 Million Dollars”', 'Eva Hussein, Founder & Director, Polaron'],
+  ['“From Cold-calling To 200 New Customers In 12 Months”', 'Emma & Jim Elliott'],
+  ['“From $4 Million To $25,000,000+ In 18 Months”', 'Michael Argent'],
+  ['“Our Pipeline Got Completely Flooded Overnight”', 'Wade Tink'],
+  ['“From $0 To $18 Million In 18 Months (During A Recession)”', 'New Sensation Homes'],
+  ['“Working With Dead River Has Transformed Our Whole Lives. The Growth That We\'ve Experienced Has Been Astronomical.”', 'Marco Maisano'],
+  ['“Initially I was worried about where my first job was coming from. After using Dead River I was more worried about how I was going to manage the job. My business has increased 200%, so I got my return on investment 10-20 times over.”', 'Ged'],
+  ['“Since starting work with Dead River 9 months ago our sales have tripled and we\'ve expanded into 3 other states. These guys are amazing!”', 'Raphael Bender'],
+  ['“We’ve Increased Our Revenue By 35-40% By Working With Dead River”', 'Colin Battersby'],
+  ['“After 18 Months, We’ve Got A 49% Increase In Leads. I’d Never Go Back To Not Using Dead River.”', 'Beth Hourigan'],
+  ['“From $3 Million To $50 Million In 12 Months With Dead River”', 'Dylan Trickey'],
+  ['“The goal was to get 8 sales in the first year. It’s been 11 months now and we’ve had 23 sales. Which is $7 million in revenue. The money I spent with Dead River I’ve seen a return on investment of five to six times.”', 'Lee Selkrig'],
+  ['“We\'ve Doubled In Staff Numbers”', 'Selma Christofi'],
+  ['“We\'ve Increased Our Revenue By 50 Percent”', 'Adam Hurdley'],
+  ['“From 3 Weeks Of Jobs To 6 Months Booked In Advance”', 'Tye Spierings'],
+  ['“Generated 95 to 100 Closed Jobs”', 'Rohan Fisher'],
+  ['“Since We\'ve Started Working With Dead River We\'ve Generated Over 2 Million Dollars”', 'Eva Hussein'],
 ];
 
 const faqs = [
-  { q: 'What does a Digital Marketing Agency do?', a: 'A good digital marketing agency will get to know your business inside out. They will assess the traffic that your website is getting and establish the best online marketing platforms to invest in. Part of a digital marketing agency’s strategy should involve continual evaluation to ensure a client is maintaining the perfect balance between their marketing spend and the results they’re getting. We do all of that but, unlike other agencies, the Dead River team isn’t just focused on maintaining that perfect balance. Our goal is to crush your competitors, turn website visitors into buyers and bring you the biggest ROI possible using the most effective marketing strategies available.' },
+  { q: 'What does a Digital Marketing Agency actually do?', a: 'A good digital marketing agency will get to know your business inside out. They will assess the traffic that your website is getting and establish the best online marketing platforms to invest in. Part of a digital marketing agency’s strategy should involve continual evaluation to ensure a client is maintaining the perfect balance between their marketing spend and the results they’re getting. We do all of that but, unlike other agencies, the Dead River team isn’t just focused on maintaining that perfect balance. Our goal is to crush your competitors, turn website visitors into buyers and bring you the biggest ROI possible using the most effective marketing strategies available.' },
   { q: 'How do I know that I will get a return on my investment?', a: 'Because we put our money where our mouth is and we make BIG guarantees that other marketing agencies don’t. Go check out our individual service pages for more information on what guarantees we offer.' },
   { q: 'Do you work with big or small companies?', a: 'Are you serious about scaling your operations and dominating your market space? We can work with you. Do you want to plug into a team of marketers, digital strategists, designers, and developers who will help you to smash your growth goals and make the kind of ROI that will leave you shouting from the rooftops? We can work with you. Do you understand the value of spending $1 to make $5? We can work with you. It doesn’t matter if you’re a big or small company. Our clients range from small, local businesses with 5 or less employees to large multinational companies with a workforce of hundreds of people operating from all corners of the globe.' },
   { q: 'Why is Dead River the best digital marketing agency?', a: 'Why are burritos delicious? Why is water wet? No, but seriously. Instead of using this little section of content to spam you with humblebrags, let us just say this… Marketers lie, numbers don’t. So instead of trying to convince you, we’re the best digital marketing agency around…here are the stats: $10.2 billion in sales generated. 1184 different industries and niches. 4,952 reviews (average of 4.7 stars). 38 millionaires created. 6x 8 figure clients created. #17 fastest growing company in Australia (ranked by the AFR). #1 fastest growing agency (3 years in a row). You see, most digital marketing agencies talk a good game, but when is all said and done, they don’t use the very same internet marketing services they prescribe to their clients (digital marketing, SEO, Facebook ads and sales funnel etc) to grow their own business. Which is HUGE telltale sign to run for the hills! Anyhoo. If you’re looking for a digital marketing company that’s worth its weight…You should go check out our reviews here and see all the nice things our clients have said about the work we do.' },
@@ -55,9 +55,10 @@ const faqs = [
     <section class="kk-hero">
       <div class="wrap">
         <p class="kk-rating"><span class="rv-stars" aria-hidden="true">★★★★★</span> <strong>4.8/5</strong> stars out of 7,568 reviews <span class="kk-pill">2,000+ clients</span></p>
-        <h1 data-split>LIKE STEROIDS<sup>*</sup> FOR BUSINESS</h1>
+        <h1>LIKE STEROIDS<sup>*</sup><br />FOR BUSINESS</h1>
         <p class="kk-sub">Growing a business is hard. We make it a whole lot easier, more predictable, less stressful, and more fun.</p>
         <form class="kk-capture" action={CTA} method="get">
+          <span aria-hidden="true">👋</span>
           <label class="sr-only" for="kk-email">Email</label>
           <input id="kk-email" name="email" type="email" required placeholder="Enter your email here and we'll send you some 'magic'..." />
           <button class="button" type="submit">Do it <Arrow /></button>
@@ -67,9 +68,12 @@ const faqs = [
           <video controls playsinline preload="metadata" poster="/images/og/demand-flow.jpg" src="/50k-demand-flow/assets/demand-flow-vsl-1080p.mp4"></video>
         </div>
       </div>
+      <i class="kk-slash-left" aria-hidden="true"></i>
+      <i class="kk-slash-right" aria-hidden="true"></i>
     </section>
 
-    <section class="kk-band kk-letter">
+    <section class="kk-band kk-white kk-letter">
+      <i class="kk-slash kk-slash-tl" aria-hidden="true"></i>
       <div class="wrap">
         <p class="kk-updated">Updated: 8th of October, 2026</p>
         <p class="kk-dear">Dear business builder,</p>
@@ -110,31 +114,43 @@ const faqs = [
         <p>It all starts by “choosing your own adventure” below…</p>
         <p><em>*cue angels singing*</em></p>
       </div>
+      <i class="kk-slash kk-slash-br" aria-hidden="true"></i>
     </section>
 
-    <section class="kk-band kk-offers">
+    <section class="kk-band kk-dark kk-offers">
+      <i class="kk-slash kk-slash-tr" aria-hidden="true"></i>
+      <i class="kk-slash kk-slash-tl" aria-hidden="true"></i>
       <div class="wrap kk-offer-grid">
         <article>
           <p class="kk-kicker">HIRE US TO DO IT FOR YOU</p>
           <h2>AGENCY</h2>
           <p>Managed and ‘done-for-you’ digital marketing services for mid-to-large companies looking to accelerate ‘hyper-growth’. And yes, we guarantee results and smell fantastic *wink*.</p>
-          <a class="button" href="/kk/agency">Get Started <Arrow /></a>
+          <a class="button" href="/kk/agency">Get Started</a>
           <small><span class="rv-stars" aria-hidden="true">★★★★★</span> 4.6 stars out of 607 reviews</small>
         </article>
         <article>
           <p class="kk-kicker">LEARN HOW TO DO IT YOURSELF</p>
-          <h2>COURSES</h2>
-          <p>Business growth training programs for companies serious about scaling their coaching, consulting or service business to seven and eight figures FAST (in months, not years).</p>
-          <a class="button secondary" href="/demand-intelligence">Get Started <Arrow /></a>
+          <h2>SOFTWARE</h2>
+          <p>Business growth software for companies serious about scaling their coaching, consulting or service business to seven and eight figures FAST (in months, not years).</p>
+          <a class="button" href="/demand-intelligence">Get Started</a>
           <small><span class="rv-stars" aria-hidden="true">★★★★★</span> 4.8 stars out of 6,961 reviews</small>
         </article>
       </div>
+      <i class="kk-slash kk-slash-br" aria-hidden="true"></i>
+      <i class="kk-slash kk-slash-bl" aria-hidden="true"></i>
     </section>
 
-    <section class="kk-band kk-promise">
+    <section class="kk-band kk-white kk-flat-bottom kk-promise">
+      <i class="kk-slash kk-slash-tl" aria-hidden="true"></i>
       <div class="wrap">
         <h2>GROW 10X FASTER, BETTER, SMARTER</h2>
-        <p class="kk-lead">Skip the guesswork, trial-and-error and never-ending shit show of trying to figure everything out yourself – for the very first time. And instead, grow your business with proven client-getting-funnels, frameworks and scientific customer acquisition (not hopes and prayers).</p>
+      </div>
+      <div class="kk-promise-tint">
+        <div class="wrap">
+          <p class="kk-lead">Skip the guesswork, trial-and-error and never-ending shit show of trying to figure everything out yourself – for the very first time. And instead, grow your business with proven <u>client-getting-funnels</u>, frameworks and <strong>scientific customer acquisition</strong> (not hopes and prayers).</p>
+        </div>
+      </div>
+      <div class="wrap">
         <dl class="kk-stats">
           <div><dt>Revenue Generated</dt><dd>$10.2B</dd><small>We let our numbers do the talking. $10.2 Billion in reported client revenue and counting.</small></div>
           <div><dt>Size Of Our Platform</dt><dd>200,000</dd><small>200,000 customers and counting make up our diverse and ever growing platform.</small></div>
@@ -144,92 +160,122 @@ const faqs = [
       </div>
     </section>
 
-    <section class="kk-band kk-dark kk-cases">
+    <section class="kk-band kk-dark kk-flat-top kk-cases">
       <div class="wrap">
         <h3>BECOME OUR NEXT SUCCESS STORY</h3>
         <div class="kk-grid">
-          {cases.map((c) => <a class="kk-tile" href="/work"><span>{c}</span><em>Read it <Arrow /></em></a>)}
+          {cases.map((c) => <a class="kk-tile" href="/work">{c}</a>)}
         </div>
-        <div class="button-row"><a class="button" href={CTA}>HIT THE DAMN BUTTON <Arrow /></a></div>
-        <p class="kk-lead">There are a lot of so-called “agencies” and “gurus” roaming around the wild wild west that is the web, today. Most of these people are all bark, no bite. All waffle, no syrup. ‘Cause marketers lie, but numbers don’t. And we’ve generated $10.2 billion (with a B) for our clients, in 1184 different industries and niches.</p>
+      </div>
+      <i class="kk-slash kk-slash-br" aria-hidden="true"></i>
+    </section>
+
+    <section class="kk-band kk-stone kk-bark">
+      <i class="kk-slash kk-slash-tl" aria-hidden="true"></i>
+      <div class="wrap">
+        <p class="kk-lead">There are a lot of so-called “agencies” and “gurus” roaming around the wild wild west that is the web, today. Most of these people are all bark, no bite. All waffle, no syrup. ‘Cause marketers lie, but numbers don’t. And <u>we’ve generated $10.2 billion</u> <strong>(with a B)</strong> for our clients, in 1184 different industries and niches.</p>
+        <div class="button-row"><a class="button" href={CTA}>HIT THE DAMN BUTTON</a></div>
         <p class="kk-rating"><span class="rv-stars" aria-hidden="true">★★★★★</span> 4.8 stars out of 7,568 reviews</p>
       </div>
+      <i class="kk-slash kk-slash-br" aria-hidden="true"></i>
     </section>
 
-    <section class="kk-band kk-platform">
+    <section class="kk-band kk-dark kk-platform">
+      <i class="kk-slash kk-slash-tr" aria-hidden="true"></i>
+      <i class="kk-slash kk-slash-tl" aria-hidden="true"></i>
       <div class="wrap">
-        <p class="kk-kicker">BUILT FOR SCALE</p>
-        <h2>THE MOST RUTHLESSLY EFFECTIVE PLATFORM FOR RAPIDLY SCALING BUSINESSES ON PLANET EARTH</h2>
         <p class="kk-kicker">NO MORE ‘HOPING-AND-PRAYING’</p>
-        <h2 class="kk-h2-sm">THE POWER IS IN THE PLATFORM</h2>
-        <p>Most entrepreneurs try growing their business through trial and error, by ‘hoping-and-praying’…. by stumbling and trying to figure it all out by themselves. We call this “guesswork”. It’s unreliable, extremely-stressful and often results in failure (or a psychiatrist).</p>
-        <p>We’ve spent over $100 million dollars on traffic perfecting what works… this isn’t our first rodeo. And our hope is to shrink the amount of time it takes, for you to go from first-time solo business operator… To fire-breathing, market-terrorising entrepreneur…</p>
-        <div class="button-row"><a class="button" href={CTA}>HIT THE DAMN BUTTON <Arrow /></a></div>
+        <h2>THE POWER IS IN THE PLATFORM</h2>
+        <div class="kk-body">
+          <p>Most entrepreneurs try growing their business through trial and error, by ‘hoping-and-praying’…. by stumbling and trying to figure it all out by themselves. We call this “guesswork”. It’s unreliable, extremely-stressful and often results in failure (or a psychiatrist).</p>
+          <p>We’ve spent over $100 million dollars on traffic perfecting what works… this isn’t our first rodeo. And our hope is to shrink the amount of time it takes, for you to go from first-time solo business operator… To fire-breathing, market-terrorising entrepreneur…</p>
+        </div>
+        <div class="kk-video">
+          <video controls playsinline preload="metadata" poster="/images/og/demand-intelligence.jpg" src="/media/demand-intelligence-walkthrough.mp4"></video>
+        </div>
+        <div class="button-row"><a class="button" href={CTA}>HIT THE DAMN BUTTON</a></div>
+        <p class="kk-rating"><span class="rv-stars" aria-hidden="true">★★★★★</span> 4.8 stars out of 7,568 reviews</p>
       </div>
+      <i class="kk-slash kk-slash-br" aria-hidden="true"></i>
     </section>
 
-    <section class="kk-band kk-dark kk-guarantee">
+    <section class="kk-band kk-stone kk-guarantee">
+      <i class="kk-slash kk-slash-tl" aria-hidden="true"></i>
       <div class="wrap">
         <h2>WE GUARANTEE TO BEAT YOUR RESULTS BY 30% OR WE WORK FOR FREE</h2>
-        <p>This is for businesses already running profitable Google or Facebook ads. We’ll design a new funnel, write new ads, and optimise performance until we beat your existing conversion rate, CPL, or ROAS by 30% within 90 days or we work for free until we do. You cover ad spend. We control the creative. And the campaigns naturally need to be apples-to-apples comparable (same product, same season, etc).</p>
-        <div class="button-row"><a class="button" href={CTA}>HIT THE DAMN BUTTON <Arrow /></a></div>
+        <p class="kk-lead">This is for businesses already running profitable Google or Facebook ads. We’ll design a new funnel, write new ads, and optimise performance until we beat your existing conversion rate, CPL, or ROAS by 30% within 90 days or we work for free until we do. You cover ad spend. We control the creative. And the campaigns naturally need to be apples-to-apples comparable (same product, same season, etc).</p>
       </div>
+      <i class="kk-slash kk-slash-br" aria-hidden="true"></i>
     </section>
 
-    <section class="kk-band kk-book">
-      <div class="wrap kk-book-grid">
-        <div class="kk-book-cover" aria-hidden="true"><span>#1 Bestseller</span><strong>SELL LIKE CRAZY</strong></div>
-        <div>
-          <p class="kk-kicker">WE LITERALLY WROTE THE BOOK ON…</p>
-          <h2>HOW TO GET AS MANY CLIENTS, CUSTOMERS AND SALES AS YOU CAN POSSIBLY HANDLE</h2>
-          <p>Sell Like Crazy shot up from being ranked 90,000 on the day of release, to a #1 international Amazon bestseller in its first day. This book is easy to read and wastes no time in going straight for the jugular.</p>
-          <p>You get actionable strategies you can use RIGHT AWAY to dramatically grow sales for your business…in most cases, without spending a cent more on advertising.</p>
-          <div class="button-row"><a class="button" href="/free-playbook">BUY THE BOOK <Arrow /></a></div>
-          <p class="kk-rating"><span class="rv-stars" aria-hidden="true">★★★★★</span> 4.8 stars out of 6,961 reviews</p>
+    <section class="kk-band kk-white kk-flat-bottom kk-book">
+      <i class="kk-slash kk-slash-tl" aria-hidden="true"></i>
+      <div class="wrap">
+        <p class="kk-kicker">WE LITERALLY WROTE THE BOOK ON…</p>
+        <h2>HOW TO GET AS MANY CLIENTS, CUSTOMERS AND SALES AS YOU CAN POSSIBLY HANDLE</h2>
+        <div class="kk-book-grid">
+          <div class="kk-book-cover" aria-hidden="true"><span>#1 Bestseller</span><strong>Sell Like Crazy</strong></div>
+          <div>
+            <p>Sell Like Crazy shot up from being ranked 90,000 on the day of release, to a #1 international Amazon bestseller in its first day. <strong>This book is easy to read and wastes no time in going straight for the jugular.</strong></p>
+            <p><u>You get actionable strategies you can use RIGHT AWAY</u> to dramatically grow sales for your business…in most cases, without spending a cent more on advertising.</p>
+            <div class="button-row"><a class="button secondary" href="/free-playbook">BUY THE BOOK</a></div>
+            <p class="kk-rating"><span class="rv-stars" aria-hidden="true">★★★★★</span> 4.8 stars out of 6,961 reviews</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="kk-band kk-dark kk-testimonials">
+    <section class="kk-band kk-dark kk-flat kk-testimonials">
       <div class="wrap">
+        <div class="kk-feature-t">
+          <p>{featured[0]}</p>
+          <footer>{featured[1]}</footer>
+          <button class="kk-play" type="button" aria-label="Play"><span></span></button>
+        </div>
         <div class="kk-tgrid">
           {testimonials.map(([quote, who]) => (
-            <article class="kk-t">
-              <button class="kk-play" type="button" aria-label="Play"><span></span></button>
-              <blockquote><p>{quote}</p><footer>{who}</footer></blockquote>
+            <article class="kk-t" title={quote}>
+              <p>{quote}</p>
+              <footer>{who}</footer>
             </article>
           ))}
         </div>
       </div>
     </section>
 
-    <section class="kk-band kk-faq">
+    <section class="kk-band kk-white kk-flat kk-faq">
       <div class="wrap">
         <h2 class="kk-h2-sm">DIGITAL MARKETING AGENCY</h2>
         <FaqList items={faqs} />
       </div>
     </section>
 
-    <section class="kk-band kk-dark kk-final">
+    <section class="kk-band kk-black kk-flat kk-final">
       <div class="wrap">
         <h2>HIT THE DAMN BUTTON</h2>
-        <div class="button-row"><a class="button" href={CTA}>HIT THE DAMN BUTTON <Arrow /></a></div>
+        <div class="button-row"><a class="button" href={CTA}>HIT THE DAMN BUTTON</a></div>
         <p class="kk-tag">The most ruthlessly effective platform for rapidly scaling businesses on planet earth.</p>
-      </div>
-    </section>
-
-    <section class="kk-band kk-news">
-      <div class="wrap kk-news-grid">
-        <div>
-          <h2 class="kk-h2-sm">Want some free money?</h2>
-          <p>Get million dollar marketing strategies sent straight to your inbox every week. Just enter your email below.</p>
+        <div class="kk-news-grid">
+          <div>
+            <h2 class="kk-h2-sm">Want some free money?</h2>
+            <p>Get million dollar marketing strategies sent straight to your inbox every week. Just enter your email below.</p>
+          </div>
+          <form class="kk-capture" action={CTA} method="get">
+            <input name="email" type="email" required placeholder="Enter your email..." aria-label="Email" />
+            <input name="first" type="text" placeholder="Enter your name..." aria-label="Name" />
+            <button class="button" type="submit">Let's Go</button>
+          </form>
         </div>
-        <form class="kk-capture" action={CTA} method="get">
-          <input name="email" type="email" required placeholder="Enter your email..." aria-label="Email" />
-          <input name="first" type="text" placeholder="Enter your name..." aria-label="Name" />
-          <button class="button" type="submit">Let's Go <Arrow /></button>
-        </form>
       </div>
     </section>
   </div>
 </Growth>
+
+<style is:global>
+  .kk-final .kk-news-grid { margin-top: 64px; padding-top: 48px; border-top: 1px solid rgba(255, 255, 255, 0.12); text-align: left; }
+  .kk-final .kk-news-grid h2 { text-align: left; margin-left: 0; }
+  .kk-final .kk-news-grid p { text-align: left; }
+  .kk-promise h2 { color: var(--kk-ink); }
+  .kk-promise .kk-stats { margin-top: 40px; }
+  .kk-capture > span { align-self: center; font-size: 20px; }
+</style>

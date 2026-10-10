@@ -17,7 +17,7 @@ const sources = options.sources.map((s) => s.replace("Sabri's YouTube Channel", 
   description="Claim your 100% FREE no-obligation 30-minute scaling growth map call."
   robots="noindex,nofollow"
 >
-  <section class="kkf wrap" data-kkf>
+  <div class="kkf-page"><section class="kkf wrap" data-kkf>
     <ol class="kkf-dots" aria-hidden="true">{Array.from({ length: 10 }).map(() => <li></li>)}</ol>
 
     <form class="kkf-form" novalidate>
@@ -149,11 +149,11 @@ const sources = options.sources.map((s) => s.replace("Sabri's YouTube Channel", 
             </span>
           </label>
           <label>
-            <input type="radio" name="path" value="Courses" />
+            <input type="radio" name="path" value="Software" />
             <span class="kkf-path-card">
               <strong>Teach Me How To Do It</strong>
-              <span class="kkf-path-sub">Courses</span>
-              <small>I’d like to learn your magic witchcraft for myself. Gimme the copy, paste, plug-and-play funnels, frameworks and tools to do it myself. (This option is cheaper, but involves more work and time from you) P.S. Includes an awesome global community and weekly Q&A calls.)</small>
+              <span class="kkf-path-sub">Software</span>
+              <small>I’d like to learn your magic witchcraft for myself. Gimme the copy, paste, plug-and-play software, frameworks and tools to do it myself. (This option is cheaper, but involves more work and time from you) P.S. Includes an awesome global community and weekly Q&A calls.)</small>
               <span class="button secondary">Get Started <Arrow /></span>
               <span class="kkf-path-rating"><span class="rv-stars" aria-hidden="true">★★★★★</span> 4.8 stars out of 6,961 reviews</span>
             </span>
@@ -215,7 +215,7 @@ const sources = options.sources.map((s) => s.replace("Sabri's YouTube Channel", 
     </form>
 
     <button class="kkf-back" type="button" data-back hidden>Back</button>
-  </section>
+  </section></div>
 
   <div class="kkf-exit" data-exit hidden role="dialog" aria-modal="true" aria-labelledby="kkf-exit-title">
     <div class="kkf-exit-card">
@@ -235,6 +235,25 @@ const sources = options.sources.map((s) => s.replace("Sabri's YouTube Channel", 
 </script>
 
 <style>
+  /* King Kong's form page is white. Warm off-white here, dark ink, copper button. */
+  .kkf-page { background: #f4f1ea; color: #121214; margin-top: -1px; }
+  .kkf-page h1, .kkf-page h2 { color: #121214; }
+  .kkf-lead, .kkf-note, .kkf-help, .kkf-rating, .kkf-serving, .kkf-range small, .kkf-path-rating { color: #5f5d57 !important; }
+  .kkf-page input[type='text'], .kkf-page input[type='email'], .kkf-page input[type='tel'], .kkf-page select, .kkf-page textarea { background: #fff; color: #121214; border-color: rgba(0, 0, 0, 0.14); }
+  .kkf-page .kkf-choices span, .kkf-page .kkf-scale span { background: #fff; color: #121214; border-color: rgba(0, 0, 0, 0.12); }
+  .kkf-page .kkf-choices input:checked + span, .kkf-page .kkf-scale input:checked + span { background: rgba(227, 160, 112, 0.22); border-color: var(--copper-deep); color: #121214; }
+  .kkf-page .kkf-path-card { background: #fff; border-color: rgba(0, 0, 0, 0.12); color: #121214; }
+  .kkf-page .kkf-path-card small { color: #5f5d57; }
+  .kkf-page .kkf-paths input:checked + .kkf-path-card { border-color: var(--copper-deep); }
+  .kkf-page .kkf-dots li { background: rgba(0, 0, 0, 0.12); }
+  .kkf-page .kkf-dots li::after { background: #c9c5bc; border-color: #c9c5bc; }
+  .kkf-page .kkf-dots li.is-done { background: var(--copper); }
+  .kkf-page .kkf-dots li.is-done::after, .kkf-page .kkf-dots li.is-current::after { background: var(--copper); border-color: var(--copper); }
+  .kkf-page .kkf-back { color: #5f5d57; }
+  .kkf-page .kkf-range output { color: var(--copper-deep); }
+  .kkf-page .button.secondary { color: #121214; border-color: #121214; }
+  .kkf-page .kkf-bar { background: rgba(0, 0, 0, 0.1); }
+  .kkf-page .kkf-error { color: #b4471b; }
   .kkf { position: relative; max-width: 760px; padding: clamp(40px, 6vw, 72px) 0 120px; min-height: 70svh; }
   .kkf-dots { display: flex; justify-content: center; gap: 0; list-style: none; margin: 0 auto 44px; padding: 0; max-width: 560px; }
   .kkf-dots li { position: relative; flex: 1; height: 2px; background: rgba(255, 255, 255, 0.12); }
