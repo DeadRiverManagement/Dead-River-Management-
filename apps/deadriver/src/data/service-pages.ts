@@ -937,7 +937,7 @@ export const servicePages: ServicePageData[] = [
     navLabel: 'Cold email',
     title: 'Cold Email for B2B Lead Generation',
     description:
-      'Cold email for B2B lead generation. Targeted lists, inbox setup, short emails people answer, and follow-up until they book or say no. Nationwide.',
+      'Cold email for B2B lead generation. Targeted lists, inbox setup, copy, and follow-up sequences that book sales calls. Nationwide.',
     eyebrow: 'Cold email marketing',
     headline: 'Cold Email That Books Sales Calls.',
     sub: 'Cold email marketing and B2B lead generation for businesses that sell to other businesses, nationwide and in El Paso.',
