@@ -4,6 +4,8 @@ export const legal = {
     name: 'Privacy notice',
     updated: 'September 19, 2026',
     intro: 'What Dead River Management collects through this website, how we use and share it, and the choices available to you.',
+    description:
+      'What Dead River Management collects through this website, how we use and share it, and how to request access, correction, or deletion. Call (915) 228-3054.',
     sections: [
       ['Who we are', 'Dead River Management Inc. is a Texas marketing and growth-services company. Our mailing address is 12210 Montwood Dr STE 103 PMB 1173, El Paso, TX 79928. This notice applies to deadrivermanagement.com and information we collect through our website, forms, communications, and related services.'],
       ['Information you give us', 'When you fill out a form, book a conversation, or contact us, we may collect your name, email address, phone number, business name, website, industry, goals, budget, timeline, and anything else you choose to provide. If you become a client, we may also collect account access details, billing and transaction records, campaign information, and other information needed to deliver the agreed services. Please do not submit patient information, customer lists, passwords, Social Security numbers, or financial account details through this website.'],
@@ -22,6 +24,8 @@ export const legal = {
     name: 'Terms of service',
     updated: 'September 19, 2026',
     intro: 'Rules for using this website and working with Dead River Management. A signed client agreement controls if it differs.',
+    description:
+      'Rules for using this website and working with Dead River Management. A signed client agreement controls if it differs. Questions? Call (915) 228-3054.',
     sections: [
       ['Agreement to these terms', 'By using this website, you agree to these terms and our Privacy Notice. If you do not agree, do not use the site. You must be legally able to enter into an agreement and use the site only for lawful business purposes.'],
       ['Website use and prohibited conduct', 'You may use this site to learn about our services, use our free tools, and contact us. Do not interfere with site security or operation, attempt unauthorized access, introduce harmful code, scrape or harvest information in violation of law, impersonate another person, submit unlawful or misleading material, or use the site to violate another person’s rights.'],
@@ -41,6 +45,8 @@ export const legal = {
     name: 'Cookie notice',
     updated: 'September 19, 2026',
     intro: 'The cookies and similar technologies used on this site, why we use them, and the controls available to you.',
+    description:
+      'The cookies and similar technologies used on this site, why we use them for analytics and advertising, and how you can block or delete them in your browser.',
     sections: [
       ['What cookies and similar technologies are', 'Cookies are small files or identifiers stored by a website or its providers. Similar technologies include pixels, tags, scripts, local storage, device identifiers, and server-side matching. They can remember settings, measure activity, attribute advertising, recognize browsers or devices, and help associate activity across services.'],
       ['Necessary technologies', 'Necessary technologies support core functions such as security, fraud prevention, network delivery, form operation, and remembering essential settings. Blocking these technologies may prevent parts of the site from working correctly.'],
@@ -59,7 +65,7 @@ export const legal = {
     updated: 'September 18, 2026',
     intro: 'When we text you, and how to stop.',
     description:
-      'When Dead River Management may text you, what those messages cover, and how to opt out. Applies to SMS you consented to receive.',
+      'When Dead River Management may text you, what those messages cover, and how to opt out. Reply STOP to any message. Consent is never a condition of buying.',
     sections: [
       [
         'We text only if you ask',
@@ -139,6 +145,8 @@ export const legal = {
     updated: 'September 18, 2026',
     intro:
       'Things we confirm with you before work starts in regulated industries.',
+    description:
+      'Industry notes from Dead River Management: privacy rules, advertising claims, licensing, and disclosures we confirm before work in regulated industries.',
     sections: [
       [
         'Med spas and dental',

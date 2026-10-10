@@ -5,7 +5,7 @@ import CTA from '../components/growth/CTA.astro';
 import Arrow from '../components/growth/Arrow.astro';
 import OfficeMap from '../components/growth/OfficeMap.astro';
 import FaqList from '../components/FaqList.astro';
-import { faqPage } from '../lib/schema';
+import { breadcrumbList, faqPage } from '../lib/schema';
 
 const fuelLine = "Not Dead River Company (New England fuel), we don't sell fuel.";
 const fuelFaqAnswer = "No. Not Dead River Company (New England fuel), we don't sell fuel. Dead River Management is based in El Paso, Texas, and works with accepted businesses nationwide.";
@@ -28,7 +28,13 @@ const companyFaq = [
 <Growth ogImage="/images/og/company.jpg"
   title="El Paso HQ, Clients Nationwide | Dead River Management"
   description="Based in El Paso, working nationwide. Dead River Management helps accepted businesses add $50,000 in new revenue in 45-60 days with Demand Flow."
-  schema={faqPage(companyFaq)}
+  schema={[
+    faqPage(companyFaq),
+    breadcrumbList([
+      { name: 'Home', path: '/' },
+      { name: 'Company', path: '/company' },
+    ]),
+  ]}
 >
   <Hero scene="liquid"
     eyebrow="Company"

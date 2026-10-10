@@ -60,9 +60,9 @@ const locked = {
       slug: 'cold-email',
       title: 'Cold Email for B2B Lead Generation',
       description:
-        'Cold email for B2B lead generation. Targeted lists, inbox setup, copy, and follow-up sequences that book sales calls. Nationwide.',
+        'Cold email for B2B lead generation. Targeted lists, inbox setup, short emails people answer, and follow-up until they book or say no. Nationwide.',
       titleChars: 58,
-      descriptionChars: 129,
+      descriptionChars: 145,
       headline: 'Cold Email That Books Sales Calls.',
     },
     {

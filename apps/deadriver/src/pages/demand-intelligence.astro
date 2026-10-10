@@ -1,6 +1,7 @@
 ---
 import Growth from '../layouts/Growth.astro';
 import Arrow from '../components/growth/Arrow.astro';
+import { breadcrumbList } from '../lib/schema';
 // Owner confirmed these shared platform figures on October 5, 2026.
 // AudienceLab customer counts and customer results do not belong to DRM.
 const stats = [
@@ -35,6 +36,10 @@ const schema = [
   {'@context': 'https://schema.org', '@type': 'SoftwareApplication', name: 'Demand Intelligence', applicationCategory: 'BusinessApplication', operatingSystem: 'Web', description: 'A purchase-intent audience platform for audience building, website visitor identification, contact enrichment and campaign activation.'},
   {'@context': 'https://schema.org', '@type': 'VideoObject', name: 'Demand Intelligence: Dallas roofing walkthrough', description: 'A product walkthrough filtering the Dallas roofing market by recent purchase-intent activity using two-day and seven-day lookback windows.', thumbnailUrl: 'https://www.deadrivermanagement.com/media/demand-intelligence-walkthrough-poster.jpg', contentUrl: 'https://www.deadrivermanagement.com/media/demand-intelligence-walkthrough.mp4', uploadDate: '2026-09-19'},
   {'@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map(([name, text]) => ({'@type': 'Question', name, acceptedAnswer: {'@type': 'Answer', text}}))},
+  breadcrumbList([
+    { name: 'Home', path: '/' },
+    { name: 'Demand Intelligence', path: '/demand-intelligence' },
+  ]),
 ];
 ---
 

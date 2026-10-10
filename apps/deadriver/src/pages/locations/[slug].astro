@@ -25,43 +25,55 @@ const pageTitle =
 const SITE = 'https://www.deadrivermanagement.com';
 const rich = Boolean(l.about);
 const here = `/locations/${l.slug}`;
+const pageDescription =
+  l.description ??
+  l.intro + ' Ads, follow-up, and reporting built around where your customers are.';
+const serviceLd = rich
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'Service',
+      name: `Marketing agency for ${l.name}, ${l.state}`,
+      serviceType: 'Marketing services',
+      description: l.description,
+      provider: { '@id': `${SITE}/#organization` },
+      areaServed: [
+        { '@type': 'City', name: l.name, containedInPlace: { '@type': 'State', name: l.region } },
+        ...l.areas.filter((a) => a !== l.name).map((a) => ({ '@type': 'Place', name: a })),
+      ],
+      url: `${SITE}/locations/${l.slug}`,
+    }
+  : l.slug === 'el-paso'
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'Service',
+        name: `Marketing agency for ${l.name}, TX`,
+        serviceType: 'Marketing services',
+        description: pageDescription,
+        provider: { '@id': `${SITE}/#organization` },
+        areaServed: [
+          { '@type': 'City', name: l.name, containedInPlace: { '@type': 'State', name: l.region } },
+        ],
+        url: `${SITE}/locations/${l.slug}`,
+      }
+    : null;
 const schema = [
   ...(pageFaq.length ? [faqPage(pageFaq)] : []),
-  ...(rich
-    ? [
-        {
-          '@context': 'https://schema.org',
-          '@type': 'Service',
-          name: `Marketing agency for ${l.name}, ${l.state}`,
-          serviceType: 'Marketing services',
-          description: l.description,
-          provider: { '@id': `${SITE}/#organization` },
-          areaServed: [
-            { '@type': 'City', name: l.name, containedInPlace: { '@type': 'State', name: l.region } },
-            ...l.areas.filter((a) => a !== l.name).map((a) => ({ '@type': 'Place', name: a })),
-          ],
-          url: `${SITE}/locations/${l.slug}`,
-        },
-        {
-          '@context': 'https://schema.org',
-          '@type': 'BreadcrumbList',
-          itemListElement: [
-            { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` },
-            { '@type': 'ListItem', position: 2, name: 'Locations', item: `${SITE}/locations` },
-            { '@type': 'ListItem', position: 3, name: l.name, item: `${SITE}/locations/${l.slug}` },
-          ],
-        },
-      ]
-    : []),
+  ...(serviceLd ? [serviceLd] : []),
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` },
+      { '@type': 'ListItem', position: 2, name: 'Locations', item: `${SITE}/locations` },
+      { '@type': 'ListItem', position: 3, name: l.name, item: `${SITE}/locations/${l.slug}` },
+    ],
+  },
 ];
 ---
 
 <Growth ogImage="/images/og/locations.jpg"
   title={pageTitle}
-  description={
-    l.description ??
-    l.intro + ' Ads, follow-up, and reporting built around where your customers are.'
-  }
+  description={pageDescription}
   schema={schema.length ? schema : undefined}
 >
   <Hero scene="liquid"

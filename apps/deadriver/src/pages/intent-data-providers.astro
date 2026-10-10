@@ -2,6 +2,7 @@
 import Growth from '../layouts/Growth.astro';
 import Hero from '../components/growth/Hero.astro';
 import Arrow from '../components/growth/Arrow.astro';
+import { breadcrumbList } from '../lib/schema';
 const priceRows = [
   {
     provider: 'Dead River Demand Intelligence',
@@ -63,12 +64,16 @@ const schema = [
       acceptedAnswer: { '@type': 'Answer', text },
     })),
   },
+  breadcrumbList([
+    { name: 'Home', path: '/' },
+    { name: 'Intent Data Providers', path: '/intent-data-providers' },
+  ]),
 ];
 ---
 
 <Growth
   title="Intent Data Provider Comparison"
-  description="Compare intent data providers on coverage, freshness, visitor ID, activation, integrations, pricing, and permitted use."
+  description="Compare intent data providers on coverage, freshness, visitor identification, activation, integrations, pricing, and permitted use. For B2B and B2C teams."
   schema={schema}
 >
   <Hero scene="signals"

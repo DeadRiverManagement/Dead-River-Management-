@@ -39,3 +39,31 @@ export function faqPage(items: readonly { q: string; a: string }[]) {
     })),
   };
 }
+
+/** BreadcrumbList. Home item is `${business.url}/`. Every crumb has an absolute item URL. */
+export function breadcrumbList(crumbs: readonly { name: string; path: string }[]) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: crumbs.map((crumb, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: crumb.name,
+      item: crumb.path === '/' ? `${business.url}/` : `${business.url}${crumb.path}`,
+    })),
+  };
+}
+
+/** ItemList of name + url, same shape as the /tools and /work hubs. */
+export function itemList(items: readonly { name: string; path: string }[]) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    itemListElement: items.map((item, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: item.name,
+      url: `${business.url}${item.path}`,
+    })),
+  };
+}

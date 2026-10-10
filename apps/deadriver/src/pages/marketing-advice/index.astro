@@ -3,14 +3,25 @@ import Growth from '../../layouts/Growth.astro';
 import Hero from '../../components/growth/Hero.astro';
 import Arrow from '../../components/growth/Arrow.astro';
 import { getCollection } from 'astro:content';
+import { breadcrumbList, itemList } from '../../lib/schema';
 const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
   (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
 );
+// Same cards as the page, skipping the one guide kept out of the sitemap.
+const listed = posts.filter((p) => p.id !== '30-leads-in-60-days-guarantee');
+const schema = [
+  breadcrumbList([
+    { name: 'Home', path: '/' },
+    { name: 'Marketing Advice', path: '/marketing-advice' },
+  ]),
+  itemList(listed.map((p) => ({ name: p.data.title, path: '/marketing-advice/' + p.id }))),
+];
 ---
 
 <Growth ogImage="/images/og/marketing-advice.jpg"
   title="Marketing Advice and Guides"
-  description="Plain-language articles from Dead River Management on getting found, websites, follow-up, and growing a local business."
+  description="Plain-language articles from Dead River Management. Short guides on getting found, your website, and fast follow-up, written in plain words for busy owners."
+  schema={schema}
 >
   <Hero scene="liquid"
     eyebrow="Articles"
