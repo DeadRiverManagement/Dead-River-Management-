@@ -1,0 +1,84 @@
+/* King Kong rhythm: full-width bands, alternating lifted charcoal and black,
+     copper diagonal cuts between them, massive uppercase condensed headlines. */
+  .kk { --kk-light: #161618; --kk-dark: #0a0a0b; }
+  .kk .wrap { max-width: 1120px; }
+  .kk-band { position: relative; background: var(--kk-light); padding: clamp(64px, 8vw, 120px) 0; border-top: 1px solid rgba(255, 255, 255, 0.08); }
+  .kk-band.kk-dark { background: var(--kk-dark); }
+  .kk-band::before { content: ''; position: absolute; left: 0; right: 0; top: -1px; height: 6px; background: linear-gradient(90deg, transparent 0%, var(--copper) 18%, var(--ember) 50%, var(--copper) 82%, transparent 100%); opacity: 0.55; clip-path: polygon(0 0, 100% 0, 100% 40%, 0 100%); }
+  .kk h1, .kk h2, .kk h3 { font-family: var(--display); font-weight: 800; letter-spacing: -0.045em; line-height: 0.95; text-transform: uppercase; }
+  .kk h2 { font-size: clamp(34px, 5.2vw, 72px); max-width: 18ch; margin-bottom: 26px; }
+  .kk h2.kk-h2-sm { font-size: clamp(30px, 4vw, 52px); }
+  .kk h3 { font-size: clamp(30px, 4.4vw, 56px); margin-bottom: 30px; }
+  .kk p { font-size: 18px; line-height: 1.7; color: #cfccc4; margin: 0 0 18px; }
+  .kk .kk-lead { font-size: clamp(18px, 1.6vw, 22px); color: var(--ink); max-width: 860px; }
+  .kk .kk-kicker { font-family: var(--mono); font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--copper); margin-bottom: 14px; }
+  .kk .kk-rating { font-size: 14px; color: var(--muted); margin: 0; }
+  .kk .kk-rating strong { color: var(--ink); }
+  .kk .kk-rating .rv-stars { color: var(--copper); margin-right: 6px; }
+  .kk .kk-pill { display: inline-block; margin-left: 14px; padding: 4px 12px; border-radius: 999px; background: rgba(227, 160, 112, 0.14); color: var(--ember); font-size: 12px; font-weight: 600; }
+  .kk .button-row { margin: 28px 0 22px; }
+
+  .kk-hero { padding: clamp(56px, 8vw, 110px) 0 48px; text-align: center; }
+  .kk-hero h1 { max-width: 12ch; margin: 24px auto 0; font-size: clamp(60px, 11.5vw, 176px); line-height: 0.86; text-shadow: 0 30px 80px rgba(0, 0, 0, 0.7); }
+  .kk-hero sup { color: var(--ember); font-size: 0.45em; vertical-align: top; }
+  .kk-hero .kk-sub { max-width: 680px; margin: 28px auto 0; font-size: clamp(18px, 2vw, 24px); color: #cfccc4; }
+  .kk-capture { display: flex; gap: 0; max-width: 760px; margin: 30px auto 0; border: 1px solid rgba(255, 255, 255, 0.14); border-radius: 999px; background: var(--cream-2); padding: 6px; }
+  .kk-capture input { flex: 1 1 auto; min-width: 0; border: 0; background: transparent; color: var(--ink); font-size: 16px; padding: 0 22px; }
+  .kk-capture input:focus { outline: none; }
+  .kk-capture .button { flex: none; }
+  .kk-foot { margin: 14px 0 0 !important; font-size: 13px !important; color: var(--muted) !important; }
+  .kk-video { max-width: 960px; margin: 48px auto 0; border-radius: 20px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.12); box-shadow: 0 40px 120px -30px rgba(0, 0, 0, 0.9), 0 0 120px -20px rgba(227, 160, 112, 0.3); }
+  .kk-video video { display: block; width: 100%; aspect-ratio: 16 / 9; background: #000; }
+
+  .kk-letter .wrap { max-width: 720px; }
+  .kk-updated { font-family: var(--mono) !important; font-size: 12px !important; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted) !important; }
+  .kk-dear { font-family: var(--display); font-weight: 800; font-size: 28px !important; color: var(--ink) !important; }
+  .kk-letter em { color: var(--muted); }
+
+  .kk-offer-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .kk-offers article { padding: 40px; border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 22px; background: linear-gradient(180deg, #1d1d20, #111112); }
+  .kk-offers h2 { font-size: clamp(44px, 6vw, 84px); margin: 8px 0 14px; }
+  .kk-offers .button { margin-top: 10px; }
+  .kk-offers small { display: block; margin-top: 16px; font-size: 13px; color: var(--muted); }
+  .kk-offers .rv-stars { color: var(--copper); }
+
+  .kk-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; margin: 44px 0 0; border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 16px; overflow: hidden; background: rgba(255, 255, 255, 0.12); }
+  .kk-stats > div { background: var(--kk-dark); padding: 28px 24px; }
+  .kk-stats dt { font-family: var(--mono); font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--copper); }
+  .kk-stats dd { margin: 10px 0 8px; font-family: var(--display); font-weight: 800; font-size: clamp(34px, 3.6vw, 52px); letter-spacing: -0.04em; color: var(--ember); line-height: 1; }
+  .kk-stats small { font-size: 14px; line-height: 1.5; color: var(--muted); }
+
+  .kk-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 8px; }
+  .kk-tile { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 22px 24px; border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 16px; background: linear-gradient(180deg, #161618, #111112); text-decoration: none; color: var(--ink); font-family: var(--display); font-weight: 800; letter-spacing: -0.01em; font-size: 15px; transition: border-color 0.3s ease, transform 0.3s ease; }
+  .kk-tile:hover { border-color: #f2b18555; transform: translateY(-2px); }
+  .kk-tile em { font-style: normal; color: var(--copper); font-family: var(--body); font-weight: 600; font-size: 13px; white-space: nowrap; }
+  .kk-cases .kk-lead { margin-top: 36px; }
+
+  .kk-book-grid { display: grid; grid-template-columns: 320px 1fr; gap: clamp(32px, 6vw, 80px); align-items: center; }
+  .kk-book-cover { aspect-ratio: 3 / 4; display: flex; flex-direction: column; justify-content: flex-end; gap: 10px; padding: 28px; border-radius: 14px; border: 1px solid rgba(255, 255, 255, 0.14); background: linear-gradient(160deg, #1d1d20, #0a0a0b 70%); box-shadow: 0 30px 80px -30px rgba(0, 0, 0, 0.9); }
+  .kk-book-cover span { font-family: var(--mono); font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--copper); }
+  .kk-book-cover strong { font-family: var(--display); font-size: 48px; line-height: 0.9; letter-spacing: -0.04em; color: var(--ink); }
+
+  .kk-tgrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .kk-t { position: relative; padding: 26px; border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 18px; background: linear-gradient(180deg, #161618, #111112); display: flex; flex-direction: column; gap: 16px; }
+  .kk-play { width: 56px; height: 56px; border-radius: 50%; border: 0; cursor: pointer; background: linear-gradient(180deg, var(--ember), var(--copper-deep)); display: grid; place-items: center; box-shadow: 0 12px 30px -10px rgba(227, 160, 112, 0.7); }
+  .kk-play span { margin-left: 4px; border-left: 16px solid #140b04; border-top: 10px solid transparent; border-bottom: 10px solid transparent; }
+  .kk-t blockquote { margin: 0; }
+  .kk-t p { font-family: var(--display); font-size: 20px; line-height: 1.25; letter-spacing: -0.02em; color: var(--ink); margin-bottom: 12px; }
+  .kk-t footer { font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+
+  .kk-final { text-align: center; }
+  .kk-final h2 { margin: 0 auto 10px; }
+  .kk-final .button-row { justify-content: center; }
+  .kk-tag { color: var(--muted) !important; font-size: 15px !important; }
+  .kk-news-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+  .kk-news .kk-capture { margin: 0; }
+
+  @media (max-width: 900px) {
+    .kk-offer-grid, .kk-grid, .kk-tgrid, .kk-book-grid, .kk-news-grid { grid-template-columns: 1fr; }
+    .kk-stats { grid-template-columns: 1fr 1fr; }
+    .kk-capture { flex-direction: column; border-radius: 20px; }
+    .kk-capture input { padding: 14px 16px; }
+    .kk-capture .button { width: 100%; }
+    .kk-book-cover { max-width: 280px; }
+  }

@@ -1,51 +1,49 @@
 ---
-// Preview: King Kong's home page structure, section for section, in the Dead
-// River look and with Dead River facts. Hidden from search and the sitemap.
-// Copy is a first pass for Brandon to react to.
+// Preview only: kingkong.co home page, copy and section order verbatim, in
+// the Dead River look. Brand name, phone, links and media point at Dead
+// River. Login-gated Vercel preview; noindex; not on the sitemap.
 import Growth from '../../layouts/Growth.astro';
 import Arrow from '../../components/growth/Arrow.astro';
-import ClientTrust from '../../components/growth/ClientTrust.astro';
-import Reviews from '../../components/growth/Reviews.astro';
 import FaqList from '../../components/FaqList.astro';
-import { work as workItems } from '../../data/growth-work';
+import '../../styles/kk.css';
 
 const CTA = '/kk/strategy-session';
 
-const letter = [
-  'Dear business builder,',
-  "If you're reading this, you're probably sick of it.",
-  'Sick of shiny-object syndrome. Sick of not knowing where your next customer is coming from. Sick of being told you need to post on social media every day, run ads, do SEO, build a funnel, and somehow still run your business.',
-  "You tried an agency. They sent a report full of clicks and impressions and you couldn't find the money in it.",
-  'You tried doing it yourself. It worked for a week, then you got busy, and the phone went quiet again.',
-  "Meanwhile the guy down the road with the worse product is booked out, because he's showing up in front of the right people and you're not.",
-  "Here's the thing. Growing a business doesn't have to feel like throwing spaghetti at a wall and seeing what sticks.",
-  "We're a marketing agency, but we're a little bit different. We use purchase intent data to find the people already looking for the services you offer. Then we put your offer in front of them, answer every lead, follow up, and get them booked.",
-  "And if we don't deliver, you get your money back. Plus $500 for wasting your time.",
-  "So pick your path below. Hire us to do it for you, or use our software and do it yourself. Either way, let's get you off the spaghetti.",
-  'Brandon Aubey',
-  'Dead River Management',
-];
+const cases = ['THE MASSAGE CHAIR COMPANY', "LET'S GET CARE", 'GLENVILL HOMES', 'NIMBLE TRANSFORMATION', 'SCOTLAND TITLES', 'MY MUSCLE CHEF', 'RENT BUY IT', 'ORIGINAL UGG AUSTRALIA CLASSIC', 'AUSSIE ENVIRONMENTAL', 'ELECTROLUX PROFESSIONAL', 'MOXIE PEST CONTROL', 'AIV AUSTRALIAN', 'KOALA', 'AQUATIC PERFORMANCE', 'PURPLE BRICKS', 'GREEN GOO', 'KOIKAS ACOUSTICS', 'PURE PUBLIC RELATIONS', 'MARSHALL WHITE', 'HURDLEYS OFFICE FURNITURE', 'CLEARANCE SOLUTIONS AUSTRALIA'];
 
-const stats = [
-  ['$20K to $100K', 'a month, Total Auto Repair'],
-  ['2 to 8 roofs', 'a month, Gonzalez & Sons Roofing'],
-  ['$60K to $250K', 'a year, The Pipe Whisperers'],
-  ['$1.2M contract', 'from one lead, Wicked Logistics'],
+const testimonials = [
+  ['“Since partnering with Dead River the results have been nothing short of outstanding. There are three simple words here and that is: Leads! Leads! Leads!”', 'Domenic Varese, Marketing Manager, Metricon'],
+  ['“From Cold-calling To 200 New Customers In 12 Months”', 'Emma & Jim Elliott, Owners, Little Big Dairy'],
+  ['“From $4 Million To $25,000,000+ In 18 Months”', "Michael Argent, Managing Director, Let's Get Care"],
+  ['“Our Pipeline Got Completely Flooded Overnight”', 'Wade Tink, Managing Director, Project Everest'],
+  ['“From $0 To $18 Million In 18 Months (During A Recession)”', 'Danny Coyne, New Sensation Homes'],
+  ['“Working With Dead River Has Transformed Our Whole Lives. The Growth That We\'ve Experienced Has Been Astronomical.”', 'Marco Maisano, CEO & Founder, NSR Australia & NZ'],
+  ['“Initially I was worried about where my first job was coming from. After using Dead River I was more worried about how I was going to manage the job. My business has increased 200%, so I got my return on investment 10-20 times over.”', "Ged, Owner, Ged's Mobile Car Cleaning"],
+  ['“Since starting work with Dead River 9 months ago our sales have tripled and we\'ve expanded into 3 other states. These guys are amazing!”', 'Raphael Bender, Founder, Breathe Education'],
+  ['“We’ve Increased Our Revenue By 35-40% By Working With Dead River”', 'Colin Battersby, Principal, Discover Stradbroke'],
+  ['“After 18 Months, We’ve Got A 49% Increase In Leads. I’d Never Go Back To Not Using Dead River.”', 'Beth Hourigan, Director, Aged Care Financial Services'],
+  ['“From $3 Million To $50 Million In 12 Months With Dead River”', 'Dylan Trickey, Marketing Coordinator'],
+  ['“The goal was to get 8 sales in the first year. It’s been 11 months now and we’ve had 23 sales. Which is $7 million in revenue. The money I spent with Dead River I’ve seen a return on investment of five to six times.”', 'Lee Selkrig, Founder, Enso Homes'],
+  ['“We\'ve Doubled In Staff Numbers”', 'Selma Christofi, Original UGG Australia Classic'],
+  ['“We\'ve Increased Our Revenue By 50 Percent”', 'Adam Hurdley, Managing Director, Hurdleys Office Furniture'],
+  ['“From 3 Weeks Of Jobs To 6 Months Booked In Advance”', 'Tye Spierings, Owner & Director, Ultimate Windows'],
+  ['“Generated 95 to 100 Closed Jobs”', 'Rohan Fisher, Director, Fisher Roofing'],
+  ['“Since We\'ve Started Working With Dead River We\'ve Generated Over 2 Million Dollars”', 'Eva Hussein, Founder & Director, Polaron'],
 ];
 
 const faqs = [
-  { q: 'What does a marketing agency actually do?', a: "A normal one runs your ads and sends you a report. We run the whole system. We find the people already looking for the services you offer, put your offer in front of them, build the page they land on, answer every lead, follow up, and track it all to the booked job." },
-  { q: "How do I know I'll get a return?", a: "Because we put it in writing. If we accept your business, the offer is $50,000 in new revenue in 45 to 60 days. If we miss, you get your service fees back plus $500 for wasting your time. Ad spend isn't refunded. Your signed agreement controls." },
-  { q: 'Do you work with big or small businesses?', a: "Mostly home service businesses: roofing, plumbing, HVAC, auto repair, and trades like them. Some are one truck. Some run crews across a state. What matters is that your average job is big enough and you can take on more work." },
-  { q: 'Why should I pick you over another agency?', a: "Three reasons. We put a revenue guarantee in writing. We judge our work by booked jobs and revenue, not clicks. And one team runs the whole thing, from the ad to the phone to the follow-up, so there's one number to call when something's off." },
-  { q: 'Do you really guarantee results?', a: "Yes, for accepted businesses. Before we take you on we look at your market, your offer, your capacity, and your ad budget. If we don't think we can hit the number, we tell you, and we don't offer the guarantee." },
-  { q: "What's involved on my side?", a: 'Give us access to your accounts, fund the agreed ad budget, approve things when we ask, and answer the leads the system sends you. That last one matters more than anything else.' },
+  { q: 'What does a Digital Marketing Agency do?', a: 'A good digital marketing agency will get to know your business inside out. They will assess the traffic that your website is getting and establish the best online marketing platforms to invest in. Part of a digital marketing agency’s strategy should involve continual evaluation to ensure a client is maintaining the perfect balance between their marketing spend and the results they’re getting. We do all of that but, unlike other agencies, the Dead River team isn’t just focused on maintaining that perfect balance. Our goal is to crush your competitors, turn website visitors into buyers and bring you the biggest ROI possible using the most effective marketing strategies available.' },
+  { q: 'How do I know that I will get a return on my investment?', a: 'Because we put our money where our mouth is and we make BIG guarantees that other marketing agencies don’t. Go check out our individual service pages for more information on what guarantees we offer.' },
+  { q: 'Do you work with big or small companies?', a: 'Are you serious about scaling your operations and dominating your market space? We can work with you. Do you want to plug into a team of marketers, digital strategists, designers, and developers who will help you to smash your growth goals and make the kind of ROI that will leave you shouting from the rooftops? We can work with you. Do you understand the value of spending $1 to make $5? We can work with you. It doesn’t matter if you’re a big or small company. Our clients range from small, local businesses with 5 or less employees to large multinational companies with a workforce of hundreds of people operating from all corners of the globe.' },
+  { q: 'Why is Dead River the best digital marketing agency?', a: 'Why are burritos delicious? Why is water wet? No, but seriously. Instead of using this little section of content to spam you with humblebrags, let us just say this… Marketers lie, numbers don’t. So instead of trying to convince you, we’re the best digital marketing agency around…here are the stats: $10.2 billion in sales generated. 1184 different industries and niches. 4,952 reviews (average of 4.7 stars). 38 millionaires created. 6x 8 figure clients created. #17 fastest growing company in Australia (ranked by the AFR). #1 fastest growing agency (3 years in a row). You see, most digital marketing agencies talk a good game, but when is all said and done, they don’t use the very same internet marketing services they prescribe to their clients (digital marketing, SEO, Facebook ads and sales funnel etc) to grow their own business. Which is HUGE telltale sign to run for the hills! Anyhoo. If you’re looking for a digital marketing company that’s worth its weight…You should go check out our reviews here and see all the nice things our clients have said about the work we do.' },
+  { q: 'Can you guarantee results?', a: 'We offer guarantees for all of our traffic sources. Whether it’s Google Ads, Facebook marketing, or SEO, we put our money where our mouth is; if we don’t hit our agreed-upon targets, we don’t get paid.' },
+  { q: 'What’s involved with digital marketing?', a: 'This is like asking “how long is a piece of string” as there is no right answer. The answer depends on YOUR BUSINESS. We treat every business differently because no two businesses – even if they operate in the same industry – are the same. Let’s apply that logic to your business and that of your biggest competitor. Yes, you’re targeting the same audience and you offer a similar product or service but that’s it. Their website is developed differently to yours. It could be older/younger than your site. They might have more/less backlinks and they might have better/worse conversion rates compared to your site. A strategy that involves an intensive link building and content marketing campaign might be all you need whilst your competitor might make more gains investing in Google Ads. The list of differences go on and on. The key takeaway here is we know that one size DOES NOT fit all, which is why we curate custom strategies for each of our clients to fit their exact needs. Our goal is to skyrocket their online presence into the stratosphere and we’ll do whatever it takes to achieve that goal.' },
 ];
 ---
 
 <Growth
   title="Like Steroids For Business (Preview)"
-  description="Preview of the King Kong page structure in the Dead River look."
+  description="Preview clone of the King Kong home page in the Dead River look."
   ogImage="/images/og/home.jpg"
   robots="noindex,nofollow"
   campaign
@@ -54,273 +52,184 @@ const faqs = [
   campaignShort="Book a call"
 >
   <div class="kk">
-    <nav class="kk-paths wrap" aria-label="Choose your path">
-      <a href="/kk/agency"><span>Agency</span><small>Hire us to do it for you</small></a>
-      <a href="/demand-intelligence"><span>Software</span><small>Do it yourself with Demand Intelligence</small></a>
-    </nav>
-
-    <section class="kk-hero wrap">
-      <p class="kk-rating" data-rise><span class="rv-stars" aria-hidden="true">★★★★★</span> <strong>Rated 5.0 on Google</strong> · Recommended on Facebook</p>
-      <h1 data-split>Like steroids<sup>*</sup> for business</h1>
-      <p class="kk-sub" data-rise>Growing a business is hard. We make it a whole lot easier, more predictable, less stressful, and more fun.</p>
-      <form class="kk-capture" action={CTA} method="get" data-rise>
-        <label class="sr-only" for="kk-email">Your email</label>
-        <input id="kk-email" name="email" type="email" required placeholder="Enter your email here and we'll send you some 'magic'..." />
-        <button class="button" type="submit">Do it <Arrow /></button>
-      </form>
-      <p class="kk-foot" data-rise><sup>*</sup>But it's 100% legal (pinky promise)</p>
-      <div class="kk-video" data-rise>
-        <video controls playsinline preload="metadata" poster="/images/og/demand-flow.jpg" src="/50k-demand-flow/assets/demand-flow-vsl-1080p.mp4"></video>
-      </div>
-    </section>
-
-    <section class="section soft kk-letter">
+    <section class="kk-hero">
       <div class="wrap">
-        {letter.map((line, i) => <p class:list={{ 'kk-sig': i >= letter.length - 2 }}>{line}</p>)}
-        <p class="kk-adventure">Now choose your own adventure below.</p>
-      </div>
-    </section>
-
-    <section class="section wrap kk-offers">
-      <article>
-        <p class="eyebrow">Hire us to do it for you</p>
-        <h2>Agency</h2>
-        <p>Managed, done-for-you marketing for service businesses that can take on more work. Demand Flow, with the $50,000 guarantee in writing.</p>
-        <a class="button" href="/kk/agency">Get started <Arrow /></a>
-        <small><span class="rv-stars" aria-hidden="true">★★★★★</span> Rated 5.0 on Google</small>
-      </article>
-      <article>
-        <p class="eyebrow">Learn how to do it yourself</p>
-        <h2>Software</h2>
-        <p>Demand Intelligence. The same purchase intent data we use, in your hands. Build the list, send it to your ads, call the people who are looking.</p>
-        <a class="button secondary" href="/demand-intelligence">Get started <Arrow /></a>
-        <small>Business and consumer data. Nationwide.</small>
-      </article>
-    </section>
-
-    <section class="section wrap kk-promise">
-      <div class="section-head">
-        <div>
-          <p class="eyebrow">The core promise</p>
-          <h2>Target. Create. Capture. Convert.</h2>
-          <p class="intro">Proven client-getting funnels and scientific customer acquisition. Not hopes and prayers. We find the people already looking, put your offer in front of them, catch every lead, and turn them into paid jobs.</p>
+        <p class="kk-rating"><span class="rv-stars" aria-hidden="true">★★★★★</span> <strong>4.8/5</strong> stars out of 7,568 reviews <span class="kk-pill">2,000+ clients</span></p>
+        <h1 data-split>LIKE STEROIDS<sup>*</sup> FOR BUSINESS</h1>
+        <p class="kk-sub">Growing a business is hard. We make it a whole lot easier, more predictable, less stressful, and more fun.</p>
+        <form class="kk-capture" action={CTA} method="get">
+          <label class="sr-only" for="kk-email">Email</label>
+          <input id="kk-email" name="email" type="email" required placeholder="Enter your email here and we'll send you some 'magic'..." />
+          <button class="button" type="submit">Do it <Arrow /></button>
+        </form>
+        <p class="kk-foot">*But it's 100% legal (pinky promise)</p>
+        <div class="kk-video">
+          <video controls playsinline preload="metadata" poster="/images/og/demand-flow.jpg" src="/50k-demand-flow/assets/demand-flow-vsl-1080p.mp4"></video>
         </div>
-        <a class="text-link" href="/demand-flow#how">How it works, start to finish <Arrow /></a>
       </div>
-      <dl class="kk-stats">
-        {stats.map(([n, l]) => <div><dd>{n}</dd><dt>{l}</dt></div>)}
-      </dl>
     </section>
 
-    <section class="section soft band-dark kk-cases">
+    <section class="kk-band kk-letter">
       <div class="wrap">
-        <div class="section-head">
-          <div>
-            <p class="eyebrow">Case studies</p>
-            <h2>Become our next success story.</h2>
-          </div>
-          <a class="text-link" href="/work">All case studies <Arrow /></a>
-        </div>
+        <p class="kk-updated">Updated: 8th of October, 2026</p>
+        <p class="kk-dear">Dear business builder,</p>
+        <p>We get it.</p>
+        <p>Growing a business is hard. Really f*cking hard.</p>
+        <p>You’re probably worried about where your next customer will come from.</p>
+        <p>Stressed and sleeping like a teething two-year-old.</p>
+        <p>As your hair goes fifty shades of grey from all the uncertainty.</p>
+        <p>And to top it all off.</p>
+        <p>You’re being pulled in a bazillion different directions.</p>
+        <p>Ohmygawd!</p>
+        <p>Should I blog? Start a podcast? Build a personal brand?</p>
+        <p>Document my whole flippin’ life on Instagram?</p>
+        <p>What about chatbots?</p>
+        <p>Errrrrrrbody’s talkin’ bout chatbots.</p>
+        <p>Should I run some ads?</p>
+        <p>Drop $3k on a logo?</p>
+        <p>Post on LinkedIn five times per day?</p>
+        <p><em>*somebody please pull out my eyelashes*</em></p>
+        <p>Look, most entrepreneurs have a bad case of ‘shiny object syndrome’…</p>
+        <p>Mixed with a scoop of ADD… and a sprinkle of “I can do everything”.</p>
+        <p>And they end up doing a little bit of this… a little bit of that.</p>
+        <p>Soon, they’re screaming at their Macbook with all the things they “have to” do.</p>
+        <p>We call this shit show a rats nest.</p>
+        <p>Also known as hell.</p>
+        <p>It’s hot and muggy there.</p>
+        <p>And we’d rather rub scorpion chillies in our eyes than operate a business that way.</p>
+        <p>But this isn’t about us… It’s about you.</p>
+        <p>You’re reading this right now because, in some way shape or form, your business isn’t where you want it to be.</p>
+        <p>Or maybe you’re flying… and you simply want more.</p>
+        <p>More security.</p>
+        <p>More money.</p>
+        <p>More freedom.</p>
+        <p>More memories.</p>
+        <p>More time with your family.</p>
+        <p>More business-class flights with your spouse to places that result in more sand between your toes.</p>
+        <p>Whatever it is for you…</p>
+        <p>It all starts by “choosing your own adventure” below…</p>
+        <p><em>*cue angels singing*</em></p>
+      </div>
+    </section>
+
+    <section class="kk-band kk-offers">
+      <div class="wrap kk-offer-grid">
+        <article>
+          <p class="kk-kicker">HIRE US TO DO IT FOR YOU</p>
+          <h2>AGENCY</h2>
+          <p>Managed and ‘done-for-you’ digital marketing services for mid-to-large companies looking to accelerate ‘hyper-growth’. And yes, we guarantee results and smell fantastic *wink*.</p>
+          <a class="button" href="/kk/agency">Get Started <Arrow /></a>
+          <small><span class="rv-stars" aria-hidden="true">★★★★★</span> 4.6 stars out of 607 reviews</small>
+        </article>
+        <article>
+          <p class="kk-kicker">LEARN HOW TO DO IT YOURSELF</p>
+          <h2>COURSES</h2>
+          <p>Business growth training programs for companies serious about scaling their coaching, consulting or service business to seven and eight figures FAST (in months, not years).</p>
+          <a class="button secondary" href="/demand-intelligence">Get Started <Arrow /></a>
+          <small><span class="rv-stars" aria-hidden="true">★★★★★</span> 4.8 stars out of 6,961 reviews</small>
+        </article>
+      </div>
+    </section>
+
+    <section class="kk-band kk-promise">
+      <div class="wrap">
+        <h2>GROW 10X FASTER, BETTER, SMARTER</h2>
+        <p class="kk-lead">Skip the guesswork, trial-and-error and never-ending shit show of trying to figure everything out yourself – for the very first time. And instead, grow your business with proven client-getting-funnels, frameworks and scientific customer acquisition (not hopes and prayers).</p>
+        <dl class="kk-stats">
+          <div><dt>Revenue Generated</dt><dd>$10.2B</dd><small>We let our numbers do the talking. $10.2 Billion in reported client revenue and counting.</small></div>
+          <div><dt>Size Of Our Platform</dt><dd>200,000</dd><small>200,000 customers and counting make up our diverse and ever growing platform.</small></div>
+          <div><dt>Our Reach</dt><dd>136</dd><small>Serving customers in over 136 different countries.</small></div>
+          <div><dt>Battle Tested</dt><dd>1184</dd><small>Our strategies have been battle tested in over 1184 different industries and niches.</small></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="kk-band kk-dark kk-cases">
+      <div class="wrap">
+        <h3>BECOME OUR NEXT SUCCESS STORY</h3>
         <div class="kk-grid">
-          {workItems.map((w) => (
-            <a class="kk-tile" href={`/work/${w.slug}`}>
-              <span class="number">{w.name}</span>
-              <strong>{w.headline}</strong>
-              <em>Read it <Arrow /></em>
-            </a>
+          {cases.map((c) => <a class="kk-tile" href="/work"><span>{c}</span><em>Read it <Arrow /></em></a>)}
+        </div>
+        <div class="button-row"><a class="button" href={CTA}>HIT THE DAMN BUTTON <Arrow /></a></div>
+        <p class="kk-lead">There are a lot of so-called “agencies” and “gurus” roaming around the wild wild west that is the web, today. Most of these people are all bark, no bite. All waffle, no syrup. ‘Cause marketers lie, but numbers don’t. And we’ve generated $10.2 billion (with a B) for our clients, in 1184 different industries and niches.</p>
+        <p class="kk-rating"><span class="rv-stars" aria-hidden="true">★★★★★</span> 4.8 stars out of 7,568 reviews</p>
+      </div>
+    </section>
+
+    <section class="kk-band kk-platform">
+      <div class="wrap">
+        <p class="kk-kicker">BUILT FOR SCALE</p>
+        <h2>THE MOST RUTHLESSLY EFFECTIVE PLATFORM FOR RAPIDLY SCALING BUSINESSES ON PLANET EARTH</h2>
+        <p class="kk-kicker">NO MORE ‘HOPING-AND-PRAYING’</p>
+        <h2 class="kk-h2-sm">THE POWER IS IN THE PLATFORM</h2>
+        <p>Most entrepreneurs try growing their business through trial and error, by ‘hoping-and-praying’…. by stumbling and trying to figure it all out by themselves. We call this “guesswork”. It’s unreliable, extremely-stressful and often results in failure (or a psychiatrist).</p>
+        <p>We’ve spent over $100 million dollars on traffic perfecting what works… this isn’t our first rodeo. And our hope is to shrink the amount of time it takes, for you to go from first-time solo business operator… To fire-breathing, market-terrorising entrepreneur…</p>
+        <div class="button-row"><a class="button" href={CTA}>HIT THE DAMN BUTTON <Arrow /></a></div>
+      </div>
+    </section>
+
+    <section class="kk-band kk-dark kk-guarantee">
+      <div class="wrap">
+        <h2>WE GUARANTEE TO BEAT YOUR RESULTS BY 30% OR WE WORK FOR FREE</h2>
+        <p>This is for businesses already running profitable Google or Facebook ads. We’ll design a new funnel, write new ads, and optimise performance until we beat your existing conversion rate, CPL, or ROAS by 30% within 90 days or we work for free until we do. You cover ad spend. We control the creative. And the campaigns naturally need to be apples-to-apples comparable (same product, same season, etc).</p>
+        <div class="button-row"><a class="button" href={CTA}>HIT THE DAMN BUTTON <Arrow /></a></div>
+      </div>
+    </section>
+
+    <section class="kk-band kk-book">
+      <div class="wrap kk-book-grid">
+        <div class="kk-book-cover" aria-hidden="true"><span>#1 Bestseller</span><strong>SELL LIKE CRAZY</strong></div>
+        <div>
+          <p class="kk-kicker">WE LITERALLY WROTE THE BOOK ON…</p>
+          <h2>HOW TO GET AS MANY CLIENTS, CUSTOMERS AND SALES AS YOU CAN POSSIBLY HANDLE</h2>
+          <p>Sell Like Crazy shot up from being ranked 90,000 on the day of release, to a #1 international Amazon bestseller in its first day. This book is easy to read and wastes no time in going straight for the jugular.</p>
+          <p>You get actionable strategies you can use RIGHT AWAY to dramatically grow sales for your business…in most cases, without spending a cent more on advertising.</p>
+          <div class="button-row"><a class="button" href="/free-playbook">BUY THE BOOK <Arrow /></a></div>
+          <p class="kk-rating"><span class="rv-stars" aria-hidden="true">★★★★★</span> 4.8 stars out of 6,961 reviews</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="kk-band kk-dark kk-testimonials">
+      <div class="wrap">
+        <div class="kk-tgrid">
+          {testimonials.map(([quote, who]) => (
+            <article class="kk-t">
+              <button class="kk-play" type="button" aria-label="Play"><span></span></button>
+              <blockquote><p>{quote}</p><footer>{who}</footer></blockquote>
+            </article>
           ))}
         </div>
-        <div class="button-row"><a class="button" href={CTA}>Hit the damn button <Arrow /></a></div>
       </div>
     </section>
 
-    <ClientTrust />
-
-    <section class="section wrap kk-platform">
-      <div class="split">
-        <div>
-          <p class="eyebrow">Built for scale</p>
-          <h2>The most ruthlessly effective system for growing a service business.</h2>
-        </div>
-        <div>
-          <p>Most agencies are all bark and no bite. They reach a broad audience, send you a report full of clicks, and hope some of it turns into money.</p>
-          <p>We don't hope. We start with purchase intent data, so your ads go in front of people who looked up your service in the last few days. Then the landing page, the quick text back, the booking link, the follow-up, and the tracking all run as one system. One team. One number to call.</p>
-          <div class="button-row"><a class="button" href={CTA}>Hit the damn button <Arrow /></a></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section soft kk-guarantee">
+    <section class="kk-band kk-faq">
       <div class="wrap">
-        <p class="eyebrow">The guarantee</p>
-        <h2>We guarantee $50,000 in new revenue in 45-60 days or your money back. Plus $500 for wasting your time.</h2>
-        <div class="split">
-          <ul class="check-list">
-            <li>Applies to businesses we accept into Demand Flow after a strategy call.</li>
-            <li>The clock starts when your system goes live. Your agreement sets the exact deadline inside the 45 to 60 day window.</li>
-            <li>Revenue counts when it comes from new customers through the system we build. We track it in your CRM against closed jobs or invoices.</li>
-            <li>If we miss, your service fees are refunded and we pay you $500. Ad spend goes to the ad platforms and isn't refunded.</li>
-          </ul>
-          <ul class="check-list">
-            <li>You fund the agreed ad budget and keep the campaigns on.</li>
-            <li>We write the ads and build the pages. You check them for accuracy.</li>
-            <li>You answer the leads. Not answering ends the guarantee.</li>
-            <li>Full terms are on the <a class="inline-link" href="/legal/guarantee">guarantee terms</a> page.</li>
-          </ul>
-        </div>
+        <h2 class="kk-h2-sm">DIGITAL MARKETING AGENCY</h2>
+        <FaqList items={faqs} />
       </div>
     </section>
 
-    <section class="section wrap kk-book">
-      <div class="split">
-        <div class="kk-book-cover" aria-hidden="true"><span>Free</span><strong>The Scale Playbook</strong><small>Get found. Win the job. Know the numbers.</small></div>
+    <section class="kk-band kk-dark kk-final">
+      <div class="wrap">
+        <h2>HIT THE DAMN BUTTON</h2>
+        <div class="button-row"><a class="button" href={CTA}>HIT THE DAMN BUTTON <Arrow /></a></div>
+        <p class="kk-tag">The most ruthlessly effective platform for rapidly scaling businesses on planet earth.</p>
+      </div>
+    </section>
+
+    <section class="kk-band kk-news">
+      <div class="wrap kk-news-grid">
         <div>
-          <p class="eyebrow">Free download</p>
-          <h2>The playbook we use to grow service businesses.</h2>
-          <p>How to get found, win the job, and know your numbers. The same steps we run for clients, written so you can do them yourself.</p>
-          <div class="button-row"><a class="button secondary" href="/free-playbook">Get the playbook <Arrow /></a></div>
+          <h2 class="kk-h2-sm">Want some free money?</h2>
+          <p>Get million dollar marketing strategies sent straight to your inbox every week. Just enter your email below.</p>
         </div>
+        <form class="kk-capture" action={CTA} method="get">
+          <input name="email" type="email" required placeholder="Enter your email..." aria-label="Email" />
+          <input name="first" type="text" placeholder="Enter your name..." aria-label="Name" />
+          <button class="button" type="submit">Let's Go <Arrow /></button>
+        </form>
       </div>
-    </section>
-
-    <Reviews />
-
-    <section class="section wrap">
-      <div class="section-head">
-        <div>
-          <p class="eyebrow">FAQ</p>
-          <h2>Questions people ask before they hit the button.</h2>
-        </div>
-      </div>
-      <FaqList items={faqs} />
-    </section>
-
-    <section class="section closing wrap">
-      <p class="eyebrow">One more thing</p>
-      <h2>Hit the damn button.</h2>
-      <p class="intro">Your market. Your numbers. A clear plan. Free, 30 minutes, no obligation.</p>
-      <div class="button-row"><a class="button" href={CTA}>Hit the damn button <Arrow /></a></div>
     </section>
   </div>
 </Growth>
-
-<style>
-  .kk-paths {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-    margin-top: 18px;
-  }
-  .kk-paths a {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-    padding: 14px 18px;
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 14px;
-    background: var(--cream);
-    text-decoration: none;
-    color: var(--ink);
-    transition: border-color 0.3s ease, transform 0.3s ease;
-  }
-  .kk-paths a:hover { border-color: #f2b18555; transform: translateY(-2px); }
-  .kk-paths span { font-family: var(--mono); font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--copper); }
-  .kk-paths small { font-size: 14px; color: var(--muted); }
-
-  .kk-hero { text-align: center; padding: clamp(56px, 8vw, 110px) 0 32px; }
-  .kk-rating { font-size: 14px; color: var(--muted); }
-  .kk-rating strong { color: var(--ink); }
-  .kk-rating .rv-stars { color: var(--copper); margin-right: 6px; }
-  .kk-hero h1 {
-    margin: 22px auto 0;
-    max-width: 14ch;
-    font-size: clamp(54px, 10vw, 150px);
-    line-height: 0.9;
-    letter-spacing: -0.05em;
-    text-transform: uppercase;
-    text-shadow: 0 30px 80px rgba(0, 0, 0, 0.7);
-  }
-  .kk-hero sup { color: var(--ember); font-size: 0.5em; vertical-align: top; }
-  .kk-sub { max-width: 640px; margin: 26px auto 0; font-size: clamp(18px, 2vw, 22px); color: #cfccc4; }
-  .kk-capture {
-    display: flex;
-    gap: 0;
-    max-width: 760px;
-    margin: 30px auto 0;
-    border: 1px solid rgba(255, 255, 255, 0.14);
-    border-radius: 999px;
-    background: var(--cream);
-    padding: 6px;
-  }
-  .kk-capture input {
-    flex: 1 1 auto;
-    min-width: 0;
-    border: 0;
-    background: transparent;
-    color: var(--ink);
-    font-size: 16px;
-    padding: 0 22px;
-  }
-  .kk-capture input:focus { outline: none; }
-  .kk-capture .button { flex: none; }
-  .kk-foot { margin-top: 14px; font-size: 13px; color: var(--muted); }
-  .kk-video {
-    max-width: 960px;
-    margin: 44px auto 0;
-    border-radius: 20px;
-    overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    box-shadow: 0 40px 120px -30px rgba(0, 0, 0, 0.9), 0 0 120px -20px rgba(227, 160, 112, 0.3);
-  }
-  .kk-video video { display: block; width: 100%; aspect-ratio: 16 / 9; background: #000; }
-
-  .kk-letter .wrap { max-width: 720px; }
-  .kk-letter p { font-size: 18px; line-height: 1.7; color: #cfccc4; margin: 0 0 18px; }
-  .kk-letter p:first-child { font-family: var(--display); font-weight: 800; font-size: 26px; color: var(--ink); }
-  .kk-letter .kk-sig { margin: 0; color: var(--ink); }
-  .kk-letter .kk-sig + .kk-sig { color: var(--muted); margin-bottom: 28px; }
-  .kk-adventure { font-weight: 600; color: var(--ember) !important; }
-
-  .kk-offers { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-  .kk-offers article {
-    padding: 36px;
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 20px;
-    background: linear-gradient(180deg, #161618, #111112);
-  }
-  .kk-offers h2 { font-size: clamp(40px, 5vw, 64px); text-transform: uppercase; letter-spacing: -0.04em; margin: 8px 0 14px; }
-  .kk-offers p { color: #cfccc4; }
-  .kk-offers .button { margin-top: 18px; }
-  .kk-offers small { display: block; margin-top: 16px; font-size: 13px; color: var(--muted); }
-  .kk-offers .rv-stars { color: var(--copper); }
-
-  .kk-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; margin: 48px 0 0; border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 16px; overflow: hidden; background: rgba(255, 255, 255, 0.12); }
-  .kk-stats > div { background: var(--paper); padding: 26px 24px; }
-  .kk-stats dd { margin: 0; font-family: var(--display); font-weight: 800; font-size: clamp(28px, 3vw, 40px); letter-spacing: -0.04em; color: var(--ember); }
-  .kk-stats dt { margin-top: 8px; font-size: 14px; color: var(--muted); }
-
-  .kk-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 36px; }
-  .kk-tile { display: flex; flex-direction: column; gap: 10px; padding: 26px; border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 18px; background: linear-gradient(180deg, #161618, #111112); text-decoration: none; color: var(--ink); transition: border-color 0.3s ease, transform 0.3s ease; }
-  .kk-tile:hover { border-color: #f2b18555; transform: translateY(-2px); }
-  .kk-tile strong { font-family: var(--display); font-size: 22px; letter-spacing: -0.02em; line-height: 1.15; }
-  .kk-tile em { font-style: normal; color: var(--copper); font-weight: 600; margin-top: auto; }
-
-  .kk-platform h2 { font-size: clamp(34px, 4.4vw, 56px); }
-  .kk-platform p { color: #cfccc4; }
-
-  .kk-guarantee h2 { max-width: 20ch; font-size: clamp(32px, 4.4vw, 58px); text-transform: uppercase; letter-spacing: -0.04em; margin: 10px 0 36px; }
-  .kk-guarantee .split { gap: 32px; }
-
-  .kk-book-cover { aspect-ratio: 3 / 4; max-width: 320px; display: flex; flex-direction: column; justify-content: flex-end; gap: 6px; padding: 28px; border-radius: 14px; border: 1px solid rgba(255, 255, 255, 0.14); background: linear-gradient(160deg, #1d1d20, #0a0a0b 70%); box-shadow: 0 30px 80px -30px rgba(0, 0, 0, 0.9); }
-  .kk-book-cover span { font-family: var(--mono); font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--copper); }
-  .kk-book-cover strong { font-family: var(--display); font-size: 34px; line-height: 1; letter-spacing: -0.03em; }
-  .kk-book-cover small { color: var(--muted); }
-
-  @media (max-width: 900px) {
-    .kk-paths, .kk-offers, .kk-grid { grid-template-columns: 1fr; }
-    .kk-stats { grid-template-columns: 1fr 1fr; }
-    .kk-capture { flex-direction: column; border-radius: 20px; }
-    .kk-capture input { padding: 14px 16px; }
-    .kk-capture .button { width: 100%; }
-  }
-</style>
