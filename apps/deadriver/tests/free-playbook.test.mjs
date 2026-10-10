@@ -42,14 +42,14 @@ test('free-playbook stays on the Growth layout with nationwide results-first cop
 });
 
 test('free-playbook is ungated: readable PDF, no lead form', () => {
-  assert.match(page, /\/downloads\/dead-river-scale-playbook\.pdf/);
+  assert.match(page, /\/downloads\/marketing-is-fcking-easy\.pdf/);
   assert.match(page, /Download PDF/);
   assert.match(page, /<iframe/);
   assert.match(page, /title="Dead River Scale playbook"/);
   assert.ok(
     existsSync(
       new URL(
-        '../public/downloads/dead-river-scale-playbook.pdf',
+        '../public/downloads/marketing-is-fcking-easy.pdf',
         import.meta.url,
       ),
     ),
@@ -124,6 +124,6 @@ test('free-playbook leads with Download where a PDF iframe is unreliable', () =>
     page.slice(page.indexOf('playbook-get'), page.indexOf('playbook-frame')),
     /—/,
   );
-  const downloads = page.match(/download="dead-river-scale-playbook\.pdf"/g);
+  const downloads = page.match(/download="marketing-is-fcking-easy\.pdf"/g);
   assert.ok(downloads && downloads.length >= 2);
 });

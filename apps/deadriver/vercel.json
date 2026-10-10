@@ -54,6 +54,11 @@
   ],
   "redirects": [
     {
+      "source": "/downloads/dead-river-scale-playbook.pdf",
+      "destination": "/downloads/marketing-is-fcking-easy.pdf",
+      "statusCode": 301
+    },
+    {
       "source": "/pricing",
       "destination": "/",
       "statusCode": 301
