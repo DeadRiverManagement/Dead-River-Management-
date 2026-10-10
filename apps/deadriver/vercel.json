@@ -1116,7 +1116,7 @@
     },
     {
       "source": "/marketing-advice/how-el-paso-plumbers-get-more-customers",
-      "destination": "/marketing-advice/el-paso-home-services-marketing-agency",
+      "destination": "/locations/el-paso",
       "statusCode": 301
     },
     {
@@ -1391,6 +1391,11 @@
     },
     {
       "source": "/demandflow",
+      "destination": "/demand-flow",
+      "statusCode": 301
+    },
+    {
+      "source": "/demandflow/home-services",
       "destination": "/demand-flow",
       "statusCode": 301
     },
